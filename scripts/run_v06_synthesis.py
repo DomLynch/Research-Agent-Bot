@@ -12,6 +12,7 @@ import re
 import shutil
 import sys
 from collections import Counter, defaultdict
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 from types import SimpleNamespace
@@ -3334,6 +3335,7 @@ async def _run(
     # ===== Auto-pipeline stages (Layer 1 audit + auto-fix → final-layer
     # review → auto-apply → final audit). No manual step required —
     # this whole chain runs from one invocation. =====
+    _write_revision_feedback_sidecar(out_dir)
     final_paper_md = await _run_post_paper_pipeline(
         paper_path=paper_path, manifest=manifest, out_dir=out_dir,
         citation_registry=citation_registry, sections=sections,
@@ -3345,23 +3347,6 @@ async def _run(
     # Re-measure
     # from the final paper and rewrite the manifest so sidecars stay
     # consistent (no more "manifest says 570 / pre_submit says 299").
-    # Slice 16 (2026-05-14): single deterministic compiler-owned
-    # post-render pass. Writer drafts freely; finalizer enforces
-    # submission discipline across 5 phases:
-    #   A — Methods replace from methods_pack.json
-    #   B — Evidence-lane qualifier injection (animal/preclinical)
-    #   C — Terminology sanitizer (pipeline jargon → academic)
-    #   D — Reference closure (orphan-ref supporting-corpus cluster)
-    #   E — Structural fallback (thesis marker / resolution criteria /
-    #       soften ungrounded "we propose" → "we operationalize")
-    # Universal — no per-topic logic; reads existing sidecars.
-    _write_revision_feedback_sidecar(out_dir)
-    from agent.journal_finalizer import finalize_run
-    _finalizer_report = finalize_run(out_dir)
-    if _finalizer_report.paper_changed:
-        final_paper_md = paper_path.read_text()
-        word_count = _finalizer_report.final_word_count
-
     manifest["section_words"] = _section_words_from_paper(final_paper_md)
     manifest["total_words"] = word_count
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
@@ -3395,36 +3380,203 @@ async def _run(
     return exit_code
 
 
+def _write_paper_audit(paper_path: Path, paper_md: str, audit_fn) -> dict:
+    report = audit_fn(paper_md)
+    paper_path.with_suffix(".audit.json").write_text(json.dumps(report, indent=2))
+    paper_path.with_suffix(".audit.md").write_text(_audit_v06._format_summary(report))
+    return report
+
+
+def _paper_consistency_issues(paper_md: str, manifest: dict, paper_path: Path, audit_fn):
+    report = audit_fn(paper_md)
+    return _consistency_audit.run_audit(
+        paper_md, manifest, report, _audit_v06._format_summary(report),
+        run_dir=paper_path.parent,
+    )
+
+
+def _stage5_repair_callback(
+    manifest: dict, paper_path: Path,
+    *, sections: tuple[SynthesisSection, ...], methods_md: str,
+    citation_registry: dict | None,
+) -> Callable[[str], str]:
+    """One repair pass; the finalizer alone owns convergence and paper writes."""
+    log: list[dict[str, Any]] = []
+    template_log: list[dict[str, Any]] = []
+    quarantine_path = paper_path.with_name("numeric_claim_quarantine.json")
+    try:
+        prefer_typed = not json.loads(quarantine_path.read_text())
+    except FileNotFoundError:
+        prefer_typed = True
+    except (OSError, ValueError):
+        prefer_typed = False
+
+    def fix(text: str, issues: list) -> str:
+        nonlocal prefer_typed
+        text, changes = _consistency_fixer.apply_fixes(
+            text, issues, manifest=manifest, quant_claims_dir=QUANT_DIR,
+            numeric_quarantine_path=quarantine_path,
+        )
+        log.extend(changes)
+        # Once quarantined, typed source text must not resurrect a numeric claim.
+        prefer_typed &= not any(c.get("fix_type") == "numeric_role_guard_strip" for c in changes)
+        return text
+
+    def repair(paper_md: str) -> str:
+        issues = _paper_consistency_issues(paper_md, manifest, paper_path, lambda text: _audit_v06.audit(
+            text, review_type=manifest.get("review_type"), manifest=manifest,
+        ))
+        paper_md = fix(paper_md, issues)
+        paper_md = _restore_rendered_section_contract(
+            paper_md, sections, prefer_typed_sections=prefer_typed,
+        )
+        if methods_md:
+            paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
+        paper_md = fix(_strip_rendered_citation_markers(paper_md), [])
+        paper_md, floor_log = _restore_public_surface_floors(paper_md, review_type=manifest.get("review_type"))
+        log.extend(floor_log)
+        paper_md, changes = _paper_quality.apply_template_repairs(paper_md)
+        template_log.extend(changes)
+        paper_md, polish_log = _consistency_fixer.apply_lightweight_public_polish(paper_md, manifest=manifest)
+        log.extend(polish_log)
+        paper_md, _ = _ensure_references_section(paper_md, citation_registry)
+        paper_md = _apply_abstract_claim_strength_repair(paper_md, log)
+        paper_path.with_suffix(".final_fixed_log.json").write_text(json.dumps(log, indent=2))
+        if template_log:
+            paper_path.with_suffix(".template_repair_log.json").write_text(json.dumps(template_log, indent=2))
+        return paper_md
+
+    return repair
+
+
 def _write_stage5c_quality_gates(
     *, paper_path: Path, paper_md: str, manifest: dict[str, Any],
     citation_registry: dict[str, Any] | None, reviewer_patches: dict[str, int],
     quality_bundle: Any, animal_citations: list[str] | set[str], citation_outcome_map: dict[str, str],
+    sections: tuple[SynthesisSection, ...] = (),
+    methods_md: str = "",
+    reviewer_counts: tuple[int, int, int] | None = None,
 ) -> tuple[str, dict[str, Any], dict[str, Any]]:
     # Finalize and gate the exact Stage 5c manuscript snapshot.
     from agent import journal_finalizer, journal_surface_gate
 
     paper_path.write_text(paper_md)
-    journal_finalizer.finalize_run(paper_path.parent)
-    paper_md = paper_path.read_text()
-    audit_report = _audit_v06.audit(
-        paper_md, review_type=manifest.get("review_type"), manifest=manifest,
+    journal_finalizer.finalize_run(
+        paper_path.parent, repair=_stage5_repair_callback(
+            manifest, paper_path, sections=sections, methods_md=methods_md,
+            citation_registry=citation_registry,
+        ),
     )
-    paper_path.with_suffix(".audit.json").write_text(json.dumps(audit_report, indent=2))
-    paper_path.with_suffix(".audit.md").write_text(_audit_v06._format_summary(audit_report))
+    paper_md = paper_path.read_text()
+    audit_report = _write_paper_audit(paper_path, paper_md, lambda text: _audit_v06.audit(
+        text, review_type=manifest.get("review_type"), manifest=manifest,
+    ))
     surface_report = journal_surface_gate.evaluate_journal_surface(
         paper_md, animal_citations=animal_citations, citation_outcome_map=citation_outcome_map,
         declared_review_type=manifest.get("review_type"),
     )
     surface_payload = {"passed": surface_report.passed, "issues": [dataclasses.asdict(issue) for issue in surface_report.issues]}
     paper_path.with_suffix(".journal_surface.json").write_text(json.dumps(surface_payload, indent=2))
+    issues = _paper_consistency_issues(paper_md, manifest, paper_path, lambda _: audit_report)
+    paper_path.with_suffix(".consistency.json").write_text(json.dumps([_issue_to_dict(i) for i in issues], indent=2))
+    paper_path.with_suffix(".consistency.md").write_text(_consistency_audit._format_summary(issues))
+    reviewer_patches = _reviewer_patches_for_gate(paper_path.parent, int(reviewer_patches.get("unresolved_p1_count", 0)))
+    if reviewer_counts is not None:
+        reviewer_counts = (int(reviewer_patches.get("unresolved_p1_count", 0)), *reviewer_counts[1:])
+    _refresh_post_finalizer_verdict(paper_path.parent, manifest=manifest, reviewer_counts=reviewer_counts)
+    verdict = json.loads(paper_path.with_suffix(".final_verdict.json").read_text())
+    _finalize_stage5_supplement(paper_path.parent, manifest, audit_report, verdict["verdict"])
     receipt_ids = {str(row.get("paper_id") or row.get("receipt_id") or "") for row in manifest.get("receipts", [])}
     citation_registry_complete = bool(citation_registry and all(rid in citation_registry for rid in receipt_ids if rid))
     gate_artifacts = _paper_quality.write_final_quality_gates(
         out_dir=paper_path.parent, paper_text=paper_md, manifest=manifest, audit=audit_report,
-        journal_surface=surface_payload, reviewer_patches=_reviewer_patches_for_gate(paper_path.parent, int(reviewer_patches.get("unresolved_p1_count", 0))), quality_bundle=quality_bundle,
+        journal_surface=surface_payload, reviewer_patches=reviewer_patches, quality_bundle=quality_bundle,
         citation_registry_complete=citation_registry_complete,
     )
     return paper_md, audit_report, gate_artifacts
+
+
+def _finalize_stage5_supplement(out_dir: Path, manifest: dict, audit_report: dict, verdict: str) -> None:
+    # Stage 5b: keep audit/provenance appendix out of the journal main.
+    # The public manuscript stays argument/prose; the supplement carries
+    # provenance, AI-use, accountability, and data availability machinery.
+    try:
+        from agent.manuscript_appendix import compose_appendix
+        from agent.settings import load_settings as _load_settings
+        import subprocess as _sp
+        try:
+            git_sha = _sp.check_output(
+                ["git", "rev-parse", "--short", "HEAD"],
+                cwd=REPO_ROOT, text=True, timeout=5,
+            ).strip()
+        except (_sp.SubprocessError, FileNotFoundError):
+            git_sha = "unknown"
+        _settings = _load_settings()
+        model_stack = {
+            "writer": _settings.minimax_model,
+            "reviewer": _settings.final_layer_reviewer_model,
+            "extractor": _settings.minimax_model,
+            "thesis": _settings.minimax_model,
+        }
+        # P1 reviewer fix (2026-05-04 wave 5): use the orchestrator's
+        # _ACTIVE_TOPIC directly. The previous regex on the run-dir
+        # name (synthesis-<topic>-v06-...) only worked for the default
+        # naming convention; custom out-dirs (e.g.
+        # runs/publication/rapamycin/) have a single-segment dir name
+        # with no hyphens, so the parser fell through to "unknown" and
+        # leaked that string into the Search Provenance section.
+        _topic = _ACTIVE_TOPIC or "unknown"
+        appendix_md = compose_appendix(
+            manifest, audit=audit_report,
+            model_stack=model_stack,
+            topic=_topic,
+            run_id=out_dir.name,
+            git_sha=git_sha,
+            bundle_path=f"bundles/{out_dir.name}/",
+            verdict=verdict,
+        )
+        if "## Publication Appendix" not in appendix_md:
+            appendix_md = "## Publication Appendix\n\n" + appendix_md.lstrip()
+        supplement_path = out_dir / "structured_evidence_tables.md"
+        existing = (
+            supplement_path.read_text()
+            if supplement_path.exists()
+            else "# Supplementary Evidence Tables and Audit Methods\n"
+        )
+        if "## Search Provenance and Selection" not in existing:
+            supplement_path.write_text(
+                existing.rstrip() + "\n\n" + appendix_md.rstrip() + "\n",
+            )
+        print(
+            "[pipeline] Stage 5b — appendix routed to supplement "
+            "(Search Provenance / AI Disclosure / Accountability / Data)",
+            file=sys.stderr,
+        )
+    except Exception as _e:  # pragma: no cover — best-effort
+        print(
+            f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
+            file=sys.stderr,
+        )
+
+    supplement_p_values = _normalize_structured_evidence_p_values(
+        out_dir,
+    )
+    if supplement_p_values:
+        print(
+            "[pipeline] Stage 5b* — normalized "
+            f"{supplement_p_values} supplement p-value(s)",
+            file=sys.stderr,
+        )
+    if supplement_revision_p_values := (
+        _revision_consistency.repair_structured_evidence_revision_p_values(
+            out_dir, manifest,
+        )
+    ):
+        print(
+            "[pipeline] Stage 5b** — reconciled reviewer-disputed "
+            f"supplement p-value ask(s)={supplement_revision_p_values}",
+            file=sys.stderr,
+        )
 
 
 async def _run_post_paper_pipeline(
@@ -3477,11 +3629,8 @@ async def _run_post_paper_pipeline(
 
     # Stage 1: deterministic audit (Q1-Q10) on the as-written paper.
     print("[pipeline] Stage 1/5 — initial audit...", file=sys.stderr)
-    audit_report = _audit(paper_md)
-    audit_path = paper_path.with_suffix(".audit.json")
-    audit_path.write_text(json.dumps(audit_report, indent=2))
+    audit_report = _write_paper_audit(paper_path, paper_md, _audit)
     audit_md = _audit_v06._format_summary(audit_report)
-    paper_path.with_suffix(".audit.md").write_text(audit_md)
 
     # Stage 2: Layer 1 consistency audit + deterministic auto-fix.
     print("[pipeline] Stage 2/5 — consistency audit + auto-fix...", file=sys.stderr)
@@ -3509,10 +3658,7 @@ async def _run_post_paper_pipeline(
     # Re-run the audit + manifest now that auto-fixes have landed
     # (the consistency audit's verdict-overclaim check needs the
     # updated audit_md to pass).
-    audit_report = _audit(paper_md)
-    audit_path.write_text(json.dumps(audit_report, indent=2))
-    audit_md = _audit_v06._format_summary(audit_report)
-    paper_path.with_suffix(".audit.md").write_text(audit_md)
+    audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
     paper_md, pre_review_template_log = _paper_quality.apply_template_repairs(
         paper_md,
@@ -3522,10 +3668,7 @@ async def _run_post_paper_pipeline(
             json.dumps(pre_review_template_log, indent=2),
         )
         paper_path.write_text(paper_md)
-        audit_report = _audit(paper_md)
-        audit_path.write_text(json.dumps(audit_report, indent=2))
-        audit_md = _audit_v06._format_summary(audit_report)
-        paper_path.with_suffix(".audit.md").write_text(audit_md)
+        audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
     # Stage 3: Final-layer LLM review (primary reviewer, fallback reviewer).
     print(
@@ -3603,18 +3746,6 @@ async def _run_post_paper_pipeline(
             manifest=manifest,
             paper_path=paper_path,
         )
-        paper_md = _restore_rendered_section_contract(paper_md, sections)
-        paper_md, _n_qei_heading_deduped = (
-            _patch_applier._collapse_consecutive_qei_headings(paper_md)
-        )
-        if methods_md:
-            paper_md = _run_mode.replace_methods_in_paper(
-                paper_md, methods_md,
-            )
-            paper_md, _n_qei_heading_deduped = (
-                _patch_applier._collapse_consecutive_qei_headings(paper_md)
-            )
-        paper_md = _strip_rendered_citation_markers(paper_md)
         results = _resolve_absent_flagged_patches(results, paper_md)
 
         paper_path.write_text(paper_md)
@@ -3722,198 +3853,20 @@ async def _run_post_paper_pipeline(
         "[pipeline] Stage 5/5 — final audit + unified verdict...",
         file=sys.stderr,
     )
-    pre_audit = _audit(paper_md)
-    pre_audit_md = _audit_v06._format_summary(pre_audit)
-    pre_issues = _consistency_audit.run_audit(
-        paper_md, manifest, pre_audit, pre_audit_md,
-        run_dir=paper_path.parent,
+    # Stage 5c: paper-quality pre-submit gate. No manuscript mutations follow.
+    if quality_bundle is None:
+        raise RuntimeError("quality_methods_bundle_missing")
+    paper_md, audit_report, gate_artifacts = _write_stage5c_quality_gates(
+        paper_path=paper_path, paper_md=paper_md, manifest=manifest,
+        citation_registry=citation_registry,
+        reviewer_patches=_reviewer_patches_for_gate(out_dir, grok_unresolved_p1),
+        quality_bundle=quality_bundle, animal_citations=_animal_citations,
+        citation_outcome_map=_citation_outcome_map, sections=sections, methods_md=methods_md,
+        reviewer_counts=(grok_unresolved_p1, n_flagged, n_stripped),
     )
-    pre_final_cleanup_md = paper_md
-    paper_md, _refix_log = _consistency_fixer.apply_fixes(
-        paper_md, pre_issues, manifest=manifest,
-        quant_claims_dir=QUANT_DIR,
-        numeric_quarantine_path=paper_path.with_name(
-            "numeric_claim_quarantine.json",
-        ),
-    )
-    prefer_typed_restore = not any(
-        item.get("fix_type") == "numeric_role_guard_strip"
-        for item in _refix_log
-    )
-    paper_md = _restore_rendered_section_contract(
-        paper_md, sections,
-        prefer_typed_sections=prefer_typed_restore,
-    )
-    if methods_md:
-        paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
-    paper_md = _strip_rendered_citation_markers(paper_md)
-    paper_md, _post_restore_public_log = _consistency_fixer.apply_fixes(
-        paper_md, [], manifest=manifest, quant_claims_dir=QUANT_DIR,
-        numeric_quarantine_path=paper_path.with_name(
-            "numeric_claim_quarantine.json",
-        ),
-    )
-    _refix_log.extend(_post_restore_public_log)
-    post_restore_audit = _audit(paper_md)
-    post_restore_audit_md = _audit_v06._format_summary(post_restore_audit)
-    post_restore_issues = _consistency_audit.run_audit(
-        paper_md, manifest, post_restore_audit, post_restore_audit_md,
-        run_dir=paper_path.parent,
-    )
-    if any(i.auto_fixable for i in post_restore_issues):
-        paper_md, _post_restore_log = _consistency_fixer.apply_fixes(
-            paper_md,
-            post_restore_issues,
-            manifest=manifest,
-            quant_claims_dir=QUANT_DIR,
-            numeric_quarantine_path=paper_path.with_name(
-                "numeric_claim_quarantine.json",
-            ),
-        )
-        _refix_log.extend(_post_restore_log)
-        if any(
-            item.get("fix_type") == "numeric_role_guard_strip"
-            for item in _post_restore_log
-        ):
-            prefer_typed_restore = False
-        paper_md = _restore_rendered_section_contract(
-            paper_md, sections,
-            prefer_typed_sections=prefer_typed_restore,
-        )
-        if methods_md:
-            paper_md = _run_mode.replace_methods_in_paper(
-                paper_md, methods_md,
-            )
-        paper_md = _strip_rendered_citation_markers(paper_md)
-        paper_md, _final_public_log = _consistency_fixer.apply_fixes(
-            paper_md, [], manifest=manifest, quant_claims_dir=QUANT_DIR,
-            numeric_quarantine_path=paper_path.with_name(
-                "numeric_claim_quarantine.json",
-            ),
-        )
-        _refix_log.extend(_final_public_log)
-    paper_md, _surface_floor_log = _restore_public_surface_floors(paper_md, review_type=manifest.get("review_type"))
-    _refix_log.extend(_surface_floor_log)
-    if _surface_floor_log:
-        paper_md, _post_surface_floor_log = _consistency_fixer.apply_fixes(
-            paper_md, [], manifest=manifest, quant_claims_dir=QUANT_DIR,
-            numeric_quarantine_path=paper_path.with_name(
-                "numeric_claim_quarantine.json",
-            ),
-        )
-        _refix_log.extend(_post_surface_floor_log)
-    paper_md, _final_polish_log = (
-        _consistency_fixer.apply_lightweight_public_polish(
-            paper_md, manifest=manifest,
-        )
-    )
-    _refix_log.extend(_final_polish_log)
-    if methods_md:
-        paper_md = _run_mode.replace_methods_in_paper(paper_md, methods_md)
-    paper_md, _final_surface_floor_log = _restore_public_surface_floors(
-        paper_md, review_type=manifest.get("review_type"),
-    )
-    _refix_log.extend(_final_surface_floor_log)
-    paper_md, _references_restored = _ensure_references_section(
-        paper_md, citation_registry,
-    )
-    paper_md = _apply_abstract_claim_strength_repair(paper_md, _refix_log)
-    if (
-        _refix_log
-        or any(i.auto_fixable for i in pre_issues)
-        or paper_md != pre_final_cleanup_md
-        or _references_restored
-    ):
-        paper_path.with_suffix(".final_fixed_log.json").write_text(
-            json.dumps(_refix_log, indent=2)
-        )
-        paper_path.write_text(paper_md)
-
-    # Stage 5a: final-layer reviewer patches can reintroduce journal-surface
-    # issues after the first deterministic finalizer pass. Run the same
-    # compiler-owned finalizer again before the surface/pre-submit gate, then
-    # audit the post-finalizer manuscript.
-    from agent.journal_finalizer import finalize_run
-    paper_path.write_text(paper_md)
-    _stage5_finalizer_report = finalize_run(paper_path.parent)
-    if _stage5_finalizer_report.paper_changed:
-        paper_md = paper_path.read_text()
-    paper_md, _post_finalizer_fix_log = _repair_post_finalizer_auto_fixables(
-        paper_md, manifest, paper_path, _audit, quant_claims_dir=QUANT_DIR,
-        sections=sections,
-    )
-    if _post_finalizer_fix_log:
-        print(
-            "[pipeline] Stage 5a* — post-finalizer consistency auto-fix "
-            f"applied={sum(int(i.get('n_changes') or 0) for i in _post_finalizer_fix_log)}",
-            file=sys.stderr,
-        )
-
-    audit_report = _audit(paper_md)
-    audit_path.write_text(json.dumps(audit_report, indent=2))
-    audit_md = _audit_v06._format_summary(audit_report)
-    paper_path.with_suffix(".audit.md").write_text(audit_md)
-    final_issues = _consistency_audit.run_audit(
-        paper_md, manifest, audit_report, audit_md,
-        run_dir=paper_path.parent,
-    )
-    paper_path.with_suffix(".consistency.json").write_text(
-        json.dumps([_issue_to_dict(i) for i in final_issues], indent=2)
-    )
-    paper_path.with_suffix(".consistency.md").write_text(
-        _consistency_audit._format_summary(final_issues)
-    )
-    try:
-        from agent.journal_surface_gate import evaluate_journal_surface
-        surface_report = evaluate_journal_surface(
-            paper_md,
-            animal_citations=_animal_citations,
-            citation_outcome_map=_citation_outcome_map,
-            declared_review_type=manifest.get("review_type"),
-        )
-        _surface_issues = tuple(
-            f"{i.code}: {i.detail}" for i in surface_report.issues
-        )
-        paper_path.with_suffix(".journal_surface.json").write_text(
-            json.dumps({
-                "passed": surface_report.passed,
-                "issues": [dataclasses.asdict(i)
-                           for i in surface_report.issues],
-            }, indent=2)
-        )
-    except (ImportError, ValueError):
-        surface_report = None
-        _surface_issues = ("journal_surface_gate_unavailable",)
-    # Pull corpus-density signals from manifest for cert-floor check
-    _n_rec = int(manifest.get("n_receipts", 0))
-    _n_claims = int(manifest.get("n_high_confidence_claims_total", 0))
-    _n_tens = int(manifest.get("n_non_orthogonal_tensions", 0))
-    # Topic-pack override of cert floors (optional)
-    _cert_floors = None
-    if _TOPIC_PACK is not None:
-        _floors_obj = getattr(_TOPIC_PACK, "certification_floors", None)
-        if _floors_obj:
-            _cert_floors = dict(_floors_obj)
-    unified = _compute_unified_verdict(
-        audit_report, final_issues, grok_unresolved_p1=grok_unresolved_p1,
-        n_receipts=_n_rec,
-        n_high_conf_claims=_n_claims,
-        n_non_orthogonal_tensions=_n_tens,
-        cert_floors=_cert_floors,
-        manifest=manifest,
-        grok_flagged_count=n_flagged,
-        auto_stripped_count=n_stripped,
-        journal_surface_pass=bool(
-            surface_report is not None and surface_report.passed
-        ),
-        journal_surface_issues=_surface_issues,
-    )
-    paper_path.with_suffix(".final_verdict.json").write_text(
-        json.dumps(dataclasses.asdict(unified), indent=2)
-    )
-    paper_path.with_suffix(".final_verdict.md").write_text(
-        _format_unified_verdict(unified)
-    )
+    unified = SimpleNamespace(**json.loads(paper_path.with_suffix(".final_verdict.json").read_text()))
+    blocker_summary = _pre_submit_blocker_summary(gate_artifacts)
+    print(f"[pipeline] Stage 5c — pre-submit quality gate: {blocker_summary or 'passed'}", file=sys.stderr)
     # FactReview-style audit pack: roll the persisted trust signals (citation
     # registry, audit, this verdict, retraction check) into paper_audit.json +
     # paper_audit.md. Advisory — never break synthesis on it.
@@ -3929,167 +3882,6 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
 
-    # Stage 5b: keep audit/provenance appendix out of the journal main.
-    # The public manuscript stays argument/prose; the supplement carries
-    # provenance, AI-use, accountability, and data availability machinery.
-    try:
-        from agent.manuscript_appendix import compose_appendix
-        from agent.settings import load_settings as _load_settings
-        import subprocess as _sp
-        try:
-            git_sha = _sp.check_output(
-                ["git", "rev-parse", "--short", "HEAD"],
-                cwd=REPO_ROOT, text=True, timeout=5,
-            ).strip()
-        except (_sp.SubprocessError, FileNotFoundError):
-            git_sha = "unknown"
-        # Load settings here — Stage 5b runs in
-        # _run_post_paper_pipeline() which doesn't receive settings
-        # from the _run() scope. Cheap call (env-var read).
-        _settings = _load_settings()
-        model_stack = {
-            "writer": _settings.minimax_model,
-            "reviewer": _settings.final_layer_reviewer_model,
-            "extractor": _settings.minimax_model,
-            "thesis": _settings.minimax_model,
-        }
-        # P1 reviewer fix (2026-05-04 wave 5): use the orchestrator's
-        # _ACTIVE_TOPIC directly. The previous regex on the run-dir
-        # name (synthesis-<topic>-v06-...) only worked for the default
-        # naming convention; custom out-dirs (e.g.
-        # runs/publication/rapamycin/) have a single-segment dir name
-        # with no hyphens, so the parser fell through to "unknown" and
-        # leaked that string into the Search Provenance section.
-        _topic = _ACTIVE_TOPIC or "unknown"
-        appendix_md = compose_appendix(
-            manifest, audit=audit_report,
-            model_stack=model_stack,
-            topic=_topic,
-            run_id=paper_path.parent.name,
-            git_sha=git_sha,
-            bundle_path=f"bundles/{paper_path.parent.name}/",
-            verdict=unified.verdict,
-        )
-        if "## Publication Appendix" not in appendix_md:
-            appendix_md = "## Publication Appendix\n\n" + appendix_md.lstrip()
-        supplement_path = paper_path.parent / "structured_evidence_tables.md"
-        existing = (
-            supplement_path.read_text()
-            if supplement_path.exists()
-            else "# Supplementary Evidence Tables and Audit Methods\n"
-        )
-        if "## Search Provenance and Selection" not in existing:
-            supplement_path.write_text(
-                existing.rstrip() + "\n\n" + appendix_md.rstrip() + "\n",
-            )
-        print(
-            "[pipeline] Stage 5b — appendix routed to supplement "
-            "(Search Provenance / AI Disclosure / Accountability / Data)",
-            file=sys.stderr,
-        )
-    except Exception as _e:  # pragma: no cover — best-effort
-        print(
-            f"[pipeline] Stage 5b — appendix splice skipped: {_e}",
-            file=sys.stderr,
-        )
-
-    supplement_p_values = _normalize_structured_evidence_p_values(
-        paper_path.parent,
-    )
-    if supplement_p_values:
-        print(
-            "[pipeline] Stage 5b* — normalized "
-            f"{supplement_p_values} supplement p-value(s)",
-            file=sys.stderr,
-        )
-    if supplement_revision_p_values := (
-        _revision_consistency.repair_structured_evidence_revision_p_values(
-            paper_path.parent, manifest,
-        )
-    ):
-        print(
-            "[pipeline] Stage 5b** — reconciled reviewer-disputed "
-            f"supplement p-value ask(s)={supplement_revision_p_values}",
-            file=sys.stderr,
-        )
-
-    # Stage 5c: paper-quality pre-submit gate. This is the live integration
-    # point for Phase 6 and Phase 8: deterministic template-language repair,
-    # template gate artifact, final gate artifact, and publication score.
-    # The gate runs after appendix insertion because the submitted manuscript
-    # is what should be judged.
-    try:
-        paper_md, template_repair_log = _paper_quality.apply_template_repairs(
-            paper_md,
-        )
-        if template_repair_log:
-            paper_path.with_suffix(".template_repair_log.json").write_text(
-                json.dumps(template_repair_log, indent=2)
-            )
-            paper_path.write_text(paper_md)
-            audit_report = _audit(paper_md)
-            audit_path.write_text(json.dumps(audit_report, indent=2))
-            audit_md = _audit_v06._format_summary(audit_report)
-            paper_path.with_suffix(".audit.md").write_text(audit_md)
-        paper_md, references_restored = _ensure_references_section(
-            paper_md, citation_registry,
-        )
-        paper_md, surface_polish_log = (
-            _consistency_fixer.apply_lightweight_public_polish(
-                paper_md, manifest=manifest,
-            )
-        )
-        if surface_polish_log:
-            final_log_path = paper_path.with_suffix(".final_fixed_log.json")
-            try:
-                prior_log = json.loads(final_log_path.read_text())
-            except (OSError, ValueError, json.JSONDecodeError):
-                prior_log = []
-            final_log_path.write_text(
-                json.dumps(prior_log + surface_polish_log, indent=2)
-            )
-        if references_restored or surface_polish_log:
-            paper_path.write_text(paper_md)
-        _pre_gate_log: list[dict[str, Any]] = []
-        paper_md = _apply_abstract_claim_strength_repair(
-            paper_md, _pre_gate_log,
-        )
-        if _pre_gate_log:
-            final_log_path = paper_path.with_suffix(".final_fixed_log.json")
-            try:
-                prior_log = json.loads(final_log_path.read_text())
-            except (OSError, ValueError, json.JSONDecodeError):
-                prior_log = []
-            final_log_path.write_text(
-                json.dumps(prior_log + _pre_gate_log, indent=2)
-            )
-            paper_path.write_text(paper_md)
-        reviewer_patches = _reviewer_patches_for_gate(out_dir, grok_unresolved_p1)
-        if quality_bundle is None:
-            raise RuntimeError("quality_methods_bundle_missing")
-        paper_md, audit_report, gate_artifacts = _write_stage5c_quality_gates(
-            paper_path=paper_path, paper_md=paper_md, manifest=manifest,
-            citation_registry=citation_registry, reviewer_patches=reviewer_patches,
-            quality_bundle=quality_bundle, animal_citations=_animal_citations, citation_outcome_map=_citation_outcome_map,
-        )
-        blocker_summary = _pre_submit_blocker_summary(gate_artifacts)
-        if blocker_summary:
-            print(
-                "[pipeline] Stage 5c — pre-submit quality gate blocked: "
-                f"{blocker_summary}",
-                file=sys.stderr,
-            )
-        else:
-            print(
-                "[pipeline] Stage 5c — pre-submit quality gate passed",
-                file=sys.stderr,
-            )
-    except Exception as _e:
-        print(
-            f"[pipeline] Stage 5c — pre-submit quality gate failed: {_e}",
-            file=sys.stderr,
-        )
-        raise
 
     # Stage 5c2: v3 polish compiler. Optional external tools (Typst,
     # sciwrite-lint, sentence-transformers) are sidecars only; deterministic
@@ -4269,6 +4061,12 @@ async def _agent_repair_loop(
             if _patch_applier._has_unsafe_match_boundary(paper_md, r.before):
                 continue
             paper_md = paper_md.replace(r.before, "", 1)
+            if re.search(r"\d", r.before):
+                _consistency_fixer._append_numeric_quarantine(
+                    paper_path.with_name("numeric_claim_quarantine.json") if paper_path is not None else None,
+                    [SimpleNamespace(issue_type="reviewer_numeric_auto_strip", severity="P1",
+                                     sentence=r.before, detail=r.reason_for_decision)],
+                )
             # Tag the result as auto-stripped
             results = [
                 _patch_applier.PatchResult(
@@ -4325,9 +4123,15 @@ def _is_unresolved_reviewer_p1(row: dict[str, Any]) -> bool:
     return row.get("decision") in {"flagged", "rejected"} and str(row.get("severity") or "").upper() in {"P1", "HIGH", "CRITICAL"}
 
 
+def _reviewer_log_path(out_dir: Path) -> Path:
+    current = out_dir / "full_paper.review_patch_log.json"
+    # A current review owns both artifacts, even before its patch log exists.
+    return current if current.exists() or (out_dir / "full_paper.review_patches.json").exists() else out_dir / "debug" / current.name
+
+
 def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
     try:
-        payload = json.loads((out_dir / "debug" / "full_paper.review_patch_log.json").read_text())
+        payload = json.loads(_reviewer_log_path(out_dir).read_text())
     except FileNotFoundError:
         return 0, 0, 0
     except (OSError, ValueError, json.JSONDecodeError):
@@ -4342,15 +4146,15 @@ def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
 def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> dict[str, int]:
     _resolve_absent_reviewer_p1s(out_dir) and _refresh_post_finalizer_verdict(out_dir)
     unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
-    unresolved = max(0, int(fallback_unresolved_p1)) if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists() else unresolved
+    unresolved = max(0, int(fallback_unresolved_p1)) if not _reviewer_log_path(out_dir).exists() else unresolved
     return {"unresolved_p1_count": unresolved, "flagged_p1_count": flagged, "auto_stripped_count": stripped}
 
 
 def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
     try:
         text = (out_dir / "full_paper.md").read_text()
-        patches = json.loads((out_dir / "debug" / "full_paper.review_patches.json").read_text()).get("patches") or []
-        log_path = out_dir / "debug" / "full_paper.review_patch_log.json"
+        log_path = _reviewer_log_path(out_dir)
+        patches = json.loads((log_path.parent / "full_paper.review_patches.json").read_text()).get("patches") or []
         log = json.loads(log_path.read_text())
     except (AttributeError, OSError, TypeError, ValueError, json.JSONDecodeError):
         return 0
@@ -4489,57 +4293,27 @@ def _heading_occurrences(heading: str, paper_md: str) -> int:
     )
 
 
-def _repair_post_finalizer_auto_fixables(
-    paper_md: str,
-    manifest: dict[str, Any],
-    paper_path: Path,
-    audit_fn,
-    *,
-    quant_claims_dir: Path,
-    sections: tuple[SynthesisSection, ...] = (),
-) -> tuple[str, list[dict[str, Any]]]:
-    original_md, all_log = paper_md, list[dict[str, Any]]()
-    for _ in range(3):
-        audit = audit_fn(paper_md)
-        issues = _consistency_audit.run_audit(paper_md, manifest, audit, _audit_v06._format_summary(audit), run_dir=paper_path.parent)
-        if not any(getattr(i, "auto_fixable", False) for i in issues):
-            break
-        fixed_md, log = _consistency_fixer.apply_fixes(
-            paper_md, issues, manifest=manifest,
-            quant_claims_dir=quant_claims_dir,
-            numeric_quarantine_path=paper_path.with_name("numeric_claim_quarantine.json"),
-        )
-        safe_typed = not any(x.get("fix_type") == "numeric_role_guard_strip" for x in log)
-        fixed_md = _restore_rendered_section_contract(fixed_md, sections, prefer_typed_sections=safe_typed)
-        fixed_md = _strip_rendered_citation_markers(fixed_md)
-        fixed_md, surface_log = _restore_public_surface_floors(fixed_md, review_type=manifest.get("review_type"))
-        if fixed_md == paper_md:
-            break
-        paper_md = fixed_md
-        all_log.extend((*log, *surface_log))
-    if paper_md == original_md:
-        return paper_md, []
-    paper_path.write_text(paper_md)
-    paper_path.with_suffix(".post_finalizer_fixed_log.json").write_text(json.dumps(all_log, indent=2))
-    return paper_md, all_log
-
-
-def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:
+def _refresh_post_finalizer_verdict(
+    out_dir: Path, *, manifest: dict | None = None,
+    reviewer_counts: tuple[int, int, int] | None = None,
+) -> bool:
     try:
         audit = json.loads((out_dir / "full_paper.audit.json").read_text())
-        manifest = json.loads((out_dir / "manifest.json").read_text())
+        if manifest is None:
+            manifest = json.loads((out_dir / "manifest.json").read_text())
         surface = json.loads((out_dir / "full_paper.journal_surface.json").read_text())
         consistency = json.loads((out_dir / "full_paper.consistency.json").read_text())
     except (OSError, ValueError, json.JSONDecodeError):
         return False
-    unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
+    unresolved, flagged, stripped = reviewer_counts if reviewer_counts is not None else _reviewer_p1_counts_from_log(out_dir)
+    cert_floors = getattr(_TOPIC_PACK, "certification_floors", None) if reviewer_counts is not None else None
     issues = [SimpleNamespace(severity=str(i.get("severity") or "")) for i in consistency if isinstance(i, dict)]
     unified = _compute_unified_verdict(
         audit, issues, grok_unresolved_p1=unresolved,
         n_receipts=int(manifest.get("n_receipts") or 0),
         n_high_conf_claims=int(manifest.get("n_high_confidence_claims_total") or 0),
         n_non_orthogonal_tensions=int(manifest.get("n_non_orthogonal_tensions") or 0),
-        cert_floors=manifest.get("certification_floors") if isinstance(manifest.get("certification_floors"), dict) else None,
+        cert_floors=dict(cert_floors) if cert_floors else manifest.get("certification_floors") if isinstance(manifest.get("certification_floors"), dict) else None,
         manifest=manifest, grok_flagged_count=flagged, auto_stripped_count=stripped,
         journal_surface_pass=bool(surface.get("passed")),
         journal_surface_issues=tuple(f"{i.get('code', '')}: {i.get('detail', '')}" for i in surface.get("issues", []) if isinstance(i, dict)),

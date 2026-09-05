@@ -122,8 +122,11 @@ class AtomicJsonState(Generic[T]):
             self._write_unlocked(value)
 
 
-def read_json(path: Path) -> dict[str, Any]:
-    state = AtomicJsonState[dict[str, Any]](path, dict).read()
+def read_json(path: Path, *, snapshot: bool = False) -> dict[str, Any]:
+    reader = AtomicJsonState[dict[str, Any]](path, dict)
+    # Atomic replacement makes an individual snapshot coherent without creating
+    # a lock file. Multi-file transactions still require the submission lock.
+    state = reader._read_unlocked() if snapshot else reader.read()
     if state.status is JsonStateStatus.CORRUPT:
         raise CorruptJsonState(f"{path}: {state.error}")
     if state.status is JsonStateStatus.VALID:

@@ -1,5 +1,18 @@
 # DECISION JOURNAL
 
+## 2026-09-05 - Consolidate repair and publishing control
+One finalizer owns post-review convergence; synthesis supplies a repair pass,
+not a competing loop. Candidate selection is read-only, preparation/submission
+is explicit, and legacy publication/revision ledgers have shared projections.
+Scientific checks, provider settings, submission locks and ledger formats stay.
+
+Shared projections move code from `scripts/` to `agent/`. Reallocate their
+effective-LOC ceilings from 25,010/41,100 to 25,250/40,250 and lower the combined
+ceiling from 66,100 to 65,500. Per-file caps are unchanged. At this checkpoint,
+production measures 65,332 effective lines against the 66,088-line backup.
+This locks in deletion rather than treating relocation as a saving. Unexercised
+scientific rules remain until representative evidence supports retirement.
+
 ## 2026-07-10 — Retire obsolete script families and enforce a 41k ceiling
 **Decision:** Cap `scripts/` at 41,000 cloc and any script at 5,700 cloc.
 Retire unreferenced campaign, report, reader-export, and superseded quality CLIs

@@ -84,6 +84,180 @@ def _seal_source(row: dict[str, Any]) -> None:
         row.pop("evidence_span", None)
 
 
+def test_structural_selector_is_pure_with_publishable_candidate(tmp_path, monkeypatch):
+    run = _run(tmp_path)
+    before = {path: (path.read_bytes(), path.stat().st_mtime_ns) for path in tmp_path.rglob("*") if path.is_file()}
+    def forbidden(*_args, **_kwargs):
+        pytest.fail("selector invoked an effect")
+    from agent import journal_finalizer
+    monkeypatch.setattr(journal_finalizer, "finalize_run", forbidden)
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", forbidden)
+    for name in ("_refresh_revision_coverage_gate", "_pubmed_abstracts", "_europe_pmc_identifiers", "_prepare_candidate_artifacts"):
+        monkeypatch.setattr(daily, name, forbidden)
+    selected, considered = daily.select_candidate(tmp_path, tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json")
+    assert selected == run and considered[0]["status"] == "eligible"
+    assert before == {path: (path.read_bytes(), path.stat().st_mtime_ns) for path in tmp_path.rglob("*") if path.is_file()}
+
+
+def test_structural_publication_snapshot_reconciles_without_rereading(tmp_path, monkeypatch):
+    import daily_research_paper_cycle as cycle
+    run = _run(tmp_path)
+    paths = [tmp_path / directory / "2026-09-05.json" for directory in (cycle.LEDGER_DIR, daily.LEDGER_DIR)]
+    for path in paths:
+        _write_json(path, {"submitted": 1, "candidate": {"run": run.name}, "submission": {"response": {"id": "sub-snapshot"}}})
+    read = cycle._read_json
+    reads = []
+    def observe(path):
+        reads.append(path)
+        return read(path)
+    monkeypatch.setattr(cycle, "_read_json", observe)
+    state, ledgers = cycle._publication_state(tmp_path)
+    assert sorted(reads) == sorted(paths)
+    def forbidden(*_args, **_kwargs):
+        pytest.fail("publication projection reread filesystem state")
+    monkeypatch.setattr(cycle, "_read_json", forbidden)
+    for name in ("_ledger_rows", "_sha256", "_paper_title"):
+        monkeypatch.setattr(daily, name, forbidden)
+    for ledger in ledgers.values():
+        assert state.reconcile(ledger, {"submission:sub-snapshot"}, {}, now="2026-09-05")
+        assert ledger["published"] == 1
+        assert not state.reconcile(ledger, set(), {}, now="2026-09-06")
+
+
+@pytest.mark.parametrize("already_published", [False, True])
+def test_structural_reconciliation_preserves_attribution_and_legacy_shape(already_published):
+    from agent.publishing.reconciliation import PublicationState
+    ledger = {"published": 1, "status": "published"} if already_published else {
+        "submitted": 1, "candidate": {"run": "good"},
+        "attempts": [{"out_dir": "good", "submitted": 1}, {"out_dir": "bad", "submitted": 0}],
+    }
+    state = PublicationState([ledger], [], [], {name: {"title:study", name} for name in ("good", "bad")}, lambda _row: set(), ())
+    assert state.reconcile(ledger, {"title:study"}, {}, now="2026-09-05") is not already_published
+    if already_published:
+        assert ledger == {"published": 1, "status": "published"}
+    else:
+        assert ledger["attempts"] == [
+            {"out_dir": "good", "submitted": 1, "published": 1}, {"out_dir": "bad", "submitted": 0},
+        ]
+
+
+def test_structural_pending_revision_reads_history_once(tmp_path, monkeypatch):
+    import daily_research_paper_cycle as cycle
+    run = _run(tmp_path)
+    request = {"title": daily._paper_title(run / "full_paper.md"), "submissionId": "sub-history", "reviewedAt": "2026-09-04"}
+    ledger_dir = tmp_path / cycle.LEDGER_DIR
+    _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{"run": run.name, "submission_id": "sub-history"}])
+    _write_json(ledger_dir / cycle.HANDLED_REVISIONS, {"handled": [
+        {**request, "status": "synthesis_timeout", "repair_epoch": cycle.REVISION_REPAIR_EPOCH, "handled_at": "2026-09-05"}
+        for _ in range(cycle.MAX_REVISE_ROUNDS)
+    ]})
+    read, reads = cycle._read_json, []
+    def observe(path):
+        reads.append(path)
+        return read(path)
+    monkeypatch.setattr(cycle, "_read_json", observe)
+    assert cycle._pending_remote_revision(tmp_path, ledger_dir, loader=lambda: ([request], None)) == (None, None)
+    assert reads.count(ledger_dir / cycle.HANDLED_REVISIONS) == 1
+
+
+@pytest.mark.parametrize(("file", "value", "status"), [
+    ("full_paper.audit.json", {}, "audit_p1_failed"),
+    ("full_paper.audit.json", {"p1_pass": False}, "audit_p1_failed"),
+    ("full_paper.journal_surface.json", {"passed": False}, "journal_surface_not_passed"),
+    ("researka_revision_request.json", {"feedback": "repair all asks"}, "revision_coverage_unverified"),
+])
+def test_structural_assessment_is_read_only(tmp_path, monkeypatch, file, value, status):
+    run = _run(tmp_path)
+    _write_json(run / file, value)
+    before = {path: path.read_bytes() for path in run.rglob("*") if path.is_file()}
+    def forbidden(*_args, **_kwargs):
+        pytest.fail("assessment invoked an effect")
+    from agent import journal_finalizer
+    monkeypatch.setattr(journal_finalizer, "finalize_run", forbidden)
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", forbidden)
+    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", forbidden)
+    monkeypatch.setattr(daily, "build_payload", forbidden)
+    assert daily._eligibility_status(run) == (False, status)
+    selected, considered = daily.select_candidate(tmp_path, tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json")
+    assert selected is None and considered[0]["status"] == status
+    assert before == {path: path.read_bytes() for path in run.rglob("*") if path.is_file()}
+
+
+@pytest.mark.parametrize(("audit_passed", "repair_error"), [
+    (True, None), (False, None),
+    *((True, error) for error in (ImportError, OSError, RuntimeError, TypeError, ValueError)),
+])
+def test_structural_full_finalize_once_before_assessment(tmp_path, monkeypatch, audit_passed, repair_error):
+    run = _run(tmp_path)
+    _write_json(run / "full_paper.audit.json", {"p1_pass": False})
+    _write_json(run / "full_paper.journal_surface.json", {"passed": False})
+    events = []
+    from agent import journal_finalizer
+    def finalize(path):
+        events.append("finalize")
+        _write_json(path / "full_paper.audit.json", {"p1_pass": audit_passed})
+        _write_json(path / "full_paper.journal_surface.json", {"passed": True})
+        if repair_error:
+            raise repair_error("partial finalization")
+    original = daily._eligible
+    def assess(path, **kwargs):
+        events.append("assess")
+        return original(path, **kwargs)
+    monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _path: pytest.fail("second refresh"))
+    monkeypatch.setattr(daily, "_eligible", assess)
+    selected, _payload, considered = daily._prepare_submission(tmp_path, tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json")
+    assert selected == (run if audit_passed and not repair_error else None)
+    assert considered[0]["status"] == (
+        "candidate_preparation_failed" if repair_error else "eligible" if audit_passed else "audit_p1_failed"
+    )
+    assert events == (["finalize"] if repair_error else ["finalize", "assess"])
+
+
+def test_structural_submit_builds_package_once(tmp_path, monkeypatch):
+    _run(tmp_path)
+    built = []
+    original = daily.build_payload
+    def build(run):
+        payload = original(run)
+        built.append(payload)
+        return payload
+    def submit(payload):
+        assert payload is built[0]
+        return {"ok": True, "status": 201, "response": {"id": "sub-once"}}
+    monkeypatch.setattr(daily, "build_payload", build)
+    out = daily.run_cycle(runs_root=tmp_path, date="2026-09-05", submit=True,
+                         submitter=submit, remote_loader=lambda: (set(), None))
+    assert out["submitted"] == 1
+    assert len(built) == 1
+
+
+@pytest.mark.parametrize(("remote", "domain_repair"), [(False, False), (True, False), (True, True)])
+def test_structural_post_qa_duplicate_is_blocked(tmp_path, monkeypatch, remote, domain_repair):
+    run = _run(tmp_path)
+    duplicate = daily.build_payload(run)
+    paper = run / "full_paper.md"
+    original = paper.read_text()
+    paper.write_text(original.replace("introduction", "background"))
+    submitted = tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json"
+    if not remote:
+        _write_json(submitted, [{"fingerprint": daily._payload_fingerprint(duplicate)}])
+    if domain_repair:
+        def repair(path):
+            (path / "full_paper.md").write_text(original)
+            return ["domain_repair"]
+        monkeypatch.setattr(daily, "_repair_domain_frame_template_file", repair)
+    else:
+        monkeypatch.setattr(daily, "_run_preflight_qa", lambda _payload, _run: (duplicate, None))
+    out = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-05", submit=True,
+        submitter=lambda _payload: pytest.fail("duplicate reached transport"),
+        remote_loader=lambda: ({duplicate["metadata"]["content_hash"]} if remote else set(), None),
+    )
+    assert out["submitted"] == 0
+    assert out["reason"] == ("duplicate_remote_publication" if remote else "duplicate_submission_fingerprint")
+
+
 def test_seen_field_reads_valid_string_fields_only(tmp_path: Path) -> None:
     ledger = tmp_path / "ledger.json"
     _write_json(ledger, [
@@ -109,8 +283,9 @@ def test_animal_receipt_is_submitted_as_context_not_direct() -> None:
     assert daily._source_context_for_receipt(receipt) == "context"
 
 
+@pytest.mark.parametrize("raises", [False, True])
 def test_run_cycle_holds_submission_lock_for_full_transaction(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, raises: bool,
 ) -> None:
     events: list[object] = []
 
@@ -123,14 +298,18 @@ def test_run_cycle_holds_submission_lock_for_full_transaction(
 
     def fake_run(**_kwargs: Any) -> dict[str, Any]:
         events.append("run")
+        if raises:
+            raise ValueError("invalid state")
         return {"status": "ok"}
 
     monkeypatch.setattr(daily, "submission_lock", lambda _root: Lock())
     monkeypatch.setattr(daily, "_run_cycle_unlocked", fake_run)
 
-    result = daily.run_cycle(runs_root=tmp_path, date="2026-08-01")
-
-    assert result == {"status": "ok"}
+    if raises:
+        with pytest.raises(ValueError, match="invalid state"):
+            daily.run_cycle(runs_root=tmp_path, date="2026-08-01")
+    else:
+        assert daily.run_cycle(runs_root=tmp_path, date="2026-08-01") == {"status": "ok"}
     assert events == [("lock", tmp_path), "run", "unlock"]
 
 
@@ -864,7 +1043,7 @@ def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
 
     calls: list[Path] = []
 
-    def fake_eligible(path: Path) -> tuple[bool, str]:
+    def fake_eligible(path: Path, **_kwargs: Any) -> tuple[bool, str]:
         calls.append(path)
         return True, "eligible"
 
@@ -873,7 +1052,7 @@ def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
     monkeypatch.setattr(daily, "_null_coding_audit_status", lambda _payload, _manifest: "eligible")
     monkeypatch.setattr(daily, "_recency_ratio_status", lambda _payload: "eligible")
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
     )
@@ -899,13 +1078,15 @@ def test_select_candidate_caps_recent_self_heal_attempts(
     os.utime(second, (now - 10, now - 10))
     called: list[str] = []
 
-    def fake_eligible(run: Path) -> tuple[bool, str]:
+    def fake_eligible(run: Path, **_kwargs: Any) -> tuple[bool, str]:
         called.append(run.name)
         return False, "journal_surface_not_passed"
 
     monkeypatch.setattr(daily, "_eligible", fake_eligible)
+    from agent import journal_finalizer
+    monkeypatch.setattr(journal_finalizer, "finalize_run", lambda _run: None)
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
     )
@@ -3398,7 +3579,9 @@ def test_revision_without_coverage_gate_is_not_submitted(tmp_path: Path) -> None
     assert ledger["considered"][0]["status"] == "revision_coverage_unverified"
 
 
-def test_failed_revision_coverage_gate_is_not_submitted(tmp_path: Path) -> None:
+def test_failed_revision_coverage_gate_is_not_submitted(tmp_path: Path, monkeypatch) -> None:
+    from agent import journal_finalizer
+    monkeypatch.setattr(journal_finalizer, "finalize_run", lambda _run: None)
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["Hedge claims"]})
@@ -3505,7 +3688,7 @@ def test_selection_skips_exact_payload_already_submitted_even_if_revision(
         "topic": "topic",
     }])
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         ledger_dir / "_submitted_fingerprints.json",
         remote_seen=set(),
@@ -3772,7 +3955,7 @@ def test_missing_revision_coverage_gate_is_refreshed_before_selection(
     _write_json(run / "researka_revision_request.json", {"feedback": ask})
     monkeypatch.setattr(revision_coverage, "unmet_asks", lambda _paper, _asks: [ask])
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         remote_seen=set(),
@@ -3833,11 +4016,13 @@ def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
 
     monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", refresh)
 
-    assert daily._refresh_stale_revision_coverage_sidecar(run) is True
+    assert daily._prepare_candidate_artifacts(run, repair=True, recent=True) is True
     assert called["refresh"] is True
 
 
-def test_stale_unmet_revision_gate_rechecks_all_asks(tmp_path: Path) -> None:
+def test_stale_unmet_revision_gate_rechecks_all_asks(tmp_path: Path, monkeypatch) -> None:
+    from agent import journal_finalizer
+    monkeypatch.setattr(journal_finalizer, "finalize_run", lambda _run: None)
     run = _run(tmp_path)
     ask = (
         "Reclassify or re-label the 'immune and inflammation positive signal' as a "
@@ -3861,7 +4046,7 @@ def test_stale_unmet_revision_gate_rechecks_all_asks(tmp_path: Path) -> None:
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         remote_seen=set(),
@@ -3886,7 +4071,7 @@ def test_unmet_refreshed_revision_coverage_still_blocks_selection(
     import agent.journal_finalizer as finalizer
     monkeypatch.setattr(finalizer, "finalize_run", lambda _path: SimpleNamespace(paper_changed=False))
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         remote_seen=set(),
@@ -4043,7 +4228,7 @@ def test_selection_repairs_recent_surface_sidecar_before_skip(
     import agent.journal_finalizer as finalizer
     monkeypatch.setattr(finalizer, "finalize_run", fake_finalize)
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         remote_seen=set(),
@@ -4081,7 +4266,7 @@ def test_selection_repairs_recent_revision_coverage_sidecar_before_skip(
     import agent.journal_finalizer as finalizer
     monkeypatch.setattr(finalizer, "finalize_run", fake_finalize)
 
-    selected, considered = daily.select_candidate(
+    selected, _payload, considered = daily._prepare_submission(
         tmp_path,
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         remote_seen=set(),

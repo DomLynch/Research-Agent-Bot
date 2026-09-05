@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
 from difflib import SequenceMatcher
 import importlib
@@ -136,7 +137,7 @@ def _refresh_evidence_lanes(out_dir: Path) -> bool:
     return True
 
 
-def finalize_run(out_dir: Path) -> FinalizerReport:
+def finalize_run(out_dir: Path, *, repair: Callable[[str], str] | None = None) -> FinalizerReport:
     paper_path = out_dir / "full_paper.md"
     if not paper_path.is_file():
         return FinalizerReport(paper_changed=False, final_word_count=0)
@@ -155,9 +156,12 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
         manifest.get("section_words"), dict,
     )
     states = [text]
+    cycle_length = 0
 
     for _ in range(40):
         before = text
+        if repair is not None:
+            text = repair(text)
         new_text, log = _run_text_phases(text, out_dir)
         entries.extend(log)
         depth_repairs: list[dict[str, Any]] = []
@@ -172,12 +176,12 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
             )
             for item in depth_repairs
         )
-        if new_text != text:
+        new_text, reference_log = _repair_reference_surface(new_text, out_dir)
+        entries.extend(reference_log)
+        if new_text != before:
             paper_path.write_text(new_text)
         text = new_text
-        entries.extend(_phase_g_refresh_sidecars(out_dir))
-        text = paper_path.read_text()
-        if new_text == before and text == new_text:
+        if text == before:
             break
         if text in states:
             cycle = states[states.index(text):]
@@ -195,14 +199,16 @@ def finalize_run(out_dir: Path) -> FinalizerReport:
             )
             paper_path.write_text(text)
             entries.append(FinalizerLogEntry("M_fixed_point_guard", "canonicalize_surface_valid_repair_cycle", 1, "selected deterministic journal-surface-valid state from repair cycle"))
-            entries.extend(_phase_g_refresh_sidecars(out_dir))
-            refreshed = paper_path.read_text()
-            if refreshed != text or not getattr(_surface_report(refreshed, out_dir), "passed", False):
-                raise RuntimeError(_non_convergence_detail(refreshed, out_dir, len(cycle)))
+            cycle_length = len(cycle)
             break
         states.append(text)
     else:
         raise RuntimeError(_non_convergence_detail(text, out_dir, 0))
+    # Derived outputs observe the final snapshot; they never participate in repair.
+    entries.extend(_phase_g_refresh_sidecars(out_dir))
+    refreshed = paper_path.read_text()
+    if refreshed != text or (cycle_length and not getattr(_surface_report(refreshed, out_dir), "passed", False)):
+        raise RuntimeError(_non_convergence_detail(refreshed, out_dir, cycle_length))
     changed = text != original
     report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
     report_path = out_dir / "journal_finalizer.json"
@@ -237,10 +243,9 @@ def _non_convergence_detail(text: str, out_dir: Path, cycle_len: int) -> str:
 
 def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
     entries: list[FinalizerLogEntry] = []
+    # Evidence-derived additions precede structural repair and terminal cleanup.
     for phase in (
         lambda t: _phase_a_methods_replace(t, out_dir),
-        lambda t: _phase_b_lane_qualifier(t, out_dir),
-        _phase_c_terminology,
         lambda t: _phase_d_admission_funnel_clarification(t, out_dir),
         lambda t: _phase_d_prisma_all_included_rationale(t, out_dir),
         lambda t: _phase_d_search_summary_scope_note(t, out_dir),
@@ -264,100 +269,58 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         lambda t: _phase_d_species_study_design_summary(t, out_dir),
         lambda t: _phase_d_source_outcome_class_map(t, out_dir),
         lambda t: _phase_d_proactive_findings_map(t, out_dir),
-        lambda t: _phase_d_outcome_label_cleanup(t, out_dir),
         lambda t: _phase_d_tensions_and_gaps_breadth(t, out_dir),
         lambda t: _phase_d_source_statistics_landscape(t, out_dir),
         lambda t: _phase_d_source_directness_breakdown(t, out_dir),
         lambda t: _phase_d_source_verification_transparency(t, out_dir),
         lambda t: _phase_d_revision_audit_notes(t, out_dir),
-        lambda t: _phase_d_revision_surface_notes(t, out_dir),
-        lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
-        _phase_d_untraceable_tension_count_cleanup,
-        lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
         lambda t: _phase_d_single_source_proportionality(t, out_dir),
         lambda t: _phase_d_actionable_gaps(t, out_dir),
         lambda t: _phase_d_prior_publication_differentiation(t, out_dir),
         lambda t: _phase_d_reference_identifier_enrichment(t, out_dir),
-        lambda t: _phase_d_numeric_significance_correction(t, out_dir),
-        lambda t: _phase_d_author_inference_boundary(t, out_dir),
-        lambda t: _phase_d_reference_closure(t, out_dir),
-        lambda t: _phase_b_lane_qualifier(t, out_dir),
         lambda t: _phase_b_corpus_strength_label(t, out_dir),
-        _phase_i_split_concatenated_headings,
         lambda t: _phase_e_structural_fallback(t, out_dir),
         lambda t: _phase_f_reconcile_results_table(t, out_dir),
         lambda t: _phase_m_relabel_public_metadata_table_headers(t, out_dir),
-        lambda t: _phase_h_topic_slug_normalise(t, out_dir), _phase_i_split_concatenated_headings,
-        lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
+        lambda t: _phase_h_topic_slug_normalise(t, out_dir),
         lambda t: _phase_l_strengthen_analytical_sections(t, out_dir),
-        lambda t: _phase_d_unproven_human_longevity(t, out_dir),
-        _phase_n_declare_discussion_thesis,
     ):
         text, log = phase(text)
         entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-    entries.extend(log)
-    text, log = _phase_m_repair_surface_artifacts(text)
-    entries.extend(log)
     text, noise_changes = review_noise_control.apply_review_noise_control(text, out_dir)
     entries.extend(FinalizerLogEntry("M_review_noise_control", *change) for change in noise_changes)
-    text, entries = review_noise_control.restore_surface_floors(text, out_dir, entries, FinalizerLogEntry)
-    # Orphan-reference closure MUST be terminal. The earlier in-loop pass
-    # (above) inserts the inline supporting-corpus cluster, but section
-    # rebuilds that follow it — structural fallback, surface-floor backstop,
-    # outcome-routing — re-render the tail section and drop the cluster, so
-    # the gate still sees the references as uncited. Running it last (after
-    # every section mutation) guarantees the cluster survives to disk. It is
-    # idempotent: a no-op when no orphans remain.
     for phase in (
+        _phase_i_split_concatenated_headings,
         lambda t: _phase_k_route_outcome_paragraphs(t, out_dir),
         lambda t: _phase_d_numeric_significance_correction(t, out_dir),
         lambda t: _phase_d_author_inference_boundary(t, out_dir),
         lambda t: _phase_d_unproven_human_longevity(t, out_dir),
-        _phase_m_strip_surface_duplicate_paragraphs,
-        lambda t: _phase_d_reference_closure(t, out_dir),
         lambda t: _phase_d_revision_surface_notes(t, out_dir),
-        _phase_m_repair_surface_artifacts,
         lambda t: _phase_d_revision_artifact_cleanup(t, out_dir),
         _phase_d_untraceable_tension_count_cleanup,
         lambda t: _phase_d_forward_dated_ai_disclosure_note(t, out_dir),
-        _phase_n_declare_discussion_thesis,
+        _phase_m_strip_surface_duplicate_paragraphs,
+        _phase_m_scope_restored_backstop_duplicates,
     ):
         text, log = phase(text)
         entries.extend(log)
-    for phase in (lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_c_terminology, lambda t: _phase_d_revision_artifact_cleanup(t, out_dir), _phase_d_untraceable_tension_count_cleanup, _phase_m_strip_surface_duplicate_paragraphs):
-        text, log = phase(text)
-        entries.extend(log)
-    for _ in range(2):
-        text, entries = review_noise_control.restore_surface_floors(
-            text, out_dir, entries, FinalizerLogEntry,
-        )
-        text, log = _phase_n_declare_discussion_thesis(text)
-        entries.extend(log)
-        text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-        entries.extend(log)
-    text, log = _phase_b_lane_qualifier(text, out_dir)
-    entries.extend(log)
     text, entries = review_noise_control.restore_surface_floors(
         text, out_dir, entries, FinalizerLogEntry,
     )
-    for phase in (_phase_m_scope_restored_backstop_duplicates, _phase_n_declare_discussion_thesis, lambda t: _phase_b_lane_qualifier(t, out_dir), _phase_m_strip_terminal_thesis_duplicates, _phase_i_split_concatenated_headings):
+    # Clean restored content last. Reference closure belongs to the controller.
+    for phase in (
+        _phase_n_declare_discussion_thesis,
+        lambda t: _phase_b_lane_qualifier(t, out_dir),
+        _phase_m_strip_terminal_thesis_duplicates,
+        lambda t: _phase_d_revision_surface_notes(t, out_dir, proactive=True),
+        lambda t: _phase_d_outcome_label_cleanup(t, out_dir),
+        _phase_c_terminology,
+        _phase_m_strip_surface_duplicate_paragraphs,
+        _phase_m_repair_surface_artifacts,
+        lambda t: _phase_o_restore_numeric_evidence_index(t, out_dir),
+    ):
         text, log = phase(text)
         entries.extend(log)
-    text, entries = review_noise_control.restore_surface_floors(
-        text, out_dir, entries, FinalizerLogEntry,
-    )
-    text, log = _phase_n_declare_discussion_thesis(text)
-    entries.extend(log)
-    text, log = _phase_b_lane_qualifier(text, out_dir)
-    entries.extend(log)
-    for phase in (_phase_m_strip_terminal_thesis_duplicates, lambda t: _phase_d_revision_surface_notes(t, out_dir, proactive=True), _phase_c_terminology):
-        text, log = phase(text)
-        entries.extend(log)
-    text, log = _phase_m_strip_surface_duplicate_paragraphs(text)
-    entries.extend(log)
-    text, log = _phase_o_restore_numeric_evidence_index(text, out_dir)
-    entries.extend(log)
     return text, entries
 
 
@@ -5701,16 +5664,12 @@ def _load_sidecar(p: Path) -> Any:
         return None
 
 
-def _restore_registry_references(out_dir: Path) -> bool:
-    paper_path = out_dir / "full_paper.md"
-    if not paper_path.is_file():
-        return False
+def _restore_registry_references(text: str, out_dir: Path) -> str:
     manifest = _load_sidecar(out_dir / "manifest.json")
     registry = _load_sidecar(out_dir / "citation_registry.json")
     receipts_raw = manifest.get("receipts") if isinstance(manifest, dict) else None
     if not isinstance(receipts_raw, list) or not isinstance(registry, dict):
-        return False
-    text = paper_path.read_text()
+        return text
     refs = _section_body(text, "References")
     refs_norm = refs.replace("é", "e")
     missing = [
@@ -5722,11 +5681,11 @@ def _restore_registry_references(out_dir: Path) -> bool:
         and str(row.get("body_citation") or "").strip().replace("é", "e") not in refs_norm
     ]
     if not missing:
-        return False
+        return text
     try:
         appender = importlib.import_module("scripts.run_v06_synthesis")._append_references_block
     except (AttributeError, ImportError):
-        return False
+        return text
 
     registry_by_id: dict[str, SimpleNamespace] = {}
     for key, row in registry.items():
@@ -5756,14 +5715,21 @@ def _restore_registry_references(out_dir: Path) -> bool:
             continue
         receipts.append(receipt_obj(row))
     if not receipts:
-        return False
+        return text
     ref_match = re.search(r"^##\s+References\b.*\Z", text, flags=re.M | re.S)
     body = (text[: ref_match.start()] if ref_match else text).rstrip() + "\n\n"
-    restored = appender(body, receipts, registry=registry_by_id)
-    if restored == text:
-        return False
-    paper_path.write_text(restored)
-    return True
+    return appender(body, receipts, registry=registry_by_id)
+
+
+def _repair_reference_surface(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    restored = _restore_registry_references(text, out_dir)
+    log = []
+    if restored != text:
+        log.append(FinalizerLogEntry("G_refresh_sidecars", "restore_registry_references_post_finalizer", 1, "rebuilt References from manifest/citation registry before sidecar refresh"))
+    fixed, closure_log = _phase_d_reference_closure(restored, out_dir)
+    if fixed != restored:
+        log.append(FinalizerLogEntry("G_refresh_sidecars", "close_registry_orphan_references_post_finalizer", sum(entry.n_changes for entry in closure_log), "cited registry-backed reference entries before surface refresh"))
+    return fixed, log
 
 
 def _reevaluate_journal_surface(out_dir: Path) -> int:
@@ -5900,19 +5866,7 @@ def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
 def _phase_g_refresh_sidecars(out_dir: Path) -> list[FinalizerLogEntry]:
     log: list[FinalizerLogEntry] = []
     _g = lambda rule, n, detail: log.append(FinalizerLogEntry(phase="G_refresh_sidecars", rule=rule, n_changes=n, detail=detail))  # noqa: E731
-    if _restore_registry_references(out_dir):
-        _g("restore_registry_references_post_finalizer", 1, "rebuilt References from manifest/citation registry before sidecar refresh")
     paper_path = out_dir / "full_paper.md"
-    if paper_path.is_file():
-        text = paper_path.read_text()
-        fixed, closure_log = _phase_d_reference_closure(text, out_dir)
-        if fixed != text:
-            paper_path.write_text(fixed)
-            _g(
-                "close_registry_orphan_references_post_finalizer",
-                sum(entry.n_changes for entry in closure_log),
-                "cited registry-backed reference entries before surface refresh",
-            )
     from agent.artifact_consistency import refresh_public_exports
     if refresh_public_exports(out_dir):
         _g("refresh_public_exports_post_finalizer", 1, "DOCX, Typst, PaperIR, and export manifest rebuilt from final Markdown")

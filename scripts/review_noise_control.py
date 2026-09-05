@@ -127,7 +127,7 @@ def _strip_unsupported_inline_citations(text: str) -> tuple[str, int]:
 
 def restore_surface_floors(text: str, out_dir: Path, entries: list[Any], entry_cls: type[Any]) -> tuple[str, list[Any]]:
     manifest = _load_json(out_dir / "manifest.json")
-    if not (out_dir / "full_paper.journal_surface.json").is_file() or not isinstance(manifest, dict) or not (
+    if not isinstance(manifest, dict) or not (
         isinstance(manifest.get("total_words"), int) or isinstance(manifest.get("section_words"), dict)
     ):
         return text, entries

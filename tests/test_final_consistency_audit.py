@@ -3,10 +3,150 @@ final-consistency checks. One discriminating test per check class."""
 from __future__ import annotations
 
 import sys
+import json
 from pathlib import Path
+
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import final_consistency_audit as audit  # type: ignore[import-not-found]  # noqa: E402
+
+
+@pytest.mark.parametrize("repair", [False, True])
+@pytest.mark.parametrize("reviewer_epoch", ["none", "current", "missing_body", "corrupt", "proposal_only"])
+def test_final_quality_boundary_freezes_repaired_snapshot(tmp_path, monkeypatch, repair, reviewer_epoch):
+    import run_v06_synthesis as orch
+    from agent import journal_finalizer, journal_surface_gate
+    from types import SimpleNamespace
+
+    path = tmp_path / "full_paper.md"
+    expected_unresolved = 2
+    if reviewer_epoch != "none":
+        debug = tmp_path / "debug"
+        debug.mkdir()
+        (debug / "full_paper.review_patch_log.json").write_text('{"patches": []}')
+        (debug / "full_paper.review_patches.json").write_text(json.dumps({"patches": [{"id": "p1", "before": "outdated absent target"}]}))
+        if reviewer_epoch != "missing_body":
+            path.with_suffix(".review_patches.json").write_text(json.dumps({"patches": [{"id": "p1", "before": "final"}]}))
+        if reviewer_epoch != "proposal_only":
+            path.with_suffix(".review_patch_log.json").write_text(
+                "broken JSON" if reviewer_epoch == "corrupt" else json.dumps({"patches": [{"patch_id": "p1", "severity": "P1", "decision": "flagged"}]}),
+            )
+            expected_unresolved = 1
+    calls, gated, counts, repaired, refreshed = [], [], [], [], []
+    bundle = object()
+    compute_verdict = orch._compute_unified_verdict
+    def verdict(*args, **kwargs):
+        counts.append(kwargs)
+        return compute_verdict(*args, **kwargs)
+    monkeypatch.setattr(orch, "_compute_unified_verdict", verdict)
+    finalize_run = journal_finalizer.finalize_run
+    def finalize(out_dir, *, repair):
+        calls.append(path.read_text())
+        return finalize_run(out_dir, repair=repair)
+    def fix(text):
+        assert not gated and not refreshed
+        repaired.append(text)
+        return "final repaired" if repair and text == "final" else text
+    monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
+    monkeypatch.setattr(orch, "_stage5_repair_callback", lambda *_a, **_kw: fix)
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _: (text.replace("draft", "final"), []))
+    monkeypatch.setattr(journal_finalizer, "_repair_reference_surface", lambda text, _: (text, []))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _: refreshed.append(path.read_text()) or [])
+    def supplement(out_dir, manifest, report, verdict):
+        assert refreshed == [path.read_text()] and not gated
+        assert report["text"] == path.read_text()
+        (out_dir / "structured_evidence_tables.md").write_text("final supplement")
+    monkeypatch.setattr(orch, "_finalize_stage5_supplement", supplement)
+    monkeypatch.setattr(orch._audit_v06, "audit", lambda text, **kw: {"checks": [{"name": "Q1", "p1": True, "passed": True}], "p1_pass": True, "n_pass": 1, "n_total": 1, "score_out_of_10": 10.0, "text": text})
+    monkeypatch.setattr(orch._audit_v06, "_format_summary", lambda report: report["text"])
+    monkeypatch.setattr(orch._consistency_audit, "run_audit", lambda *_a, **_kw: [])
+    monkeypatch.setattr(journal_surface_gate, "evaluate_journal_surface", lambda *_a, **_kw: SimpleNamespace(passed=True, issues=()))
+    monkeypatch.setattr(orch._paper_quality, "write_final_quality_gates", lambda **kw: gated.append(kw) or {"final_gate": {"passed": True}})
+    paper, report, _ = orch._write_stage5c_quality_gates(
+        paper_path=path, paper_md="draft", manifest={}, citation_registry=None,
+        reviewer_patches={"unresolved_p1_count": 2}, quality_bundle=bundle,
+        animal_citations=[], citation_outcome_map={}, reviewer_counts=(2, 3, 4),
+    )
+    assert calls == ["draft"]
+    assert repaired == (["draft", "final", "final repaired"] if repair else ["draft", "final"])
+    assert refreshed == [paper]
+    assert (tmp_path / "structured_evidence_tables.md").read_text() == "final supplement"
+    assert paper == path.read_text() == report["text"] == gated[0]["paper_text"]
+    assert gated[0]["quality_bundle"] is bundle
+    verdict = json.loads(path.with_suffix(".final_verdict.json").read_text())
+    assert verdict["grok_unresolved_p1"] == expected_unresolved
+    assert gated[0]["reviewer_patches"]["unresolved_p1_count"] == expected_unresolved
+    assert verdict["verdict"] != "AAA"
+    assert verdict["grok_flagged"] == 3
+    assert counts[-1]["auto_stripped_count"] == 4
+    assert path.with_suffix(".consistency.md").exists()
+
+
+@pytest.mark.parametrize("prior_quarantine", [False, True])
+def test_stage5_repair_callback_keeps_numeric_quarantine_sticky(tmp_path, monkeypatch, prior_quarantine):
+    import run_v06_synthesis as orch
+    from types import SimpleNamespace
+
+    fixes, restores = [], []
+    monkeypatch.setattr(orch, "_paper_consistency_issues", lambda *_a: [SimpleNamespace(auto_fixable=True)])
+    def fix(text, issues, **kwargs):
+        fixes.append(kwargs["numeric_quarantine_path"])
+        log = [{"fix_type": "numeric_role_guard_strip"}] if len(fixes) == 2 else []
+        return text, log
+    def restore(text, sections, *, prefer_typed_sections):
+        restores.append(prefer_typed_sections)
+        return text
+    monkeypatch.setattr(orch._consistency_fixer, "apply_fixes", fix)
+    monkeypatch.setattr(orch, "_restore_rendered_section_contract", restore)
+    monkeypatch.setattr(orch, "_restore_public_surface_floors", lambda text, **kw: (text, []))
+    monkeypatch.setattr(orch._consistency_fixer, "apply_lightweight_public_polish", lambda text, **kw: (text, []))
+    monkeypatch.setattr(orch._paper_quality, "apply_template_repairs", lambda text: (text, []))
+    path = tmp_path / "full_paper.md"
+    if prior_quarantine:
+        (tmp_path / "numeric_claim_quarantine.json").write_text('[{"sentence": "removed earlier"}]')
+    repair = orch._stage5_repair_callback({}, path, sections=(), methods_md="", citation_registry=None)
+    assert repair(repair("paper")) == "paper"
+    assert not path.exists()  # Only the convergence controller may write the manuscript.
+    assert fixes == [tmp_path / "numeric_claim_quarantine.json"] * 4
+    assert restores == [not prior_quarantine, False]
+
+
+@pytest.mark.parametrize("value,accepted", [(42.7, True), (99.9, False)])
+def test_stage5_numeric_claim_boundary(tmp_path, monkeypatch, value, accepted):
+    import run_v06_synthesis as orch
+    from agent import journal_finalizer
+    from agent.paper_writer import SynthesisSection
+
+    quant = tmp_path / "quant_claims"
+    quant.mkdir()
+    (quant / "study.quant_claims.json").write_text(json.dumps({"paper_id": "study", "claims": [{
+        "numeric_values": [42.7], "binding_confidence": "high",
+        "claim_type": "percentage", "claim_role": "effect",
+    }]}))
+    manifest = {"review_type": "thin_corpus_brief", "receipts": [{
+        "receipt_id": "study", "paper_id": "study", "citation_token": "Smith 2024",
+    }]}
+    sentence = f"Smith 2024 reported a response rate of {value}%."
+    sections = (SynthesisSection(name="results", body_md="## Results\n\n" + sentence + "\n\n" + " evidence" * 510, anchors=()),)
+    path = tmp_path / "full_paper.md"
+    path.write_text("## Results\n\nThe findings require cautious interpretation.\n")
+    restored = []
+    restore = orch._restore_rendered_section_contract
+    def track_restore(*args, **kwargs):
+        restored.append(kwargs["prefer_typed_sections"])
+        return restore(*args, **kwargs)
+    monkeypatch.setattr(orch, "QUANT_DIR", quant)
+    monkeypatch.setattr(orch, "_restore_rendered_section_contract", track_restore)
+    repair = orch._stage5_repair_callback(manifest, path, sections=sections, methods_md="", citation_registry=None)
+    journal_finalizer.finalize_run(tmp_path, repair=repair)
+    assert (sentence in path.read_text()) is accepted
+    assert restored[0] and len(restored) > 1
+    assert all(flag is accepted for flag in restored[1:])
+    quarantine = tmp_path / "numeric_claim_quarantine.json"
+    assert quarantine.exists() is not accepted
+    if not accepted:
+        assert any("99.9" in row["sentence"] for row in json.loads(quarantine.read_text()))
 
 
 def _empty_audit() -> dict:

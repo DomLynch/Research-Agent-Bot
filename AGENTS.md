@@ -49,10 +49,10 @@ LLM PROPOSES. CODE DISPOSES.
 - Python >= 3.11.
 - Runtime dependency discipline: prefer stdlib and existing deps; justify any new
   dependency in `DECISIONS.md`.
-- Current runtime LOC ceiling: 25,000 effective LOC in `agent/`; test-enforced
+- Current runtime LOC ceiling: 25,250 effective LOC in `agent/`; test-enforced
   per-file hard cap: 800.
-- Current `scripts/` ceiling: 41,000 effective LOC; combined `agent/` + `scripts/`
-  ceiling: 66,000; test-enforced script per-file hard cap: 5,700.
+- Current `scripts/` ceiling: 40,250 effective LOC; combined `agent/` + `scripts/`
+  ceiling: 65,500; test-enforced script per-file hard cap: 5,700.
 - Soft budgets: file ~300 cloc, function ~50 cloc.
 - All cross-stage objects should be explicit dataclasses or schema-shaped dicts.
 - No imports from `agent_legacy/` or `agent_archived/`.

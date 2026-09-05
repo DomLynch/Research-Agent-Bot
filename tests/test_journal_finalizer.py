@@ -1978,8 +1978,6 @@ def test_run_text_phases_strips_late_outcome_route_duplicates(tmp_path, monkeypa
     def route(text: str, _out_dir):
         nonlocal calls
         calls += 1
-        if calls < 2:
-            return text, []
         return (
             text + "\n\n### Contextual Outcomes\n\n" + duplicate
             + "\n\n### Frailty Outcomes\n\n" + duplicate,
@@ -1996,6 +1994,7 @@ def test_run_text_phases_strips_late_outcome_route_duplicates(tmp_path, monkeypa
     )
 
     assert _duplicate_paragraph_issue_messages(fixed) == ()
+    assert calls == 1
     assert fixed.count(duplicate) == 1
     assert "### Frailty Outcomes" not in fixed
     assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
@@ -2062,7 +2061,7 @@ def test_run_text_phases_strips_duplicate_added_by_final_surface_floor(
         calls += 1
         return (
             text + "\n\n## Cross-Domain Synthesis\n\n" + duplicate
-            if calls == 5 else text,
+            if calls == 1 else text,
             entries,
         )
 
@@ -2074,7 +2073,7 @@ def test_run_text_phases_strips_duplicate_added_by_final_surface_floor(
 
     fixed, logs = journal_finalizer._run_text_phases(paper, tmp_path)
 
-    assert calls == 5
+    assert calls == 1
     assert _duplicate_paragraph_issue_messages(fixed) == ()
     assert fixed.count(duplicate) == 1
     assert any(log.phase == "M_duplicate_paragraph_strip" for log in logs)
@@ -5644,6 +5643,7 @@ def test_reference_identifier_enrichment_preserves_existing_ids(tmp_path: Path) 
 
 def test_finalizer_reaches_late_fixed_point(tmp_path: Path, monkeypatch) -> None:
     calls = 0
+    refreshed: list[str] = []
     (tmp_path / "full_paper.md").write_text("A")
 
     def staged(text: str, _out: Path) -> tuple[str, list[Any]]:
@@ -5651,12 +5651,46 @@ def test_finalizer_reaches_late_fixed_point(tmp_path: Path, monkeypatch) -> None
         calls += 1
         return (text + "x", []) if calls < 8 else (text, [])
 
+    def refresh(out: Path) -> list[Any]:
+        refreshed.append((out / "full_paper.md").read_text())
+        return []
+
     monkeypatch.setattr(journal_finalizer, "_run_text_phases", staged)
-    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", refresh)
     report = journal_finalizer.finalize_run(tmp_path)
 
     assert calls == 8
+    assert refreshed == ["A" + "x" * 7]
     assert report.paper_changed
+
+
+def test_finalizer_owns_consistency_repairs_and_persists_callback_only_change(tmp_path: Path, monkeypatch) -> None:
+    import pytest
+
+    paper = tmp_path / "full_paper.md"
+    paper.write_text("A")
+    refreshed: list[str] = []
+
+    def refresh(out):
+        refreshed.append((out / "full_paper.md").read_text())
+        return []
+
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _: ({"B": "C"}.get(text, text), []))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", refresh)
+    def repair(text):
+        return {"A": "B", "C": "D"}.get(text, text)
+
+    assert journal_finalizer.finalize_run(tmp_path, repair=repair).paper_changed
+    assert paper.read_text() == "D"
+    assert not journal_finalizer.finalize_run(tmp_path, repair=repair).paper_changed
+    assert refreshed == ["D", "D"]
+
+    def fail(text):
+        raise ValueError("repair failed")
+
+    with pytest.raises(ValueError, match="repair failed"):
+        journal_finalizer.finalize_run(tmp_path, repair=fail)
+    assert refreshed == ["D", "D"]
 
 
 def test_finalizer_iteration_cap_still_fails_closed(tmp_path: Path, monkeypatch) -> None:
@@ -5741,12 +5775,12 @@ def test_finalizer_refreshes_cycle_before_rejecting_stale_surface_state(
     monkeypatch.setattr(
         journal_finalizer,
         "_surface_report",
-        lambda _text, _out: SimpleNamespace(passed=refreshes >= 3),
+        lambda _text, _out: SimpleNamespace(passed=refreshes >= 1),
     )
 
     report = journal_finalizer.finalize_run(tmp_path)
 
-    assert refreshes == 3
+    assert refreshes == 1
     assert (tmp_path / "full_paper.md").read_text() == "A"
     assert any(
         entry.rule == "canonicalize_surface_valid_repair_cycle"
@@ -5764,8 +5798,7 @@ def test_finalizer_revalidates_cycle_after_sidecar_refresh(tmp_path: Path, monke
     def phase_g(out_dir: Path) -> list[Any]:
         nonlocal calls
         calls += 1
-        if calls == 3:
-            (out_dir / "full_paper.md").write_text("BROKEN")
+        (out_dir / "full_paper.md").write_text("BROKEN")
         return []
 
     monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _out: ({"A": "B", "B": "A"}[text], []))
@@ -6347,7 +6380,7 @@ def test_phase_k_no_duplicate_fallback_for_multiple_thin_outcome_classes(tmp_pat
     assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
 
 
-def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: Path) -> None:
+def test_finalizer_restores_registry_references_before_artifact_refresh(tmp_path: Path, monkeypatch) -> None:
     """A finalizer pass may rewrite prose after the deterministic reference
     append. Before Phase G recomputes artifact consistency, References must be
     rebuilt from manifest + citation_registry so registry coverage cannot drift.
@@ -6392,7 +6425,11 @@ def test_phase_g_restores_registry_references_before_artifact_refresh(tmp_path: 
     before = verify_run_artifacts(tmp_path)
     assert any(c.name == "citation_registry_coverage" and not c.passed for c in before.checks)
 
-    log = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+    original = (tmp_path / "full_paper.md").read_bytes()
+    journal_finalizer._phase_g_refresh_sidecars(tmp_path)
+    assert (tmp_path / "full_paper.md").read_bytes() == original
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda text, _out: (text, []))
+    log = journal_finalizer.finalize_run(tmp_path).entries
     rules = [entry.rule for entry in log]
     assert "restore_registry_references_post_finalizer" in rules
     assert "close_registry_orphan_references_post_finalizer" in rules

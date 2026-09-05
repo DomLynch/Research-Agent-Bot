@@ -186,6 +186,7 @@ def find_unsourced_background_uses(
     *,
     manifest: dict | None = None,
     quant_claims_dir: Path | None = None,
+    receipt_numeric_tokens: dict[str, set[str]] | None = None,
 ) -> list[tuple[str, str, str]]:
     """For each background-literature numeric that appears in the
     paper, check the citation_token also appears in the same sentence.
@@ -217,10 +218,8 @@ def find_unsourced_background_uses(
     # to prevent '5%' from matching inside '95%' (CI notation).
     # Refactor 2026-05-04: fixes a false positive where '5%' bg-lit
     # entry was triggering on every '95% CI:' in the paper.
-    receipt_numeric_tokens = _receipt_numeric_tokens_by_citation(
-        manifest,
-        quant_claims_dir,
-    )
+    if receipt_numeric_tokens is None:
+        receipt_numeric_tokens = _receipt_numeric_tokens_by_citation(manifest, quant_claims_dir)
     entry_patterns: dict[str, re.Pattern] = {}
     for entry in registry.values():
         # Anchor: not preceded by a digit, then literal numeric.

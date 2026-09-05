@@ -20,12 +20,12 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 25010  # +10 for 2026-08-13 reviewer-defect repair; measured 25005.
+TOTAL_LIMIT = 25250  # Shared publishing projections moved here from scripts/.
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 SCRIPTS_DIR = AGENT_DIR.parent / "scripts"
-SCRIPT_TOTAL_LIMIT = 41100  # +100 for 2026-08-13 reviewer-defect repair; measured 41079.
-COMBINED_LIMIT = 66100  # +100 for 2026-08-13 reviewer-defect repair; measured 66084.
+SCRIPT_TOTAL_LIMIT = 40250
+COMBINED_LIMIT = 65500  # Lock in the controller consolidation; no new headroom.
 SCRIPT_PER_FILE_LIMIT = 5700
 
 

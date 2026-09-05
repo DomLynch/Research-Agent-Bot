@@ -286,6 +286,35 @@ def test_unsourced_check_still_flags_prose_unsourced_use() -> None:
     assert len(findings) == 1
 
 
+def test_strip_reuses_numeric_index_only_within_one_call(tmp_path, monkeypatch) -> None:
+    from apply_consistency_fixes import _strip_unsourced_background_sentences
+
+    registry = _registry(target={"numeric": "7%", "citation_token": "ADA 2024"})
+    monkeypatch.setattr(bg, "load_registry", lambda: registry)
+    manifest = {"receipts": [{"receipt_id": "r1", "citation_token": "Trial 2025"}]}
+    source = tmp_path / "r1.quant_claims.json"
+    source.write_text(json.dumps({"claims": [{
+        "binding_confidence": "high", "numeric_values": [7],
+    }]}))
+    build_index = bg._receipt_numeric_tokens_by_citation
+    builds = []
+
+    def counted_index(*args):
+        builds.append(1)
+        return build_index(*args)
+
+    monkeypatch.setattr(bg, "_receipt_numeric_tokens_by_citation", counted_index)
+    paper = "Trial 2025 reported 7%. Another study reported 7%. Context remains."
+    kwargs = {"manifest": manifest, "quant_claims_dir": tmp_path}
+    assert _strip_unsourced_background_sentences(paper, **kwargs) == (
+        "Trial 2025 reported 7%. Context remains."
+    )
+    assert len(builds) == 1
+    source.unlink()
+    assert _strip_unsourced_background_sentences(paper, **kwargs) == "Context remains."
+    assert len(builds) == 2
+
+
 def test_is_table_dominated_helper() -> None:
     """Coverage of the markdown-table heuristic. ≥50% of non-blank
     lines start with `|` → table-dominated."""

@@ -96,15 +96,19 @@ def test_build_claims_skips_paper_with_no_high_conf_claims(
     assert out["Walton 2019"] == []
 
 
-def test_post_finalizer_auto_fixable_issues_are_repaired(
+def test_finalizer_controller_applies_consistency_repairs(
     tmp_path: Path, monkeypatch,
 ) -> None:
-    """Post-finalizer repairs iterate until the manuscript is stable."""
+    """The finalizer owns convergence; quarantined typed text stays disabled."""
+    from agent import journal_finalizer
     paper_path = tmp_path / "full_paper.md"
     paper_path.write_text("Bad finalizer numeric 123.")
     issue = SimpleNamespace(auto_fixable=True)
 
     monkeypatch.setattr(orch, "_strip_rendered_citation_markers", lambda md: md)
+    monkeypatch.setattr(orch._audit_v06, "audit", lambda *_args, **_kwargs: {"checks": []})
+    monkeypatch.setattr(journal_finalizer, "_run_text_phases", lambda md, _out: (md, []))
+    monkeypatch.setattr(journal_finalizer, "_phase_g_refresh_sidecars", lambda _out: [])
     monkeypatch.setattr(
         orch._audit_v06, "_format_summary", lambda _audit: "audit-md",
     )
@@ -113,15 +117,11 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
         "run_audit",
         lambda md, *_args, **_kwargs: [] if md == "Clean finalizer paper." else [issue],
     )
-    repairs = iter(("Intermediate paper.", "Clean finalizer paper."))
-    monkeypatch.setattr(
-        orch._consistency_fixer,
-        "apply_fixes",
-        lambda *args, **kwargs: (
-            next(repairs),
-            [{"fix_type": "numeric_role_guard_strip", "n_changes": 1}],
-        ),
-    )
+    def repair(md, *_args, **_kwargs):
+        fixed = {"Bad finalizer numeric 123.": "Intermediate paper.",
+                 "Intermediate paper.": "Clean finalizer paper."}.get(md, md)
+        return fixed, [{"fix_type": "numeric_role_guard_strip", "n_changes": 1}] if fixed != md else []
+    monkeypatch.setattr(orch._consistency_fixer, "apply_fixes", repair)
     monkeypatch.setattr(
         orch,
         "_restore_public_surface_floors",
@@ -136,21 +136,16 @@ def test_post_finalizer_auto_fixable_issues_are_repaired(
         restore,
     )
 
-    fixed, log = orch._repair_post_finalizer_auto_fixables(
-        paper_path.read_text(),
-        {"topic": "cardio"},
-        paper_path,
-        lambda _md: {"checks": []},
-        quant_claims_dir=tmp_path / "quant_claims",
+    callback = orch._stage5_repair_callback(
+        {"topic": "cardio"}, paper_path, sections=(), methods_md="", citation_registry=None,
     )
-
-    assert fixed == "Clean finalizer paper."
-    assert paper_path.read_text() == fixed
+    journal_finalizer.finalize_run(tmp_path, repair=callback)
+    assert paper_path.read_text() == "Clean finalizer paper."
+    log = json.loads(paper_path.with_suffix(".final_fixed_log.json").read_text())
     assert [row["fix_type"] for row in log] == [
         "numeric_role_guard_strip", "numeric_role_guard_strip",
     ]
     assert restored == [((), False), ((), False)]
-    assert (tmp_path / "full_paper.post_finalizer_fixed_log.json").is_file()
 
 
 def test_build_claims_handles_missing_quant_file(

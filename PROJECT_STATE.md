@@ -1,5 +1,17 @@
 # PROJECT_STATE.md
 
+## Refactor Verification - 2026-09-05
+The backed-up simplification gives post-review repair one bounded finalizer
+controller, then refreshes derived artifacts from the settled manuscript.
+Publishing selection is read-only; preparation and submission are explicit,
+with shared legacy-ledger projections and the existing submission lock.
+Scientific thresholds, provider routing and schedules are unchanged.
+
+Backup: sibling `Research Agent Bot backup 2026-09-05.dgPgrd`.
+Checks and independent audit: sibling `Research Agent Bot Audit - 2026-09-05`.
+These are pre-deployment checks, not a live publication receipt.
+Live recovery still requires a representative writer run and public outcome.
+
 ## Writer Route - 2026-09-04
 Main writer/extractor now uses OpenRouter `z-ai/glm-5.3-flash`, not the moving
 latest alias. Gemma review and Mistral reviewer fallback are unchanged. GLM

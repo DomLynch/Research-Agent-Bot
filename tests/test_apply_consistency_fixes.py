@@ -514,3 +514,51 @@ def test_lightweight_polish_repairs_accidental_h3_split() -> None:
     assert "### Immune Outcomes" in out
     assert "#\n\n## Immune Outcomes" not in out
     assert any(i["fix_type"] == "heading_boundary_normalization" for i in log)
+
+
+def test_apply_fixes_preserves_repair_output_and_ordered_log() -> None:
+    paper = (
+        "**Submission:** `synthesis-test`\n\n## ## Results\n\n"
+        "Smith 2020 et al. (2020) found (potentially) mixed  evidence.\n\n"
+        "## References\n\n- Smith et al. 2020.\n"
+    )
+    out, log = fixes.apply_fixes(paper, [])
+    assert out == (
+        "## Results\n\nSmith et al. 2020 found mixed evidence.\n\n"
+        "## References\n\n- Smith et al. 2020.\n"
+    )
+    assert [(row["fix_type"], row["n_changes"], row["description"]) for row in log] == [
+        ("repair_artifact", 1, "stripped ' (potentially)' inline artifacts"),
+        ("malformed_header", 1, "collapsed '### ###' / '## ##' to single tier"),
+        ("broken_citation_order", 1, "rewrote 'Author YYYY et al.' → 'Author et al. YYYY' "
+         "(canonical scholarly citation order)"),
+        ("duplicate_citation_year", 1, "collapsed duplicate citation-year artifacts like "
+         "'Author et al. YYYY (YYYY)' or 'Author et al. YYYY YYYY'"),
+        ("double_space_collapse", 1, "collapsed mid-line double spaces to single space "
+         "(Stage-2 C08 was flagging without auto-fix)"),
+        ("internal_pipeline_metadata_strip", 1, "stripped '**Submission:** `synthesis-...`' "
+         "run-tag from title block — internal pipeline metadata belongs in "
+         "manifest.json/supplement, not prose (Fix #56 / cert old-defect scan)"),
+    ]
+    assert all(list(row) == ["fix_type", "n_changes", "description"] for row in log)
+    assert fixes.apply_fixes(out, []) == (out, [])
+
+
+def test_apply_fixes_chains_zero_count_repair_without_logging(monkeypatch) -> None:
+    seen = []
+
+    def placeholder(text):
+        seen.append(text)
+        return text.replace("Intermediate", "Final"), int("Intermediate" in text)
+
+    monkeypatch.setattr(fixes, "_strip_public_pipeline_meta", lambda text: (
+        text.replace("Original", "Intermediate"), 0,
+    ))
+    monkeypatch.setattr(fixes, "_strip_public_placeholder_paragraphs", placeholder)
+    out, log = fixes.apply_fixes("## Results\n\nOriginal evidence remains uncertain.\n", [])
+    assert "Intermediate evidence" in seen[0]
+    assert "Final evidence" in out
+    assert log == [{
+        "fix_type": "public_placeholder_paragraph_strip", "n_changes": 1,
+        "description": "stripped public placeholder prose paragraphs before journal surface review",
+    }]

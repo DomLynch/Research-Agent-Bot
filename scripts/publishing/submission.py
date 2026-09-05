@@ -118,7 +118,7 @@ _READ_ERROR = "_v3_read_error"
 
 def _read_json(path: Path) -> dict[str, Any]:
     try:
-        return _read_json_state(path)
+        return _read_json_state(path, snapshot=True)
     except CorruptJsonState as exc:
         return {_READ_ERROR: str(exc)}
 
@@ -996,18 +996,19 @@ def _needs_submit_self_heal(run: Path, *, inside_refresh: bool | None = None) ->
 
 def _static_ineligible_status(
     run: Path, *, allow_recent_repair: bool = True, inside_refresh: bool | None = None,
+    revision_verified: bool = False,
 ) -> str | None:
     missing = [name for name in SUBMISSION_REQUIRED_FILES if not (run / name).exists()]
     if missing:
         return "missing:" + ",".join(missing)
     repairable = allow_recent_repair and _needs_submit_self_heal(run, inside_refresh=inside_refresh)
     audit = _read_json(run / "full_paper.audit.json")
-    if audit and audit.get("p1_pass") is not True:
+    if audit.get("p1_pass") is not True:
         if repairable:
             return None
         return "audit_p1_failed"
     surface = _read_json(run / "full_paper.journal_surface.json")
-    if surface and surface.get("passed") is not True:
+    if surface.get("passed") is not True:
         if repairable:
             return None
         return "journal_surface_not_passed"
@@ -1017,16 +1018,9 @@ def _static_ineligible_status(
     public_surface_status = _public_research_surface_status(run)
     if public_surface_status != "eligible":
         return public_surface_status
-    request = _read_json(run / "researka_revision_request.json")
-    if request and _revision_needs_coverage(request):
-        refreshed = _refresh_revision_coverage_gate(run, request)
-        gate = _read_json(run / REVISION_COVERAGE_GATE)
-        if not refreshed and gate.get("passed") is not False:
-            return "revision_coverage_unverified"
-        if gate.get("passed") is False:
-            if repairable:
-                return None
-            return "revision_coverage_unmet"
+    revision_status = _revision_coverage_status(run, refreshed=revision_verified)
+    if revision_status != "eligible":
+        return None if repairable else revision_status
     source_floor_status = _source_floor_status(run)
     if source_floor_status != "eligible":
         return source_floor_status
@@ -1039,11 +1033,10 @@ def _static_ineligible_status(
     return None
 
 
-def _revision_coverage_status(run: Path) -> str:
+def _revision_coverage_status(run: Path, *, refreshed: bool = False) -> str:
     request = _read_json(run / "researka_revision_request.json")
     if not request or not _revision_needs_coverage(request):
         return "eligible"
-    refreshed = _refresh_revision_coverage_gate(run, request)
     gate = _read_json(run / REVISION_COVERAGE_GATE)
     if refreshed and gate.get("passed") is True:
         return "eligible"
@@ -1281,83 +1274,32 @@ def _refresh_stale_audit_sidecar(run: Path) -> bool:
         return False
 
 
-def _refresh_stale_surface_sidecar(run: Path) -> bool:
-    if not _inside_refresh_window(run):
-        return False
-    surface = _read_json(run / "full_paper.journal_surface.json")
-    if surface.get("passed") is not False:
-        return False
-    try:
+def _prepare_candidate_artifacts(
+    run: Path, *, repair: bool, recent: bool, revision_verified: bool = False,
+) -> bool:
+    """Own effects explicitly; full finalization repairs, Phase G only refreshes."""
+    if repair:
         from agent.journal_finalizer import finalize_run
-        report = finalize_run(run)
-        return bool(report.paper_changed)
-    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
-        return False
-
-
-def _refresh_stale_revision_coverage_sidecar(run: Path) -> bool:
-    if not _inside_refresh_window(run):
-        return False
-    request = _read_json(run / "researka_revision_request.json")
-    if not request:
-        return False
-    gate = _read_json(run / REVISION_COVERAGE_GATE)
-    if gate.get("passed") is True:
-        return False
-    try:
-        from agent.journal_finalizer import finalize_run
-        report = finalize_run(run)
-        refreshed = _refresh_revision_coverage_gate(run, request)
-        return bool(report.paper_changed or refreshed)
-    except (ImportError, OSError, RuntimeError, TypeError, ValueError):
-        return False
-
-
-def _eligibility_status(run: Path) -> tuple[bool, str]:
-    # Phase G refreshes all sidecars (audit + gate + accountability); run it at
-    # most once — prefer the accountability path, else the stale-audit path.
-    recent = _inside_refresh_window(run)
-    if recent and not _refresh_stale_accountability_sidecar(run):
+        finalize_run(run)
+    elif recent and not _refresh_stale_accountability_sidecar(run):
         _refresh_stale_audit_sidecar(run)
-    missing = [name for name in SUBMISSION_REQUIRED_FILES if not (run / name).exists()]
-    if missing:
-        return False, "missing:" + ",".join(missing)
-    audit = _read_json(run / "full_paper.audit.json")
-    surface = _read_json(run / "full_paper.journal_surface.json")
-    if recent and surface.get("passed") is not True and _refresh_stale_surface_sidecar(run):
-        surface = _read_json(run / "full_paper.journal_surface.json")
-    verdict = _read_json(run / "full_paper.final_verdict.json")
-    if audit.get("p1_pass") is not True:
-        return False, "audit_p1_failed"
-    if surface.get("passed") is not True:
-        return False, "journal_surface_not_passed"
-    pre_submit_status = _pre_submit_status(_read_json(run / "pre_submit_gate.json"))
-    if pre_submit_status != "eligible":
-        return False, pre_submit_status
-    public_surface_status = _public_research_surface_status(run)
-    if public_surface_status != "eligible":
-        return False, public_surface_status
-    if recent:
-        _refresh_stale_revision_coverage_sidecar(run)
-    revision_status = _revision_coverage_status(run)
-    if revision_status != "eligible":
-        return False, revision_status
-    source_floor_status = _source_floor_status(run)
-    if source_floor_status != "eligible":
-        return False, source_floor_status
-    final_status = _read_json(run / "final_status.json")
-    if final_status and not _final_status_ready(final_status):
-        return False, "final_status_not_ready"
-    if not final_status and str(verdict.get("verdict", "")).upper() != "AAA":
-        return False, "final_verdict_not_aaa"
+    request = _read_json(run / "researka_revision_request.json")
+    return (not request or _refresh_revision_coverage_gate(run, request)) if repair else revision_verified
+
+
+def _eligibility_status(run: Path, *, revision_verified: bool = False) -> tuple[bool, str]:
+    if status := _static_ineligible_status(
+        run, allow_recent_repair=False, revision_verified=revision_verified,
+    ):
+        return False, status
     source_precise, source_status = _source_topic_precision(run)
     if not source_precise:
         return False, source_status
     return True, "eligible"
 
 
-def _candidate_decision(run: Path) -> CandidateDecision:
-    _ok, status = _eligibility_status(run)
+def _candidate_decision(run: Path, *, revision_verified: bool = False) -> CandidateDecision:
+    _ok, status = _eligibility_status(run, revision_verified=revision_verified)
     review_type = str(_read_json(run / "manifest.json").get("review_type") or "")
     return decision_from_status(
         run.name,
@@ -1366,8 +1308,8 @@ def _candidate_decision(run: Path) -> CandidateDecision:
     )
 
 
-def _eligible(run: Path) -> tuple[bool, str]:
-    decision = _candidate_decision(run)
+def _eligible(run: Path, *, revision_verified: bool = False) -> tuple[bool, str]:
+    decision = _candidate_decision(run, revision_verified=revision_verified)
     return decision.publishable, decision.blocker_code or "eligible"
 
 
@@ -1467,7 +1409,50 @@ def _remote_publication_duplicate_status(
     return None
 
 
-def select_candidate(
+def _payload_candidate_status(
+    run: Path, payload: dict[str, Any], submitted_path: Path, *,
+    remote_seen: set[str], purpose: str, explicit_candidate: bool,
+) -> str:
+    """Assess the exact package without repairing it or changing selection state."""
+    revision = bool(_read_json(run / "researka_revision_request.json"))
+    if (status := _null_coding_audit_status(payload, _read_json(run / "manifest.json"))) != "eligible":
+        return status
+    if not (purpose == "revision" and revision) and (status := _recency_ratio_status(payload)) != "eligible":
+        return status
+    fp = _payload_fingerprint(payload)
+    for path, status in (
+        (submitted_path.with_name(REJECTED_FINGERPRINTS), "researka_rejected_fingerprint"),
+        (submitted_path.with_name(REVISION_FINGERPRINTS), "researka_revision_fingerprint"),
+        (submitted_path, "duplicate_submission_fingerprint"),
+    ):
+        if fp in _seen(path):
+            return status
+    paper = run / "full_paper.md"
+    paper_sha = _sha256(paper)
+    title_marks = _title_markers(_paper_title(paper)) | _title_markers(str(payload.get("title") or ""))
+    metadata = payload.get("metadata")
+    markers = {paper_sha, f"sha256:{paper_sha}", *title_marks} | _metadata_markers(metadata if isinstance(metadata, dict) else {})
+    if remote_status := _remote_publication_duplicate_status(
+        markers=markers, title_marks=title_marks, published_seen=remote_seen,
+        revision=revision, explicit_candidate=explicit_candidate,
+    ):
+        return remote_status
+    topic = _run_topic(run)
+    submitted_topics = _seen_field(submitted_path, "topic", latest_active=True)
+    if revision and not explicit_candidate and topic in submitted_topics:
+        return "revision_pending_for_revise_lane"
+    if topic in submitted_topics and not revision and topic not in _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic"):
+        same_run_rows = [row for row in _ledger_rows(submitted_path)
+                         if row.get("topic") == topic and row.get("run") == run.name and not row.get("duplicate_submission_id")]
+        if explicit_candidate and same_run_rows and not any(
+            fp in {row.get("fingerprint"), row.get("submission_payload_hash")} for row in same_run_rows
+        ):
+            return "eligible_resubmission_after_payload_change"
+        return "topic_already_submitted_pending"
+    return "eligible"
+
+
+def _prepare_submission(
     root: Path,
     submitted_path: Path,
     *,
@@ -1476,13 +1461,8 @@ def select_candidate(
     purpose: str = "resubmit",
     skip_topics: set[str] | None = None,
     candidate_inside_refresh: bool | None = None,
-) -> tuple[Path | None, list[dict[str, Any]]]:
-    local_seen = _seen(submitted_path)
-    rejected_seen = _seen(submitted_path.with_name(REJECTED_FINGERPRINTS))
-    revision_seen = _seen(submitted_path.with_name(REVISION_FINGERPRINTS))
-    submitted_topics = _seen_field(submitted_path, "topic", latest_active=True)
-    revision_topics = _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic")
-    published_seen = remote_seen or set()
+) -> tuple[Path | None, dict[str, Any], list[dict[str, Any]]]:
+    """Prepare once, then assess; an ineligible newer run still permits fallback."""
     considered = []
     seen_topics: set[str] = set()
     blocked_topics = skip_topics or set()
@@ -1505,86 +1485,82 @@ def select_candidate(
         topic = _run_topic(run)
         paper = run / "full_paper.md"
         paper_sha = _sha256(paper) if paper.exists() else ""
-        title_marks = _title_markers(_paper_title(paper))
-        markers = {paper_sha, f"sha256:{paper_sha}", *title_marks} if paper_sha else set(title_marks)
-        revision = bool(_read_json(run / "researka_revision_request.json"))
         if topic in blocked_topics:
             considered.append({"run": run.name, "topic": topic, "fingerprint": paper_sha, "status": "topic_already_consumed_this_window"})
             continue
         if topic in seen_topics:
             considered.append({"run": run.name, "topic": topic, "fingerprint": paper_sha, "status": "superseded_topic_run"})
             continue
+        request = _read_json(run / "researka_revision_request.json")
+        revision_verified = not request or _refresh_revision_coverage_gate(run, request)
         needs_repair = _needs_submit_self_heal(run, inside_refresh=inside_refresh)
         allow_repair = repair_attempts < MAX_SUBMIT_SELF_HEAL_CANDIDATES
         if static_status := _static_ineligible_status(
             run, allow_recent_repair=allow_repair, inside_refresh=inside_refresh,
+            revision_verified=revision_verified,
         ):
             considered.append({"run": run.name, "topic": topic, "fingerprint": paper_sha, "status": static_status})
             continue
-        if needs_repair:
+        if needs_repair and allow_repair:
             repair_attempts += 1
-        locally_eligible, status = _eligible(run)
-        ok = locally_eligible
+        try:
+            revision_verified = _prepare_candidate_artifacts(
+                run, repair=needs_repair and allow_repair, recent=inside_refresh,
+                revision_verified=revision_verified,
+            )
+        except (ImportError, OSError, RuntimeError, TypeError, ValueError):
+            locally_eligible, status = False, "candidate_preparation_failed"
+        else:
+            locally_eligible, status = _eligible(run, revision_verified=revision_verified)
         payload = build_payload(run) if locally_eligible else {}
-        metadata = payload.get("metadata") if isinstance(payload, dict) else {}
-        metadata = metadata if isinstance(metadata, dict) else {}
-        if locally_eligible:
-            title_marks.update(_title_markers(str(payload.get("title") or "")))
-            markers.update(title_marks)
-        if locally_eligible:
-            null_status = _null_coding_audit_status(payload, _read_json(run / "manifest.json"))
-            if null_status != "eligible":
-                ok, status = False, null_status
-            elif (
-                not (purpose == "revision" and revision)
-                and (recency_status := _recency_ratio_status(payload)) != "eligible"
-            ):
-                ok, status = False, recency_status
         fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
         if locally_eligible:
-            markers.update(_metadata_markers(metadata))
-        if ok and fp in rejected_seen:
-            ok, status = False, "researka_rejected_fingerprint"
-        elif ok and fp in revision_seen:
-            ok, status = False, "researka_revision_fingerprint"
-        elif ok and fp in local_seen:
-            ok, status = False, "duplicate_submission_fingerprint"
-        elif ok and (
-            remote_status := _remote_publication_duplicate_status(
-                markers=markers,
-                title_marks=title_marks,
-                published_seen=published_seen,
-                revision=revision,
-                explicit_candidate=explicit_candidate,
+            status = _payload_candidate_status(
+                run, payload, submitted_path, remote_seen=remote_seen or set(),
+                purpose=purpose, explicit_candidate=explicit_candidate,
             )
-        ):
-            ok, status = False, remote_status
-        elif ok and revision and not explicit_candidate and topic in submitted_topics:
-            ok, status = False, "revision_pending_for_revise_lane"
-        elif ok and topic in submitted_topics and topic not in revision_topics and not revision:
-            topic_rows = [
-                row for row in _ledger_rows(submitted_path)
-                if row.get("topic") == topic
-            ]
-            same_run_rows = [
-                row for row in topic_rows
-                if row.get("run") == run.name and not row.get("duplicate_submission_id")
-            ]
-            if same_run_rows and not any(
-                fp in {row.get("fingerprint"), row.get("submission_payload_hash")}
-                for row in same_run_rows
-            ):
-                if explicit_candidate:
-                    status = "eligible_resubmission_after_payload_change"
-                else:
-                    ok, status = False, "topic_already_submitted_pending"
-            else:
-                ok, status = False, "topic_already_submitted_pending"
-        if locally_eligible:
             seen_topics.add(topic)
         row = {"run": run.name, "topic": topic, "fingerprint": fp, "status": status}
         considered.append(row)
-        if ok:
+        if locally_eligible and status in {"eligible", "eligible_resubmission_after_payload_change"}:
+            return run, payload, considered
+    return None, {}, considered
+
+
+def select_candidate(
+    root: Path, submitted_path: Path, *, remote_seen: set[str] | None = None,
+    candidate_run: Path | None = None, purpose: str = "resubmit",
+    skip_topics: set[str] | None = None, candidate_inside_refresh: bool | None = None,
+) -> tuple[Path | None, list[dict[str, Any]]]:
+    """Observe local eligibility only; preparation belongs to run_cycle.
+
+    Source enrichment and fresh revision verification are deliberately not
+    inferred from cached green reports. The coordinator re-evaluates after
+    explicit preparation and validates the exact outgoing package.
+    """
+    considered: list[dict[str, Any]] = []
+    seen_topics = set(skip_topics or ())
+    for run in ([candidate_run] if candidate_run else _runs(root)):
+        topic = _run_topic(run)
+        paper = run / "full_paper.md"
+        fp = _sha256(paper) if paper.exists() else ""
+        status = _run_artifact_error(run)
+        if not status and topic in seen_topics:
+            status = "topic_already_consumed_this_window" if topic in (skip_topics or ()) else "superseded_topic_run"
+        if not status:
+            status = _static_ineligible_status(run, allow_recent_repair=False) or ""
+        if not status:
+            eligible, status = _eligible(run)
+            if eligible:
+                payload = build_payload(run, enrich_sources=False)
+                fp = _payload_fingerprint(payload)
+                status = _payload_candidate_status(
+                    run, payload, submitted_path, remote_seen=remote_seen or set(),
+                    purpose=purpose, explicit_candidate=candidate_run is not None,
+                )
+                seen_topics.add(topic)
+        considered.append({"run": run.name, "topic": topic, "fingerprint": fp, "status": status})
+        if status in {"eligible", "eligible_resubmission_after_payload_change"}:
             return run, considered
     return None, considered
 
@@ -1824,7 +1800,7 @@ def _europe_pmc_identifiers(title: str) -> dict[str, str]:
     }
 
 
-def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
+def _source_bundle(run: Path, *, limit: int, enrich: bool = True) -> list[dict[str, Any]]:
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     corpus = ROOT / "docs" / "quality-reference" / topic
@@ -1845,7 +1821,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
     rows = _publication_evidence.ordered_source_rows(
         _publication_evidence.source_rows(registry, receipts), receipts,
     )
-    pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]])
+    pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]]) if enrich else {}
     rob_ratings = _publication_evidence.risk_of_bias_ratings(run)
     bundle = []
     for row in rows[:limit]:
@@ -1873,7 +1849,7 @@ def _source_bundle(run: Path, *, limit: int) -> list[dict[str, Any]]:
         }
         known = explicit_ids if any(str(value or "").strip() for value in explicit_ids.values()) else url_ids
         missing_primary_id = _evidence_type_for_source(receipt) == "primary" and not _has_registered_source_locator(known)
-        identifiers = _europe_pmc_identifiers(title) if missing_primary_id else {}
+        identifiers = _europe_pmc_identifiers(title) if missing_primary_id and enrich else {}
         resolved_ids = identifiers or known
         registry_id = str(resolved_ids.get("registry_id") or "").strip() or None
         openalex_id = str(resolved_ids.get("openalex_id") or "").strip() or None
@@ -2322,7 +2298,7 @@ def _restore_source_bounded_conclusion(
     return paper[:match.start()] + replacement + paper[match.end():].lstrip()
 
 
-def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
+def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> dict[str, Any]:
     paper = _BACKGROUND_REFERENCES_RE.sub("", _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), (run / "full_paper.md").read_text(encoding="utf-8")))
     paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
@@ -2331,7 +2307,7 @@ def build_payload(run: Path, *, max_sources: int = 1000) -> dict[str, Any]:
     topic = str(manifest.get("topic") or run.name)
     # Preserve the agent's existing source URLs, source-level appraisals, and
     # exact body-to-bundle links instead of dropping them at the API boundary.
-    source_bundle = _source_bundle(run, limit=max_sources)
+    source_bundle = _source_bundle(run, limit=max_sources) if enrich_sources else _source_bundle(run, limit=max_sources, enrich=False)
     for row in source_bundle:
         if span := _source_evidence_span(row):
             row["evidence_span"] = span
@@ -2606,7 +2582,7 @@ def _run_cycle_unlocked(
         if candidate_run is not None and _read_json(candidate_run / "researka_revision_request.json")
         else "resubmit"
     )
-    run, considered = select_candidate(
+    run, payload, considered = _prepare_submission(
         runs_root,
         submitted_path,
         remote_seen=remote_seen,
@@ -2623,7 +2599,7 @@ def _run_cycle_unlocked(
     domain_frame_repairs = _repair_domain_frame_template_file(run) if submit else []
     if domain_frame_repairs:
         ledger["domain_frame_repairs"] = {"run": run.name, "codes": domain_frame_repairs}
-    payload = build_payload(run)
+        payload = build_payload(run)
     fp = _payload_fingerprint(payload)
     raw_metadata = payload.get("metadata")
     metadata: dict[str, Any] = raw_metadata if isinstance(raw_metadata, dict) else {}
@@ -2660,6 +2636,13 @@ def _run_cycle_unlocked(
     metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
     ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
     preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
+    if preflight_status == "eligible":
+        preflight_status = _payload_candidate_status(
+            run, payload, submitted_path, remote_seen=remote_seen,
+            purpose=purpose, explicit_candidate=candidate_run is not None,
+        )
+        if preflight_status == "eligible_resubmission_after_payload_change":
+            preflight_status = "eligible"
     ledger["researka_preflight"] = preflight_status
     if preflight_status != "eligible":
         ledger.update({"status": "no_eligible_research_paper", "reason": preflight_status})

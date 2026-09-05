@@ -848,20 +848,24 @@ def test_abstract_claim_strength_repair_records_pre_gate_log() -> None:
     assert log == [{"fix_type": "abstract_claim_strength_pre_gate"}]
 
 
-def test_stage_5c_repairs_abstract_before_surface_gate() -> None:
-    source = Path(orch.__file__).read_text(encoding="utf-8")
-    stage = source.split("# Stage 5c: paper-quality pre-submit gate.", 1)[1]
-    helper = source.split("def _write_stage5c_quality_gates", 1)[1].split(
-        "async def _run_post_paper_pipeline", 1,
-    )[0]
-    assert stage.index("_apply_abstract_claim_strength_repair") < stage.index(
-        "_write_stage5c_quality_gates"
+def test_stage_5c_repairs_abstract_before_surface_gate(tmp_path, monkeypatch) -> None:
+    paper = "## Abstract\n\nRobust signals demonstrated in preclinical models justify further targeted testing.\n"
+    path = tmp_path / "full_paper.md"
+    manifest = {"review_type": "thin_corpus_brief"}
+    # Template repair may reintroduce a claim requiring terminal calibration.
+    monkeypatch.setattr(orch._paper_quality, "apply_template_repairs", lambda _: (paper, []))
+    monkeypatch.setattr(orch._consistency_fixer, "apply_lightweight_public_polish", lambda text, **kw: (text, []))
+    repair = orch._stage5_repair_callback(
+        manifest, path,
+        sections=(), methods_md="", citation_registry=None,
     )
-    assert (
-        helper.index("finalize_run")
-        < helper.index("evaluate_journal_surface")
-        < helper.index("write_final_quality_gates")
-    )
+    out = repair(paper)
+    assert not path.exists()
+    assert "context-dependent signals" in out
+    assert "suggested by preclinical models" in out
+    assert "can motivate further targeted testing" in out
+    assert "Robust signals demonstrated" not in out
+    assert any(row["fix_type"] == "abstract_claim_strength_pre_gate" for row in json.loads(path.with_suffix(".final_fixed_log.json").read_text()))
 
 
 def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
@@ -874,9 +878,10 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
     captured: dict[str, Any] = {}
     events: list[str] = []
 
-    def finalize(out_dir: Path) -> SimpleNamespace:
+    def finalize(out_dir: Path, *, repair) -> SimpleNamespace:
         captured["finalizer_input"] = (out_dir / "full_paper.md").read_text()
         events.append("finalize")
+        assert repair(captured["finalizer_input"]) == "before finalizer"
         (out_dir / "full_paper.md").write_text("after finalizer")
         return SimpleNamespace(paper_changed=True)
 
@@ -902,7 +907,13 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
         captured["gate_reviewer_patches"] = kwargs["reviewer_patches"]
         return {"final_gate": {"passed": True}}
 
+    def repair(text):
+        events.append("repair")
+        return text
+
     monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
+    monkeypatch.setattr(orch, "_stage5_repair_callback", lambda *_a, **_kw: repair)
+    monkeypatch.setattr(orch, "_finalize_stage5_supplement", lambda *_a: events.append("supplement"))
     monkeypatch.setattr(orch, "_reviewer_patches_for_gate", reviewer_patches)
     monkeypatch.setattr(orch._audit_v06, "audit", audit)
     monkeypatch.setattr(orch._audit_v06, "_format_summary", lambda report: str(report))
@@ -922,7 +933,7 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
 
     assert paper == "after finalizer"
     assert captured["finalizer_input"] == "before finalizer"
-    assert events == ["finalize", "audit", "surface", "reviewer", "gate"]
+    assert events == ["finalize", "repair", "audit", "surface", "reviewer", "supplement", "gate"]
     assert captured["reviewer_refresh"] == (tmp_path, 2)
     assert captured["audit_text"] == "after finalizer"
     assert captured["surface_text"] == "after finalizer"
@@ -932,15 +943,44 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
     assert gates["final_gate"]["passed"] is True
 
 
-def test_stage_5_runs_finalizer_before_surface_gate() -> None:
-    source = Path(orch.__file__).read_text(encoding="utf-8")
-    stage = source.split("# Stage 5: Final audit + UNIFIED verdict", 1)[1]
-    stage = stage.split("# Stage 5b:", 1)[0]
-    assert (
-        stage.index("_apply_abstract_claim_strength_repair")
-        < stage.index("finalize_run")
-        < stage.index("evaluate_journal_surface")
-    )
+def test_stage_5_runs_finalizer_before_surface_gate(tmp_path, monkeypatch) -> None:
+    import asyncio
+    from agent import journal_finalizer, journal_surface_gate
+
+    class SurfaceReached(Exception):
+        pass
+
+    path = tmp_path / "full_paper.md"
+    path.write_text("## Abstract\n\nRobust signals demonstrated in preclinical models justify further targeted testing.\n")
+    events = []
+    repair = orch._apply_abstract_claim_strength_repair
+    def record_repair(text, log):
+        events.append("repair")
+        return repair(text, log)
+    async def review(*args, **kwargs):
+        return [], "", "offline-reviewer", 0.0
+    def finalize(out_dir, *, repair):
+        events.append("finalize")
+        text = repair(path.read_text())
+        assert "Robust signals demonstrated" not in text
+        path.write_text(text + "\n\nFinalized manuscript marker.\n")
+    def surface(text, **kwargs):
+        events.append("surface")
+        assert text == path.read_text()
+        assert "Finalized manuscript marker." in text
+        raise SurfaceReached
+
+    monkeypatch.setattr(orch, "_apply_abstract_claim_strength_repair", record_repair)
+    monkeypatch.setattr(orch._final_reviewer, "review_paper", review)
+    monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
+    monkeypatch.setattr(journal_surface_gate, "evaluate_journal_surface", surface)
+    with pytest.raises(SurfaceReached):
+        asyncio.run(orch._run_post_paper_pipeline(
+            paper_path=path, manifest={"review_type": "thin_corpus_brief"},
+            out_dir=tmp_path, quality_bundle=object(),
+        ))
+    assert events.count("finalize") == 1
+    assert events == ["finalize", "repair", "surface"]
 
 
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:

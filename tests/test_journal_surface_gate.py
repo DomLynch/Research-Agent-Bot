@@ -2106,7 +2106,8 @@ def test_finalizer_reaches_text_fixed_point_before_return(tmp_path, monkeypatch)
     assert (tmp_path / "full_paper.md").read_text() == "C"
 
 
-def test_finalizer_reprocesses_phase_g_paper_mutation(tmp_path, monkeypatch) -> None:
+def test_finalizer_rejects_phase_g_paper_mutation(tmp_path, monkeypatch) -> None:
+    import pytest
     from agent import journal_finalizer as finalizer
 
     (tmp_path / "full_paper.md").write_text("A")
@@ -2124,12 +2125,9 @@ def test_finalizer_reprocesses_phase_g_paper_mutation(tmp_path, monkeypatch) -> 
 
     monkeypatch.setattr(finalizer, "_run_text_phases", text_phases)
     monkeypatch.setattr(finalizer, "_phase_g_refresh_sidecars", phase_g)
-    report = finalizer.finalize_run(tmp_path)
-
-    assert report.paper_changed
-    assert report.final_word_count == 1
-    assert phase_g_calls == 3
-    assert (tmp_path / "full_paper.md").read_text() == "FINAL"
+    with pytest.raises(RuntimeError, match="did not reach a fixed point"):
+        finalizer.finalize_run(tmp_path)
+    assert phase_g_calls == 1
 
 
 def test_finalizer_writes_repair_log_sidecar(tmp_path) -> None:

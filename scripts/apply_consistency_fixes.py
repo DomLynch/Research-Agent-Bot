@@ -25,7 +25,7 @@ import re
 import sys
 import unicodedata
 from collections import Counter, defaultdict
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from pathlib import Path
 
 from agent.topic_display import humanize_topic, intervention_label
@@ -1826,6 +1826,21 @@ def apply_fixes(
     failures are auditable, not silent text loss."""
     new_md = paper_md
     log: list[dict] = []
+
+    def apply(
+        repair: Callable[..., tuple[str, int]], fix_type: str,
+        description: str, *args: object,
+    ) -> int:
+        nonlocal new_md
+        new_md, count = repair(new_md, *args)
+        if count:
+            log.append({
+                "fix_type": fix_type,
+                "n_changes": count,
+                "description": description,
+            })
+        return count
+
     # Snapshot for Fix #53 depth-preservation guard
     pre_strip_sections: dict[str, str] = {}
     for heading in _DEPTH_PROTECTED_SECTIONS:
@@ -1834,8 +1849,7 @@ def apply_fixes(
             pre_strip_sections[heading] = body
 
     # 1. Strip (potentially) inline artifacts (highest count, run first).
-    pot_count_before = len(_POTENTIALLY_RE.findall(new_md))
-    new_md = _POTENTIALLY_RE.sub("", new_md)
+    new_md, pot_count_before = _POTENTIALLY_RE.subn("", new_md)
     if pot_count_before:
         log.append({
             "fix_type": "repair_artifact",
@@ -1843,302 +1857,172 @@ def apply_fixes(
             "description": "stripped ' (potentially)' inline artifacts",
         })
 
-    new_md, n_role_artifacts = _strip_role_repair_artifacts(new_md)
-    if n_role_artifacts:
-        log.append({
-            "fix_type": "role_repair_artifact_strip",
-            "n_changes": n_role_artifacts,
-            "description": (
-                "stripped numeric role-repair artifact sentences from "
-                "public prose"
-            ),
-        })
+    apply(
+        _strip_role_repair_artifacts, "role_repair_artifact_strip",
+        "stripped numeric role-repair artifact sentences from "
+        "public prose",
+    )
 
-    new_md, n_pipeline_meta = _strip_public_pipeline_meta(new_md)
-    if n_pipeline_meta:
-        log.append({
-            "fix_type": "public_pipeline_meta_strip",
-            "n_changes": n_pipeline_meta,
-            "description": (
-                "stripped public-facing pipeline meta-comments left by "
-                "section repair or absence-audit scaffolding"
-            ),
-        })
+    apply(
+        _strip_public_pipeline_meta, "public_pipeline_meta_strip",
+        "stripped public-facing pipeline meta-comments left by "
+        "section repair or absence-audit scaffolding",
+    )
 
-    new_md, n_placeholder = _strip_public_placeholder_paragraphs(new_md)
-    if n_placeholder:
-        log.append({
-            "fix_type": "public_placeholder_paragraph_strip",
-            "n_changes": n_placeholder,
-            "description": (
-                "stripped public placeholder prose paragraphs before "
-                "journal surface review"
-            ),
-        })
+    apply(
+        _strip_public_placeholder_paragraphs, "public_placeholder_paragraph_strip",
+        "stripped public placeholder prose paragraphs before "
+        "journal surface review",
+    )
 
-    new_md, n_topic_slug = _normalize_public_topic_slug(new_md, manifest)
-    if n_topic_slug:
-        log.append({
-            "fix_type": "public_topic_slug_normalization",
-            "n_changes": n_topic_slug,
-            "description": (
-                "rewrote topic-pack slug tokens in the public manuscript "
-                "body to the display topic name"
-            ),
-        })
+    apply(
+        _normalize_public_topic_slug, "public_topic_slug_normalization",
+        "rewrote topic-pack slug tokens in the public manuscript "
+        "body to the display topic name",
+        manifest,
+    )
 
     if manifest is not None:
-        new_md, n_abstract_direction = repair_abstract_direction_summary(
-            new_md, manifest,
+        apply(
+            repair_abstract_direction_summary, "abstract_results_direction_consistency_repair",
+            "rewrote the Abstract direction-summary sentence from "
+            "manifest receipt direction counts; advisory repair only",
+            manifest,
         )
-        if n_abstract_direction:
-            log.append({
-                "fix_type": "abstract_results_direction_consistency_repair",
-                "n_changes": n_abstract_direction,
-                "description": (
-                    "rewrote the Abstract direction-summary sentence from "
-                    "manifest receipt direction counts; advisory repair only"
-                ),
-            })
 
-    new_md, n_empty_parens = _strip_empty_parenthetical_citations(new_md)
-    if n_empty_parens:
-        log.append({
-            "fix_type": "empty_parenthetical_citation_strip",
-            "n_changes": n_empty_parens,
-            "description": (
-                "removed empty citation parentheses left by safe citation "
-                "stripping"
-            ),
-        })
-
-    new_md, n_ordinal_gaps = _normalize_ordinal_gaps(new_md)
-    if n_ordinal_gaps:
-        log.append({
-            "fix_type": "ordinal_gap_normalization",
-            "n_changes": n_ordinal_gaps,
-            "description": (
-                "renumbered paragraph-local ordinal openers in encounter "
-                "order to prevent stale outline fragments"
-            ),
-        })
-
-    new_md, n_h3_residue = _normalize_h3_residue_headings(new_md)
-    if n_h3_residue:
-        log.append({
-            "fix_type": "h3_residue_heading_normalization",
-            "n_changes": n_h3_residue,
-            "description": "rewrote leaked '### H3:' headings to normal markdown H3 headings",
-        })
-
-    new_md, n_snake_label = _normalize_public_snake_case_labels(new_md)
-    if n_snake_label:
-        log.append({
-            "fix_type": "public_snake_case_label_normalization",
-            "n_changes": n_snake_label,
-            "description": (
-                "rewrote internal enum-style snake_case labels in the "
-                "public manuscript body"
-            ),
-        })
-
-    new_md, n_thesis_marker = _ensure_public_thesis_marker(new_md, manifest)
-    if n_thesis_marker:
-        log.append({
-            "fix_type": "public_thesis_marker_backfill",
-            "n_changes": n_thesis_marker,
-            "description": (
-                "inserted an explicit public Abstract thesis marker when "
-                "writer prose lacked an auditor-detectable thesis sentence"
-            ),
-        })
-
-    new_md, n_meta_phrase = _normalize_public_meta_phrases(new_md)
-    if n_meta_phrase:
-        log.append({
-            "fix_type": "public_meta_phrase_normalization",
-            "n_changes": n_meta_phrase,
-            "description": (
-                "rewrote audit/compiler meta phrases into neutral "
-                "journal-facing manuscript prose"
-            ),
-        })
-
-    new_md, n_effect_artifact = _strip_effect_estimate_artifact_sentences(
-        new_md,
+    apply(
+        _strip_empty_parenthetical_citations, "empty_parenthetical_citation_strip",
+        "removed empty citation parentheses left by safe citation "
+        "stripping",
     )
-    if n_effect_artifact:
-        log.append({
-            "fix_type": "effect_estimate_artifact_sentence_strip",
-            "n_changes": n_effect_artifact,
-            "description": (
-                "stripped generic 'reported an effect estimate of ...' "
-                "sentences that are repair artifacts rather than "
-                "publishable source-context prose"
-            ),
-        })
 
-    new_md, n_orphan_threshold = _strip_orphan_threshold_sentences(new_md)
-    if n_orphan_threshold:
-        log.append({
-            "fix_type": "orphan_threshold_sentence_strip",
-            "n_changes": n_orphan_threshold,
-            "description": (
-                "stripped anaphoric threshold-comparison sentences whose "
-                "improvement anchor was absent"
-            ),
-        })
-
-    new_md, n_orphan_demonstrated = _strip_orphan_demonstrated_clauses(new_md)
-    if n_orphan_demonstrated:
-        log.append({
-            "fix_type": "orphan_demonstrated_clause_strip",
-            "n_changes": n_orphan_demonstrated,
-            "description": (
-                "removed orphaned 'yet demonstrated that ...' clauses "
-                "left after unsupported citation cleanup"
-            ),
-        })
-
-    new_md, n_ref_dumps = _strip_public_reference_dumps(new_md)
-    if n_ref_dumps:
-        log.append({
-            "fix_type": "public_reference_dump_strip",
-            "n_changes": n_ref_dumps,
-            "description": "removed DOI/PMID dump blocks from journal-main prose",
-        })
-
-    new_md, n_final_interpretation = _strip_final_interpretation_blocks(new_md)
-    if n_final_interpretation:
-        log.append({
-            "fix_type": "final_interpretation_block_strip",
-            "n_changes": n_final_interpretation,
-            "description": "removed internal final-interpretation subsection from journal main",
-        })
-
-    new_md, n_discussion_opener = _normalize_discussion_opener(new_md)
-    if n_discussion_opener:
-        log.append({
-            "fix_type": "discussion_opener_normalization",
-            "n_changes": n_discussion_opener,
-            "description": "removed leading contrast marker from Discussion opener",
-        })
-
-    new_md, n_empty_attribution = _strip_empty_attribution_sentences(new_md)
-    if n_empty_attribution:
-        log.append({
-            "fix_type": "empty_attribution_sentence_strip",
-            "n_changes": n_empty_attribution,
-            "description": (
-                "removed sentences left with empty attribution fragments "
-                "such as 'described by .'"
-            ),
-        })
-
-    new_md, n_toxin = _strip_toxin_mobilization_sentences(new_md)
-    if n_toxin:
-        log.append({
-            "fix_type": "toxin_mobilization_sentence_strip",
-            "n_changes": n_toxin,
-            "description": (
-                "removed public toxin-mobilization asides that require "
-                "specialized source context outside the synthesis claim"
-            ),
-        })
-
-    new_md, n_pvalue_norm = _normalize_public_p_values(new_md)
-    if n_pvalue_norm:
-        log.append({
-            "fix_type": "public_p_value_normalization",
-            "n_changes": n_pvalue_norm,
-            "description": (
-                "normalized public p-value spacing/casing before "
-                "final-layer review"
-            ),
-        })
-
-    new_md, n_unreferenced_et_al = _strip_unreferenced_et_al_parentheticals(
-        new_md, manifest,
+    apply(
+        _normalize_ordinal_gaps, "ordinal_gap_normalization",
+        "renumbered paragraph-local ordinal openers in encounter "
+        "order to prevent stale outline fragments",
     )
-    if n_unreferenced_et_al:
-        log.append({
-            "fix_type": "unreferenced_parenthetical_citation_strip",
-            "n_changes": n_unreferenced_et_al,
-            "description": (
-                "removed Author et al. YYYY parenthetical citations that "
-                "were not backed by the manifest, background registry, "
-                "or References block"
-            ),
-        })
 
-    new_md, n_orphan_inference = _strip_orphan_inference_fragments(new_md)
-    if n_orphan_inference:
-        log.append({
-            "fix_type": "orphan_inference_fragment_strip",
-            "n_changes": n_orphan_inference,
-            "description": (
-                "stripped D1 inferential-bridge fragments that were "
-                "left outside an Inferential Bridge section"
-            ),
-        })
+    apply(
+        _normalize_h3_residue_headings, "h3_residue_heading_normalization",
+        "rewrote leaked '### H3:' headings to normal markdown H3 headings",
+    )
 
-    new_md, n_invalid_d1 = _strip_invalid_inferential_bridge_claims(new_md)
-    if n_invalid_d1:
-        log.append({
-            "fix_type": "invalid_inferential_bridge_claim_strip",
-            "n_changes": n_invalid_d1,
-            "description": (
-                "stripped Inferential Bridge claims missing required "
-                "Q14 tags or containing untraced numerics"
-            ),
-        })
+    apply(
+        _normalize_public_snake_case_labels, "public_snake_case_label_normalization",
+        "rewrote internal enum-style snake_case labels in the "
+        "public manuscript body",
+    )
 
-    new_md, n_dup_subsections = _strip_duplicate_subsections(new_md)
-    if n_dup_subsections:
-        log.append({
-            "fix_type": "duplicate_subsection",
-            "n_changes": n_dup_subsections,
-            "description": (
-                "removed repeated markdown subsections produced by "
-                "section backstops or repair loops"
-            ),
-        })
-    new_md, n_empty_headings = _strip_empty_headings(new_md)
-    if n_empty_headings:
-        log.append({
-            "fix_type": "empty_heading_strip",
-            "n_changes": n_empty_headings,
-            "description": "removed headings left empty after deterministic cleanup",
-        })
-    new_md, n_ref_only_next = _strip_reference_only_next_study_section(new_md)
-    if n_ref_only_next:
-        log.append({
-            "fix_type": "reference_only_next_study_strip",
-            "n_changes": n_ref_only_next,
-            "description": "removed next-study recommendation sections containing only reference residue",
-        })
+    apply(
+        _ensure_public_thesis_marker, "public_thesis_marker_backfill",
+        "inserted an explicit public Abstract thesis marker when "
+        "writer prose lacked an auditor-detectable thesis sentence",
+        manifest,
+    )
 
-    new_md, n_dup_paragraphs = _strip_consecutive_duplicate_paragraphs(new_md)
-    if n_dup_paragraphs:
-        log.append({
-            "fix_type": "duplicate_paragraph",
-            "n_changes": n_dup_paragraphs,
-            "description": (
-                "removed consecutive duplicate prose paragraphs produced "
-                "by section backstops or repair loops"
-            ),
-        })
+    apply(
+        _normalize_public_meta_phrases, "public_meta_phrase_normalization",
+        "rewrote audit/compiler meta phrases into neutral "
+        "journal-facing manuscript prose",
+    )
 
-    new_md, n_fuzzy_dup_paragraphs = _strip_fuzzy_duplicate_paragraphs(new_md)
-    if n_fuzzy_dup_paragraphs:
-        log.append({
-            "fix_type": "fuzzy_duplicate_paragraph",
-            "n_changes": n_fuzzy_dup_paragraphs,
-            "description": (
-                "removed later body paragraphs with high token overlap "
-                "against earlier body paragraphs"
-            ),
-        })
+    apply(
+        _strip_effect_estimate_artifact_sentences, "effect_estimate_artifact_sentence_strip",
+        "stripped generic 'reported an effect estimate of ...' "
+        "sentences that are repair artifacts rather than "
+        "publishable source-context prose",
+    )
+
+    apply(
+        _strip_orphan_threshold_sentences, "orphan_threshold_sentence_strip",
+        "stripped anaphoric threshold-comparison sentences whose "
+        "improvement anchor was absent",
+    )
+
+    apply(
+        _strip_orphan_demonstrated_clauses, "orphan_demonstrated_clause_strip",
+        "removed orphaned 'yet demonstrated that ...' clauses "
+        "left after unsupported citation cleanup",
+    )
+
+    apply(
+        _strip_public_reference_dumps, "public_reference_dump_strip",
+        "removed DOI/PMID dump blocks from journal-main prose",
+    )
+
+    apply(
+        _strip_final_interpretation_blocks, "final_interpretation_block_strip",
+        "removed internal final-interpretation subsection from journal main",
+    )
+
+    apply(
+        _normalize_discussion_opener, "discussion_opener_normalization",
+        "removed leading contrast marker from Discussion opener",
+    )
+
+    apply(
+        _strip_empty_attribution_sentences, "empty_attribution_sentence_strip",
+        "removed sentences left with empty attribution fragments "
+        "such as 'described by .'",
+    )
+
+    apply(
+        _strip_toxin_mobilization_sentences, "toxin_mobilization_sentence_strip",
+        "removed public toxin-mobilization asides that require "
+        "specialized source context outside the synthesis claim",
+    )
+
+    apply(
+        _normalize_public_p_values, "public_p_value_normalization",
+        "normalized public p-value spacing/casing before "
+        "final-layer review",
+    )
+
+    apply(
+        _strip_unreferenced_et_al_parentheticals, "unreferenced_parenthetical_citation_strip",
+        "removed Author et al. YYYY parenthetical citations that "
+        "were not backed by the manifest, background registry, "
+        "or References block",
+        manifest,
+    )
+
+    apply(
+        _strip_orphan_inference_fragments, "orphan_inference_fragment_strip",
+        "stripped D1 inferential-bridge fragments that were "
+        "left outside an Inferential Bridge section",
+    )
+
+    apply(
+        _strip_invalid_inferential_bridge_claims, "invalid_inferential_bridge_claim_strip",
+        "stripped Inferential Bridge claims missing required "
+        "Q14 tags or containing untraced numerics",
+    )
+
+    apply(
+        _strip_duplicate_subsections, "duplicate_subsection",
+        "removed repeated markdown subsections produced by "
+        "section backstops or repair loops",
+    )
+    apply(
+        _strip_empty_headings, "empty_heading_strip",
+        "removed headings left empty after deterministic cleanup",
+    )
+    apply(
+        _strip_reference_only_next_study_section, "reference_only_next_study_strip",
+        "removed next-study recommendation sections containing only reference residue",
+    )
+
+    apply(
+        _strip_consecutive_duplicate_paragraphs, "duplicate_paragraph",
+        "removed consecutive duplicate prose paragraphs produced "
+        "by section backstops or repair loops",
+    )
+
+    apply(
+        _strip_fuzzy_duplicate_paragraphs, "fuzzy_duplicate_paragraph",
+        "removed later body paragraphs with high token overlap "
+        "against earlier body paragraphs",
+    )
 
     new_md, n_fused_repeat = re.subn(
         r"(?P<sentence>[A-Z][^.!?\n]{20,})(?<!doi)\.org/10\.\d{4,9}/"
@@ -2156,20 +2040,14 @@ def apply_fixes(
             "description": "removed a DOI tail fused onto manuscript prose",
         })
 
-    new_md, n_dup_sentences = _strip_duplicate_long_sentences(new_md)
-    if n_dup_sentences:
-        log.append({
-            "fix_type": "duplicate_sentence",
-            "n_changes": n_dup_sentences,
-            "description": (
-                "removed repeated long prose sentences produced by "
-                "section backstops or repair loops"
-            ),
-        })
+    apply(
+        _strip_duplicate_long_sentences, "duplicate_sentence",
+        "removed repeated long prose sentences produced by "
+        "section backstops or repair loops",
+    )
 
     # 2. Fix '### ###' / '## ##' malformed headers.
-    bad_hdr_count = len(_DOUBLE_HASH_RE.findall(new_md))
-    new_md = _DOUBLE_HASH_RE.sub(r"\1 ", new_md)
+    new_md, bad_hdr_count = _DOUBLE_HASH_RE.subn(r"\1 ", new_md)
     if bad_hdr_count:
         log.append({
             "fix_type": "malformed_header",
@@ -2182,17 +2060,12 @@ def apply_fixes(
     # whole paper, so a stale Methods disclosure could consume the
     # preceding QEI line plus the `## Methods` heading. Section scope
     # makes Methods corruption structurally impossible.
-    new_md, n_stale_stripped = _strip_stale_spar_sentences(new_md)
-    if n_stale_stripped:
-        log.append({
-            "fix_type": "stale_method_boilerplate",
-            "n_changes": n_stale_stripped,
-            "description": (
-                "stripped stale SPAR/receipt-cluster sentences with "
-                "section-scoped matching; deterministic Methods "
-                "'What did NOT run' disclosure is preserved"
-            ),
-        })
+    apply(
+        _strip_stale_spar_sentences, "stale_method_boilerplate",
+        "stripped stale SPAR/receipt-cluster sentences with "
+        "section-scoped matching; deterministic Methods "
+        "'What did NOT run' disclosure is preserved",
+    )
 
     # 4. Dedupe '## References' (keep first).
     refs_pattern = re.compile(
@@ -2223,9 +2096,8 @@ def apply_fixes(
     cite_order_re = re.compile(
         r"\b([A-Z][a-zA-Z]+)\s+(\d{4})\s+et\s+al\.?",
     )
-    cite_order_count = len(cite_order_re.findall(new_md))
+    new_md, cite_order_count = cite_order_re.subn(r"\1 et al. \2", new_md)
     if cite_order_count:
-        new_md = cite_order_re.sub(r"\1 et al. \2", new_md)
         log.append({
             "fix_type": "broken_citation_order",
             "n_changes": cite_order_count,
@@ -2282,19 +2154,12 @@ def apply_fixes(
     # for unsourced background numerics). Numeric is corpus-traced
     # (Q2 untouched); only the misread sentence is lost. The writer's
     # surrounding prose carries the rest of the argument.
-    new_md, n_misread_stripped = _strip_change_value_misread_sentences(
-        new_md,
+    apply(
+        _strip_change_value_misread_sentences, "change_value_misread_strip",
+        "stripped sentences containing change-value numerics "
+        "(e.g. 0.13 m/s 'improvement') rendered as absolute "
+        "values below thresholds (Fix #46 / C13 auto-fix)",
     )
-    if n_misread_stripped:
-        log.append({
-            "fix_type": "change_value_misread_strip",
-            "n_changes": n_misread_stripped,
-            "description": (
-                "stripped sentences containing change-value numerics "
-                "(e.g. 0.13 m/s 'improvement') rendered as absolute "
-                "values below thresholds (Fix #46 / C13 auto-fix)"
-            ),
-        })
 
     # 6c. Fix #54: strip cross-sentence anaphoric misreads. C13's
     # per-sentence detection misses 'This walk speed value is below
@@ -2302,21 +2167,14 @@ def apply_fixes(
     # change-numeric is in the PRECEDING sentence. Fix #54 strips
     # the threshold-comparison sentence (the misread carrier), not
     # the corpus-traced numeric sentence (which is fine).
-    new_md, n_anaphor_stripped = _strip_change_value_anaphor_sentences(
-        new_md,
+    n_anaphor_stripped = apply(
+        _strip_change_value_anaphor_sentences, "change_value_anaphor_strip",
+        "stripped cross-sentence anaphoric misreads — "
+        "sentences referring back to a change-value numeric "
+        "('this walk speed value...') and treating it as "
+        "absolute via threshold-comparison phrasing "
+        "(Fix #54 / C13b auto-fix)",
     )
-    if n_anaphor_stripped:
-        log.append({
-            "fix_type": "change_value_anaphor_strip",
-            "n_changes": n_anaphor_stripped,
-            "description": (
-                "stripped cross-sentence anaphoric misreads — "
-                "sentences referring back to a change-value numeric "
-                "('this walk speed value...') and treating it as "
-                "absolute via threshold-comparison phrasing "
-                "(Fix #54 / C13b auto-fix)"
-            ),
-        })
 
     # 6d. Fix #58 (C13c): strip threshold-comparison sentences
     # from paragraphs that juxtapose a corpus change-numeric with
@@ -2325,21 +2183,14 @@ def apply_fixes(
     # threshold, regardless of wording. The strip removes the
     # threshold-comparison sentence(s); the change-numeric
     # sentence stays.
-    new_md, n_para_stripped = (
-        _strip_change_value_paragraph_threshold_sentences(new_md)
+    apply(
+        _strip_change_value_paragraph_threshold_sentences, "change_value_paragraph_threshold_strip",
+        "stripped threshold-comparison sentences from "
+        "paragraphs that juxtaposed a corpus change-numeric "
+        "(e.g. 0.13 m/s) with threshold language without "
+        "the change-framing in proximity (Fix #58 / C13c "
+        "auto-fix)",
     )
-    if n_para_stripped:
-        log.append({
-            "fix_type": "change_value_paragraph_threshold_strip",
-            "n_changes": n_para_stripped,
-            "description": (
-                "stripped threshold-comparison sentences from "
-                "paragraphs that juxtaposed a corpus change-numeric "
-                "(e.g. 0.13 m/s) with threshold language without "
-                "the change-framing in proximity (Fix #58 / C13c "
-                "auto-fix)"
-            ),
-        })
 
     # 7. Fix #22: strip orphan / consecutive `_Cited:` blocks.
     # Stage-2 surface-render-lint flags these as P2 with
@@ -2451,30 +2302,20 @@ def apply_fixes(
             ),
         })
 
-    new_md, n_extra_methods_steps = _strip_extra_methods_numbered_steps(new_md)
-    if n_extra_methods_steps:
-        log.append({
-            "fix_type": "methods_extra_step_strip",
-            "n_changes": n_extra_methods_steps,
-            "description": (
-                "stripped numbered Methods steps beyond the deterministic "
-                "run-mode contract"
-            ),
-        })
+    apply(
+        _strip_extra_methods_numbered_steps, "methods_extra_step_strip",
+        "stripped numbered Methods steps beyond the deterministic "
+        "run-mode contract",
+    )
 
     # 8b. Q6 structural backstop: preclinical → human transfer must be
     # hedged. This is universal translational discipline, not a
     # topic-specific patch.
-    new_md, n_preclinical_hedges = _hedge_preclinical_translation(new_md)
-    if n_preclinical_hedges:
-        log.append({
-            "fix_type": "preclinical_translation_hedge",
-            "n_changes": n_preclinical_hedges,
-            "description": (
-                "added neutral translational-uncertainty hedge after "
-                "unhedged preclinical/model-organism sentences"
-            ),
-        })
+    apply(
+        _hedge_preclinical_translation, "preclinical_translation_hedge",
+        "added neutral translational-uncertainty hedge after "
+        "unhedged preclinical/model-organism sentences",
+    )
 
     # 8. Collapse mid-line double spaces to single space.
     # Stage-2 C08 flags these as P2 auto_fixable; before this fix the
@@ -2485,9 +2326,8 @@ def apply_fixes(
     # legitimate in markdown bullets / cite blocks) AND NOT preceded
     # by a newline.
     double_space_re = re.compile(r"(?<=\S)  +(?=\S)")
-    n_collapsed = len(double_space_re.findall(new_md))
+    new_md, n_collapsed = double_space_re.subn(" ", new_md)
     if n_collapsed:
-        new_md = double_space_re.sub(" ", new_md)
         log.append({
             "fix_type": "double_space_collapse",
             "n_changes": n_collapsed,
@@ -2497,16 +2337,11 @@ def apply_fixes(
             ),
         })
 
-    new_md, n_dup_words = _collapse_adjacent_duplicate_words(new_md)
-    if n_dup_words:
-        log.append({
-            "fix_type": "duplicate_word_collapse",
-            "n_changes": n_dup_words,
-            "description": (
-                "collapsed adjacent duplicated prose words flagged by "
-                "Stage-2 C08 (for example 'not not')"
-            ),
-        })
+    apply(
+        _collapse_adjacent_duplicate_words, "duplicate_word_collapse",
+        "collapsed adjacent duplicated prose words flagged by "
+        "Stage-2 C08 (for example 'not not')",
+    )
 
     # Fix #56: strip internal pipeline metadata from prose body.
     # The writer's title block produces a '**Submission:**
@@ -2518,9 +2353,8 @@ def apply_fixes(
         r"^\*\*Submission:\*\*\s*`[^`]+`\s*\n+",
         re.MULTILINE,
     )
-    n_submission = len(submission_re.findall(new_md))
+    new_md, n_submission = submission_re.subn("", new_md)
     if n_submission:
-        new_md = submission_re.sub("", new_md)
         log.append({
             "fix_type": "internal_pipeline_metadata_strip",
             "n_changes": n_submission,
@@ -2620,9 +2454,8 @@ def apply_fixes(
     # so this re-strip is unconditionally safe. Without this re-pass
     # the C05 P2 issue resurfaces in the final consistency audit even
     # though the strip "fired" earlier.
-    pot_re_count = len(_POTENTIALLY_RE.findall(new_md))
+    new_md, pot_re_count = _POTENTIALLY_RE.subn("", new_md)
     if pot_re_count:
-        new_md = _POTENTIALLY_RE.sub("", new_md)
         log.append({
             "fix_type": "repair_artifact_restrip_post_depth",
             "n_changes": pot_re_count,
@@ -2634,51 +2467,30 @@ def apply_fixes(
             ),
         })
 
-    new_md, n_pipeline_meta = _strip_public_pipeline_meta(new_md)
-    if n_pipeline_meta:
-        log.append({
-            "fix_type": "public_pipeline_meta_restrip_post_depth",
-            "n_changes": n_pipeline_meta,
-            "description": (
-                "re-stripped public-facing pipeline meta-comments after "
-                "depth-preservation restore reintroduced them"
-            ),
-        })
-
-    new_md, n_placeholder = _strip_public_placeholder_paragraphs(new_md)
-    if n_placeholder:
-        log.append({
-            "fix_type": "public_placeholder_paragraph_restrip_post_depth",
-            "n_changes": n_placeholder,
-            "description": (
-                "re-stripped public placeholder prose after section "
-                "restoration"
-            ),
-        })
-
-    new_md, n_pvalue_norm = _normalize_public_p_values(new_md)
-    if n_pvalue_norm:
-        log.append({
-            "fix_type": "public_p_value_renormalization_post_depth",
-            "n_changes": n_pvalue_norm,
-            "description": (
-                "re-normalized public p-value spacing/casing after "
-                "section restoration"
-            ),
-        })
-
-    new_md, n_unreferenced_et_al = _strip_unreferenced_et_al_parentheticals(
-        new_md, manifest,
+    apply(
+        _strip_public_pipeline_meta, "public_pipeline_meta_restrip_post_depth",
+        "re-stripped public-facing pipeline meta-comments after "
+        "depth-preservation restore reintroduced them",
     )
-    if n_unreferenced_et_al:
-        log.append({
-            "fix_type": "unreferenced_parenthetical_citation_restrip_post_depth",
-            "n_changes": n_unreferenced_et_al,
-            "description": (
-                "re-removed unreferenced Author et al. YYYY parenthetical "
-                "citations after section restoration"
-            ),
-        })
+
+    apply(
+        _strip_public_placeholder_paragraphs, "public_placeholder_paragraph_restrip_post_depth",
+        "re-stripped public placeholder prose after section "
+        "restoration",
+    )
+
+    apply(
+        _normalize_public_p_values, "public_p_value_renormalization_post_depth",
+        "re-normalized public p-value spacing/casing after "
+        "section restoration",
+    )
+
+    apply(
+        _strip_unreferenced_et_al_parentheticals, "unreferenced_parenthetical_citation_restrip_post_depth",
+        "re-removed unreferenced Author et al. YYYY parenthetical "
+        "citations after section restoration",
+        manifest,
+    )
 
     # Universal Numeric Role Guard auto-fix (2026-05-05): strip P1
     # sentences flagged for arithmetic_violation, role_mismatch, OR
@@ -2827,60 +2639,37 @@ def apply_fixes(
             log.extend(depth_log)
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
         log.extend(hedge_log)
-        new_md, n_dup_subsections = _strip_duplicate_subsections(new_md)
-        if n_dup_subsections:
-            log.append({
-                "fix_type": "duplicate_subsection_restrip_post_depth",
-                "n_changes": n_dup_subsections,
-                "description": (
-                    "re-removed repeated markdown subsections after "
-                    "depth restoration"
-                ),
-            })
+        apply(
+            _strip_duplicate_subsections, "duplicate_subsection_restrip_post_depth",
+            "re-removed repeated markdown subsections after "
+            "depth restoration",
+        )
 
-    new_md, n_meta_phrase = _normalize_public_meta_phrases(new_md)
-    if n_meta_phrase:
-        log.append({
-            "fix_type": "public_meta_phrase_normalization_post_depth",
-            "n_changes": n_meta_phrase,
-            "description": (
-                "rewrote audit/compiler meta phrases reintroduced by "
-                "section restoration or final depth backfill"
-            ),
-        })
+    apply(
+        _normalize_public_meta_phrases, "public_meta_phrase_normalization_post_depth",
+        "rewrote audit/compiler meta phrases reintroduced by "
+        "section restoration or final depth backfill",
+    )
 
-    new_md, n_topic_slug = _normalize_public_topic_slug(new_md, manifest)
-    if n_topic_slug:
-        log.append({
-            "fix_type": "public_topic_slug_normalization_post_depth",
-            "n_changes": n_topic_slug,
-            "description": (
-                "re-normalized topic-pack slug tokens after section "
-                "restoration/backfill"
-            ),
-        })
+    apply(
+        _normalize_public_topic_slug, "public_topic_slug_normalization_post_depth",
+        "re-normalized topic-pack slug tokens after section "
+        "restoration/backfill",
+        manifest,
+    )
 
-    new_md, n_snake_label = _normalize_public_snake_case_labels(new_md)
-    if n_snake_label:
-        log.append({
-            "fix_type": "public_snake_case_label_normalization_post_depth",
-            "n_changes": n_snake_label,
-            "description": (
-                "re-normalized internal enum-style snake_case labels after "
-                "section restoration/backfill"
-            ),
-        })
+    apply(
+        _normalize_public_snake_case_labels, "public_snake_case_label_normalization_post_depth",
+        "re-normalized internal enum-style snake_case labels after "
+        "section restoration/backfill",
+    )
 
-    new_md, n_thesis_marker = _ensure_public_thesis_marker(new_md, manifest)
-    if n_thesis_marker:
-        log.append({
-            "fix_type": "public_thesis_marker_backfill_post_depth",
-            "n_changes": n_thesis_marker,
-            "description": (
-                "reinserted explicit public Abstract thesis marker after "
-                "section restoration/backfill"
-            ),
-        })
+    apply(
+        _ensure_public_thesis_marker, "public_thesis_marker_backfill_post_depth",
+        "reinserted explicit public Abstract thesis marker after "
+        "section restoration/backfill",
+        manifest,
+    )
 
     new_md, n_final_dup_paragraphs = _strip_exact_duplicate_public_paragraphs(
         new_md,
@@ -2898,24 +2687,16 @@ def apply_fixes(
             new_md, depth_log = _ensure_analytical_depth_floors(new_md)
             log.extend(depth_log)
 
-    new_md, n_final_pvalue_norm = _normalize_public_p_values(new_md)
-    if n_final_pvalue_norm:
-        log.append({
-            "fix_type": "public_p_value_normalization_final",
-            "n_changes": n_final_pvalue_norm,
-            "description": (
-                "re-normalized public p-values after all restoration and "
-                "numeric-role repair paths"
-            ),
-        })
+    apply(
+        _normalize_public_p_values, "public_p_value_normalization_final",
+        "re-normalized public p-values after all restoration and "
+        "numeric-role repair paths",
+    )
 
-    new_md, n_final_thin = _strip_thin_analytic_paragraphs(new_md)
-    if n_final_thin:
-        log.append({
-            "fix_type": "thin_analytic_restrip_post_depth",
-            "n_changes": n_final_thin,
-            "description": "re-removed generic prose restored by depth guards",
-        })
+    apply(
+        _strip_thin_analytic_paragraphs, "thin_analytic_restrip_post_depth",
+        "re-removed generic prose restored by depth guards",
+    )
 
     return new_md, log
 
@@ -3774,6 +3555,7 @@ def _strip_unsourced_background_sentences(
     if not registry:
         return paper_md
 
+    receipt_numeric_tokens = _bg._receipt_numeric_tokens_by_citation(manifest, quant_claims_dir)
     sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])")
 
     def _is_markdown_table_paragraph(paragraph: str) -> bool:
@@ -3812,6 +3594,7 @@ def _strip_unsourced_background_sentences(
                     registry,
                     manifest=manifest,
                     quant_claims_dir=quant_claims_dir,
+                    receipt_numeric_tokens=receipt_numeric_tokens,
                 )
                 if unsourced:
                     drop = True

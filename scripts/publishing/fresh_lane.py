@@ -67,6 +67,8 @@ from agent.publishing.policy import (  # noqa: E402
 )
 from agent.publishing import topic_supply  # noqa: E402
 from agent.publishing.revision_lane import (  # noqa: E402
+    RevisionHistory,
+    revision_request_fingerprint as _revision_request_fingerprint,
     V3_AGENT_IDS,
     actionable_revisions as _actionable_revisions,
     review_agent_mismatch as _review_agent_mismatch,
@@ -76,13 +78,11 @@ from agent.publishing.revision_lane import (  # noqa: E402
     terminal_revision as _terminal_revision,
 )
 from agent.publishing.reconciliation import (  # noqa: E402
-    child_submission_counts as _child_submission_counts,
-    clear_unattributed_publication_reconciliation as _clear_unattributed_publication_reconciliation,
+    PublicationState,
     ledger_run_names as _ledger_run_names,
     ledger_submission_markers as _ledger_submission_markers_impl,
-    reconciled_publication_markers as _reconciled_publication_markers,
-    row_submission_markers as _row_submission_markers,
-    sync_reconciled_children as _sync_reconciled_children,
+    submission_count,
+    submission_day_summary,
 )
 from agent.revision_contract import ask_fingerprint  # noqa: E402
 from agent.revision_claim_trace import major_claim_trace_capacity  # noqa: E402
@@ -232,197 +232,35 @@ def _submit_ledger_paths_for_reconciliation(runs_root: Path, date: str | None) -
     return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
 
 
-def _refresh_submit_day_summary(ledger: dict[str, Any], runs_root: Path) -> bool:
-    date = str(ledger.get("date") or "")
-    if not DAY_KEY_RE.fullmatch(date):
-        return False
-    summary = ledger.get("day_summary")
-    summary = summary if isinstance(summary, dict) else {}
-    before = dict(summary)
-    durable_submitted = submit_bridge._submitted_count_for_date(
-        runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
-        date,
-    )
-    day_summary = {
-        "submitted": max(
-            durable_submitted,
-            int(ledger.get("submitted") or 0),
-            int(summary.get("submitted") or 0),
-        ),
-        "published": max(
-            int(ledger.get("published") or 0),
-            int(summary.get("published") or 0),
-        ),
-    }
-    if day_summary["submitted"] or day_summary["published"]:
-        ledger["day_summary"] = day_summary
-    return ledger.get("day_summary") != before
-
-
-def _publication_markers_for_run(runs_root: Path, run_name: str) -> set[str]:
-    paper = runs_root / run_name / "full_paper.md"
-    if not paper.exists():
-        return set()
-    markers = {submit_bridge._sha256(paper)}
-    title = submit_bridge._paper_title(paper)
-    if title:
-        markers.add(submit_bridge._title_marker(title))
-    return markers
-
-
-def _submitted_title_marker_counts(runs_root: Path) -> Counter[str]:
-    run_names: set[str] = set()
-    for ledger_dir in (runs_root / LEDGER_DIR, runs_root / submit_bridge.LEDGER_DIR):
-        for path in ledger_dir.glob("*.json"):
-            if path.name.startswith("_"):
-                continue
-            ledger = _read_json(path)
-            if int(ledger.get("submitted") or 0):
-                run_names.update(_ledger_run_names(ledger))
-    for row in submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"):
-        raw_run = row.get("run")
-        if isinstance(raw_run, str) and raw_run:
-            run_names.add(raw_run)
-    counts: Counter[str] = Counter()
-    for run_name in run_names:
-        paper = runs_root / run_name / "full_paper.md"
-        if paper.exists():
-            marker = submit_bridge._title_marker(submit_bridge._paper_title(paper))
-            if marker:
-                counts[marker] += 1
-    return counts
-
-
-def _remote_has_submission_marker(remote_seen: set[str]) -> bool:
-    return any(marker.startswith("submission:") for marker in remote_seen)
-
-
-def _publication_matches_for_run(
-    runs_root: Path,
-    run_name: str,
-    remote_seen: set[str],
-    title_marker_counts: Counter[str],
-) -> set[str]:
-    matches = _publication_markers_for_run(runs_root, run_name) & remote_seen
-    if not matches:
-        return set()
-    paper = runs_root / run_name / "full_paper.md"
-    if not paper.exists():
-        return matches
-    title_marker = submit_bridge._title_marker(submit_bridge._paper_title(paper))
-    if title_marker in matches and title_marker_counts.get(title_marker, 0) > 1:
-        matches.remove(title_marker)
-    return matches
-
-
 def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
     return _ledger_submission_markers_impl(
-        ledger,
-        submission_ids_from_response=submit_bridge._submission_ids_from_response,
+        ledger, submission_ids_from_response=submit_bridge._submission_ids_from_response,
         submission_marker=submit_bridge._submission_marker,
     )
 
 
-def _submit_bridge_submission_markers_by_run(runs_root: Path, run_names: set[str]) -> dict[str, set[str]]:
-    if not run_names:
-        return {}
-    markers_by_run: dict[str, set[str]] = {}
-    ledger_dir = runs_root / submit_bridge.LEDGER_DIR
-    for path in ledger_dir.glob("*.json"):
-        if path.name.startswith("_"):
-            continue
-        ledger = _read_json(path)
-        submissions = ledger.get("submissions")
-        if isinstance(submissions, list):
-            for submission in submissions:
-                if not isinstance(submission, dict):
-                    continue
-                candidate = submission.get("candidate")
-                run_name = candidate.get("run") if isinstance(candidate, dict) else None
-                if isinstance(run_name, str) and run_name in run_names:
-                    markers_by_run.setdefault(run_name, set()).update(
-                        _ledger_submission_markers(submission),
-                    )
-            continue
-        matched_runs = set(_ledger_run_names(ledger)) & run_names
-        if matched_runs:
-            markers = _ledger_submission_markers(ledger)
-            for run_name in matched_runs:
-                markers_by_run.setdefault(run_name, set()).update(markers)
-    for row in submit_bridge._ledger_rows(ledger_dir / "_submitted_fingerprints.json"):
-        raw_run = row.get("run")
-        if not isinstance(raw_run, str) or raw_run not in run_names:
-            continue
-        markers = markers_by_run.setdefault(raw_run, set())
-        submission_id = row.get("submission_id")
-        if isinstance(submission_id, str) and submission_id:
-            markers.add(submit_bridge._submission_marker(submission_id))
-        for key in ("fingerprint", "paper_sha256", *submit_bridge.PUBLICATION_IDENTITY_KEYS):
-            value = row.get(key)
-            if isinstance(value, str) and value:
-                markers.add(value if value.startswith("sha256:") else f"sha256:{value}")
-    return markers_by_run
-
-
-def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[str]) -> set[str]:
-    markers: set[str] = set()
-    for values in _submit_bridge_submission_markers_by_run(runs_root, run_names).values():
-        markers.update(values)
-    return markers
-
-
-def _ledger_publication_markers_for_runs(
-    ledger: dict[str, Any],
-    runs_root: Path,
-    run_names: set[str],
-) -> set[str]:
-    markers = set(_ledger_submission_markers(ledger))
-    markers.update(_submit_bridge_submission_markers_for_runs(runs_root, run_names))
-    for run_name in run_names:
-        markers.update(_publication_markers_for_run(runs_root, run_name))
-    return markers
-
-
-def _reconciled_publication_matches_ledger(ledger: dict[str, Any], runs_root: Path) -> bool:
-    matched = _reconciled_publication_markers(ledger)
-    if not matched:
-        return True
-    run_names = set(_ledger_run_names(ledger, submitted_only=False))
-    if matched & _ledger_publication_markers_for_runs(ledger, runs_root, run_names):
-        return True
-    return not any(value.startswith("submission:") for value in matched)
-
-
-def _matched_ledger_runs_for_markers(
-    ledger: dict[str, Any],
-    runs_root: Path,
-    matched: set[str],
-) -> set[str]:
-    run_names = set(_ledger_run_names(ledger, submitted_only=False))
-    marker_map = _submit_bridge_submission_markers_by_run(runs_root, run_names)
-    matched_runs = {
-        run_name for run_name, markers in marker_map.items()
-        if markers & matched
-    }
-    for run_name in run_names:
-        if _publication_markers_for_run(runs_root, run_name) & matched:
-            matched_runs.add(run_name)
-    attempts = ledger.get("attempts")
-    for attempt in attempts if isinstance(attempts, list) else []:
-        if not isinstance(attempt, dict):
-            continue
-        attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
-        if attempt_run and _row_submission_markers(attempt) & matched:
-            matched_runs.add(attempt_run)
-    submissions = ledger.get("submissions")
-    for submission in submissions if isinstance(submissions, list) else []:
-        if not isinstance(submission, dict):
-            continue
-        candidate = submission.get("candidate")
-        submission_run = candidate.get("run") if isinstance(candidate, dict) else None
-        if isinstance(submission_run, str) and _row_submission_markers(submission) & matched:
-            matched_runs.add(submission_run)
-    return matched_runs
+def _publication_state(runs_root: Path) -> tuple[PublicationState, dict[Path, dict[str, Any]]]:
+    paths = [
+        *(_ledger_paths_for_reconciliation(runs_root / LEDGER_DIR, None, None)),
+        *(_submit_ledger_paths_for_reconciliation(runs_root, None)),
+    ]
+    ledgers = {path: _read_json(path) for path in paths}
+    records = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    names = {name for ledger in ledgers.values() for name in _ledger_run_names(ledger, submitted_only=False)}
+    names.update(str(row["run"]) for row in records if isinstance(row.get("run"), str) and row["run"])
+    papers = {}
+    for name in names:
+        paper = runs_root / name / "full_paper.md"
+        if paper.exists():
+            papers[name] = {submit_bridge._sha256(paper)}
+            if title := submit_bridge._paper_title(paper):
+                papers[name].add(submit_bridge._title_marker(title))
+    return PublicationState(
+        list(ledgers.values()), [row for path, row in ledgers.items() if path.parent.name == submit_bridge.LEDGER_DIR],
+        records, papers,
+        _ledger_submission_markers,
+        submit_bridge.PUBLICATION_IDENTITY_KEYS,
+    ), ledgers
 
 
 def _review_decision_summary(rows: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -479,33 +317,6 @@ def _publication_receipts_by_marker(
     return receipts
 
 
-def _apply_publication_receipt(
-    ledger: dict[str, Any],
-    matched: set[str],
-    receipts_by_marker: dict[str, dict[str, Any]] | None,
-) -> bool:
-    if not receipts_by_marker:
-        return False
-    receipt = next(
-        (receipts_by_marker[marker] for marker in sorted(matched) if marker in receipts_by_marker),
-        None,
-    )
-    if not receipt:
-        return False
-    reconciliation = ledger.get("publication_reconciliation")
-    reconciliation = reconciliation if isinstance(reconciliation, dict) else {}
-    reconciled_at = str(reconciliation.get("reconciled_at") or dt.datetime.now(dt.UTC).isoformat())
-    changed = False
-    for key, value in {**receipt, "reconciled": True, "reconciled_at": reconciled_at}.items():
-        if ledger.get(key) != value:
-            ledger[key] = value
-            changed = True
-    for key, value in receipt.items():
-        if reconciliation.get(key) != value:
-            reconciliation[key] = value
-            changed = True
-    ledger["publication_reconciliation"] = reconciliation
-    return changed
 
 
 def _write_reconcile_artifact(
@@ -525,106 +336,6 @@ def _write_reconcile_artifact(
     })
 
 
-def _reconcile_published_ledger(
-    ledger: dict[str, Any],
-    runs_root: Path,
-    remote_seen: set[str],
-    title_marker_counts: Counter[str] | None = None,
-    receipts_by_marker: dict[str, dict[str, Any]] | None = None,
-) -> bool:
-    changed = False
-    if int(ledger.get("published") or 0):
-        if not _reconciled_publication_matches_ledger(ledger, runs_root):
-            changed = _clear_unattributed_publication_reconciliation(ledger)
-        else:
-            matched = _reconciled_publication_markers(ledger)
-            if matched:
-                existing_matched_runs = _matched_ledger_runs_for_markers(ledger, runs_root, matched)
-                changed = _sync_reconciled_children(ledger, existing_matched_runs, matched) or changed
-                changed = _apply_publication_receipt(ledger, matched, receipts_by_marker) or changed
-            if str(ledger.get("status") or "") != "published":
-                ledger["status"] = "published"
-                changed = True
-            child_submitted, child_published = _child_submission_counts(ledger)
-            if child_submitted and int(ledger.get("submitted") or 0) < child_submitted:
-                ledger["submitted"] = child_submitted
-                changed = True
-            if child_published and int(ledger.get("published") or 0) < child_published:
-                ledger["published"] = child_published
-                changed = True
-            before = len(ledger)
-            ledger.pop("no_submission_reason", None)
-            return changed or len(ledger) != before
-    matches: set[str] = set()
-    matched_runs: set[str] = set()
-    submitted_runs = set(_ledger_run_names(ledger))
-    title_marker_counts = title_marker_counts or _submitted_title_marker_counts(runs_root)
-    if int(ledger.get("submitted") or 0):
-        exact_markers = _ledger_submission_markers(ledger) or _submit_bridge_submission_markers_for_runs(runs_root, submitted_runs)
-        if exact_markers:
-            matches.update(exact_markers & remote_seen)
-            if not matches and _remote_has_submission_marker(remote_seen):
-                return changed
-        if not matches:
-            for run_name in submitted_runs:
-                run_matches = _publication_matches_for_run(runs_root, run_name, remote_seen, title_marker_counts)
-                if run_matches:
-                    matched_runs.add(run_name)
-                    matches.update(run_matches)
-    else:
-        marker_map = _submit_bridge_submission_markers_by_run(
-            runs_root,
-            set(_ledger_run_names(ledger, submitted_only=False)),
-        )
-        for run_name, markers in marker_map.items():
-            run_matches = markers & remote_seen
-            if run_matches:
-                matched_runs.add(run_name)
-                matches.update(run_matches)
-        if not matches:
-            return changed
-    if not matches:
-        return changed
-    if not submitted_runs:
-        submitted_runs = matched_runs
-    if not matched_runs and matches:
-        matched_runs = _matched_ledger_runs_for_markers(ledger, runs_root, matches)
-    ledger["status"] = "published"
-    ledger.pop("no_submission_reason", None)
-    ledger["publication_reconciliation"] = {
-        "source": "remote_publications",
-        "matched": sorted(matches)[:5],
-        "reconciled_at": dt.datetime.now(dt.UTC).isoformat(),
-    }
-    _apply_publication_receipt(ledger, matches, receipts_by_marker)
-    attempts = ledger.get("attempts")
-    for attempt in attempts if isinstance(attempts, list) else []:
-        if not isinstance(attempt, dict):
-            continue
-        attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
-        if not attempt_run or attempt_run in matched_runs or (not matched_runs and attempt_run in submitted_runs):
-            attempt["submitted"] = 1
-            attempt["published"] = 1
-    submissions = ledger.get("submissions")
-    for submission in submissions if isinstance(submissions, list) else []:
-        if not isinstance(submission, dict):
-            continue
-        values = submission.get("submission_markers")
-        submission_markers = set()
-        if isinstance(values, list):
-            submission_markers = {
-                value for value in values
-                if isinstance(value, str) and value.startswith("submission:")
-            }
-        candidate = submission.get("candidate")
-        submission_run = candidate.get("run") if isinstance(candidate, dict) else None
-        if submission_markers & matches or (isinstance(submission_run, str) and submission_run in matched_runs):
-            submission["submitted"] = 1
-            submission["published"] = 1
-    child_submitted, child_published = _child_submission_counts(ledger)
-    ledger["submitted"] = max(int(ledger.get("submitted") or 0), child_submitted, 1)
-    ledger["published"] = max(int(ledger.get("published") or 0), child_published, 1)
-    return True
 
 
 def _reconcile_publication_ledgers_unlocked(
@@ -640,7 +351,6 @@ def _reconcile_publication_ledgers_unlocked(
         result = {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
         _write_reconcile_artifact(ledger_dir, date=date, mode=mode, result=result)
         return result
-    title_marker_counts = _submitted_title_marker_counts(runs_root)
     decision_records = 0
     decision_seen: set[str] = set()
     decision_summary: dict[str, Any] = {"counts": {}, "records": []}
@@ -658,41 +368,32 @@ def _reconcile_publication_ledgers_unlocked(
             receipts_by_marker = _publication_receipts_by_marker(latest_decisions)
             decision_records = len(latest_decisions)
             decision_summary = _review_decision_summary(latest_decisions)
+    state, snapshot = _publication_state(runs_root)
+    now = dt.datetime.now(dt.UTC).isoformat()
     checked = 0
     updated: list[str] = []
-    for ledger_path in _ledger_paths_for_reconciliation(ledger_dir, date, mode):
-        ledger = _read_json(ledger_path)
+    paths = [
+        *((path, False) for path in _ledger_paths_for_reconciliation(ledger_dir, date, mode)),
+        *((path, True) for path in _submit_ledger_paths_for_reconciliation(runs_root, date)),
+    ]
+    for ledger_path, submit_ledger in paths:
+        ledger = snapshot.get(ledger_path, {})
         if not ledger:
             continue
         checked += 1
-        changed = _reconcile_published_ledger(
-            ledger, runs_root, remote_seen, title_marker_counts, receipts_by_marker,
-        )
+        changed = state.reconcile(ledger, remote_seen, receipts_by_marker, now=now)
         if not changed and decision_seen:
-            changed = _reconcile_published_ledger(
-                ledger, runs_root, decision_seen, title_marker_counts, receipts_by_marker,
-            )
+            changed = state.reconcile(ledger, decision_seen, receipts_by_marker, now=now)
+        if submit_ledger and int(ledger.get("published") or 0):
+            if DAY_KEY_RE.fullmatch(day := str(ledger.get("date") or "")):
+                summary = submission_day_summary(ledger, submission_count(state.records, day))
+                changed = summary != ledger.get("day_summary") or changed
+                ledger["day_summary"] = summary
         if changed:
             _write_json(ledger_path, ledger)
-            _record_daily_throughput(ledger_dir, ledger)
-            updated.append(ledger_path.name)
-    for ledger_path in _submit_ledger_paths_for_reconciliation(runs_root, date):
-        ledger = _read_json(ledger_path)
-        if not ledger:
-            continue
-        checked += 1
-        changed = _reconcile_published_ledger(
-            ledger, runs_root, remote_seen, title_marker_counts, receipts_by_marker,
-        )
-        if not changed and decision_seen:
-            changed = _reconcile_published_ledger(
-                ledger, runs_root, decision_seen, title_marker_counts, receipts_by_marker,
-            )
-        if int(ledger.get("published") or 0):
-            changed = _refresh_submit_day_summary(ledger, runs_root) or changed
-        if changed:
-            _write_json(ledger_path, ledger)
-            updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}")
+            if not submit_ledger:
+                _record_daily_throughput(ledger_dir, ledger)
+            updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}" if submit_ledger else ledger_path.name)
     result = {
         "status": "publication_reconciled" if updated else "no_publication_reconciliation_needed",
         "checked": checked,
@@ -1664,207 +1365,37 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
     return sorted(out, key=_review_ts, reverse=True), None
 
 
-def _revision_identity(row: dict[str, Any]) -> tuple[str, str]:
-    return str(row.get("submissionId") or row.get("submission_id") or "").strip(), str(row.get("artifactId") or row.get("artifact_id") or "").strip()
-
-
-def _revision_identity_applies(row: dict[str, Any], submission_id: str, artifact_id: str) -> bool:
-    if not (submission_id or artifact_id):
-        return True
-    row_submission, row_artifact = _revision_identity(row)
-    comparisons = [(row_submission, submission_id), (row_artifact, artifact_id)]
-    comparable = [(left, right) for left, right in comparisons if left and right]
-    return all(left == right for left, right in comparable) if comparable else not submission_id and not (row_submission or row_artifact)
-
-
-def _revision_request_fingerprint(row: dict[str, Any]) -> str:
-    identity = [*_revision_identity(row), str(row.get("reviewedAt") or row.get("reviewed_at") or ""), str(row.get("failure_category") or row.get("failureCategory") or ""), *sorted(_required_revision_items(row))]
-    return ask_fingerprint(identity)
-
-
-def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
-    """Revision keys (paper-title markers) that have hit the per-paper round
-    cap for the active reviewer request. A paper may be re-processed up to
-    MAX_REVISE_ROUNDS times per request; older handled rows do not exhaust a
-    newer reviewedAt for the same title. Counting is by title — Researka mints
-    a new artifactId per submission, so artifactId counts never accumulate."""
-    data = _read_json(ledger_dir / HANDLED_REVISIONS)
-    rows = data.get("handled")
-    if not isinstance(rows, list):
-        return set()
-    active_reviewed = {
-        _revision_key(row): _parse_review_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
-        for row in (active_requests or [])
-    }
-    active_identities = {_revision_key(row): _revision_identity(row) for row in active_requests or []}
-    active_fingerprints = {_revision_key(row): _revision_request_fingerprint(row) for row in active_requests or []}
-
-    def _row_applies_to_active_request(row: dict[str, Any]) -> bool:
-        key = _revision_key(row)
-        if key not in active_reviewed:
-            return True
-        reviewed_at = active_reviewed[key]
-        stored_fingerprint = str(row.get("request_fingerprint") or "")
-        if stored_fingerprint:
-            return stored_fingerprint == active_fingerprints.get(key)
-        active_submission, active_artifact = active_identities.get(key, ("", ""))
-        if not _revision_identity_applies(row, active_submission, active_artifact):
-            return False
-        if reviewed_at is None:
-            return True
-        handled_at = _parse_time(str(row.get("handled_at") or ""))
-        return bool(handled_at and handled_at >= reviewed_at)
-
-    def _submitted_row_is_superseded_by_active_decision(row: dict[str, Any]) -> bool:
-        if str(row.get("status") or "") != "submitted_to_researka":
-            return False
-        active_submission = active_identities.get(_revision_key(row), ("", ""))[0]
-        if not active_submission:
-            return False
-        row_submission_id = _revision_identity(row)[0]
-        return not row_submission_id or row_submission_id == active_submission
-
-    def _counts_toward_current_round_cap(row: dict[str, Any]) -> bool:
-        status = str(row.get("status") or "")
-        return (
-            status not in _RETRYABLE_REVISION_STATUSES
-            or str(row.get("repair_epoch") or "") == str(REVISION_REPAIR_EPOCH)
-        )
-
-    # Round-cap counting only: collapse affix variants ("— full paper", the
-    # "Research Synthesis:" prefix) onto one canonical key, else the same paper
-    # gets a fresh MAX_REVISE_ROUNDS budget per spelling (observed: one topic
-    # resubmitted 20x across 3 variants). terminal/reopen keys stay raw so
-    # repairable-terminal reopening is unaffected.
-    def _cap_key(title: str) -> str:
-        markers = submit_bridge._title_markers(title)
-        return min(markers, key=lambda m: (len(m), m)) if markers else ""
-
-    counts = Counter(
-        _cap_key(str(row.get("title") or ""))
-        for row in rows
-        if (
-            isinstance(row, dict)
-            and row.get("title")
-            and _row_applies_to_active_request(row)
-            and not _submitted_row_is_superseded_by_active_decision(row)
-            and _counts_toward_current_round_cap(row)
-        )
-    )
-    terminal = {
-        submit_bridge._title_marker(str(row.get("title") or ""))
-        for row in rows
-        if (
-            isinstance(row, dict)
-            and row.get("title")
-            and str(row.get("status") or "") in (_TERMINAL_REVISION_STATUSES | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES)
-            and _row_applies_to_active_request(row)
-        )
-    }
-    # Callers look up by raw marker: re-expand each capped canonical key to the
-    # spellings seen for that paper. Only the capped set expands; terminal is
-    # untouched so repairable-terminal reopening still works.
-    capped = {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
-    titles = [str(r.get("title") or "") for r in rows if isinstance(r, dict) and r.get("title")]
-    handled = terminal | {submit_bridge._title_marker(t) for t in titles if _cap_key(t) in capped}
-    for row in rows:
-        if not isinstance(row, dict) or row.get("status") != "submitted_to_researka":
-            continue
-        if _submitted_row_is_superseded_by_active_decision(row):
-            continue
-        key = _revision_key(row)
-        handled_at = _parse_time(str(row.get("handled_at") or ""))
-        reviewed_at = active_reviewed.get(key)
-        if reviewed_at is None or (handled_at and handled_at >= reviewed_at):
-            handled.add(key)
-    return handled
-
-
-def _handled_revision_statuses(
-    ledger_dir: Path,
-    key: str,
-    reviewed_at: str = "",
-    request_fingerprint: str = "",
-    submission_id: str = "",
-    artifact_id: str = "",
-) -> tuple[str, ...]:
-    rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
-    if not isinstance(rows, list):
-        return ()
-    reviewed = _parse_review_time(reviewed_at)
-    statuses: list[str] = []
-    for row in rows:
-        if not isinstance(row, dict) or str(row.get("key") or _revision_key(row)) != key:
-            continue
-        status = str(row.get("status") or "")
-        stored_fingerprint = str(row.get("request_fingerprint") or "")
-        if request_fingerprint and stored_fingerprint and stored_fingerprint != request_fingerprint:
-            continue
-        identity_scoped = status not in (_TERMINAL_REVISION_STATUSES | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES)
-        if request_fingerprint and not stored_fingerprint and identity_scoped and not _revision_identity_applies(row, submission_id, artifact_id):
-            continue
-        handled_at = _parse_time(str(row.get("handled_at") or ""))
-        if reviewed and handled_at and handled_at < reviewed:
-            continue
-        if (
-            status in _RETRYABLE_REVISION_STATUSES
-            and str(row.get("repair_epoch") or "") != str(REVISION_REPAIR_EPOCH)
-        ):
-            continue
-        if status:
-            statuses.append(status)
-    return tuple(statuses)
-
-
 def _revision_key(row: dict[str, Any]) -> str:
-    # Title-first so the round cap is per-paper, not per-submission: Researka
-    # assigns a new artifactId per submission, which would otherwise reset the
-    # count every round and let a never-converging paper loop forever.
+    # Title-first: new submission IDs must not reset a paper's round cap.
     return submit_bridge._title_marker(str(row.get("title") or "")) or str(row.get("artifactId") or row.get("submissionId") or "")
 
 
-def _compact_handled_revision_rows(rows: list[Any]) -> list[dict[str, Any]]:
-    def _row_time(row: dict[str, Any]) -> dt.datetime:
-        return _parse_time(str(row.get("handled_at") or "")) or dt.datetime.min.replace(tzinfo=dt.UTC)
-
-    def _round_priority(row: dict[str, Any]) -> tuple[bool, dt.datetime]:
-        status = str(row.get("status") or "")
-        current = (
-            status not in _RETRYABLE_REVISION_STATUSES
-            or str(row.get("repair_epoch") or "") == str(REVISION_REPAIR_EPOCH)
-        )
-        return current, _row_time(row)
-
-    grouped: dict[str, list[dict[str, Any]]] = {}
-    for row in rows:
-        if not isinstance(row, dict):
-            continue
-        key = _revision_key(row) or str(row.get("key") or "")
-        if key:
-            grouped.setdefault(key, []).append({**row, "key": key})
-    compacted: list[dict[str, Any]] = []
-    durable_statuses = (
-        _TERMINAL_REVISION_STATUSES
-        | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
-        | {"submitted_to_researka"}
+def _revision_history(rows: object) -> RevisionHistory:
+    return RevisionHistory(
+        rows, key=_revision_key, title_markers=submit_bridge._title_markers,
+        title_marker=submit_bridge._title_marker, parse_review_time=_parse_review_time,
+        terminal=_TERMINAL_REVISION_STATUSES | _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES,
+        retryable=_RETRYABLE_REVISION_STATUSES, epoch=str(REVISION_REPAIR_EPOCH),
+        max_rounds=MAX_REVISE_ROUNDS,
     )
-    for group in grouped.values():
-        durable: dict[str, dict[str, Any]] = {}
-        recent: list[dict[str, Any]] = []
-        for row in group:
-            status = str(row.get("status") or "")
-            if status in durable_statuses:
-                prior = durable.get(status)
-                if prior is None or _row_time(row) >= _row_time(prior):
-                    durable[status] = row
-            else:
-                recent.append(row)
-        selected = [
-            *sorted(recent, key=_round_priority)[-MAX_REVISE_ROUNDS:],
-            *durable.values(),
-        ]
-        compacted.extend(selected)
-    return sorted(compacted, key=_row_time)
+
+
+def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
+    return _revision_history(_read_json(ledger_dir / HANDLED_REVISIONS).get("handled")).handled(active_requests or ())
+
+
+def _handled_revision_statuses(
+    ledger_dir: Path, key: str, reviewed_at: str = "", request_fingerprint: str = "",
+    submission_id: str = "", artifact_id: str = "",
+) -> tuple[str, ...]:
+    return _revision_history(_read_json(ledger_dir / HANDLED_REVISIONS).get("handled")).statuses(key, {
+        "reviewedAt": reviewed_at, "request_fingerprint": request_fingerprint,
+        "submissionId": submission_id, "artifactId": artifact_id,
+    })
+
+
+def _compact_handled_revision_rows(rows: list[Any]) -> list[dict[str, Any]]:
+    return _revision_history(rows).compact()
 
 
 def _mark_revision_handled(
@@ -1980,6 +1511,34 @@ def _source_manifest_receipt_contract_hash(
     ).hexdigest()
 
 
+def _revision_observations(
+    runs_root: Path, ledger_dir: Path, loader: RevisionLoader | None,
+    published_loader: PublishedLoader | None, exclude_keys: set[str] | None = None,
+) -> tuple[list[dict[str, Any]], str | None, RevisionHistory, set[str], list[tuple[dict[str, Any], Path, str, str]]]:
+    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root)
+    if error:
+        return [], error, _revision_history([]), set(), []
+    rows = [row for row in rows if _revision_key(row) not in (exclude_keys or set())]
+    history = _revision_history(_read_json(ledger_dir / HANDLED_REVISIONS).get("handled"))
+    remote_seen, _ = published_loader() if published_loader else (set(), None)
+    records = []
+    for record in submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"):
+        run = runs_root / str(record.get("run") or "")
+        paper = run / "full_paper.md"
+        if paper.exists():
+            records.append((record, run, str(record.get("topic") or submit_bridge._run_topic(run)),
+                            submit_bridge._title_marker(submit_bridge._paper_title(paper))))
+    return rows, None, history, remote_seen, records
+
+
+def _matching_revision_records(request, records, *, match_fingerprint=False):
+    title = submit_bridge._title_marker(str(request.get("title") or ""))
+    topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
+    return [(record, run, record_topic) for record, run, record_topic, marker in records
+            if title == marker or (match_fingerprint and title == str(record.get("fingerprint") or ""))
+            or (topic and topic == submit_bridge._normalized_key(record_topic))]
+
+
 def _pending_remote_revision(
     runs_root: Path,
     ledger_dir: Path,
@@ -1988,33 +1547,15 @@ def _pending_remote_revision(
     published_loader: PublishedLoader | None = None,
     exclude_keys: set[str] | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
-    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root)
+    rows, error, history, remote_seen, records = _revision_observations(
+        runs_root, ledger_dir, loader, published_loader, exclude_keys,
+    )
     if error:
         return None, error
-    if exclude_keys:
-        rows = [row for row in rows if _revision_key(row) not in exclude_keys]
-    handled = _handled_revision_ids(ledger_dir, rows)
-    remote_seen: set[str] = set()
-    if published_loader is not None:
-        remote_seen, _remote_error = published_loader()
-    records = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    handled = history.handled(rows)
     for request in rows:
         request_key = _revision_key(request)
-        title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
-        request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
-        matches: list[tuple[dict[str, Any], Path, str]] = []
-        for record in records:
-            run = runs_root / str(record.get("run") or "")
-            paper = run / "full_paper.md"
-            if not paper.exists():
-                continue
-            record_topic = str(record.get("topic") or submit_bridge._run_topic(run))
-            markers = {
-                str(record.get("fingerprint") or ""),
-                submit_bridge._title_marker(submit_bridge._paper_title(paper)),
-            }
-            if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
-                matches.append((record, run, record_topic))
+        matches = _matching_revision_records(request, records, match_fingerprint=True)
         request_submission_id = str(request.get("submissionId") or request.get("submission_id") or "").strip()
         request_reviewed = _review_ts(request)
         if any(
@@ -2038,12 +1579,9 @@ def _pending_remote_revision(
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
         if request_key in handled:
-            handled_status_rows = _handled_revision_statuses(
-                ledger_dir, request_key, str(request.get("reviewedAt") or request.get("reviewed_at") or ""),
-                _revision_request_fingerprint(request),
-                str(request.get("submissionId") or request.get("submission_id") or ""),
-                str(request.get("artifactId") or request.get("artifact_id") or ""),
-            )
+            handled_status_rows = history.statuses(request_key, {
+                **request, "request_fingerprint": _revision_request_fingerprint(request),
+            })
             retryable_failures = sum(
                 status in _RETRYABLE_REVISION_STATUSES for status in handled_status_rows
             )
@@ -2136,35 +1674,19 @@ def _pending_remote_revision_topics(
     loader: RevisionLoader | None = None,
     published_loader: PublishedLoader | None = None,
 ) -> tuple[set[str], str | None]:
-    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root)
+    rows, error, history, remote_seen, records = _revision_observations(
+        runs_root, ledger_dir, loader, published_loader,
+    )
     if error:
         return set(), error
-    handled = _handled_revision_ids(ledger_dir, rows)
-    remote_seen: set[str] = set()
-    if published_loader is not None:
-        remote_seen, _remote_error = published_loader()
-    records = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    handled = history.handled(rows)
     out: set[str] = set()
     for request in rows:
         if _revision_key(request) in handled:
             continue
-        title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
-        request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
-        matched_topics: set[str] = set()
-        matched_published = False
-        for record in records:
-            run = runs_root / str(record.get("run") or "")
-            paper = run / "full_paper.md"
-            if not paper.exists():
-                continue
-            record_topic = str(record.get("topic") or submit_bridge._run_topic(run))
-            if title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)) or (
-                request_topic and request_topic == submit_bridge._normalized_key(record_topic)
-            ):
-                matched_topics.add(record_topic)
-                matched_published = matched_published or _submitted_record_is_published(record, paper, remote_seen)
-        if not matched_published:
-            out.update(matched_topics)
+        matches = _matching_revision_records(request, records)
+        if not any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
+            out.update(topic for _record, _run, topic in matches)
     return out, None
 
 
@@ -3685,37 +3207,13 @@ def _submit_current_candidate(
     remote_seen: set[str],
     candidate_run: Path,
 ) -> dict[str, Any]:
-    bridge = submit_bridge.run_cycle(
+    return submit_bridge.run_cycle(
         runs_root=runs_root,
         date=date,
         submit=submit,
         remote_loader=(lambda: (remote_seen, None)) if submit else None,
         candidate_run=candidate_run,
     )
-    if bridge.get("status") != "no_eligible_research_paper":
-        return bridge
-    candidate_path, considered = submit_bridge.select_candidate(
-        runs_root,
-        runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
-        remote_seen=remote_seen,
-        candidate_run=candidate_run,
-    )
-    if candidate_path is None:
-        return bridge
-    first_bridge = bridge
-    bridge = submit_bridge.run_cycle(
-        runs_root=runs_root,
-        date=date,
-        submit=submit,
-        remote_loader=(lambda: (remote_seen, None)) if submit else None,
-        candidate_run=candidate_run,
-    )
-    bridge["retry_after_no_eligible"] = {
-        "first_status": first_bridge.get("status"),
-        "first_considered": first_bridge.get("considered"),
-        "eligibility_recheck": considered,
-    }
-    return bridge
 
 
 def _should_retry_same_topic(attempt: dict[str, Any], *, auto_selected: bool = True) -> bool:
@@ -4032,31 +3530,8 @@ def prepare_candidate_buffer(
         if not topic:
             break
         attempted.add(topic)
-        preflight = _receipt_preflight(
-            topic, runs_root / "_candidate_prepare" / topic, timeout=timeout, repair=False, dry_run=dry_run,
-        )
-        quant_claims = _quant_claim_count(topic)
-        source_precise, source_precision, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
-        decision = decide_candidate(
-            topic,
-            review_type=None,
-            evidence=CandidateEvidence(
-                n_quant_claims=quant_claims,
-                n_receipts=int(preflight.get("n_receipts") or 0),
-                n_primary_tier=int(preflight.get("n_primary_tier") or 0),
-                n_direct_receipts=int(preflight.get("n_direct_receipts") or 0),
-                source_precision_ok=source_precise,
-            ),
-            thresholds=_CANDIDATE_THRESHOLDS,
-        )
-        ready = decision.ready_for_synthesis and preflight.get("passed") is True
         repair: dict[str, Any] = {"status": "not_needed"}
-        if not ready and report["repair_count"] < max_repairs:
-            if source_precise:
-                repair = _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
-            else:
-                repair = _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
-            report["repair_count"] += 1
+        for observation in range(2):
             preflight = _receipt_preflight(topic, runs_root / "_candidate_prepare" / topic, timeout=timeout, repair=False, dry_run=dry_run)
             quant_claims = _quant_claim_count(topic)
             source_precise, source_precision, _ = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
@@ -4073,8 +3548,16 @@ def prepare_candidate_buffer(
                 thresholds=_CANDIDATE_THRESHOLDS,
             )
             ready = decision.ready_for_synthesis and preflight.get("passed") is True
-        elif not ready:
-            repair = {"status": "repair_budget_exhausted"}
+            if ready or observation:
+                break
+            if report["repair_count"] >= max_repairs:
+                repair = {"status": "repair_budget_exhausted"}
+                break
+            repair = (
+                _repair_topic_corpus(topic, dry_run=dry_run, timeout=timeout, force_extract=True)
+                if source_precise else _repair_low_source_precision_corpus(topic, dry_run=dry_run, timeout=timeout)
+            )
+            report["repair_count"] += 1
         binding = _current_candidate_binding(topic) if ready else None
         ready = ready and binding is not None
         row = {

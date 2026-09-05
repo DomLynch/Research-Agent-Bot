@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import io
 import json
 import sys
 import tempfile
@@ -317,7 +318,7 @@ def test_fresh_publish_continues_after_frontier_seed_stays_thin(tmp_path: Path, 
     assert ledger["submitted_topic"] == "bbb_ready"
 
 
-def test_fresh_publish_blocks_empty_claim_sidecars_before_synthesis(tmp_path: Path, monkeypatch) -> None:
+def test_fresh_publish_blocks_empty_claim_sidecars_before_synthesis(tmp_path: Path, monkeypatch, failed_corpus_process) -> None:
     _topic(tmp_path, "empty_claim_sidecars", corpus=False, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
@@ -432,6 +433,22 @@ def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path:
 
 
 @pytest.fixture(autouse=True)
+def _offline_environment(monkeypatch):
+    monkeypatch.setenv("RESEARKA_REVIEWS_URL", "https://reviews.test")
+
+    def urlopen(request, **_kwargs):
+        assert request.full_url == "https://reviews.test", "unexpected HTTP request"
+        return io.BytesIO(b'{"reviews": []}')
+
+    def git_head(command, **_kwargs):
+        assert command == ["git", "rev-parse", "HEAD"], "unexpected command"
+        return "a" * 40
+
+    monkeypatch.setattr(urllib.request, "urlopen", urlopen)
+    monkeypatch.setattr(cycle.subprocess, "check_output", git_head)
+
+
+@pytest.fixture(autouse=True)
 def _offline_coverage_judge(monkeypatch):
     """The revision coverage judge calls a live model; default every test to
     "all asks met" so revise tests stay deterministic and offline. The four
@@ -440,6 +457,18 @@ def _offline_coverage_judge(monkeypatch):
     monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda out_dir: [])
     monkeypatch.setattr(cycle, "_abstract_overclaims", lambda out_dir: [])
     monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda out_dir: [])
+
+
+@pytest.fixture
+def failed_corpus_process(monkeypatch):
+    """No new evidence arrives from the external seed/probe CLI in these cases."""
+    def run(command, **_kwargs):
+        assert command[1] == "scripts/seed_topic_corpus.py" or (
+            command[1] == "scripts/run_v06_synthesis.py" and "--dry-run" in command
+        ), "unexpected corpus command"
+        return cycle.subprocess.CompletedProcess(command, 1, stdout="", stderr="fixture: corpus unavailable")
+
+    monkeypatch.setattr(cycle.subprocess, "run", run)
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -2013,7 +2042,7 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
 
 
 def test_candidate_buffer_invalidates_ready_count_when_source_precision_drifts(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failed_corpus_process,
 ) -> None:
     runs_root = tmp_path / "runs"
     ledger_dir = runs_root / cycle.LEDGER_DIR
@@ -3820,7 +3849,7 @@ def test_fresh_lane_excludes_unrepaired_source_precision_backlog(tmp_path: Path,
     assert calls["topic"] == "zzz_seed_candidate"
 
 
-def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_path: Path, monkeypatch) -> None:
+def test_fresh_lane_rechecks_preflight_cooldown_before_source_low_selection(tmp_path: Path, monkeypatch, failed_corpus_process) -> None:
     _topic(tmp_path, "aaa_low_source", target_journal=True)
     _topic(tmp_path, "zzz_clean_ready", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -4007,7 +4036,7 @@ def test_cycle_restricts_real_submit_bridge_to_current_run(
     assert calls["candidate_run"] == tmp_path / "runs" / ledger["attempts"][-1]["out_dir"]
 
 
-def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp_path: Path, monkeypatch) -> None:
+def test_cycle_does_not_reselect_after_submit_bridge_no_eligible(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "curcumin_inflammaging")
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
@@ -4054,8 +4083,7 @@ def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp
         return {"status": "submitted_to_researka", "submitted": 1, "published": 0}
 
     def fake_select_candidate(*_args: Any, candidate_run: Path | None = None, **_kwargs: Any) -> tuple[Path | None, list[dict[str, str]]]:
-        assert candidate_run is not None
-        return candidate_run, [{"run": candidate_run.name, "status": "eligible"}]
+        raise AssertionError("hidden reselection")
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
     monkeypatch.setattr(cycle.submit_bridge, "run_cycle", fake_submit_bridge)
@@ -4073,7 +4101,8 @@ def test_cycle_retries_real_submit_bridge_when_current_run_rechecks_eligible(tmp
 
     assert ledger["status"] == "submitted_to_researka"
     assert len(calls) == 2
-    assert ledger["submit_bridge"]["retry_after_no_eligible"]["eligibility_recheck"][0]["status"] == "eligible"
+    assert calls[0] != calls[1]  # Separate lane attempts, never a hidden same-run retry.
+    assert "retry_after_no_eligible" not in ledger["submit_bridge"]
 
 
 def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Path, monkeypatch) -> None:
@@ -4327,9 +4356,12 @@ def test_revise_cycle_resumes_timeout_checkpoint_with_original_parent(
         "resume_run": checkpoint.name,
     }]})
     availability_runs: list[Path] = []
-    monkeypatch.setattr(cycle, "_source_manifest_availability", lambda _topic, run, **_kwargs: (
-        availability_runs.append(run) or {"passed": True, "evidence_mode": "snapshot"}
-    ))
+
+    def available(_topic, run, **_kwargs):
+        availability_runs.append(run)
+        return {"passed": True, "evidence_mode": "snapshot"}
+
+    monkeypatch.setattr(cycle, "_source_manifest_availability", available)
     monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda *_a, **_k: [])
     monkeypatch.setattr(cycle, "_retracted_cited_sources", lambda *_a, **_k: [])
     monkeypatch.setattr(cycle, "_abstract_overclaims", lambda *_a, **_k: [])
@@ -6737,7 +6769,8 @@ def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monke
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
-def test_unmet_revision_asks_scopes_outcome_rename_to_public_manuscript(tmp_path: Path) -> None:
+def test_unmet_revision_asks_scopes_outcome_rename_to_public_manuscript(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle.revision_coverage, "unmet_asks", lambda *_a, **_k: [])
     out_dir = tmp_path / "run"
     out_dir.mkdir()
     (out_dir / "full_paper.md").write_text(
@@ -9264,7 +9297,8 @@ def test_external_authority_retry_reuses_unchanged_approved_run(tmp_path: Path, 
     assert (out / "full_paper.md").read_text(encoding="utf-8") == (source / "full_paper.md").read_text(encoding="utf-8")
     request = json.loads((out / "researka_revision_request.json").read_text(encoding="utf-8"))
     assert request["submissionId"] == "submission-1"
-    assert cycle.submit_bridge._revision_coverage_status(out) == "eligible"
+    verified = cycle.submit_bridge._refresh_revision_coverage_gate(out, request)
+    assert cycle.submit_bridge._revision_coverage_status(out, refreshed=verified) == "eligible"
     assert json.loads((out / cycle.REVISION_COVERAGE_GATE).read_text())["mode"] == "unchanged_external_verifier_retry"
 
 
@@ -10688,6 +10722,8 @@ def test_revise_mode_never_rotates_to_fresh_topic(tmp_path: Path, monkeypatch) -
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: (_ for _ in ()).throw(AssertionError("terminal sparse revise should not synthesise")))
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision",
+                        lambda *_a, **_k: (True, "source_topic_precision_ok:10/10", []))
     request = {
         "artifactId": "colchicine-review",
         "title": "Research Synthesis: Colchicine Inflammaging",
@@ -13314,6 +13350,8 @@ def test_revise_lane_allows_surface_repeat_after_new_ready_run(tmp_path: Path, m
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision",
+                        lambda *_a, **_k: (True, "source_topic_precision_ok:10/10", []))
     monkeypatch.setattr(cycle, "_ensure_topic_corpus", lambda *_a, **_k: {
         "status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS,
     })

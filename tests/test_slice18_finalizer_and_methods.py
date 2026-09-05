@@ -532,6 +532,7 @@ def test_phase_g_writes_consistency_before_readiness_contract(
         artifact_consistency=False,
     )
 
+    (run / "submission_package" / "final_manuscript.md").write_text("STALE")
     log = _phase_g_refresh_sidecars(run)
     gate = json.loads((run / "pre_submit_gate.json").read_text())
     item_13 = next(i for i in gate["journal_readiness_contract"] if i["id"] == 13)

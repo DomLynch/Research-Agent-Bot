@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-import os
+import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -12,21 +13,29 @@ sys.path.insert(0, str(REPO / "scripts"))
 import daily_research_paper_submit as submit  # type: ignore[import-not-found]  # noqa: E402
 
 
-_ROOT_CANDIDATES = [
-    Path(os.environ["RESEARKA_PREFLIGHT_QA_ROOT"]) if os.environ.get("RESEARKA_PREFLIGHT_QA_ROOT") else None,
-    REPO.parent / "Polish - Research agent",
-    Path("/opt/researka-preflight-qa"),
-    REPO.parent / "researka-preflight-qa",
-]
-# Hermetic: the external researka-preflight-qa repo is absent in many checkouts
-# (CI, /tmp worktrees). Resolve tolerantly and skip this module's tests rather
-# than raising StopIteration at import, which previously halted collection of
-# the ENTIRE suite. Set RESEARKA_PREFLIGHT_QA_ROOT to run them.
-PREFLIGHT_ROOT = next((path for path in _ROOT_CANDIDATES if path and path.is_dir()), None)
-requires_preflight = pytest.mark.skipif(
-    PREFLIGHT_ROOT is None,
-    reason="external researka-preflight-qa repo not present (set RESEARKA_PREFLIGHT_QA_ROOT)",
-)
+@pytest.fixture
+def preflight_cli(tmp_path: Path, monkeypatch):
+    """Exercise the real submission adapter against controlled CLI artifacts."""
+    tool_root = tmp_path / "qa"
+    tool_root.mkdir()
+    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tool_root))
+    monkeypatch.delenv("RESEARKA_PREFLIGHT_USE_M3", raising=False)
+    response = {"report": {"status": "pass", "blocked_reasons": [], "advisories": [
+        {"code": "doi_not_in_source_bundle", "severity": "critical"},
+    ]}}
+
+    def run(command, **kwargs):
+        assert command[:4] == [sys.executable, "-m", "preflight_qa", "check"]
+        assert command[4::2] == ["--input", "--out", "--clean-out"]
+        assert kwargs == dict(cwd=tool_root, text=True, capture_output=True, timeout=90, check=False)
+        response["input"] = json.loads(Path(command[5]).read_text())
+        Path(command[7]).write_text(json.dumps(response["report"]))
+        if "cleaned" in response:
+            Path(command[9]).write_text(json.dumps(response["cleaned"]))
+        return subprocess.CompletedProcess(command, 0, stdout="", stderr="")
+
+    monkeypatch.setattr(submit.subprocess, "run", run)
+    return response
 
 
 def _payload(body: str) -> dict:
@@ -88,17 +97,19 @@ def test_payload_source_bundle_excludes_cited_only_references(tmp_path: Path, mo
     assert "99999999" not in payload["body_markdown"]
 
 
-@requires_preflight
-def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch, preflight_cli) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
-    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
     run.mkdir()
 
     original = _payload("## Abstract\n\nThis may be limited.\n\nThis may be limited.\n\n## Result\n\nBounded.")
     original["abstract"] = "This may be limited. This may be limited."
+    preflight_cli.update(report={"status": "pass", "advisories": []}, cleaned=_payload(
+        "## Abstract\n\nThis may be limited.\n\n## Results\n\nBounded.",
+    ))
     payload, report = submit._run_preflight_qa(original, run)  # type: ignore[attr-defined]
 
+    assert preflight_cli["input"]["body_markdown"] == original["body_markdown"]
     assert report and report["status"] == "pass"
     assert payload is not None
     assert payload["body_markdown"].count("This may be limited.") == 1
@@ -110,10 +121,8 @@ def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, mon
     assert report["cleaned_hash"] == payload["metadata"]["submission_payload_hash"]
 
 
-@requires_preflight
-def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch, preflight_cli) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
-    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
     run.mkdir()
 
@@ -129,10 +138,8 @@ def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path,
     assert submit._read_json(run / "researka_preflight_report.json")["status"] == "blocked"  # type: ignore[attr-defined]
 
 
-@requires_preflight
-def test_final_preflight_live_mode_blocks_critical_advisory(tmp_path: Path, monkeypatch) -> None:
+def test_final_preflight_live_mode_blocks_critical_advisory(tmp_path: Path, monkeypatch, preflight_cli) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "live")
-    monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(PREFLIGHT_ROOT))
     run = tmp_path / "run"
     run.mkdir()
 
