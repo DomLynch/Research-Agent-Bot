@@ -7,10 +7,20 @@ Publishing selection is read-only; preparation and submission are explicit,
 with shared legacy-ledger projections and the existing submission lock.
 Scientific thresholds, provider routing and schedules are unchanged.
 
-Backup: sibling `Research Agent Bot backup 2026-09-05.dgPgrd`.
-Checks and independent audit: sibling `Research Agent Bot Audit - 2026-09-05`.
+Backup: `~/Desktop/_ARCHIVE/V3-2026-09-05/Research Agent Bot backup 2026-09-05.dgPgrd`.
+Checks and audit: `~/Desktop/_ARCHIVE/V3-2026-09-05/Research Agent Bot Audit - 2026-09-05`.
 These are pre-deployment checks, not a live publication receipt.
 Live recovery still requires a representative writer run and public outcome.
+
+## Canonical Checkout and Revision Gates - 2026-09-05
+Run V3 commands from `/Users/domininclynch/Desktop/Business/Research Agent Bot`.
+The archived backup is an ancestor; its only dirty test change already exists here.
+Revision refresh decisions already share `agent/revision_contract.py:gate_report`.
+Keep the wrappers' distinct contracts: finalizer returns whether its sidecar changed;
+submission returns whether verification completed. Their behavioral regression tests
+cover matching verdicts, stale approvals, failed verification, idempotence and locks.
+Optional diagnostics include a generated lifecycle test; randomization requires
+explicit `-p randomly`. No provider, schedule or publication threshold changed.
 
 ## Writer Route - 2026-09-04
 Main writer/extractor now uses OpenRouter `z-ai/glm-5.3-flash`, not the moving
