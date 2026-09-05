@@ -40,6 +40,8 @@ diagnostics = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = [".", "scripts"]
+# Diagnostics must not randomize ordinary hooks/CI; opt in with -p randomly.
+addopts = "-p no:randomly"
 # Auto-mode: pytest-asyncio treats `async def test_*` as async tests
 # without requiring per-test @pytest.mark.asyncio. Existing tests use
 # the marker explicitly; this keeps "strict" semantics consistent with

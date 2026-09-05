@@ -800,6 +800,67 @@ def test_gate_refresh_rejects_stale_unknown_ask_verdict(tmp_path: Path) -> None:
     assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
 
 
+def test_revision_gate_generated_lifecycle() -> None:
+    import tempfile
+    import pytest
+
+    hypothesis = pytest.importorskip("hypothesis")
+    st = pytest.importorskip("hypothesis.strategies")
+    actions = ("repair", "regress", "approve", "reject", "new_review", "missing_gate", "corrupt_gate")
+
+    @hypothesis.settings(max_examples=60, deadline=None, derandomize=True, database=None)
+    @hypothesis.example(["approve", "repair", "regress", "repair", "new_review", "approve", "corrupt_gate", "reject"])
+    @hypothesis.given(st.lists(st.sampled_from(actions), min_size=1, max_size=20))
+    def lifecycle(events: list[str]) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            run = Path(directory)
+            known = "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural corpus limitation."
+            rows = [{"citation_token": "Wick 2025", "directness": "indirect"}]
+            broken = "## Evidence Landscape\n\nBounded evidence.\n"
+            repaired, _ = repair_revision_quality(broken, rows, known)
+            paper, request, gate = (run / name for name in (
+                "full_paper.md", "researka_revision_request.json", "revision_coverage_gate.json",
+            ))
+            (run / "manifest.json").write_text(json.dumps({"receipts": rows}))
+            paper.write_text(broken)
+            repaired_now, review = False, 0
+            approved: bool | None = None
+            unknown = "Improve the Discussion's clinical interpretation (review 0)."
+            request.write_text(json.dumps({"required_revisions": [known, unknown]}))
+            for action in events:
+                if action in {"repair", "regress"}:
+                    repaired_now = action == "repair"
+                    paper.write_text(repaired if repaired_now else broken)
+                elif action in {"approve", "reject"}:
+                    approved = action == "approve"
+                    gate.write_text(json.dumps({
+                        "passed": approved, "ask_count": 2,
+                        "unmet_asks": [] if approved else [unknown],
+                        "ask_fingerprint": ask_fingerprint([known, unknown]),
+                    }))
+                elif action == "new_review":
+                    review += 1
+                    unknown = f"Improve the Discussion's clinical interpretation (review {review})."
+                    request.write_text(json.dumps({"required_revisions": [known, unknown]}))
+                    approved = None
+                else:
+                    gate.unlink(missing_ok=True)
+                    if action == "corrupt_gate":
+                        gate.write_text("{")
+                    approved = None
+                report = gate_report(run, revision_coverage, refreshed_by="test")
+                if approved is None:
+                    assert report is None, events
+                    continue
+                expected = ([] if repaired_now else [known]) + ([] if approved else [unknown])
+                assert report is not None and report["unmet_asks"] == expected, events
+                assert report["passed"] is (not expected), events
+                gate.write_text(json.dumps(report))
+                assert gate_report(run, revision_coverage, refreshed_by="test") == report
+
+    lifecycle()
+
+
 def test_named_statistic_repair_includes_reviewer_requested_source_value() -> None:
     ask = (
         "In the 'Cross-Domain Synthesis' section, Kelly 2020 is supported by the source, "
