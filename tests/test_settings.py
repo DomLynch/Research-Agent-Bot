@@ -32,7 +32,7 @@ def isolated_dotenv(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
         "MINIMAX_API_KEY", "MIMO_API_KEY", "OPENROUTER_API_KEY",
         "MINIMAX_MODEL", "MINIMAX_BASE_URL", "MINIMAX_TIMEOUT_SEC",
         "MIMO_MODEL", "MIMO_BASE_URL", "MIMO_TIMEOUT_SEC",
-        "WRITER_MODEL", "WRITER_TIMEOUT_SEC", "OPENROUTER_BASE_URL",
+        "WRITER_MODEL", "WRITER_PROVIDER", "WRITER_TIMEOUT_SEC", "OPENROUTER_BASE_URL",
         "JUDGE_MODEL", "FALLBACK_MODEL",
         "DOTENV_TEST_KEY", "DOTENV_QUOTED", "FINAL_LAYER_REVIEWER_MODEL",
         "DOTENV_OVERRIDE_TEST",
@@ -97,8 +97,8 @@ def test_load_settings_defaults_when_unset(
     s = settings_module.load_settings()
     assert s.minimax_api_key == ""
     assert s.openrouter_api_key == ""
-    assert s.minimax_model == "z-ai/glm-5.3-flash"
-    assert s.minimax_base_url == "https://openrouter.ai/api/v1"
+    assert s.minimax_model == "gpt-5.6-sol"
+    assert s.minimax_base_url == "codex://chatgpt"
     assert s.judge_model == "google/gemma-4-31b-it"
     assert s.fallback_model == "mistralai/mistral-small-2603"
     assert s.final_layer_reviewer_model == "google/gemma-4-31b-it"
@@ -111,7 +111,7 @@ def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_api_key == "or-test-key"
+    assert s.minimax_api_key == ""
     assert s.openrouter_api_key == "or-test-key"
 
 
@@ -140,8 +140,8 @@ def test_load_settings_ignores_stale_writer_provider_names(
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_model == "z-ai/glm-5.3-flash"
-    assert s.minimax_base_url == "https://openrouter.ai/api/v1"
+    assert s.minimax_model == "gpt-5.6-sol"
+    assert s.minimax_base_url == "codex://chatgpt"
     assert s.minimax_timeout_sec == 180.0
     assert s.mimo_model == s.minimax_model
 
@@ -150,6 +150,7 @@ def test_load_settings_accepts_explicit_writer_configuration(
     isolated_dotenv: Path,
 ) -> None:
     (isolated_dotenv / ".env").write_text(
+        "WRITER_PROVIDER=openrouter\n"
         "WRITER_MODEL=vendor/writer\n"
         "OPENROUTER_BASE_URL=https://openrouter.example/api/v1\n"
         "WRITER_TIMEOUT_SEC=9\n",
@@ -159,6 +160,13 @@ def test_load_settings_accepts_explicit_writer_configuration(
     assert s.minimax_model == "vendor/writer"
     assert s.minimax_base_url == "https://openrouter.example/api/v1"
     assert s.minimax_timeout_sec == 9.0
+
+
+@pytest.mark.parametrize("config", ["WRITER_PROVIDER=typo", "WRITER_MODEL=z-ai/glm-5.3-flash"])
+def test_codex_route_rejects_stale_or_invalid_configuration(isolated_dotenv: Path, config: str) -> None:
+    (isolated_dotenv / ".env").write_text(config)
+    with pytest.raises(ValueError, match="WRITER_"):
+        settings_module.load_settings()
 
 
 def test_real_repo_dotenv_loads_when_present() -> None:

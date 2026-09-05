@@ -221,15 +221,6 @@ def _ok_body(content: str = '{"x": 1}', prompt_tok: int = 10, comp_tok: int = 20
     }
 
 
-def _anthropic_ok_body(
-    content: str = '{"x": 1}', input_tok: int = 10, output_tok: int = 20,
-) -> dict:
-    return {
-        "content": [{"type": "text", "text": content}],
-        "usage": {"input_tokens": input_tok, "output_tokens": output_tok},
-    }
-
-
 def _run(coro):
     return asyncio.run(coro)
 
@@ -254,49 +245,6 @@ def test_chat_json_happy_path_returns_parsed() -> None:
     assert resp.input_tokens == 10
     assert resp.output_tokens == 20
     assert resp.model == "test/model"
-
-
-def test_chat_json_anthropic_compatible_minimax_m3() -> None:
-    captured: dict[str, Any] = {}
-
-    def handler(request: httpx.Request) -> httpx.Response:
-        captured["url"] = str(request.url)
-        captured["payload"] = json.loads(request.content)
-        return httpx.Response(200, json=_anthropic_ok_body())
-
-    async def go() -> LLMResponse:
-        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
-        try:
-            return await chat_json(
-                messages=[
-                    {"role": "system", "content": "Return JSON only."},
-                    {"role": "user", "content": "hi"},
-                ],
-                chain=(
-                    _spec(
-                        model="MiniMax-M3",
-                        base_url="https://api.minimax.io/anthropic",
-                    ),
-                ),
-                client=client,
-                max_tokens=123,
-            )
-        finally:
-            await client.aclose()
-
-    resp = _run(go())
-    assert captured["url"] == "https://api.minimax.io/anthropic/v1/messages"
-    assert captured["payload"] == {
-        "model": "MiniMax-M3",
-        "temperature": 0.2,
-        "max_tokens": 123,
-        "messages": [{"role": "user", "content": "hi"}],
-        "system": "Return JSON only.",
-    }
-    assert resp.parsed == {"x": 1}
-    assert resp.input_tokens == 10
-    assert resp.output_tokens == 20
-    assert resp.model == "MiniMax-M3"
 
 
 def test_chat_json_falls_back_on_5xx() -> None:
@@ -341,7 +289,7 @@ def test_chat_json_falls_back_on_missing_provider_content() -> None:
             return await chat_json(
                 messages=[{"role": "user", "content": "hi"}],
                 chain=(
-                    _spec("primary", base_url="https://api.minimax.io/anthropic"),
+                    _spec("primary", base_url="https://openrouter.ai/api/v1"),
                     _spec("fallback"),
                 ),
                 client=client,

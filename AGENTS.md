@@ -11,7 +11,7 @@ agent and paper engine.
 
 ## Current State - 2026-08-13
 - Last pre-switch clean baseline: `415621b2`.
-- Current branch target (2026-09-04): OpenRouter GLM 5.3 Flash writer/extractor with independent
+- Current branch target (2026-09-05): Codex GPT-5.6 Sol High writer/extractor with independent
   Gemma review and Mistral fallback.
 - Service: `research-agent-bot.service`.
 - Live endpoint: deploy-safe live status page, HTTP 200 by design.
@@ -19,9 +19,11 @@ agent and paper engine.
 - Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
   paper-quality sprint has lifted runner-admitted receipts from 16 to 40 via
   source-validated vocabulary and qualification fixes.
-- Current writer/extractor: `z-ai/glm-5.3-flash` via `OPENROUTER_API_KEY`;
-  `WRITER_MODEL`/`WRITER_TIMEOUT_SEC` configure it. Old `MIMO_*`/`MINIMAX_*`
+- Writer/extractor: `gpt-5.6-sol`, High reasoning, via Codex ChatGPT login;
+  `WRITER_PROVIDER=codex` and `WRITER_MODEL`/`WRITER_TIMEOUT_SEC` configure it.
+  No API-key writer fallback. Old `MIMO_*`/`MINIMAX_*`
   environment variables are ignored; legacy Settings field names remain internal.
+- Release configuration uses Codex; pin `CODEX_WRITER_BIN` to the VPS CLI below.
 - Current reviewer: `google/gemma-4-31b-it`; Mistral Small is bounded fallback,
   not a writer or silent acceptance override.
 - Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.

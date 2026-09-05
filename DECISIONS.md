@@ -734,6 +734,29 @@ under `.[diagnostics]`, outside runtime and normal CI dependencies.
 **Why:** They localize intermittent V3 failures without adding production code,
 hook latency, or default-suite randomness. Install them only for a focused run.
 
+## 2026-09-05 - Subscription-authenticated Codex writer
+**Decision:** Replace the writer transport with a bounded Codex CLI call to
+`gpt-5.6-sol` at High reasoning, using existing ChatGPT authentication. Keep
+Gemma/Mistral review and every scientific gate unchanged. Remove the inactive
+MiniMax Anthropic transport instead of raising the LOC cap. No Python dependency.
+
+**Controls:** Pin CLI 0.153.1 on the VPS separately from the developer CLI;
+force ChatGPT auth, suppress inherited API credentials/config/tools/hooks,
+use a temporary read-only working directory, and kill/reap on cancellation.
+Preserve the caller's system prompt and JSON contract. Seed/temperature are not
+CLI controls; explicit output limits are checked after generation. Usage records
+identify subscription billing, sharing quota with development and hook audits.
+
+**Rejected:** A local HTTP proxy (extra service), direct API billing, and copying
+the hook implementation into V3. Roll back explicitly with the two documented
+writer environment settings; never fall back automatically after a Codex error.
+
+**2026-09-06 validation:** The old abstract prompt demanded locally authored
+methods while requiring every sentence to trace to an external study. Remove that
+contradiction and recover rejected abstracts with source-exact evidence, preserving
+the original payload, validators and retry limit. VPS HPV canary passed both sections;
+full local suite passed. This is writer cutover evidence, not publication proof.
+
 ## 2026-08-13 — Bounded LOC allowance for reviewer-defect repair
 **Decision:** Use 100 of the operator-approved 5,000-line allowance: raise the
 `agent/` ceiling by 10 and the `scripts/` and combined ceilings by 100.

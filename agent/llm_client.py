@@ -6,8 +6,12 @@ import json
 import logging
 import os
 import re
+import shutil
+import signal
+import tempfile
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field, replace
+from pathlib import Path
 from typing import Any
 
 try:
@@ -45,9 +49,7 @@ _RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 _PRICING: Mapping[str, tuple[float, float]] = {
     # GLM standard rates; OpenRouter's returned cost includes discounts/cache.
     "z-ai/glm-5.3-flash": (0.00015, 0.00050),
-    # MiniMax M3 standard tier, <=512k input tokens: $0.30/1M in, $1.20/1M out
     "MiniMax-M3": (0.00030, 0.00120),
-    # Legacy MiMo V2.5 Pro (Xiaomi-hosted): $0.14/1M in, $0.28/1M out
     "mimo-v2.5-pro": (0.00014, 0.00028),
     # Mistral Small via OpenRouter: ~$0.10/1M in, ~$0.30/1M out
     "mistralai/mistral-small-2603": (0.00010, 0.00030),
@@ -60,13 +62,12 @@ class LLMError(RuntimeError):
     """Raised when every CallSpec in the chain fails or has no api_key."""
 
 
+CODEX_WRITER_URL = "codex://chatgpt"
+
+
 @dataclass(frozen=True, slots=True)
 class CallSpec:
-    """A single (provider, model) call attempt.
-
-    `api_key` may be empty — `chat_json` skips empty-keyed specs and tries
-    the next one, which is how the chain degrades when an env var is unset.
-    """
+    """HTTP needs an API key; codex://chatgpt uses saved subscription auth."""
     base_url: str
     api_key: str
     model: str
@@ -131,13 +132,7 @@ def _strip_response(text: str) -> str:
 
 
 def extract_json(text: str) -> dict[str, Any]:
-    """Pull the first valid JSON object out of an LLM response.
-
-    Real LLMs emit `<think>...</think>` blocks, ```json fences, or prose
-    around the JSON even with `response_format=json_object` set. This
-    handles all three. Raises ValueError when no JSON object is found —
-    the caller's schema layer turns that into a structured rejection.
-    """
+    """Extract an object from fenced/think-wrapped HTTP output, or raise ValueError."""
     cleaned = _strip_response(text)
     decoder = json.JSONDecoder()
     for match in re.finditer(r"\{", cleaned):
@@ -173,7 +168,6 @@ def _configured_attempts(base_url: str) -> int:
 
 
 def configured_attempts_for_url(base_url: str) -> int:
-    """Configured retry attempts for an OpenAI-compatible base URL."""
     return _configured_attempts(base_url)
 
 
@@ -190,40 +184,6 @@ def _request_headers(spec: CallSpec) -> dict[str, str]:
             "OPENROUTER_X_TITLE", "Research Agent Bot",
         )
     return headers
-
-
-def _uses_anthropic_api(spec: CallSpec) -> bool:
-    return "/anthropic" in spec.base_url.lower().rstrip("/")
-
-
-def _anthropic_messages(
-    messages: Sequence[Mapping[str, str]],
-) -> tuple[str | None, list[dict[str, Any]]]:
-    system_parts: list[str] = []
-    out: list[dict[str, Any]] = []
-    for msg in messages:
-        role = str(msg.get("role", "user"))
-        content = str(msg.get("content", ""))
-        if role == "system":
-            system_parts.append(content)
-        else:
-            out.append({"role": role, "content": content})
-    return ("\n\n".join(system_parts) or None, out)
-
-
-def _anthropic_text(body: Mapping[str, Any]) -> str:
-    blocks = body.get("content")
-    if not isinstance(blocks, list):
-        raise ValueError("Anthropic response has no content block list")
-    text_parts = [
-        block.get("text", "")
-        for block in blocks
-        if isinstance(block, dict) and block.get("type") == "text"
-    ]
-    text = "\n".join(part for part in text_parts if isinstance(part, str)).strip()
-    if not text:
-        raise ValueError("Anthropic response has no text content")
-    return text
 
 
 def _err_summary(exc: BaseException) -> str:
@@ -256,6 +216,104 @@ def _is_retryable_error(exc: BaseException) -> bool:
     )
 
 
+async def _call_codex(
+    spec: CallSpec, messages: Sequence[Mapping[str, str]], max_tokens: int | None,
+) -> LLMResponse:
+    """One isolated, bounded subscription call; no API or writer fallback."""
+    binary = os.environ.get("CODEX_WRITER_BIN") or next((
+        path for path in (
+            "/Applications/ChatGPT.app/Contents/Resources/codex", shutil.which("codex"),
+        ) if path and Path(path).is_file()
+    ), None)
+    if not binary:
+        raise LLMError("Codex writer CLI missing; set CODEX_WRITER_BIN")
+    # Never inherit provider keys, routing overrides, or the application's secrets.
+    env = {key: value for key, value in os.environ.items() if key in {
+        "HOME", "PATH", "USER", "LOGNAME", "LANG", "LC_ALL", "TMPDIR", "CODEX_HOME",
+        "SSL_CERT_FILE", "SSL_CERT_DIR", "HTTPS_PROXY", "HTTP_PROXY", "NO_PROXY",
+    }}
+    with tempfile.TemporaryDirectory(prefix="v3-writer-") as directory:
+        instructions = Path(directory) / "instructions.md"
+        instructions.write_text(
+            "You are the research writer/extractor, not a coding assistant. "
+            "Return only the requested JSON object. Use only supplied evidence; "
+            "never invent sources, findings, numbers, or verification. No tools.\n"
+            + "\n\n".join(m["content"] for m in messages if m["role"] == "system")
+            + (f"\nOutput limit: {max_tokens} tokens." if max_tokens else ""),
+            encoding="utf-8",
+        )
+        command = [
+            binary, "exec", "--ignore-user-config", "--ignore-rules", "--ephemeral",
+            "--skip-git-repo-check", "--sandbox", "read-only", "--model", spec.model,
+            "--config", 'forced_login_method="chatgpt"',
+            "--config", 'model_provider="openai"',
+            "--config", 'model_reasoning_effort="high"',
+            "--config", 'approval_policy="never"',
+            "--config", 'web_search="disabled"',
+            "--config", "project_doc_max_bytes=0",
+            "--config", f"model_instructions_file={json.dumps(str(instructions))}",
+            "--json", "-",
+        ]
+        for feature in (
+            "shell_tool", "unified_exec", "apps", "plugins", "hooks", "memories",
+            "multi_agent", "browser_use", "computer_use", "image_generation",
+            "view_image", "workspace_dependencies", "goals", "sleep_tool",
+            "skill_mcp_dependency_install", "skill_search", "chronicle", "code_mode_host",
+        ):
+            command[1:1] = ["--config", f"features.{feature}=false"]
+        try:
+            process = await asyncio.create_subprocess_exec(
+                *command, cwd=directory, env=env, start_new_session=True,
+                stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+        except OSError as exc:
+            raise LLMError(f"Codex writer launch failed: {type(exc).__name__}") from exc
+        try:
+            stdout, stderr = await asyncio.wait_for(process.communicate(json.dumps([
+                dict(m) for m in messages if m["role"] != "system"
+            ], ensure_ascii=False).encode()), timeout=spec.timeout_sec)
+        except (TimeoutError, asyncio.CancelledError) as exc:
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            await process.communicate()
+            if isinstance(exc, asyncio.CancelledError):
+                raise
+            raise LLMError(f"Codex writer timed out after {spec.timeout_sec:g}s") from exc
+    events = [json.loads(line) for line in stdout.decode().splitlines() if line.strip()]
+    if not all(isinstance(event, dict) for event in events):
+        raise ValueError("Codex writer returned malformed events")
+    failure = next((event for event in events if event.get("type") == "turn.failed"), None)
+    if process.returncode or failure:
+        detail = json.dumps(failure) if failure else stderr.decode(errors="replace")
+        raise LLMError(f"Codex writer failed: {detail[-400:]}")
+    completed = [event for event in events if event.get("type") == "turn.completed"]
+    lifecycle = [event.get("item") for event in events if str(event.get("type", "")).startswith("item.")]
+    if any(not isinstance(item, dict) or item.get("type") not in {"agent_message", "reasoning"} for item in lifecycle):
+        raise LLMError("Codex writer malformed item or attempted a tool call")
+    items = [event["item"] for event in events if event.get("type") == "item.completed"]
+    if len(completed) != 1:
+        raise LLMError("Codex writer did not complete exactly one turn")
+    text = next((item["text"] for item in reversed(items) if item.get("type") == "agent_message"), "")
+    usage = completed[-1]["usage"]
+    tokens = (usage["input_tokens"], usage["output_tokens"])
+    if any(type(n) is not int or n < 0 for n in tokens):
+        raise ValueError("Codex writer returned invalid token usage")
+    if max_tokens is not None and tokens[1] > max_tokens:
+        raise LLMError("Codex writer exceeded the requested output-token limit")
+    parsed = json.loads(text)
+    if not isinstance(parsed, dict) or not parsed:
+        raise ValueError("Codex writer returned no JSON object")
+    return LLMResponse(
+        text=text, parsed=parsed, model=spec.model,
+        input_tokens=tokens[0], output_tokens=tokens[1],
+        # No per-token API charge; this consumes the shared Codex plan allowance.
+        estimated_cost_usd=0.0,
+    )
+
+
 async def _call_one(
     *,
     client: httpx.AsyncClient,
@@ -266,42 +324,10 @@ async def _call_one(
     max_tokens: int | None,
     seed: int | None,
 ) -> LLMResponse:
-    """Single OpenAI-compatible chat call. Caller catches errors for fallback."""
+    if spec.base_url == CODEX_WRITER_URL:
+        return await _call_codex(spec, messages, max_tokens)
     if not spec.api_key:
         raise LLMError(f"missing api_key for model={spec.model}")
-    if _uses_anthropic_api(spec):
-        system, anthropic_messages = _anthropic_messages(messages)
-        anthropic_payload: dict[str, Any] = {
-            "model": spec.model,
-            "temperature": temperature,
-            "max_tokens": max_tokens or 4096,
-            "messages": anthropic_messages,
-        }
-        if system:
-            anthropic_payload["system"] = system
-        url = spec.base_url.rstrip("/") + "/v1/messages"
-        response = await client.post(
-            url, json=anthropic_payload, headers=_request_headers(spec),
-            timeout=spec.timeout_sec,
-        )
-        response.raise_for_status()
-        body = response.json()
-        if not isinstance(body, Mapping):
-            raise ValueError("Anthropic response body is not an object")
-        text = _anthropic_text(body)
-        parsed = extract_json(text)
-        raw_usage = body.get("usage")
-        usage = raw_usage if isinstance(raw_usage, Mapping) else {}
-        in_tok = int(usage.get("input_tokens", 0) or 0)
-        out_tok = int(usage.get("output_tokens", 0) or 0)
-        return LLMResponse(
-            text=_strip_response(text),
-            parsed=parsed,
-            model=spec.model,
-            input_tokens=in_tok,
-            output_tokens=out_tok,
-            estimated_cost_usd=_estimate_cost(spec.model, in_tok, out_tok),
-        )
     payload: dict[str, Any] = {
         "model": spec.model,
         "temperature": temperature,
@@ -315,10 +341,7 @@ async def _call_one(
         payload["reasoning"] = {"effort": "low", "exclude": True}
         payload.setdefault("max_tokens", 16384)
     if seed is not None:
-        # OpenAI-compatible seed: same seed + same prompt + temperature 0
-        # → byte-identical response (best-effort; some providers honor
-        # this exactly, others approximately). MiMo + OpenRouter both
-        # support the field. Day 9.4 ships zero-variance receipts.
+        # Provider seed is best-effort, not a deterministic-output guarantee.
         payload["seed"] = int(seed)
     url = spec.base_url.rstrip("/") + "/chat/completions"
     response = await client.post(
@@ -373,19 +396,10 @@ async def chat_json(
     max_tokens: int | None = None,
     seed: int | None = None,
 ) -> LLMResponse:
-    """Call CallSpecs in order; return on first success; raise LLMError on all-fail.
-
-    A spec is treated as a failure on:
-      - missing `api_key` (skip silently — partial config is normal)
-      - `httpx.HTTPError` (transport error or 4xx/5xx response)
-      - `ValueError` (JSON extraction failed — model emitted unparseable text)
-      - `KeyError` (response shape didn't have `choices[0].message`)
-
-    Day 9.4: when `seed` is set, it's forwarded to every CallSpec in
-    the chain. Combined with temperature 0.0 this makes the chat call
-    deterministic (same prompt + same seed → same response). Both MiMo
-    and OpenRouter (Gemma / Mistral) support the OpenAI-compatible
-    seed parameter. None preserves prior stochastic behavior.
+    """Return the first successful spec; subscription failures never fall back.
+    HTTP routes forward seed and temperature (best-effort reproducibility).
+    Codex uses High reasoning; its CLI does not expose seed or temperature.
+    Its output cap is checked after generation, not a server-side token limit.
     """
     if not chain:
         raise LLMError("chat_json called with empty chain")
@@ -398,7 +412,7 @@ async def chat_json(
     attempts: list[dict[str, Any]] = []
     try:
         for spec in chain:
-            if not spec.api_key:
+            if not spec.api_key and spec.base_url != CODEX_WRITER_URL:
                 errors.append((spec.model, "missing api_key"))
                 attempts.append({
                     "model": spec.model,
@@ -409,7 +423,7 @@ async def chat_json(
                     "retryable": False,
                 })
                 continue
-            max_attempts = max(1, spec.max_attempts)
+            max_attempts = 1 if spec.base_url == CODEX_WRITER_URL else max(1, spec.max_attempts)
             for attempt in range(1, max_attempts + 1):
                 try:
                     resp = await _call_one(
@@ -440,6 +454,8 @@ async def chat_json(
                         "error": summary,
                         "retryable": retryable,
                     })
+                    if spec.base_url == CODEX_WRITER_URL:
+                        raise LLMError(f"Codex writer stopped; no paid fallback: {summary}") from exc
                     if retryable and attempt < max_attempts:
                         logger.warning(
                             "llm_client: %s attempt %s/%s failed (%s); retrying",
@@ -460,6 +476,8 @@ async def chat_json(
                     "error_type": None,
                     "error": None,
                     "retryable": None,
+                    "transport": "codex_cli" if spec.base_url == CODEX_WRITER_URL else "http",
+                    "billing": "codex_subscription" if spec.base_url == CODEX_WRITER_URL else "api",
                 })
                 resp = replace(resp, attempts=tuple(attempts))
                 if ledger is not None:
@@ -478,7 +496,6 @@ async def chat_json(
 
 
 def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """Build the configured writer/extractor route without a paid fallback."""
     return (
         CallSpec(
             base_url=settings.minimax_base_url,
@@ -491,11 +508,7 @@ def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
 
 
 def _model_family(model: str) -> str:
-    """Coarse provider/family key for a model id, used to keep the SPAR judge
-    in a different family than the writer. ``vendor/model`` -> vendor
-    (``google/gemma-4-31b-it`` -> ``google``); a bare id -> its leading token
-    (``MiniMax-M3`` -> ``minimax``).
-    """
+    """Return vendor for vendor/model IDs, otherwise the leading model token."""
     m = model.strip().lower()
     if not m:
         return ""
@@ -503,14 +516,7 @@ def _model_family(model: str) -> str:
 
 
 def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """Build the SPAR judge chain from independent model families only.
-
-    Trust-spine rule — *judge != writer*: a model cannot independently grade
-    its own output, so the judge chain excludes the configured writer family.
-    Non-writer specs with empty api_keys are kept
-    (``chat_json`` skips them at call time). Raises if no independent judge
-    model remains.
-    """
+    """Exclude the writer family; raise if no independent reviewer remains."""
     writer_families = {_model_family(settings.minimax_model)}
     candidates = (
         CallSpec(

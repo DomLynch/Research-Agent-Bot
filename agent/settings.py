@@ -78,10 +78,17 @@ class Settings:
 
 def load_settings() -> Settings:
     _load_dotenv_if_present()
+    provider = os.environ.get("WRITER_PROVIDER", "codex").strip()
+    if provider not in {"codex", "openrouter"}:
+        raise ValueError("WRITER_PROVIDER must be codex or openrouter")
+    codex = provider == "codex"
+    model = os.environ.get("WRITER_MODEL", "gpt-5.6-sol" if codex else "z-ai/glm-5.3-flash")
+    if codex and model != "gpt-5.6-sol":
+        raise ValueError("Codex writer requires WRITER_MODEL=gpt-5.6-sol")
     return Settings(
-        minimax_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
-        minimax_model=os.environ.get("WRITER_MODEL", "z-ai/glm-5.3-flash"),
-        minimax_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+        minimax_api_key="" if codex else os.environ.get("OPENROUTER_API_KEY", "").strip(),
+        minimax_model=model,
+        minimax_base_url="codex://chatgpt" if codex else os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         minimax_timeout_sec=_float("WRITER_TIMEOUT_SEC", 180.0),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),

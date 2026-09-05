@@ -22,12 +22,25 @@ cover matching verdicts, stale approvals, failed verification, idempotence and l
 Optional diagnostics include a generated lifecycle test; randomization requires
 explicit `-p randomly`. No provider, schedule or publication threshold changed.
 
-## Writer Route - 2026-09-04
-Main writer/extractor now uses OpenRouter `z-ai/glm-5.3-flash`, not the moving
-latest alias. Gemma review and Mistral reviewer fallback are unchanged. GLM
-uses low reasoning effort with a 16,384-token default ceiling (explicit caller
-limits win). API-reported cost takes precedence over standard-rate estimates.
-No publication gate or schedule changed; full-manuscript quality is not yet measured.
+## Writer Route - 2026-09-05
+Implemented writer target is `gpt-5.6-sol` with High reasoning through Codex CLI
+and the service user's ChatGPT login. Gemma review and Mistral reviewer fallback
+remain on OpenRouter. Codex runs without tools, hooks, project instructions,
+or inherited provider keys; timeout/cancellation kills and reaps its process group.
+Subscription failures stop the writer, never trigger a paid fallback. Token usage
+and subscription billing are recorded; zero API cost does not mean unlimited quota.
+Codex CLI >=0.153.1 is required (`CODEX_WRITER_BIN` can pin its location).
+Explicit rollback: `WRITER_PROVIDER=openrouter`, `WRITER_MODEL=z-ai/glm-5.3-flash`.
+No publication gate or schedule changed. Model migration alone is not publication proof.
+
+Release checks passed 2026-09-06: VPS ChatGPT authorization and the normal writer
+path produced a validated 335-word abstract and 1,125-word Cross-Domain section.
+Abstract recovery preserves the evidence payload and uses source-exact sentences
+only after grounding rejection, within the existing retry budget. The primary
+prompt no longer cites external papers as evidence of our own synthesis methods.
+Mac suite: 4,523 passed, 2 xpassed; isolated VPS: 135 passed, 1 skipped.
+Ruff, mypy, unchanged LOC caps, and independent transport/recovery audit passed.
+This verifies writer integration, not a complete paper or daily publication cadence.
 
 ## Current Objective
 Make Research Agent Bot produce genuinely world-class biomedical research papers.

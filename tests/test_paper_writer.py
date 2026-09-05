@@ -7,6 +7,7 @@ LLM should physically not see what it's not allowed to cite.
 from __future__ import annotations
 
 import asyncio
+import pytest
 
 import agent.paper_writer_backstop as writer_backstop
 from agent import paper_writer
@@ -318,12 +319,16 @@ def test_citation_only_repair_rejects_content_or_source_changes() -> None:
     )
 
 
-def test_anchored_writer_regenerates_non_citation_failure(monkeypatch) -> None:
+@pytest.mark.parametrize("failed_text,source_failure", [
+    ("Unsupported result was 999 percent [r-a].", False),
+    ("Cardiovascular mortality improved after treatment [r-a].", True),
+])
+def test_anchored_writer_regenerates_non_citation_failure(monkeypatch, failed_text, source_failure) -> None:
     prompts: list[str] = []
 
     async def fake_call(**kwargs):
         prompts.append(str(kwargs["user_prompt"]))
-        text = "Unsupported result was 999 percent [r-a]." if len(prompts) == 1 else "Result remained bounded [r-a]."
+        text = failed_text if len(prompts) == 1 else "Result remained bounded [r-a]."
         return {"paragraphs": [{"text": text, "receipt_ids": ["r-a"]}]}
 
     async def no_citation_fix(section, **_kwargs):
@@ -344,6 +349,9 @@ def test_anchored_writer_regenerates_non_citation_failure(monkeypatch) -> None:
     assert "Result remained bounded" in section.body_md
     assert len(prompts) == 2
     assert "ANCHOR REPAIR REQUIRED" not in prompts[1]
+    assert ("source-exact" in prompts[1]) is source_failure
+    assert prompts[1].startswith("base")
+    assert failed_text not in section.body_md
 
 
 def test_cross_domain_writer_regenerates_sentence_level_records(monkeypatch) -> None:
