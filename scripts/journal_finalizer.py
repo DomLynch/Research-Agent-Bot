@@ -3931,7 +3931,7 @@ def _phase_d_source_outcome_class_map(
             extra_notes=_findings_map_feedback_notes(feedback, present_tokens),
         )
         existing = re.search(
-            r"^### (?:Findings Map|Source (?:Outcome-Class|Classification) Map)\b.*?(?=^### |^## |\Z)",
+            r"^### (?:Findings Map|Source (?:Outcome-Class|Classification) Map)\b.*?(?=^### (?!(?:Findings Map|Source (?:Outcome-Class|Classification) Map)[ \t]*$)|^## |\Z)",
             text,
             flags=re.M | re.S,
         )
@@ -4020,7 +4020,7 @@ def _phase_d_source_outcome_class_map(
     heading = "### Findings Map" if wants_findings_map else "### Source Outcome-Class Map"
     note = heading + "\n\n" + "\n\n".join((*notes, *examples))
     existing = re.search(
-        r"^### (?:Findings Map|Source (?:Outcome-Class|Classification) Map)\b.*?(?=^### |^## |\Z)",
+        r"^### Source (?:Outcome-Class|Classification) Map\b.*?(?=^### (?!Source (?:Outcome-Class|Classification) Map[ \t]*$)|^## |\Z)",
         text,
         flags=re.M | re.S,
     )

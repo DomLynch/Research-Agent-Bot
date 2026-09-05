@@ -2941,6 +2941,13 @@ def test_source_outcome_class_map_repairs_mapping_ask(tmp_path: Path) -> None:
     assert "- Jones 2025: outcome=Immune and Inflammation; direction=unclear; directness=review; tier=B1." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
+    fixed, _ = journal_finalizer._phase_d_source_outcome_class_map(fixed, tmp_path)
+    fixed = fixed.replace("### Source Outcome-Class Map", "### Findings Map\n\nKeep these quantitative findings.\n\n### Source Outcome-Class Map", 1)
+    tail = "\n\n### Source Outcome-Class Map limitations\n\nKeep this analysis.\n\n## Results\n\nKeep these findings.\n"
+    duplicated = fixed + "\n\n### Source Classification Map\n\n- Stale row.\n\n### Source Outcome-Class Map\n\n- Jones 2025.\n" + tail
+    repaired, _ = journal_finalizer._phase_d_source_outcome_class_map(duplicated, tmp_path)
+    assert repaired == fixed.rstrip() + tail
+    assert journal_finalizer._phase_d_source_outcome_class_map(repaired, tmp_path) == (repaired, [])
 
 
 def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: Path) -> None:
@@ -3015,6 +3022,12 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
     assert "finding=representative statistic p = 0.04" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
+    fixed, _ = journal_finalizer._phase_d_source_outcome_class_map(fixed, tmp_path)
+    tail = "\n\n### Independent analysis\n\nKeep this analysis.\n\n## Results\n\nKeep these findings.\n"
+    duplicated = fixed + "\n\n### Source Classification Map\n\n- Stale row.\n\n### Findings Map\n\n- Smith 2024.\n" + tail
+    repaired, _ = journal_finalizer._phase_d_source_outcome_class_map(duplicated, tmp_path)
+    assert repaired == fixed.rstrip() + tail
+    assert journal_finalizer._phase_d_source_outcome_class_map(repaired, tmp_path) == (repaired, [])
 
 
 def test_source_outcome_class_map_includes_all_rows_for_each_retained_source_ask(tmp_path: Path) -> None:
