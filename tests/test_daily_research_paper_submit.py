@@ -3985,15 +3985,25 @@ def test_passed_partial_revision_gate_is_fully_revalidated(tmp_path: Path) -> No
     assert gate["unmet_asks"]
 
 
+@pytest.mark.parametrize("failure", [None, ImportError, OSError, RuntimeError, TypeError, ValueError])
 def test_stale_passed_revision_gate_fails_closed_when_refresh_is_unverified(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failure: type[Exception] | None,
 ) -> None:
     run = _run(tmp_path)
-    _write_json(run / "researka_revision_request.json", {"feedback": "Complete the requested repair."})
+    request = {"feedback": "Complete the requested repair."}
+    _write_json(run / "researka_revision_request.json", request)
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True, "unmet_asks": []})
-    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", lambda *_args: False)
+    def fail(*_args: Any, **_kwargs: Any) -> None:
+        if failure is not None:
+            raise failure("coverage unavailable")
 
-    assert daily._static_ineligible_status(run) == "revision_coverage_unverified"
+    if failure is ImportError:
+        monkeypatch.setitem(sys.modules, "revision_coverage", None)
+    else:
+        monkeypatch.setattr(daily, "_revision_gate_report", fail)
+    verified = daily._refresh_revision_coverage_gate(run, request)
+    assert verified is False
+    assert daily._static_ineligible_status(run, revision_verified=verified) == "revision_coverage_unverified"
 
 
 def test_stale_revision_coverage_refresh_runs_after_finalizer_change(

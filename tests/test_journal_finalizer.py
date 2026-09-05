@@ -4,6 +4,7 @@ import json
 import importlib
 import re
 import time
+import pytest
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -693,7 +694,10 @@ def test_finalize_run_preserves_unproven_human_longevity_after_surface_restore(t
     assert any(entry.phase == "D_unproven_human_longevity" for entry in report.entries)
 
 
-def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path: Path) -> None:
+@pytest.mark.parametrize("resolved", [False, True])
+def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path: Path, resolved: bool) -> None:
+    submission = importlib.import_module("publishing.submission")
+
     ask = (
         "Resolve the Brouwers 2016 direction coding inconsistency: either confirm the "
         "positive frailty coding with the supporting statistic, or correct to unclear/null "
@@ -706,6 +710,8 @@ def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path:
         "within-source contrast, as non-significant.\n\n"
         "- Brouwers 2016: outcome=Frailty; direction=null; finding=representative statistic p=0.88.\n"
     )
+    if not resolved:
+        paper = "## Evidence Landscape\n\nDirection coding remains unresolved.\n"
     (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}), encoding="utf-8")
     (tmp_path / "revision_coverage_gate.json").write_text(
@@ -717,12 +723,19 @@ def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path:
 
     gate = json.loads((tmp_path / "revision_coverage_gate.json").read_text(encoding="utf-8"))
     assert gate == {
-        "passed": True,
+        "passed": resolved,
         "ask_count": 1,
-        "unmet_asks": [],
+        "unmet_asks": [] if resolved else [ask],
         "refreshed_by": "journal_finalizer",
     }
     assert any(entry.rule == "refresh_revision_coverage_gate_post_finalizer" for entry in logs)
+    gate_path = tmp_path / "revision_coverage_gate.json"
+    snapshot = (gate_path.read_bytes(), gate_path.stat().st_mtime_ns)
+    assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is False
+    assert (gate_path.read_bytes(), gate_path.stat().st_mtime_ns) == snapshot
+    gate_path.write_text(json.dumps({"passed": False, "ask_count": 1, "unmet_asks": [ask]}))
+    assert submission._refresh_revision_coverage_gate(tmp_path, {"feedback": ask}) is True
+    assert json.loads(gate_path.read_text()) == {**gate, "refreshed_by": "daily_submit"}
 
 
 def test_source_verification_transparency_is_inserted_into_methods(tmp_path: Path) -> None:
@@ -4402,6 +4415,21 @@ def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_
     assert "Smith 2025: outcome=Cardiometabolic; direction=positive" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, asks) == []
     assert {entry.phase for entry in logs} >= {"D_substantive_evidence_synthesis", "D_tensions_and_gaps_breadth"}
+
+    (tmp_path / "full_paper.md").write_text(paper)
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({"passed": False, "unmet_asks": asks}))
+    assert journal_finalizer.finalize_run(tmp_path).paper_changed
+    # The per-invocation execution log may change; publication artifacts must not.
+    snapshot = {path: path.read_bytes() for path in tmp_path.rglob("*") if path.is_file() and path.name != "journal_finalizer.json"}
+    assert {
+        "full_paper.md", "full_paper.docx", "full_paper.typ", "paper_ir.json",
+        "public_export_manifest.json", "artifact_consistency.json", "revision_coverage_gate.json",
+        "full_paper.audit.json", "full_paper.consistency.json", "full_paper.final_verdict.json",
+        "full_paper.journal_surface.json",
+    } <= {path.name for path in snapshot}
+    assert json.loads(snapshot[tmp_path / "revision_coverage_gate.json"])["passed"] is True
+    assert not journal_finalizer.finalize_run(tmp_path).paper_changed
+    assert {path: path.read_bytes() for path in tmp_path.rglob("*") if path.is_file() and path.name != "journal_finalizer.json"} == snapshot
 
 
 def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path) -> None:

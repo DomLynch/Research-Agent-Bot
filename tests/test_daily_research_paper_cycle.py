@@ -10773,6 +10773,24 @@ def test_submit_lock_blocks_until_free(tmp_path: Path) -> None:
         assert reacquired is True
 
 
+@pytest.mark.parametrize("holder", ["lane", "submit"])
+@pytest.mark.parametrize("error", [BlockingIOError, RuntimeError])
+def test_lock_propagates_body_exception_and_releases(tmp_path: Path, holder: str, error: type[Exception]) -> None:
+    submission = cycle.submit_bridge
+
+    ledger = tmp_path / submission.LEDGER_DIR
+    lock = submission.submission_lock(tmp_path) if holder == "submit" else cycle._lock(ledger, ".submit.lock")
+    failure = error("transaction failed")
+    with pytest.raises(error) as caught:
+        with lock:
+            with cycle._lock(ledger, ".submit.lock") as contender:
+                assert contender is False
+            raise failure
+    assert caught.value is failure
+    with cycle._lock(ledger, ".submit.lock") as reacquired:
+        assert reacquired is True
+
+
 def test_surface_repeat_topics_skips_same_deterministic_gate_twice(tmp_path: Path) -> None:
     """A topic that fails the SAME deterministic gate twice in-window is skipped;
     different gates, single failures, transient statuses, and stale windows are not.
