@@ -71,6 +71,9 @@ Initial result: 413 passed; 11 existing positional-maxsplit deprecation warnings
 
 ## Review follow-up
 
+- Release CI caught the renamed `Corpus scope` label in the Limitations brief.
+  Restored it without changing the source-specific evidence boundary or the test;
+  polish, writer and LOC regressions: 50 passed.
 - Moved Hypothesis from optional diagnostics into `dev`, which CI installs with
   `pip install -e '.[dev]'`. The lifecycle test now imports it normally: missing
   installation fails rather than silently skipping. A fresh local `.venv` installed

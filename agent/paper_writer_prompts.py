@@ -426,7 +426,7 @@ Output ONE JSON object with this exact shape:
 Validation tier: ANCHORED. Each entry is exactly one sentence and must include only its supporting receipt_ids inline; metadata alone does not count. Entries sharing paragraph_index are grouped into prose paragraphs.
 
 Required topics to cover:
-1. Source scope — what the cited studies themselves cannot establish;
+1. Corpus scope — what the cited studies themselves cannot establish;
    do not cite one study as proof that an entire literature lacks evidence.
    Use plain academic phrasing — do NOT
    mention "SPAR", "quarantine", "rejected", or other pipeline-
