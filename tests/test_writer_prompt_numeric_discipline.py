@@ -64,13 +64,10 @@ def test_numeric_discipline_rule_names_specific_forbidden_examples() -> None:
 
 
 def test_numeric_discipline_rule_names_canonical_citation_tokens() -> None:
-    """Rule shows MiMo the SHAPE of acceptable citation tokens, with
-    real examples from the seeded background_literature.json."""
-    # At least one canonical citation example MUST be in the rule
-    examples = ("Studenski 2011", "Cesari 2009", "Cruz-Jentoft 2019")
-    assert any(c in NUMERIC_DISCIPLINE_RULE for c in examples), (
-        "Rule should show at least one real citation token example"
-    )
+    """Teach citation shape without seeding a source absent from the packet."""
+    assert '"Author Year"' in NUMERIC_DISCIPLINE_RULE
+    assert '"Author et al. Year"' in NUMERIC_DISCIPLINE_RULE
+    assert "Do NOT invent citations" in NUMERIC_DISCIPLINE_RULE
 
 
 def test_numeric_discipline_rule_describes_qualitative_fallback() -> None:
@@ -100,8 +97,9 @@ def test_numeric_discipline_rule_is_self_contained() -> None:
     # Self-contained means: contains its own header, contains its own
     # examples, contains its own escape-hatch description.
     assert "HARD NUMERIC DISCIPLINE" in NUMERIC_DISCIPLINE_RULE
-    assert "(a)" in NUMERIC_DISCIPLINE_RULE  # corpus lane
-    assert "(b)" in NUMERIC_DISCIPLINE_RULE  # background lane
+    assert "exact accepted receipts cited" in NUMERIC_DISCIPLINE_RULE
+    assert "A value elsewhere in the corpus is not support" in NUMERIC_DISCIPLINE_RULE
+    assert "Never add training-data numerics or background thresholds merely because" in NUMERIC_DISCIPLINE_RULE
 
 
 def test_section_prompts_remain_distinct_after_rule_prepend() -> None:

@@ -57,15 +57,7 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
     return f"{base}\n\nVALIDATION FAILURES: {'; '.join(dict.fromkeys(reasons))}\n{' '.join(guidance)} JSON only."
 
 
-# Fix #17: shared hard rule prepended to EVERY section prompt below.
-# The rule is the writer-side enforcement of Fix #16's external-context
-# lane: numerics from world-knowledge / training data are forbidden
-# unless they appear in the supplied receipts (corpus evidence) OR are
-# canonical clinical thresholds with their citation in the SAME
-# sentence (background context lane). The post-paper audit gates
-# (Q2 strict + Stage-2 background-lit-unsourced) catch any violation;
-# this prompt change reduces the violation rate at generation time so
-# we don't waste cycles on regenerations.
+# Every section requires mapped source support, including background numerics.
 NUMERIC_DISCIPLINE_RULE = """\
 ================================================================
 HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)

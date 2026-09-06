@@ -110,7 +110,9 @@ def build_retry_prompt(
         f"stretch one paragraph across sources. Every empirical sentence "
         f"must include an exact accepted receipt_id inline and list it in "
         f"receipt_ids; split when support differs. Preserve the section's JSON schema "
-        f"and qualitative-only rules. Never invent evidence to meet a word target."
+        f"and qualitative-only rules. Numeric values must appear verbatim in the sources "
+        f"cited for that sentence. Describe supported findings qualitatively instead of inventing "
+        f"numbers. Never invent evidence to meet a word target."
     )
 
 
