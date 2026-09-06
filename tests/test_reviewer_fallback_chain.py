@@ -115,11 +115,12 @@ def test_low_patch_short_paper_does_not_escalate() -> None:
     assert client.post.call_count == 1
 
 
-def test_review_paper_tolerates_non_list_patches() -> None:
+def test_review_paper_retries_non_list_patches() -> None:
     client = MagicMock()
-    client.post = AsyncMock(return_value=_mock_chat_response(
-        "google/gemini-3.1-flash-lite:exacto", {"patches": 0},
-    ))
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": 0}),
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": []}),
+    ])
 
     patches, raw, _model_used, _cost = asyncio.run(
         final_reviewer.review_paper(
@@ -134,10 +135,10 @@ def test_review_paper_tolerates_non_list_patches() -> None:
     )
 
     assert patches == []
-    assert raw["patches_parse_warning"] == "int"
+    assert [a["ok"] for a in raw["_review_attempts"]] == [False, True]
 
 
-def test_low_patch_escalation_tolerates_non_list_patches() -> None:
+def test_low_patch_escalation_preserves_review_on_invalid_patches() -> None:
     client = MagicMock()
     client.post = AsyncMock(side_effect=[
         _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": []}),
@@ -158,8 +159,8 @@ def test_low_patch_escalation_tolerates_non_list_patches() -> None:
     )
 
     assert patches == []
-    assert raw["patches_parse_warning"] == "int"
-    assert model_used == "google/gemini-3.1-flash-lite:exacto→x-ai/grok-4.3"
+    assert raw["low_patch_escalation_error"] == "ValueError"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto"
 
 
 def test_primary_retry_recovers_before_mistral() -> None:

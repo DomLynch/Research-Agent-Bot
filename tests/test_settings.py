@@ -99,9 +99,9 @@ def test_load_settings_defaults_when_unset(
     assert s.openrouter_api_key == ""
     assert s.minimax_model == "gpt-5.6-sol"
     assert s.minimax_base_url == "codex://chatgpt"
-    assert s.judge_model == "google/gemma-4-31b-it"
-    assert s.fallback_model == "mistralai/mistral-small-2603"
-    assert s.final_layer_reviewer_model == "google/gemma-4-31b-it"
+    assert s.judge_model == "gpt-5.6-terra"
+    assert s.fallback_model == "z-ai/glm-5.3-flash"
+    assert s.final_layer_reviewer_model == "gpt-5.6-terra"
 
 
 def test_load_settings_reads_dotenv(isolated_dotenv: Path) -> None:

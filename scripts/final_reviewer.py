@@ -24,8 +24,7 @@ Output:
   - <paper>.review_patches.json — list of TypedPatch records
   - <paper>.review_summary.md   — human-readable review notes
 
-Default primary: configured final-layer reviewer via OpenRouter with
-high thinking. Mistral Small is the cheap fallback.
+Default primary: Terra Medium via Codex; GLM Flash is the HTTP fallback.
 """
 from __future__ import annotations
 
@@ -42,7 +41,7 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
-from agent.llm_client import extract_json  # noqa: E402
+from agent.llm_client import LLMError, _call_codex, extract_json, review_call_spec  # noqa: E402
 from agent.settings import load_settings  # noqa: E402  loads .env
 
 __all__ = ["TypedPatch", "review_paper", "main"]
@@ -284,6 +283,8 @@ def _build_reviewer_prompt(
 # Per-1M-token pricing (input, output) in USD. Unpriced models are rejected
 # before any provider call so cost reporting cannot silently become zero.
 _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
+    "gpt-5.6-terra": (0.0, 0.0),  # Codex allowance, not API billing.
+    "z-ai/glm-5.3-flash": (0.075, 0.25),
     "x-ai/grok-4.3": (3.00, 15.00),
     "google/gemini-3.1-flash-lite:exacto": (0.25, 1.50),
     # JUDGE_MODEL default (agent/settings.py). Absent here, _estimate_cost raised
@@ -298,8 +299,8 @@ _PRICING_PER_MTOK: dict[str, tuple[float, float]] = {
 _PRIMARY_ATTEMPTS = 3
 _FALLBACK_ATTEMPTS = 1
 _MAX_OUTPUT_TOKENS = 12_000
-_DEFAULT_REVIEWER_MODEL = "google/gemma-4-31b-it"
-_DEFAULT_FALLBACK_MODEL = "mistralai/mistral-small-2603"
+_DEFAULT_REVIEWER_MODEL = "gpt-5.6-terra"
+_DEFAULT_FALLBACK_MODEL = "z-ai/glm-5.3-flash"
 _DEFAULT_BASE_URL = "https://openrouter.ai/api/v1"
 _DEFAULT_MAX_COST_USD = 1.0
 _RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
@@ -310,6 +311,16 @@ async def _call_one(
     base_url: str, client: Any,
 ) -> tuple[dict[str, Any], int, int]:
     """Single chat call. Returns (parsed_json, in_tokens, out_tokens)."""
+    if model == "gpt-5.6-terra":
+        response = await _call_codex(
+            review_call_spec(model, api_key=api_key, base_url=base_url,
+                             timeout_sec=_review_call_timeout_sec()),
+            [{"role": "system", "content": system}, {"role": "user", "content": user}],
+            _MAX_OUTPUT_TOKENS,
+        )
+        return dict(response.parsed), response.input_tokens, response.output_tokens
+    if not api_key:
+        raise ValueError("OPENROUTER_API_KEY not set for review fallback")
     url = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
@@ -328,6 +339,8 @@ async def _call_one(
     }
     if model.startswith("google/gemini-3.1"):
         payload["reasoning"] = {"effort": "high", "exclude": True}
+    if model == "z-ai/glm-5.3-flash":
+        payload["reasoning"] = {"effort": "low", "exclude": True}
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -373,6 +386,8 @@ def _positive_int_setting(name: str, default: int) -> int:
 
 
 def _attempt_count(model: str, primary_model: str) -> int:
+    if model == "gpt-5.6-terra":
+        return 1
     if model == primary_model:
         return _positive_int_setting("FINAL_LAYER_PRIMARY_ATTEMPTS", _PRIMARY_ATTEMPTS)
     return _positive_int_setting("FINAL_LAYER_FALLBACK_ATTEMPTS", _FALLBACK_ATTEMPTS)
@@ -471,10 +486,27 @@ async def _call_one_bounded(
     base_url: str, client: Any,
 ) -> tuple[dict[str, Any], int, int]:
     timeout = _review_call_timeout_sec()
-    return await asyncio.wait_for(
+    raw, in_tok, out_tok = await asyncio.wait_for(
         _call_one(system, user, model, api_key, base_url, client),
         timeout=timeout,
     )
+    patches = raw.get("patches")
+    patches = [patches] if isinstance(patches, dict) else patches
+    if not isinstance(patches, list):
+        raise ValueError("review response requires an explicit patches list")
+    for patch in patches:
+        if not isinstance(patch, dict):
+            raise ValueError("review patch must be an object")
+        if patch.get("patch_type") == "unfixable":
+            continue
+        if (
+            patch.get("patch_type") not in PATCH_TYPES
+            or patch.get("severity") not in ("P1", "P2", "P3")
+            or not isinstance(patch.get("before"), str) or not patch["before"].strip()
+            or any(not isinstance(patch.get(key), str) for key in ("after", "reason"))
+        ):
+            raise ValueError("review patch has missing or invalid fields")
+    return raw, in_tok, out_tok
 
 
 async def _call_with_fallback(
@@ -490,7 +522,7 @@ async def _call_with_fallback(
     except ModuleNotFoundError:
         transport_errors = ()
     retry_errors = transport_errors + (
-        TimeoutError, ValueError, KeyError, json.JSONDecodeError,
+        TimeoutError, ValueError, KeyError, TypeError, LLMError, json.JSONDecodeError,
     )
     attempts: list[dict[str, Any]] = []
     for model in (primary_model, fallback_model):
@@ -511,6 +543,10 @@ async def _call_with_fallback(
                     "error": None,
                 })
                 parsed["_review_attempts"] = attempts
+                parsed["_review_usage"] = {
+                    "input_tokens": in_tok, "output_tokens": out_tok,
+                    "billing": "codex_subscription" if model == "gpt-5.6-terra" else "api",
+                }
                 return parsed, model, cost
             except retry_errors as exc:
                 retryable = _is_retryable_error(exc)
@@ -672,9 +708,7 @@ async def repair_flagged_patches(
     smart-gate the same way the original proposals did."""
     if not flagged:
         return []
-    api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        return []  # silently skip if no key
+    api_key = api_key or os.environ.get("OPENROUTER_API_KEY", "")
     model = _configured_value(model, "FINAL_LAYER_REVIEWER_MODEL", _DEFAULT_REVIEWER_MODEL)
     fallback_model = _configured_value(
         fallback_model, "FINAL_LAYER_FALLBACK_MODEL", _DEFAULT_FALLBACK_MODEL,
@@ -712,14 +746,9 @@ async def review_paper(
     max_cost_usd: float | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
-    model_used, successful-call cost estimate). The configured primary runs first; Mistral
-    Small is the fallback that only fires on primary outage or invalid
-    JSON."""
-    api_key = api_key or os.environ.get("OPENROUTER_API_KEY")
-    if not api_key:
-        raise RuntimeError(
-            "OPENROUTER_API_KEY not set; cannot run final-layer review"
-        )
+    model_used, successful-call cost estimate). Fallback fires only on technical
+    failure, never on a valid negative review."""
+    api_key = api_key or os.environ.get("OPENROUTER_API_KEY", "")
     model = _configured_value(model, "FINAL_LAYER_REVIEWER_MODEL", _DEFAULT_REVIEWER_MODEL)
     fallback_model = _configured_value(
         fallback_model, "FINAL_LAYER_FALLBACK_MODEL", _DEFAULT_FALLBACK_MODEL,
@@ -780,7 +809,7 @@ def _needs_low_patch_escalation(
 def _format_summary(
     patches: list[TypedPatch],
     cost_usd: float = 0.0,
-    model_used: str = "google/gemma-4-31b-it",
+    model_used: str = _DEFAULT_REVIEWER_MODEL,
 ) -> str:
     if not patches:
         return (
@@ -822,7 +851,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--model",
         default=None,
-        help="OpenRouter primary model id (or FINAL_LAYER_REVIEWER_MODEL)",
+        help="Primary reviewer model id (or FINAL_LAYER_REVIEWER_MODEL)",
     )
     parser.add_argument("--fallback-model", default=None)
     parser.add_argument("--base-url", default=None)

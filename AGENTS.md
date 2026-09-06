@@ -11,8 +11,8 @@ agent and paper engine.
 
 ## Current State - 2026-08-13
 - Last pre-switch clean baseline: `415621b2`.
-- Current branch target (2026-09-05): Codex GPT-5.6 Sol High writer/extractor with independent
-  Gemma review and Mistral fallback.
+- Current branch target (2026-09-06): Codex GPT-5.6 Sol High writer/extractor,
+  Terra Medium review and GLM Flash technical fallback.
 - Service: `research-agent-bot.service`.
 - Live endpoint: deploy-safe live status page, HTTP 200 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
@@ -24,8 +24,10 @@ agent and paper engine.
   No API-key writer fallback. Old `MIMO_*`/`MINIMAX_*`
   environment variables are ignored; legacy Settings field names remain internal.
 - Release configuration uses Codex; pin `CODEX_WRITER_BIN` to the VPS CLI below.
-- Current reviewer: `google/gemma-4-31b-it`; Mistral Small is bounded fallback,
-  not a writer or silent acceptance override.
+- Current judge/final reviewer: `gpt-5.6-terra`, Medium reasoning via Codex;
+  `z-ai/glm-5.3-flash` is bounded OpenRouter technical-failure fallback.
+  A valid negative review never triggers failover. Sol/Terra share a model family;
+  separate review calls are not independent-provider scientific verification.
 - Generated topic-pack V1 shipped but full generated-pack synthesis remains gated.
 - Cross-topic meta-synthesis V1 shipped; auto-selection must use only fully
   certified 14/14 runs.

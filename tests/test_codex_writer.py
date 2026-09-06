@@ -15,6 +15,8 @@ from agent.llm_client import (
     build_judge_chain, chat_json,
 )
 from agent import settings
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+import final_reviewer  # noqa: E402
 
 
 @pytest.fixture
@@ -26,17 +28,27 @@ from pathlib import Path
 args = sys.argv[1:]
 assert "--ignore-user-config" in args and "--ephemeral" in args
 assert args[args.index("--sandbox") + 1] == "read-only"
-assert args[args.index("--model") + 1] == "gpt-5.6-sol"
+model = args[args.index("--model") + 1]
+assert model in ("gpt-5.6-sol", "gpt-5.6-terra")
 assert 'forced_login_method="chatgpt"' in args
-assert 'model_reasoning_effort="high"' in args
+effort = "medium" if model == "gpt-5.6-terra" else "high"
+assert 'model_reasoning_effort="' + effort + '"' in args
 for feature in ("shell_tool", "apps", "plugins", "hooks", "multi_agent", "memories"):
     assert "features." + feature + "=false" in args
 assert not any(k in os.environ for k in ("OPENAI_API_KEY", "CODEX_API_KEY", "OPENROUTER_API_KEY", "OPENAI_BASE_URL"))
 config = next(a for a in args if a.startswith("model_instructions_file="))
-assert "Test source-grounding instruction" in Path(json.loads(config.split("=", 1)[1])).read_text()
+instructions = Path(json.loads(config.split("=", 1)[1])).read_text()
+role = "reviewer" if model == "gpt-5.6-terra" else "writer/extractor"
+assert "research " + role in instructions
+if model == "gpt-5.6-sol":
+    assert "Test source-grounding instruction" in instructions
 messages = json.load(sys.stdin)
 assert all(m["role"] != "system" for m in messages)
-data = json.loads(messages[-1]["content"])
+try:
+    data = json.loads(messages[-1]["content"])
+except ValueError:
+    content = messages[-1]["content"]
+    data = {"case": content.split("CASE:", 1)[1].split()[0] if "CASE:" in content else "ok"}
 case = data.get("case", "ok")
 if case == "hang":
     Path(data["pid_path"]).write_text(str(os.getpid()))
@@ -53,6 +65,10 @@ if case == "malformed_events":
     print("not json")
     sys.exit(0)
 text = "[]" if case == "array" else ("not JSON" if case == "prose" else '{"claim":"source-grounded","receipt_ids":["R1"]}')
+if case == "ok" and model == "gpt-5.6-terra":
+    text = json.dumps({"decision":"revise", "patches":[{"patch_type":"claim", "severity":"P1", "before":"Unsupported claim", "after":"", "reason":"No evidence"}]})
+if case.startswith("schema_"):
+    text = json.dumps({"schema_null":{"patches":None}, "schema_missing":{"verdict":"reject"}, "schema_incomplete":{"patches":[{"patch_type":"claim","severity":"P1"}]}}[case])
 print(json.dumps({"type":"item.completed","item":{"type":"agent_message","text":text}}))
 if case == "tool":
     print(json.dumps({"type":"item.completed","item":{"type":"command_execution","command":"id"}}))
@@ -147,3 +163,69 @@ def test_live_route_keeps_independent_reviewers(tmp_path, monkeypatch):
     reviewers = build_judge_chain(config)
     assert [spec.model for spec in reviewers] == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
     assert all(spec.api_key == "reviewer-key" and spec.base_url != CODEX_WRITER_URL for spec in reviewers)
+
+
+@pytest.mark.parametrize("case", ["ok", "quota", "prose"])
+def test_terra_judge_medium_falls_back_only_on_technical_failure(cli, tmp_path, monkeypatch, case):
+    monkeypatch.setattr(settings, "_REPO_ROOT", tmp_path)
+    monkeypatch.setenv("JUDGE_MODEL", "gpt-5.6-terra")
+    monkeypatch.setenv("FALLBACK_MODEL", "z-ai/glm-5.3-flash")
+    config = settings.load_settings()
+    writer, = build_extract_chain(config)
+    assert writer.model == "gpt-5.6-sol" and writer.reasoning_effort == "high"
+    chain = build_judge_chain(config)
+    assert [s.model for s in chain] == ["gpt-5.6-terra", "z-ai/glm-5.3-flash"]
+    calls = []
+
+    def fallback(request):
+        payload = json.loads(request.content)
+        calls.append(payload)
+        assert payload["model"] == "z-ai/glm-5.3-flash"
+        assert payload["reasoning"] == {"effort": "low", "exclude": True}
+        return httpx.Response(200, json={"choices":[{"message":{"content":'{"decision":"reject"}'}}]})
+
+    async def run():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(fallback)) as client:
+            return await chat_json(messages=[{"role":"user", "content":json.dumps({"case":case})}], chain=chain, client=client)
+
+    response = asyncio.run(run())
+    assert response.parsed["decision"] == ("revise" if case == "ok" else "reject")
+    assert len(calls) == (0 if case == "ok" else 1)
+    assert len(response.attempts) == (1 if case == "ok" else 2)
+
+
+@pytest.mark.parametrize("case", ["ok", "quota", "prose", "schema_null", "schema_missing", "schema_incomplete"])
+def test_terra_final_review_preserves_negative_verdict_and_uses_glm_on_failure(cli, monkeypatch, case):
+    monkeypatch.delenv("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", raising=False)
+    if case == "ok":
+        monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+    calls = []
+
+    def fallback(request):
+        payload = json.loads(request.content)
+        calls.append(payload)
+        assert payload["model"] == "z-ai/glm-5.3-flash"
+        assert payload["reasoning"] == {"effort":"low", "exclude":True}
+        return httpx.Response(200, json={"choices":[{"message":{"content":'{"patches":[]}'}}]})
+
+    async def run():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(fallback)) as client:
+            result = await final_reviewer.review_paper(
+                "Unsupported claim CASE:" + case, {}, {}, client=client,
+                model="gpt-5.6-terra", fallback_model="z-ai/glm-5.3-flash",
+            )
+            if case == "ok":
+                repaired = await final_reviewer.repair_flagged_patches(
+                    [(result[0][0], "requires source support")], "Unsupported claim",
+                    model="gpt-5.6-terra", fallback_model="z-ai/glm-5.3-flash", client=client,
+                )
+                assert repaired[0].severity == "P1"
+            return result
+
+    patches, raw, model, _cost = asyncio.run(run())
+    assert model == ("gpt-5.6-terra" if case == "ok" else "z-ai/glm-5.3-flash")
+    assert len(calls) == (0 if case == "ok" else 1)
+    assert len(raw["_review_attempts"]) == (1 if case == "ok" else 2)
+    assert raw["_review_usage"]["billing"] == ("codex_subscription" if case == "ok" else "api")
+    if case == "ok":
+        assert patches[0].severity == "P1"

@@ -73,6 +73,8 @@ class CallSpec:
     model: str
     timeout_sec: float = 60.0
     max_attempts: int = 1
+    reasoning_effort: str = "high"
+    role: str = "writer/extractor"
 
 
 @dataclass(frozen=True, slots=True)
@@ -219,7 +221,7 @@ def _is_retryable_error(exc: BaseException) -> bool:
 async def _call_codex(
     spec: CallSpec, messages: Sequence[Mapping[str, str]], max_tokens: int | None,
 ) -> LLMResponse:
-    """One isolated, bounded subscription call; no API or writer fallback."""
+    """One isolated, bounded subscription call; caller owns fallback policy."""
     binary = os.environ.get("CODEX_WRITER_BIN") or next((
         path for path in (
             "/Applications/ChatGPT.app/Contents/Resources/codex", shutil.which("codex"),
@@ -235,7 +237,7 @@ async def _call_codex(
     with tempfile.TemporaryDirectory(prefix="v3-writer-") as directory:
         instructions = Path(directory) / "instructions.md"
         instructions.write_text(
-            "You are the research writer/extractor, not a coding assistant. "
+            f"You are the research {spec.role}, not a coding assistant. "
             "Return only the requested JSON object. Use only supplied evidence; "
             "never invent sources, findings, numbers, or verification. No tools.\n"
             + "\n\n".join(m["content"] for m in messages if m["role"] == "system")
@@ -247,7 +249,7 @@ async def _call_codex(
             "--skip-git-repo-check", "--sandbox", "read-only", "--model", spec.model,
             "--config", 'forced_login_method="chatgpt"',
             "--config", 'model_provider="openai"',
-            "--config", 'model_reasoning_effort="high"',
+            "--config", f"model_reasoning_effort={json.dumps(spec.reasoning_effort)}",
             "--config", 'approval_policy="never"',
             "--config", 'web_search="disabled"',
             "--config", "project_doc_max_bytes=0",
@@ -396,9 +398,9 @@ async def chat_json(
     max_tokens: int | None = None,
     seed: int | None = None,
 ) -> LLMResponse:
-    """Return the first successful spec; subscription failures never fall back.
+    """Return the first successful spec; subscription writers never fall back.
     HTTP routes forward seed and temperature (best-effort reproducibility).
-    Codex uses High reasoning; its CLI does not expose seed or temperature.
+    Codex uses the spec's reasoning effort; its CLI has no seed or temperature.
     Its output cap is checked after generation, not a server-side token limit.
     """
     if not chain:
@@ -454,7 +456,7 @@ async def chat_json(
                         "error": summary,
                         "retryable": retryable,
                     })
-                    if spec.base_url == CODEX_WRITER_URL:
+                    if spec.base_url == CODEX_WRITER_URL and spec.role != "reviewer":
                         raise LLMError(f"Codex writer stopped; no paid fallback: {summary}") from exc
                     if retryable and attempt < max_attempts:
                         logger.warning(
@@ -515,27 +517,33 @@ def _model_family(model: str) -> str:
     return m.split("/", 1)[0] if "/" in m else m.split("-", 1)[0]
 
 
+def review_call_spec(
+    model: str, *, api_key: str, base_url: str, timeout_sec: float,
+) -> CallSpec:
+    """Terra reviews through subscription auth; other reviewers use HTTP."""
+    codex = model == "gpt-5.6-terra"
+    return CallSpec(
+        base_url=CODEX_WRITER_URL if codex else base_url,
+        api_key="" if codex else api_key, model=model, timeout_sec=timeout_sec,
+        max_attempts=1 if codex else _configured_attempts(base_url),
+        reasoning_effort="medium", role="reviewer",
+    )
+
+
 def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """Exclude the writer family; raise if no independent reviewer remains."""
+    """Keep a separate reviewer; Sol/Terra is the approved same-family pair."""
     writer_families = {_model_family(settings.minimax_model)}
     candidates = (
-        CallSpec(
-            base_url=settings.openrouter_base_url,
-            api_key=settings.openrouter_api_key,
-            model=settings.judge_model,
-            timeout_sec=settings.minimax_timeout_sec,
-            max_attempts=_configured_attempts(settings.openrouter_base_url),
-        ),
-        CallSpec(
-            base_url=settings.openrouter_base_url,
-            api_key=settings.openrouter_api_key,
-            model=settings.fallback_model,
-            timeout_sec=settings.minimax_timeout_sec,
-            max_attempts=_configured_attempts(settings.openrouter_base_url),
-        ),
+        review_call_spec(
+            model, base_url=settings.openrouter_base_url,
+            api_key=settings.openrouter_api_key, timeout_sec=settings.minimax_timeout_sec,
+        ) for model in (settings.judge_model, settings.fallback_model)
     )
     chain = tuple(
-        c for c in candidates if _model_family(c.model) not in writer_families
+        c for c in candidates if c.model != settings.minimax_model and (
+            _model_family(c.model) not in writer_families
+            or (settings.minimax_model == "gpt-5.6-sol" and c.model == "gpt-5.6-terra")
+        )
     )
     if not chain:
         raise ValueError(

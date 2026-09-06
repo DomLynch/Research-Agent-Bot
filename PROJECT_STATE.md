@@ -24,10 +24,10 @@ explicit `-p randomly`. No provider, schedule or publication threshold changed.
 
 ## Writer Route - 2026-09-05
 Implemented writer target is `gpt-5.6-sol` with High reasoning through Codex CLI
-and the service user's ChatGPT login. Gemma review and Mistral reviewer fallback
-remain on OpenRouter. Codex runs without tools, hooks, project instructions,
+and the service user's ChatGPT login. Terra Medium reviews through Codex; GLM
+review fallback remains on OpenRouter. Codex runs without tools, hooks, project instructions,
 or inherited provider keys; timeout/cancellation kills and reaps its process group.
-Subscription failures stop the writer, never trigger a paid fallback. Token usage
+Subscription failures stop the writer, never trigger a paid writer fallback. Token usage
 and subscription billing are recorded; zero API cost does not mean unlimited quota.
 Codex CLI >=0.153.1 is required (`CODEX_WRITER_BIN` can pin its location).
 Explicit rollback: `WRITER_PROVIDER=openrouter`, `WRITER_MODEL=z-ai/glm-5.3-flash`.
@@ -43,6 +43,14 @@ Ruff, mypy, unchanged LOC caps, and independent transport/recovery audit passed.
 This verifies writer integration, not a complete paper or daily publication cadence.
 
 ## Current Objective
+Reviewer migration 2026-09-06: judge, final review and rejected-patch repair use
+Terra Medium via the same isolated Codex adapter. Sol High writer is unchanged.
+GLM 5.3 Flash is the OpenRouter fallback on technical failure only; review
+decisions and scientific gates are unchanged. Both GPT roles consume the shared
+Codex subscription allowance. This does not change Researka's external panel.
+Rollback: set JUDGE_MODEL and FINAL_LAYER_REVIEWER_MODEL to google/gemma-4-31b-it;
+set FALLBACK_MODEL and FINAL_LAYER_FALLBACK_MODEL to mistralai/mistral-small-2603.
+
 Make Research Agent Bot produce genuinely world-class biomedical research papers.
 Immediate sprint: clear release-green blockers, then raise the rapamycin paper
 from a certified AAA/L6 artifact to candidate-publication quality.

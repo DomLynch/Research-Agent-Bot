@@ -41,11 +41,11 @@ class Settings:
     minimax_base_url: str
     minimax_timeout_sec: float
 
-    # OpenRouter — independent judge primary + fallback
+    # Review models; Terra uses Codex, fallback uses OpenRouter.
     openrouter_api_key: str
     openrouter_base_url: str
-    judge_model: str       # Gemma 4 (primary judge)
-    fallback_model: str    # Mistral judge fallback
+    judge_model: str
+    fallback_model: str
     final_layer_reviewer_model: str  # final fail-safe reviewer
 
     # Safety rails
@@ -92,9 +92,9 @@ def load_settings() -> Settings:
         minimax_timeout_sec=_float("WRITER_TIMEOUT_SEC", 180.0),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
-        judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-31b-it"),
-        fallback_model=os.environ.get("FALLBACK_MODEL", "mistralai/mistral-small-2603"),
-        final_layer_reviewer_model=os.environ.get("FINAL_LAYER_REVIEWER_MODEL", "google/gemma-4-31b-it"),
+        judge_model=os.environ.get("JUDGE_MODEL", "gpt-5.6-terra"),
+        fallback_model=os.environ.get("FALLBACK_MODEL", "z-ai/glm-5.3-flash"),
+        final_layer_reviewer_model=os.environ.get("FINAL_LAYER_REVIEWER_MODEL", "gpt-5.6-terra"),
         bot_enabled=_bool("BOT_ENABLED", True),
         daily_cost_cap_usd=_float("DAILY_COST_CAP_USD", 10.0),
         dashboard_host=os.environ.get("DASHBOARD_HOST", "127.0.0.1"),

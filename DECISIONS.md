@@ -768,3 +768,20 @@ The resulting totals are 25,005 agent, 41,079 scripts, and 66,084 combined.
 
 **Rejected:** Raising by the full 5,000 or weakening manuscript gates. The
 allowance is limited to the measured change plus at most 21 lines of headroom.
+
+## 2026-09-06 - Subscription reviewer with bounded API fallback
+**Decision:** Keep Sol High writing; route the judge, final review and rejected-patch
+repair through Terra Medium using the existing isolated Codex adapter. GLM 5.3
+Flash on OpenRouter is technical-failure fallback only, never verdict shopping.
+Both GPT roles share subscription quota and model-family risks. No dependency,
+service, scientific threshold or Researka panel change; net +37 production lines.
+
+**Verification:** Full local suite: 4,532 passed, 2 xpassed. Ruff/mypy passed.
+VPS canary: Terra rejected an unsupported mortality claim, found the same planted
+error in a real manuscript, and GLM rejected it when the primary transport was
+deliberately failed. The independent audit found malformed patch JSON could be
+accepted as an empty review; schema validation now rejects it before success.
+Re-audit passed. These receipts verify review routing, not publication cadence.
+
+**Rollout:** Preserve the in-flight manuscript before changing the live checkout.
+Back up the service environment; rollback model variables are in PROJECT_STATE.md.
