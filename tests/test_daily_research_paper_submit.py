@@ -1413,6 +1413,42 @@ def test_direct_source_without_authoritative_text_fails_local_preflight(tmp_path
     assert status == "source_bundle_unverified_direct_sources:1/12"
 
 
+@pytest.mark.parametrize("own_section", ["abstract", "results", "split", None])
+def test_source_bundle_does_not_attribute_background_studies_to_primary_source(
+    tmp_path: Path, own_section: str | None,
+) -> None:
+    run = _run(tmp_path)
+    receipt_id = "topic_effect_0"
+    background = "An earlier trial reported improved fatigue in 65% of participants after treatment."
+    finding = "This randomized trial enrolled 42 participants and reported two adverse events requiring discontinuation."
+    manifest = json.loads((run / "manifest.json").read_text())
+    manifest["receipts"][0]["thesis_text"] = f"Trial - source excerpts: {background}"
+    sections = {"introduction": background, "references": background}
+    if own_section == "split":
+        result = "Treatment improved fifteen biological age markers compared with placebo in the randomized cohort."
+        sections = {"abstract": finding, **sections, "results": result}
+        manifest["receipts"][0]["thesis_text"] = f"Trial - source excerpts: {finding} | {result}"
+    elif own_section:
+        sections[own_section] = finding
+    _write_json(run / "manifest.json", manifest)
+    corpus = tmp_path / "docs" / "quality-reference" / "topic"
+    _write_json(corpus / "parsed" / f"{receipt_id}.paper_sections.json", {"sections": sections})
+    _write_json(corpus / "quant_claims" / f"{receipt_id}.quant_claims.json", {
+        "claims": [{"sentence": background, "binding_confidence": "high"}],
+    })
+    _snapshot_run(run)
+
+    payload = daily.build_payload(run, enrich_sources=False)
+    row = payload["source_bundle"][0]
+    assert row["excerpt"] == (finding if own_section else "")
+    assert row["quote"] is None
+    assert background not in str(row.get("evidence_span", ""))
+    if own_section:
+        assert daily._publication_evidence.source_proof_is_valid(row)
+    if own_section is None:
+        assert daily._researka_preflight_status(payload) == "source_bundle_unverified_direct_sources:1/12"
+
+
 def test_unavailable_authority_revision_passes_only_after_named_dois_are_absent(
     tmp_path: Path, monkeypatch,
 ) -> None:

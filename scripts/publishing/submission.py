@@ -1726,15 +1726,18 @@ def _parsed_source_excerpt(parsed_dir: Path, receipt_id: str) -> str:
     return ""
 
 
-def _parsed_source_text(parsed_dir: Path, receipt_id: str) -> str:
+def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str, Any]) -> str:
     data = _read_json(parsed_dir / f"{receipt_id}.paper_sections.json")
     sections = data.get("sections")
     if not isinstance(sections, dict):
         return ""
-    return " ".join(
-        " ".join(value.split()) for value in sections.values()
-        if isinstance(value, str) and value.strip()
-    )
+    # Keep a contiguous passage; background citations are not this study's findings.
+    for name in ("abstract", "results", "conclusion", "discussion", "methods"):
+        text = " ".join(str(sections.get(name) or "").split())
+        excerpt = _receipt_evidence_excerpt(receipt, text)
+        if len(excerpt.split()) >= 12:
+            return excerpt
+    return ""
 
 
 def _pubmed_abstracts(pmids: list[str]) -> dict[str, str]:
@@ -1859,12 +1862,8 @@ def _source_bundle(run: Path, *, limit: int, enrich: bool = True) -> list[dict[s
         claim_excerpt = _claim_excerpt(quant_dir, str(row.get("receipt_id") or ""))
         pubmed_excerpt = pubmed_abstracts.get(pmid or "")
         parsed_excerpt = _parsed_source_excerpt(parsed_dir, receipt_id)
-        receipt_excerpt = _receipt_evidence_excerpt(
-            receipt, _parsed_source_text(parsed_dir, receipt_id),
-        )
-        excerpt = receipt_excerpt if len(receipt_excerpt.split()) >= 12 else (
-            parsed_excerpt or pubmed_excerpt or ""
-        )
+        receipt_excerpt = _parsed_receipt_excerpt(parsed_dir, receipt_id, receipt)
+        excerpt = receipt_excerpt or parsed_excerpt or pubmed_excerpt or ""
         quote = _publication_evidence.exact_source_quote(claim_excerpt, excerpt)
         cited_as = str(row.get("body_citation") or "")
         rob = _publication_evidence.risk_of_bias_rating(rob_ratings, cited_as, receipt.get("citation_token"), receipt_id)
