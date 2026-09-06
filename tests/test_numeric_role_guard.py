@@ -379,6 +379,35 @@ def test_source_context_drift_ignores_citation_identifiers(tmp_path):
     assert "## Cross-Domain Synthesis" in fixed
 
 
+def test_source_context_drift_ignores_biomedical_identifiers_not_quantities():
+    from numeric_role_guard import _check_source_context_drift
+
+    sources = {"Smith 2025": {"0.05": {"effect"}}}
+    for label in ("FGF-21", "FGF-23", "type 2 diabetes", "type 1 diabetes"):
+        text = f"Smith 2025 studied {label} (P < 0.05)."
+        assert _check_source_context_drift(text, sources) is None
+        assert _check_source_context_drift(text + " A reduction of 99% was reported by Smith 2025.", sources)
+    assert _check_source_context_drift("Smith 2025 measured FGF 80 pg/mL.", sources)
+
+
+def test_source_context_drift_validates_exact_manifest_bullets():
+    from journal_finalizer import _manifest_source_finding_line
+    from numeric_role_guard import _strip_compiler_source_finding_lines
+
+    rows = [{
+        "citation_token": "Smith 2025", "source_title": "Serum FGF-21 responses",
+        "n_claims": 8, "outcome_class": "cardiometabolic",
+        "effect_direction": "unclear", "directness": "direct", "evidence_tier": "A1",
+    }]
+    trusted = "- " + _manifest_source_finding_line(rows[0]) + "."
+    rendered = trusted.replace("Smith 2025", "Smith 2025 [bundle:1]")
+    forged = rendered.replace("8 extracted", "80 extracted")
+    prose = "Smith 2025 reported a reduction of 99%."
+    checked = _strip_compiler_source_finding_lines("\n\n".join((rendered, forged, prose)), {"receipts": rows})
+    assert rendered not in checked
+    assert forged in checked and prose in checked
+
+
 def test_source_context_drift_skips_compiler_manifest_synthesis_blocks(tmp_path):
     qc_dir = tmp_path / "quant_claims"
     qc_dir.mkdir()

@@ -1575,7 +1575,8 @@ def _shorten_claim_sentence(sentence: str, limit: int = 180) -> str:
     clean = " ".join((sentence or "").replace("\xa0", " ").split())
     if len(clean) <= limit:
         return clean
-    return clean[: limit - 1].rstrip() + "…"
+    end = clean.find(" ", limit - 1)
+    return clean if end < 0 else clean[:end] + "…"
 
 
 def _completes_locked_comparison(current: str, locked: Any) -> bool:

@@ -418,6 +418,7 @@ _DRIFT_NUMERIC_RE = re.compile(
 )
 _NON_CLAIM_NUMERIC_RE = re.compile(
     r"\[bundle:\d+\]|\[exact source:[^\]]+\]|https?://\S+|"
+    r"\bFGF[-\u2010\u2011](?:21|23)\b|\btype\s+[12]\s+diabetes\b|"
     r"(?<!\w)10\.\d{4,9}/\S+", flags=re.IGNORECASE,
 )
 _NUMERIC_RANGE_RE = re.compile(
@@ -1152,10 +1153,19 @@ def _strip_markdown_table_lines(paper_md: str) -> str:
     )
 
 
+def _compiler_source_row_key(text: str) -> str:
+    text = " ".join(re.sub(r"\[bundle:\d+\]", "", text).split()).casefold()
+    return re.sub(r"\bp\s*([<=>]+)\s*", r"p\1", text)
+
+
 def _strip_compiler_source_finding_lines(paper_md: str, manifest: dict | None) -> str:
     """Drop finalizer-owned source-map bullets before prose scanning."""
     from agent.revision_claim_trace import _source_owned_results
-    trusted_rows = {re.sub(r"\[bundle:\d+\]", "[bundle]", " ".join(statement.split())) for _key, _number, statement in _source_owned_results(list(manifest.get("receipts") or ()))} if isinstance(manifest, dict) else set()
+    from importlib import import_module
+    source_finding_line = import_module("scripts.journal_finalizer")._manifest_source_finding_line
+    rows = list(manifest.get("receipts") or ()) if isinstance(manifest, dict) else []
+    trusted_rows = {_compiler_source_row_key(statement) for _key, _number, statement in _source_owned_results(rows)}
+    trusted_rows.update(_compiler_source_row_key("- " + source_finding_line(row) + ".") for row in rows)
     paper_md = re.sub(
         r"^Substantive evidence synthesis:.*?(?=\n\s*\n|^## |\Z)"
         r"|^Key findings from source synthesis:.*?"
@@ -1167,7 +1177,7 @@ def _strip_compiler_source_finding_lines(paper_md: str, manifest: dict | None) -
     )
     out: list[str] = []
     mode = ""
-    for line in (line for line in paper_md.splitlines() if re.sub(r"\[bundle:\d+\]", "[bundle]", " ".join(line.split())) not in trusted_rows):
+    for line in (line for line in paper_md.splitlines() if _compiler_source_row_key(line) not in trusted_rows):
         if line.startswith("### Source Classification Map"):
             mode = "section"
             continue

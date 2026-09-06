@@ -504,6 +504,26 @@ def test_receipt_thesis_uses_source_sentence_not_arm_paraphrase() -> None:
     assert "metformin increase" not in thesis
 
 
+def test_receipt_excerpt_does_not_invent_species_by_splitting_words() -> None:
+    from agent.evidence_lanes import is_animal_context
+
+    sentence = (
+        "Patients with type 2 diabetes (HbA1c >= 6.5%, use of antidiabetic drugs, "
+        "and/or disease codes of type 2 diabetes) and preserved kidney function "
+        "(estimated glomerular filtration rate >= 60) were included."
+    )
+    excerpt = orch._shorten_claim_sentence(sentence, sentence.index("rate") + 4)
+    assert not excerpt.endswith("rat…")
+    assert excerpt.endswith("rate…")
+    row = {"evidence_tier": "A2", "directness": "indirect", "thesis_text": excerpt}
+    assert not is_animal_context(row)
+    assert is_animal_context({**row, "thesis_text": "Kidney function was measured in rats."})
+    animal = "Kidney function was measured in rats with diabetes."
+    excerpt = orch._shorten_claim_sentence(animal, animal.index("rats") + 4)
+    assert excerpt.endswith("rats…")
+    assert is_animal_context({**row, "thesis_text": excerpt})
+
+
 def test_receipt_thesis_preserves_late_source_statistics() -> None:
     claims = [
         {
