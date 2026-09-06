@@ -601,12 +601,18 @@ def build_scoped_from_parsed(
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
     if not anchors:
+        if rejection_reasons is not None and not rejections:
+            rejection_reasons.append("empty_or_invalid_paragraphs")
         return None
     section_text = _normalize(" ".join(anchor.sentence for anchor in anchors))
     aliases = _topic_aliases(topic)
     if aliases and max(section_text.count(alias) for alias in aliases) < 2:
+        if rejection_reasons is not None:
+            rejection_reasons.append(f"topic_alias_under_count:<2:{aliases[0]}")
         return None
     if not any(hedge in section_text for hedge in _HEDGE_PHRASES):
+        if rejection_reasons is not None:
+            rejection_reasons.append("missing_hedge_phrase")
         return None
     return SynthesisSection(
         name=name, body_md="\n".join(body_lines).rstrip() + "\n",

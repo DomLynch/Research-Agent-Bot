@@ -802,10 +802,9 @@ def test_gate_refresh_rejects_stale_unknown_ask_verdict(tmp_path: Path) -> None:
 
 def test_revision_gate_generated_lifecycle() -> None:
     import tempfile
-    import pytest
+    import hypothesis
+    from hypothesis import strategies as st
 
-    hypothesis = pytest.importorskip("hypothesis")
-    st = pytest.importorskip("hypothesis.strategies")
     actions = ("repair", "regress", "approve", "reject", "new_review", "missing_gate", "corrupt_gate")
 
     @hypothesis.settings(max_examples=60, deadline=None, derandomize=True, database=None)

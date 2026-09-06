@@ -33,6 +33,8 @@ from agent.paper_writer_deterministic import (
 )
 from agent.paper_writer_helpers import (
     build_retry_prompt as _build_retry_prompt,
+    ceiling_retry_prompt,
+    log_section_done as _log_section_done,
     call_llm_section as _call_llm_section,
     section_word_count as _section_word_count,
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -381,6 +383,9 @@ async def _write_anchored_section(
                 rejected_json = None
             continue
         words = _section_word_count(section)
+        if retry := ceiling_retry_prompt(user_prompt, heading, words, floor):
+            current_prompt = retry
+            continue
         if words > best_words:
             best, best_words = section, words
         if best_words >= floor or floor == 0:
@@ -408,9 +413,8 @@ async def _write_anchored_section(
         # meet any section floor, so emitting it guarantees a downstream gate
         # failure. Announce it where the cause is still visible.
         print(
-            f"[paper_writer] {name}: ALL {SECTION_RETRY_BUDGET + 1} attempts "
-            f"failed — emitting placeholder fallback_body "
-            f"({len(fallback_body.split())} words, floor {floor})",
+            f"[paper_writer] {name}: ALL {SECTION_RETRY_BUDGET + 1} attempts failed; "
+            f"placeholder fallback_body ({len(fallback_body.split())} words, floor {floor})",
             flush=True,
         )
     return best or SynthesisSection(
@@ -444,6 +448,7 @@ async def _write_scoped_section(
             chain=chain, client=client, ledger=ledger, seed=seed,
         )
         if not parsed:
+            print(f"[paper_writer] {name}: no parseable object (attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})", flush=True)
             continue
         rejection_reasons: list[str] = []
         section = build_scoped_from_parsed(
@@ -451,6 +456,7 @@ async def _write_scoped_section(
             rejection_reasons=rejection_reasons,
         )
         if section is None:
+            print(f"[paper_writer] {name}: rejected (attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1}): {'; '.join(rejection_reasons) or 'invalid_section_shape'}", flush=True)
             current_prompt = cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
             continue
         words = _section_word_count(section)
@@ -704,13 +710,6 @@ async def render_full_paper(
     topic_title = humanize_topic(topic, title_case=True, root=_repo)
     title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
     sections: dict[SectionName, SynthesisSection] = {}
-
-    def _log_section_done(name: str, sect: SynthesisSection) -> None:
-        words = _section_word_count(sect)
-        print(
-            f"[paper_writer] {name:25} done — {words} words",
-            flush=True,
-        )
 
     print("[paper_writer] starting full-paper render", flush=True)
     sections["abstract"] = await _write_anchored_section(

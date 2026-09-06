@@ -109,10 +109,11 @@ def build_backstop_prompt(
         f"for the {section_name.upper()} section. The Researka "
         f"audit will FAIL the entire paper if this section is "
         f"below {floor} words. You MUST produce at LEAST "
-        f"{floor + 100} words of substantive prose. Add more "
-        f"paragraphs. Make each paragraph 8-12 sentences. Do NOT "
-        f"pad with restated literature; cite once and add new "
-        f"analysis. The audit gate is non-negotiable."
+        f"{floor + 100} words of substantive, source-grounded prose. Preserve "
+        f"the section's original JSON schema and paragraph grouping; a one-sentence "
+        f"record must stay one sentence. Cite every empirical statement as instructed. "
+        f"Do NOT invent evidence, numerical study designs, treatment advice or filler "
+        f"to satisfy length. Expand supported comparisons and limitations only."
     )
 
 

@@ -418,6 +418,55 @@ def test_retry_prompt_requires_mapped_source_language() -> None:
     assert "evidence_excerpt" in prompt
 
 
+def test_all_section_briefs_and_retries_share_evidence_boundaries() -> None:
+    from agent.paper_writer_prompts import ABSTRACT_SOURCE_RETRY, format_prompts_for_topic
+    from agent.paper_writer_backstop import build_backstop_prompt
+
+    prompts = format_prompts_for_topic("BNT162b2", "vaccine")
+    assert len(prompts) == 8
+    for name, prompt in prompts.items():
+        assert "Do not invent citations, study designs, search dates" in prompt
+        assert "Word targets apply to THIS section" in prompt
+        assert "A value elsewhere in the corpus is not support" in prompt
+        assert "canonical clinical thresholds with their Author-Year" not in prompt
+        backstop = build_backstop_prompt(prompt, name, 20, 250)
+        assert "original JSON schema" in backstop
+        assert "Make each paragraph 8-12 sentences" not in backstop
+    for prompt in (prompts["abstract"], ABSTRACT_SOURCE_RETRY):
+        assert "200-280" in prompt and "300" in prompt
+        assert "300-400" not in prompt and "250-350" not in prompt
+    for name in ("cross_domain_synthesis", "limitations_full"):
+        retry = paper_writer.cross_domain_retry_prompt("base", name, ["novel_numeric:'50'"])
+        assert "omit ALL numeric quantities" in retry
+    assert "NOT actionable treatment advice" in prompts["conclusion"]
+
+
+def test_abstract_retries_over_ceiling_instead_of_returning_it(monkeypatch) -> None:
+    from agent.synthesis_schemas import SynthesisSection
+
+    calls = []
+    async def call(**kwargs):
+        calls.append(kwargs["user_prompt"])
+        return {"words": 330 if len(calls) == 1 else 260}
+
+    def build(parsed, **kwargs):
+        return SynthesisSection(name="abstract", body_md="## Abstract\n\n" + "word " * parsed["words"], anchors=())
+
+    async def citation_pass(section, **kwargs):
+        return section
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", call)
+    monkeypatch.setattr(paper_writer, "build_anchored_from_parsed", build)
+    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", citation_pass)
+    section = asyncio.run(paper_writer._write_anchored_section(
+        name="abstract", heading="## Abstract", system_prompt="brief", user_prompt="evidence",
+        accepted=[], chain=[], client=None, ledger=None, seed=None, fallback_body="fallback",
+    ))
+    assert paper_writer._section_word_count(section) == 260
+    assert len(calls) == 2 and "LENGTH RETRY REQUIRED" in calls[1]
+    assert "200-300 words" in calls[1]
+
+
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
     receipts = [
         _summary(

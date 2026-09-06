@@ -760,7 +760,7 @@ def test_restore_public_surface_floors_without_typed_sections() -> None:
     assert orch._word_count(body) >= 400
 
 
-def test_restore_public_surface_floors_replaces_overlong_abstract() -> None:
+def test_restore_public_surface_floors_preserves_overlong_abstract_for_gate() -> None:
     paper = (
         "## Abstract\n\n" + _words(330) + "\n\n"
         "## Introduction\n\n" + _words(420) + "\n\n"
@@ -775,14 +775,13 @@ def test_restore_public_surface_floors_replaces_overlong_abstract() -> None:
 
     out, log = orch._restore_public_surface_floors(paper)
 
-    assert log == [{
-        "fix_type": "surface_floor_backstop",
-        "section": "Abstract",
-        "reason": "replace_long_section",
-    }]
+    assert out == paper and log == []
     match = orch._rendered_section_match(out, "## Abstract")
     assert match is not None
-    assert 150 <= orch._word_count(match.group(1)) <= 300
+    assert orch._word_count(match.group(1)) == 330
+    from agent.journal_surface_gate import evaluate_journal_surface
+    assert any("Abstract" in issue.detail and "330" in issue.detail
+               for issue in evaluate_journal_surface(out).issues)
 
 
 def test_restore_public_surface_floors_respects_thin_review_type() -> None:

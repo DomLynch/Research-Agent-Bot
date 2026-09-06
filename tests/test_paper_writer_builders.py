@@ -420,6 +420,32 @@ def test_scoped_applies_topic_and_hedge_contract_across_section() -> None:
     ) is None
 
 
+def test_scoped_failures_explain_the_actual_retry_contract() -> None:
+    from agent.paper_writer_prompts import cross_domain_retry_prompt
+
+    for text, ids, expected, guidance in (
+        ("BNT162b2 evidence remains uncertain.", ["r1"], "topic_alias_under_count:", "TOPIC RETRY REQUIRED"),
+        ("BNT162b2 evidence concerns BNT162b2.", ["r1"], "missing_hedge_phrase", "UNCERTAINTY RETRY REQUIRED"),
+        ("BNT162b2 may inform BNT162b2 research.", [], "no_accepted_anchor:", "CITATION RETRY REQUIRED"),
+    ):
+        receipt = _accepted("r1", thesis_text="Test source - source excerpts: " + text)
+        reasons: list[str] = []
+        section = build_scoped_from_parsed(
+            {"paragraphs": [{"text": text, "receipt_ids": ids}]},
+            name="conclusion", heading="## Conclusion", topic="bnt162b2_vaccine_effects",
+            accepted=[receipt], rejection_reasons=reasons,
+        )
+        assert section is None and any(reason.startswith(expected) for reason in reasons)
+        assert guidance in cross_domain_retry_prompt("base", "conclusion", reasons)
+
+    reasons = []
+    assert build_scoped_from_parsed(
+        {"paragraphs": []}, name="conclusion", heading="## Conclusion",
+        topic="bnt162b2_vaccine_effects", accepted=[], rejection_reasons=reasons,
+    ) is None
+    assert reasons == ["empty_or_invalid_paragraphs"]
+
+
 def test_scoped_numeric_forms_must_exist_in_anchored_corpus() -> None:
     numeric_text = (
         "The trial enrolled n = 120 at age 65, used 10 mg for 12 weeks, "

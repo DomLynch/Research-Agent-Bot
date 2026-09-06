@@ -8,6 +8,7 @@ from collections.abc import Sequence
 import httpx
 
 from agent.llm_client import CallSpec, CostLedger, chat_json
+from agent.journal_surface_gate import _SECTION_CEILINGS
 from agent.synthesis_schemas import SynthesisSection
 
 logger = logging.getLogger(__name__)
@@ -88,6 +89,10 @@ def strip_rendered_citation_markers(markdown: str) -> str:
     return _RENDERED_CITED_RE.sub("", markdown)
 
 
+def log_section_done(name: str, section: SynthesisSection) -> None:
+    print(f"[paper_writer] {name:25} done - {section_word_count(section)} words", flush=True)
+
+
 def build_retry_prompt(
     base_user_prompt: str,
     *,
@@ -104,13 +109,19 @@ def build_retry_prompt(
         f"of substantive prose. Add evidence-grounded paragraphs; do not "
         f"stretch one paragraph across sources. Every empirical sentence "
         f"must include an exact accepted receipt_id inline and list it in "
-        f"receipt_ids; split when support differs. Do NOT default to summary mode.\n"
-        f"CRITICAL: every numeric value you write must appear verbatim in "
-        f"the sources given above. Any number that does not is dropped along "
-        f"with the whole paragraph containing it, which is why the previous "
-        f"attempt came back short. If you cannot source a figure, describe "
-        f"the finding in words instead of inventing a value. Longer prose "
-        f"with no new numbers beats precise-looking prose that is discarded."
+        f"receipt_ids; split when support differs. Preserve the section's JSON schema "
+        f"and qualitative-only rules. Never invent evidence to meet a word target."
+    )
+
+
+def ceiling_retry_prompt(base: str, heading: str, words: int, floor: int) -> str | None:
+    ceiling = _SECTION_CEILINGS.get(heading.removeprefix("## "))
+    if ceiling is None or words <= ceiling:
+        return None
+    return (
+        f"{base}\n\nLENGTH RETRY REQUIRED: {heading} had {words} words. "
+        f"Write {floor}-{ceiling} words, preserving supported findings, citations "
+        "and qualifications. Remove repetition, not evidence. Keep the JSON schema."
     )
 
 

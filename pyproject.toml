@@ -19,6 +19,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "pytest>=8,<9",
+  "hypothesis>=6.167,<7",
   # Required for async-test support: tests/test_source_hardening.py and
   # tests/test_enrichment_v2.py use @pytest.mark.asyncio. Without this
   # plugin a clean `pytest -q` fails 72 tests with "async def functions
@@ -30,7 +31,6 @@ dev = [
 ]
 diagnostics = [
   "coverage[toml]>=7.16,<8",
-  "hypothesis>=6.167,<7",
   "py-spy>=0.4,<1",
   "pytest>=8,<9",
   "pytest-randomly>=5,<6",

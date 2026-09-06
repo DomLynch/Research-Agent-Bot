@@ -485,7 +485,7 @@ def _restore_public_surface_floors(
     """Enforce the section floors for the selected review type."""
     try:
         from agent.journal_surface_gate import (
-            _REQUIRED_SECTIONS, _REQUIRED_SECTIONS_THIN, _SECTION_CEILINGS,
+            _REQUIRED_SECTIONS, _REQUIRED_SECTIONS_THIN,
         )
     except ImportError:
         return paper_md, []
@@ -496,7 +496,6 @@ def _restore_public_surface_floors(
     titles = tuple(required.keys())
     for idx, title in enumerate(titles):
         floor = int(required[title])
-        ceiling = _SECTION_CEILINGS.get(title)
         heading = f"## {title}"
         match = _rendered_section_match(out, heading)
         context_md = out if match is None else out[:match.start()] + out[match.end():]
@@ -505,9 +504,10 @@ def _restore_public_surface_floors(
             continue
         if match is not None:
             words = _word_count(match.group(1))
-            if words >= floor and (ceiling is None or words <= ceiling):
+            # Length excess must remain visible to the gate, never erase findings.
+            if words >= floor:
                 continue
-            reason = "replace_long_section" if ceiling is not None and words > ceiling else "replace_short_section"
+            reason = "replace_short_section"
         else:
             reason = "insert_missing_section"
         if match is not None:
