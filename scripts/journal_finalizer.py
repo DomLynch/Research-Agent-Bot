@@ -2669,6 +2669,9 @@ def _source_grounding_section_insert_at(text: str, heading: str) -> int:
 def _phase_d_substantive_evidence_synthesis(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
+    # Explicit preparation owns scientific prose; do not restore metadata findings afterwards.
+    if (out_dir / "submission_source_proofs.json").is_file():
+        return text, []
     request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
     feedback = _revision_feedback(request)
     if not _revision_asks_substantive_evidence_synthesis(feedback):
@@ -2684,20 +2687,17 @@ def _phase_d_substantive_evidence_synthesis(
         return text, []
     text, legacy_n = _remove_legacy_source_pattern_summary(text)
     key_finding_lines = _manifest_key_finding_lines(rows, limit=len(rows) if full_source_surface else 8)
-    result_limit = len(key_finding_lines) if full_source_surface else 5
-    result_sentence = "\n".join(f"- {line}" for line in key_finding_lines[:result_limit])
+    result_sentence = "\n".join(f"- {line}" for line in (key_finding_lines if full_source_surface else key_finding_lines[:5]))
     if result_sentence:
         result_sentence += "\n\n"
     outcome_lines = _manifest_outcome_summary_lines(rows, per_outcome_limit=None if full_source_surface else 3)
-    outcome_limit = len(outcome_lines) if full_source_surface else 8
-    outcome_sentence = "\n".join(f"- {line}" for line in outcome_lines[:outcome_limit])
+    outcome_sentence = "\n".join(f"- {line}" for line in (outcome_lines if full_source_surface else outcome_lines[:8]))
     if outcome_sentence:
         outcome_sentence = "Source-level findings by outcome class:\n\n" + outcome_sentence + "\n\n"
     pattern_summary = _manifest_source_pattern_summary(rows)
     if pattern_summary:
         pattern_summary += "\n\n"
-    count_reconciliation = _manifest_count_reconciliation_note(rows, feedback)
-    if count_reconciliation:
+    if count_reconciliation := _manifest_count_reconciliation_note(rows, feedback):
         count_reconciliation += "\n\n"
     direction_visibility = _manifest_direction_visibility_note(rows, feedback)
     if direction_visibility:
@@ -5606,7 +5606,7 @@ def _phase_f_reconcile_results_table(
         for m in re.finditer(r"^###\s+(.+?)\s*$", new_results, flags=re.M)
     }
     missing_blocks = []
-    for slug, display in stubs:
+    for slug, display in (() if (out_dir / "submission_source_proofs.json").is_file() else stubs):
         matching = groups.get(slug, [])
         section_aliases = {
             slug, _outcome_key(_reviewer_adjusted_outcome_label(display, feedback)),

@@ -3650,6 +3650,45 @@ def test_substantive_evidence_synthesis_creates_landscape_and_key_findings(tmp_p
     assert logs[0].phase == "D_substantive_evidence_synthesis"
 
 
+def test_substantive_synthesis_does_not_restore_templates_after_preparation(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    import importlib
+
+    orch = importlib.import_module("scripts.run_v06_synthesis")
+    monkeypatch.setattr(orch, "_ACTIVE_TOPIC", getattr(orch, "_ACTIVE_TOPIC", ""))
+    monkeypatch.setattr(orch, "_ACTIVE_MANIFEST", getattr(orch, "_ACTIVE_MANIFEST", {}))
+    monkeypatch.setattr(orch, "_restore_public_surface_floors", lambda text, **_: (text + "restored", []))
+    paper = "## Results\n\nSource evidence remains unresolved.\n\n## Conclusion\n\nBounded.\n"
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({
+        "feedback": "Provide actual evidence synthesis.",
+    }))
+    (tmp_path / "manifest.json").write_text(json.dumps({"total_words": 1000, "receipts": [{
+        "receipt_id": "karim", "citation_token": "Karim 2026 [bundle:18]",
+        "source_title": "Improvement in postural imbalance with intake of resveratrol",
+        "outcome_class": "frailty", "effect_direction": "negative",
+        "directness": "direct", "evidence_tier": "A1", "n_claims": 1,
+        "p_values": ["P < 0.05"],
+        "thesis_text": "Source excerpts: Resveratrol significantly improved balance and gait speed (all p < 0.05), without affecting resting pain.",
+    }]}))
+    before, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+    assert "representative statistic" in before
+    restored_before, _ = journal_finalizer.review_noise_control.restore_surface_floors(
+        paper, tmp_path, [], journal_finalizer.FinalizerLogEntry,
+    )
+    assert restored_before == paper + "restored"
+    for proof in ("[]", "{"):
+        (tmp_path / "submission_source_proofs.json").write_text(proof)
+        after, logs = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
+        assert (after, logs) == (paper, [])
+        reconciled, _ = journal_finalizer._phase_f_reconcile_results_table(paper, tmp_path)
+        assert "representative statistic" not in reconciled
+        assert "| Outcome class |" in reconciled
+        assert "Source evidence remains unresolved." in reconciled
+        restored, entries = journal_finalizer.review_noise_control.restore_surface_floors(
+            paper, tmp_path, [], journal_finalizer.FinalizerLogEntry,
+        )
+        assert (restored, entries) == (paper, [])
+
+
 def test_substantive_evidence_synthesis_is_idempotent_after_surface_rewrite(tmp_path: Path) -> None:
     from agent.journal_surface_gate import apply_pipeline_jargon_replacements
 
