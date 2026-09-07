@@ -2310,7 +2310,7 @@ def _ensure_named_numeric_correction_statement(text: str, feedback: str, out_dir
         return re.subn(rf"(?im)^Numeric verification note:\s*{re.escape(source_label)}\b[^\n]*(?:\n|$)", "", text)
     statement = _stats.nominal_verification_statement(source_label, stat_text, feedback) if is_p_value else None
     if statement:
-        return (text, 0) if statement in text else _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
+        return (text, 0) if statement in re.sub(r"\s*\[bundle:\d+\]", "", text) else _prepend_or_create_section_paragraph(text, "Evidence Landscape", statement)
     normalized, n_existing = _clarify_mapped_non_significant_comparison(text)
     if n_existing:
         text = normalized

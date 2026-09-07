@@ -2497,6 +2497,10 @@ def test_numeric_significance_correction_does_not_invent_non_significance(tmp_pa
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs
 
+    cited = fixed.replace("Smith 2025", "Smith 2025 [bundle:10]")
+    stable, _ = journal_finalizer._phase_d_numeric_significance_correction(cited, tmp_path)
+    assert stable == cited
+
 
 def test_exact_stat_trace_request_does_not_trigger_legacy_numeric_note(tmp_path: Path) -> None:
     import revision_coverage
