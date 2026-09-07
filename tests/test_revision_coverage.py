@@ -2311,6 +2311,14 @@ def test_ambiguous_multi_source_recode_authorizes_nothing() -> None:
     ) == {}
 
 
+def test_named_source_reclassification_authorizes_only_coupled_tier_fields() -> None:
+    rows = {name: {"source_title": name} for name in ("Evans 2016", "Richer 2013", "Evans 2017")}
+    fields = {"directness", "evidence_tier"}
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        "Correct the evidence classification of Evans 2016 and Richer 2013, which are not completed RCTs.", rows,
+    ) == {"Evans 2016": fields, "Richer 2013": fields}
+
+
 def test_direction_coding_relabel_request_authorizes_only_named_directions() -> None:
     rows = {"karim": {"source_title": "Karim 2025"}, "bastin": {"source_title": "Bastin 2025"}, "other": {"source_title": "Other 2020"}}
     feedback = "State the direction-coding convention explicitly and then relabel or reconcile Karim 2025 and Bastin 2025, currently negative despite improvement."

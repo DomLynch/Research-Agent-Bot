@@ -1,10 +1,6 @@
 name: CI Gate
 
-on:
-  push:
-    branches: [main, "codex/019e9ce8/main"]
-  pull_request:
-    branches: [main, "codex/019e9ce8/main"]
+on: [push, pull_request]
 
 jobs:
   test:
@@ -26,6 +22,9 @@ jobs:
 
       - name: Lint (ruff)
         run: ruff check .
+
+      - name: Quality ratchets and randomized lifecycle
+        run: make quality PYTHON=python
 
       - name: Type check
         run: mypy agent scripts

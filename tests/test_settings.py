@@ -17,10 +17,18 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 
 from agent import settings as settings_module
+
+
+@pytest.fixture(autouse=True)
+def isolate_process_environment():
+    """Dotenv writes directly to environ; restore those writes after each test."""
+    with patch.dict(os.environ):
+        yield
 
 
 @pytest.fixture

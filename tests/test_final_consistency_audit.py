@@ -934,7 +934,7 @@ def test_apply_fixes_does_not_pad_results_after_numeric_strips() -> None:
     paper = "## Results\n\n" + " ".join(f"word{i}" for i in range(380))
     out, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
     assert "**Result-interpretation guardrail.**" not in out
-    assert fixer._section_word_count(out, "Results") == 380
+    assert fixer._section_word_count(out, "Results") == 380, log
     assert not any(
         item["fix_type"] == "analytical_depth_backfill"
         and "'Results'" in item["description"]

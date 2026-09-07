@@ -1,22 +1,12 @@
-"""Fix #4: Evidence taxonomy — A1/A2/B1/B2/C1/C2 from structured
-metadata, NOT inferred from prose.
-
-Pre-fix: human observational mortality studies were tagged
-`directness=mechanistic` because the heuristic in
-`_classify_paper_tier` checked only receipt_id prefix (`PMC` →
-"mechanistic"). MET-PREVENT (Witham 2025, a real human RCT) was
-tagged `effect_direction=positive` even though the trial's primary
-walk-speed result was null (0.001 m/s, p=0.96).
-
-Fix: per-paper deterministic classifier from structured metadata
-(study_design + species + endpoint_kind). Returns one of:
-
+"""Deterministic evidence taxonomy from study_design, species and endpoint_kind.
+The legacy inference path uses the paper's title/abstract, not its identifier prefix.
   - A1: direct human RCT with clinical/functional endpoint
   - A2: human mechanistic intervention study
   - B1: systematic / narrative review
   - B2: human observational cohort
   - C1: animal / model-organism preclinical
   - C2: molecular / mechanistic review
+  - D1: protocol without reported results
 
 When metadata is insufficient, returns `tier="unknown"` and a
 rationale — the audit can flag those for manual annotation.
@@ -116,6 +106,7 @@ _DESIGN_OBSERVATIONAL_TOKENS: tuple[str, ...] = (
     "prospective cohort", "retrospective cohort", "ehr cohort",
     "cohort study", "cohort", "case-control", "case control",
     "observational", "retrospective", "prospective",
+    "case report", "case series", "case-by-case",
 )
 _DESIGN_PRECLINICAL_TOKENS: tuple[str, ...] = (
     "animal study", "preclinical", "in vivo", "in vitro",
@@ -130,7 +121,7 @@ _DESIGN_PRECLINICAL_TOKENS: tuple[str, ...] = (
 _DESIGN_PROTOCOL_TOKENS: tuple[str, ...] = (
     "study protocol", "trial protocol", "research protocol",
     "protocol for a", "protocol for the", "rationale and design",
-    "design and rationale", "statistical analysis plan",
+    "design and rationale", "rationale and study design", "statistical analysis plan",
 )
 
 
@@ -349,7 +340,7 @@ def classify_evidence(
 _TITLE_PROTOCOL_RE = re.compile(
     r"\b(study protocol|trial protocol|research protocol|"
     r"protocol (?:for|of)(?: (?:a|an|the))?|rationale and design|"
-    r"design and rationale|statistical analysis plan)\b",
+    r"design and rationale|rationale and study design|statistical analysis plan)\b",
     re.IGNORECASE,
 )
 _TITLE_RCT_RE = re.compile(
@@ -358,11 +349,11 @@ _TITLE_RCT_RE = re.compile(
 )
 _TITLE_OBSERVATIONAL_RE = re.compile(
     r"\b(cohort|registry|observational|target trial|emulation|"
-    r"retrospective|prospective|case[\-\s]?control|single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed)\b",
+    r"retrospective|prospective|case[\-\s]?control|case reports?|case series|case-by-case|single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed)\b",
     re.IGNORECASE,
 )
 _NONRANDOMIZED_DESIGN_RE = re.compile(
-    r"\b(?:single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed|observational|retrospective)\b", re.I,
+    r"\b(?:single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed|observational|retrospective|case reports?|case series|case-by-case)\b", re.I,
 )
 _FUTURE_TRIAL_RE = re.compile(
     r"\b(?:trials?\s+(?:are|is)\s+(?:needed|required|warranted)|"
@@ -426,8 +417,11 @@ def _is_protocol_paper(title: str, abstract: str) -> bool:
 def is_primary_randomized_study(title: str, abstract: str = "", *, study_design: str = "") -> bool:
     title, abstract, study_design = map(_normalize_study_text, (title, abstract, study_design))
     identity_text = f"{title} {study_design}"
+    # Structured abstracts often cite earlier trials in Background, not Methods.
+    methods = re.search(r"\bmethods?\s*:\s*(.*?)(?=\b(?:results?|conclusions?|discussion)\s*:|$)", abstract, re.I | re.S)
+    design_text = methods.group(1) if methods else abstract
     # Calls for future trials describe missing evidence, not this study's design.
-    trial_evidence = " ".join(sentence for sentence in re.split(r"[.!?]\s+", abstract)
+    trial_evidence = " ".join(sentence for sentence in re.split(r"[.!?]\s+", design_text)
                               if not _FUTURE_TRIAL_RE.search(sentence)
                               and not _NONRANDOMIZED_DESIGN_RE.search(sentence))
     return bool(

@@ -1,0 +1,9 @@
+{
+  "path": ["agent", "scripts"],
+  "format": ["python"],
+  "minLines": 10,
+  "minTokens": 100,
+  "ignore": ["**/__pycache__/**", "**/*.pyc"],
+  "reporters": ["json"],
+  "output": ".quality-reports"
+}

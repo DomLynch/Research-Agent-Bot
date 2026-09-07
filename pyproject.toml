@@ -20,6 +20,8 @@ dependencies = [
 dev = [
   "pytest>=8,<9",
   "hypothesis>=6.167,<7",
+  "pytest-randomly>=5,<6",
+  "coverage[toml]>=7.16,<8",
   # Required for async-test support: tests/test_source_hardening.py and
   # tests/test_enrichment_v2.py use @pytest.mark.asyncio. Without this
   # plugin a clean `pytest -q` fails 72 tests with "async def functions
@@ -28,6 +30,8 @@ dev = [
   "pytest-asyncio>=1,<2",
   "ruff>=0.13,<0.16",
   "mypy>=1.18,<2",
+  "PyYAML>=6,<7",
+  "types-PyYAML>=6,<7",
 ]
 diagnostics = [
   "coverage[toml]>=7.16,<8",
@@ -40,8 +44,8 @@ diagnostics = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = [".", "scripts"]
-# Diagnostics must not randomize ordinary hooks/CI; opt in with -p randomly.
-addopts = "-p no:randomly"
+# Randomized order is required; pytest prints the seed for reproduction.
+addopts = "-p randomly"
 # Auto-mode: pytest-asyncio treats `async def test_*` as async tests
 # without requiring per-test @pytest.mark.asyncio. Existing tests use
 # the marker explicitly; this keeps "strict" semantics consistent with

@@ -280,21 +280,21 @@ def test_animal_receipt_is_submitted_as_context_not_direct() -> None:
     assert daily._source_context_for_receipt(receipt) == "context"
 
 
-@pytest.mark.parametrize("source_case", ["supported", "contradicted", "negated", "missing"])
+@pytest.mark.parametrize("source_case", ["supported", "background", "contradicted", "negated", "missing"])
 def test_preparation_refreshes_old_qei_from_frozen_context_and_labels_protocol(tmp_path: Path, source_case: str) -> None:
     run = _run(tmp_path)
     manifest = daily._read_json(run / "manifest.json")
     manifest["receipts"][1]["directness"] = "protocol"
     _write_json(run / "manifest.json", manifest)
     corpus = tmp_path / "docs" / "quality-reference" / "topic"
-    sentence = "Other cohorts had a median reduction in triglycerides of 48% and mortality of 1.7%."
+    sentence = ("Other cohorts" if source_case == "background" else "Our participants") + " had a median reduction in triglycerides of 48% and mortality of 1.7%."
     _write_json(corpus / "quant_claims" / "topic_effect_0.quant_claims.json", {
         "paper_id": "topic_effect_0", "claims": [{
             "claim_type": "percentage", "raw_text": "48%", "numeric_values": [48],
             "sentence": sentence, "binding_confidence": "high", "endpoint": "mortality",
         }],
     })
-    source_text = {"supported": sentence, "contradicted": "Survival was 100% in both groups.",
+    source_text = {"supported": sentence, "background": sentence, "contradicted": "Survival was 100% in both groups.",
                    "negated": "There is no evidence that " + sentence, "missing": ""}[source_case]
     _write_json(corpus / "parsed" / "topic_effect_0.paper_sections.json", {"sections": {"abstract": source_text}})
     shutil.rmtree(run / "revision_evidence_snapshot")
@@ -309,6 +309,8 @@ def test_preparation_refreshes_old_qei_from_frozen_context_and_labels_protocol(t
     assert "| Alpha 2026 | mortality | 48% |" not in payload["body_markdown"]
     assert payload["body_markdown"].count(f"| Alpha 2026 | {sentence} | 48% |") == (1 if source_case == "supported" else 0)
     assert payload["body_markdown"].count("## Quantitative Evidence Index") <= 1
+    if source_case == "background":
+        assert "drop_unowned_result" in (run / "qei_quarantine.json").read_text()
     protocol = payload["source_bundle"][1]
     assert (protocol["publication_type"], protocol["directness"], protocol["evidence_context"]) == ("study protocol", "protocol", "context")
     assert payload["metadata"]["submission_payload_hash"] == daily._payload_fingerprint(payload)

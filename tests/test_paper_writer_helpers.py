@@ -7,6 +7,7 @@ from typing import Any
 import pytest
 
 from agent import paper_writer_helpers as helpers
+from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
 
 
 @pytest.mark.asyncio
@@ -16,6 +17,10 @@ async def test_call_llm_section_retries_one_timeout(monkeypatch: pytest.MonkeyPa
     async def fake_chat_json(**_kwargs: Any) -> SimpleNamespace:
         nonlocal calls
         calls += 1
+        assert _kwargs["messages"] == [
+            {"role": "system", "content": PUBLICATION_REQUIREMENTS + "\nsys"},
+            {"role": "user", "content": "user"},
+        ]
         if calls == 1:
             raise asyncio.TimeoutError
         return SimpleNamespace(parsed={"section": "ok"})

@@ -1,6 +1,24 @@
 """LLM system prompts for generic multi-topic full-paper sections."""
 from __future__ import annotations
 
+PUBLICATION_POLICY_VERSION = "reviewer-v13-repairability"
+PUBLICATION_REQUIREMENTS = f"""Publication target: {PUBLICATION_POLICY_VERSION}.
+The full manuscript must earn at least 4/5 in EACH of: research_question_quality,
+synthesis_quality, claim_evidence_alignment, limitations_quality, gaps_quality,
+and source_grounding; no average compensates for a weak category. Acceptance also
+requires supported claims, no overclaim and no unresolved major issues. Do not claim acceptance yourself.
+Keep the declared article type, question, population, methods and conclusions consistent.
+Each section contributes to that shared goal while retaining its own format and word budget.
+For tables and prose, distinguish this study's own results from studies it cites;
+keep source, endpoint, comparator, value, significance and direction together.
+Protocols are not completed trials; case series and observational evidence are not RCTs.
+Do not invent methods, evidence classifications or risk-of-bias assessments to meet the rubric.
+Optional style/wording suggestions are not publication blockers. Address prior material
+issues using evidence, keep resolved fixes, and identify unresolved items; do not hide them.
+Correctable errors use existing evidence; a fundamentally new question or missing evidence
+must be flagged, not fabricated. This guidance does not replace source validation or the output schema.
+"""
+
 ABSTRACT_SOURCE_RETRY = """Write a source-exact evidence abstract about the supplied topic, 200-280 words; never exceed 300.
 Return JSON {"paragraphs":[{"sentence":"<source sentence without final punctuation> [receipt_id].","receipt_ids":["receipt_id"],"numerics":[]}]}.
 Select 8-10 informative complete sentences from the supplied evidence_excerpt fields.

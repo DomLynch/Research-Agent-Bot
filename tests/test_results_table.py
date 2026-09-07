@@ -636,15 +636,18 @@ def test_frozen_gubensek_mortality_value_is_not_exported_as_a_trial_outcome(tmp_
     "range_dash", "whitespace", "contradicted", "leading_negation",
     "trailing_qualification", "missing", "wrong_paper", "metadata_only",
     "changed_sign", "changed_operator", "changed_range",
-    "complete_negation", "complete_qualification",
+    "complete_negation", "complete_qualification", "background_cohort",
 ])
 def test_qei_checks_complete_parsed_source_and_preserves_authoritative_text(tmp_path, case):
-    source = (
+    background_source = (
         "Furthermore, large cohorts treated conservatively without PE, have recently been "
         "reported with a median reduction in triglycerides of 48% (IQR 29\u201363%) within "
         "the first 24 h and comparable clinical outcomes (median hospital stay of 6 days "
         "and mortality of 1.7%) to the published PE cohorts ( 9 )."
     )
+    source = "Our participants had a median reduction in triglycerides of 48% (IQR 29\u201363%) within the first 24 h and mortality of 1.7%."
+    if case == "background_cohort":
+        source = background_source
     sentence = source.replace("\u2013", "-")
     record_id = "gubensek"
     if case == "whitespace":
@@ -685,20 +688,36 @@ def test_qei_checks_complete_parsed_source_and_preserves_authoritative_text(tmp_
     if case != "missing":
         (parsed_dir / f"{record_id}.paper_sections.json").write_text(json.dumps({
             "paper_id": record_id, "title": source,
-            "sections": {"discussion": "" if case == "metadata_only" else source},
+            "sections": {"results": "" if case == "metadata_only" else source},
         }))
     md, diag = build_results_table_with_diagnostic(
         claims_dir, parsed_dir=parsed_dir, topic="plasma_exchange_adverse_rates",
         accepted_paper_ids=frozenset({"gubensek"}),
         citation_tokens_by_paper_id={"gubensek": "Gubensek 2022"},
     )
-    if case in {"range_dash", "whitespace", "complete_negation", "complete_qualification"}:
+    if case in {"range_dash", "whitespace"}:
         assert diag["n_rendered"] == 1
         assert f"| Gubensek 2022 | {' '.join(source.split())} | 48% |" in md
         assert "29-63%" not in md
     else:
         assert md == ""
-        assert diag["drop_surface_gate"] == 1
+        assert diag["drop_unowned_result" if case in {"complete_negation", "complete_qualification", "background_cohort"} else "drop_surface_gate"] == 1
+
+
+@pytest.mark.parametrize("section,sentence,owned", [
+    ("discussion", "Additionally, 75 mg trans-resveratrol increased FMD from 5.83% to 7.21% in 28 adults [ 9 ].", False),
+    ("results", "Abdollahi et al. reported improved insulin resistance (p = 0.01).", False),
+    ("abstract", "Previous studies reported a 17% improvement.", False),
+    ("introduction", "Resveratrol increased responsiveness by 17%.", False),
+    ("results", "Resveratrol increased responsiveness by 17%.", True),
+    ("abstract", "Resveratrol increased responsiveness by 17%.", True),
+    ("discussion", "We observed a 17% increase in responsiveness.", True),
+    ("discussion", "Resveratrol increased responsiveness by 17%.", False),
+])
+def test_qei_requires_result_ownership_not_merely_source_containment(section, sentence, owned):
+    from agent.results_table import _owned_result_sentence
+
+    assert _owned_result_sentence(sentence, {"sections": {section: sentence}}) is owned
 
 
 def test_qei_uses_canonical_citation_token(tmp_path):

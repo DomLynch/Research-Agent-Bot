@@ -8,6 +8,7 @@ import tempfile
 import urllib.request
 
 import pytest
+import yaml
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -203,7 +204,12 @@ def test_v3_units_do_not_override_canonical_publication_surface() -> None:
 def test_canonical_deploy_branch_runs_github_ci() -> None:
     for name in ("ci.yml", "eval.yml", "karpathy-pr.yml"):
         workflow = (REPO / ".github" / "workflows" / name).read_text(encoding="utf-8")
-        assert "codex/019e9ce8/main" in workflow
+        events = yaml.load(workflow, Loader=yaml.BaseLoader)["on"]
+        assert "pull_request" in events
+        for event in ("push", "pull_request"):
+            if isinstance(events, dict) and event in events:
+                branches = (events[event] or {}).get("branches")
+                assert branches is None or "codex/019e9ce8/main" in branches
     karpathy = (REPO / ".github" / "workflows" / "karpathy-pr.yml").read_text(encoding="utf-8")
     assert 'git fetch origin "${{ github.base_ref }}"' in karpathy
     assert 'git checkout "origin/${{ github.base_ref }}"' in karpathy

@@ -41,6 +41,26 @@ _DOSE_ENDPOINTS = {
 _RATIO_CLAIM_TYPES = {"hazard_ratio", "odds_ratio", "risk_ratio"}
 
 
+def _owned_result_sentence(sentence: str, record: dict[str, Any]) -> bool:
+    """A source-local quote can still describe another study's findings."""
+    if re.search(
+        r"\[\s*\d+(?:\s*[,;\-–]\s*\d+)*\s*\]|\bet al\.|"
+        r"\b(?:previous|prior|earlier|other|published)\s+(?:[\w-]+\s+){0,2}(?:stud(?:y|ies)|reports?|trials?|cohorts?|research|evidence)\b|"
+        r"\bno evidence that\b", sentence, re.I,
+    ):
+        return False
+    sections = record.get("sections", {})
+    if not isinstance(sections, dict):
+        return False
+    for name, text in sections.items():
+        if str(name).lower() in {"abstract", "results", "conclusion"} or (
+            str(name).lower() == "discussion" and re.search(r"\b(?:we|our|this study|present study)\b", sentence, re.I)
+        ):
+            if exact_source_quote(sentence, _record_text(text)):
+                return True
+    return False
+
+
 @dataclass(frozen=True, slots=True)
 class EvidenceRow:
     study_label: str       # "Author Year" or "<paper_id> (Year)"
@@ -87,6 +107,21 @@ def build_results_table(
     )[0]
 
 
+def _source_result_claim(
+    claim: dict[str, Any], source_text: str, normalized_source: str, record: dict[str, Any],
+) -> tuple[dict[str, Any], str]:
+    sentence = exact_source_quote(
+        re.sub(r"(?<=\d)\u2013(?=\d)", "-", str(claim.get("sentence") or "")), normalized_source,
+    )
+    match = re.search(
+        r"(?:^|[.!?]\s+)(" + re.escape(sentence) + r")(?=$|\s)", normalized_source,
+    ) if sentence and sentence.endswith((".", "!", "?")) else None
+    if not match:
+        return claim, "drop_surface_gate"
+    claim = {**claim, "sentence": source_text[slice(*match.span(1))]}
+    return claim, "" if _owned_result_sentence(str(claim["sentence"]), record) else "drop_unowned_result"
+
+
 def build_results_table_with_diagnostic(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
@@ -94,19 +129,12 @@ def build_results_table_with_diagnostic(
     quarantine_path: Path | None = None, parsed_dir: Path | None = None,
 ) -> tuple[str, dict[str, int]]:
     """Return QEI markdown plus drop counters."""
-    diag: dict[str, int] = {
-        "n_quant_files": 0,
-        "n_total_claims": 0,
-        "n_admissible": 0,
-        "n_topic_matched": 0,
-        "n_meaningful": 0,
-        "n_after_quotas": 0,
-        "n_rendered": 0,
-        "drop_off_topic_arm": 0,
-        "drop_non_receipt_paper": 0,
-        "drop_surface_gate": 0,
-        "drop_missing_canonical_citation": 0,
-    }
+    diag = dict.fromkeys((
+        "n_quant_files", "n_total_claims", "n_admissible", "n_topic_matched",
+        "n_meaningful", "n_after_quotas", "n_rendered", "drop_off_topic_arm",
+        "drop_non_receipt_paper", "drop_surface_gate",
+        "drop_missing_canonical_citation", "drop_unowned_result",
+    ), 0)
     rows: list[EvidenceRow] = []
     quarantined: list[dict[str, str]] = []
     if not quant_dir.exists():
@@ -127,6 +155,7 @@ def build_results_table_with_diagnostic(
             diag["drop_non_receipt_paper"] += 1
             continue
         source_text = ""
+        record = {}
         if parsed_dir is not None:
             try:
                 record = json.loads((parsed_dir / f"{paper_id}.paper_sections.json").read_text())
@@ -138,16 +167,11 @@ def build_results_table_with_diagnostic(
         for claim in data.get("claims", []) or []:
             diag["n_total_claims"] += 1
             if parsed_dir is not None:
-                sentence = exact_source_quote(
-                    re.sub(r"(?<=\d)\u2013(?=\d)", "-", str(claim.get("sentence") or "")), normalized_source,
-                )
-                match = re.search(
-                    r"(?:^|[.!?]\s+)(" + re.escape(sentence) + r")(?=$|\s)", normalized_source,
-                ) if sentence and sentence.endswith((".", "!", "?")) else None
-                if not match:
-                    diag["drop_surface_gate"] += 1
+                claim, reason = _source_result_claim(claim, source_text, normalized_source, record)
+                if reason:
+                    diag[reason] += 1
+                    quarantined.append(_qei_quarantine_entry(paper_id, claim, reason))
                     continue
-                claim = {**claim, "sentence": source_text[slice(*match.span(1))]}
             if not _confidence_admissible(claim):
                 continue
             diag["n_admissible"] += 1
@@ -216,12 +240,7 @@ def build_results_table_with_diagnostic(
 def format_empty_qei_placeholder(
     diagnostic: dict[str, int], *, topic: str,
 ) -> str:
-    """Diagnostic placeholder for the QEI section when no rows survive
-    all gates. Replaces the prior generic 'No high-confidence claims'
-    blurb with a structural breakdown so reviewers see exactly which
-    gate dropped the rows. Universal across topics — pure counter
-    rendering, no drug names, no per-topic prose.
-    """
+    """Report the actual gate drop counts when no QEI rows survive."""
     n_files = diagnostic.get("n_quant_files", 0)
     n_total = diagnostic.get("n_total_claims", 0)
     n_adm = diagnostic.get("n_admissible", 0)
@@ -247,21 +266,9 @@ def format_empty_qei_placeholder(
 
 
 def _row_is_meaningful(claim: dict[str, Any]) -> bool:
-    """Reviewer wave 9 (2026-05-05): drop rows whose endpoint is
-    unbound or whose unit/endpoint combination is semantically
-    incoherent. Universal — no drug names, no specific values.
+    """Reject unbound endpoints, incompatible units and non-result numerics.
 
-    Rules (each one drops the row):
-      1. endpoint ∈ {unknown, background, '', n/a, none, ?}
-      2. claim_type='unit_value' with TEMPORAL units (years, months,
-         days) but endpoint isn't a duration/age outcome — that's a
-         age-or-duration value misattributed to a non-temporal
-         endpoint (e.g. 'BMI = 65 years' — wrong).
-      3. claim_role is background/protocol-only; public QEI is for
-         outcome/effect numerics, not contextual or methods numerics.
-      4. percentage extractor captured the "95%" prefix of a CI;
-         the confidence_interval claim carries the publishable row.
-      5. partial-confidence ratio rows without a signed direction.
+    Binding confidence alone does not establish a statistic's meaning.
     """
     endpoint = (claim.get("endpoint") or "").strip().lower()
     if endpoint in _UNBOUND_ENDPOINTS:
@@ -378,10 +385,7 @@ def _qei_quarantine_entry(
     return {
         "reason": reason,
         "paper_id": paper_id,
-        "endpoint": str(claim.get("endpoint") or ""),
-        "arm": str(claim.get("arm") or ""),
-        "claim_type": str(claim.get("claim_type") or ""),
-        "raw_text": str(claim.get("raw_text") or ""),
+        **{key: str(claim.get(key) or "") for key in ("endpoint", "arm", "claim_type", "raw_text", "sentence")},
     }
 
 
@@ -455,25 +459,15 @@ def _short_citation(paper_id: str) -> str:
 
 def _confidence_admissible(claim: dict[str, Any]) -> bool:
     """High or partial confidence admitted; 'none' / unbound rejected."""
-    conf = (claim.get("binding_confidence") or "").lower()
-    return conf in ("high", "partial")
+    return (claim.get("binding_confidence") or "").lower() in ("high", "partial")
 
 
 def resolve_accepted_paper_ids(
     receipts: Any, parsed_dir: Path,
 ) -> frozenset[str]:
-    """Map receipts → corpus paper_ids via parsed metadata.
+    """Match accepted receipts to parsed paper IDs by DOI/PMID.
 
-    For each parsed/<paper_id>.paper_sections.json, read its DOI +
-    PMID. Match against receipts' source_doi / source_pmid. The set
-    of paper_ids that match are the ones contributing evidence —
-    used to scope the Quantitative Evidence Index so non-receipt
-    papers don't pad the table (P2 reviewer fix wave 6).
-
-    Universal across topics, no per-topic logic. Empty frozenset
-    when receipts have no DOI/PMID (rare — drug topics populate
-    these). Empty set is treated as 'no filter' upstream so the
-    table doesn't go empty for back-compat callers.
+    Empty means no matched evidence; callers must choose their fallback explicitly.
     """
     if not parsed_dir.exists():
         return frozenset()
@@ -511,8 +505,6 @@ def _load_topic_arm_terms(topic: str) -> frozenset[str]:
     drop cross-topic-arm rows from the table."""
     repo = Path(__file__).resolve().parent.parent
     tp_path = repo / "topic_packs" / f"{topic}.toml"
-    if not tp_path.exists():
-        return frozenset()
     try:
         from agent.topic_pack import load_topic_pack
         pack = load_topic_pack(tp_path)
@@ -538,23 +530,14 @@ def _arm_belongs_to_topic(
     - Non-empty arm: must match (case-insensitive substring) at least
       one topic-pack arm synonym OR be a generic comparator term.
     """
-    if not topic_arm_terms:
-        return True
     arm = (claim.get("arm") or "").strip().lower()
-    if not arm:
-        return True
     # Match by substring containment in either direction so 'low-dose
     # aspirin' matches 'aspirin' and vice versa.
-    return any(term in arm or arm in term for term in topic_arm_terms)
+    return not topic_arm_terms or not arm or any(term in arm or arm in term for term in topic_arm_terms)
 
 
 def _quality_score(claim: dict[str, Any]) -> int:
-    """Higher = better row to include in the table.
-    Rules from Shot 3 of the reviewer's plan:
-      - prefer p-value / CI / sample_size claims (statistical content)
-      - prefer claims with bound endpoint + arm (high binding)
-      - prefer hazard_ratio / odds_ratio / risk_ratio (effect estimates)
-    """
+    """Rank statistical information and bound endpoints/arms above bare values."""
     score = {
         **dict.fromkeys(_RATIO_CLAIM_TYPES, 5),
         "p_value": 3,
@@ -580,7 +563,7 @@ def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
         f"## Quantitative Evidence Index — {topic}\n\n"
         "_Quantitative Evidence Index: source excerpts with numerical statements. "
         "The quoted context retains the population, comparator and endpoint; "
-        "it may describe background studies rather than the cited report's own results._\n\n"
+        "source-local text alone does not establish study ownership; background-study quotations are excluded._\n\n"
     )
     header = (
         "| Study | Source context | Raw statistic |\n"

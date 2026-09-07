@@ -322,6 +322,16 @@ def test_prompt_uses_body_citations_when_registry_provided() -> None:
     assert "Allowed body citations" in user
 
 
+def test_review_and_repair_use_the_publication_policy() -> None:
+    from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
+    import revision_coverage
+
+    system, _ = final_reviewer._build_reviewer_prompt("paper", {"receipts": []}, {})
+    repair, _ = final_reviewer._build_repair_prompt([], "paper")
+    assert all(prompt.startswith(PUBLICATION_REQUIREMENTS) for prompt in (system, repair, revision_coverage._SYS))
+    assert "4/5 in EACH" in system and "Optional style/wording suggestions are not publication blockers" in system
+
+
 def test_prompt_keeps_same_background_citation_with_distinct_numerics() -> None:
     """A single background citation can define multiple canonical
     thresholds. The final-layer reviewer must see each token+numeric pair; deduping only by

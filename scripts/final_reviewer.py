@@ -43,6 +43,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 from agent.llm_client import LLMError, _call_codex, extract_json, review_call_spec  # noqa: E402
 from agent.settings import load_settings  # noqa: E402  loads .env
+from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS  # noqa: E402
 
 __all__ = ["TypedPatch", "review_paper", "main"]
 
@@ -76,6 +77,7 @@ def _build_reviewer_prompt(
 ) -> tuple[str, str]:
     """Build typed-patch instructions and source-aware citation guidance."""
     system = (
+        PUBLICATION_REQUIREMENTS + "\n"
         "You are a careful research-synthesis reviewer. Your job is to "
         "find issues in the paper and propose TYPED patches with "
         "provenance. You are NOT writing prose; you are emitting a "
@@ -637,6 +639,7 @@ def _build_repair_prompt(
     explicitly state 'no safe fix possible' so the pipeline can
     auto-strip the offending region."""
     system = (
+        PUBLICATION_REQUIREMENTS + "\n"
         "You are repairing patches you previously proposed that the "
         "deterministic smart-gate REJECTED. The gate auto-applies "
         "claim/numeric patches ONLY when AFTER:\n"

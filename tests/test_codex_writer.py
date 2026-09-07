@@ -168,6 +168,8 @@ def test_live_route_keeps_independent_reviewers(tmp_path, monkeypatch):
 @pytest.mark.parametrize("case", ["ok", "quota", "prose"])
 def test_terra_judge_medium_falls_back_only_on_technical_failure(cli, tmp_path, monkeypatch, case):
     monkeypatch.setattr(settings, "_REPO_ROOT", tmp_path)
+    monkeypatch.setenv("WRITER_PROVIDER", "codex")
+    monkeypatch.setenv("WRITER_MODEL", "gpt-5.6-sol")
     monkeypatch.setenv("JUDGE_MODEL", "gpt-5.6-terra")
     monkeypatch.setenv("FALLBACK_MODEL", "z-ai/glm-5.3-flash")
     config = settings.load_settings()

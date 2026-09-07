@@ -10,6 +10,7 @@ import httpx
 from agent.llm_client import CallSpec, CostLedger, chat_json
 from agent.journal_surface_gate import _SECTION_CEILINGS
 from agent.synthesis_schemas import SynthesisSection
+from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +38,7 @@ async def call_llm_section(
             response = await asyncio.wait_for(
                 chat_json(
                     messages=[
-                        {"role": "system", "content": system_prompt},
+                        {"role": "system", "content": PUBLICATION_REQUIREMENTS + "\n" + system_prompt},
                         {"role": "user", "content": user_prompt},
                     ],
                     chain=chain,

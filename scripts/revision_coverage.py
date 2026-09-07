@@ -12,8 +12,9 @@ from agent import revision_quality as _quality
 from agent.reviewer_consistency_repairs import unsupported_general_health_claim_spans
 from agent.settings import load_settings
 from agent.statistical_consistency import has_adjusted_significance_threshold
+from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
 
-_SYS = "You are a strict manuscript reviewer. Reply with JSON only."
+_SYS = PUBLICATION_REQUIREMENTS + "\nYou are a strict manuscript reviewer. Reply with JSON only."
 _USER = (
     "Below are {n} required revisions and a manuscript. For EACH revision, in "
     "order, decide whether the manuscript MATERIALLY addresses it — a substantive "
@@ -313,7 +314,7 @@ def authorized_receipt_contract_fields(text: str) -> set[str]:
     if action and any(token in lower for token in ("outcome class", "outcome-class")):
         fields.add("outcome_class")
     study_recode = action and (
-        any(token in lower for token in ("directness", "direct/indirect", "evidence tier", "proper tier"))
+        any(token in lower for token in ("directness", "direct/indirect", "evidence tier", "proper tier", "evidence classification"))
         or all(token in lower for token in ("primary", "review"))
         and any(token in lower for token in ("rct", "randomized", "randomised"))
     )
@@ -357,7 +358,7 @@ def authorized_receipt_contract_fields_by_receipt(
             )
         ]
         fields = authorized_receipt_contract_fields(segment)
-        if not named or not fields or len(named) > 1 and len(fields) > 1:
+        if not named or not fields or len(named) > 1 and len(fields) > 1 and fields != {"directness", "evidence_tier"}:
             continue
         for receipt_id in named:
             authorized.setdefault(receipt_id, set()).update(fields)

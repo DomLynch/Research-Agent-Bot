@@ -1,5 +1,21 @@
 # PROJECT_STATE.md
 
+## Source Attribution and Shared Review Policy - 2026-09-07
+Writer sections, final review, patch repair and revision coverage now consume
+`reviewer-v13-repairability`: all six categories require at least 4/5, supported
+claims and no unresolved major issues. Optional style suggestions do not block.
+Result tables quarantine quotations describing other studies; protocols and
+case series are no longer promoted by references to earlier randomized trials.
+Authorized classification corrections preserve the revision's source identities.
+Offline Resveratrol replay removed three unowned result rows and preserved
+payload idempotence; this does not establish publication or replace normal review.
+Fresh checks: 4,667 passed, 2 xpassed, 16 warnings (seed 907); Ruff and mypy pass.
+`make quality` passed with no new/worsened complexity or clone findings and
+278 focused tests. Pytest randomization is now enabled by the dev dependencies;
+profiling remains optional. One earlier order-sensitive finalizer-test failure
+did not reproduce in the final suite and remains unlocalized.
+Deployment and the corrected submission require separate live receipts.
+
 ## Refactor Verification - 2026-09-05
 The backed-up simplification gives post-review repair one bounded finalizer
 controller, then refreshes derived artifacts from the settled manuscript.

@@ -11,6 +11,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import evidence_taxonomy as et  # type: ignore[import-not-found]  # noqa: E402
 
 
+@pytest.mark.parametrize("title,abstract,tier,directness", [
+    ("Clinical Evaluation of Resveratrol: Rationale and Study Design",
+     "Method: Women were recruited for a randomised placebo-controlled trial. Conclusion: This trial provides a model approach.", "D1", "protocol"),
+    ("Observation of Human Retinal Remodeling",
+     "Background: Published evidence includes a human randomized placebo controlled trial. Methods: Patients received compassionate care on a case-by-case basis. Three cases are presented. Results: Retinal changes were observed.", "B2", "indirect"),
+    ("Effects of Resveratrol on Cognitive Performance in Women",
+     "Methods: Women were randomised to resveratrol or placebo. Results: Responsiveness increased by 17%.", "A1", "direct"),
+])
+def test_source_design_not_background_trial_mentions(title, abstract, tier, directness):
+    classification = et.infer_from_paper_meta({"title": title, "abstract": abstract})
+    assert (classification.tier, classification.directness) == (tier, directness)
+    assert et.is_primary_randomized_study(title, abstract) is (tier == "A1")
+
+
 def test_human_rct_with_clinical_endpoint_is_a1() -> None:
     cls = et.classify_evidence(
         study_design="randomized controlled trial",
