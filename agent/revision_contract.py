@@ -24,6 +24,30 @@ def needs_coverage(request: Any) -> bool:
     return bool(feedback(request).strip()) or not isinstance(request, dict) or request.get("retry_unchanged") is not True
 
 
+def evidence_rows(out_dir: Path, manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    """Review complete frozen abstracts without rewriting the receipt contracts."""
+    from agent.revision_evidence import load_revision_evidence
+
+    raw = manifest.get("receipts")
+    rows = [row for row in raw if isinstance(row, dict)] if isinstance(raw, list) else []
+    if not rows:
+        return rows
+    snapshot = out_dir / "revision_evidence_snapshot"
+    if not snapshot.exists() and not manifest.get("revision_evidence_snapshot"):
+        return rows
+    lock = load_revision_evidence(out_dir, quant_dir=snapshot / "quant_claims", parsed_dir=snapshot / "parsed")
+    if lock.errors:
+        raise ValueError("revision_evidence_unverified:" + ",".join(lock.errors))
+    if lock.mode != "snapshot":
+        return rows
+    reviewed = []
+    for row in rows:
+        record = json.loads((lock.parsed_dir / f"{row['receipt_id']}.paper_sections.json").read_text())
+        abstract = record.get("sections", {}).get("abstract")
+        reviewed.append({**row, "verified_abstract": abstract} if isinstance(abstract, str) and abstract.strip() else row)
+    return reviewed
+
+
 def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str, payload_satisfied: Callable[[str], bool] | None = None) -> dict[str, Any] | None:
     def load(name: str) -> dict[str, Any]:
         try:
@@ -40,8 +64,7 @@ def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str, payload_sati
     required = request.get("required_revisions")
     asks = coverage.revision_asks(revision_feedback, required if isinstance(required, list) else None)
     manifest = load("manifest.json")
-    rows_raw = manifest.get("receipts")
-    rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
+    rows = evidence_rows(out_dir, manifest)
     known = coverage.deterministic_known_asks(asks, evidence_rows=rows)
     known_set = set(known) | {ask for ask in asks if payload_satisfied and payload_satisfied(ask)}
     if not asks or not known_set:

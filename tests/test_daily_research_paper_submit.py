@@ -2193,6 +2193,45 @@ def test_finding_repair_never_promotes_mid_sentence_excerpt(tmp_path: Path) -> N
     assert "We found no evidence that" in finding
 
 
+def test_source_projection_keeps_complete_bounded_abstract(tmp_path: Path) -> None:
+    finding = "Body weight decreased after supplementation compared with placebo because lean mass declined (p = 0.026)."
+    abstract = "Background context. " * 75 + finding + " No mitochondrial improvement was demonstrated."
+    path = tmp_path / "source.paper_sections.json"
+    path.write_text(json.dumps({"sections": {"abstract": abstract}}))
+    receipt = {"thesis_text": "Source excerpts: " + finding[:90] + "…"}
+    assert daily._parsed_source_excerpt(tmp_path, "source") == abstract
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt) == abstract
+    path.write_text(json.dumps({"sections": {"abstract": abstract * 10}}))
+    assert len(daily._parsed_source_excerpt(tmp_path, "source")) <= 1201
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt) == finding[:90]
+
+
+def test_literal_compound_findings_align_with_inline_citation() -> None:
+    finding = (
+        "Body weight decreased after resveratrol supplementation "
+        "(resveratrol -0.95 ± 1.01 kg vs placebo -0.16 ± 0.66 kg, p = 0.049) "
+        "due to a reduction in lean mass "
+        "(resveratrol -1.79 ± 1.67 kg vs 0.37 ± 0.86 kg, p = 0.026)."
+    )
+    source = {"excerpt": finding}
+    claim = finding[:-1] + " [bundle:1]."
+    assert daily._cited_claim_aligns(claim, [source], {0})
+    for incorrect in (
+        claim.replace("-1.79", "1.79"), claim.replace("0.026", "0.001"),
+        claim.replace("decreased", "increased").replace("reduction", "increase"),
+        "Mortality improved: " + claim, "In rats, " + claim, "It is false that " + claim,
+    ):
+        assert not daily._cited_claim_aligns(incorrect, [source], {0})
+
+
+def test_statistical_decimal_spacing_does_not_split_source_sentence() -> None:
+    finding = "Negative symptoms improved (F = 12.25, P < . 001). Positive symptoms did not differ (P = . 180)."
+    assert daily._revision_claim_trace._sentences(finding) == [
+        "Negative symptoms improved (F = 12.25, P < . 001).",
+        "Positive symptoms did not differ (P = . 180).",
+    ]
+
+
 def test_quantity_tokens_ignore_alphanumeric_source_identifiers() -> None:
     for hyphen in "-‐‑‒–—−":
         for identifier in (f"TA{hyphen}65", f"HHV{hyphen}6", f"8{hyphen}OHdG"):
@@ -2238,6 +2277,24 @@ def test_preparation_removes_accounting_without_recycling_results(tmp_path: Path
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == (
         "researka_core_claims_unresolved:conclusion_claims=0"
     )
+
+
+def test_core_claim_trace_checks_every_clause_of_multisource_claim() -> None:
+    bundle = [
+        {"excerpt": "Resistance training reduced fatigue scores among treated adults (P < 0.05)."},
+        {"excerpt": "Aerobic exercise improved gait speed among older adults (P < 0.01)."},
+    ]
+    claim = "Resistance training reduced fatigue scores among treated adults (P < 0.05) [bundle:1], whereas aerobic exercise improved gait speed among older adults (P < 0.01) [bundle:2]."
+    payload = {"body_markdown": f"## Abstract\n\n{claim}\n\n## Conclusion\n\n{claim}"}
+    assert daily._researka_core_claim_trace_status(payload, bundle) == "eligible"
+    assert daily._researka_quantitative_trace_status({"abstract": claim}, bundle) == "eligible"
+    assert daily._claim_trace_counts(claim, bundle) == (1, 1, 1)
+    for unsupported in (claim.replace("gait speed", "survival"), claim.replace("0.01", "0.001"), claim.replace("improved", "worsened")):
+        assert daily._researka_core_claim_trace_status(
+            {"body_markdown": payload["body_markdown"].replace(claim, unsupported)}, bundle,
+        ) != "eligible"
+        assert daily._researka_quantitative_trace_status({"abstract": unsupported}, bundle) != "eligible"
+        assert daily._claim_trace_counts(unsupported, bundle) == (1, 1, 0)
 
 
 def test_core_claim_trace_does_not_recycle_only_verified_finding(tmp_path: Path) -> None:
@@ -2322,8 +2379,8 @@ def test_preparation_preserves_abstract_scope_without_false_source_trace(tmp_pat
         "Direction reconciliation:", "### Bounded conclusion",
     ))
     assert "### Source-backed boundary" in payload["body_markdown"]
-    assert "### Corpus boundary" in payload["sections"]["Conclusion"]
-    assert daily._word_count(payload["sections"]["Conclusion"]) >= 250
+    assert "### Corpus boundary" not in payload["sections"]["Conclusion"]
+    assert daily._word_count(payload["sections"]["Conclusion"]) < 250  # No synthetic length repair.
     scope = "This paper synthesizes evidence on resistance training regimens across the retained source corpus and high-confidence extracted claim set."
     assert scope not in payload["abstract"]
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
@@ -3095,8 +3152,7 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
         "## Results\n\n" + _words("results", 850) + ".\n\n"
         "## Discussion\n\n" + _words("discussion", 500) + ".\n\n"
         "## Limitations\n\n" + _words("limitations", 200) + ".\n\n"
-        # >=250 words so _restore_source_bounded_conclusion does not pad: this
-        # test asserts a COMPLIANT paper submits byte-identical to disk.
+        # A compliant paper must submit byte-identical to disk.
         "## Conclusion\n\n" + note + _words("conclusion", 200) + ".\n\n"
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")

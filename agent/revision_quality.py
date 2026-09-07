@@ -300,7 +300,7 @@ def _asks_named_direction_reconciliation(text: str) -> bool:
         return False
     request = _evidence_pending_requested(text) or (
         "direction" in text
-        and any(token in text for token in ("consistent wording", "recheck", "realign", "recode", "coded direction", "coding", "direction reflects", "source direction", "bundle records"))
+        and any(token in text for token in ("consistent wording", "recheck", "realign", "recode", "coded direction", "coding", "polarity contradiction", "direction reflects", "source direction", "bundle records"))
     ) or all(token in text for token in ("coding", "align", "refers to")) or all(
         token in text for token in ("tagged", "oscillat", "reconcil"))
     return _has_named_source(text) and request and ("evidence pending" in text or any(
@@ -393,18 +393,18 @@ def _prose_paragraphs(text: str) -> list[str]:
     ]
 
 
-def _row_evidence(row: dict[str, Any]) -> str: return " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
+def _row_evidence(row: dict[str, Any], *, statistics: bool = False) -> str: return re.sub(r"(\bp\s*(?:[<>]=?|=|≤|≥)\s*0?\.)\s+(?=\d)", r"\1", str(row.get("verified_abstract") or _row_evidence(row)), flags=re.I) if statistics else " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
 
 
 def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
     values = row.get("p_values")
     return tuple(value for raw in values if (value := str(raw).strip())
-                 and _stat_supported(value, row)) if isinstance(values, list) else ()
+                 and _stat_supported(value, row, original_only=True)) if isinstance(values, list) else ()
 
 
 def _traceable_effect_statistics(row: dict[str, Any]) -> tuple[str, ...]:
     return tuple(dict.fromkeys(match.group(0) for match in _EFFECT_STAT_RE.finditer(
-        _row_evidence(row)) if _stat_supported(match.group(0), row)))
+        _row_evidence(row, statistics=True)) if _stat_supported(match.group(0), row)))
 
 
 def resolved_effect_direction(row: dict[str, Any]) -> str:
@@ -432,8 +432,8 @@ def _numbers(text: str) -> tuple[str, ...]:
     return tuple(value.rstrip("0").rstrip(".") if "." in value else value for value in values)
 
 
-def _stat_supported(stat: str, row: dict[str, Any]) -> bool:
-    evidence = _row_evidence(row).casefold().replace("–", "-")
+def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = False) -> bool:
+    evidence = _row_evidence(row, statistics=not original_only).casefold().replace("–", "-")
     evidence_numbers = set(_numbers(evidence))
     metric = next((token for token in ("smd", "nnt", "hr", "or", "rr", "md", "ci", "p", "%") if token in stat.casefold()), "")
     metric_present = metric == "%" and "%" in evidence or bool(metric and re.search(rf"\b{re.escape(metric)}\b", evidence))

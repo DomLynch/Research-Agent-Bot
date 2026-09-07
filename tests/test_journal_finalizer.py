@@ -3689,6 +3689,18 @@ def test_substantive_synthesis_does_not_restore_templates_after_preparation(tmp_
         assert (restored, entries) == (paper, [])
 
 
+def test_prepared_finalizer_does_not_backfill_short_conclusion(tmp_path: Path) -> None:
+    (tmp_path / "manifest.json").write_text(json.dumps({"section_words": {"Conclusion": 1}, "receipts": []}))
+    (tmp_path / "submission_source_proofs.json").write_text("[]")
+    (tmp_path / "full_paper.md").write_text("## Conclusion\n\nBounded.\n")
+    journal_finalizer.finalize_run(tmp_path)
+    paper = (tmp_path / "full_paper.md").read_text()
+    assert "A defensible next study" not in paper
+    assert "The conclusion preserves" not in paper
+    assert len(journal_finalizer._section_body(paper, "Conclusion").split()) < 250
+    assert not journal_finalizer.finalize_run(tmp_path).paper_changed
+
+
 def test_substantive_evidence_synthesis_is_idempotent_after_surface_rewrite(tmp_path: Path) -> None:
     from agent.journal_surface_gate import apply_pipeline_jargon_replacements
 
@@ -7156,6 +7168,12 @@ def test_numeric_density_restores_verified_index_when_it_clears_floor(tmp_path: 
     assert journal_finalizer._script_module("audit_v06_paper")._check_numeric_density(fixed)[0]
     assert logs[0].rule == "restore_verified_quantitative_evidence_index"
     assert journal_finalizer._phase_o_restore_numeric_evidence_index(fixed, tmp_path) == (fixed, [])
+    (tmp_path / "submission_source_proofs.json").write_text("{}")
+    assert journal_finalizer._phase_o_restore_numeric_evidence_index(paper, tmp_path) == (paper, [])
+    assert journal_finalizer.review_noise_control.repair_revision_surface(
+        paper, "Restore the quantitative evidence index", tmp_path,
+    ) == (paper, [])
+    assert not journal_finalizer._script_module("audit_v06_paper")._check_numeric_density(paper)[0]
 
 
 def test_influenza_revision_adds_verified_pmid_and_authoritative_tally_notes(

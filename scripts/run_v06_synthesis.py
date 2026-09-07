@@ -3646,7 +3646,7 @@ async def _run_post_paper_pipeline(
         _consistency_audit._format_summary(issues)
     )
     paper_md, fix_log = _consistency_fixer.apply_fixes(
-        paper_md, issues, manifest=manifest,
+        paper_md, issues, manifest=manifest, quant_claims_dir=QUANT_DIR,
         numeric_quarantine_path=paper_path.with_name(
             "numeric_claim_quarantine.json",
         ),

@@ -318,6 +318,17 @@ def test_apply_fixes_skips_full_depth_backfill_for_thin_brief() -> None:
     assert "analytical_depth_backfill" not in {i["fix_type"] for i in log}
 
 
+def test_prepared_cleanup_does_not_replace_short_conclusion_with_padding(tmp_path: Path) -> None:
+    (tmp_path / "submission_source_proofs.json").write_text("[]")
+    paper = "## Conclusion\n\nEndpoint-specific interpretation remains necessary.\n"
+    out, log = fixes.apply_fixes(
+        paper, [], manifest={}, numeric_quarantine_path=tmp_path / "numeric_claim_quarantine.json",
+    )
+    assert out == paper
+    assert "analytical_depth_backfill" not in {item["fix_type"] for item in log}
+    assert fixes.apply_fixes(out, [], manifest={}, numeric_quarantine_path=tmp_path / "numeric_claim_quarantine.json")[0] == out
+
+
 def test_apply_fixes_does_not_restore_cross_topic_template_for_depth() -> None:
     template = (
         "The same rules classify a biomedical intervention, a management field "

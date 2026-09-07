@@ -20,12 +20,12 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 25250  # Shared publishing projections moved here from scripts/.
+TOTAL_LIMIT = 25269  # Shared verified revision context replaces submission padding.
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 SCRIPTS_DIR = AGENT_DIR.parent / "scripts"
-SCRIPT_TOTAL_LIMIT = 40250
-COMBINED_LIMIT = 65500  # Lock in the controller consolidation; no new headroom.
+SCRIPT_TOTAL_LIMIT = 40231
+COMBINED_LIMIT = 65500  # Preserve the combined ceiling; see DECISIONS.
 SCRIPT_PER_FILE_LIMIT = 5700
 
 

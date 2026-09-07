@@ -47,7 +47,7 @@ _FRAMEWORK_PROPOSAL_RE = re.compile(
 )
 _P_VALUE_RE = re.compile(r"\bp\s*(<=|>=|<|>|=|≤|≥)\s*(0?\.\d+|1(?:\.0+)?)", re.I)
 _REPLACEMENT_CUE_RE = re.compile(
-    r"\b(?:(?:bundled?|source(?:\s+bundle)?)\s+)?excerpt\s+(?:shows?|reports?|contains?|lists?|states?|gives?)\b",
+    r"\b(?:(?:bundled?|source(?:\s+bundle)?)\s+)?excerpt\s+(?:shows?|reports?|contains?|lists?|states?|gives?)\b|\bconsistent\s+with\s+(?:the\s+)?source\s+excerpt\b",
     re.I,
 )
 _FRAMEWORK_NOVELTY_RE = re.compile(
@@ -77,7 +77,7 @@ def _replacement_parts(ask: str) -> tuple[str, str]:
 
 def preferred_replacement_statistics(ask: str, supported: Sequence[str]) -> tuple[str, ...]:
     before, after = _replacement_parts(ask)
-    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} if after else set()
+    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} - {_p_key(match.group()) for match in _P_VALUE_RE.finditer(after)} if after else set()
     by_key = {_p_key(stat): stat for stat in supported if _p_key(stat)}
     preferred = [by_key[key] for match in _P_VALUE_RE.finditer(after)
                  if (key := _p_key(match.group())) in by_key]
@@ -101,7 +101,7 @@ def disputed_p_value_near_sources(
     ask: str, paper_md: str, labels: Sequence[str], all_labels: Sequence[str],
 ) -> bool:
     before, after = _replacement_parts(ask)
-    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} if after else set()
+    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} - {_p_key(match.group()) for match in _P_VALUE_RE.finditer(after)} if after else set()
     targets = {label.lower() for label in labels}
     return bool(disputed) and any(
         _p_key(match.group()) in disputed
@@ -114,7 +114,7 @@ def remove_disputed_p_values_near_sources(
     ask: str, paper_md: str, labels: Sequence[str], all_labels: Sequence[str],
 ) -> str:
     before, after = _replacement_parts(ask)
-    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} if after else set()
+    disputed = {_p_key(match.group()) for match in _P_VALUE_RE.finditer(before)} - {_p_key(match.group()) for match in _P_VALUE_RE.finditer(after)} if after else set()
     targets = {label.lower() for label in labels}
     return _P_VALUE_RE.sub(
         lambda match: "a source-reported estimate"

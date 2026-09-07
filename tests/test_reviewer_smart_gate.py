@@ -162,6 +162,9 @@ def test_final_reviewer_prompt_documents_smart_gate_contract() -> None:
     assert "shorter-or-equal" in system
     # Concrete examples of GOOD vs BAD patches present
     assert "GOOD" in system and "BAD" in system
+    assert "[bundle:N] source-bundle links" in system
+    assert "Preserve these links; their syntax alone is not a defect" in system
+    assert "Still flag incorrect source attribution" in system
 
 
 def test_final_reviewer_preserves_complete_long_patch_fields() -> None:

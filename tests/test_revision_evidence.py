@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any, cast
 
 import agent.revision_evidence as revision_evidence
+import pytest
 from agent.revision_evidence import (
     SNAPSHOT_DIR,
     create_revision_evidence_snapshot,
@@ -33,6 +34,43 @@ def _contract(receipt: ReceiptSummary) -> dict[str, object]:
         key: list(value) if key == "p_values" else value
         for key, value in dataclasses.asdict(receipt).items()
     }
+
+
+def test_revision_review_uses_complete_verified_abstract_without_contract_mutation(tmp_path: Path) -> None:
+    from agent.revision_contract import evidence_rows
+    from agent.revision_quality import _revision_note, resolved_effect_direction
+
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    abstract = "Baseline characteristics were similar (P > .05). Negative symptoms improved (P < . 001)."
+    (raw / "r1.quant_claims.json").write_text('{"paper_id":"r1"}')
+    (raw / "r1.paper_sections.json").write_text(json.dumps({"sections": {"abstract": abstract}}))
+    (raw / "citation_registry.json").write_text('{"r1":{"body_citation":"Trial 2024"}}')
+    manifest: dict[str, Any] = {"topic": "statins", "receipts": [{**_contract(_receipt()), "thesis_text": "Baseline P > .05."}],
+                "revision_evidence_snapshot": {"required": True}}
+    (tmp_path / "manifest.json").write_text(json.dumps(manifest))
+    assert create_revision_evidence_snapshot(tmp_path, quant_dir=raw, parsed_dir=raw,
+        citation_registry=raw / "citation_registry.json", receipt_ids={"r1"})["passed"]
+    snapshot = tmp_path / SNAPSHOT_DIR
+    before = {p: p.read_bytes() for p in snapshot.rglob("*") if p.is_file()}
+    rows = evidence_rows(tmp_path, manifest)
+    assert rows[0]["verified_abstract"] == abstract
+    assert rows[0]["thesis_text"] == "Baseline P > .05."
+    assert manifest["receipts"][0]["thesis_text"] == "Baseline P > .05."
+    note = _revision_note("statistic", rows[0], 1, "Correct representative statistic consistent with the source excerpt (P < .001 for negative-symptom improvement).")
+    assert note and "retains P < .001" in note[1]
+    assert before == {p: p.read_bytes() for p in before}
+    assert resolved_effect_direction({**rows[0], "effect_direction": "null", "verified_abstract": "Higher inflammation caused harm (P < .05)."}) == "null"
+    assert resolved_effect_direction({**rows[0], "effect_direction": "null", "thesis_text": "Higher inflammation can cause harm.", "p_values": ["P < .001"]}) == "null"
+    from agent.revision_consistency import disputed_p_value_near_sources, remove_disputed_p_values_near_sources
+    ask = "Correct Trial 2024 P = .01 to be consistent with the source excerpt (P = .01)."
+    text = "Trial 2024 reports a result P = .01."
+    assert not disputed_p_value_near_sources(ask, text, ["Trial 2024"], ["Trial 2024"])
+    assert remove_disputed_p_values_near_sources(ask, text, ["Trial 2024"], ["Trial 2024"]) == text
+    (snapshot / "parsed" / "r1.paper_sections.json").write_text('{"sections":{"abstract":"invented result"}}')
+    with pytest.raises(ValueError, match="snapshot_parsed:r1"):
+        evidence_rows(tmp_path, manifest)
+    assert evidence_rows(tmp_path / "legacy", {"receipts": manifest["receipts"]}) == manifest["receipts"]
 
 
 def test_reviewer_unavailable_source_dois_are_explicit_and_exact() -> None:

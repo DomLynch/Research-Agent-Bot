@@ -752,6 +752,9 @@ def test_source_grounding_accepts_bounded_quantitative_paraphrase_without_title_
     assert build_results_from_parsed(_results_payload(
         "Metformin reduced pancreatic cancer by 50% among adults [r-cardio]."
     ), accepted=[spliced]) is None
+    assert build_results_from_parsed(_results_payload(
+        "In pancreatic cancer, metformin reduced pancreatic cancer by 50% among adults [r-cardio]."
+    ), accepted=[spliced]) is None
 
 
 def test_source_grounding_checks_leading_clause_citation_identity_and_scope() -> None:

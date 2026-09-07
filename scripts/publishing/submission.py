@@ -30,7 +30,6 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
-from agent.deterministic_anchors import build_source_bounded_conclusion  # noqa: E402
 from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
 from agent import publication_evidence as _publication_evidence, revision_claim_trace as _revision_claim_trace  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
@@ -170,7 +169,7 @@ _CLAIM_MARKERS = ("support", "suggest", "risk", "increase", "decrease", "null", 
 _GENERIC_EVIDENCE_WORDS = frozenset({
     "about", "across", "adults", "after", "among", "associated", "before", "bundle", "cohort", "compared", "evidence",
     "finding", "findings", "group", "groups", "intervention", "patients", "reported", "results",
-    "receiving", "review", "significant", "significantly", "source", "studies", "study", "support",
+    "receiving", "review", "significant", "significantly", "source", "studies", "study", "support", "occurred",
     "supports", "suggests", "therapy", "treated", "treatment", "trial", "trials",
 })
 _CORPUS_ACCOUNTING_MARKERS = (
@@ -613,14 +612,16 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
     label_words = _evidence_words(source.get("cited_as"))
     claim_words = _evidence_words(claim) - label_words
     grounding_claim = _grounding_words(claim) - _grounding_words(source.get("cited_as"))
+    context = re.match(r"^(?:In|Among)\b[^,;:.]*,\s*", claim, re.I)
+    if source_language and context and not _empirical_claim(context[0]) and _grounding_words(context[0]) <= _grounding_words(" ".join(str(source.get(key) or "") for key in ("title", "population", "directness"))):
+        grounding_claim = _grounding_words(claim[context.end():]) - _grounding_words(source.get("cited_as"))
     claim_population = (bool(_HUMAN_TEXT_RE.search(claim)), bool(_ANIMAL_TEXT_RE.search(claim))) if source_language else (False, False)
     cautious = source_language and bool(re.search(r"\b(?:remain(?:s|ed)? (?:bounded|cautious|limited|uncertain)|is (?:unclear|unknown|not established))\b", claim, re.I))
     if cautious and not grounding_claim:
         return True
     required = min(4, max(3, (len(claim_words) + 4) // 5))
-    claim_text = (claim.lower().split(":", 1)[-1] if (generated_trace := claim.lower().startswith("the cited source reports the following finding:")) else claim.lower().split(" reports: ", 1)[-1]).split(" [exact source:", 1)[0]
-    if source_language or generated_trace:
-        claim_text = re.sub(r"\s+([.,;:!?])", r"\1", _BUNDLE_REFERENCE_RE.sub("", claim_text)).strip().translate(str.maketrans("‐‑‒–—−", "------"))
+    claim_text = (claim.lower().split(":", 1)[-1] if claim.lower().startswith("the cited source reports the following finding:") else claim.lower().split(" reports: ", 1)[-1]).split(" [exact source:", 1)[0]
+    claim_text = re.sub(r"\s+([.,;:!?])", r"\1", _BUNDLE_REFERENCE_RE.sub("", claim_text)).strip().translate(str.maketrans("‐‑‒–—−", "------"))
     claim_quantities = _quantity_tokens(claim, [source])
     structured_fields = _structured_source_fields(claim)
     expected_fields = {
@@ -634,8 +635,7 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
         return False
     for key in ("quote", "evidence_span", "excerpt"):
         evidence = (raw_evidence := " ".join(str(source.get(key) or "").split()).replace("−", "-").replace("–", "-").replace("—", "-")).lower()
-        if source_language or generated_trace:
-            evidence = re.sub(r"\s+([.,;:!?])", r"\1", evidence)
+        evidence = re.sub(r"\s+([.,;:!?])", r"\1", evidence)
         if len(evidence) < 20:
             continue
         sentences = _revision_claim_trace._sentences(raw_evidence if source_language else evidence)
@@ -645,8 +645,8 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
             sentence = raw_sentence.lower()
             passages = _source_language_clauses(sentence) if source_language else re.split(r";\s*|,\s*(?=[a-z])|\s+and\s+(?=[^,;.]{0,80}(?:[+-]?\d|\.\d)|[^,;.]{0,60}\b(?:did not|had no|no (?:statistically )?significant|remained unchanged))", sentence, flags=re.I)
             direction_conflict = not _directions_compatible(claim, sentence)
-            distinct_null = any(_NULL_RE.search(part) and bool(_evidence_words(part) - claim_words - {"change", "control", "controls", "difference", "effect", "effects", "individuals", "observed", "overall", "participant", "participants", "population", "populations", "same", "sample", "subject", "subjects", "these", "those"}) for part in passages)
-            if len(sentence) >= 20 and claim_text and (claim_text in sentence or not source_language and sentence in claim_text) and (not claim_quantities or _quantities_match(claim_quantities, sentence)) and (not direction_conflict or distinct_null):
+            distinct_null = any(_NULL_RE.search(part) and not re.search(r"\b(?:same|these|those)\b", part) and bool(_evidence_words(part) - claim_words - {"change", "control", "controls", "difference", "effect", "effects", "individuals", "observed", "overall", "participant", "participants", "population", "populations", "same", "sample", "subject", "subjects", "these", "those"}) for part in passages)
+            if len(sentence) >= 20 and len(claim_words) >= required and claim_text and claim_text in sentence and (not claim_quantities or _quantities_match(claim_quantities, sentence)) and (not direction_conflict or distinct_null):
                 return True
             for passage in passages:
                 if not passage or not _directions_compatible(claim, passage, exact=source_language) or direction_conflict and not distinct_null:
@@ -656,12 +656,12 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
                 passage_words = _evidence_words(passage) - label_words
                 overlap = len(claim_words & passage_words)
                 quantity_match = _quantities_match(claim_quantities, passage)
-                if len(passage) >= 20 and claim_text and (claim_text in passage or not source_language and passage in claim_text) and (not claim_quantities or quantity_match):
+                if len(passage) >= 20 and len(claim_words) >= required and claim_text and claim_text in passage and (not claim_quantities or quantity_match):
                     return True
                 if source_language:
                     grounding_passage = _grounding_words(passage) - _grounding_words(source.get("cited_as"))
                     grounding_required = min(4, max(1, (len(grounding_claim) + 4) // 5))
-                    if len(grounding_claim & grounding_passage) >= grounding_required and (not grounding_claim - grounding_passage or bool(claim_quantities) and any(match.group().lower() in passage.lower() for match in re.finditer(r"\b[a-z]{3,}(?:\s+[a-z]{3,}){2}\b", claim, re.I)) and len(grounding_claim & (grounding_passage | _grounding_words(" ".join(str(source.get(key) or "") for key in ("title", "population", "directness"))))) * 5 >= len(grounding_claim) * 4) and (cautious or not claim_quantities or quantity_match):
+                    if len(grounding_claim & grounding_passage) >= grounding_required and not grounding_claim - grounding_passage and (cautious or not claim_quantities or quantity_match):
                         return True
                 elif overlap >= (2 if claim_quantities else required) and (not claim_quantities or quantity_match):
                     return True
@@ -695,7 +695,7 @@ def _claim_trace_counts(
 ) -> tuple[int, int, int]:
     claims = _claim_candidates(text)
     indexes = [_citation_indexes(claim, bundle) for claim in claims]
-    return len(claims), sum(map(bool, indexes)), sum(any(_evidence_aligns(claim, bundle[index]) for index in values)
+    return len(claims), sum(map(bool, indexes)), sum(_cited_claim_aligns(claim, bundle, values)
                                                      for claim, values in zip(claims, indexes, strict=True))
 
 
@@ -827,7 +827,7 @@ def _researka_core_claim_trace_status(
         claims.extend(section_claims)
     indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
     cited = sum(bool(values) for values in indexes)
-    aligned = sum(any(_evidence_aligns(claim, source_bundle[index]) for index in values)
+    aligned = sum(_cited_claim_aligns(claim, source_bundle, values)
                   for claim, values in zip(claims, indexes, strict=True))
     if aligned == len(claims):
         return "eligible"
@@ -906,11 +906,8 @@ def _researka_quantitative_trace_status(
     )
     aligned = 0
     for claim in claims:
-        sources = [
-            source_bundle[index] for index in _citation_indexes(claim, source_bundle)
-            if _evidence_aligns(claim, source_bundle[index])
-        ]
-        aligned += bool(sources) and _quantities_agree(claim, sources)
+        indexes = _citation_indexes(claim, source_bundle)
+        aligned += _cited_claim_aligns(claim, source_bundle, indexes) and _quantities_agree(claim, [source_bundle[index] for index in indexes])
     return (
         "eligible" if aligned == len(claims)
         else f"researka_quantitative_trace_insufficient:aligned={aligned}/{len(claims)}"
@@ -1761,7 +1758,7 @@ def _parsed_source_excerpt(parsed_dir: Path, receipt_id: str) -> str:
     for name in ("abstract", "results", "conclusion", "discussion"):
         text = " ".join(str(sections.get(name) or "").split())
         if text:
-            return _clip_text(text, limit=1200)
+            return text if name == "abstract" and len(text) <= 12_000 else _clip_text(text, limit=1200)
     return ""
 
 
@@ -1775,7 +1772,7 @@ def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str
         text = " ".join(str(sections.get(name) or "").split())
         excerpt = _receipt_evidence_excerpt(receipt, text)
         if len(excerpt.split()) >= 12:
-            return excerpt
+            return text if name == "abstract" and len(text) <= 12_000 else excerpt
     return ""
 
 
@@ -2304,20 +2301,6 @@ def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
     return paper
 
 
-def _restore_source_bounded_conclusion(
-    paper: str, source_bundle: list[dict[str, Any]],
-) -> str:
-    match = re.search(r"(?ms)(^## Conclusion\s*\n)(.*?)(?=^## |\Z)", paper)
-    if not match or "### Corpus boundary" in match.group(2) or (words := _word_count(match.group(2))) >= 250:
-        return paper
-    anchor = build_source_bounded_conclusion(source_bundle, minimum_words=250 - words)
-    if not anchor:
-        return paper
-    body = match.group(2).rstrip()
-    replacement = f"{match.group(1)}{body}\n\n{anchor}\n\n"
-    return paper[:match.start()] + replacement + paper[match.end():].lstrip()
-
-
 def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> bool:
     paper = _BACKGROUND_REFERENCES_RE.sub("", _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), (run / "full_paper.md").read_text(encoding="utf-8")))
     paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
@@ -2361,7 +2344,7 @@ def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_
     paper = _DOI_TEXT_RE.sub(lambda match: match.group(0) if _clean_doi(match.group(2)) in bundle_dois else "", paper)
     paper = _PMID_RE.sub(lambda match: match.group(0) if match.group(1) in bundle_pmids else "", paper)
     paper = re.sub(r"\[([^\]\n]+)\]\(\s*\)", r"\1", re.sub(r"\[exact source:\s*\]", "", paper, flags=re.I))
-    paper = _trim_submission_boilerplate(_restore_source_bounded_conclusion(paper, source_bundle))
+    paper = _trim_submission_boilerplate(paper)
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
     paper = _ensure_core_source_traces(paper, source_bundle)

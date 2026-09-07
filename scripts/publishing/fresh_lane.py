@@ -84,7 +84,7 @@ from agent.publishing.reconciliation import (  # noqa: E402
     submission_count,
     submission_day_summary,
 )
-from agent.revision_contract import ask_fingerprint  # noqa: E402
+from agent.revision_contract import ask_fingerprint, evidence_rows as revision_evidence_rows  # noqa: E402
 from agent.revision_claim_trace import major_claim_trace_capacity  # noqa: E402
 from agent.revision_evidence import RECEIPT_CONTRACT_FIELDS, load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
@@ -2407,14 +2407,13 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     except OSError:
         return asks
     supplement = out_dir / "structured_evidence_tables.md"
-    if supplement.is_file():
+    if supplement.is_file() and not (out_dir / "submission_source_proofs.json").exists():
         try:
             text += "\n\n" + supplement.read_text(encoding="utf-8")
         except OSError:
             return asks
     manifest = _read_json(out_dir / "manifest.json")
-    rows_raw = manifest.get("receipts")
-    rows = [row for row in rows_raw if isinstance(row, dict)] if isinstance(rows_raw, list) else []
+    rows = revision_evidence_rows(out_dir, manifest)
     unmet = revision_coverage.material_unmet_asks(
         text, feedback, retained_citations=revision_coverage.retained_citation_labels(
             manifest, _read_json(out_dir / "citation_registry.json"),

@@ -578,7 +578,7 @@ def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
     rows_list = list(rows)
     title = (
         f"## Quantitative Evidence Index — {topic}\n\n"
-        f"_Quantitative Evidence Index: {len(rows_list)} source excerpts with numerical statements. "
+        "_Quantitative Evidence Index: source excerpts with numerical statements. "
         "The quoted context retains the population, comparator and endpoint; "
         "it may describe background studies rather than the cited report's own results._\n\n"
     )

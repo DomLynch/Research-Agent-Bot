@@ -2311,6 +2311,17 @@ def test_ambiguous_multi_source_recode_authorizes_nothing() -> None:
     ) == {}
 
 
+def test_direction_coding_relabel_request_authorizes_only_named_directions() -> None:
+    rows = {"karim": {"source_title": "Karim 2025"}, "bastin": {"source_title": "Bastin 2025"}, "other": {"source_title": "Other 2020"}}
+    feedback = "State the direction-coding convention explicitly and then relabel or reconcile Karim 2025 and Bastin 2025, currently negative despite improvement."
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(feedback, rows) == {
+        "karim": {"effect_direction"}, "bastin": {"effect_direction"},
+    }
+    assert revision_coverage.authorized_receipt_contract_fields(
+        "Move the direction-coding convention into Methods and explain the negative label for Karim 2025.",
+    ) == set()
+
+
 def test_receipt_alias_matching_does_not_authorize_prefix_collision() -> None:
     rows = {
         "topic_effect_1": {"source_title": "First trial"},
@@ -3215,6 +3226,17 @@ def test_deterministic_unmet_accepts_contextual_claims_explanation_in_evidence_s
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_direction_reconciliation_does_not_require_invented_source_disagreement() -> None:
+    ask = "Reconcile the direction-coding contradiction for Smith 2025: its source reports benefit but its label is negative."
+    assert not revision_coverage._asks_concrete_tensions_gaps(ask.lower())
+    assert revision_coverage.deterministic_unmet_asks("## Discussion\nUncorrected.", [ask]) == [ask]
+    assert revision_coverage._asks_concrete_tensions_gaps((ask + " Also describe three cross-source pairs of disagreements.").lower())
+    assert revision_coverage._asks_concrete_tensions_gaps("Describe the contradiction between the source studies.")
+    polarity = ask.replace("direction-coding", "direction-polarity")
+    assert not revision_coverage._asks_concrete_tensions_gaps(polarity.lower())
+    assert revision_coverage.deterministic_unmet_asks("## Discussion\nUncorrected.", [polarity]) == [polarity]
 
 
 def test_deterministic_unmet_flags_directional_table_narrative_contradiction() -> None:

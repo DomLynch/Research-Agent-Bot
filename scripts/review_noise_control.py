@@ -204,7 +204,7 @@ def repair_revision_surface(
         if n:
             changes.append("mechanistic_content_framing")
     lower = feedback.lower()
-    if out_dir and "quantitative evidence index" in lower and "## Quantitative Evidence Index" not in text:
+    if out_dir and not (out_dir / "submission_source_proofs.json").is_file() and "quantitative evidence index" in lower and "## Quantitative Evidence Index" not in text:
         supplement = _load_text(out_dir / "structured_evidence_tables.md")
         index = re.search(r"^## Quantitative Evidence Index\b.*?(?=^## |\Z)", supplement, re.M | re.S)
         if index:

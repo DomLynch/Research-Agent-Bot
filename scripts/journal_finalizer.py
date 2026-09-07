@@ -16,7 +16,7 @@ from agent import statistical_consistency as _stats
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
 from agent.evidence_lanes import LANE_TOKENS, build_lane_map, derive_receipt_lane, effective_directness, is_animal_context
 from agent.revision_identity import outcome_direction_tally_note, repair_revision_identity
-from agent.revision_contract import feedback as _revision_feedback, gate_report as _revision_gate_report
+from agent.revision_contract import evidence_rows as _revision_evidence_rows, feedback as _revision_feedback, gate_report as _revision_gate_report
 from agent.revision_quality import (
     asks_exact_stat_trace as _asks_exact_stat_trace,
     _asks_named_statistic_reconciliation,
@@ -152,7 +152,7 @@ def finalize_run(out_dir: Path, *, repair: Callable[[str], str] | None = None) -
             detail="rebuilt evidence lanes from current manifest before text repair",
         ))
     manifest = _load_sidecar(out_dir / "manifest.json")
-    enforce_depth = isinstance(manifest, dict) and isinstance(
+    enforce_depth = not (out_dir / "submission_source_proofs.json").exists() and isinstance(manifest, dict) and isinstance(
         manifest.get("section_words"), dict,
     )
     states = [text]
@@ -4642,8 +4642,7 @@ def _phase_d_revision_surface_notes(
     if not lower:
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    receipts_raw = manifest.get("receipts") if isinstance(manifest, dict) else None
-    receipts = [r for r in receipts_raw if isinstance(r, dict)] if isinstance(receipts_raw, list) else []
+    receipts = _revision_evidence_rows(out_dir, manifest)
     if not receipts:
         return text, []
     patched, details = review_noise_control.repair_revision_surface(text, feedback, out_dir)

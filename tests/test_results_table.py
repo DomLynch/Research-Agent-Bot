@@ -430,6 +430,7 @@ def test_build_results_table_renders_rows(tmp_path):
     )
     md = build_results_table(claims_dir, topic="aspirin")
     assert "Quantitative Evidence Index — aspirin" in md
+    assert "Quantitative Evidence Index: source excerpts" in md
     assert "| Study | Source context | Raw statistic |" in md
     # Endpoint-bound sample-size rows are quarantined from public QEI;
     # ratio and p-value rows still render.

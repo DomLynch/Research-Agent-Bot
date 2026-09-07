@@ -1826,6 +1826,9 @@ def apply_fixes(
     failures are auditable, not silent text loss."""
     new_md = paper_md
     log: list[dict] = []
+    enforce_depth = manifest is not None and not (
+        numeric_quarantine_path and (numeric_quarantine_path.parent / "submission_source_proofs.json").exists()
+    )
 
     def apply(
         repair: Callable[..., tuple[str, int]], fix_type: str,
@@ -2634,7 +2637,7 @@ def apply_fixes(
             new_md,
         )
         log.extend(cross_dup_log)
-        if manifest.get("review_type") not in {"thin_corpus_brief", "evidence_brief", "evidence_map"}:
+        if enforce_depth and manifest.get("review_type") not in {"thin_corpus_brief", "evidence_brief", "evidence_map"}:
             new_md, depth_log = _ensure_analytical_depth_floors(new_md)
             log.extend(depth_log)
         new_md, hedge_log = _ensure_discussion_hedge_density(new_md)
@@ -2683,7 +2686,7 @@ def apply_fixes(
                 "after restoration/backfill paths"
             ),
         })
-        if manifest is not None:
+        if enforce_depth:
             new_md, depth_log = _ensure_analytical_depth_floors(new_md)
             log.extend(depth_log)
 

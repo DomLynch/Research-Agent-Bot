@@ -74,17 +74,7 @@ def _build_reviewer_prompt(
     paper_md: str, manifest: dict, audit: dict,
     citation_registry: dict | None = None,
 ) -> tuple[str, str]:
-    """System + user messages for the final-layer reviewer.
-
-    The system prompt enumerates the patch type contract so the model
-    produces correctly-typed output.
-
-    Fix #11: when citation_registry is provided, the user prompt
-    shows the reviewer the ALLOWED BODY CITATIONS (Author-Year tokens)
-    instead of internal receipt_id handles. Pre-fix reviewer behavior
-    was reverting clean
-    Author-Year citations back to long PMC handles because the prompt
-    said 'use ONLY these for citations' next to the receipt_ids."""
+    """Build typed-patch instructions and source-aware citation guidance."""
     system = (
         "You are a careful research-synthesis reviewer. Your job is to "
         "find issues in the paper and propose TYPED patches with "
@@ -99,12 +89,15 @@ def _build_reviewer_prompt(
         "gate: AFTER's words ⊆ BEFORE's words; AFTER ≤ BEFORE in "
         "word count; no new numerics/citations/identifiers).\n"
         "  citation   — any change to a paper citation. Body citations "
-        "MUST be human-readable Author-Year tokens (e.g. \"Walton 2019\", "
+        "use human-readable Author-Year tokens (e.g. \"Walton 2019\", "
         "\"Smith et al. 2025\"). NEVER use receipt_id strings or "
         "internal handles like `PMC12978362_...` or "
         "`Author_YYYY_TRIAL_...` in body prose — those are internal "
         "identifiers, not citations. PMC IDs and DOIs belong only in "
         "the References section.\n"
+        "Prepared manuscripts also use [bundle:N] source-bundle links, checked by deterministic "
+        "citation gates. Preserve these links; their syntax alone is not a defect. "
+        "Still flag incorrect source attribution or claims unsupported by their cited evidence.\n"
         "  claim      — any change to a substantive claim (effect "
         "direction, magnitude, mechanism). Auto-applies ONLY under "
         "the same strict-deletion smart-gate as numeric. Otherwise "

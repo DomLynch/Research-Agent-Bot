@@ -1,5 +1,40 @@
 # DECISION JOURNAL
 
+## 2026-09-07 - Verify revisions against complete frozen statistics
+Use one hash-verified abstract projection for revision repair and its gate.
+Keep this context separate from direction/role classification and preserve the
+original receipt contracts and source files. Recognize the reviewer's explicit
+source-excerpt correction, including spaced decimal p-values, without admitting
+an unverified statistic. Keep complete bounded abstracts in outgoing evidence.
+
+Remove submission-time generic conclusion padding and prevent the finalizer
+from restoring a rejected quantitative table from the old supplement. Short
+sections remain validation failures, not an excuse to manufacture prose.
+
+Normalize inline citations before exact source matching and preserve spaced
+p-value decimals during sentence splitting. Exact matching cannot accept a
+source sentence merely embedded inside a larger unsupported assertion; numeric,
+direction and minimum-specificity checks remain required. Preparation, claim
+counts and both decisive-claim gates share clause-level validation. Statistical
+overlap cannot substitute an outcome; source-confirmed non-empirical context
+prefixes remain allowed. The revise lane uses the same verified context and
+does not treat an old supplement as part of the prepared submission.
+
+The shared evidence helper moves responsibility into agent/. Measured effective
+LOC is agent 25,269, scripts 40,231, combined 65,500. Reallocate the directory
+budgets without increasing the combined ceiling or altering scientific gates.
+Both post-review cleanup paths also suppress prepared-manuscript depth padding.
+The first cleanup receives the frozen quantitative corpus, as the final pass
+already does. Remove the redundant QEI caption count rather than treating table
+metadata as a clinical result or weakening numeric trace validation.
+The reviewer brief now distinguishes prepared source-bundle links from internal
+receipt IDs; valid citation syntax is not an editorial defect. Incorrect source
+attribution and unsupported claims remain reviewable and deterministically gated.
+Named direction-polarity corrections use the source-scoped direction checker,
+not an unrelated demand to invent cross-study tensions. Explicit source-pair
+requests still require their own evidence; incorrect direction labels still fail.
+This is code hardening, not a claim of publication recovery.
+
 ## 2026-09-05 - Consolidate repair and publishing control
 One finalizer owns post-review convergence; synthesis supplies a repair pass,
 not a competing loop. Candidate selection is read-only, preparation/submission

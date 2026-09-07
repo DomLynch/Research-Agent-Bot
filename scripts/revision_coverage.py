@@ -303,7 +303,7 @@ def asks_effect_direction_reconciliation(text: str) -> bool:
 def authorized_receipt_contract_fields(text: str) -> set[str]:
     """Receipt fields a reviewer explicitly asked this revision to recode."""
     lower = _normalised_feedback(text)
-    fields = {"effect_direction"} if _asks_effect_direction_reconciliation(lower) else set()
+    fields = {"effect_direction"} if _asks_effect_direction_reconciliation(lower) or "direction coding" in lower and "relabel or reconcile" in lower else set()
     action = any(token in lower for token in (
         "correct", "move", "reclassify", "recode", "reconcile", "reroute",
         "inconsistent", "misclassified", "not a review", "underlying source",
@@ -1127,7 +1127,7 @@ def _asks_concrete_tensions_gaps(text: str) -> bool:
                    "sources on each side", "studies on each side")
     pair_language = any(token in text for token in pair_tokens) or source_identity and bool(re.search(r"\b(?:pairs?|contrasts?)\b", text))
     numbered_pairs = pair_language and bool(re.search(r"\b(?:three(?!\s*[-–]?\s*year)|3)\b", text))
-    return source_identity and disagreement or numbered_pairs or (
+    return source_identity and disagreement and (pair_language or not _quality._asks_named_direction_reconciliation(text)) or numbered_pairs or (
         "non-orthogonal tensions" in text
         and any(token in text for token in ("operationalize", "calculation", "verifiable", "auditable"))
     ) or (

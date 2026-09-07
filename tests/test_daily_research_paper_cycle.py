@@ -6769,6 +6769,8 @@ def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monke
         encoding="utf-8",
     )
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
+    (out_dir / "submission_source_proofs.json").write_text("[]")
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
 
 
 def test_unmet_revision_asks_scopes_outcome_rename_to_public_manuscript(tmp_path: Path, monkeypatch) -> None:
