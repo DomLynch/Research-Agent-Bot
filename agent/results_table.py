@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 from agent.outcome_class_remap import outcome_display
+from agent.publication_evidence import _record_text, exact_source_quote
 
 # Hard cap per the reviewer's spec: don't build a 1000-row table even
 # if the corpus has that many high-confidence claims. 40 rows × ~3
@@ -49,6 +50,8 @@ class EvidenceRow:
     unit_or_type: str      # units string or claim_type fallback
     statistic: str         # "p=0.04" / "(0.81–1.13)" / "—"
     citation: str          # citation_token (Author Year)
+    source_context: str = ""
+    source_value: str = ""
 
 
 # Per-category row quotas — picks rows so the audit's six Q9 numeric
@@ -74,13 +77,13 @@ def build_results_table(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
     citation_tokens_by_paper_id: Mapping[str, str] | None = None,
-    quarantine_path: Path | None = None,
+    quarantine_path: Path | None = None, parsed_dir: Path | None = None,
 ) -> str:
     return build_results_table_with_diagnostic(
         quant_dir, topic=topic, max_rows=max_rows,
         accepted_paper_ids=accepted_paper_ids,
         citation_tokens_by_paper_id=citation_tokens_by_paper_id,
-        quarantine_path=quarantine_path,
+        quarantine_path=quarantine_path, parsed_dir=parsed_dir,
     )[0]
 
 
@@ -88,7 +91,7 @@ def build_results_table_with_diagnostic(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
     citation_tokens_by_paper_id: Mapping[str, str] | None = None,
-    quarantine_path: Path | None = None,
+    quarantine_path: Path | None = None, parsed_dir: Path | None = None,
 ) -> tuple[str, dict[str, int]]:
     """Return QEI markdown plus drop counters."""
     diag: dict[str, int] = {
@@ -123,8 +126,28 @@ def build_results_table_with_diagnostic(
         if accepted_paper_ids is not None and paper_id not in accepted_paper_ids:
             diag["drop_non_receipt_paper"] += 1
             continue
+        source_text = ""
+        if parsed_dir is not None:
+            try:
+                record = json.loads((parsed_dir / f"{paper_id}.paper_sections.json").read_text())
+                source_text = " ".join(_record_text(record.get("sections", {})).split())
+            except (OSError, ValueError, AttributeError):
+                pass
+        # Range-dash equivalence is length-preserving; render the original source span.
+        normalized_source = re.sub(r"(?<=\d)\u2013(?=\d)", "-", source_text)
         for claim in data.get("claims", []) or []:
             diag["n_total_claims"] += 1
+            if parsed_dir is not None:
+                sentence = exact_source_quote(
+                    re.sub(r"(?<=\d)\u2013(?=\d)", "-", str(claim.get("sentence") or "")), normalized_source,
+                )
+                match = re.search(
+                    r"(?:^|[.!?]\s+)(" + re.escape(sentence) + r")(?=$|\s)", normalized_source,
+                ) if sentence and sentence.endswith((".", "!", "?")) else None
+                if not match:
+                    diag["drop_surface_gate"] += 1
+                    continue
+                claim = {**claim, "sentence": source_text[slice(*match.span(1))]}
             if not _confidence_admissible(claim):
                 continue
             diag["n_admissible"] += 1
@@ -132,8 +155,9 @@ def build_results_table_with_diagnostic(
                 diag["drop_off_topic_arm"] += 1
                 continue
             diag["n_topic_matched"] += 1
-            token = _canonical_qei_token(
-                paper_id, citation_tokens_by_paper_id,
+            token = (
+                (citation_tokens_by_paper_id.get(paper_id) or "").strip()
+                if citation_tokens_by_paper_id is not None else None
             )
             if citation_tokens_by_paper_id is not None and not token:
                 diag["drop_missing_canonical_citation"] += 1
@@ -155,7 +179,7 @@ def build_results_table_with_diagnostic(
                 continue
             score = _quality_score(claim)
             ct = claim.get("claim_type", "")
-            value_key = f"{row.value}|{row.unit_or_type}|{row.statistic}"
+            value_key = f"{row.source_value}|{row.unit_or_type}"
             candidates.append((score, ct, row, value_key))
     candidates.sort(key=lambda t: -t[0])
     cat_count: dict[str, int] = {}
@@ -321,7 +345,7 @@ def _claim_to_row(
     if not nums:
         return None
     try:
-        primary_value = float(nums[0])
+        float(nums[0])
     except (TypeError, ValueError):
         return None
     raw = (claim.get("raw_text") or "").strip()
@@ -330,20 +354,6 @@ def _claim_to_row(
     endpoint = (claim.get("endpoint") or "").strip()
     arm = (claim.get("arm") or "").strip()
     role = (claim.get("claim_role") or "").strip()
-    # Statistic column: pull a paired p or CI from the claim if present.
-    statistic = _format_statistic(claim, primary_value)
-    # Pick the best display string for value: raw_text if it's compact,
-    # else format the numeric. Confidence intervals render their interval
-    # once in Statistic; repeating/truncating the CI in Value creates
-    # public-table residue and unsafe reviewer patches.
-    if claim_type == "confidence_interval" and statistic != "—":
-        value_str = "—"
-    elif claim_type == "p_value":
-        value_str = _format_p_value(raw, primary_value)
-    else:
-        value_str = raw if (raw and len(raw) < 24) else _format_value(
-            primary_value,
-        )
     # Unit/type: prefer explicit units, fall back to public claim type.
     unit_str = units if units else _public_label(claim_type)
     # Endpoint column: bound endpoint > claim_role > short claim_type.
@@ -353,20 +363,13 @@ def _claim_to_row(
         study_label=citation,
         endpoint=_truncate(ep, 30),
         arm=_truncate(arm or "—", 24),
-        value=_truncate(value_str, 20),
+        value=" ".join(raw.split()).replace("|", "&#124;"),
         unit_or_type=_truncate(unit_str, 18),
-        statistic=_truncate(statistic, 22),
+        statistic="—",
         citation=citation,
+        source_context=" ".join(str(claim.get("sentence") or "").split()).replace("|", "&#124;"),
+        source_value=" ".join(raw.split()).replace("|", "&#124;"),
     )
-
-
-def _canonical_qei_token(
-    paper_id: str, tokens_by_paper_id: Mapping[str, str] | None,
-) -> str | None:
-    if tokens_by_paper_id is None:
-        return None
-    token = (tokens_by_paper_id.get(paper_id) or "").strip()
-    return token or None
 
 
 def _qei_quarantine_entry(
@@ -400,35 +403,6 @@ def _publishable_surface_row(row: EvidenceRow) -> bool:
     return is_publishable_qei_row(row)
 
 
-def _format_value(v: float) -> str:
-    if v == int(v):
-        return f"{int(v):,}"
-    return f"{v:.3g}"
-
-
-def _format_p_value(raw: str, value: float) -> str:
-    """Normalize source p-values without confusing other zero-valued fields."""
-    match = re.search(
-        r"\bp\s*([=<>\u2264\u2265])\s*((?:0)?\.\d+|0|1(?:\.0+)?)\b",
-        raw,
-        flags=re.I,
-    )
-    if match:
-        operator, literal = match.groups()
-    else:
-        bare = re.fullmatch(r"\s*([=<>\u2264\u2265])?\s*((?:0)?\.\d+|0|1(?:\.0+)?)\s*", raw)
-        if not bare:
-            return "—" if raw or value == 0 else f"P = {_format_value(value)}"
-        operator, literal = bare.group(1) or "=", bare.group(2)
-    literal = f"0{literal}" if literal.startswith(".") else literal
-    if float(literal) == 0:
-        if "." not in literal:
-            return "—"
-        decimals = len(literal.partition(".")[2])
-        return f"P < {10 ** -decimals:.{decimals}f}"
-    return f"P {operator} {literal}"
-
-
 def _public_label(value: str) -> str:
     labels = {
         "ci": "confidence interval",
@@ -441,32 +415,9 @@ def _public_label(value: str) -> str:
     return labels.get(s, outcome_display(s).lower())
 
 
-def _format_statistic(claim: dict[str, Any], value: float) -> str:
-    """For p_value claims, format as 'p=...'. For CI claims, format
-    as '(low–high)'. For HR/OR/RR, return '—' (the value column
-    already shows the ratio). Otherwise empty."""
-    ct = claim.get("claim_type", "")
-    if ct == "p_value":
-        # The value column already carries the exact p-value string.
-        # Duplicating it here invites reviewer/model "simplifications"
-        # that can corrupt markdown table arity.
-        return "—"
-    if ct == "confidence_interval":
-        nums = claim.get("numeric_values") or []
-        if len(nums) >= 2:
-            try:
-                lo = float(nums[0])
-                hi = float(nums[1])
-                return f"({lo:.2f}–{hi:.2f})"
-            except (TypeError, ValueError):
-                return "—"
-    return "—"
-
-
 def _short_citation(paper_id: str) -> str:
     """Extract a compact citation tag from a paper_id slug.
     Falls back to the first 24 chars when no year token is present."""
-    import re
     # Find a 4-digit year token. Digit-boundary (not \b word boundary)
     # because paper_ids use underscore separators — \b is matched
     # between word chars and non-word, but '_' is a word char so the
@@ -483,19 +434,12 @@ def _short_citation(paper_id: str) -> str:
         return paper_id[:24]
     # First word that's non-numeric and not an article
     skip = {"the", "a", "an", "of", "in", "and", "for", "to", "on"}
-    surname = ""
-    for w in parts:
-        wl = w.lower()
-        if wl in skip or wl.isdigit():
-            continue
-        if w[:1].isalpha():
-            surname = w.title()
-            break
-    if surname and year:
-        return f"{surname} {year}"
-    if year:
-        return f"PMC {year}"
-    return paper_id[:24]
+    surname = next(
+        (w.title() for w in parts
+         if w.lower() not in skip and not w.isdigit() and w[:1].isalpha()),
+        "",
+    )
+    return f"{surname or 'PMC'} {year}" if year else paper_id[:24]
 
 
 # Admissibility matches the audit's _load_corpus_numerics rule
@@ -574,14 +518,11 @@ def _load_topic_arm_terms(topic: str) -> frozenset[str]:
         pack = load_topic_pack(tp_path)
     except (ImportError, OSError, ValueError):
         return frozenset()
-    terms: set[str] = set()
-    for syn in (
-        list(getattr(pack, "active_arm_synonyms", []) or []) +
-        list(getattr(pack, "placebo_arm_synonyms", []) or [])
-    ):
-        s = str(syn).strip().lower()
-        if s:
-            terms.add(s)
+    terms = {
+        s for field in ("active_arm_synonyms", "placebo_arm_synonyms")
+        for syn in (getattr(pack, field, []) or [])
+        if (s := str(syn).strip().lower())
+    }
     # Generic placebo/control terms always allowed (cross-topic safe)
     terms |= {"placebo", "control", "vehicle", "pooled"}
     return frozenset(terms)
@@ -604,10 +545,7 @@ def _arm_belongs_to_topic(
         return True
     # Match by substring containment in either direction so 'low-dose
     # aspirin' matches 'aspirin' and vice versa.
-    for term in topic_arm_terms:
-        if term in arm or arm in term:
-            return True
-    return False
+    return any(term in arm or arm in term for term in topic_arm_terms)
 
 
 def _quality_score(claim: dict[str, Any]) -> int:
@@ -617,21 +555,14 @@ def _quality_score(claim: dict[str, Any]) -> int:
       - prefer claims with bound endpoint + arm (high binding)
       - prefer hazard_ratio / odds_ratio / risk_ratio (effect estimates)
     """
-    ct = claim.get("claim_type", "")
-    score = 0
-    if ct in ("hazard_ratio", "odds_ratio", "risk_ratio"):
-        score += 5
-    if ct in ("p_value", "confidence_interval"):
-        score += 3
-    if ct == "sample_size":
-        score += 4
-    if ct == "percentage":
-        score += 1
-    if claim.get("endpoint"):
-        score += 2
-    if claim.get("arm"):
-        score += 1
-    return score
+    score = {
+        **dict.fromkeys(_RATIO_CLAIM_TYPES, 5),
+        "p_value": 3,
+        "confidence_interval": 3,
+        "sample_size": 4,
+        "percentage": 1,
+    }.get(claim.get("claim_type", ""), 0)
+    return score + 2 * bool(claim.get("endpoint")) + bool(claim.get("arm"))
 
 
 def _truncate(s: str, limit: int) -> str:
@@ -647,19 +578,16 @@ def _render_md(rows: Iterable[EvidenceRow], *, topic: str) -> str:
     rows_list = list(rows)
     title = (
         f"## Quantitative Evidence Index — {topic}\n\n"
-        f"_Quantitative Evidence Index: top {len(rows_list)} high-confidence numeric claims from the "
-        f"corpus. Every row traces to a corpus-bound claim and a registered citation._\n\n"
-        "**Numeric verification note:** P-values are rendered from extracted "
-        "source statistics; rounded zero values are reported at their implied "
-        "decimal floor rather than as impossible zero probabilities.\n\n"
+        f"_Quantitative Evidence Index: {len(rows_list)} source excerpts with numerical statements. "
+        "The quoted context retains the population, comparator and endpoint; "
+        "it may describe background studies rather than the cited report's own results._\n\n"
     )
     header = (
-        "| Study | Endpoint | Arm | Value | Type | Statistic |\n"
-        "|---|---|---|---|---|---|\n"
+        "| Study | Source context | Raw statistic |\n"
+        "|---|---|---|\n"
     )
     body = "\n".join(
-        f"| {r.study_label} | {r.endpoint} | {r.arm} "
-        f"| {r.value} | {r.unit_or_type} | {r.statistic} |"
+        f"| {r.study_label} | {r.source_context} | {r.source_value} |"
         for r in rows_list
     )
     return title + header + body + "\n"

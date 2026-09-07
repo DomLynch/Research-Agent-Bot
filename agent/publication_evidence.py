@@ -53,11 +53,19 @@ def _record_text(value: object) -> str:
     return str(value) if isinstance(value, str) else ""
 
 
+def _complete_record_field(value: object, text: str) -> bool:
+    if isinstance(value, dict):
+        return any(_complete_record_field(item, text) for item in value.values())
+    if isinstance(value, list):
+        return any(_complete_record_field(item, text) for item in value)
+    return isinstance(value, str) and _normalized_text(value) == text
+
+
 def source_proof_fields(
     row: dict[str, Any], *, origin: str, evidence: RevisionEvidenceLock | None = None,
     topic: str = "", receipt_id: str = "",
 ) -> dict[str, Any]:
-    if evidence is None or evidence.mode != "snapshot" or evidence.errors:
+    if origin not in SOURCE_PROOF_ORIGINS or evidence is None or evidence.mode != "snapshot" or evidence.errors:
         return {}
     if not topic or not receipt_id or receipt_id not in evidence.receipt_rows:
         return {}
@@ -71,20 +79,50 @@ def source_proof_fields(
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return {}
     excerpt = _normalized_text(row.get("excerpt"))
+    sections = record.get("sections", {}) if isinstance(record, dict) else {}
+    if not isinstance(sections, dict):
+        return {}
+    section = next((name for name in sorted(sections, key=lambda name: name.lower() != "abstract")
+                    if exact_source_quote(excerpt, _record_text(sections[name]))), None)
+    if section is None:
+        return {}
+    pmid = _normalized_text(row.get("pmid") or (row.get("id") if row.get("source_type") == "pubmed" else ""))
+    origin = "full_text"
+    if section.lower() == "abstract":
+        origin = "pubmed" if re.fullmatch(r"[1-9]\d*", pmid) else "publisher"
+    pmcid = _normalized_text(row.get("pmcid")).upper()
+    locator = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if origin == "pubmed" else ""
+    if not locator and re.fullmatch(r"PMC[1-9]\d*", pmcid):
+        locator = f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/"
+    doi = re.sub(r"^(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "", _normalized_text(row.get("doi")), flags=re.I)
+    for value in (record.get("source_pdf"), record.get("url"),
+                  f"https://doi.org/{doi}" if re.fullmatch(r"10\.\d{4,9}/\S+", doi) else "", row.get("url")):
+        if locator:
+            break
+        value = _normalized_text(value)
+        try:
+            parsed = urllib.parse.urlparse(value)
+        except ValueError:
+            continue
+        if parsed.scheme in {"http", "https"} and parsed.netloc:
+            locator = value
+    if not locator:
+        return {}
     source_run = evidence.source_run.name if evidence.source_run else "unknown"
-    locator = f"revision-snapshot:{source_run}:{topic}:{receipt_id}"
     identity_hash = source_identity_hash(
         {**row, "source_record_locator": locator}, origin=origin,
     )
-    if not excerpt or not exact_source_quote(excerpt, _record_text(record)) or not identity_hash:
-        return {}
     quote = _normalized_text(row.get("quote"))
     return {
         "evidence_origin": origin,
         "source_record_locator": locator,
+        # Local preparation ledger only; build_payload strips these before submission.
+        "source_snapshot_locator": f"revision-snapshot:{source_run}:{topic}:{receipt_id}",
+        "source_passage_locator": f"sections.{section}",
         "source_record_hash": "sha256:" + hashlib.sha256(raw).hexdigest(),
         "source_content_hash": _sha256_text(excerpt),
         "source_identity_hash": identity_hash,
+        "excerpt_is_complete_field": _complete_record_field(record, excerpt),
         "quote_verified": bool(quote and exact_source_quote(quote, excerpt)),
     }
 

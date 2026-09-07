@@ -27,6 +27,7 @@ import daily_research_paper_submit as daily  # type: ignore[import-not-found]  #
 from agent.revision_evidence import create_revision_evidence_snapshot, load_revision_evidence  # noqa: E402
 
 _REAL_EUROPE_PMC_IDENTIFIERS = daily._europe_pmc_identifiers
+_RECENCY_CONTRACT = json.loads((REPO / "tests/fixtures/researka_recency_contract.json").read_text(encoding="utf-8"))
 
 
 @pytest.fixture(autouse=True)
@@ -215,7 +216,8 @@ def test_structural_full_finalize_once_before_assessment(tmp_path, monkeypatch, 
 
 
 def test_structural_submit_builds_package_once(tmp_path, monkeypatch):
-    _run(tmp_path)
+    run = _run(tmp_path)
+    frozen = daily._read_json(run / "submission_package.json")["payload"]
     built = []
     original = daily.build_payload
     def build(run):
@@ -223,7 +225,7 @@ def test_structural_submit_builds_package_once(tmp_path, monkeypatch):
         built.append(payload)
         return payload
     def submit(payload):
-        assert payload is built[0]
+        assert payload == built[0] == frozen
         return {"ok": True, "status": 201, "response": {"id": "sub-once"}}
     monkeypatch.setattr(daily, "build_payload", build)
     out = daily.run_cycle(runs_root=tmp_path, date="2026-09-05", submit=True,
@@ -232,23 +234,18 @@ def test_structural_submit_builds_package_once(tmp_path, monkeypatch):
     assert len(built) == 1
 
 
-@pytest.mark.parametrize(("remote", "domain_repair"), [(False, False), (True, False), (True, True)])
-def test_structural_post_qa_duplicate_is_blocked(tmp_path, monkeypatch, remote, domain_repair):
+@pytest.mark.parametrize("remote", [False, True])
+def test_structural_post_qa_duplicate_is_blocked(tmp_path, monkeypatch, remote):
     run = _run(tmp_path)
     duplicate = daily.build_payload(run)
     paper = run / "full_paper.md"
     original = paper.read_text()
     paper.write_text(original.replace("introduction", "background"))
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
     submitted = tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json"
     if not remote:
         _write_json(submitted, [{"fingerprint": daily._payload_fingerprint(duplicate)}])
-    if domain_repair:
-        def repair(path):
-            (path / "full_paper.md").write_text(original)
-            return ["domain_repair"]
-        monkeypatch.setattr(daily, "_repair_domain_frame_template_file", repair)
-    else:
-        monkeypatch.setattr(daily, "_run_preflight_qa", lambda _payload, _run: (duplicate, None))
+    monkeypatch.setattr(daily, "_run_preflight_qa", lambda _payload, _run: (duplicate, None))
     out = daily.run_cycle(
         runs_root=tmp_path, date="2026-09-05", submit=True,
         submitter=lambda _payload: pytest.fail("duplicate reached transport"),
@@ -281,6 +278,47 @@ def test_animal_receipt_is_submitted_as_context_not_direct() -> None:
     }
 
     assert daily._source_context_for_receipt(receipt) == "context"
+
+
+@pytest.mark.parametrize("source_case", ["supported", "contradicted", "negated", "missing"])
+def test_preparation_refreshes_old_qei_from_frozen_context_and_labels_protocol(tmp_path: Path, source_case: str) -> None:
+    run = _run(tmp_path)
+    manifest = daily._read_json(run / "manifest.json")
+    manifest["receipts"][1]["directness"] = "protocol"
+    _write_json(run / "manifest.json", manifest)
+    corpus = tmp_path / "docs" / "quality-reference" / "topic"
+    sentence = "Other cohorts had a median reduction in triglycerides of 48% and mortality of 1.7%."
+    _write_json(corpus / "quant_claims" / "topic_effect_0.quant_claims.json", {
+        "paper_id": "topic_effect_0", "claims": [{
+            "claim_type": "percentage", "raw_text": "48%", "numeric_values": [48],
+            "sentence": sentence, "binding_confidence": "high", "endpoint": "mortality",
+        }],
+    })
+    source_text = {"supported": sentence, "contradicted": "Survival was 100% in both groups.",
+                   "negated": "There is no evidence that " + sentence, "missing": ""}[source_case]
+    _write_json(corpus / "parsed" / "topic_effect_0.paper_sections.json", {"sections": {"abstract": source_text}})
+    shutil.rmtree(run / "revision_evidence_snapshot")
+    _snapshot_run(run)
+    paper_path = run / "full_paper.md"
+    old_table = "## Quantitative Evidence Index\n\n| Alpha 2026 | mortality | 48% |\n\n"
+    original = paper_path.read_text().replace("## References", old_table * 2 + "## References")
+    paper_path.write_text(original)
+    assert daily.prepare_submission_manuscript(run, enrich_sources=False)
+    prepared = paper_path.read_bytes()
+    payload = daily.build_payload(run, enrich_sources=False)
+    assert "| Alpha 2026 | mortality | 48% |" not in payload["body_markdown"]
+    assert payload["body_markdown"].count(f"| Alpha 2026 | {sentence} | 48% |") == (1 if source_case == "supported" else 0)
+    assert payload["body_markdown"].count("## Quantitative Evidence Index") <= 1
+    protocol = payload["source_bundle"][1]
+    assert (protocol["publication_type"], protocol["directness"], protocol["evidence_context"]) == ("study protocol", "protocol", "context")
+    assert payload["metadata"]["submission_payload_hash"] == daily._payload_fingerprint(payload)
+    assert payload["body_markdown"].encode("utf-8") == prepared == paper_path.read_bytes()
+    assert daily.build_payload(run, enrich_sources=False) == payload
+    snapshot_claim = run / "revision_evidence_snapshot" / "quant_claims" / "topic_effect_0.quant_claims.json"
+    snapshot_claim.write_text("{}")
+    paper_path.write_text(original)
+    with pytest.raises(ValueError, match="qei_source_snapshot_unverified"):
+        daily.prepare_submission_manuscript(run, enrich_sources=False)
 
 
 @pytest.mark.parametrize("raises", [False, True])
@@ -448,14 +486,16 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
         for idx, row in enumerate(receipts, start=1)
     })
     _snapshot_run(run)
+    daily.prepare_submission_manuscript(run)
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 14, "n_total": 14})
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write_json(run / "full_paper.final_verdict.json", {"verdict": "AAA"})
     _write_json(run / "pre_submit_gate.json", {"result": {"passed": True}})
+    daily.freeze_submission_package(run, {"verdict": "AAA"})
     return run
 
 
-def test_payload_avoids_platform_false_positive_for_scientific_unresolved(tmp_path: Path) -> None:
+def test_payload_preserves_scientific_unresolved_and_fails_gate(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = run / "full_paper.md"
     paper.write_text(paper.read_text(encoding="utf-8").replace("endpoint result", "unresolved endpoint result").replace("methods methods", "unresolved methods issue methods"), encoding="utf-8")
@@ -464,12 +504,78 @@ def test_payload_avoids_platform_false_positive_for_scientific_unresolved(tmp_pa
     sections = daily._sections(payload["body_markdown"])
     decisive = "\n".join((payload["title"], payload["abstract"], sections["Conclusion"]))
 
-    assert "unresolved" not in decisive.lower()
-    assert "unsettled endpoint result" in payload["body_markdown"]
+    assert "unresolved endpoint result" in decisive.lower()
+    assert "unsettled endpoint result" not in payload["body_markdown"]
     assert "unresolved methods issue" in payload["body_markdown"]
-    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+    assert payload["body_markdown"] == paper.read_text(encoding="utf-8")
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "researka_core_claims_unresolved:placeholder_token"
     payload["abstract"] += " This remains unresolved."
     assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "researka_core_claims_unresolved:placeholder_token"
+
+
+def test_build_payload_preserves_all_input_files_and_unprepared_manuscript(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    paper = run / "full_paper.md"
+    raw = paper.read_text(encoding="utf-8").replace(
+        "# Research Synthesis: Topic", "# Research Synthesis: Topic — full paper",
+    ).replace("endpoint result", "unresolved endpoint result") + "\n\n"
+    paper.write_text(raw, encoding="utf-8")
+    before = {path: (path.read_bytes(), path.stat().st_mtime_ns) for path in tmp_path.rglob("*") if path.is_file()}
+
+    payload = daily.build_payload(run, enrich_sources=False)
+
+    assert payload == daily.build_payload(run, enrich_sources=False)
+    assert payload["body_markdown"].encode("utf-8") == before[paper][0]
+    assert {path: (path.read_bytes(), path.stat().st_mtime_ns) for path in tmp_path.rglob("*") if path.is_file()} == before
+
+
+@pytest.mark.parametrize(("change", "reason"), [
+    ("manuscript", "submission_package_changed_after_review"),
+    ("source", "submission_package_changed_after_review"),
+    ("domain", "submission_package_changed_after_review"),
+    ("category", "submission_package_changed_after_review"),
+    ("metadata", "submission_package_changed_after_review"),
+    ("verdict", "submission_package_review_missing_or_stale"),
+    ("missing_package", "submission_package_review_missing_or_stale"),
+])
+def test_post_review_changes_cannot_reach_transport(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, change: str, reason: str,
+) -> None:
+    run = _run(tmp_path)
+    original_fingerprint = daily._payload_fingerprint(daily.build_payload(run))
+    if change == "manuscript":
+        paper = run / "full_paper.md"
+        paper.write_text(paper.read_text(encoding="utf-8").replace("introduction", "context", 1), encoding="utf-8")
+    elif change == "source":
+        manifest = daily._read_json(run / "manifest.json")
+        manifest["receipts"][0]["effect_direction"] = "positive"
+        _write_json(run / "manifest.json", manifest)
+        _snapshot_run(run)
+    elif change in {"domain", "category"}:
+        key = "RESEARKA_DOMAIN_SLUG_V3" if change == "domain" else "RESEARKA_CATEGORY_V3"
+        monkeypatch.setenv(key, "changed-after-review")
+    elif change == "metadata":
+        manifest = daily._read_json(run / "manifest.json")
+        manifest["n_non_orthogonal_tensions"] += 1
+        _write_json(run / "manifest.json", manifest)
+        _snapshot_run(run)
+    elif change == "verdict":
+        _write_json(run / "full_paper.final_verdict.json", {"verdict": "AAA", "review_epoch": "new"})
+    else:
+        (run / "submission_package.json").unlink()
+    payload = daily.build_payload(run)
+    if change in {"domain", "category", "metadata"}:
+        assert daily._payload_fingerprint(payload) == original_fingerprint
+    assert daily._frozen_package_status(run, payload) == reason
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-07", submit=True,
+        submitter=lambda _payload: pytest.fail("unreviewed package reached transport"),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["reason"] == reason
 
 
 def _retopic(run: Path, topic: str) -> None:
@@ -528,7 +634,7 @@ def _snapshot_run(run: Path) -> None:
     assert report["passed"] is True
 
 
-def test_preflight_cleaned_payload_rebinds_source_identity(
+def test_preflight_changed_cleaned_payload_requires_review_without_rebinding(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
@@ -556,15 +662,16 @@ def test_preflight_cleaned_payload_rebinds_source_identity(
 
     monkeypatch.setattr(daily.subprocess, "run", fake_run)
 
-    checked, _report = daily._run_preflight_qa(payload, run)
+    reviewed = json.loads(json.dumps(payload))
+    checked, report = daily._run_preflight_qa(payload, run)
 
-    assert checked is not None
-    assert checked["metadata"]["source_citation_hash"] == daily._source_citation_hash(
-        checked["source_bundle"],
-    )
-    assert checked["metadata"]["source_citation_hash"] != original_source_hash
-    assert checked["metadata"]["submission_identity_key"] != original_identity
-    assert checked["core_claims_resolved"] is True
+    assert checked is None
+    assert report["blocked_reasons"] == ["preflight_revision_required"]
+    assert payload["metadata"]["source_citation_hash"] == original_source_hash
+    assert payload["metadata"]["submission_identity_key"] == original_identity
+    assert payload["source_bundle"] == reviewed["source_bundle"]
+    assert payload["body_markdown"] == reviewed["body_markdown"]
+    assert payload["sections"] == reviewed["sections"]
 
 
 def _trust_revision_gate(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -656,7 +763,7 @@ def test_select_candidate_allows_explicit_changed_payload_for_submitted_topic(tm
     assert considered[0]["status"] == "eligible_resubmission_after_payload_change"
 
 
-def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
+def test_preparation_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = run / "full_paper.md"
     paper.write_text(
@@ -668,6 +775,7 @@ def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     registry[first_key]["source_doi"] = "10.3344/kjp.24202."
     _write_json(run / "citation_registry.json", registry)
     _snapshot_run(run)
+    assert daily.prepare_submission_manuscript(run)
 
     payload = daily.build_payload(run)
     row = next(row for row in payload["source_bundle"] if row["doi"] == "10.3344/kjp.24202")
@@ -678,7 +786,7 @@ def test_build_payload_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
     assert not re.search(r"10\.3344/kjp\.24202[.,;]", json.dumps(payload))
 
 
-def test_build_payload_removes_internal_full_paper_title_suffix(tmp_path: Path) -> None:
+def test_preparation_removes_internal_full_paper_title_suffix(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = run / "full_paper.md"
     paper.write_text(
@@ -690,6 +798,7 @@ def test_build_payload_removes_internal_full_paper_title_suffix(tmp_path: Path) 
         encoding="utf-8",
     )
 
+    assert daily.prepare_submission_manuscript(run)
     payload = daily.build_payload(run)
 
     assert payload["title"] == "Research Synthesis: Topic"
@@ -697,7 +806,7 @@ def test_build_payload_removes_internal_full_paper_title_suffix(tmp_path: Path) 
     assert "full paper" not in payload["body_markdown"].splitlines()[0].lower()
 
 
-def test_build_payload_strips_unbundled_background_references(tmp_path: Path) -> None:
+def test_preparation_strips_unbundled_background_references(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = run / "full_paper.md"
     paper.write_text(
@@ -708,6 +817,7 @@ def test_build_payload_strips_unbundled_background_references(tmp_path: Path) ->
         encoding="utf-8",
     )
 
+    assert daily.prepare_submission_manuscript(run)
     payload = daily.build_payload(run)
     material = json.dumps({
         "body_markdown": payload["body_markdown"],
@@ -727,6 +837,8 @@ def test_run_cycle_capped_continues_past_researka_preflight_block(tmp_path: Path
     ready = _run(tmp_path, "synthesis-aspirin-v06-old")
     _retopic(blocked, "protein")
     _retopic(ready, "aspirin")
+    daily.prepare_submission_manuscript(ready)
+    daily.freeze_submission_package(ready, daily._read_json(ready / "full_paper.final_verdict.json"))
     registry = json.loads((blocked / "citation_registry.json").read_text(encoding="utf-8"))
     first_key = sorted(registry)[0]
     registry[first_key].pop("body_citation", None)
@@ -790,6 +902,8 @@ def test_run_cycle_capped_continues_past_source_bundle_topic_mismatch(
         row["source_pmid"] = str(9000 + idx)
     _write_json(ready / "citation_registry.json", ready_registry)
     _snapshot_run(ready)
+    daily.prepare_submission_manuscript(ready)
+    daily.freeze_submission_package(ready, daily._read_json(ready / "full_paper.final_verdict.json"))
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",
@@ -838,6 +952,8 @@ def test_daily_submit_skips_compact_review_run_before_http(tmp_path: Path) -> No
     ready = _run(tmp_path, "synthesis-aspirin-v06-old")
     _retopic(compact, "intermittent_fasting")
     _retopic(ready, "aspirin")
+    daily.prepare_submission_manuscript(ready)
+    daily.freeze_submission_package(ready, daily._read_json(ready / "full_paper.final_verdict.json"))
     manifest = json.loads((compact / "manifest.json").read_text(encoding="utf-8"))
     manifest["review_type"] = "thin_corpus_brief"
     _write_json(compact / "manifest.json", manifest)
@@ -1513,10 +1629,25 @@ def test_payload_exports_source_proof_and_exact_bundle_trace(tmp_path: Path, mon
 
     monkeypatch.setenv("RESEARKA_SUBMITTER_NAME", "Legacy Submitter")
     monkeypatch.setenv("RESEARKA_SUBMITTER_ORCID", "0000-0000-0000-0000")
+    ensure_traces = daily._ensure_core_source_traces
+    trace_calls = []
+    def checked_traces(paper, bundle):
+        assert bundle[0]["excerpt_is_complete_field"] is True
+        trace_calls.append(True)
+        return ensure_traces(paper, bundle)
+    monkeypatch.setattr(daily, "_ensure_core_source_traces", checked_traces)
+    daily.prepare_submission_manuscript(run)
     payload = daily.build_payload(run)
+    assert trace_calls == [True]
+    proofs = json.loads((run / "submission_source_proofs.json").read_text(encoding="utf-8"))
+    assert len(proofs) == len(payload["source_bundle"])
+    assert proofs[0]["source_snapshot_locator"] and proofs[0]["source_passage_locator"]
     row = payload["source_bundle"][0]
     assert "submitter_name" not in payload
     assert "submitter_orcid" not in payload
+    assert "excerpt_is_complete_field" not in json.dumps(payload)
+    assert payload["metadata"]["source_citation_hash"] == daily._source_citation_hash(payload["source_bundle"])
+    assert payload["metadata"]["submission_payload_hash"] == daily._payload_fingerprint(payload)
 
     assert row["url"] == "https://clinicaltrials.gov/study/NCT01234567"
     assert row["registry_id"] == "NCT01234567"
@@ -1586,7 +1717,12 @@ def test_primary_source_without_registered_identity_is_enriched_or_fails_closed(
     assert daily._source_bundle_reconciliation_status(payload) == "eligible"
     assert daily._researka_preflight_status(payload) == "eligible"
     assert payload["source_bundle"][0]["pmid"] == "34849008"
-    assert "pmcid" not in payload["source_bundle"][0]
+    monkeypatch.setattr(daily, "_europe_pmc_identifiers", lambda _title: {"pmcid": "PMC8627262"})
+    pmc_payload = daily.build_payload(run)
+    assert "PMC8627262" in pmc_payload["source_bundle"][0]["url"]
+    assert daily._researka_preflight_status(pmc_payload) == "eligible"
+    for row in payload["source_bundle"] + pmc_payload["source_bundle"]:
+        assert not {"pmcid", "source_snapshot_locator", "source_passage_locator"} & row.keys()
 
 
 def test_europe_pmc_identity_lookup_is_unique_and_cached(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -1973,14 +2109,16 @@ def test_source_bound_structured_statistic_requires_matching_evidence_and_metada
         "directness=direct; tier=A1)."
     )
 
-    assert daily._claim_trace_counts(claim, [source]) == (1, 1, 1)
+    assert daily._claim_trace_counts(claim, [source]) == (1, 1, 0)
     assert daily._claim_trace_counts(claim.replace("0.007", "0.008"), [source]) == (1, 1, 0)
     assert daily._claim_trace_counts(claim.replace("direction=mixed", "direction=positive"), [source]) == (1, 1, 0)
     assert daily._claim_trace_counts(claim.replace("outcome=Longevity", "outcome=Safety"), [source]) == (1, 1, 0)
     assert daily._claim_trace_counts(claim.replace("Faqihi 2021", "Wrong 2021"), [source]) == (1, 1, 0)
     wrong_direction = claim.replace("direction=mixed", "direction=positive")
     overlap_source = {**source, "excerpt": claim}
-    assert daily._researka_evidence_aligns(claim, source)
+    assert not daily._researka_evidence_aligns(claim, source)
+    finding = "The cited source reports the following finding: Days on ventilation were lower in the exchange group (p = 0.007) [bundle:1]."
+    assert daily._claim_trace_counts(finding, [source]) == (1, 1, 1)
     assert not daily._researka_evidence_aligns(wrong_direction, overlap_source)
     assert daily._researka_claim_trace_status(
         {"abstract": "", "sections": {"Results": wrong_direction}}, [overlap_source],
@@ -2000,9 +2138,59 @@ def test_source_bound_structured_statistic_requires_matching_evidence_and_metada
         "outcome=Longevity; direction=mixed; directness=direct; tier=A1",
         "outcome=Mechanism (mouse); direction=mixed; directness=mechanistic; tier=A1",
     )
-    assert daily._structured_source_summary_aligns(
-        model_claim, model_source, daily._quantity_tokens(model_claim, [model_source]),
+    assert not daily._evidence_aligns(model_claim, model_source)
+
+
+def test_generated_statistic_repair_preserves_endpoint_and_deduplicates() -> None:
+    excerpt = "Days on ventilation were lower in the plasma exchange group than in the standard care group (p = 0.007)."
+    source = {"cited_as": "Faqihi 2021", "doi": "10.1000/faqihi", "excerpt": excerpt,
+              "outcome_class": "longevity", "effect_direction": "mixed", "directness": "direct", "evidence_tier": "A1"}
+    _seal_source(source)
+    claim = "Faqihi 2021 [bundle:1] (representative statistic p = 0.007; source-level statistic reported; outcome=Longevity; direction=mixed; directness=direct; tier=A1)."
+    paper = f"## Abstract\n\n{claim}\n\n## Results\n\n- {claim}\n"
+    repaired = daily._attach_aligned_claim_references(paper, [source])
+    assert repaired.count(excerpt.rstrip(".")) == 1
+    assert "outcome=Longevity" not in repaired
+    assert daily._claim_trace_counts(repaired, [source]) == (1, 1, 1)
+    assert daily._attach_aligned_claim_references(repaired, [source]) == repaired
+    source["excerpt"] = excerpt.replace("0.007", "0.008")
+    assert "reports the following finding" not in daily._attach_aligned_claim_references(paper, [source])
+
+
+def test_verified_finding_keeps_full_comparison_not_source_category() -> None:
+    result = "Plasma amyloid levels were lower after treatment ( P < .05), and CSF levels had a marginal change ( P = .072)."
+    null = "Cognitive outcomes were secondary and the study was not powered to detect significant differences."
+    source = {"doi": "10.1000/boada", "cited_as": "Boada 2019", "excerpt": result + " " + null}
+    _seal_source(source)
+    claim = "Boada 2019 [bundle:1] (representative statistic P < 0.05; outcome=Cognitive; direction=positive; directness=direct; tier=A1)."
+    finding = daily._verified_source_finding(claim, [source], set())
+    assert result.rstrip(".") in finding
+    assert "outcome=Cognitive" not in finding
+    assert daily._claim_trace_counts(finding, [source]) == (1, 1, 1)
+    assert not daily._evidence_aligns(
+        "The cited source reports the following finding: Cognitive outcomes improved significantly after treatment (p < .05) [bundle:1].", source,
     )
+
+
+def test_finding_repair_never_promotes_mid_sentence_excerpt(tmp_path: Path) -> None:
+    partial = "plasma exchange reduced ventilation days in patients with severe pneumonia compared with standard care alone (p = 0.007)."
+    full = "We found no evidence that " + partial
+    source = {"doi": "10.1000/negative", "excerpt": partial}
+    evidence = _source_lock(tmp_path, "test", "source", full)
+    source.update(daily._publication_evidence.source_proof_fields(
+        source, origin="full_text", evidence=evidence, topic="test", receipt_id="source",
+    ))
+    claim = "Study [bundle:1] (representative statistic p = 0.007; outcome=Longevity; direction=positive)."
+    assert daily._publication_evidence.source_proof_is_valid(source)
+    assert source["excerpt_is_complete_field"] is False
+    assert daily._verified_source_finding(claim, [source], set()) == ""
+    source["excerpt"] = full
+    source["quote"] = partial
+    source.update(daily._publication_evidence.source_proof_fields(
+        source, origin="full_text", evidence=evidence, topic="test", receipt_id="source",
+    ))
+    finding = daily._verified_source_finding(claim, [source], set())
+    assert "We found no evidence that" in finding
 
 
 def test_quantity_tokens_ignore_alphanumeric_source_identifiers() -> None:
@@ -2015,7 +2203,7 @@ def test_quantity_tokens_ignore_alphanumeric_source_identifiers() -> None:
     assert not daily._quantities_agree("10-Year-old cohort", [{"evidence_span": "5-Year-old cohort"}])
 
 
-def test_core_claim_trace_replaces_unsupported_conclusion_accounting(tmp_path: Path) -> None:
+def test_preparation_removes_accounting_without_recycling_results(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
     beta = "Beta 2025 reports: Topic intervention trial reports an authoritative endpoint result from source-owned full text content."
@@ -2029,13 +2217,14 @@ def test_core_claim_trace_replaces_unsupported_conclusion_accounting(tmp_path: P
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
 
+    assert daily.prepare_submission_manuscript(run)
     payload = daily.build_payload(run)
 
     assert "The evidence tiers include A1" not in payload["body_markdown"]
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
-    assert payload["core_claims_resolved"] is True
-    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
-    assert daily._researka_preflight_status(payload, enforce_recency=False) == "eligible"
+    assert payload["core_claims_resolved"] is False
+    assert daily._researka_core_claim_trace_status(payload, payload["source_bundle"]).startswith("researka_core_claims_unresolved:")
+    assert daily._researka_preflight_status(payload, enforce_recency=False) != "eligible"
     abstract_claims = set(map(daily._normalized_key, daily._claim_candidates(payload["abstract"])))
     conclusion_claims = set(map(daily._normalized_key, daily._claim_candidates(payload["sections"]["Conclusion"])))
     assert abstract_claims.isdisjoint(conclusion_claims)
@@ -2051,7 +2240,7 @@ def test_core_claim_trace_replaces_unsupported_conclusion_accounting(tmp_path: P
     )
 
 
-def test_core_claim_trace_restates_verified_finding_without_duplicate_prose(tmp_path: Path) -> None:
+def test_core_claim_trace_does_not_recycle_only_verified_finding(tmp_path: Path) -> None:
     payload = daily.build_payload(_run(tmp_path))
     bundle = payload["source_bundle"]
     claim = next(item for item in daily._claim_candidates(payload["body_markdown"])
@@ -2062,11 +2251,23 @@ def test_core_claim_trace_restates_verified_finding_without_duplicate_prose(tmp_
     repaired = daily._ensure_core_source_traces(paper, bundle)
 
     assert repaired.count(claim) == 1
-    assert "The cited source reports the following finding:" in repaired
-    assert daily._researka_core_claim_trace_status({"body_markdown": repaired}, bundle) == "eligible"
+    assert repaired == paper
+    assert daily._researka_core_claim_trace_status({"body_markdown": repaired}, bundle).startswith("researka_core_claims_unresolved:")
     paragraphs = [set(re.findall(r"[a-z0-9]+", item.lower())) for item in repaired.split("\n\n") if len(item.split()) >= 8]
     assert all(len(left & right) / max(1, len(left | right)) < 0.9
                for index, left in enumerate(paragraphs) for right in paragraphs[index + 1:])
+
+
+def test_core_claim_trace_uses_distinct_verified_sentence_not_results_copy() -> None:
+    first = "The intervention group reported lower glucose concentrations than the standard care group at follow-up."
+    second = "The intervention group reported unchanged sleep duration compared with the standard care group."
+    source = {"doi": "10.1000/distinct", "excerpt": first + " " + second}
+    _seal_source(source)
+    paper = f"## Results\n\nThe cited source reports the following finding: {first.rstrip('.')} [bundle:1].\n\n## Abstract\n\nScope remains bounded.\n"
+    repaired = daily._ensure_core_source_traces(paper, [source])
+    assert repaired.count(first.rstrip(".")) == 1
+    assert repaired.count(second.rstrip(".")) == 1
+    assert daily._ensure_core_source_traces(repaired, [source]) == repaired
 
 
 def test_core_claim_trace_does_not_copy_truncated_source_sentence() -> None:
@@ -2080,7 +2281,7 @@ def test_core_claim_trace_does_not_copy_truncated_source_sentence() -> None:
     assert repaired == paper
 
 
-def test_payload_preserves_abstract_scope_without_false_source_trace(tmp_path: Path) -> None:
+def test_preparation_preserves_abstract_scope_without_false_source_trace(tmp_path: Path) -> None:
     run = _run(tmp_path)
     registry = json.loads((run / "citation_registry.json").read_text(encoding="utf-8"))
     registry["topic_effect_0"]["title"] = "Resistance training trial"
@@ -2111,6 +2312,7 @@ def test_payload_preserves_abstract_scope_without_false_source_trace(tmp_path: P
     )
     (run / "full_paper.md").write_text(paper, encoding="utf-8")
 
+    assert daily.prepare_submission_manuscript(run)
     payload = daily.build_payload(run)
 
     assert len(payload["abstract"]) > 1400
@@ -2299,6 +2501,15 @@ def test_source_proof_requires_backing_record() -> None:
     assert daily._publication_evidence.source_proof_fields(
         row, origin="publisher",
     ) == {}
+
+
+def test_verified_evidence_span_keeps_late_result() -> None:
+    context = "Baseline organ dysfunction comparisons were not statistically significant. " * 9
+    result = "Severe pneumonia was observed in 9.1% of the plasma exchange group versus 50% of controls (p = 0.047)."
+    source = {"doi": "10.1000/long", "excerpt": context + result}
+    _seal_source(source)
+    assert len(source["excerpt"]) > 600
+    assert daily._source_evidence_span(source) == source["excerpt"]
 
 
 def test_receipt_evidence_excerpt_requires_exact_source_owned_text() -> None:
@@ -2675,7 +2886,7 @@ def test_researka_preflight_blocks_unsupported_domain_frame_template(tmp_path: P
     assert daily._researka_preflight_status(payload) == "domain_frame_template_leak:bounded_geroscience"
 
 
-def test_run_cycle_repairs_domain_frame_template_before_preflight(tmp_path: Path) -> None:
+def test_domain_frame_preparation_requires_review_before_submission(tmp_path: Path) -> None:
     run = _run(tmp_path)
     paper = run / "full_paper.md"
     paper.write_text(
@@ -2687,6 +2898,10 @@ def test_run_cycle_repairs_domain_frame_template_before_preflight(tmp_path: Path
     assert daily._researka_preflight_status(daily.build_payload(run)).startswith(
         "domain_frame_template_leak:"
     )
+    assert daily.prepare_submission_manuscript(run)
+    prepared = paper.read_bytes()
+    assert daily._frozen_package_status(run, daily.build_payload(run)) == "submission_package_changed_after_review"
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
     submitted: list[dict[str, Any]] = []
 
     def submitter(payload: dict[str, Any]) -> dict[str, Any]:
@@ -2707,10 +2922,8 @@ def test_run_cycle_repairs_domain_frame_template_before_preflight(tmp_path: Path
     )
 
     assert ledger["status"] == "submitted_to_researka"
-    assert ledger["domain_frame_repairs"] == {
-        "run": run.name,
-        "codes": ["bounded_geroscience", "anti_aging_claim", "geroprotection"],
-    }
+    assert "domain_frame_repairs" not in ledger
+    assert paper.read_bytes() == prepared
     assert len(submitted) == 1
     assert daily._researka_preflight_status(daily.build_payload(run)) == "eligible"
 
@@ -2834,7 +3047,7 @@ def test_high_null_no_direct_abstract_bundle_blocks_without_generation_reconcili
     ]
     _write_json(run / "manifest.json", manifest)
     _write_json(run / "citation_registry.json", {
-        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
+        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "source_year": 2026, "reference_id": f"R{i:02d}"}
         for i in range(16)
     })
     for i in range(16):
@@ -2940,6 +3153,7 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
             for pmid in pmids
         },
     )
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
     submitted: list[dict[str, Any]] = []
 
     def submitter(payload: dict[str, Any]) -> dict[str, Any]:
@@ -2956,7 +3170,7 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
 
     assert ledger["status"] == "submitted_to_researka"
     assert daily._null_coding_audit_status(submitted[0], manifest) == "eligible"
-    assert submitted[0]["body_markdown"] == (run / "full_paper.md").read_text(encoding="utf-8").strip()
+    assert submitted[0]["body_markdown"].encode("utf-8") == (run / "full_paper.md").read_bytes()
     body_hash = "sha256:" + daily.hashlib.sha256(submitted[0]["body_markdown"].encode("utf-8")).hexdigest()
     assert submitted[0]["author_signature"] == body_hash
     assert submitted[0]["metadata"]["content_hash"] == body_hash
@@ -2978,7 +3192,7 @@ def test_lower_null_ratio_abstract_bundle_still_eligible(tmp_path: Path, monkeyp
     ]
     _write_json(run / "manifest.json", manifest)
     _write_json(run / "citation_registry.json", {
-        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "reference_id": f"R{i:02d}"}
+        f"topic_r{i}": {"receipt_id": f"topic_r{i}", "source_pmid": str(1000 + i), "source_year": 2026, "reference_id": f"R{i:02d}"}
         for i in range(27)
     })
     monkeypatch.setattr(
@@ -3115,6 +3329,7 @@ def test_submit_uses_final_status_ready_over_all_green_verdict(tmp_path: Path, m
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 13, "n_total": 14})
     _write_json(run / "full_paper.final_verdict.json", {"verdict": "Trust-Spine Pass"})
     _write_json(run / "final_status.json", {"submission_ready": True})
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
     monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
 
     ledger = daily.run_cycle(
@@ -3346,14 +3561,14 @@ def test_recency_ratio_blocks_old_source_bundle() -> None:
         {"year": 2015}, {"year": 2013}, {"year": 2009},
         {"year": None}, {"title": "no year"},  # undated rows ignored
     ]}
-    assert daily._recency_ratio_status(old_bundle) == "recency_ratio_low:2/5<0.50"
+    assert daily._recency_ratio_status(old_bundle) == "recency_ratio_low:2/7<0.40"
 
 
-def test_recency_ratio_passes_recent_bundle_and_fails_open_when_undated() -> None:
+def test_recency_ratio_counts_undated_sources() -> None:
     recent = {"source_bundle": [{"year": 2024}, {"year": 2022}, {"year": 2021}, {"year": 2014}]}
     assert daily._recency_ratio_status(recent) == "eligible"  # 3/4 = 75%
-    assert daily._recency_ratio_status({"source_bundle": [{"title": "x"}]}) == "eligible"  # no years -> fail-open
-    assert daily._recency_ratio_status({}) == "eligible"
+    assert daily._recency_ratio_status({"source_bundle": [{"title": "x"}]}) == "recency_ratio_low:0/1<0.40"
+    assert daily._recency_ratio_status({}) == "recency_ratio_low:0/0<0.40"
 
 
 def test_preflight_and_submitter_block_low_recency_before_http(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
@@ -3366,13 +3581,13 @@ def test_preflight_and_submitter_block_low_recency_before_http(tmp_path: Path, m
 
     monkeypatch.setattr(urllib.request, "urlopen", fail_urlopen)
 
-    assert daily._researka_preflight_status(payload) == "recency_ratio_low:0/12<0.50"
+    assert daily._researka_preflight_status(payload) == "recency_ratio_low:0/12<0.40"
     result = daily._submitter("https://api.researka.org/submissions", "secret", "agent-v3")(payload)
 
     assert result == {
         "ok": False,
         "status": 0,
-        "response": "recency_ratio_low:0/12<0.50",
+        "response": "recency_ratio_low:0/12<0.40",
         "preflight": True,
     }
 
@@ -3526,7 +3741,7 @@ def test_duplicate_submission_response_seeds_pending_topic_skip(tmp_path: Path) 
         remote_loader=lambda: (set(), None),
     )
 
-    assert ledger["status"] == "submission_rejected_by_researka"
+    assert ledger["status"] == "submission_duplicate_pending"
     submitted = json.loads((tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
     assert submitted[0]["topic"] == "topic"
     assert submitted[0]["duplicate_submission_id"] == "sub-1"
@@ -3557,6 +3772,7 @@ def test_already_submitted_topic_still_allows_explicit_revision(
                 {"artifactId": "a", "submissionId": "s", "feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
     _trust_revision_gate(monkeypatch)
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
     _write_json(
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
         [{"topic": "topic", "fingerprint": "sha256:earlier-different-content"}],
@@ -3641,14 +3857,14 @@ def test_researka_rejection_records_and_skips_same_paper(tmp_path: Path) -> None
         runs_root=tmp_path,
         date="2026-05-23",
         submit=True,
-        submitter=lambda _payload: {"ok": False, "status": 422, "response": "gate rejected"},
+        submitter=lambda _payload: {"ok": False, "status": 422, "response": {"decision": "reject", "reason": "gate rejected"}},
         remote_loader=lambda: (set(), None),
     )
 
     assert ledger["status"] == "submission_rejected_by_researka"
     assert ledger["submitted"] == 0
     assert ledger["considered"][0]["status"] == "submission_rejected_by_researka"
-    assert ledger["revision_feedback"] == "gate rejected"
+    assert json.loads(ledger["revision_feedback"])["decision"] == "reject"
     rejected = json.loads((tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).read_text(encoding="utf-8"))
     assert rejected[0]["topic"] == "topic"
 
@@ -3679,6 +3895,109 @@ def test_transient_submission_status_remains_retryable(
     assert not (tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).exists()
     retry = daily.run_cycle(runs_root=tmp_path, date="2026-05-24")
     assert retry["status"] == "dry_run_selected"
+
+
+@pytest.mark.parametrize("status_code", [401, 403, 400, 422])
+def test_unstructured_http_errors_never_reject_manuscript(tmp_path: Path, status_code: int) -> None:
+    _run(tmp_path)
+    ledger = daily.run_cycle(runs_root=tmp_path, date="2026-09-07", submit=True,
+        submitter=lambda _: {"ok": False, "status": status_code, "response": "access denied; revise configuration"},
+        remote_loader=lambda: (set(), None))
+    assert ledger["status"] == ("submission_authentication_failed" if status_code in {401, 403} else "submission_failed")
+    assert not (tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).exists()
+    assert not (tmp_path / daily.LEDGER_DIR / daily.REVISION_FINGERPRINTS).exists()
+    assert daily.run_cycle(runs_root=tmp_path, date="2026-09-08")["status"] == "dry_run_selected"
+
+
+def test_historical_auth_rejection_is_corrected_without_erasing_history(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    path = tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS
+    rows = [{"status": 401, "fingerprint": daily._payload_fingerprint(daily.build_payload(run))},
+            {"status": 422, "fingerprint": "real-rejection"}]
+    _write_json(path, rows)
+    ledger = daily.run_cycle(runs_root=tmp_path, date="2026-09-07")
+    assert ledger["status"] == "dry_run_selected"
+    assert ledger["history_corrections"][0]["nonblocking_records"] == rows[:1]
+    assert json.loads(path.read_text()) == rows
+    assert daily._seen(path) == {"real-rejection"}
+
+
+@pytest.mark.parametrize("state_key", ["publication_state", "publicationState"])
+@pytest.mark.parametrize("state,visible,expected", [("PUBLISH_BLOCKED_EXTERNAL", False, False),
+    ("PUBLISHING", True, False), ("PUBLISHING", False, False),
+    ("PUBLISHED", False, False), ("PUBLISHED", True, True), ("", None, False)])
+def test_publication_identity_is_not_release_proof(state_key: str, state: str, visible: bool | None, expected: bool) -> None:
+    assert daily._publication_row_has_public_proof({state_key: state, "publicVisible": visible,
+        "publication_id": "reserved-id", "public_url": "https://researka.org/papers/reserved-id"}, {}) is expected
+
+
+@pytest.mark.parametrize("case", _RECENCY_CONTRACT["cases"], ids=lambda case: case["name"])
+def test_research_synthesis_recency_contract(case: dict[str, Any]) -> None:
+    article_type = _RECENCY_CONTRACT["article_type"]
+    assert daily.RECENT_PUBLICATION_YEAR_FLOOR == _RECENCY_CONTRACT["year_floor"]
+    assert daily._threshold(article_type, "recency_ratio") == _RECENCY_CONTRACT["ratio"]
+    bundle: list[dict[str, Any]] = []
+    for group in case["groups"]:
+        for _ in range(group["count"]):
+            bundle.append({"id": f"contract-{len(bundle) + 1}", "title": "Contract trial",
+                           **{key: value for key, value in group.items() if key != "count"}})
+    assert daily._recency_ratio_status({"article_type": article_type, "source_bundle": bundle}) == case["expected"]
+
+
+@pytest.mark.parametrize(("field", "value", "eligible"), [
+    ("publication_type", "study protocol", False),
+    ("title", "Study protocol for a Topic trial", False),
+    ("evidence_context", "context", True),
+])
+def test_intake_citation_floor_excludes_protocol_not_context(
+    tmp_path: Path, field: str, value: str, eligible: bool,
+) -> None:
+    payload = daily.build_payload(_run(tmp_path))
+    bundle = payload["source_bundle"]
+    bundle[-1][field] = value
+    original = json.dumps(bundle)
+
+    assert len(daily._intake_source_rows(payload)) == (12 if eligible else 11)
+    assert daily._researka_preflight_status(payload) == (
+        "eligible" if eligible else "researka_preflight_insufficient_sources:11 < 12"
+    )
+    assert json.dumps(payload["source_bundle"]) == original
+
+
+@pytest.mark.parametrize("design,directness,expected", [("systematic review", "indirect", "review"),
+    ("randomized controlled trial", "review", "primary"), ("study protocol", "protocol", "primary")])
+def test_source_kind_uses_typed_design(design: str, directness: str, expected: str) -> None:
+    assert daily._evidence_type_for_source({"study_design": design, "directness": directness}) == expected
+
+
+@pytest.mark.parametrize("field", ["study_design", "publication_type"])
+def test_typed_protocol_overrides_stale_directness_in_public_bundle(tmp_path: Path, field: str) -> None:
+    run = _run(tmp_path)
+    manifest = daily._read_json(run / "manifest.json")
+    receipt = manifest["receipts"][0]
+    receipt.update({field: "study protocol", "directness": "direct"})
+    assert daily._source_context_for_receipt(receipt) == "context"
+    _write_json(run / "manifest.json", manifest)
+    _snapshot_run(run)
+
+    payload = daily.build_payload(run)
+
+    assert len(payload["source_bundle"]) == 12
+    row = payload["source_bundle"][0]
+    assert row["publication_type"] == "study protocol"
+    assert row["evidence_context"] == "context"
+    assert daily._researka_preflight_status(payload) == "researka_preflight_insufficient_sources:11 < 12"
+
+
+@pytest.mark.parametrize("name,expected", [("optional_cost_telemetry.json", ""),
+    ("manifest.json", "run_artifact_invalid:manifest.json"),
+    ("researka_revision_request.json", "run_operational_state_invalid:researka_revision_request.json")])
+def test_optional_telemetry_is_not_scientific_proof(tmp_path: Path, capsys, name: str, expected: str) -> None:
+    run = _run(tmp_path)
+    (run / name).write_text("{")
+    assert daily._run_artifact_error(run) == expected
+    if not expected:
+        assert "optional_artifact_invalid" in capsys.readouterr().err
 
 
 def test_researka_revise_records_feedback_and_skips_same_paper(tmp_path: Path) -> None:
@@ -3856,6 +4175,7 @@ def test_remote_publication_dedupe_allows_explicit_revision_of_existing_title(
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
     _trust_revision_gate(monkeypatch)
     marker = daily._title_marker(daily.build_payload(run)["title"])
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
 
     ledger = daily.run_cycle(
         runs_root=tmp_path,
@@ -3897,7 +4217,7 @@ def test_remote_publication_dedupe_blocks_stale_revision_in_generic_sweep(
     assert ledger["considered"][0]["status"] == "duplicate_remote_publication"
 
 
-def test_explicit_revision_candidate_bypasses_recency_floor_only(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_explicit_revision_candidate_enforces_recency_floor(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     run = _run(tmp_path)
     _write_json(run / "researka_revision_request.json", {
         "artifactId": "art-1",
@@ -3935,10 +4255,10 @@ def test_explicit_revision_candidate_bypasses_recency_floor_only(tmp_path: Path,
         candidate_run=run,
     )
 
-    assert daily._researka_preflight_status(daily.build_payload(run)) == "recency_ratio_low:0/12<0.50"
-    assert ledger["status"] == "submitted_to_researka"
-    assert ledger["submitted"] == 1
-    assert ledger["considered"][0]["status"] == "submitted_to_researka"
+    assert daily._researka_preflight_status(daily.build_payload(run)) == "recency_ratio_low:0/12<0.40"
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["submitted"] == 0
+    assert ledger["considered"][0]["status"] == "recency_ratio_low:0/12<0.40"
 
 
 def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(
@@ -4611,6 +4931,146 @@ def test_transport_failures_are_retryable_and_persisted(
     assert persisted["status"] == "submission_failed"
     assert persisted["submission"]["response"]
     assert not (tmp_path / daily.LEDGER_DIR / daily.REJECTED_FINGERPRINTS).exists()
+
+
+@pytest.mark.parametrize("preflight", ["off", "enforce"])
+def test_uncertain_delivery_reposts_identical_frozen_package_then_reconciles_409(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, preflight: str,
+) -> None:
+    run = _run(tmp_path)
+    monkeypatch.setenv(daily.PREFLIGHT_MODE_ENV, preflight)
+    frozen = daily._read_json(run / "submission_package.json")["payload"]
+    paper_bytes = (run / "full_paper.md").read_bytes()
+    requests: list[bytes] = []
+    if preflight == "enforce":
+        monkeypatch.setenv("RESEARKA_PREFLIGHT_QA_ROOT", str(tmp_path))
+
+        def fake_qa(*_args: Any, **_kwargs: Any) -> SimpleNamespace:
+            qa_input = daily._read_json(run / "researka_preflight_input.json")
+            assert qa_input == frozen
+            _write_json(run / "researka_preflight_cleaned_payload.json", qa_input)
+            _write_json(run / "researka_preflight_report.json", {"status": "pass", "blocked_reasons": []})
+            return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+        monkeypatch.setattr(daily.subprocess, "run", fake_qa)
+
+    def fake_urlopen(req: Request, timeout: int) -> None:
+        assert timeout == 60
+        assert isinstance(req.data, bytes)
+        requests.append(req.data)
+        if len(requests) == 1:
+            raise TimeoutError("response lost after acceptance")
+        raise urllib.error.HTTPError(req.full_url, 409, "Conflict", Message(), io.BytesIO(
+            b'{"detail":{"error":"duplicate_submission","submission_id":"sub-existing"}}',
+        ))
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_urlopen)
+    submitter = daily._submitter("https://api.researka.org/submissions", "secret", "agent-v3")
+    first = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-07", submit=True, submitter=submitter,
+        remote_loader=lambda: (set(), None),
+    )
+    ledger_dir = tmp_path / daily.LEDGER_DIR
+    pending_path = ledger_dir / "_uncertain_submissions.json"
+    pending = json.loads(pending_path.read_text(encoding="utf-8"))
+    assert first["status"] == "submission_failed" and first["retryable"] is True
+    assert first["submission"]["unknown_submission"] is True
+    assert len(pending) == 1 and pending[0]["payload"] == frozen == json.loads(requests[0])
+    assert not (ledger_dir / "_submitted_fingerprints.json").exists()
+    assert not (ledger_dir / daily.REJECTED_FINGERPRINTS).exists()
+
+    second = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-08", submit=True, submitter=submitter,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert second["status"] == "submission_duplicate_pending"
+    assert second["reconciliation"] == "retry_identical_frozen_package_for_existing_submission_id"
+    assert len(requests) == 2 and requests[0] == requests[1] == json.dumps(frozen).encode("utf-8")
+    assert json.loads(requests[1])["body_markdown"].encode("utf-8") == paper_bytes == (run / "full_paper.md").read_bytes()
+    if preflight == "enforce":
+        assert first["preflight_qa"]["status"] == second["preflight_qa"]["status"] == "pass"
+        assert "preflight_qa" not in json.loads(requests[1])["metadata"]
+    assert json.loads(pending_path.read_text(encoding="utf-8")) == []
+    submitted = json.loads((ledger_dir / "_submitted_fingerprints.json").read_text(encoding="utf-8"))
+    assert len(submitted) == 1 and submitted[0]["duplicate_submission_id"] == "sub-existing"
+    assert submitted[0]["submission_id"] == "sub-existing"
+    assert not (ledger_dir / daily.REJECTED_FINGERPRINTS).exists()
+
+
+@pytest.mark.parametrize("raw", [b"{", b"{}", b"[{}]", None, b"[]"],
+                         ids=["malformed_json", "wrong_root", "incomplete_row", "absent", "empty"])
+def test_uncertain_delivery_invalid_state_blocks_transport_without_overwrite(
+    tmp_path: Path, raw: bytes | None,
+) -> None:
+    _run(tmp_path)
+    path = tmp_path / daily.LEDGER_DIR / "_uncertain_submissions.json"
+    path.parent.mkdir(exist_ok=True)
+    if raw is not None:
+        path.write_bytes(raw)
+    allowed = raw in (None, b"[]")
+    sent = []
+
+    def submitter(payload: dict[str, Any]) -> dict[str, Any]:
+        sent.append(payload)
+        assert allowed, "invalid delivery state reached transport"
+        return {"ok": True, "status": 201, "response": {"id": "sub-state-control"}}
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-07", submit=True, submitter=submitter,
+        remote_loader=lambda: (set(), None),
+    )
+
+    if allowed:
+        assert ledger["status"] == "submitted_to_researka" and len(sent) == 1
+    else:
+        assert not sent and ledger["status"] == "no_eligible_research_paper"
+        assert ledger["considered"][0]["status"] == "submission_delivery_state_invalid"
+        assert path.read_bytes() == raw
+        assert not (path.parent / "_submitted_fingerprints.json").exists()
+        assert not (path.parent / daily.REJECTED_FINGERPRINTS).exists()
+
+
+@pytest.mark.parametrize(("key", "value"), [
+    ("topic", ["topic"]), ("topic", "wrong-topic"), ("fingerprint", "sha256:" + "0" * 64),
+], ids=["topic_list", "wrong_topic", "fingerprint_mismatch"])
+def test_corrupt_pending_identity_blocks_reviewed_changed_package(
+    tmp_path: Path, key: str, value: Any,
+) -> None:
+    run = _run(tmp_path)
+
+    def timeout(_payload: dict[str, Any]) -> dict[str, Any]:
+        raise TimeoutError("response lost after acceptance")
+
+    first = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-07", submit=True, submitter=timeout,
+        remote_loader=lambda: (set(), None),
+    )
+    assert first["submission"]["unknown_submission"] is True
+    path = tmp_path / daily.LEDGER_DIR / "_uncertain_submissions.json"
+    pending = json.loads(path.read_text(encoding="utf-8"))
+    assert len(pending) == 1
+    pending[0][key] = value
+    raw = json.dumps(pending).encode("utf-8")
+    path.write_bytes(raw)
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text(encoding="utf-8").replace("introduction", "context", 1), encoding="utf-8")
+    daily.freeze_submission_package(run, daily._read_json(run / "full_paper.final_verdict.json"))
+    changed = daily.build_payload(run)
+    assert daily._frozen_package_status(run, changed) == "eligible"
+    assert daily._payload_fingerprint(changed) != daily._payload_fingerprint(pending[0]["payload"])
+
+    second = daily.run_cycle(
+        runs_root=tmp_path, date="2026-09-08", submit=True,
+        submitter=lambda _payload: pytest.fail("changed package reached transport"),
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert second["status"] == "no_eligible_research_paper"
+    assert second["considered"][0]["status"] == "submission_delivery_state_invalid"
+    assert path.read_bytes() == raw
+    assert not (path.parent / "_submitted_fingerprints.json").exists()
+    assert not (path.parent / daily.REJECTED_FINGERPRINTS).exists()
 
 
 def test_researka_preflight_rejects_non_full_public_surface() -> None:

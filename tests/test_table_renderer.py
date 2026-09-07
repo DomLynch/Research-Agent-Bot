@@ -132,7 +132,9 @@ def test_table_2_includes_interpretation_column() -> None:
         ),
     ]
     md = tr.render_table_2_endpoint_evidence(receipts)
-    assert "worsens muscle function" in md
+    assert "source-level direction code: negative" in md
+    assert "endpoint benefit is not established by this code" in md
+    assert "worsens muscle function" not in md
     assert "muscle_function" not in md
 
 
@@ -190,6 +192,21 @@ def test_table_2_positive_receipt_with_p_value_uses_summary_language() -> None:
     assert "p = 0.01 | positive summary |" in md
     assert "reported statistic; receipt summary remains positive" in md
     assert "improves muscle function" not in md
+
+
+def test_source_level_codes_and_p_bounds_do_not_prove_endpoint_benefit() -> None:
+    for direction in ("positive", "negative", "null", "mixed", "unclear"):
+        md = tr.render_table_2_endpoint_evidence([
+            _FakeReceipt(receipt_id="Khamis 2020", outcome_class="immune_inflammation", effect_direction=direction),
+        ])
+        assert f"source-level direction code: {direction}" in md
+        assert "improves immune inflammation" not in md
+        assert "worsens immune inflammation" not in md
+        assert "no significant effect" not in md
+    for stat in ("P > 0.05", "p > 0.001", "P >= .05", "p ≥ 0.05", "p ≤ 0.05"):
+        assert not tr._has_significant_p_value(stat)
+    for stat in ("P < 0.05", "p = 0.049", "p ≤ 0.01", "p < 1e-3"):
+        assert tr._has_significant_p_value(stat)
 
 
 def test_table_3_assigns_per_domain_grades_by_tier() -> None:

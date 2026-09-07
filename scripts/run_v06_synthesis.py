@@ -3671,6 +3671,12 @@ async def _run_post_paper_pipeline(
         paper_path.write_text(paper_md)
         audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
+    # Submission preparation is a visible revision, before the reviewer sees it.
+    from publishing.submission import prepare_submission_manuscript
+    prepare_submission_manuscript(paper_path.parent)
+    paper_md = paper_path.read_text()
+    audit_report = _write_paper_audit(paper_path, paper_md, _audit)
+
     # Stage 3: Final-layer LLM review (primary reviewer, fallback reviewer).
     print(
         "[pipeline] Stage 3/5 — final-layer review (primary → fallback)...",
@@ -4320,6 +4326,8 @@ def _refresh_post_finalizer_verdict(
         journal_surface_issues=tuple(f"{i.get('code', '')}: {i.get('detail', '')}" for i in surface.get("issues", []) if isinstance(i, dict)),
     )
     payload = json.loads(json.dumps(dataclasses.asdict(unified)))
+    from publishing.submission import freeze_submission_package
+    freeze_submission_package(out_dir, payload)
     path = out_dir / "full_paper.final_verdict.json"
     try:
         if json.loads(path.read_text()) == payload:

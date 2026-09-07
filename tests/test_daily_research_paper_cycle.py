@@ -1488,6 +1488,8 @@ def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_sub
             "decision": "accept",
             "submissionId": "accepted-submission",
             "reviewedAt": "2026-06-29T10:16:20+04:00",
+            "publication_state": "PUBLISHED",
+            "publicVisible": True,
             "publication": {
                 "url": "https://researka.org/papers/existing",
                 "deduped": True,
@@ -6936,15 +6938,16 @@ def test_payload_source_bundle_revision_ask_can_be_satisfied_by_payload(tmp_path
     out_dir.mkdir()
     bundle = [
         _proven_source(
-            id=str(index), evidence_type="primary",
+            id=str(index + 1), evidence_type="primary",
             excerpt="This source reports GDF11 dosing, measured outcomes, and directional effects in a bounded experiment.",
         )
         for index in range(14)
     ]
     bundle.append(_proven_source(
-        id="review", evidence_type="review",
+        id="15", evidence_type="review",
         excerpt="This review summarizes context without being counted as primary evidence in the bounded synthesis.",
     ))
+    assert all(cycle.submit_bridge._publication_evidence.source_proof_is_valid(row) for row in bundle)
     monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle})
 
     assert cycle._payload_revision_ask_satisfied(
@@ -7717,7 +7720,7 @@ def test_submission_decisions_keep_old_topic_visible_beyond_row_window(
     latest, error = cycle._submitted_submission_decisions_by_title(runs_root)
 
     assert error is None
-    assert fetched == ["sub-24", "sub-0"]
+    assert fetched == [f"sub-{index}" for index in reversed(range(25))]
     old = next(row for row in latest.values() if row["submissionId"] == "sub-0")
     assert old["decision"] == "revise"
     assert old["notes"] == ["source metadata verification unavailable (fail-closed)"]
@@ -7828,6 +7831,39 @@ def test_submission_decision_writeback_preserves_concurrent_append(
     assert persisted[0]["decision"] == "accept"
 
 
+@pytest.mark.parametrize("poll_error", [None, "HTTPError:503"])
+def test_legacy_duplicate_submission_id_is_polled_and_normalized(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, poll_error: str | None,
+) -> None:
+    path = tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    legacy = {
+        "run": "missing-manuscript", "topic": "topic", "title": "Known paper",
+        "duplicate_submission_id": "legacy-known", "fingerprint": "sha256:retained",
+    }
+    _write_json(path, [legacy])
+    calls: list[str] = []
+
+    def fetch(submission_id):
+        calls.append(submission_id)
+        if poll_error:
+            return None, poll_error
+        return {"status": "complete", "decision": "revise", "required_revisions": ["Correct source trace."]}, None
+
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    decisions, error = cycle._submitted_submission_decisions_by_title(tmp_path)
+    assert calls == ["legacy-known"]
+    assert error == poll_error
+    persisted = json.loads(path.read_text())[0]
+    assert persisted["submission_id"] == "legacy-known"
+    assert {key: persisted[key] for key in legacy} == legacy
+    state, _ = cycle._publication_state(tmp_path)
+    assert state.records[0]["submission_id"] == "legacy-known"
+    if not poll_error:
+        assert next(iter(decisions.values()))["submissionId"] == "legacy-known"
+        assert persisted["decision"] == "revise"
+        assert persisted["required_revisions"] == ["Correct source trace."]
+
+
 def test_pending_decision_does_not_clear_durable_revision(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -7844,11 +7880,13 @@ def test_pending_decision_does_not_clear_durable_revision(
         "decision": "revise",
         "required_revisions": ["Keep exact source traces."],
         "remote_revision_requested": True,
+        "stage_errors": [{"message": "Temporary source outage"}],
+        "notes": ["Old operational note"],
     })
     monkeypatch.setattr(
         cycle,
         "_fetch_submission_decision",
-        lambda _submission_id: ({"status": "pending"}, None),
+        lambda _submission_id: ({"status": "pending", "stage_errors": [], "notes": None}, None),
     )
 
     cycle._submitted_submission_decisions_by_title(runs_root)
@@ -7857,6 +7895,8 @@ def test_pending_decision_does_not_clear_durable_revision(
     assert persisted["decision"] == "revise"
     assert persisted["required_revisions"] == ["Keep exact source traces."]
     assert persisted["remote_revision_requested"] is True
+    assert persisted["stage_errors"] == []
+    assert persisted["notes"] is None
 
 
 def test_stale_revise_decision_does_not_overwrite_newer_accept(
@@ -7893,6 +7933,74 @@ def test_stale_revise_decision_does_not_overwrite_newer_accept(
     assert persisted["decision"] == "accept"
     assert persisted["remote_revision_requested"] is False
     assert next(iter(decisions.values()))["decision"] == "accept"
+
+
+@pytest.mark.parametrize(("explicit_null", "updated_at", "status", "keeps_revision"), [
+    (True, "2026-09-07T10:00:00Z", "reviewing", False),
+    (True, "2026-09-06T10:00:00Z", "reviewing", False),
+    (True, "2026-09-05T10:00:00Z", "reviewing", True),
+    (False, "2026-09-07T10:00:00Z", "reviewing", False),
+    (False, "2026-09-06T10:00:00Z", "reviewing", True),
+    (False, "2026-09-07T10:00:00Z", "complete", True),
+    (False, "2026-09-07T10:00:00Z", "publishing", False),
+])
+def test_current_submission_lifecycle_does_not_manufacture_cached_revision(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, explicit_null: bool,
+    updated_at: str, status: str, keeps_revision: bool,
+) -> None:
+    path = tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    reviewed_at = "2026-09-06T10:00:00Z"
+    _write_json(path, [{
+        "submission_id": "known", "title": "Known paper", "decision": "revise",
+        "decision_status": "complete", "reviewed_at": reviewed_at,
+        "required_revisions": ["Old source correction."], "remote_revision_requested": True,
+    }])
+    payload: dict[str, Any] = {
+        "status": status, "reviewedAt": min(updated_at, reviewed_at), "updatedAt": updated_at,
+        "next_action": "wait",
+    }
+    if explicit_null:
+        payload["decision"] = None
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _sid: (payload, None))
+    # Same-ID public prose cannot override the authenticated lifecycle.
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url: ({
+        cycle.submit_bridge._title_marker("Known paper"): {
+            "submissionId": "known", "title": "Known paper", "decision": "revise",
+            "reviewedAt": "2026-09-08T10:00:00Z", "required_revisions": ["Public cached request."],
+        },
+    }, None))
+    requests, error = cycle._remote_revision_requests(runs_root=tmp_path)
+    assert error is None
+    assert bool(requests) is keeps_revision
+    row = json.loads(path.read_text())[0]
+    assert row["decision"] == ("revise" if keeps_revision else None)
+    assert row["remote_revision_requested"] is keeps_revision
+    assert row["decision_status"] == ("complete" if keeps_revision else status)
+    if requests:
+        assert requests[0]["feedback"] == "Old source correction."
+
+
+def test_submission_polling_skips_only_confirmed_closed_records(tmp_path: Path, monkeypatch) -> None:
+    records: list[dict[str, Any]] = [
+        {"submission_id": "public", "decision": "accept", "publication_state": "PUBLISHED", "public_visible": True},
+        {"submission_id": "closed", "decision": "reject", "closed": True, "retryable": False},
+        {"submission_id": "rejected", "decision": "reject", "retryable": False},
+        {"submission_id": "hidden", "decision": "accept", "publication_state": "PUBLISHED", "public_visible": False},
+        {"submission_id": "blocked", "decision": "accept", "publication_state": "PUBLISH_BLOCKED_EXTERNAL"},
+        {"submission_id": "retry", "decision": "reject", "closed": True, "retryable": True},
+    ]
+    _write_json(tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", records)
+    calls: list[str] = []
+
+    def fetch(sid):
+        calls.append(sid)
+        return {"status": "reviewing", "decision": None}, None
+
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    direct, error = cycle._submitted_submission_decisions_by_title(tmp_path)
+    assert error is None
+    assert calls == ["retry", "blocked", "hidden", "rejected"]
+    assert {row["submissionId"] for row in direct.values()} == {row["submission_id"] for row in records}
 
 
 def test_stale_revise_does_not_overwrite_newer_revise_details(
@@ -9214,6 +9322,7 @@ def test_remote_revision_retries_unchanged_after_source_authority_outage(monkeyp
         "feedback": "",
         "retry_unchanged": True,
         "failure_category": "source_authority_available",
+        "resubmission": {"allowed": True},
     }]
 
 
@@ -9504,6 +9613,73 @@ def test_submission_decision_fallback_accepts_camel_case_payload(tmp_path: Path,
         "Define rates operationally.; Verify the dose-specific source excerpt.; "
         "Reconcile the effect-direction claim."
     )
+
+
+@pytest.mark.parametrize("public_url", [None, "https://public.example.test/reviews"])
+@pytest.mark.parametrize("camel_case", [False, True])
+def test_revision_polling_survives_public_outage_and_missing_manuscripts(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, public_url: str | None, camel_case: bool,
+) -> None:
+    submitted = tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    records = [
+        {"submission_id": "old", "run": "missing-old", "topic": "shared", "title": "Older paper"},
+        {"submission_id": "new", "run": "missing-new", "topic": "shared"},
+        {"submission_id": "delivery", "topic": "shared", "decision": "accept"},
+    ]
+    _write_json(submitted, [*records, records[0]])
+    lifecycle = {
+        "fault_domain": "platform", "retryable": False, "reason_code": "SOURCE_AUTHORITY_UNAVAILABLE",
+        "publication_state": "PUBLISH_BLOCKED_EXTERNAL", "public_visible": False,
+        "failure_stage": "source_verification",
+        "stage_errors": [{"stage": "source_verification", "message": "Upstream timeout"}],
+        "errors": [], "next_action": "retry_verification", "notes": [],
+        "resubmission": {"allowed": False},
+    }
+    aliases = {
+        "fault_domain": "faultDomain", "reason_code": "reasonCode", "publication_state": "publicationState",
+        "public_visible": "publicVisible",
+        "failure_stage": "failureStage", "stage_errors": "stageErrors", "next_action": "nextAction",
+    }
+    calls: list[str] = []
+
+    def urlopen(request, **_kwargs):
+        calls.append(request.full_url)
+        if not request.full_url.startswith("https://api.example.test/"):
+            raise urllib.error.HTTPError(request.full_url, 503, "Unavailable", None, None)
+        assert request.get_header("Authorization") == "Bearer test-token"
+        assert request.get_header("X-api-key") == "test-token"
+        submission_id = request.full_url.split("/")[-2]
+        payload = {
+            "status": "complete", "decision": "accept" if submission_id == "delivery" else "revise",
+            "required_revisions": ["Correct the source trace."],
+            **{aliases.get(key, key) if camel_case else key: value for key, value in lifecycle.items()},
+        }
+        if submission_id == "new":
+            payload["title"] = "Newer paper"
+        return io.BytesIO(json.dumps(payload).encode())
+
+    monkeypatch.setenv("RESEARKA_URL", "https://api.example.test")
+    monkeypatch.setenv("RESEARKA_REVIEWS_URL", "https://public.example.test/reviews")
+    monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("test-token", "TEST"))
+    monkeypatch.setattr(cycle.urllib.request, "urlopen", urlopen)
+    requests, error = cycle._remote_revision_requests(public_url, runs_root=tmp_path)
+
+    assert error is None
+    assert [url.split("/")[-2] for url in calls[:-1]] == ["old", "delivery", "new"]
+    assert calls[-1] == "https://public.example.test/reviews"
+    assert {row["submissionId"] for row in requests} == {"old", "new"}
+    assert {row["title"] for row in requests} == {"Older paper", "Newer paper"}
+    persisted = json.loads(submitted.read_text())
+    for row in [*persisted, *requests]:
+        assert {key: row[key] for key in lifecycle} == lifecycle
+        assert row["decision_status"] == "complete"
+    assert next(row for row in persisted if row["submission_id"] == "delivery")["decision"] == "accept"
+
+
+def test_revision_polling_returns_auth_error_when_both_surfaces_fail(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(cycle, "_submitted_submission_decisions_by_title", lambda _root: ({}, "HTTPError:401"))
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url: ({}, "HTTPError:503"))
+    assert cycle._remote_revision_requests(runs_root=tmp_path) == ([], "HTTPError:401")
 
 
 def test_newer_feed_row_beats_older_same_day_detailed_submission_decision(

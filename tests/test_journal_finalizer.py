@@ -2802,6 +2802,28 @@ def test_numeric_significance_repair_preserves_references_and_grammar(tmp_path: 
     assert "title saying non-significant result (p = 0.01)" in fixed
 
 
+def test_numeric_significance_repair_preserves_frozen_samaei_row_and_other_cells(tmp_path: Path) -> None:
+    from agent.statistical_consistency import nominal_significance, nominal_verification_statement
+
+    row = ("| Samaei 2020 | finding=representative non-significant statistic P > 0.05; "
+           "not treated as positive or negative directional support unless source direction is coded |\n")
+    paper = "## Evidence Landscape\n| Other source | P = 0.003 |\n" + row
+    fixed, _ = journal_finalizer._phase_d_numeric_significance_correction(paper, tmp_path)
+    assert fixed == paper
+    broken = paper.replace("representative non-significant", "representative nominally statistically significant")
+    repaired, _ = journal_finalizer._phase_d_numeric_significance_correction(broken, tmp_path)
+    assert repaired == paper
+    assert nominal_verification_statement("Samaei 2020", "P > 0.05", "") is None
+    for stat in ("p > 0.001", "p ≤ 0.05", "p < 0.5"):
+        assert nominal_significance(stat) is None
+        assert nominal_verification_statement("Source", stat, "") is None
+    negative = "## Results\nThere was no significant reduction (P > 0.05).\n"
+    assert journal_finalizer._phase_d_numeric_significance_correction(negative, tmp_path)[0] == negative
+    quote = ("## Quantitative Evidence Index\n| Study | Source context | Raw statistic |\n"
+             "| Source 2020 | The source called its comparison non-significant (p=.04). | p=.04 |\n")
+    assert journal_finalizer._phase_d_numeric_significance_correction(quote, tmp_path)[0] == quote
+
+
 def test_numeric_significance_correction_repairs_verify_statistic_ask(tmp_path: Path) -> None:
     import revision_coverage
 

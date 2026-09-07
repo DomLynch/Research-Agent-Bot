@@ -4,6 +4,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from agent.statistical_consistency import nominal_significance
+
 
 # Reviewer-fix P1: complete cell-content sanitization so newlines
 # don't fork the row, backticks don't toggle code mode, and pipes
@@ -253,16 +255,8 @@ def render_table_1_included_studies(receipts: list) -> str:
 # --- Table 2: Per-Study Endpoint Evidence (DENSE) -----------------------
 
 
-_P_VALUE_RE = re.compile(r"\b[Pp]\s*([<=>])\s*(0?\.\d+)\b")
-
-
 def _has_significant_p_value(stat: str) -> bool:
-    match = _P_VALUE_RE.search(stat)
-    if not match:
-        return False
-    op, value = match.groups()
-    threshold = float(value)
-    return threshold <= 0.05 if op == "<" else threshold < 0.05
+    return nominal_significance(stat) is True
 
 
 def _interpretation(direction: str, outcome: str, stat: str = "") -> str:
@@ -275,15 +269,7 @@ def _interpretation(direction: str, outcome: str, stat: str = "") -> str:
         if direction == "null" and _has_significant_p_value(stat):
             return "significant statistic; receipt-level direction remains null"
         return f"reported statistic; receipt summary remains {direction}"
-    if direction == "positive":
-        return f"improves {outcome}"
-    if direction == "negative":
-        return f"worsens {outcome}"
-    if direction == "null":
-        return f"no significant effect on {outcome}"
-    if direction == "mixed":
-        return f"mixed signal on {outcome}"
-    return f"unclear effect on {outcome}"
+    return f"source-level direction code: {direction}; endpoint benefit is not established by this code"
 
 
 def _display_direction(direction: str, stat: str = "") -> str:

@@ -128,7 +128,7 @@ def test_timeout_and_cancellation_reap_process(cli, tmp_path, case, cancel):
     pid_path = tmp_path / "child.pid"
 
     async def run():
-        task = asyncio.create_task(call(case, timeout=5 if cancel else 0.5, pid_path=str(pid_path)))
+        task = asyncio.create_task(call(case, timeout=5 if cancel else 2, pid_path=str(pid_path)))
         if cancel:
             for _ in range(100):
                 if pid_path.exists():

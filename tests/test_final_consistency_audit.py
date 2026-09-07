@@ -2538,3 +2538,9 @@ def test_prose_data_coherence_flags_marginal_with_strong_p():
     assert not audit._check_prose_data_coherence(
         "Several contrasts reached p < 0.001, while one was non-significant at p = 0.43.",
     )
+    assert audit._check_prose_data_coherence(
+        "Samaei 2020: representative nominally statistically significant statistic P > 0.05.",
+    )
+    assert not audit._check_prose_data_coherence(
+        "Samaei 2020: representative non-significant statistic P > 0.05.",
+    )

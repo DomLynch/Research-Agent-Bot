@@ -1,0 +1,34 @@
+{
+  "core_revision": "d8738cf",
+  "article_type": "research_synthesis",
+  "year_floor": 2020,
+  "ratio": 0.4,
+  "cases": [
+    {
+      "name": "five_recent_seven_old",
+      "groups": [{"count": 5, "year": 2026}, {"count": 7, "year": 2019}],
+      "expected": "eligible"
+    },
+    {
+      "name": "three_recent_nine_unknown",
+      "groups": [{"count": 3, "year": 2026}, {"count": 9}],
+      "expected": "recency_ratio_low:3/12<0.40"
+    },
+    {
+      "name": "old_protocols_excluded_from_denominator",
+      "groups": [
+        {"count": 4, "year": 2020}, {"count": 6, "year": 2019},
+        {"count": 2, "year": 2019, "publication_type": "study protocol"}
+      ],
+      "expected": "eligible"
+    },
+    {
+      "name": "recent_protocols_excluded_from_numerator",
+      "groups": [
+        {"count": 4, "year": 2026}, {"count": 8, "year": 2019},
+        {"count": 2, "year": 2026, "title": "Protocol for a trial"}
+      ],
+      "expected": "recency_ratio_low:4/12<0.40"
+    }
+  ]
+}

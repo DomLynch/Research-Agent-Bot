@@ -1060,40 +1060,64 @@ def _fetch_submission_decision(submission_id: str) -> tuple[dict[str, Any] | Non
     return payload if isinstance(payload, dict) else None, None
 
 
+_DECISION_LIFECYCLE_FIELDS = {
+    "decision_status": ("status",),
+    "updated_at": ("updated_at", "updatedAt"),
+    "closed": ("closed",),
+    "fault_domain": ("fault_domain", "faultDomain"),
+    "retryable": ("retryable",),
+    "reason_code": ("reason_code", "reasonCode"),
+    "publication_state": ("publication_state", "publicationState"),
+    "public_visible": ("public_visible", "publicVisible"),
+    "failure_stage": ("failure_stage", "failureStage"),
+    "stage_errors": ("stage_errors", "stageErrors"),
+    "errors": ("errors",),
+    "next_action": ("next_action", "nextAction"),
+    "notes": ("notes",),
+    "resubmission": ("resubmission",),
+}
+_PENDING_DECISION_STATUSES = frozenset({
+    "pending", "queued", "running", "processing", "reviewing", "submitted",
+    "under_review", "publishing",
+})
+
+
+def _decision_ts(row: dict[str, Any]) -> dt.datetime:
+    return max(_review_ts(row), _review_ts({"reviewedAt": row.get("updated_at") or row.get("updatedAt")}))
+
+
 def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[dict[str, dict[str, Any]], str | None]:
     submitted_path = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     rows = submit_bridge._ledger_rows(submitted_path)
     latest: dict[str, dict[str, Any]] = {}
     first_error: str | None = None
     updates: dict[str, dict[str, Any]] = {}
-    missing = object()
-    latest_by_topic: dict[str, dict[str, Any]] = {}
-    for row in reversed(rows):
-        latest_by_topic.setdefault(str(row.get("topic") or row.get("submission_id") or row.get("run")), row)
-    for record in latest_by_topic.values():
-        submission_id = str(record.get("submission_id") or "").strip()
+    seen: set[str] = set()
+    for record in reversed(rows):
+        canonical_id = str(record.get("submission_id") or "").strip()
+        submission_id = canonical_id or str(record.get("duplicate_submission_id") or "").strip()
         run = runs_root / str(record.get("run") or "")
         paper = run / "full_paper.md"
-        if not submission_id or not paper.exists():
+        if not submission_id:
             continue
-        payload, err = _fetch_submission_decision(submission_id)
+        if not canonical_id:
+            updates.setdefault(submission_id, {})
+        if submission_id in seen:
+            continue
+        seen.add(submission_id)
+        terminal = (
+            str(record.get("publication_state") or "").upper() == "PUBLISHED"
+            and record.get("public_visible", record.get("publicVisible")) is True
+        ) or (
+            record.get("closed") is True and record.get("retryable") is not True
+            and str(record.get("decision") or "").lower() in {"reject", "rejected"}
+        )
+        payload, err = (record, None) if terminal else _fetch_submission_decision(submission_id)
         first_error = first_error or err
         if not payload:
             continue
-        decision_payload: dict[str, Any] = payload
-
-        def present(*names: str) -> Any:
-            return next(
-                (
-                    decision_payload[name]
-                    for name in names
-                    if name in decision_payload and decision_payload[name] is not None
-                ),
-                missing,
-            )
-
         fields = {
-            "decision_status": ("status",),
+            "title": ("title",),
             "decision": ("decision",),
             "decision_object_id": (
                 "decision_object_id", "decisionObjectId", "decision_id", "decisionId", "id",
@@ -1110,30 +1134,31 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
             "failure_category": ("failure_category", "failureCategory"),
             "publication_status": ("publication_status", "publicationStatus"),
             "publication": ("publication",),
-        }
-        persisted = {
-            key: value
-            for key, names in fields.items()
-            if (value := present(*names)) is not missing
-        }
-        if (decision_value := persisted.get("decision")) is not None:
+        } | _DECISION_LIFECYCLE_FIELDS
+        persisted = {}
+        for key, names in fields.items():
+            for name in names:
+                if name in payload and (payload[name] is not None or key in _DECISION_LIFECYCLE_FIELDS or key == "decision"):
+                    persisted[key] = payload[name]
+                    break
+        active_review = any(
+            str(persisted.get(key) or "").lower() in _PENDING_DECISION_STATUSES
+            for key in ("decision_status", "publication_state")
+        )
+        if "decision" not in persisted and active_review and _decision_ts(persisted) > _decision_ts(record):
+            persisted["decision"] = None
+        if "decision" in persisted:
             persisted["remote_revision_requested"] = (
-                str(decision_value).strip().lower() == "revise"
+                str(persisted["decision"]).strip().lower() == "revise"
             )
-        current_decision = str(record.get("decision") or "").strip()
-        incoming_decision = str(persisted.get("decision") or "").strip()
-        if (
-            current_decision
-            and incoming_decision
-            and _review_ts(record) > _review_ts(persisted)
-        ):
+        if _decision_ts(record) > _decision_ts(persisted):
             persisted = {}
-            decision_payload = {}
         if persisted:
             updates[submission_id] = persisted
         effective = {**record, **persisted}
-        title = submit_bridge._paper_title(paper)
+        title = str(effective.get("title") or submit_bridge._paper_title(paper))
         row = {
+            **{key: effective[key] for key in fields if key in effective},
             "artifactType": "research_paper",
             "agentId": submit_bridge._agent_slug(),
             "artifactId": (
@@ -1142,44 +1167,29 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
             "submissionId": submission_id,
             "title": title,
             "topic": effective.get("topic") or submit_bridge._run_topic(run),
-            "decision": effective.get("decision"),
             "reviewedAt": (
-                effective.get("reviewed_at")
+                effective.get("updated_at")
+                or effective.get("reviewed_at")
                 or effective.get("submitted_at")
                 or effective.get("date")
             ),
-            "required_revisions": effective.get("required_revisions") or [],
-            "failed_checks": effective.get("failed_checks") or [],
-            "major_issues": effective.get("major_issues") or [],
-            "minor_issues": effective.get("minor_issues") or [],
-            "review_summary": effective.get("review_summary"),
-            "publication": effective.get("publication"),
-            "failure_category": effective.get("failure_category"),
-            "notes": decision_payload.get("notes") or effective.get("notes"),
-            "resubmission": (
-                decision_payload.get("resubmission") or effective.get("resubmission")
-            ),
         }
-        key = submit_bridge._title_marker(title)
+        key = submit_bridge._title_marker(title) if title else submit_bridge._submission_marker(submission_id)
         if key and (key not in latest or _should_replace_review_row(latest[key], row)):
             latest[key] = row
     if updates:
         def merge(current: list[dict[str, Any]]) -> None:
             for current_record in current:
-                submission_id = str(current_record.get("submission_id") or "").strip()
+                submission_id = str(current_record.get("submission_id") or "").strip() or str(current_record.get("duplicate_submission_id") or "").strip()
                 if submission_id in updates:
+                    current_record["submission_id"] = submission_id
                     update = dict(updates[submission_id])
                     current_decision = str(current_record.get("decision") or "").strip()
-                    incoming_decision = str(update.get("decision") or "").strip()
-                    if (
-                        current_decision
-                        and incoming_decision
-                        and _review_ts(current_record) > _review_ts(update)
-                    ):
+                    if _decision_ts(current_record) > _decision_ts(update):
                         continue
                     if (
                         current_decision
-                        and not incoming_decision
+                        and "decision" not in update
                         and update.get("decision_status") != "complete"
                     ):
                         update.pop("decision_status", None)
@@ -1310,13 +1320,13 @@ def _record_revise_reasons(ledger_dir: Path, latest: dict[str, dict[str, Any]]) 
 
 
 def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS) -> tuple[list[dict[str, Any]], str | None]:
+    direct, direct_err = _submitted_submission_decisions_by_title(runs_root)
     latest, err = _latest_reviews_by_title(url)
-    if err:
-        return [], err
-    if url is None:
-        direct, direct_err = _submitted_submission_decisions_by_title(runs_root)
-        latest = _merge_latest_by_title(latest, direct)
-        err = direct_err if not latest else None
+    known_ids = {row.get("submissionId") for row in direct.values()}
+    latest = {key: row for key, row in latest.items() if (row.get("submissionId") or row.get("submission_id")) not in known_ids}
+    latest = _merge_latest_by_title({} if err else latest, direct)
+    if not latest:
+        return [], direct_err or err
     out: list[dict[str, Any]] = []
     for row in latest.values():
         decision = str(row.get("decision") or "").lower()
@@ -1339,6 +1349,7 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
             summary = str(row.get("review_summary") or row.get("reviewSummary") or "").strip()
             required = [summary or notes or f"Resolve reviewer failure category: {failure_category or 'unparsed_review'}."]
         request = {
+            **{key: row[key] for key in _DECISION_LIFECYCLE_FIELDS if key in row},
             "artifactId": row.get("artifactId") or row.get("artifact_id"),
             "submissionId": row.get("submissionId") or row.get("submission_id"),
             "title": row.get("title"),
@@ -1657,14 +1668,7 @@ def _submitted_record_has_pending_decision(record: dict[str, Any]) -> bool:
         return False
     if str(payload.get("decision") or "").strip():
         return False
-    return str(payload.get("status") or "").strip().lower() in {
-        "pending",
-        "queued",
-        "running",
-        "processing",
-        "reviewing",
-        "submitted",
-    }
+    return str(payload.get("status") or "").strip().lower() in _PENDING_DECISION_STATUSES
 
 
 def _pending_remote_revision_topics(

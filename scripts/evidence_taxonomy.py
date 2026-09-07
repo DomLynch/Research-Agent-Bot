@@ -353,13 +353,21 @@ _TITLE_PROTOCOL_RE = re.compile(
     re.IGNORECASE,
 )
 _TITLE_RCT_RE = re.compile(
-    r"\b(randomi[sz]ed|RCT|placebo[\-\s]?controlled|double[\-\s]?blind)\b",
+    r"\b(randomi[sz]ed|randomly assigned|RCT|placebo[\-\s]?controlled|double[\-\s]?blind)\b",
     re.IGNORECASE,
 )
 _TITLE_OBSERVATIONAL_RE = re.compile(
     r"\b(cohort|registry|observational|target trial|emulation|"
-    r"retrospective|prospective|case[\-\s]?control)\b",
+    r"retrospective|prospective|case[\-\s]?control|single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed)\b",
     re.IGNORECASE,
+)
+_NONRANDOMIZED_DESIGN_RE = re.compile(
+    r"\b(?:single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed|observational|retrospective)\b", re.I,
+)
+_FUTURE_TRIAL_RE = re.compile(
+    r"\b(?:trials?\s+(?:are|is)\s+(?:needed|required|warranted)|"
+    r"(?:need(?:ed)?|requires?|warrants?|future)\b[^.!?]*\btrials?|"
+    r"trials?\s+to\s+(?:confirm|test))\b", re.I,
 )
 # P1 reviewer fix: drop the bare "review" keyword — it false-fires on
 # "RCT methodology review", "Cohort design review", etc. Only multi-
@@ -408,15 +416,28 @@ def _normalize_study_text(value: object) -> str:
     return _UNICODE_DASH_RE.sub("-", str(value or ""))
 
 
+def _is_protocol_paper(title: str, abstract: str) -> bool:
+    return bool(_TITLE_PROTOCOL_RE.search(title) or (
+        re.search(r"\bstudy design\s*$", title, re.I)
+        and re.search(r"\b(?:trial|study) is designed to\b", abstract, re.I)
+    ))
+
+
 def is_primary_randomized_study(title: str, abstract: str = "", *, study_design: str = "") -> bool:
     title, abstract, study_design = map(_normalize_study_text, (title, abstract, study_design))
     identity_text = f"{title} {study_design}"
+    # Calls for future trials describe missing evidence, not this study's design.
+    trial_evidence = " ".join(sentence for sentence in re.split(r"[.!?]\s+", abstract)
+                              if not _FUTURE_TRIAL_RE.search(sentence)
+                              and not _NONRANDOMIZED_DESIGN_RE.search(sentence))
     return bool(
-        not _TITLE_PROTOCOL_RE.search(identity_text)
+        not _is_protocol_paper(title, abstract)
+        and not _TITLE_PROTOCOL_RE.search(study_design)
         and not _TITLE_REVIEW_RE.search(identity_text)
+        and not _NONRANDOMIZED_DESIGN_RE.search(identity_text)
         and (
             _TITLE_RCT_RE.search(identity_text)
-            or (_TITLE_RCT_RE.search(abstract) and not _TITLE_REVIEW_RE.search(abstract))
+            or (_TITLE_RCT_RE.search(trial_evidence) and not _TITLE_REVIEW_RE.search(abstract))
         )
     )
 
@@ -433,14 +454,13 @@ def infer_from_paper_meta(paper_meta: dict) -> EvidenceClassification:
     abstract = _normalize_study_text(paper_meta.get("abstract"))
     haystack = f"{title} {abstract}"
 
-    # Protocol detection on TITLE ONLY for precision — a results paper
-    # that references "the study protocol" in its abstract stays graded
-    # on its actual design.
-    if _TITLE_PROTOCOL_RE.search(title):
+    # Require title evidence; design-only titles also need an explicit
+    # planned-trial statement, not merely a mention of a study protocol.
+    if _is_protocol_paper(title, abstract):
         design = "study protocol"
     elif _TITLE_REVIEW_RE.search(haystack):
         design = "systematic review"
-    elif _TITLE_RCT_RE.search(haystack):
+    elif is_primary_randomized_study(title, abstract):
         design = "randomized controlled trial"
     elif _TITLE_OBSERVATIONAL_RE.search(haystack):
         design = "cohort"

@@ -84,6 +84,9 @@ def test_payload_source_bundle_excludes_cited_only_references(tmp_path: Path, mo
         encoding="utf-8",
     )
 
+    original = run.joinpath("full_paper.md").read_text()
+    assert submit.build_payload(run)["body_markdown"] == original
+    submit.prepare_submission_manuscript(run)
     payload = submit.build_payload(run)  # type: ignore[attr-defined]
 
     # cited-only reference is NOT counted as a retained source; bundle stays
@@ -97,7 +100,7 @@ def test_payload_source_bundle_excludes_cited_only_references(tmp_path: Path, mo
     assert "99999999" not in payload["body_markdown"]
 
 
-def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, monkeypatch, preflight_cli) -> None:
+def test_final_preflight_hook_requires_review_of_changed_payload(tmp_path: Path, monkeypatch, preflight_cli) -> None:
     monkeypatch.setenv("RESEARKA_PREFLIGHT_QA", "enforce")
     run = tmp_path / "run"
     run.mkdir()
@@ -110,15 +113,12 @@ def test_final_preflight_hook_cleans_payload_in_enforce_mode(tmp_path: Path, mon
     payload, report = submit._run_preflight_qa(original, run)  # type: ignore[attr-defined]
 
     assert preflight_cli["input"]["body_markdown"] == original["body_markdown"]
-    assert report and report["status"] == "pass"
-    assert payload is not None
-    assert payload["body_markdown"].count("This may be limited.") == 1
-    assert payload["abstract"] == payload["sections"]["Abstract"]
-    assert payload["metadata"]["preflight_qa"]["status"] == "pass"
-    assert payload["metadata"]["content_hash"] != "sha256:old"
+    assert report and report["blocked_reasons"] == ["preflight_revision_required"]
+    assert payload is None
+    assert original["body_markdown"].count("This may be limited.") == 2
+    assert original["metadata"]["content_hash"] == "sha256:old"
     persisted = submit._read_json(run / "researka_preflight_cleaned_payload.json")  # type: ignore[attr-defined]
-    assert persisted["abstract"] == payload["abstract"]
-    assert report["cleaned_hash"] == payload["metadata"]["submission_payload_hash"]
+    assert persisted["body_markdown"].count("This may be limited.") == 1
 
 
 def test_final_preflight_hook_blocks_bad_payload_in_enforce_mode(tmp_path: Path, monkeypatch, preflight_cli) -> None:
@@ -168,6 +168,7 @@ def test_payload_canonicalizes_nested_source_locator(tmp_path: Path, monkeypatch
     run.joinpath("manifest.json").write_text('{"topic":"metformin"}', encoding="utf-8")
     monkeypatch.setattr(submit, "_source_bundle", lambda *_args, **_kwargs: [{"doi": doi}, {"doi": parenthetical_doi}])
 
+    submit.prepare_submission_manuscript(run)
     cleaned = submit.build_payload(run)["body_markdown"]  # type: ignore[attr-defined]
 
     assert cleaned.count(f"[exact source: https://doi.org/{doi}]") == 1

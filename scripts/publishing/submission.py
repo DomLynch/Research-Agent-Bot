@@ -104,7 +104,7 @@ NULL_CODING_AUDIT_FLOOR = 0.90
 RECENT_PUBLICATION_YEAR_FLOOR = 2020
 # Pre-submit intake floors mirror Researka's full research-synthesis contract.
 RESEARKA_TYPE_THRESHOLDS: dict[str, dict[str, float]] = {
-    "research_synthesis": {"min_citations": 12, "recency_ratio": 0.50, "min_question_words": 75, "min_body_words": 2000},
+    "research_synthesis": {"min_citations": 12, "recency_ratio": 0.40, "min_question_words": 75, "min_body_words": 2000},
 }
 PUBLICATION_IDENTITY_KEYS = (
     "submission_identity_key",
@@ -134,7 +134,16 @@ def _run_artifact_error(run: Path) -> str:
         try:
             json.loads(path.read_text(encoding="utf-8"))
         except (OSError, UnicodeDecodeError, json.JSONDecodeError):
-            return f"run_artifact_invalid:{path.name}"
+            if path.name in {
+                "manifest.json", "citation_registry.json", "full_paper.audit.json",
+                "full_paper.journal_surface.json", "full_paper.final_verdict.json",
+                "full_paper.consistency.json", "pre_submit_gate.json", "artifact_consistency.json",
+                "target_journal_pack.json", "risk_of_bias.json", "submission_package.json",
+            }:
+                return f"run_artifact_invalid:{path.name}"
+            if path.name in {"final_status.json", "researka_revision_request.json", REVISION_COVERAGE_GATE}:
+                return f"run_operational_state_invalid:{path.name}"
+            print(f"[submit] WARN optional_artifact_invalid:{run.name}/{path.name}", file=sys.stderr)
     return ""
 RESEARKA_REQUIRED_SECTIONS = {
     "research_synthesis": (
@@ -346,35 +355,10 @@ def _run_preflight_qa(payload: dict[str, Any], run: Path) -> tuple[dict[str, Any
             payload, mode, "preflight_missing_cleaned_payload",
             "Preflight passed but did not write a cleaned payload.",
         )
-    cleaned_metadata = cleaned.setdefault("metadata", {})
-    if isinstance(cleaned_metadata, dict):
-        body = str(cleaned.get("body_markdown") or "")
-        cleaned["sections"] = sections = _sections(body)
-        cleaned["abstract"] = sections.get("Abstract") or cleaned.get("abstract")
-        content_hash = "sha256:" + hashlib.sha256(body.encode("utf-8")).hexdigest()
-        cleaned_metadata["preflight_original_content_hash"] = cleaned_metadata.get("content_hash")
-        cleaned_metadata["content_hash"] = content_hash
-        cleaned["author_signature"] = content_hash
-        source_bundle = [row for row in (cleaned.get("source_bundle") or []) if isinstance(row, dict)]
-        cleaned_metadata["source_citation_hash"] = source_hash = _source_citation_hash(source_bundle)
-        cleaned_metadata["submission_identity_key"] = _submission_identity_key(
-            agent_slug=str(cleaned.get("author_agent_id") or ""),
-            title=str(cleaned.get("title") or ""),
-            content_hash=content_hash,
-            source_citation_hash=source_hash,
-            revision_parent=str(
-                (cleaned_metadata.get("revision_of") or {}).get("submissionId")
-                or (cleaned_metadata.get("revision_of") or {}).get("artifactId")
-                or ""
-            ) if isinstance(cleaned_metadata.get("revision_of"), dict) else "",
-        )
-        cleaned["core_claims_resolved"] = _researka_core_claim_trace_status(cleaned, source_bundle) == "eligible"
-        cleaned_metadata["submission_payload_hash"] = _payload_fingerprint(cleaned)
-        report["cleaned_hash"] = cleaned_metadata["submission_payload_hash"]
-        cleaned_metadata["preflight_qa"] = _preflight_summary(report) | {"mode": mode}
-        _write_json(clean_path, cleaned)
-        _write_json(report_path, report)
-    return cleaned, report
+    if _payload_fingerprint(cleaned) != _payload_fingerprint(payload):
+        return _preflight_failure(payload, mode, "preflight_revision_required",
+                                  "QA proposed a changed package; revise and review it before submission.")
+    return payload, report
 
 
 def _hash_json(material: Any) -> str:
@@ -622,23 +606,10 @@ def _structured_source_fields(claim: str) -> dict[str, str]:
     return fields
 
 
-def _structured_source_summary_aligns(claim: str, source: dict[str, Any], quantities: set[tuple[str, str]]) -> bool:
-    fields = _structured_source_fields(claim)
-    expected = (
-        ("outcome", role_outcome_display(source)),
-        ("direction", resolved_effect_direction(source)),
-        ("directness", str(source.get("directness") or "")),
-        ("tier", str(source.get("evidence_tier") or "")),
-    )
-    return (
-        bool(quantities) and bool(re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I))
-        and _normalized_key(claim.split(" [bundle:", 1)[0]) == _normalized_key(str(source.get("cited_as") or ""))
-        and all(value and _normalized_key(fields.get(key, "")) == _normalized_key(value) for key, value in expected)
-        and any(_quantities_match(quantities, str(source.get(key) or "")) for key in ("quote", "evidence_span", "excerpt"))
-    )
-
-
 def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: bool = False) -> bool:
+    # A source taxonomy label plus a matching statistic does not identify its endpoint.
+    if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
+        return False
     label_words = _evidence_words(source.get("cited_as"))
     claim_words = _evidence_words(claim) - label_words
     grounding_claim = _grounding_words(claim) - _grounding_words(source.get("cited_as"))
@@ -661,10 +632,10 @@ def _evidence_aligns(claim: str, source: dict[str, Any], *, source_language: boo
     if any(not expected_fields[key] or _normalized_key(value) != _normalized_key(expected_fields[key])
            for key, value in structured_fields.items()):
         return False
-    if _structured_source_summary_aligns(claim, source, claim_quantities):
-        return True
     for key in ("quote", "evidence_span", "excerpt"):
         evidence = (raw_evidence := " ".join(str(source.get(key) or "").split()).replace("−", "-").replace("–", "-").replace("—", "-")).lower()
+        if source_language or generated_trace:
+            evidence = re.sub(r"\s+([.,;:!?])", r"\1", evidence)
         if len(evidence) < 20:
             continue
         sentences = _revision_claim_trace._sentences(raw_evidence if source_language else evidence)
@@ -731,7 +702,7 @@ def _claim_trace_counts(
 def _researka_evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
     claim_words = _evidence_words(claim)
     if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
-        return _structured_source_summary_aligns(claim, source, _quantity_tokens(claim, [source]))
+        return False
     required = min(4, max(2, (len(claim_words) + 4) // 5))
     return any(len(evidence := " ".join(str(source.get(key) or "").lower().split())) >= 20 and (evidence in claim.lower() or claim.lower() in evidence or len(claim_words & _evidence_words(evidence)) >= required) for key in ("quote", "evidence_span", "excerpt"))
 
@@ -749,9 +720,28 @@ def _cited_claim_aligns(claim: str, bundle: list[dict[str, Any]], indexes: set[i
     return all(any(_evidence_aligns(clause, bundle[index], source_language=True) for index in (_citation_indexes(clause, bundle) or indexes)) for clause in clauses)
 
 
+def _verified_source_finding(claim: str, bundle: list[dict[str, Any]], used: set[str]) -> str:
+    candidates = []
+    for index in sorted(_citation_indexes(claim, bundle)):
+        source = bundle[index]
+        if source.get("excerpt_is_complete_field") is not True or not _publication_evidence.source_proof_is_valid(source):
+            continue
+        quantities = _quantity_tokens(claim, [source])
+        for sentence in _revision_claim_trace._sentences(str(source.get("excerpt") or "")):
+            if (len(sentence.strip()) < 20 or not re.search(r"[.!?][\"')]*$", sentence.strip())
+                    or _revision_claim_trace._drop_unmatched_parentheses(sentence) != sentence
+                    or not _quantities_match(quantities, sentence)):
+                continue
+            finding = f"The cited source reports the following finding: {sentence.rstrip('.')} [bundle:{index + 1}]."
+            if not any(_revision_claim_trace._claim_key(sentence) in key for key in used) and _cited_claim_aligns(finding, bundle, {index}):
+                candidates.append(finding)
+    return max(candidates, key=lambda item: len(_evidence_words(claim) & _evidence_words(item)), default="")
+
+
 def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -> str:
     lines: list[str] = []
     section = ""
+    generated: set[str] = set()
     for line in paper.splitlines():
         if heading := re.match(r"^##\s+(.+?)\s*$", line):
             section = heading.group(1).strip().lower()
@@ -759,6 +749,16 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
             sentences: list[str] = []
             for sentence in _revision_claim_trace._sentences(line):
                 clean = sentence.strip(" -*")
+                if re.search(r"\brepresentative (?:non-significant )?statistic\b", clean, re.I):
+                    sentence = _verified_source_finding(clean, bundle, generated)
+                    if not sentence:
+                        continue
+                    clean = sentence
+                if clean.startswith("The cited source reports the following finding:"):
+                    key = _revision_claim_trace._claim_key(clean)
+                    if key in generated:
+                        continue
+                    generated.add(key)
                 candidate = not _corpus_accounting_only(clean) and (bool(_claim_candidates(clean)) or len(clean) >= 80 and (section in {"abstract", "conclusion"} and any(marker in clean.lower() for marker in _CLAIM_MARKERS) or bool(re.search(r"\b(?:drug|intervention|patients?|participants?|subjects?|therapy|treatment)\s+[a-z]+(?:ed|ing)\b", clean, re.I))))
                 indexes = _citation_indexes(clean, bundle)
                 if candidate and indexes and not _cited_claim_aligns(clean, bundle, indexes):
@@ -784,7 +784,7 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
                 sentences.append(sentence)
             line = " ".join(sentences)
         lines.append(line)
-    return "\n".join(lines)
+    return "\n".join(lines).rstrip("\n")
 
 
 def _researka_claim_trace_status(
@@ -926,12 +926,13 @@ def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool
     source_bundle_raw = payload.get("source_bundle")
     source_bundle = [row for row in source_bundle_raw if isinstance(row, dict)] if isinstance(source_bundle_raw, list) else []
     min_citations = int(_threshold(article_type, "min_citations"))
-    if len(source_bundle) < min_citations:
-        return f"researka_preflight_insufficient_sources:{len(source_bundle)} < {min_citations}"
+    citation_count = len(_intake_source_rows(payload))
+    if citation_count < min_citations:
+        return f"researka_preflight_insufficient_sources:{citation_count} < {min_citations}"
     for check in (_public_grade_surface_status, _source_bundle_reconciliation_status, _source_bundle_topic_status):
         if (status := check(payload)) != "eligible":
             return status
-    direct = sum(_row_context(row) == "direct" for row in source_bundle)
+    direct = sum(_row_context(row) == "direct" for row in _intake_source_rows(payload))
     if direct < PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS:
         return f"public_surface_direct_receipts_below_floor:{direct} < {PUBLIC_RESEARCH_MIN_DIRECT_RECEIPTS}"
 
@@ -1135,21 +1136,22 @@ def _source_topic_precision(run: Path) -> tuple[bool, str]:
     return False, f"source_topic_precision_low:{hits}/{n}<{SOURCE_TOPIC_PRECISION_FLOOR:.2f}"
 
 
+def _intake_source_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    # Core d8738cf: protocols/notices do not count toward citation or recency floors.
+    bundle = payload.get("source_bundle")
+    return [row for row in (bundle if isinstance(bundle, list) else []) if isinstance(row, dict)
+            and not re.search(r"\b(?:correction|corrigendum|erratum|retraction|withdrawn|expression of concern|study protocol|protocol for)\b", str(row.get("publication_type") or ""), re.I)
+            and not re.search(r"^\s*(?:\[(?:retracted|withdrawn)\]\s*)?(?:(?:correction|corrigendum|erratum|retraction|withdrawal|expression of concern)(?::|\s+(?:of|to)\b)|(?:a\s+)?study protocol\b|protocol for\b)", str(row.get("title") or ""), re.I)]
+
+
 def _recency_ratio_status(payload: dict[str, Any]) -> str:
     """Mirror Researka's article-type recency floor over the submitted bundle."""
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     floor = _threshold(article_type, "recency_ratio")
-    bundle = payload.get("source_bundle")
-    years = [
-        row["year"]
-        for row in (bundle if isinstance(bundle, list) else [])
-        if isinstance(row, dict) and isinstance(row.get("year"), int)
-    ]
-    if not years:
-        return "eligible"
-    recent = sum(1 for year in years if year >= RECENT_PUBLICATION_YEAR_FLOOR)
-    if recent / len(years) < floor:
-        return f"recency_ratio_low:{recent}/{len(years)}<{floor:.2f}"
+    rows = _intake_source_rows(payload)
+    recent = sum(isinstance(row.get("year"), int) and row["year"] >= RECENT_PUBLICATION_YEAR_FLOOR for row in rows)
+    if not rows or recent / len(rows) < floor:
+        return f"recency_ratio_low:{recent}/{len(rows)}<{floor:.2f}"
     return "eligible"
 
 
@@ -1313,17 +1315,31 @@ def _eligible(run: Path, *, revision_verified: bool = False) -> tuple[bool, str]
     return decision.publishable, decision.blocker_code or "eligible"
 
 
-def _ledger_rows(path: Path) -> list[dict[str, Any]]:
+def _ledger_rows(path: Path, *, strict: bool = False) -> list[dict[str, Any]]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+    except FileNotFoundError:
         return []
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        if strict:
+            raise ValueError("submission_delivery_state_invalid") from exc
+        return []
+    if strict and (not isinstance(data, list) or any(
+        not isinstance(row, dict) or not isinstance(row.get("payload"), dict)
+        or not isinstance(row["payload"].get("metadata"), dict)
+        or not isinstance(row.get("topic"), str) or not row["topic"]
+        or row.get("fingerprint") != _payload_fingerprint(row["payload"])
+        or row["topic"] != row["payload"]["metadata"].get("topic") for row in data
+    )):
+        raise ValueError("submission_delivery_state_invalid")
     return [row for row in (data if isinstance(data, list) else []) if isinstance(row, dict)]
 
 
 def _seen(path: Path) -> set[str]:
     out: set[str] = set()
     for row in _ledger_rows(path):
+        if path.name in {REJECTED_FINGERPRINTS, REVISION_FINGERPRINTS} and str(row.get("status")) in {"401", "403"}:
+            continue
         for key in ("fingerprint", *PUBLICATION_IDENTITY_KEYS):
             value = row.get(key)
             if isinstance(value, str) and value:
@@ -1359,9 +1375,19 @@ def _feedback_text(payload: Any) -> str:
     return " ".join(text.split())[:2000]
 
 
-def _is_revision_feedback(text: str) -> bool:
-    lowered = text.lower()
-    return any(marker in lowered for marker in ("revise", "revision", "resubmit", "needs revision"))
+def _content_decision(response: Any) -> str:
+    if isinstance(response, str):
+        try:
+            response = json.loads(response)
+        except ValueError:
+            return ""
+    if not isinstance(response, dict):
+        return ""
+    detail = response.get("detail", response)
+    if not isinstance(detail, dict) or detail.get("fault_domain") in {"platform", "provider", "transport"}:
+        return ""
+    decision = str(detail.get("decision") or detail.get("recommendation") or "").lower()
+    return decision if decision in {"reject", "revise", "revise_technical"} else ""
 
 
 def _is_duplicate_submission_feedback(text: str) -> bool:
@@ -1376,7 +1402,7 @@ def _duplicate_submission_id(text: str) -> str | None:
     detail = data.get("detail") if isinstance(data, dict) else None
     row = detail if isinstance(detail, dict) else data
     value = row.get("submission_id") if isinstance(row, dict) else None
-    return str(value) if value else None
+    return str(value) if value and isinstance(row, dict) and row.get("error") == "duplicate_submission" else None
 
 
 def _mark_considered_status(rows: list[dict[str, Any]], run_name: str, status: str) -> None:
@@ -1417,9 +1443,16 @@ def _payload_candidate_status(
     revision = bool(_read_json(run / "researka_revision_request.json"))
     if (status := _null_coding_audit_status(payload, _read_json(run / "manifest.json"))) != "eligible":
         return status
-    if not (purpose == "revision" and revision) and (status := _recency_ratio_status(payload)) != "eligible":
+    if (status := _recency_ratio_status(payload)) != "eligible":
         return status
     fp = _payload_fingerprint(payload)
+    try:
+        pending_rows = _ledger_rows(submitted_path.with_name("_uncertain_submissions.json"), strict=True)
+    except ValueError:
+        return "submission_delivery_state_invalid"
+    for pending in pending_rows:
+        if pending.get("topic") == _run_topic(run) and pending.get("fingerprint") != fp:
+            return "submission_delivery_requires_reconciliation"
     for path, status in (
         (submitted_path.with_name(REJECTED_FINGERPRINTS), "researka_rejected_fingerprint"),
         (submitted_path.with_name(REVISION_FINGERPRINTS), "researka_revision_fingerprint"),
@@ -1631,9 +1664,15 @@ def _registered_url_identifiers(value: object) -> dict[str, str]:
     return identifiers
 
 
+def _source_design(receipt: dict[str, Any]) -> str:
+    from evidence_taxonomy import _design_class, _normalize
+    return _design_class(_normalize(str(receipt.get("study_design") or receipt.get("publication_type") or "")))
+
+
 def _evidence_type_for_source(receipt: dict[str, Any]) -> str:
+    design = _source_design(receipt)
     directness = str(receipt.get("directness") or "").lower()
-    if directness == "review":
+    if design == "review" or design == "unknown" and directness == "review":
         return "review"
     return "primary"
 
@@ -1644,7 +1683,7 @@ SOURCE_CONTEXTS = frozenset({"direct", "adjacent", "mechanistic", "context"})
 def _source_context_for_receipt(receipt: dict[str, Any]) -> str:
     directness = str(receipt.get("directness") or "").lower()
     outcome = str(receipt.get("outcome_class") or "").lower()
-    if derive_receipt_lane(receipt) == "animal_preclinical":
+    if _source_design(receipt) == "protocol" or derive_receipt_lane(receipt) == "animal_preclinical":
         return "context"
     if directness == "direct":
         return "direct"
@@ -1875,6 +1914,7 @@ def _source_bundle(run: Path, *, limit: int, enrich: bool = True) -> list[dict[s
             "url": url,
             "doi": doi,
             "pmid": pmid,
+            "pmcid": pmcid,
             "openalex_id": openalex_id,
             "registry_id": registry_id.upper() if registry_id else None,
             "excerpt": excerpt,
@@ -1893,6 +1933,11 @@ def _source_bundle(run: Path, *, limit: int, enrich: bool = True) -> list[dict[s
             "cited_as": cited_as or None,
             "risk_of_bias": rob if _source_context_for_receipt(receipt) == "direct" else None,
         }
+        publication_type = receipt.get("publication_type") or receipt.get("study_design")
+        if str(receipt.get("directness") or "").lower() == "protocol" or _source_design(receipt) == "protocol":
+            publication_type = "study protocol"
+        if publication_type:
+            source["publication_type"] = str(publication_type)
         source.update(_publication_evidence.source_proof_fields(
             source,
             origin="full_text",
@@ -1944,7 +1989,7 @@ def _source_evidence_span(row: dict[str, Any]) -> str:
         "validated source-owned result trace", "source-bundle audit for",
     )):
         return ""
-    return text if len(text) <= 600 else text[:600].rsplit(" ", 1)[0]
+    return text
 
 
 def _asks_source_evidence_span(ask: str) -> bool:
@@ -2178,18 +2223,6 @@ def _repair_domain_frame_template_text(text: str) -> tuple[str, list[str]]:
     return repaired, list(dict.fromkeys(codes))
 
 
-def _repair_domain_frame_template_file(run: Path) -> list[str]:
-    paper = run / "full_paper.md"
-    try:
-        text = paper.read_text(encoding="utf-8")
-    except OSError:
-        return []
-    repaired, codes = _repair_domain_frame_template_text(text)
-    if codes and repaired != text:
-        paper.write_text(repaired, encoding="utf-8")
-    return codes
-
-
 def _domain_frame_status(payload: dict[str, Any]) -> str:
     sections = payload.get("sections")
     values = [payload.get(key) for key in ("title", "abstract", "body_markdown")]
@@ -2257,28 +2290,16 @@ def _trim_submission_boilerplate(paper: str) -> str:
 
 
 def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
-    used = {_normalized_key(claim) for heading in ("Abstract", "Conclusion") if (match := re.search(rf"(?ms)^## {heading}\s*\n(.*?)(?=^## |\Z)", paper)) for claim in _claim_candidates(match.group(1)) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))}
     aligned = [claim for claim in _claim_candidates("\n".join(line for line in paper.splitlines() if not line.lstrip().startswith("|"))) if _cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))]
+    used = {_revision_claim_trace._claim_key(claim) for claim in aligned}
     for heading in ("Abstract", "Conclusion"):
         if not (match := re.search(rf"(?ms)(^## {heading}\s*\n)(.*?)(?=^## |\Z)", paper)) or any(_cited_claim_aligns(claim, bundle, _citation_indexes(claim, bundle))
                             for claim in _claim_candidates(match.group(2))):
             continue
-        claim = next((item for item in aligned if _normalized_key(item) not in used), "")
-        if not claim and aligned:
-            original = aligned[0]
-            candidates = [
-                (index, sentence.strip())
-                for index in _citation_indexes(original, bundle)
-                for key in ("quote", "evidence_span", "excerpt")
-                for sentence in _revision_claim_trace._sentences(str(bundle[index].get(key) or ""))
-                if len(sentence.strip()) >= 20 and _revision_claim_trace._drop_unmatched_parentheses(sentence) == sentence
-            ]
-            if candidates:
-                index, sentence = max(candidates, key=lambda item: len(_evidence_words(original) & _evidence_words(item[1])))
-                claim = f"The cited source reports the following finding: {sentence.rstrip('.')} [bundle:{index + 1}]."
+        claim = next((finding for original in aligned if (finding := _verified_source_finding(original, bundle, used))), "")
         if not claim:
             return paper
-        used.add(_normalized_key(claim))
+        used.add(_revision_claim_trace._claim_key(claim))
         paper = paper[:match.start()] + f"{match.group(1)}{match.group(2).rstrip()}\n\n{claim}\n\n" + paper[match.end():].lstrip()
     return paper
 
@@ -2297,16 +2318,32 @@ def _restore_source_bounded_conclusion(
     return paper[:match.start()] + replacement + paper[match.end():].lstrip()
 
 
-def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> dict[str, Any]:
+def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> bool:
     paper = _BACKGROUND_REFERENCES_RE.sub("", _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), (run / "full_paper.md").read_text(encoding="utf-8")))
     paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
     paper = re.sub(r"\A(# [^\n]+?)\s+[—-]\s+full paper\s*$", r"\1", paper, count=1, flags=re.I | re.M)
     paper = _trim_submission_boilerplate(paper)
+    paper, _ = _repair_domain_frame_template_text(paper)
     manifest = _read_json(run / "manifest.json")
     topic = str(manifest.get("topic") or run.name)
     # Preserve the agent's existing source URLs, source-level appraisals, and
     # exact body-to-bundle links instead of dropping them at the API boundary.
     source_bundle = _source_bundle(run, limit=max_sources) if enrich_sources else _source_bundle(run, limit=max_sources, enrich=False)
+    if re.search(r"^## Quantitative Evidence Index\b", paper, re.M):
+        from agent.results_table import build_results_table
+
+        snapshot = run / "revision_evidence_snapshot"
+        evidence = load_revision_evidence(run, quant_dir=snapshot / "quant_claims", parsed_dir=snapshot / "parsed", expected_topic=topic)
+        if evidence.mode != "snapshot" or evidence.errors or not evidence.citation_registry:
+            raise ValueError("qei_source_snapshot_unverified")
+        receipts = {str(row["receipt_id"]): row for row in manifest.get("receipts", [])}
+        rows = _publication_evidence.source_rows(_read_json(evidence.citation_registry), receipts)
+        retained = {str(row.get("cited_as") or "") for row in source_bundle}
+        tokens = {str(row["receipt_id"]): str(row["body_citation"]) for row in rows if row.get("body_citation") in retained}
+        table = build_results_table(evidence.quant_dir, topic=topic, parsed_dir=evidence.parsed_dir, accepted_paper_ids=frozenset(tokens), citation_tokens_by_paper_id=tokens)
+        qei_pattern = r"(?ms)^## Quantitative Evidence Index\b.*?(?=^## |\Z)"
+        first_qei = re.search(qei_pattern, paper)
+        paper = re.sub(qei_pattern, lambda match: table.rstrip() + "\n\n" if first_qei and match.start() == first_qei.start() else "", paper)
     for row in source_bundle:
         if span := _source_evidence_span(row):
             row["evidence_span"] = span
@@ -2328,7 +2365,33 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
     paper = _publication_evidence.attach_bundle_references(paper, source_bundle)
     paper = _attach_aligned_claim_references(paper, source_bundle)
     paper = _ensure_core_source_traces(paper, source_bundle)
-    paper = re.sub(r"(?ims)(\A# [^\n]+|^## (?:Abstract|Conclusion)\b.*?(?=^## |\Z))", lambda block: re.sub(r"\bunresolved\b", lambda word: "Unsettled" if word.group()[:1].isupper() else "unsettled", block.group()), paper)
+    for source in source_bundle:
+        source.pop("excerpt_is_complete_field", None)
+    from difflib import unified_diff
+    _write_json(run / "submission_source_proofs.json", source_bundle)
+    path = run / "full_paper.md"
+    original = path.read_text(encoding="utf-8")
+    if original == paper:
+        return False
+    (run / "submission_preparation.diff").write_text("".join(unified_diff(
+        original.splitlines(keepends=True), paper.splitlines(keepends=True),
+        fromfile="before-review", tofile="prepared-for-review",
+    )), encoding="utf-8")
+    path.write_text(paper, encoding="utf-8")
+    return True
+
+
+def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> dict[str, Any]:
+    """Serialize the manuscript without changing its scientific content."""
+    paper = (run / "full_paper.md").read_text(encoding="utf-8")
+    manifest = _read_json(run / "manifest.json")
+    topic = str(manifest.get("topic") or run.name)
+    source_bundle = _source_bundle(run, limit=max_sources, enrich=enrich_sources)
+    for source in source_bundle:
+        if span := _source_evidence_span(source):
+            source["evidence_span"] = span
+        for key in ("excerpt_is_complete_field", "pmcid", "source_snapshot_locator", "source_passage_locator"):
+            source.pop(key, None)
     title = paper.splitlines()[0].lstrip("# ").strip() if paper.startswith("# ") else f"Research Synthesis: {_display_topic(topic)}"
     _publication_evidence.attach_evidence_spans(paper, source_bundle)
     sections = _sections(paper)
@@ -2351,7 +2414,7 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
             f"n_receipts={n_receipts} for {run.name}",
             file=sys.stderr,
         )
-    body_markdown = paper.strip()
+    body_markdown = paper
     content_hash = "sha256:" + hashlib.sha256(body_markdown.encode("utf-8")).hexdigest()
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
@@ -2409,6 +2472,33 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
     return payload
 
 
+def freeze_submission_package(run: Path, verdict: dict[str, Any]) -> None:
+    """Bind the final local verdict to the exact package it certifies."""
+    payload = build_payload(run, enrich_sources=False)
+    _write_json(run / "submission_package.json", {
+        "payload": payload, "verdict_hash": _hash_json(verdict),
+        "package_hash": _reviewed_package_hash(payload),
+    })
+
+
+def _reviewed_package_hash(payload: dict[str, Any]) -> str:
+    metadata = dict(payload.get("metadata") or {})
+    metadata.pop("preflight_qa", None)
+    return _hash_json({**payload, "metadata": metadata})
+
+
+def _frozen_package_status(run: Path, payload: dict[str, Any]) -> str:
+    frozen = _read_json(run / "submission_package.json")
+    reviewed = frozen.get("payload")
+    if not isinstance(reviewed, dict) or frozen.get("verdict_hash") != _hash_json(_read_json(run / "full_paper.final_verdict.json")):
+        return "submission_package_review_missing_or_stale"
+    if frozen.get("package_hash") != _reviewed_package_hash(reviewed) or _reviewed_package_hash(payload) != frozen.get("package_hash"):
+        return "submission_package_changed_after_review"
+    if payload.get("body_markdown") != (run / "full_paper.md").read_text(encoding="utf-8"):
+        return "submission_manuscript_changed_after_review"
+    return "eligible"
+
+
 def _trusted_submission_url(url: str) -> bool:
     try:
         parsed = urllib.parse.urlparse(url)
@@ -2427,7 +2517,7 @@ def _submitter(url: str, token: str, agent_slug: str, *, purpose: str = "resubmi
     def submit(payload: dict[str, Any]) -> dict[str, Any]:
         if not _trusted_submission_url(url):
             return {"ok": False, "status": 0, "response": "untrusted_submission_url", "preflight": True}
-        preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
+        preflight_status = _researka_preflight_status(payload)
         if preflight_status != "eligible":
             return {"ok": False, "status": 0, "response": preflight_status, "preflight": True}
         metadata = payload.get("metadata")
@@ -2461,7 +2551,7 @@ def _submitter(url: str, token: str, agent_slug: str, *, purpose: str = "resubmi
         except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
             return {
                 "ok": False, "status": 0,
-                "response": f"{type(exc).__name__}: {exc}", "retryable": True,
+                "response": f"{type(exc).__name__}: {exc}", "retryable": True, "unknown_submission": True,
             }
     return submit
 
@@ -2493,20 +2583,16 @@ def _publications_url() -> str:
 def _publication_row_has_public_proof(row: dict[str, Any], metadata: dict[str, Any]) -> bool:
     publication = row.get("publication")
     publication = publication if isinstance(publication, dict) else {}
-    for source in (row, metadata, publication):
-        status = str(source.get("status") or source.get("publication_status") or "").strip().lower()
+    sources = (row, metadata, publication)
+    for source in sources:
+        state = str(source.get("publication_state") or source.get("publicationState") or "").upper()
+        if state and state != "PUBLISHED" or source.get("publicVisible") is False or source.get("public_visible") is False:
+            return False
+    for source in sources:
+        status = str(source.get("publication_state") or source.get("publicationState") or source.get("status") or source.get("publication_status") or "").strip().lower()
         if status in {"public", "published"}:
             return True
         if source.get("publicVisible") is True or source.get("public_visible") is True or source.get("published") is True:
-            return True
-        for key in ("publishedAt", "published_at", "published_at_iso"):
-            value = source.get(key)
-            if isinstance(value, str) and value.strip():
-                return True
-        keys = ("publication_id", "publicationId", "public_url")
-        if any(isinstance(source.get(key), str) and source[key].strip() for key in keys):
-            return True
-        if source is publication and isinstance(source.get("url"), str) and source["url"].strip():
             return True
     return False
 
@@ -2562,6 +2648,10 @@ def _run_cycle_unlocked(
     ledger_path = runs_root / LEDGER_DIR / f"{date}.json"
     submitted_path = runs_root / LEDGER_DIR / "_submitted_fingerprints.json"
     ledger: dict[str, Any] = {"date": date, "dry_run": not submit, "submitted": 0, "published": 0, "status": "started"}
+    for name in (REJECTED_FINGERPRINTS, REVISION_FINGERPRINTS):
+        corrections = [row for row in _ledger_rows(submitted_path.with_name(name)) if str(row.get("status")) in {"401", "403"}]
+        if corrections:
+            ledger.setdefault("history_corrections", []).append({"ledger": name, "reason": "authentication_is_not_content_rejection", "nonblocking_records": corrections})
     token, token_env = _token() if submitter is None else ("", "")
     if submit and submitter is None and not token:
         ledger.update({"status": "submit_not_configured", "reason": "missing_v3_submit_token"})
@@ -2595,10 +2685,6 @@ def _run_cycle_unlocked(
         ledger.update({"status": "no_eligible_research_paper"})
         _write_json(ledger_path, ledger)
         return ledger
-    domain_frame_repairs = _repair_domain_frame_template_file(run) if submit else []
-    if domain_frame_repairs:
-        ledger["domain_frame_repairs"] = {"run": run.name, "codes": domain_frame_repairs}
-        payload = build_payload(run)
     fp = _payload_fingerprint(payload)
     raw_metadata = payload.get("metadata")
     metadata: dict[str, Any] = raw_metadata if isinstance(raw_metadata, dict) else {}
@@ -2634,7 +2720,7 @@ def _run_cycle_unlocked(
     raw_metadata = payload.get("metadata")
     metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
     ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
-    preflight_status = _researka_preflight_status(payload, enforce_recency=purpose != "revision")
+    preflight_status = _researka_preflight_status(payload)
     if preflight_status == "eligible":
         preflight_status = _payload_candidate_status(
             run, payload, submitted_path, remote_seen=remote_seen,
@@ -2643,17 +2729,30 @@ def _run_cycle_unlocked(
         if preflight_status == "eligible_resubmission_after_payload_change":
             preflight_status = "eligible"
     ledger["researka_preflight"] = preflight_status
+    if preflight_status == "eligible":
+        preflight_status = _frozen_package_status(run, payload)
+        if preflight_status == "eligible":
+            payload = _read_json(run / "submission_package.json")["payload"]
+            preflight_status = _frozen_package_status(run, payload)
+        ledger["researka_preflight"] = preflight_status
     if preflight_status != "eligible":
         ledger.update({"status": "no_eligible_research_paper", "reason": preflight_status})
         _mark_considered_status(considered, run.name, preflight_status)
         _write_json(ledger_path, ledger)
         return ledger
     try:
+        uncertain_path = submitted_path.with_name("_uncertain_submissions.json")
+        pending = next((row for row in _ledger_rows(uncertain_path, strict=True) if row.get("fingerprint") == fp), None)
+        if pending:
+            payload = pending["payload"]
+            if _payload_fingerprint(payload) != fp or _frozen_package_status(run, payload) != "eligible":
+                raise ValueError("uncertain_submission_package_changed")
+            ledger["reconciliation"] = "retry_identical_frozen_package_for_existing_submission_id"
         result = submitter(payload)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         result = {
             "ok": False, "status": 0,
-            "response": f"{type(exc).__name__}: {exc}", "retryable": True,
+            "response": f"{type(exc).__name__}: {exc}", "retryable": True, "unknown_submission": True,
         }
     if not isinstance(result, dict):
         result = {"ok": False, "status": 0, "response": "malformed submitter response", "retryable": True}
@@ -2668,6 +2767,10 @@ def _run_cycle_unlocked(
             **result, "ok": False, "retryable": True, "unknown_submission": True,
         }
     ledger["submission"] = result
+    if result.get("unknown_submission") and not pending:
+        _append_record(uncertain_path, {"fingerprint": fp, "topic": metadata.get("topic"), "payload": payload, "date": date})
+    if result.get("ok") or status_code == 409 and _duplicate_submission_id(_feedback_text(result.get("response"))):
+        _update_json_list(uncertain_path, lambda rows: rows.__setitem__(slice(None), [row for row in rows if row.get("fingerprint") != fp]))
     if result.get("ok"):
         assert submission_id is not None
         _append_record(submitted_path, {
@@ -2684,11 +2787,16 @@ def _run_cycle_unlocked(
         })
         ledger.update({"status": "submitted_to_researka", "submitted": 1})
         _mark_considered_status(considered, run.name, "submitted_to_researka")
-    elif 400 <= status_code < 500 and status_code not in TRANSIENT_SUBMISSION_STATUSES:
+    elif status_code in {401, 403}:
+        ledger.update(status="submission_authentication_failed", fault_domain="configuration", retryable=False)
+        _mark_considered_status(considered, run.name, ledger["status"])
+    elif 400 <= status_code < 500 and status_code not in TRANSIENT_SUBMISSION_STATUSES and (
+        _content_decision(result.get("response")) or _duplicate_submission_id(_feedback_text(result.get("response")))
+    ):
         feedback = _feedback_text(result.get("response"))
         is_duplicate = _is_duplicate_submission_feedback(feedback)
-        is_revision = False if is_duplicate else _is_revision_feedback(feedback)
-        status = "submission_revise_requested" if is_revision else "submission_rejected_by_researka"
+        is_revision = _content_decision(result.get("response")).startswith("revise")
+        status = "submission_duplicate_pending" if is_duplicate else "submission_revise_requested" if is_revision else "submission_rejected_by_researka"
         if is_duplicate:
             _append_record(submitted_path, {
                 "date": date,
@@ -2696,16 +2804,14 @@ def _run_cycle_unlocked(
                 "topic": metadata.get("topic"),
                 "fingerprint": fp,
                 "duplicate_submission_id": _duplicate_submission_id(feedback),
+                "submission_id": _duplicate_submission_id(feedback),
                 **{key: metadata.get(key) for key in PUBLICATION_IDENTITY_KEYS if metadata.get(key)},
             })
-        _append_record(submitted_path.with_name(REVISION_FINGERPRINTS if is_revision else REJECTED_FINGERPRINTS), {
-            "date": date,
-            "run": run.name,
-            "topic": metadata.get("topic"),
-            "fingerprint": fp,
-            "status": result.get("status"),
-            "feedback": feedback,
-        })
+        else:
+            _append_record(submitted_path.with_name(REVISION_FINGERPRINTS if is_revision else REJECTED_FINGERPRINTS), {
+                "date": date, "run": run.name, "topic": metadata.get("topic"),
+                "fingerprint": fp, "status": status_code, "feedback": feedback,
+            })
         ledger.update({"status": status, "revision_feedback": feedback})
         _mark_considered_status(considered, run.name, status)
     else:

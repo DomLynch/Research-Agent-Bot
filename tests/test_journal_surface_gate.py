@@ -896,12 +896,31 @@ def test_valid_rows_pass_surface_gate():
         study_label="Smith 2024", endpoint="fasting glucose",
         arm="control", value="89 mg/dL", unit_or_type="mg/dL",
         statistic="—", citation="Smith 2024",
+        source_context="Fasting glucose was 89 mg/dL.", source_value="89 mg/dL",
     )
     assert is_publishable_qei_row(row)
     report = _complete_surface(_paper(
         "| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |",
     ))
     assert report.passed
+
+
+def test_qei_source_quotes_require_exact_signed_value_and_shape():
+    from agent.journal_surface_gate import _extract_qei_rows, _qei_shape_issue_messages, qei_row_issue_messages
+
+    header = "## Quantitative Evidence Index\n| Study | Source context | Raw statistic |\n|---|---|---|\n"
+    for context, raw in (("Mimio (n=23) was compared with placebo (n=19).", "n=23"),
+                         ("Glucose changed by - 0.56 mmol/L.", "-0.56 mmol/L")):
+        paper = header + f"| Grant 2026 | {context} | {raw} |\n"
+        assert not _qei_shape_issue_messages(paper)
+        assert not qei_row_issue_messages(next(iter(_extract_qei_rows(paper))))
+    for context, raw in (("The sample was 149.", "49"), ("Glucose changed by -0.56 mmol/L.", "0.56 mmol/L"),
+                         ("Triglycerides fell <10 mmol/L.", "10 mmol/L"),
+                         ("Mean BMI was 27.6 kg/m^2.", "2"), ("Mean BMI was 40 kg/m².", "40 kg"),
+                         ("Dose was 5 mg·kg−1.", "5 mg"),
+                         ("", "n=23"), ("Only placebo n=19 was reported.", "n=23")):
+        assert qei_row_issue_messages({"study_label": "Grant 2026", "source_context": context, "source_value": raw})
+    assert _qei_shape_issue_messages(header + "| Grant 2026 | no statistic |\n")
 
 
 # Bug-fix: gate must tolerate diacritic mismatch between inline

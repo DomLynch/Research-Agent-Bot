@@ -7,14 +7,13 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from agent.results_table import (
     EvidenceRow,
     _arm_belongs_to_topic,
     _claim_to_row,
     _confidence_admissible,
-    _format_value,
-    _format_p_value,
-    _format_statistic,
     _load_topic_arm_terms,
     _quality_score,
     _short_citation,
@@ -53,45 +52,17 @@ def test_unbound_or_none_rejected():
     assert not _confidence_admissible({})
 
 
-# ---------- formatting ---------------------------------------------
+# ---------- source statistic preservation --------------------------
 
-def test_format_value_integer_uses_commas():
-    assert _format_value(19114.0) == "19,114"
-
-
-def test_format_value_decimal_keeps_3_sig_figs():
-    assert _format_value(0.85) == "0.85"
-    assert _format_value(0.001234) == "0.00123"
-
-
-def test_format_statistic_p_value():
-    assert _format_statistic({"claim_type": "p_value"}, 0.0001) == "—"
-    assert _format_statistic({"claim_type": "p_value"}, 0.04) == "—"
-
-
-def test_format_statistic_confidence_interval():
-    s = _format_statistic(
-        {"claim_type": "confidence_interval",
-         "numeric_values": [0.81, 1.13]}, 0.81,
-    )
-    assert s == "(0.81–1.13)"
-
-
-def test_format_statistic_default_dash():
-    """For HR/OR, the value column already shows the ratio; statistic
-    column gets em-dash."""
-    assert _format_statistic({"claim_type": "hazard_ratio"}, 0.85) == "—"
-
-
-def test_format_p_value_replaces_rounded_zero_with_implied_floor():
-    assert _format_p_value("P < 0.000", 0.0) == "P < 0.001"
-    assert _format_p_value("p=0.0000", 0.0) == "P < 0.0001"
-    assert _format_p_value("p=.000", 0.0) == "P < 0.001"
-    assert _format_p_value("p=0.044", 0.044) == "P = 0.044"
-    assert _format_p_value("effect=0.000; p=0.044", 0.044) == "P = 0.044"
-    assert _format_p_value("P > .99", 0.99) == "P > 0.99"
-    assert _format_p_value("p≥.95", 0.95) == "P ≥ 0.95"
-    assert _format_p_value("p=0", 0.0) == "—"
+def test_source_statistics_are_not_rounded_or_reinterpreted():
+    for raw, value in (("P < 0.000", 0), ("P > .99", .99), ("p=.044", .044)):
+        row = _claim_to_row(
+            {"claim_type": "p_value", "endpoint": "glucose", "raw_text": raw,
+             "numeric_values": [value], "sentence": f"Glucose differed ({raw})."},
+            paper_id="Source 2026",
+        )
+        assert row is not None
+        assert row.source_value == raw
 
 
 # ---------- citation extraction ------------------------------------
@@ -188,9 +159,10 @@ def test_claim_to_row_renders_confidence_interval_once():
         paper_id="x",
     )
     assert row is not None
-    assert row.value == "—"
+    assert row.value == "95% CI -28.97 to 19.71"
     assert row.unit_or_type == "95%CI"
-    assert row.statistic == "(-28.97–19.71)"
+    assert row.source_value == "95% CI -28.97 to 19.71"
+    assert row.statistic == "—"
 
 
 def test_claim_to_row_drops_ambiguous_multi_endpoint_p_value():
@@ -436,6 +408,7 @@ def test_build_results_table_renders_rows(tmp_path):
             {
                 "claim_type": "hazard_ratio",
                 "raw_text": "HR 1.01",
+                "sentence": "The mortality comparison yielded HR 1.01.",
                 "numeric_values": [1.01],
                 "binding_confidence": "high",
                 "endpoint": "mortality",
@@ -444,6 +417,7 @@ def test_build_results_table_renders_rows(tmp_path):
             {
                 "claim_type": "p_value",
                 "raw_text": "p=0.32",
+                "sentence": "Mortality did not differ (p=0.32).",
                 "numeric_values": [0.32],
                 "binding_confidence": "high",
                 "endpoint": "mortality",
@@ -456,7 +430,7 @@ def test_build_results_table_renders_rows(tmp_path):
     )
     md = build_results_table(claims_dir, topic="aspirin")
     assert "Quantitative Evidence Index — aspirin" in md
-    assert "| Study | Endpoint | Arm | Value | Type | Statistic |" in md
+    assert "| Study | Source context | Raw statistic |" in md
     # Endpoint-bound sample-size rows are quarantined from public QEI;
     # ratio and p-value rows still render.
     assert "19,114" not in md and "n=19,114" not in md
@@ -578,6 +552,7 @@ def test_diagnostic_counts_for_normal_corpus(tmp_path):
             # 1 high-conf, on-topic, meaningful → renders
             {"claim_type": "p_value", "raw_text": "p=0.04",
              "numeric_values": [0.04], "binding_confidence": "high",
+             "sentence": "The comparison yielded p=0.04.",
              "endpoint": "mortality", "arm": "metformin"},
             # 1 high-conf, off-topic arm (drops at arm filter)
             {"claim_type": "p_value", "raw_text": "p=0.05",
@@ -619,6 +594,7 @@ def test_surface_gate_drops_unpublishable_qei_rows(tmp_path):
              "arm": "pooled"},
             {"claim_type": "unit_value", "raw_text": "89 mg/dL",
              "numeric_values": [89], "units": "mg/dL",
+             "sentence": "Fasting glucose was 89 mg/dL.",
              "binding_confidence": "high", "endpoint": "fasting glucose",
              "arm": "pooled"},
         ],
@@ -632,6 +608,98 @@ def test_surface_gate_drops_unpublishable_qei_rows(tmp_path):
     assert diag["drop_surface_gate"] == 1
 
 
+def test_frozen_gubensek_mortality_value_is_not_exported_as_a_trial_outcome(tmp_path):
+    # Frozen public excerpt and erroneous QEI value from the 2026-09-07 audit.
+    sentence = "Hospital length of stay was also comparable in both groups and survival was 100%."
+    claims_dir = tmp_path / "qc"
+    claims_dir.mkdir()
+    claims = [{
+        "claim_type": "percentage", "raw_text": raw, "numeric_values": [value],
+        "sentence": sentence, "binding_confidence": "high", "endpoint": "mortality", "arm": "pooled",
+    } for raw, value in (("48%", 48), ("100%", 100))]
+    (claims_dir / "gubensek.quant_claims.json").write_text(json.dumps({
+        "paper_id": "gubensek", "claims": claims,
+    }))
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, topic="plasma_exchange_adverse_rates",
+        citation_tokens_by_paper_id={"gubensek": "Gubensek 2022"},
+    )
+    assert diag["drop_surface_gate"] == 1
+    assert diag["n_rendered"] == 1
+    assert "| Gubensek 2022 | mortality |" not in md
+    assert "48%" not in md
+    assert f"| Gubensek 2022 | {sentence} | 100% |" in md
+
+
+@pytest.mark.parametrize("case", [
+    "range_dash", "whitespace", "contradicted", "leading_negation",
+    "trailing_qualification", "missing", "wrong_paper", "metadata_only",
+    "changed_sign", "changed_operator", "changed_range",
+    "complete_negation", "complete_qualification",
+])
+def test_qei_checks_complete_parsed_source_and_preserves_authoritative_text(tmp_path, case):
+    source = (
+        "Furthermore, large cohorts treated conservatively without PE, have recently been "
+        "reported with a median reduction in triglycerides of 48% (IQR 29\u201363%) within "
+        "the first 24 h and comparable clinical outcomes (median hospital stay of 6 days "
+        "and mortality of 1.7%) to the published PE cohorts ( 9 )."
+    )
+    sentence = source.replace("\u2013", "-")
+    record_id = "gubensek"
+    if case == "whitespace":
+        source = source.replace("within the", "within\n  the")
+    elif case == "contradicted":
+        source = "Survival was 100% in both groups."
+    elif case == "leading_negation":
+        source = "We found no evidence that " + source
+    elif case == "trailing_qualification":
+        sentence = "Mortality was 48% in the intervention group"
+        source = sentence + " only in previous reports, not in this trial."
+    elif case == "wrong_paper":
+        record_id = "another_paper"
+    elif case == "changed_sign":
+        source = "The triglyceride change was -48% in the intervention group."
+        sentence = source.replace("-48%", "48%")
+    elif case == "changed_operator":
+        source = "Triglycerides fell by 48% without significance (P > 0.05)."
+        sentence = source.replace(">", "<")
+    elif case == "changed_range":
+        sentence = sentence.replace("29-63", "29-64")
+    elif case == "complete_negation":
+        sentence = source = "We found no evidence that mortality was 48% in this trial."
+    elif case == "complete_qualification":
+        sentence = source = (
+            "Mortality was 48% in the intervention group only in previous reports, not in this trial."
+        )
+    claims_dir, parsed_dir = tmp_path / "qc", tmp_path / "parsed"
+    claims_dir.mkdir()
+    parsed_dir.mkdir()
+    (claims_dir / "gubensek.quant_claims.json").write_text(json.dumps({
+        "paper_id": "gubensek", "claims": [{
+            "claim_type": "percentage", "raw_text": "48%", "numeric_values": [48],
+            "sentence": sentence, "binding_confidence": "partial",
+            "endpoint": "mortality", "arm": "", "claim_role": "unknown",
+        }],
+    }))
+    if case != "missing":
+        (parsed_dir / f"{record_id}.paper_sections.json").write_text(json.dumps({
+            "paper_id": record_id, "title": source,
+            "sections": {"discussion": "" if case == "metadata_only" else source},
+        }))
+    md, diag = build_results_table_with_diagnostic(
+        claims_dir, parsed_dir=parsed_dir, topic="plasma_exchange_adverse_rates",
+        accepted_paper_ids=frozenset({"gubensek"}),
+        citation_tokens_by_paper_id={"gubensek": "Gubensek 2022"},
+    )
+    if case in {"range_dash", "whitespace", "complete_negation", "complete_qualification"}:
+        assert diag["n_rendered"] == 1
+        assert f"| Gubensek 2022 | {' '.join(source.split())} | 48% |" in md
+        assert "29-63%" not in md
+    else:
+        assert md == ""
+        assert diag["drop_surface_gate"] == 1
+
+
 def test_qei_uses_canonical_citation_token(tmp_path):
     claims_dir = tmp_path / "qc"
     claims_dir.mkdir()
@@ -639,6 +707,7 @@ def test_qei_uses_canonical_citation_token(tmp_path):
     (claims_dir / "PMC1.quant_claims.json").write_text(json.dumps({
         "paper_id": paper_id,
         "claims": [{"claim_type": "p_value", "raw_text": "p=0.04",
+                    "sentence": "The weight comparison yielded p=0.04.",
                     "numeric_values": [0.04],
                     "binding_confidence": "high",
                     "endpoint": "body weight", "arm": "pooled"}],

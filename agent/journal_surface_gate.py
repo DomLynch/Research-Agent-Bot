@@ -294,6 +294,15 @@ def is_publishable_qei_row(row: Any) -> bool:
 
 
 def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
+    if "source_context" in row:
+        context, raw = (re.sub(r"([+\-−–])\s+(?=\d)", r"\1",
+                               re.sub(r"\s*([=<>≤≥])\s*", r"\1", " ".join(value.split()).casefold()))
+                        for value in (row["source_context"], row.get("source_value", "")))
+        pattern = rf"(?<![\w.+\-−–/^·⋅=<>≤≥])(?<!\d,){re.escape(raw)}(?!\w|[.,]\w|[/^·⋅])"
+        study = row.get("study_label", "").strip()
+        if not context or not raw or not re.search(r"\d", raw) or not re.search(pattern, context):
+            return ("QEI statistic missing from complete source context",)
+        return (f"malformed study id: {study}",) if not study or _malformed_study_id(study) else ()
     endpoint = _norm(row.get("endpoint", ""))
     value = _norm(row.get("value", ""))
     unit = _norm(row.get("unit_or_type", row.get("type", "")))
@@ -319,37 +328,36 @@ def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
     return tuple(issues)
 
 
+_QEI_FIELDS = {
+    3: ("study_label", "source_context", "source_value"),
+    6: ("study_label", "endpoint", "arm", "value", "unit_or_type", "statistic"),
+}
+
+
 def _extract_qei_rows(paper_md: str) -> Iterable[dict[str, str]]:
-    m = re.search(r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)", paper_md, flags=re.M | re.S)
-    if not m:
-        return ()
-    rows: list[dict[str, str]] = []
-    for line in m.group(1).splitlines():
-        if not line.startswith("|") or "---" in line:
-            continue
-        cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if cells[:6] == ["Study", "Endpoint", "Arm", "Value", "Type", "Statistic"]:
-            continue
-        if len(cells) >= 6:
-            rows.append({"study_label": cells[0], "endpoint": cells[1], "arm": cells[2], "value": cells[3], "unit_or_type": cells[4], "statistic": cells[5]})
-    return tuple(rows)
+    return tuple(
+        dict(zip(_QEI_FIELDS[len(cells)], cells))
+        for _, cells, _ in _qei_cells(paper_md) if len(cells) in _QEI_FIELDS
+    )
 
 
 def _qei_shape_issue_messages(paper_md: str) -> tuple[str, ...]:
-    m = re.search(r"^## Quantitative Evidence Index\b.*?\n(.*?)(?=^## |\Z)", paper_md, flags=re.M | re.S)
-    if not m:
-        return ()
-    issues: list[str] = []
+    return tuple(
+        f"malformed QEI row cell count: {line.strip()}"
+        for line, cells, expected in _qei_cells(paper_md) if len(cells) != expected
+    )
+
+
+def _qei_cells(paper_md: str) -> Iterable[tuple[str, list[str], int]]:
     expected = 6
-    for line in m.group(1).splitlines():
+    for line in (_section_body(paper_md, "Quantitative Evidence Index") or "").splitlines():
         if not line.startswith("|") or "---" in line:
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if cells[:6] == ["Study", "Endpoint", "Arm", "Value", "Type", "Statistic"]:
-            continue
-        if len(cells) != expected:
-            issues.append(f"malformed QEI row cell count: {line.strip()}")
-    return tuple(issues)
+        if cells == ["Study", "Source context", "Raw statistic"]:
+            expected = 3
+        elif cells[:6] != ["Study", "Endpoint", "Arm", "Value", "Type", "Statistic"]:
+            yield line, cells, expected
 
 
 def _section_issue_messages(paper_md: str, declared_review_type: str | None = None) -> tuple[str, ...]:
@@ -926,7 +934,7 @@ def _section_body(paper_md: str, heading: str) -> str | None:
 def _row_to_dict(row: Any) -> dict[str, str]:
     if isinstance(row, dict):
         return {str(k): str(v) for k, v in row.items()}
-    keys = ("study_label", "endpoint", "arm", "value", "unit_or_type", "statistic")
+    keys = _QEI_FIELDS[3 if hasattr(row, "source_context") else 6]
     return {key: str(getattr(row, key, "")) for key in keys}
 
 

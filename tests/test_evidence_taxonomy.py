@@ -315,6 +315,34 @@ def test_design_string_with_rct_substring_classifies_correctly() -> None:
     assert cls.tier == "A1"
 
 
+def test_future_trials_do_not_promote_pilots_or_protocols() -> None:
+    for title, abstract, tier in (
+        ("Single-group pilot in older adults", "Fully powered randomized controlled trials are needed.", "B2"),
+        ("Fasting pilot in adults", "We conducted a single-arm study. Results support larger randomized trials to confirm efficacy.", "B2"),
+        ("Hormone prediction in adults", "This retrospective cohort requires confirmation in larger randomised trials.", "B2"),
+        ("INTERFAST study design", "This randomized controlled trial is designed to investigate adults.", "D1"),
+    ):
+        assert not et.is_primary_randomized_study(title, abstract)
+        assert et.infer_from_paper_meta({"title": title, "abstract": abstract}).tier == tier
+    for title, abstract in (
+        ("A fasting intervention in adults", "Adults were randomized to fasting or placebo. Larger trials are needed."),
+        ("Prospective pilot in adults", "Patients were randomly assigned to two drugs. Larger randomised trials are required."),
+        ("Fasting and blood pressure in adults",
+         "Prior observational studies suggested benefit. We randomized 100 adults to fasting or usual diet and measured blood pressure."),
+        ("Fasting and blood pressure in adults",
+         "We randomized 100 adults with hypertension who were required to have stable medication to fasting or usual diet."),
+        ("Fasting effects in adults", "Adults were randomized in a trial required by the funding agency."),
+        ("Fasting in adults: study design and results of a randomized controlled trial",
+         "We randomized 100 adults to fasting or usual diet and report blood pressure outcomes."),
+    ):
+        assert et.is_primary_randomized_study(title, abstract)
+        assert et.infer_from_paper_meta({"title": title, "abstract": abstract}).tier == "A1"
+    assert et.is_primary_randomized_study("Prospective randomized controlled trial in adults")
+    assert not et.is_primary_randomized_study(
+        "INTERFAST study design", "This trial is designed to investigate adults.", study_design="randomized trial",
+    )
+
+
 def test_surrogate_endpoint_in_human_rct_is_a1() -> None:
     """Reviewer P2 fix: surrogate endpoints (HbA1c, BP, LDL) are
     validated clinical biomarkers per regulatory convention; they

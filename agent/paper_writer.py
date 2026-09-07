@@ -802,7 +802,7 @@ async def render_full_paper(
         receipts, _parsed_dir,
     )
     _table_md, _qei_diag = build_results_table_with_diagnostic(
-        _quant_dir, topic=topic,
+        _quant_dir, topic=topic, parsed_dir=_parsed_dir,
         accepted_paper_ids=_accepted_paper_ids,
         citation_tokens_by_paper_id=qei_citation_tokens_by_paper_id,
         quarantine_path=qei_quarantine_path,
