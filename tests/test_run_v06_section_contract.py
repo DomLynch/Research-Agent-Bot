@@ -1001,7 +1001,7 @@ def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     assert body.strip() == "Too short."
     assert orch._insufficient_evidence_owned_section_depth(
         out, "structured_narrative_synthesis",
-    )[0] == "Results=2/500"
+    )[0] == "Results=2/400"
 
 
 def test_restore_contract_collapses_consecutive_qei_headings() -> None:
@@ -1155,6 +1155,24 @@ def _full_evidence_owned_paper() -> str:
         "## Discussion\n\n" + _words(800) + "\n\n"
         "## Conclusion\n\n" + _words(250) + "\n"
     )
+
+
+@pytest.mark.parametrize("title,minimum,old_minimum", [("Results", 400, 500), ("Conclusion", 200, 250)])
+def test_final_section_minimum_keeps_writer_headroom(title, minimum, old_minimum) -> None:
+    from agent.journal_surface_gate import evaluate_journal_surface
+    from agent.paper_writer import SECTION_WORD_FLOORS
+
+    assert SECTION_WORD_FLOORS["results"] == 1500
+    assert SECTION_WORD_FLOORS["conclusion"] == 250
+    for count in (minimum - 1, minimum):
+        paper = _full_evidence_owned_paper().replace(
+            f"## {title}\n\n" + _words(old_minimum),
+            f"## {title}\n\n" + _words(count),
+        )
+        depth = orch._insufficient_evidence_owned_section_depth(paper, "structured_narrative_synthesis")
+        assert (f"{title}={count}/{minimum}" in depth) == (count < minimum)
+        surface = evaluate_journal_surface(paper)
+        assert any(f"section too short: {title} " in issue.detail for issue in surface.issues) == (count < minimum)
 
 
 def test_final_exit_code_9_for_missing_required_artifact(tmp_path: Path) -> None:

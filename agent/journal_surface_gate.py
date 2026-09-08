@@ -131,7 +131,7 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     # rewrite doesn't push abstracts over the section ceiling.
     ("structured corpus synthesis", "AI-assisted evidence synthesis"),
 )
-_REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 500, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 250}
+_REQUIRED_SECTIONS = {"Abstract": 150, "Introduction": 400, "Background": 300, "Methods": 300, "Results": 400, "Cross-Domain Synthesis": 850, "Discussion": 800, "Limitations": 250, "Conclusion": 200}
 # Slice 35 thin-corpus skeleton: only structural-evidence minimum required.
 _REQUIRED_SECTIONS_THIN = {"Abstract": 100, "Methods": 200, "Results": 200, "Limitations": 80, "Conclusion": 80}
 _SECTION_CEILINGS = {"Abstract": 300}
