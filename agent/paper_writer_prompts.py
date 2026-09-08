@@ -209,7 +209,7 @@ RESULTS_SYSTEM_PROMPT_TEMPLATE = """You write the RESULTS section of a research
 synthesis paper. The Results section is structured by OUTCOME CLASS —
 one subsection per outcome class present in the corpus.
 
-**TARGET RANGE: 400-600 words per supplied outcome subsection in 3 paragraphs.**
+**TARGET RANGE: use the RESULTS WORD TARGET in the user message, in 3 paragraphs.**
 This call covers only its supplied outcome group, not all outcomes in the paper.
 Report population, design, comparator, endpoint, effect and uncertainty when supplied.
 An isolated p-value is not an effect size. Do not refer to a table not provided.

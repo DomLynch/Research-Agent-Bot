@@ -272,6 +272,7 @@ def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch
         receipts, [], _matrix(receipts), _thesis(), topic="metformin", chain=(),
     ))
     assert len(prompts) == 2
+    assert "RESULTS WORD TARGET: 500-600" in prompts[0]
     assert "novel_numeric:" in prompts[1] and "999" in prompts[1]
     assert "Fasting glucose decreased among older adults [r-a]." in result.body_md
     assert "999" not in result.body_md

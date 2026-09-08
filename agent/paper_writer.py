@@ -546,7 +546,7 @@ async def write_results_section(
         user = _build_user_prompt(
             group, (), local_matrix, thesis, topic=topic,
             background_lit_entries=(),
-        )
+        ) + f"\nRESULTS WORD TARGET: {per_outcome_floor}-{per_outcome_floor + 100} prose words, excluding citation IDs. Never pad with unsupported claims."
         best: SynthesisSection | None = None
         best_words = 0
         current_prompt = user
