@@ -1,0 +1,1957 @@
+{
+  "duplicates": [
+    {
+      "firstFile": {
+        "end": 109,
+        "endLoc": {
+          "column": 18,
+          "line": 109,
+          "position": 4081
+        },
+        "name": "agent/enrichment/openfda.py",
+        "start": 92,
+        "startLoc": {
+          "column": 62,
+          "line": 92,
+          "position": 3556
+        }
+      },
+      "format": "python",
+      "fragment": "            \"count\": \"patient.reaction.reactionmeddrapt.exact\",\n            \"limit\": str(max(1, min(limit, 100))),\n        })\n        try:\n            response = await client.get(\n                _FAERS_URL, params=params, timeout=30.0,\n            )\n        except httpx.HTTPError:\n            return []\n        if response.status_code in (401, 403, 429):\n            return []\n        if response.status_code >= 500 or response.status_code != 200:\n            return []\n        try:\n            data = response.json()\n        except ValueError:\n            return []\n        out: list[AdverseReactionCount] = []",
+      "isNew": false,
+      "lines": 18,
+      "secondFile": {
+        "end": 156,
+        "endLoc": {
+          "column": 18,
+          "line": 156,
+          "position": 5729
+        },
+        "name": "agent/enrichment/openfda.py",
+        "start": 139,
+        "startLoc": {
+          "column": 38,
+          "line": 139,
+          "position": 5204
+        }
+      },
+      "tokens": 101
+    },
+    {
+      "firstFile": {
+        "end": 158,
+        "endLoc": {
+          "column": 15,
+          "line": 158,
+          "position": 11253
+        },
+        "name": "agent/reviewer_consistency_repairs.py",
+        "start": 148,
+        "startLoc": {
+          "column": 42,
+          "line": 148,
+          "position": 10849
+        }
+      },
+      "format": "python",
+      "fragment": "    next_heading = re.search(r\"^#{1,2}\\s+\", tail, re.M)\n    return match.end(), match.end() + (next_heading.start() if next_heading else len(tail))\n\n\ndef _upsert_note(paper_md: str, heading: str, marker: str, note: str) -> tuple[str, int]:\n    span = _section_span(paper_md, heading)\n    if not span:\n        return paper_md, 0\n    start, end = span\n    existing = re.search(rf\"^{re.escape(marker)}.*$\", paper_md[start:end], re.M)\n    if existing:",
+      "isNew": false,
+      "lines": 11,
+      "secondFile": {
+        "end": 138,
+        "endLoc": {
+          "column": 15,
+          "line": 138,
+          "position": 5693
+        },
+        "name": "agent/revision_source_roles.py",
+        "start": 128,
+        "startLoc": {
+          "column": 71,
+          "line": 128,
+          "position": 5289
+        }
+      },
+      "tokens": 105
+    },
+    {
+      "firstFile": {
+        "end": 645,
+        "endLoc": {
+          "column": 3,
+          "line": 645,
+          "position": 33517
+        },
+        "name": "agent/revision_quality.py",
+        "start": 634,
+        "startLoc": {
+          "column": 101,
+          "line": 634,
+          "position": 33102
+        }
+      },
+      "format": "python",
+      "fragment": "    return _normalise(_SUBSET_NOTE) in _normalise(paper_md) and _findings_map_is_exact(paper_md, rows)\n\n\ndef _mention_key(text: str) -> str: return _normalise(re.sub(r\"\\bet\\s+al\\.?\", \"\", text, flags=re.I))\n\n\ndef _named_rows(ask: str, rows: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:\n    lower = _mention_key(ask)\n    return [row for row in rows if any(value and re.search(rf\"(?<!\\w){re.escape(_mention_key(value))}(?!\\w)\", lower) for value in (_label(row), str(row.get(\"source_title\") or \"\").strip()))]\n\n\ndef _topic_fit_is_deterministic(ask: str, rows: Sequence[dict[str, Any]]) -> bool:",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 123,
+        "endLoc": {
+          "column": 3,
+          "line": 123,
+          "position": 4974
+        },
+        "name": "agent/revision_source_roles.py",
+        "start": 108,
+        "startLoc": {
+          "column": 12,
+          "line": 108,
+          "position": 4533
+        }
+      },
+      "tokens": 119
+    },
+    {
+      "firstFile": {
+        "end": 85,
+        "endLoc": {
+          "column": 19,
+          "line": 85,
+          "position": 2540
+        },
+        "name": "agent/sources/_base.py",
+        "start": 64,
+        "startLoc": {
+          "column": 77,
+          "line": 64,
+          "position": 1692
+        }
+      },
+      "format": "python",
+      "fragment": "    \"\"\"GET + parse JSON; record provider failures and preserve fail-soft IO.\"\"\"\n    try:\n        response = await client.get(\n            url, params=params, headers=headers, timeout=timeout,\n        )\n    except httpx.HTTPError as exc:\n        record_source_provider_failure(\n            \"transport_error\", f\"{type(exc).__name__}: {exc}\",\n        )\n        return None\n    if response.status_code in (401, 403):\n        record_source_provider_failure(\"auth_failed\", f\"HTTP {response.status_code}\")\n        return None\n    if response.status_code == 429:\n        record_source_provider_failure(\"rate_limited\", \"HTTP 429\")\n        return None\n    if response.status_code >= 500:\n        record_source_provider_failure(\"server_error\", f\"HTTP {response.status_code}\")\n        return None\n    if response.status_code != 200:\n        record_source_provider_failure(\"http_error\", f\"HTTP {response.status_code}\")\n        return None",
+      "isNew": false,
+      "lines": 22,
+      "secondFile": {
+        "end": 130,
+        "endLoc": {
+          "column": 19,
+          "line": 130,
+          "position": 4080
+        },
+        "name": "agent/sources/_base.py",
+        "start": 109,
+        "startLoc": {
+          "column": 78,
+          "line": 109,
+          "position": 3232
+        }
+      },
+      "tokens": 112
+    },
+    {
+      "firstFile": {
+        "end": 73,
+        "endLoc": {
+          "column": 46,
+          "line": 73,
+          "position": 2353
+        },
+        "name": "agent/sources/biorxiv.py",
+        "start": 53,
+        "startLoc": {
+          "column": 62,
+          "line": 53,
+          "position": 1722
+        }
+      },
+      "format": "python",
+      "fragment": "        data = await safe_get_json(client, _BIORXIV_SEARCH_URL, params=params)\n        if data is None:\n            return []\n        records = data.get(\"resultList\", {}).get(\"result\", [])\n        return [\n            hit for hit in (\n                self._parse(r, query=query) for r in records\n            )\n            if hit\n        ]\n\n    def _parse(\n        self, record: dict[str, Any], *, query: str,\n    ) -> RawHit | None:\n        title = clean_text(record.get(\"title\"), limit=300)\n        abstract = clean_text(\n            record.get(\"abstractText\"), limit=4000,\n        )\n        if not title or not abstract:\n            return None\n        doi = normalize_doi(record.get(\"doi\"))",
+      "isNew": false,
+      "lines": 21,
+      "secondFile": {
+        "end": 79,
+        "endLoc": {
+          "column": 46,
+          "line": 79,
+          "position": 2703
+        },
+        "name": "agent/sources/medrxiv.py",
+        "start": 59,
+        "startLoc": {
+          "column": 63,
+          "line": 59,
+          "position": 2072
+        }
+      },
+      "tokens": 135
+    },
+    {
+      "firstFile": {
+        "end": 73,
+        "endLoc": {
+          "column": 46,
+          "line": 73,
+          "position": 2353
+        },
+        "name": "agent/sources/biorxiv.py",
+        "start": 53,
+        "startLoc": {
+          "column": 62,
+          "line": 53,
+          "position": 1722
+        }
+      },
+      "format": "python",
+      "fragment": "        data = await safe_get_json(client, _BIORXIV_SEARCH_URL, params=params)\n        if data is None:\n            return []\n        records = data.get(\"resultList\", {}).get(\"result\", [])\n        return [\n            hit for hit in (\n                self._parse(r, query=query) for r in records\n            )\n            if hit\n        ]\n\n    def _parse(\n        self, record: dict[str, Any], *, query: str,\n    ) -> RawHit | None:\n        title = clean_text(record.get(\"title\"), limit=300)\n        abstract = clean_text(\n            record.get(\"abstractText\"), limit=4000,\n        )\n        if not title or not abstract:\n            return None\n        doi = normalize_doi(record.get(\"doi\"))",
+      "isNew": false,
+      "lines": 21,
+      "secondFile": {
+        "end": 71,
+        "endLoc": {
+          "column": 46,
+          "line": 71,
+          "position": 2193
+        },
+        "name": "agent/sources/pmc_oai.py",
+        "start": 51,
+        "startLoc": {
+          "column": 57,
+          "line": 51,
+          "position": 1562
+        }
+      },
+      "tokens": 135
+    },
+    {
+      "firstFile": {
+        "end": 115,
+        "endLoc": {
+          "column": 13,
+          "line": 115,
+          "position": 4010
+        },
+        "name": "agent/template_gate_adapter.py",
+        "start": 98,
+        "startLoc": {
+          "column": 43,
+          "line": 98,
+          "position": 3266
+        }
+      },
+      "format": "python",
+      "fragment": "            for cat, count in by_cat.items():\n                lines.append(f\"| {cat} | {count} |\")\n    lines.append(\"\")\n    lines.append(\"## Hits\")\n    lines.append(\"\")\n    if not hits:\n        lines.append(\"_No template-language hits detected._\")\n    else:\n        lines.append(\"| Line | Severity | Category | Phrase | Sentence |\")\n        lines.append(\"| ---: | --- | --- | --- | --- |\")\n        sorted_hits = sorted(hits, key=lambda h: (h.line_number, h.severity, h.category))\n        for h in sorted_hits:\n            sentence = h.sentence.replace(\"|\", \"\\\\|\").replace(\"\\n\", \" \")\n            phrase = h.phrase.replace(\"|\", \"\\\\|\")\n            lines.append(\n                f\"| {h.line_number} | {h.severity} | {h.category} | \"\n                f\"`{phrase}` | {sentence} |\"\n            )",
+      "isNew": false,
+      "lines": 18,
+      "secondFile": {
+        "end": 87,
+        "endLoc": {
+          "column": 13,
+          "line": 87,
+          "position": 2982
+        },
+        "name": "scripts/template_language_gate.py",
+        "start": 70,
+        "startLoc": {
+          "column": 47,
+          "line": 70,
+          "position": 2242
+        }
+      },
+      "tokens": 121
+    },
+    {
+      "firstFile": {
+        "end": 3368,
+        "endLoc": {
+          "column": 39,
+          "line": 3368,
+          "position": 131339
+        },
+        "name": "scripts/apply_consistency_fixes.py",
+        "start": 3343,
+        "startLoc": {
+          "column": 33,
+          "line": 3343,
+          "position": 130321
+        }
+      },
+      "format": "python",
+      "fragment": "            _THRESHOLD_KEYWORD_RE,\n        )\n        change_value_map: dict[str, set[str]] = {}\n        for qf in _audit.QUANT_DIR.glob(\"*.quant_claims.json\"):\n            try:\n                data = json.loads(qf.read_text())\n            except (OSError, json.JSONDecodeError):\n                continue\n            for c in data.get(\"claims\", []):\n                if c.get(\"binding_confidence\") != \"high\":\n                    continue\n                raw = (c.get(\"raw_text\") or \"\").strip()\n                if not raw:\n                    continue\n                sent_lc = (c.get(\"sentence\") or \"\").lower()\n                hits = {w for w in _CHANGE_WORDS if w in sent_lc}\n                if hits:\n                    change_value_map.setdefault(raw, set()).update(hits)\n    except (ImportError, OSError, ValueError):\n        return paper_md, 0\n    if not change_value_map:\n        return paper_md, 0\n    sent_split = re.compile(r\"(?<=[.!?])\\s+(?=[A-Z])\")\n    n_stripped = 0\n    out_paragraphs: list[str] = []\n    for para in paper_md.split(\"\\n\\n\"):",
+      "isNew": false,
+      "lines": 26,
+      "secondFile": {
+        "end": 3470,
+        "endLoc": {
+          "column": 39,
+          "line": 3470,
+          "position": 135761
+        },
+        "name": "scripts/apply_consistency_fixes.py",
+        "start": 3445,
+        "startLoc": {
+          "column": 30,
+          "line": 3445,
+          "position": 134743
+        }
+      },
+      "tokens": 197
+    },
+    {
+      "firstFile": {
+        "end": 3393,
+        "endLoc": {
+          "column": 35,
+          "line": 3393,
+          "position": 132466
+        },
+        "name": "scripts/apply_consistency_fixes.py",
+        "start": 3382,
+        "startLoc": {
+          "column": 8,
+          "line": 3382,
+          "position": 131824
+        }
+      },
+      "format": "python",
+      "fragment": "        change_sent_indices: dict[str, int] = {}\n        for i, sent in enumerate(sentences):\n            sent_lc = sent.lower()\n            for numeric in change_value_map:\n                if numeric in sent and numeric not in change_sent_indices:\n                    change_sent_indices[numeric] = i\n            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}\n            if change_hits:\n                for numeric in _CHANGE_SPEED_VALUE_RE.findall(sent):\n                    change_sent_indices.setdefault(numeric, i)\n                    change_value_map.setdefault(numeric, set()).update(change_hits)\n        if not change_sent_indices:",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 1733,
+        "endLoc": {
+          "column": 35,
+          "line": 1733,
+          "position": 75025
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1722,
+        "startLoc": {
+          "column": 8,
+          "line": 1722,
+          "position": 74383
+        }
+      },
+      "tokens": 102
+    },
+    {
+      "firstFile": {
+        "end": 189,
+        "endLoc": {
+          "column": 45,
+          "line": 189,
+          "position": 7632
+        },
+        "name": "scripts/audit_v06_paper.py",
+        "start": 170,
+        "startLoc": {
+          "column": 0,
+          "line": 170,
+          "position": 6938
+        }
+      },
+      "format": "python",
+      "fragment": "def _manifest_structural_numerics(manifest: dict | None) -> set[str]:\n    if not isinstance(manifest, dict):\n        return set()\n    keys = (\n        \"n_receipts\", \"n_high_confidence_claims_total\",\n        \"n_non_orthogonal_tensions\", \"total_words\",\n    )\n    out = {\n        canonical_numeric(str(manifest[k]))\n        for k in keys\n        if isinstance(manifest.get(k), (int, float))\n    }\n    counts = ((manifest.get(\"receipt_funnel\") or {}).get(\"counts\") or {})\n    if isinstance(counts, dict):\n        out.update(\n            canonical_numeric(str(v))\n            for v in counts.values()\n            if isinstance(v, (int, float))\n        )\n    receipts = manifest.get(\"receipts\") or ()",
+      "isNew": false,
+      "lines": 20,
+      "secondFile": {
+        "end": 532,
+        "endLoc": {
+          "column": 45,
+          "line": 532,
+          "position": 21182
+        },
+        "name": "scripts/numeric_role_guard.py",
+        "start": 513,
+        "startLoc": {
+          "column": 0,
+          "line": 513,
+          "position": 20488
+        }
+      },
+      "tokens": 148
+    },
+    {
+      "firstFile": {
+        "end": 1362,
+        "endLoc": {
+          "column": 14,
+          "line": 1362,
+          "position": 58398
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1348,
+        "startLoc": {
+          "column": 20,
+          "line": 1348,
+          "position": 57830
+        }
+      },
+      "format": "python",
+      "fragment": "    change_value_map: dict[str, set[str]] = {}\n    for qf in quant_dir.glob(\"*.quant_claims.json\"):\n        try:\n            data = json.loads(qf.read_text())\n        except (OSError, json.JSONDecodeError):\n            continue\n        for c in data.get(\"claims\", []):\n            if c.get(\"binding_confidence\") != \"high\":\n                continue\n            raw = (c.get(\"raw_text\") or \"\").strip()\n            if not raw:\n                continue\n            sent_lc = (c.get(\"sentence\") or \"\").lower()\n            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}\n            if not change_hits:",
+      "isNew": false,
+      "lines": 15,
+      "secondFile": {
+        "end": 1501,
+        "endLoc": {
+          "column": 14,
+          "line": 1501,
+          "position": 64602
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1487,
+        "startLoc": {
+          "column": 22,
+          "line": 1487,
+          "position": 64034
+        }
+      },
+      "tokens": 123
+    },
+    {
+      "firstFile": {
+        "end": 1362,
+        "endLoc": {
+          "column": 30,
+          "line": 1362,
+          "position": 58414
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1348,
+        "startLoc": {
+          "column": 4,
+          "line": 1348,
+          "position": 57814
+        }
+      },
+      "format": "python",
+      "fragment": "    change_value_map: dict[str, set[str]] = {}\n    for qf in quant_dir.glob(\"*.quant_claims.json\"):\n        try:\n            data = json.loads(qf.read_text())\n        except (OSError, json.JSONDecodeError):\n            continue\n        for c in data.get(\"claims\", []):\n            if c.get(\"binding_confidence\") != \"high\":\n                continue\n            raw = (c.get(\"raw_text\") or \"\").strip()\n            if not raw:\n                continue\n            sent_lc = (c.get(\"sentence\") or \"\").lower()\n            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}\n            if not change_hits:",
+      "isNew": false,
+      "lines": 15,
+      "secondFile": {
+        "end": 1699,
+        "endLoc": {
+          "column": 27,
+          "line": 1699,
+          "position": 73517
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1685,
+        "startLoc": {
+          "column": 4,
+          "line": 1685,
+          "position": 72920
+        }
+      },
+      "tokens": 126
+    },
+    {
+      "firstFile": {
+        "end": 1502,
+        "endLoc": {
+          "column": 31,
+          "line": 1502,
+          "position": 64647
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1489,
+        "startLoc": {
+          "column": 11,
+          "line": 1489,
+          "position": 64125
+        }
+      },
+      "format": "python",
+      "fragment": "        try:\n            data = json.loads(qf.read_text())\n        except (OSError, json.JSONDecodeError):\n            continue\n        for c in data.get(\"claims\", []):\n            if c.get(\"binding_confidence\") != \"high\":\n                continue\n            raw = (c.get(\"raw_text\") or \"\").strip()\n            if not raw:\n                continue\n            sent_lc = (c.get(\"sentence\") or \"\").lower()\n            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}\n            if change_hits:\n                change_numerics.add(raw)",
+      "isNew": false,
+      "lines": 14,
+      "secondFile": {
+        "end": 1700,
+        "endLoc": {
+          "column": 32,
+          "line": 1700,
+          "position": 73550
+        },
+        "name": "scripts/final_consistency_audit.py",
+        "start": 1687,
+        "startLoc": {
+          "column": 11,
+          "line": 1687,
+          "position": 73027
+        }
+      },
+      "tokens": 101
+    },
+    {
+      "firstFile": {
+        "end": 331,
+        "endLoc": {
+          "column": 54,
+          "line": 331,
+          "position": 15432
+        },
+        "name": "scripts/review_noise_control.py",
+        "start": 315,
+        "startLoc": {
+          "column": 16,
+          "line": 315,
+          "position": 14919
+        }
+      },
+      "format": "python",
+      "fragment": "    lines = text.splitlines()\n    out: list[str] = []\n    removed = 0\n    i = 0\n    while i < len(lines):\n        if not lines[i].lstrip().startswith(\"|\"):\n            out.append(lines[i])\n            i += 1\n            continue\n        start = i\n        while i < len(lines) and lines[i].lstrip().startswith(\"|\"):\n            i += 1\n        table = lines[start:i]\n        if len(table) < 3 or not _separator_row(table[1]):\n            out.extend(table)\n            continue\n        header = [c.lower() for c in _cells(table[0])]",
+      "isNew": false,
+      "lines": 17,
+      "secondFile": {
+        "end": 396,
+        "endLoc": {
+          "column": 54,
+          "line": 396,
+          "position": 17825
+        },
+        "name": "scripts/review_noise_control.py",
+        "start": 380,
+        "startLoc": {
+          "column": 26,
+          "line": 380,
+          "position": 17312
+        }
+      },
+      "tokens": 137
+    },
+    {
+      "firstFile": {
+        "end": 733,
+        "endLoc": {
+          "column": 28,
+          "line": 733,
+          "position": 29792
+        },
+        "name": "tests/test_citation_registry.py",
+        "start": 705,
+        "startLoc": {
+          "column": 46,
+          "line": 705,
+          "position": 29048
+        }
+      },
+      "format": "python",
+      "fragment": "    matrix.receipts and trips invariant checks.\"\"\"\n\n    @dataclass(frozen=True)\n    class _Receipt:\n        receipt_id: str\n        source_year: int | None = None\n        source_doi: str | None = None\n        source_pmid: str | None = None\n        source_pmcid: str | None = None\n        source_journal: str | None = None\n        title: str | None = None\n\n    @dataclass(frozen=True)\n    class _Tension:\n        receipt_a_id: str\n        receipt_b_id: str\n        kind: str = \"agreement\"\n        outcome_class: str = \"longevity\"\n        summary: str = \"\"\n        severity: int = 0\n\n    @dataclass(frozen=True)\n    class _Matrix:\n        receipts: tuple\n        pairs: tuple\n\n    receipts = [\n        _Receipt(receipt_id=\"Walton_2019_MASTERS\", source_year=2019),\n        _Receipt(receipt_id=\"PMC12978362_molecular_metformin\",",
+      "isNew": false,
+      "lines": 29,
+      "secondFile": {
+        "end": 787,
+        "endLoc": {
+          "column": 28,
+          "line": 787,
+          "position": 31700
+        },
+        "name": "tests/test_citation_registry.py",
+        "start": 759,
+        "startLoc": {
+          "column": 61,
+          "line": 759,
+          "position": 30956
+        }
+      },
+      "tokens": 128
+    },
+    {
+      "firstFile": {
+        "end": 1621,
+        "endLoc": {
+          "column": 20,
+          "line": 1621,
+          "position": 69297
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 1606,
+        "startLoc": {
+          "column": 4,
+          "line": 1606,
+          "position": 68646
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"aerobic_exercise\", target_journal=True)\n    runs_root = tmp_path / \"runs\"\n    ledger_dir = runs_root / cycle.LEDGER_DIR\n    old = dt.datetime.now(dt.UTC) - dt.timedelta(days=cycle.PUBLISHED_TOPIC_COOLDOWN_DAYS + 1)\n    _write_json(runs_root / cycle.submit_bridge.LEDGER_DIR / \"_submitted_fingerprints.json\", [{\n        \"date\": old.isoformat(),\n        \"topic\": \"aerobic_exercise\",\n        \"fingerprint\": \"sha256:abc\",\n    }])\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n\n    selected = cycle.select_topic(\n        [\"aerobic_exercise\"],\n        ledger_dir,\n        runs_root=runs_root,\n        remote_seen=set(),",
+      "isNew": false,
+      "lines": 16,
+      "secondFile": {
+        "end": 1672,
+        "endLoc": {
+          "column": 20,
+          "line": 1672,
+          "position": 71484
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 1657,
+        "startLoc": {
+          "column": 4,
+          "line": 1657,
+          "position": 70833
+        }
+      },
+      "tokens": 110
+    },
+    {
+      "firstFile": {
+        "end": 2204,
+        "endLoc": {
+          "column": 67,
+          "line": 2204,
+          "position": 93795
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 2193,
+        "startLoc": {
+          "column": 4,
+          "line": 2193,
+          "position": 93349
+        }
+      },
+      "format": "python",
+      "fragment": "    monkeypatch.setattr(cycle, \"discover_topics\", lambda: topics)\n    monkeypatch.setattr(cycle, \"_fresh_topic_pool\", lambda *_a, **_k: topics)\n    monkeypatch.setattr(\n        cycle,\n        \"select_topic\",\n        lambda _topics, _ledger, **kwargs: next(\n            (topic for topic in topics if topic not in (kwargs.get(\"exclude\") or set())),\n            None,\n        ),\n    )\n\n    def repair_topic(topic: str, **_kwargs: Any) -> dict[str, str]:",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 2324,
+        "endLoc": {
+          "column": 67,
+          "line": 2324,
+          "position": 98503
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 2313,
+        "startLoc": {
+          "column": 4,
+          "line": 2313,
+          "position": 98057
+        }
+      },
+      "tokens": 100
+    },
+    {
+      "firstFile": {
+        "end": 3334,
+        "endLoc": {
+          "column": 14,
+          "line": 3334,
+          "position": 139229
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 3323,
+        "startLoc": {
+          "column": 52,
+          "line": 3323,
+          "position": 138562
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"creatine\", target_journal=True)\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda *_a, **_k: (\n        True, \"source_topic_precision_ok:10/10\", [],\n    ))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    calls: dict[str, Any] = {}\n\n    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:\n        calls[\"synthesis\"] = {\"topic\": topic, \"out_dir\": out_dir.name, \"dry_run\": dry_run, \"timeout\": timeout}",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 3720,
+        "endLoc": {
+          "column": 25,
+          "line": 3720,
+          "position": 156921
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 3708,
+        "startLoc": {
+          "column": 5,
+          "line": 3708,
+          "position": 156251
+        }
+      },
+      "tokens": 138
+    },
+    {
+      "firstFile": {
+        "end": 3412,
+        "endLoc": {
+          "column": 18,
+          "line": 3412,
+          "position": 142533
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 3384,
+        "startLoc": {
+          "column": 99,
+          "line": 3384,
+          "position": 141425
+        }
+      },
+      "format": "python",
+      "fragment": "        return {\"status\": \"topic_supply_refreshed\", \"created\": [{\"slug\": \"sglt2_inhibitors_effects\"}]}\n\n    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:\n        qdir = cycle.CORPORA / topic / \"quant_claims\"\n        qdir.mkdir(parents=True)\n        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):\n            _write_json(qdir / f\"seed-{i}.quant_claims.json\", {\"paper_id\": f\"{topic}-{i}\"})\n        return {\"status\": \"corpus_seeded\", \"n_quant_claims\": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}\n\n    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:\n        calls[\"topic\"] = topic\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_refresh_topic_supply\", fake_refresh)\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-06-25\",\n        run_synthesis=True,\n        submit=True,\n        mode=\"fresh\",\n        remote_loader=lambda: (set(), None),\n        ensure_corpus=fake_corpus,\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n    )\n\n    assert ledger[\"topic_supply_refresh\"][\"status\"] == \"topic_supply_refreshed\"",
+      "isNew": false,
+      "lines": 29,
+      "secondFile": {
+        "end": 3761,
+        "endLoc": {
+          "column": 18,
+          "line": 3761,
+          "position": 158633
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 3733,
+        "startLoc": {
+          "column": 95,
+          "line": 3733,
+          "position": 157525
+        }
+      },
+      "tokens": 212
+    },
+    {
+      "firstFile": {
+        "end": 4234,
+        "endLoc": {
+          "column": 30,
+          "line": 4234,
+          "position": 180011
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 4215,
+        "startLoc": {
+          "column": 4,
+          "line": 4215,
+          "position": 179007
+        }
+      },
+      "format": "python",
+      "fragment": "    paper = source / \"full_paper.md\"\n    paper.write_text(f\"# {title}\\n\", encoding=\"utf-8\")\n    _write_json(tmp_path / \"runs\" / cycle.submit_bridge.LEDGER_DIR / \"_submitted_fingerprints.json\", [{\n        \"run\": source.name,\n        \"topic\": \"taurine\",\n        \"fingerprint\": cycle.submit_bridge._sha256(paper),\n    }])\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda *_a, **_k: (True, \"source_topic_precision_ok:67/67\", []))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda *_a, **_k: {\"passed\": True})\n    monkeypatch.setattr(cycle, \"_preflight\", lambda *_a, **_k: {\n        \"passed\": True,\n        \"has_manifest\": True,\n        \"n_receipts\": 67,\n        \"n_tensions\": 727,\n        \"n_primary_tier\": 1,\n    })\n    monkeypatch.setattr(cycle, \"_source_manifest_availability\", lambda *_a, **_k: {",
+      "isNew": false,
+      "lines": 20,
+      "secondFile": {
+        "end": 4511,
+        "endLoc": {
+          "column": 30,
+          "line": 4511,
+          "position": 192153
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 4492,
+        "startLoc": {
+          "column": 4,
+          "line": 4492,
+          "position": 191149
+        }
+      },
+      "tokens": 186
+    },
+    {
+      "firstFile": {
+        "end": 4842,
+        "endLoc": {
+          "column": 34,
+          "line": 4842,
+          "position": 206717
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 4827,
+        "startLoc": {
+          "column": 4,
+          "line": 4827,
+          "position": 206095
+        }
+      },
+      "format": "python",
+      "fragment": "    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:\n        synthesized.append(topic)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_repair_topic_corpus\", fake_repair)\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-06-05\",\n        run_synthesis=True,\n        submit=True,\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        ensure_corpus=fake_corpus,",
+      "isNew": false,
+      "lines": 16,
+      "secondFile": {
+        "end": 4891,
+        "endLoc": {
+          "column": 34,
+          "line": 4891,
+          "position": 208909
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 4876,
+        "startLoc": {
+          "column": 4,
+          "line": 4876,
+          "position": 208287
+        }
+      },
+      "tokens": 118
+    },
+    {
+      "firstFile": {
+        "end": 5009,
+        "endLoc": {
+          "column": 3,
+          "line": 5009,
+          "position": 213474
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 4994,
+        "startLoc": {
+          "column": 4,
+          "line": 4994,
+          "position": 212953
+        }
+      },
+      "format": "python",
+      "fragment": "    def fake_repair(topic: str, **_kwargs: Any) -> dict[str, Any]:\n        repairs.append(topic)\n        return {\"status\": \"corpus_repaired\"}\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n    monkeypatch.setattr(cycle, \"_repair_topic_corpus\", fake_repair)\n\n    result = cycle._receipt_preflight(\"zero_topic\", tmp_path / \"runs\" / \"synthesis-zero_topic-v06-test\")\n\n    assert result[\"passed\"] is False\n    assert result[\"n_receipts\"] == 0\n    assert len(result[\"probes\"]) == 1\n    assert repairs == []\n\n\ndef test_receipt_preflight_does_not_repair_zero_receipt_failed_probe(tmp_path: Path, monkeypatch) -> None:",
+      "isNew": false,
+      "lines": 16,
+      "secondFile": {
+        "end": 5034,
+        "endLoc": {
+          "column": 3,
+          "line": 5034,
+          "position": 214503
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 5019,
+        "startLoc": {
+          "column": 4,
+          "line": 5019,
+          "position": 213982
+        }
+      },
+      "tokens": 101
+    },
+    {
+      "firstFile": {
+        "end": 5574,
+        "endLoc": {
+          "column": 7,
+          "line": 5574,
+          "position": 238495
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 5564,
+        "startLoc": {
+          "column": 31,
+          "line": 5564,
+          "position": 237962
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"acarbose\", target_journal=True)\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda *_a, **_k: (\n        True, \"source_topic_precision_ok:10/10\", [],\n    ))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    runs: list[str] = []\n\n    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:",
+      "isNew": false,
+      "lines": 11,
+      "secondFile": {
+        "end": 5624,
+        "endLoc": {
+          "column": 15,
+          "line": 5624,
+          "position": 240652
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 5615,
+        "startLoc": {
+          "column": 50,
+          "line": 5615,
+          "position": 240112
+        }
+      },
+      "tokens": 101
+    },
+    {
+      "firstFile": {
+        "end": 5581,
+        "endLoc": {
+          "column": 21,
+          "line": 5581,
+          "position": 238811
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 5570,
+        "startLoc": {
+          "column": 5,
+          "line": 5570,
+          "position": 238360
+        }
+      },
+      "format": "python",
+      "fragment": "    ))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    runs: list[str] = []\n\n    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:\n        runs.append(out_dir.name)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    def fake_submit(**_kwargs: Any) -> dict[str, Any]:\n        return {\n            \"status\": \"submitted_to_researka\",",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 10436,
+        "endLoc": {
+          "column": 21,
+          "line": 10436,
+          "position": 441539
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10424,
+        "startLoc": {
+          "column": 81,
+          "line": 10424,
+          "position": 441087
+        }
+      },
+      "tokens": 110
+    },
+    {
+      "firstFile": {
+        "end": 5679,
+        "endLoc": {
+          "column": 16,
+          "line": 5679,
+          "position": 242819
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 5669,
+        "startLoc": {
+          "column": 31,
+          "line": 5669,
+          "position": 242222
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"acarbose\", target_journal=True)\n    _topic(tmp_path, \"creatine\", target_journal=True)\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda *_a, **_k: (\n        True, \"source_topic_precision_ok:10/10\", [],\n    ))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    topics: list[str] = []\n    submit_calls = 0",
+      "isNew": false,
+      "lines": 11,
+      "secondFile": {
+        "end": 5734,
+        "endLoc": {
+          "column": 8,
+          "line": 5734,
+          "position": 244825
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 5724,
+        "startLoc": {
+          "column": 32,
+          "line": 5724,
+          "position": 244236
+        }
+      },
+      "tokens": 111
+    },
+    {
+      "firstFile": {
+        "end": 9502,
+        "endLoc": {
+          "column": 21,
+          "line": 9502,
+          "position": 404183
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 9474,
+        "startLoc": {
+          "column": 34,
+          "line": 9474,
+          "position": 403241
+        }
+      },
+      "format": "python",
+      "fragment": "        \"unchanged_retry_count\": 1,\n    })\n    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / \"_submitted_fingerprints.json\", [{\n        \"run\": run.name,\n        \"topic\": \"influenza_vaccination_effects\",\n        \"fingerprint\": \"sha256:x\",\n        \"submission_id\": \"submission-1\",\n        \"submitted_at\": \"2026-07-18T19:27:45+00:00\",\n    }])\n    request = {\n        \"artifactId\": \"decision-1\",\n        \"submissionId\": \"submission-1\",\n        \"title\": \"Research Synthesis: Influenza Vaccination Effects — full paper\",\n        \"topic\": \"influenza_vaccination_effects\",\n        \"reviewedAt\": \"2026-07-18T19:28:00+00:00\",\n        \"feedback\": \"\",\n        \"retry_unchanged\": True,\n        \"failure_category\": \"source_authority_available\",\n    }\n\n    pending, error = cycle._pending_remote_revision(\n        runs,\n        ledger_dir,\n        loader=lambda: ([request], None),\n        published_loader=lambda: (set(), None),\n    )\n\n    assert error is None\n    assert pending is not None",
+      "isNew": false,
+      "lines": 29,
+      "secondFile": {
+        "end": 9545,
+        "endLoc": {
+          "column": 21,
+          "line": 9545,
+          "position": 405702
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 9517,
+        "startLoc": {
+          "column": 56,
+          "line": 9517,
+          "position": 404760
+        }
+      },
+      "tokens": 122
+    },
+    {
+      "firstFile": {
+        "end": 10185,
+        "endLoc": {
+          "column": 22,
+          "line": 10185,
+          "position": 431669
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10156,
+        "startLoc": {
+          "column": 98,
+          "line": 10156,
+          "position": 430846
+        }
+      },
+      "format": "python",
+      "fragment": "    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    topics: list[str] = []\n\n    def fake_synthesis(\n        topic: str,\n        out_dir: Path,\n        *,\n        dry_run: bool,\n        timeout: int | None = None,\n        revision_feedback: str | None = None,\n        review_type_override: str | None = None,\n        revision_source_run: Path | None = None,\n    ) -> int:\n        topics.append(topic)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-05-24\",\n        run_synthesis=True,\n        submit=True,\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        max_attempts=2,\n    )\n\n    assert topics == [\"aaa_thin_topic\"]",
+      "isNew": false,
+      "lines": 30,
+      "secondFile": {
+        "end": 10230,
+        "endLoc": {
+          "column": 22,
+          "line": 10230,
+          "position": 433612
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10201,
+        "startLoc": {
+          "column": 129,
+          "line": 10201,
+          "position": 432789
+        }
+      },
+      "tokens": 157
+    },
+    {
+      "firstFile": {
+        "end": 10185,
+        "endLoc": {
+          "column": 10,
+          "line": 10185,
+          "position": 431657
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10156,
+        "startLoc": {
+          "column": 97,
+          "line": 10156,
+          "position": 430845
+        }
+      },
+      "format": "python",
+      "fragment": "    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    topics: list[str] = []\n\n    def fake_synthesis(\n        topic: str,\n        out_dir: Path,\n        *,\n        dry_run: bool,\n        timeout: int | None = None,\n        revision_feedback: str | None = None,\n        review_type_override: str | None = None,\n        revision_source_run: Path | None = None,\n    ) -> int:\n        topics.append(topic)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-05-24\",\n        run_synthesis=True,\n        submit=True,\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        max_attempts=2,\n    )\n\n    assert topics == [\"aaa_thin_topic\"]",
+      "isNew": false,
+      "lines": 30,
+      "secondFile": {
+        "end": 12481,
+        "endLoc": {
+          "column": 10,
+          "line": 12481,
+          "position": 532651
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12452,
+        "startLoc": {
+          "column": 4,
+          "line": 12452,
+          "position": 531839
+        }
+      },
+      "tokens": 154
+    },
+    {
+      "firstFile": {
+        "end": 10222,
+        "endLoc": {
+          "column": 13,
+          "line": 10222,
+          "position": 433343
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10197,
+        "startLoc": {
+          "column": 78,
+          "line": 10197,
+          "position": 432410
+        }
+      },
+      "format": "python",
+      "fragment": "    _prior_run(tmp_path, \"zzz_solid_topic\", receipts=40, tensions=5, primary=3)\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_current_low_source_precision_topics\", lambda topics: set())\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda topic, **_k: (True, \"source_topic_precision_ok:40/40\", []))\n    topics: list[str] = []\n\n    def fake_synthesis(\n        topic: str,\n        out_dir: Path,\n        *,\n        dry_run: bool,\n        timeout: int | None = None,\n        revision_feedback: str | None = None,\n        review_type_override: str | None = None,\n        revision_source_run: Path | None = None,\n    ) -> int:\n        topics.append(topic)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-05-24\",",
+      "isNew": false,
+      "lines": 26,
+      "secondFile": {
+        "end": 11245,
+        "endLoc": {
+          "column": 13,
+          "line": 11245,
+          "position": 476233
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 11220,
+        "startLoc": {
+          "column": 6,
+          "line": 11220,
+          "position": 475300
+        }
+      },
+      "tokens": 169
+    },
+    {
+      "firstFile": {
+        "end": 10473,
+        "endLoc": {
+          "column": 47,
+          "line": 10473,
+          "position": 443229
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10462,
+        "startLoc": {
+          "column": 38,
+          "line": 10462,
+          "position": 442547
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"allostatic_load\", target_journal=True)\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    synthesis_runs: list[str] = []\n    submit_calls = 0\n\n    def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, revision_feedback: str | None = None) -> int:\n        synthesis_runs.append(out_dir.name)\n        out_dir.mkdir(parents=True)\n        (out_dir / \"full_paper.md\").write_text(",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 10669,
+        "endLoc": {
+          "column": 47,
+          "line": 10669,
+          "position": 451298
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10658,
+        "startLoc": {
+          "column": 32,
+          "line": 10658,
+          "position": 450616
+        }
+      },
+      "tokens": 139
+    },
+    {
+      "firstFile": {
+        "end": 10733,
+        "endLoc": {
+          "column": 13,
+          "line": 10733,
+          "position": 453807
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 10705,
+        "startLoc": {
+          "column": 110,
+          "line": 10705,
+          "position": 452734
+        }
+      },
+      "format": "python",
+      "fragment": "    _write_json(prior / \"full_paper.audit.json\", {\"checks\": [{\"name\": \"Q9_numeric_density\", \"passed\": False}]})\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_current_low_source_precision_topics\", lambda topics: set())\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda topic, **_k: (\n        True, \"source_topic_precision_ok:40/40\", [],\n    ))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda *_args, **_kwargs: {\"passed\": True})\n    overrides: list[str | None] = []\n\n    def fake_synthesis(\n        topic: str,\n        out_dir: Path,\n        *,\n        dry_run: bool,\n        timeout: int | None = None,\n        revision_feedback: str | None = None,\n        review_type_override: str | None = None,\n        revision_source_run: Path | None = None,\n    ) -> int:\n        overrides.append(review_type_override)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-05-28\",",
+      "isNew": false,
+      "lines": 29,
+      "secondFile": {
+        "end": 11196,
+        "endLoc": {
+          "column": 13,
+          "line": 11196,
+          "position": 474212
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 11168,
+        "startLoc": {
+          "column": 58,
+          "line": 11168,
+          "position": 473139
+        }
+      },
+      "tokens": 194
+    },
+    {
+      "firstFile": {
+        "end": 11650,
+        "endLoc": {
+          "column": 23,
+          "line": 11650,
+          "position": 495951
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 11640,
+        "startLoc": {
+          "column": 56,
+          "line": 11640,
+          "position": 495262
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"oral_microbiome_periodontal_aging\", target_journal=True)\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_current_low_source_precision_topics\", lambda topics: set())\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda topic, **_k: (True, \"source_topic_precision_ok:10/10\", []))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\n        \"passed\": False,\n        \"status\": \"receipt_preflight_insufficient\",\n        \"n_receipts\": 5,\n        \"min_receipts\": 12,",
+      "isNew": false,
+      "lines": 11,
+      "secondFile": {
+        "end": 12352,
+        "endLoc": {
+          "column": 31,
+          "line": 12352,
+          "position": 527164
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12345,
+        "startLoc": {
+          "column": 36,
+          "line": 12345,
+          "position": 526553
+        }
+      },
+      "tokens": 114
+    },
+    {
+      "firstFile": {
+        "end": 12000,
+        "endLoc": {
+          "column": 21,
+          "line": 12000,
+          "position": 512118
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 11975,
+        "startLoc": {
+          "column": 31,
+          "line": 11975,
+          "position": 511114
+        }
+      },
+      "format": "python",
+      "fragment": "                \"n_receipts\": 3,\n                \"min_receipts\": 12,\n            }\n        return {\"passed\": True, \"status\": \"receipt_preflight_ok\", \"n_receipts\": 18, \"min_receipts\": 12}\n\n    synthesized: list[str] = []\n\n    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:\n        synthesized.append(topic)\n        out_dir.mkdir(parents=True)\n        _write_json(out_dir / \"final_status.json\", {\"submission_ready\": True})\n        (out_dir / \"full_paper.md\").write_text(_surface_passing_paper(), encoding=\"utf-8\")\n        return 0\n\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", fake_receipt_preflight)\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-06-02\",\n        run_synthesis=True,\n        submit=True,\n        mode=\"fresh\",\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        max_attempts=2,",
+      "isNew": false,
+      "lines": 26,
+      "secondFile": {
+        "end": 12051,
+        "endLoc": {
+          "column": 21,
+          "line": 12051,
+          "position": 514469
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12026,
+        "startLoc": {
+          "column": 31,
+          "line": 12026,
+          "position": 513465
+        }
+      },
+      "tokens": 181
+    },
+    {
+      "firstFile": {
+        "end": 12003,
+        "endLoc": {
+          "column": 10,
+          "line": 12003,
+          "position": 512138
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 11978,
+        "startLoc": {
+          "column": 8,
+          "line": 11978,
+          "position": 511174
+        }
+      },
+      "format": "python",
+      "fragment": "        return {\"passed\": True, \"status\": \"receipt_preflight_ok\", \"n_receipts\": 18, \"min_receipts\": 12}\n\n    synthesized: list[str] = []\n\n    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:\n        synthesized.append(topic)\n        out_dir.mkdir(parents=True)\n        _write_json(out_dir / \"final_status.json\", {\"submission_ready\": True})\n        (out_dir / \"full_paper.md\").write_text(_surface_passing_paper(), encoding=\"utf-8\")\n        return 0\n\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", fake_receipt_preflight)\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-06-02\",\n        run_synthesis=True,\n        submit=True,\n        mode=\"fresh\",\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        max_attempts=2,\n    )\n\n    assert synthesized == [\"zzz_ready\"]",
+      "isNew": false,
+      "lines": 26,
+      "secondFile": {
+        "end": 12223,
+        "endLoc": {
+          "column": 10,
+          "line": 12223,
+          "position": 521129
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12198,
+        "startLoc": {
+          "column": 8,
+          "line": 12198,
+          "position": 520165
+        }
+      },
+      "tokens": 179
+    },
+    {
+      "firstFile": {
+        "end": 12356,
+        "endLoc": {
+          "column": 10,
+          "line": 12356,
+          "position": 527284
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12346,
+        "startLoc": {
+          "column": 57,
+          "line": 12346,
+          "position": 526633
+        }
+      },
+      "format": "python",
+      "fragment": "    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS_DB\", tmp_path / \"topic_packs_db\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_current_low_source_precision_topics\", lambda topics: set())\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda topic, **_k: (True, \"source_topic_precision_ok:10/10\", []))\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    synthesized: list[str] = []\n\n    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:\n        synthesized.append(topic)\n        if len(synthesized) == 1:",
+      "isNew": false,
+      "lines": 11,
+      "secondFile": {
+        "end": 12581,
+        "endLoc": {
+          "column": 15,
+          "line": 12581,
+          "position": 537618
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12571,
+        "startLoc": {
+          "column": 57,
+          "line": 12571,
+          "position": 536962
+        }
+      },
+      "tokens": 126
+    },
+    {
+      "firstFile": {
+        "end": 12450,
+        "endLoc": {
+          "column": 74,
+          "line": 12450,
+          "position": 531743
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12437,
+        "startLoc": {
+          "column": 38,
+          "line": 12437,
+          "position": 530881
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"zzz_solid_topic\", target_journal=True)\n    _prior_run(tmp_path, \"aaa_thin_topic\", receipts=6, tensions=0, primary=0)\n    ledger_dir = tmp_path / \"runs\" / cycle.LEDGER_DIR\n    cycle._record_blockers(\n        ledger_dir,\n        \"2026-05-31\",\n        [{\"topic\": \"aaa_thin_topic\", \"submit_status\": \"preflight_insufficient_corpus\", \"submitted\": 0}],\n    )\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_corpus_repair_limit\", lambda: 1)\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n    monkeypatch.setattr(cycle, \"_quant_claim_source_precision\", lambda topic, **_k: (True, \"source_topic_precision_ok:10/10\", []))\n    monkeypatch.setattr(cycle, \"_repair_topic_corpus\", lambda topic, **_k: {",
+      "isNew": false,
+      "lines": 14,
+      "secondFile": {
+        "end": 12501,
+        "endLoc": {
+          "column": 74,
+          "line": 12501,
+          "position": 533866
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12488,
+        "startLoc": {
+          "column": 37,
+          "line": 12488,
+          "position": 533004
+        }
+      },
+      "tokens": 157
+    },
+    {
+      "firstFile": {
+        "end": 12448,
+        "endLoc": {
+          "column": 30,
+          "line": 12448,
+          "position": 531468
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12437,
+        "startLoc": {
+          "column": 38,
+          "line": 12437,
+          "position": 530881
+        }
+      },
+      "format": "python",
+      "fragment": "    _topic(tmp_path, \"zzz_solid_topic\", target_journal=True)\n    _prior_run(tmp_path, \"aaa_thin_topic\", receipts=6, tensions=0, primary=0)\n    ledger_dir = tmp_path / \"runs\" / cycle.LEDGER_DIR\n    cycle._record_blockers(\n        ledger_dir,\n        \"2026-05-31\",\n        [{\"topic\": \"aaa_thin_topic\", \"submit_status\": \"preflight_insufficient_corpus\", \"submitted\": 0}],\n    )\n    monkeypatch.setattr(cycle, \"TOPIC_PACKS\", tmp_path / \"topic_packs\")\n    monkeypatch.setattr(cycle, \"CORPORA\", tmp_path / \"docs\" / \"quality-reference\")\n    monkeypatch.setattr(cycle, \"_corpus_repair_limit\", lambda: 1)\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})",
+      "isNew": false,
+      "lines": 12,
+      "secondFile": {
+        "end": 12617,
+        "endLoc": {
+          "column": 30,
+          "line": 12617,
+          "position": 539220
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12606,
+        "startLoc": {
+          "column": 50,
+          "line": 12606,
+          "position": 538633
+        }
+      },
+      "tokens": 101
+    },
+    {
+      "firstFile": {
+        "end": 12483,
+        "endLoc": {
+          "column": 10,
+          "line": 12483,
+          "position": 532768
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12464,
+        "startLoc": {
+          "column": 4,
+          "line": 12464,
+          "position": 532155
+        }
+      },
+      "format": "python",
+      "fragment": "    ) -> int:\n        topics.append(topic)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-05-31\",\n        run_synthesis=True,\n        submit=True,\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        max_attempts=1,\n    )\n\n    assert \"corpus_repairs\" not in ledger\n    assert ledger[\"topic_status\"][\"aaa_thin_topic\"] == \"preflight_blocked\"\n    assert topics == [\"zzz_solid_topic\"]",
+      "isNew": false,
+      "lines": 20,
+      "secondFile": {
+        "end": 12523,
+        "endLoc": {
+          "column": 10,
+          "line": 12523,
+          "position": 534616
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12504,
+        "startLoc": {
+          "column": 64,
+          "line": 12504,
+          "position": 534003
+        }
+      },
+      "tokens": 110
+    },
+    {
+      "firstFile": {
+        "end": 13019,
+        "endLoc": {
+          "column": 10,
+          "line": 13019,
+          "position": 556904
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 12999,
+        "startLoc": {
+          "column": 81,
+          "line": 12999,
+          "position": 556236
+        }
+      },
+      "format": "python",
+      "fragment": "    monkeypatch.setattr(cycle, \"_repair_low_source_precision_corpus\", fake_repair)\n\n    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:\n        synthesized.append(topic)\n        out_dir.mkdir(parents=True)\n        return 0\n\n    monkeypatch.setattr(cycle, \"_run_synthesis\", fake_synthesis)\n    monkeypatch.setattr(cycle, \"_receipt_preflight\", lambda topic, out_dir, **_k: {\"passed\": True})\n\n    ledger = cycle.run_cycle(\n        runs_root=tmp_path / \"runs\",\n        date=\"2026-06-01\",\n        run_synthesis=True,\n        submit=True,\n        remote_loader=lambda: (set(), None),\n        submit_cycle=lambda **_kwargs: {\"status\": \"submitted_to_researka\", \"submitted\": 1, \"published\": 0},\n        max_attempts=1,\n    )\n\n    assert repairs == [\"aaa_low_source\"]",
+      "isNew": false,
+      "lines": 21,
+      "secondFile": {
+        "end": 13356,
+        "endLoc": {
+          "column": 10,
+          "line": 13356,
+          "position": 572205
+        },
+        "name": "tests/test_daily_research_paper_cycle.py",
+        "start": 13336,
+        "startLoc": {
+          "column": 5,
+          "line": 13336,
+          "position": 571537
+        }
+      },
+      "tokens": 134
+    },
+    {
+      "firstFile": {
+        "end": 870,
+        "endLoc": {
+          "column": 42,
+          "line": 870,
+          "position": 38558
+        },
+        "name": "tests/test_daily_research_paper_submit.py",
+        "start": 856,
+        "startLoc": {
+          "column": 4,
+          "line": 856,
+          "position": 38065
+        }
+      },
+      "format": "python",
+      "fragment": "    )\n\n    out = daily.run_cycle_capped(\n        runs_root=tmp_path,\n        date=\"2026-06-29\",\n        submit=True,\n        submitter=lambda _payload: {\"ok\": True, \"status\": 200, \"response\": {\"id\": \"sub-aspirin\"}},\n        remote_loader=lambda: (set(), None),\n        max_submissions=2,\n    )\n\n    assert out[\"submitted\"] == 1\n    assert out[\"status\"] == \"submitted_to_researka\"\n    assert out[\"submissions\"][0][\"status\"] == \"no_eligible_research_paper\"\n    assert out[\"submissions\"][0][\"reason\"] == \"source_bundle_unmapped_sources:outcome=0,citation=1\"",
+      "isNew": false,
+      "lines": 15,
+      "secondFile": {
+        "end": 948,
+        "endLoc": {
+          "column": 42,
+          "line": 948,
+          "position": 42357
+        },
+        "name": "tests/test_daily_research_paper_submit.py",
+        "start": 934,
+        "startLoc": {
+          "column": 4,
+          "line": 934,
+          "position": 41864
+        }
+      },
+      "tokens": 100
+    },
+    {
+      "firstFile": {
+        "end": 371,
+        "endLoc": {
+          "column": 35,
+          "line": 371,
+          "position": 15472
+        },
+        "name": "tests/test_final_status.py",
+        "start": 359,
+        "startLoc": {
+          "column": 64,
+          "line": 359,
+          "position": 14838
+        }
+      },
+      "format": "python",
+      "fragment": "    + artifact_consistency + citation_registry + target_journal).\"\"\"\n    (tmp_path / \"full_paper.md\").write_text(_AUTOMATED_ACCOUNTABILITY)\n    _write(tmp_path, \"benchmark_runtime.json\", {\"return_code\": 0})\n    _write(tmp_path, \"full_paper.audit.json\", {\n        \"n_total\": 14, \"n_pass\": 14, \"p1_pass\": True,\n    })\n    _write(tmp_path, \"full_paper.journal_surface.json\",\n           {\"passed\": True, \"issues\": []})\n    _write(tmp_path, \"pre_submit_gate.json\",\n           {\"result\": {\"passed\": True, \"failures\": []}})\n    _write(tmp_path, \"target_journal_pack.json\", {\"journal\": \"Aging Cell\", \"declared_in_topic_pack\": True})\n    _write(tmp_path, \"manifest.json\",\n           {\"accountability_model\": \"researka_agent_certified\"})",
+      "isNew": false,
+      "lines": 13,
+      "secondFile": {
+        "end": 396,
+        "endLoc": {
+          "column": 35,
+          "line": 396,
+          "position": 16702
+        },
+        "name": "tests/test_final_status.py",
+        "start": 384,
+        "startLoc": {
+          "column": 58,
+          "line": 384,
+          "position": 16068
+        }
+      },
+      "tokens": 109
+    },
+    {
+      "firstFile": {
+        "end": 374,
+        "endLoc": {
+          "column": 42,
+          "line": 374,
+          "position": 15652
+        },
+        "name": "tests/test_final_status.py",
+        "start": 361,
+        "startLoc": {
+          "column": 4,
+          "line": 361,
+          "position": 14918
+        }
+      },
+      "format": "python",
+      "fragment": "    _write(tmp_path, \"benchmark_runtime.json\", {\"return_code\": 0})\n    _write(tmp_path, \"full_paper.audit.json\", {\n        \"n_total\": 14, \"n_pass\": 14, \"p1_pass\": True,\n    })\n    _write(tmp_path, \"full_paper.journal_surface.json\",\n           {\"passed\": True, \"issues\": []})\n    _write(tmp_path, \"pre_submit_gate.json\",\n           {\"result\": {\"passed\": True, \"failures\": []}})\n    _write(tmp_path, \"target_journal_pack.json\", {\"journal\": \"Aging Cell\", \"declared_in_topic_pack\": True})\n    _write(tmp_path, \"manifest.json\",\n           {\"accountability_model\": \"researka_agent_certified\"})\n    _write(tmp_path, \"citation_registry.json\", _REGISTRY)\n    _write(tmp_path, \"artifact_consistency.json\",\n           {\"passed\": True, \"checks\": []})",
+      "isNew": false,
+      "lines": 14,
+      "secondFile": {
+        "end": 482,
+        "endLoc": {
+          "column": 42,
+          "line": 482,
+          "position": 20938
+        },
+        "name": "tests/test_final_status.py",
+        "start": 469,
+        "startLoc": {
+          "column": 4,
+          "line": 469,
+          "position": 20204
+        }
+      },
+      "tokens": 124
+    },
+    {
+      "firstFile": {
+        "end": 399,
+        "endLoc": {
+          "column": 42,
+          "line": 399,
+          "position": 16883
+        },
+        "name": "tests/test_final_status.py",
+        "start": 386,
+        "startLoc": {
+          "column": 4,
+          "line": 386,
+          "position": 16148
+        }
+      },
+      "format": "python",
+      "fragment": "    _write(tmp_path, \"benchmark_runtime.json\", {\"return_code\": 0})\n    _write(tmp_path, \"full_paper.audit.json\", {\n        \"n_total\": 14, \"n_pass\": 14, \"p1_pass\": True,\n    })\n    _write(tmp_path, \"full_paper.journal_surface.json\",\n           {\"passed\": True, \"issues\": []})\n    _write(tmp_path, \"pre_submit_gate.json\",\n           {\"result\": {\"passed\": True, \"failures\": []}})\n    _write(tmp_path, \"target_journal_pack.json\", {\"journal\": \"Aging Cell\", \"declared_in_topic_pack\": True})\n    _write(tmp_path, \"manifest.json\",\n           {\"accountability_model\": \"legacy_journal_submission\"})\n    _write(tmp_path, \"citation_registry.json\", _REGISTRY)\n    _write(tmp_path, \"artifact_consistency.json\",\n           {\"passed\": True, \"checks\": []})",
+      "isNew": false,
+      "lines": 14,
+      "secondFile": {
+        "end": 422,
+        "endLoc": {
+          "column": 42,
+          "line": 422,
+          "position": 18001
+        },
+        "name": "tests/test_final_status.py",
+        "start": 409,
+        "startLoc": {
+          "column": 4,
+          "line": 409,
+          "position": 17266
+        }
+      },
+      "tokens": 124
+    },
+    {
+      "firstFile": {
+        "end": 594,
+        "endLoc": {
+          "column": 29,
+          "line": 594,
+          "position": 19167
+        },
+        "name": "tests/test_llm_client.py",
+        "start": 580,
+        "startLoc": {
+          "column": 74,
+          "line": 580,
+          "position": 18657
+        }
+      },
+      "format": "python",
+      "fragment": "    \"\"\"Verify the wire-level payload has response_format=json_object set.\"\"\"\n    captured: dict[str, dict] = {}\n\n    def handler(request: httpx.Request) -> httpx.Response:\n        captured[\"payload\"] = json.loads(request.content)\n        return httpx.Response(200, json=_ok_body())\n\n    async def go() -> None:\n        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))\n        try:\n            await chat_json(\n                messages=[{\"role\": \"user\", \"content\": \"hi\"}],\n                chain=(_spec(),),\n                client=client,\n                enforce_json=True,",
+      "isNew": false,
+      "lines": 15,
+      "secondFile": {
+        "end": 618,
+        "endLoc": {
+          "column": 29,
+          "line": 618,
+          "position": 20002
+        },
+        "name": "tests/test_llm_client.py",
+        "start": 604,
+        "startLoc": {
+          "column": 77,
+          "line": 604,
+          "position": 19492
+        }
+      },
+      "tokens": 111
+    },
+    {
+      "firstFile": {
+        "end": 593,
+        "endLoc": {
+          "column": 30,
+          "line": 593,
+          "position": 19137
+        },
+        "name": "tests/test_llm_client.py",
+        "start": 581,
+        "startLoc": {
+          "column": 4,
+          "line": 581,
+          "position": 18664
+        }
+      },
+      "format": "python",
+      "fragment": "    captured: dict[str, dict] = {}\n\n    def handler(request: httpx.Request) -> httpx.Response:\n        captured[\"payload\"] = json.loads(request.content)\n        return httpx.Response(200, json=_ok_body())\n\n    async def go() -> None:\n        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))\n        try:\n            await chat_json(\n                messages=[{\"role\": \"user\", \"content\": \"hi\"}],\n                chain=(_spec(),),\n                client=client,",
+      "isNew": false,
+      "lines": 13,
+      "secondFile": {
+        "end": 676,
+        "endLoc": {
+          "column": 30,
+          "line": 676,
+          "position": 22078
+        },
+        "name": "tests/test_llm_client.py",
+        "start": 664,
+        "startLoc": {
+          "column": 4,
+          "line": 664,
+          "position": 21605
+        }
+      },
+      "tokens": 108
+    },
+    {
+      "firstFile": {
+        "end": 676,
+        "endLoc": {
+          "column": 30,
+          "line": 676,
+          "position": 22078
+        },
+        "name": "tests/test_llm_client.py",
+        "start": 663,
+        "startLoc": {
+          "column": 30,
+          "line": 663,
+          "position": 21596
+        }
+      },
+      "format": "python",
+      "fragment": "    for zero-variance receipts.\"\"\"\n    captured: dict[str, dict] = {}\n\n    def handler(request: httpx.Request) -> httpx.Response:\n        captured[\"payload\"] = json.loads(request.content)\n        return httpx.Response(200, json=_ok_body())\n\n    async def go() -> None:\n        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))\n        try:\n            await chat_json(\n                messages=[{\"role\": \"user\", \"content\": \"hi\"}],\n                chain=(_spec(),),\n                client=client,",
+      "isNew": false,
+      "lines": 14,
+      "secondFile": {
+        "end": 702,
+        "endLoc": {
+          "column": 30,
+          "line": 702,
+          "position": 22932
+        },
+        "name": "tests/test_llm_client.py",
+        "start": 689,
+        "startLoc": {
+          "column": 23,
+          "line": 689,
+          "position": 22450
+        }
+      },
+      "tokens": 111
+    },
+    {
+      "firstFile": {
+        "end": 33,
+        "endLoc": {
+          "column": 16,
+          "line": 33,
+          "position": 1020
+        },
+        "name": "tests/test_publish_drought_recovery.py",
+        "start": 23,
+        "startLoc": {
+          "column": 56,
+          "line": 23,
+          "position": 573
+        }
+      },
+      "format": "python",
+      "fragment": "def test_recovery_prepares_then_starts_one_fresh_attempt(tmp_path: Path) -> None:\n    report = tmp_path / \"guard.json\"\n    state = tmp_path / \"state.json\"\n    report.write_text(json.dumps({\"passed\": False, \"reason\": \"publish_drought\"}))\n    calls: list[tuple[str, ...]] = []\n\n    def runner(args: tuple[str, ...], **_kwargs: object) -> subprocess.CompletedProcess[str]:\n        calls.append(args)\n        if args[:2] == (\"systemctl\", \"is-active\"):\n            return _completed(args, 1)\n        if args[-1] == \"research-agent-paper-prepare.service\":",
+      "isNew": false,
+      "lines": 11,
+      "secondFile": {
+        "end": 109,
+        "endLoc": {
+          "column": 16,
+          "line": 109,
+          "position": 3709
+        },
+        "name": "tests/test_publish_drought_recovery.py",
+        "start": 99,
+        "startLoc": {
+          "column": 50,
+          "line": 99,
+          "position": 3262
+        }
+      },
+      "tokens": 113
+    },
+    {
+      "firstFile": {
+        "end": 869,
+        "endLoc": {
+          "column": 47,
+          "line": 869,
+          "position": 32581
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 854,
+        "startLoc": {
+          "column": 72,
+          "line": 854,
+          "position": 31977
+        }
+      },
+      "format": "python",
+      "fragment": "    \"\"\"AAA + manifest above floor + zero grok + zero auto-strip → L5.\"\"\"\n    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)\n    manifest = {\n        \"n_receipts\": 15, \"n_high_confidence_claims_total\": 134,\n        \"n_non_orthogonal_tensions\": 42,\n        \"receipts\": [\n            {\"outcome_class\": [\"a\", \"b\", \"c\"][i % 3],\n             \"evidence_tier\": \"A1\", \"directness\": \"direct\",\n             \"receipt_id\": f\"P{i}\"} for i in range(15)\n        ],\n    }\n    v = orch._compute_unified_verdict(\n        s1, [], grok_unresolved_p1=0,\n        n_receipts=15, n_high_conf_claims=134,\n        n_non_orthogonal_tensions=42,\n        manifest=manifest, auto_stripped_count=0,",
+      "isNew": false,
+      "lines": 16,
+      "secondFile": {
+        "end": 893,
+        "endLoc": {
+          "column": 47,
+          "line": 893,
+          "position": 33485
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 878,
+        "startLoc": {
+          "column": 77,
+          "line": 878,
+          "position": 32881
+        }
+      },
+      "tokens": 107
+    },
+    {
+      "firstFile": {
+        "end": 869,
+        "endLoc": {
+          "column": 26,
+          "line": 869,
+          "position": 32560
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 854,
+        "startLoc": {
+          "column": 72,
+          "line": 854,
+          "position": 31977
+        }
+      },
+      "format": "python",
+      "fragment": "    \"\"\"AAA + manifest above floor + zero grok + zero auto-strip → L5.\"\"\"\n    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)\n    manifest = {\n        \"n_receipts\": 15, \"n_high_confidence_claims_total\": 134,\n        \"n_non_orthogonal_tensions\": 42,\n        \"receipts\": [\n            {\"outcome_class\": [\"a\", \"b\", \"c\"][i % 3],\n             \"evidence_tier\": \"A1\", \"directness\": \"direct\",\n             \"receipt_id\": f\"P{i}\"} for i in range(15)\n        ],\n    }\n    v = orch._compute_unified_verdict(\n        s1, [], grok_unresolved_p1=0,\n        n_receipts=15, n_high_conf_claims=134,\n        n_non_orthogonal_tensions=42,\n        manifest=manifest, auto_stripped_count=0,",
+      "isNew": false,
+      "lines": 16,
+      "secondFile": {
+        "end": 915,
+        "endLoc": {
+          "column": 26,
+          "line": 915,
+          "position": 34295
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 900,
+        "startLoc": {
+          "column": 74,
+          "line": 900,
+          "position": 33712
+        }
+      },
+      "tokens": 105
+    },
+    {
+      "firstFile": {
+        "end": 869,
+        "endLoc": {
+          "column": 49,
+          "line": 869,
+          "position": 32583
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 855,
+        "startLoc": {
+          "column": 4,
+          "line": 855,
+          "position": 31984
+        }
+      },
+      "format": "python",
+      "fragment": "    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)\n    manifest = {\n        \"n_receipts\": 15, \"n_high_confidence_claims_total\": 134,\n        \"n_non_orthogonal_tensions\": 42,\n        \"receipts\": [\n            {\"outcome_class\": [\"a\", \"b\", \"c\"][i % 3],\n             \"evidence_tier\": \"A1\", \"directness\": \"direct\",\n             \"receipt_id\": f\"P{i}\"} for i in range(15)\n        ],\n    }\n    v = orch._compute_unified_verdict(\n        s1, [], grok_unresolved_p1=0,\n        n_receipts=15, n_high_conf_claims=134,\n        n_non_orthogonal_tensions=42,\n        manifest=manifest, auto_stripped_count=0,",
+      "isNew": false,
+      "lines": 15,
+      "secondFile": {
+        "end": 941,
+        "endLoc": {
+          "column": 49,
+          "line": 941,
+          "position": 35257
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 927,
+        "startLoc": {
+          "column": 4,
+          "line": 927,
+          "position": 34658
+        }
+      },
+      "tokens": 108
+    },
+    {
+      "firstFile": {
+        "end": 942,
+        "endLoc": {
+          "column": 28,
+          "line": 942,
+          "position": 35286
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 926,
+        "startLoc": {
+          "column": 31,
+          "line": 926,
+          "position": 34649
+        }
+      },
+      "format": "python",
+      "fragment": "    manuscript-surface failures.\"\"\"\n    s1 = _stage1_report(p1_pass=True, n_pass=10, n_total=10)\n    manifest = {\n        \"n_receipts\": 15, \"n_high_confidence_claims_total\": 134,\n        \"n_non_orthogonal_tensions\": 42,\n        \"receipts\": [\n            {\"outcome_class\": [\"a\", \"b\", \"c\"][i % 3],\n             \"evidence_tier\": \"A1\", \"directness\": \"direct\",\n             \"receipt_id\": f\"P{i}\"} for i in range(15)\n        ],\n    }\n    v = orch._compute_unified_verdict(\n        s1, [], grok_unresolved_p1=0,\n        n_receipts=15, n_high_conf_claims=134,\n        n_non_orthogonal_tensions=42,\n        manifest=manifest, auto_stripped_count=0,\n        journal_surface_pass=False,",
+      "isNew": false,
+      "lines": 17,
+      "secondFile": {
+        "end": 987,
+        "endLoc": {
+          "column": 5,
+          "line": 987,
+          "position": 36951
+        },
+        "name": "tests/test_unified_verdict.py",
+        "start": 971,
+        "startLoc": {
+          "column": 35,
+          "line": 971,
+          "position": 36337
+        }
+      },
+      "tokens": 112
+    },
+    {
+      "firstFile": {
+        "end": 158,
+        "endLoc": {
+          "column": 41,
+          "line": 158,
+          "position": 6303
+        },
+        "name": "tests/test_v5_fullraw_source.py",
+        "start": 146,
+        "startLoc": {
+          "column": 63,
+          "line": 146,
+          "position": 5773
+        }
+      },
+      "format": "python",
+      "fragment": "    monkeypatch.setenv(\"V5_MEMO_FULL_RAW_CORPUS_TIMEOUT\", \"900\")\n    received: dict[str, Any] = {}\n\n    def responder(request: httpx.Request) -> httpx.Response:\n        received[\"body\"] = json.loads(request.content)\n        received[\"timeout\"] = request.extensions.get(\"timeout\")\n        return httpx.Response(200, json={\"meta\": {\"shard_receipt\": {}}, \"results\": []})\n\n    async with _mock_client(responder) as client:\n        await V5FullRawClient().search(client, \"metformin longevity\", limit=3)\n\n    assert \"timeout_seconds\" not in received[\"body\"]\n    assert received[\"timeout\"][\"read\"] == 300.0",
+      "isNew": false,
+      "lines": 13,
+      "secondFile": {
+        "end": 178,
+        "endLoc": {
+          "column": 41,
+          "line": 178,
+          "position": 7259
+        },
+        "name": "tests/test_v5_fullraw_source.py",
+        "start": 166,
+        "startLoc": {
+          "column": 61,
+          "line": 166,
+          "position": 6729
+        }
+      },
+      "tokens": 120
+    }
+  ],
+  "statistics": {
+    "detectionDate": "2026-09-08T08:33:02.721Z",
+    "formats": {
+      "python": {
+        "clones": 52,
+        "duplicatedLines": 857,
+        "duplicatedTokens": 6666,
+        "lines": 163105,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.5254284050151743,
+        "percentageTokens": 0.7002814362387765,
+        "sources": 325,
+        "tokens": 951903
+      }
+    },
+    "total": {
+      "clones": 52,
+      "duplicatedLines": 857,
+      "duplicatedTokens": 6666,
+      "lines": 163105,
+      "newClones": 0,
+      "newDuplicatedLines": 0,
+      "percentage": 0.5254284050151743,
+      "percentageTokens": 0.7002814362387765,
+      "sources": 325,
+      "tokens": 951903
+    }
+  }
+}
