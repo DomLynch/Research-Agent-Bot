@@ -246,7 +246,8 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
 
 
 @pytest.mark.parametrize("mixed", [False, True])
-def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch, mixed) -> None:
+@pytest.mark.parametrize("bad_text,reason", [("Fasting glucose decreased by 999% among older adults [r-a].", "novel_numeric:"), ("Metformin prevented pancreatic cancer [r-a].", "source_grounding:")])
+def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch, mixed, bad_text, reason) -> None:
     receipts = [_summary("r-a", outcome="cardiometabolic", thesis_text=(
         "Trial - source excerpts: Fasting glucose decreased among older adults."
     ))]
@@ -256,7 +257,7 @@ def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch
         prompts.append(kwargs["user_prompt"])
         text = "Fasting glucose decreased among older adults [r-a]."
         if len(prompts) == 1 or mixed:
-            text = "Fasting glucose decreased by 999% among older adults [r-a]."
+            text = bad_text
         paragraphs = [{"text": text, "receipt_ids": ["r-a"]}]
         if mixed:
             paragraphs.append({"text": "Fasting glucose decreased among older adults [r-a].", "receipt_ids": ["r-a"]})
@@ -273,9 +274,10 @@ def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch
     ))
     assert len(prompts) == 2
     assert "RESULTS WORD TARGET: 500-600" in prompts[0]
-    assert "novel_numeric:" in prompts[1] and "999" in prompts[1]
+    assert reason in prompts[1]
     assert "Fasting glucose decreased among older adults [r-a]." in result.body_md
     assert "999" not in result.body_md
+    assert "pancreatic cancer" not in result.body_md
 
 
 def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> None:

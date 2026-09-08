@@ -705,7 +705,7 @@ def build_results_from_parsed(
             rendered_outcomes.add(subsection_outcome)
     if rejection_reasons is not None:
         rejection_reasons.extend(rejections)
-    if (rejections and not anchors) or any(reason.startswith("source_grounding:") for reason in rejections):
+    if rejections and not anchors:
         return None
     for outcome in sorted(outcome_bodies):
         body_lines.extend(outcome_bodies[outcome])

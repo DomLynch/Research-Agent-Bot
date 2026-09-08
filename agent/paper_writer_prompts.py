@@ -209,10 +209,18 @@ RESULTS_SYSTEM_PROMPT_TEMPLATE = """You write the RESULTS section of a research
 synthesis paper. The Results section is structured by OUTCOME CLASS —
 one subsection per outcome class present in the corpus.
 
-**TARGET RANGE: use the RESULTS WORD TARGET in the user message, in 3 paragraphs.**
+**TARGET RANGE: use the RESULTS WORD TARGET in the user message.**
 This call covers only its supplied outcome group, not all outcomes in the paper.
-Report population, design, comparator, endpoint, effect and uncertainty when supplied.
-An isolated p-value is not an effect size. Do not refer to a table not provided.
+Write source-owned findings, not a study catalogue or cross-source interpretation.
+Each paragraph entry must contain ONE independently supported finding from ONE
+receipt. Use the source's endpoint labels, abbreviations, comparator, direction,
+numeric notation and qualifiers. Keep its wording close; do not expand a source
+abbreviation using a title or training knowledge. Do not add design, population,
+dose or duration from metadata when the evidence_excerpt does not state it.
+An isolated p-value is not an effect size. Omit background-study results, planned
+protocol outcomes and assertions about information absent from the excerpt.
+Cover distinct findings across eligible receipts without repetition. If the packet
+cannot support the word target, return the supported findings without padding.
 
 Output ONE JSON object with this exact shape:
 
@@ -223,39 +231,22 @@ Output ONE JSON object with this exact shape:
       "heading": "<H3 heading text>",
       "paragraphs": [
         {
-          "text": "<one full paragraph of 4-8 sentences>",
-          "receipt_ids": ["r-a", "r-b"],
+          "text": "<one source-owned finding with its exact [receipt_id] inline>",
+          "receipt_ids": ["r-a"],
           "numerics": ["p=0.003", ...]
         },
-        ... 3 paragraphs per subsection
+        ... distinct supported findings
       ]
     },
     ... one subsection per outcome class in the input
   ]
 }
 
-Validation tier: ANCHORED. EVERY paragraph must cite ≥1 receipt_id.
-The validator drops uncited paragraphs entirely.
-
-REQUIRED PER-SUBSECTION STRUCTURE (3 paragraphs):
-  P1 trial summary: population, design, duration, endpoint, dose.
-  P2 quantitative findings: exact receipt values only; no rounding.
-  P3 within-outcome differences and source-stated limitations; do NOT use
-     "SPAR-rejected", "SPAR quarantine", "rejected evidence", or machinery prose.
-
-Rules:
-1. Cite ≥1 receipt_id in EVERY paragraph; multiple receipts when
-   the paragraph integrates evidence across them.
-2. Report effect sizes, p-values, sample sizes EXACTLY as they
-   appear in receipts. Do NOT round, paraphrase, or compute new
-   numerics. Validator drops paragraphs with novel numerics.
-3. Use explicit directness transitions: "Mechanistically,",
-   "By contrast,", "In a clinical RCT,", "Preclinical data suggest,",
-   "The mechanistic substrate underlying this functional finding,".
-4. NEVER mention "SPAR", "quarantine", "rejected by", or any other
-   pipeline-internal term in prose. The corpus is presented as
-   curated evidence; tensions are surfaced through standard
-   academic discussion of disagreement.
+Validation tier: ANCHORED. Every sentence must contain its exact receipt_id in
+square brackets AND list that ID in receipt_ids. Paragraph metadata alone does
+not count. Invalid findings are removed individually. NEVER mention "SPAR",
+"quarantine", "rejected by", or other internal pipeline terms. Cross-source
+interpretation belongs in Discussion, not this call.
 
 Output JSON only. No prose outside the JSON."""
 
