@@ -62,6 +62,42 @@ the explanation for these five failures.
 
 ## First Target: Resveratrol, Six Corrections
 
+### Enforcement Receipt, Sep 8 14:19 Dubai
+
+Invoked the live decision filter and, for the paperless Resveratrol repair,
+`_unmet_revision_asks` without making an LLM call:
+
+| Submission | Decision filter | Actual repair proof |
+|---|---|---|
+| 5011371c | Revision permitted | All six asks returned unmet; no final manuscript |
+| 59cf3989 | Blocked: REJECT, allowed=false | No nine-item completed repair verified |
+| 3183d0a6 | Blocked: REJECT, allowed=false | No eight-item completed repair verified |
+| eac2d1ad | Blocked: REJECT, allowed=false | No nine-item completed repair verified |
+| 0eec3d87 | Its individual record permits revision | Old one-item pass is not an eight-item repair; newer same-topic rejection needs reconciliation |
+
+The lane requires successful synthesis and no unmet asks before submission.
+This is real enforcement, not a proof that every semantic correction is detected.
+`revision_coverage.material_unmet_asks` combines deterministic predicates with a
+judge whose `_excerpt` supplies only the first 16,000 and last 8,000 characters.
+Some deterministic passes also override a negative judge result.
+
+Measured on the actual five submitted manuscripts, the ENTIRE Findings Map lies
+outside that judge excerpt, not merely its heading:
+
+| Submission | Manuscript characters | Omitted Findings Map range |
+|---|---:|---|
+| 5011371c | 99,079 | 26,702-40,215 |
+| 59cf3989 | 104,308 | 16,541-41,883 |
+| 3183d0a6 | 97,614 | 21,860-36,960 |
+| eac2d1ad | 75,251 | 18,053-27,963 |
+| 0eec3d87 | 78,145 | 19,465-29,375 |
+
+This establishes incomplete semantic-review input, not that every historical
+rejection was caused by truncation. Deterministic checks still inspect manuscript
+text. Complete source-aware verification of the requested table corrections is
+not established by a local coverage pass. This remains separate from the v15
+prompt-alignment patch and was not changed during this audit.
+
 Owner: V3. All items remain open until checked in the final submitted payload.
 Existing code improvements or intermediate logs are not completion evidence.
 
