@@ -1247,6 +1247,7 @@ def test_source_bundle_grounds_author_year_citation_via_cited_as(tmp_path: Path,
 
 def test_source_bundle_structured_fallback_is_audit_specific(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(daily, "_pubmed_abstracts", lambda pmids: {})
+    monkeypatch.setattr(daily, "ROOT", tmp_path)
     run = _run(tmp_path)
 
     payload = daily.build_payload(run)

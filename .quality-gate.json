@@ -1,0 +1,7 @@
+{
+  "commands": [
+    [".venv/bin/python", "-m", "ruff", "check", "agent", "scripts", "tests"],
+    [".venv/bin/python", "-m", "mypy", "agent"],
+    [".venv/bin/python", "-m", "pytest", "-q", "tests/test_daily_research_paper_submit.py", "tests/test_revision_coverage.py", "tests/test_loc_budget.py"]
+  ]
+}
