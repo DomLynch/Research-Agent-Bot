@@ -105,7 +105,7 @@ def _revision_feedback_block() -> str:
 
 
 def _revision_feedback_text() -> str:
-    return " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
+    return " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------

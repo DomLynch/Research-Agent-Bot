@@ -139,8 +139,9 @@ def test_build_user_prompt_no_rejected_input_still_works() -> None:
     assert "QUARANTINED" not in prompt
 
 
-def test_build_user_prompt_includes_revision_feedback_as_guidance(monkeypatch) -> None:
-    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", "Revise headline; remove unsupported mechanistic overclaim.")
+@pytest.mark.parametrize("padding", ["", " Preserve source attribution." * 180], ids=["short", "over-4000"])
+def test_build_user_prompt_includes_revision_feedback_as_guidance(monkeypatch, padding) -> None:
+    monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", f"Revise headline{padding}; remove unsupported mechanistic overclaim.; Add the missing source-quality field.")
     accepted = [_summary("r-A")]
 
     prompt = _build_user_prompt(
@@ -151,6 +152,7 @@ def test_build_user_prompt_includes_revision_feedback_as_guidance(monkeypatch) -
     assert "REVISION FEEDBACK — address EACH point below" in prompt
     assert "1. Revise headline" in prompt
     assert "2. remove unsupported mechanistic overclaim" in prompt
+    assert "3. Add the missing source-quality field." in prompt
     assert "Treat this as reviewer guidance, not evidence" in prompt
 
 
