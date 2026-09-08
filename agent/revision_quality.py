@@ -426,7 +426,7 @@ def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = Fal
     evidence = re.sub(r"[–\u2212]", "-", _row_evidence({**row, "source_title": ""}, statistics=not original_only))
     def key(value: str) -> tuple:
         value = re.sub(r"\b(?:was|is)\b", "", re.sub(r"[–\u2212]", "-", value.casefold()))
-        return re.sub(r"[\s:=<>≤≥]", "", re.sub(r"\d+(?:\.\d+)?|\.\d+", lambda m: _numbers(m[0])[0], value)), _p_relations(value)
+        return re.sub(r"[\s:=<>≤≥]", "", re.compile(r"\d+(?:\.\d+)?|\.\d+").sub(lambda m: _numbers(m[0])[0], value)), _p_relations(value)
     def context_key(value: str) -> str:
         value = re.sub(r"[–\u2212]", "-", value).replace("≤", "<=").replace("≥", ">=")
         return _claim_key(re.sub(r"[-+<>=]", lambda m: f" operator{ord(m[0])} ", value), [row])
