@@ -30,7 +30,7 @@ from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
 )
 from agent.evidence_lanes import derive_receipt_lane, effective_directness  # noqa: E402
-from agent.paper_writer import render_full_paper  # noqa: E402
+from agent.paper_writer import MAX_EVIDENCE_CHARS_PER_RECEIPT, render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
 )
@@ -1588,6 +1588,7 @@ def _build_receipt_thesis_text(
 ) -> str:
     """Build a neutral receipt summary from verbatim source sentences."""
     evidence_lines: list[str] = []
+    prefix = f"{paper_title or paper_id} — source excerpts: "
     seen: set[str] = set()
     generic_title_words = {
         "analysis", "clinical", "cohort", "effect", "effects", "patients", "randomized",
@@ -1608,7 +1609,7 @@ def _build_receipt_thesis_text(
         directional = bool(str(claim.get("direction") or claim.get("comparator") or "").strip())
         title_match = any(re.search(rf"\b{re.escape(term)}\b", sentence, re.I) for term in title_terms)
         outcome_bearing = effect and directional
-        preferred = outcome_bearing and section in {"results", "abstract", "conclusion"}
+        preferred = section in {"results", "abstract", "conclusion"} and claim.get("claim_role") != "background"
         return (
             not preferred,
             not outcome_bearing,
@@ -1628,13 +1629,11 @@ def _build_receipt_thesis_text(
         if not sentence or sentence in seen:
             continue
         seen.add(sentence)
-        if (raw := (claim.get("raw_text") or "").strip()) and raw not in sentence:
-            evidence_lines.append(f"{sentence} [{raw}]")
-        else:
-            evidence_lines.append(sentence)
-        if len(evidence_lines) >= 3:
-            break
-    return f"{paper_title or paper_id} — " + ("source excerpts: " + " | ".join(evidence_lines) if evidence_lines else "high-confidence quantitative evidence available.")
+        raw = (claim.get("raw_text") or "").strip()
+        line = f"{sentence} [{raw}]" if raw and raw not in sentence else sentence
+        if len(prefix + " | ".join((*evidence_lines, line))) <= MAX_EVIDENCE_CHARS_PER_RECEIPT:
+            evidence_lines.append(line)
+    return prefix + " | ".join(evidence_lines) if evidence_lines else f"{paper_title or paper_id} — high-confidence quantitative evidence available."
 
 
 def _receipt_topic_identity(paper_id: str, paper_meta: dict, claims: list[dict]) -> str:

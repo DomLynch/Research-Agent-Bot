@@ -677,6 +677,18 @@ def test_receipt_thesis_prefers_results_over_methods() -> None:
     assert thesis.index("Statin exposure") < thesis.index("40 mg dose")
 
 
+def test_receipt_packet_prioritizes_own_findings_within_writer_budget() -> None:
+    own = [{"sentence": f"Outcome {i} improved in the intervention arm compared with control.",
+            "source_section": "results", "claim_role": "unknown"} for i in range(20)]
+    background = {"sentence": "Another study reported lower mortality.", "source_section": "discussion",
+                  "claim_role": "effect", "direction": "decrease", "binding_confidence": "high"}
+    thesis = orch._build_receipt_thesis_text("paper", "Trial", [background, *own])
+    spans = thesis.split("source excerpts: ")[1].split(" | ")
+    assert len(spans) > 3 and len(thesis) <= orch.MAX_EVIDENCE_CHARS_PER_RECEIPT
+    assert spans[0] == own[0]["sentence"] and background["sentence"] not in spans
+    assert all(span in {claim["sentence"] for claim in own} for span in spans)
+
+
 def test_population_summary_does_not_render_derived_sample_sum() -> None:
     """Population summaries must not synthesize derived n totals.
 

@@ -24,7 +24,7 @@ __all__ = [
 
 # Matches one-character receipt-id drift without snapping unrelated IDs.
 _RECEIPT_ID_REPAIR_CUTOFF = 0.85
-_CONTINUING_ABBREVIATION_RE = re.compile(r"\bet al\.(?=[ \t]+(?-i:[a-z0-9(]))", re.I)
+_CONTINUING_ABBREVIATION_RE = re.compile(r"\b(?:et al\.(?=[ \t]+(?-i:[a-z0-9(]))|vs\.(?=\s+[-+]?\s*\d))", re.I)
 _AMBIGUOUS_ABBREVIATION_RE = re.compile(
     r"\b(?:(?-i:[A-Z])\.|(?:[A-Za-z]\.){2,}|(?:dr|mr|mrs|ms|prof|sr|jr|st|figs?|eqs?|refs?|"
     r"secs?|dept|nos?|vol|inc|ltd|co|etc|approx|vs|cf|et al)\.)[,;:]?\s+",
@@ -212,6 +212,12 @@ def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_
                                                   receipt.population_summary)))
         source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "population": receipt.population_summary, "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class, "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
     protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
+    quoted = _normalize(_INLINE_RECEIPT_RE.sub(lambda match: "" if match[1] in source_by_id else match[0], text)).strip(' ."“”')
+    inline_ids = set(_INLINE_RECEIPT_RE.findall(text)) & source_by_id.keys()
+    if len(inline_ids) == 1 and any(quoted == _normalize(span).strip(' ."“”') for rid in inline_ids
+           for parts in [re.split(r"\bsource excerpts:\s*", receipts_by_id[rid].thesis_text, maxsplit=1, flags=re.I)]
+           if len(parts) == 2 for span in parts[1].split(" | ") if len(span.strip()) >= 20):
+        return None
     for sentence in _SENTENCE_BREAK_RE.split(protected):
         clean, sentence_ids = sentence.replace("<DOT>", ".").strip(), set(_INLINE_RECEIPT_RE.findall(sentence)) or set(receipt_ids)
         for clause in _source_language_clauses(clean):
@@ -670,6 +676,8 @@ def build_results_from_parsed(
                 repaired_rids, subsection_outcome, receipt_outcomes,
             )
             mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
+            ids = "|".join(map(re.escape, repaired_rids))
+            text = re.sub(rf'([.!?])(["”])(\s+\[(?:{ids})\])[.!?]?$', r'\2\3\1', text)
             ok, reason = _check_anchored_paragraph(
                 text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts),
             )
@@ -683,11 +691,8 @@ def build_results_from_parsed(
                 sub_body = [
                     f"### {_label_for_outcome(subsection_outcome)} Outcomes", "",
                 ]
-            sub_body.append(text.strip())
-            sub_body.append("")
             cite_str = ", ".join(f"`{i}`" for i in repaired_rids)
-            sub_body.append(f"  _Cited: {cite_str}_")
-            sub_body.append("")
+            sub_body.extend((text.strip(), "", f"  _Cited: {cite_str}_", ""))
             sub_anchors.append(SynthesisClaimAnchor(
                 sentence=text.strip(),
                 receipt_ids=tuple(repaired_rids),

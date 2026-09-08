@@ -730,6 +730,27 @@ def test_writer_builders_enforce_mapped_source_grounding() -> None:
     assert reasons == ["source_grounding:r-cardio"]
 
 
+def test_results_preserves_complete_source_quote_with_bracketed_statistics() -> None:
+    sentence = (
+        "Treatment reduced glucose [low-dose: -0.41 (95% CI -0.80 to -0.02); "
+        "high-dose: -0.46 (95% CI -0.74 to -0.17)] vs. -0.01 in control, "
+        "but mortality did not change."
+    )
+    source = _grounded_receipt("Trial - source excerpts: " + sentence)
+    text = f'"{sentence.rstrip(".")}" [r-cardio].'
+    section = build_results_from_parsed(_results_payload(text), accepted=[source])
+    assert section is not None and text in section.body_md
+    quoted_period = text.replace('" [r-cardio].', '." [r-cardio].')
+    section = build_results_from_parsed(_results_payload(quoted_period), accepted=[source])
+    assert section is not None and text in section.body_md
+    for invalid in (text.replace("-0.41", "-0.42"), text.replace("glucose", "cancer"), text.replace(" [r-cardio]", " [r-forged]")):
+        assert build_results_from_parsed(_results_payload(invalid), accepted=[source]) is None
+    wrong_source = replace(source, receipt_id="r-other", thesis_text="Trial - source excerpts: Treatment did not change glucose or mortality.")
+    payload = _results_payload(text.replace("[r-cardio]", "[r-other]"))
+    payload["subsections"][0]["paragraphs"][0]["receipt_ids"] = ["r-cardio", "r-other"]
+    assert build_results_from_parsed(payload, accepted=[source, wrong_source]) is None
+
+
 def test_source_grounding_accepts_bounded_quantitative_paraphrase_without_title_splicing() -> None:
     kelly = replace(
         _grounded_receipt(

@@ -95,7 +95,7 @@ HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
   "The reported outcome was mixed [r-a].") and list it in receipt_ids; paragraph
   metadata alone is not an inline citation. Directly paraphrase its supplied
   evidence_excerpt; split by source and never infer beyond the excerpt.
-- Spell out period-bearing abbreviations in ANCHORED prose (for example, United
+- Outside verbatim quotes, spell out period-bearing abbreviations (for example, United
   States, intravenous, Figure, Equation); only Author et al. (Year) is allowed.
 
 QUALITY CONTRACT FOR EVERY SECTION:
@@ -212,10 +212,12 @@ one subsection per outcome class present in the corpus.
 **TARGET RANGE: use the RESULTS WORD TARGET in the user message.**
 This call covers only its supplied outcome group, not all outcomes in the paper.
 Write source-owned findings, not a study catalogue or cross-source interpretation.
-Each paragraph entry must contain ONE independently supported finding from ONE
-receipt. Use the source's endpoint labels, abbreviations, comparator, direction,
-numeric notation and qualifiers. Keep its wording close; do not expand a source
-abbreviation using a title or training knowledge. Do not add design, population,
+Each paragraph entry must QUOTE ONE complete supplied source finding from ONE
+receipt verbatim, enclosed in quotation marks with its receipt_id appended.
+Format: "The complete source finding" [r-a]. Put the final period after the citation.
+Preserve the entire statement, including numeric notation, comparator and caveats;
+do not shorten it, expand abbreviations or combine separate source statements.
+Do not add design, population,
 dose or duration from metadata when the evidence_excerpt does not state it.
 An isolated p-value is not an effect size. Omit background-study results, planned
 protocol outcomes and assertions about information absent from the excerpt.
@@ -231,7 +233,7 @@ Output ONE JSON object with this exact shape:
       "heading": "<H3 heading text>",
       "paragraphs": [
         {
-          "text": "<one source-owned finding with its exact [receipt_id] inline>",
+          "text": "<one complete quoted source finding with its exact [receipt_id] inline>",
           "receipt_ids": ["r-a"],
           "numerics": ["p=0.003", ...]
         },
