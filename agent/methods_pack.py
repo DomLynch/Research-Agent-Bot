@@ -45,10 +45,10 @@ def build_methods_pack(
     review_type: str,
     topic: str,
     corpus_search_queries: Sequence[str],
-    n_retrieved: int,
-    n_screened: int,
+    n_retrieved: int | None,
+    n_screened: int | None,
     n_included: int,
-    n_rejected: int,
+    n_rejected: int | None,
     outcome_classes: Sequence[str],
     source_inventory: Sequence[tuple[str, str]] = (),
     receipt_funnel: Any | None = None,
@@ -80,38 +80,17 @@ def build_methods_pack(
         "confidence interval or credible interval", "p-value", "sample size",
         "follow-up duration", "risk-of-bias rating",
     )
-    # Count-backed exclusion summary: state an exclusion reason ONLY when a
-    # real count backs it, so the "Exclusion reasons" list can never
-    # contradict a "0 excluded" screening flow (reviewer-flagged). When no
-    # instrumented gate recorded exclusions, say so plainly instead of
-    # listing phantom reasons. Universal — no per-topic logic.
-    n_screening_excluded = max(
-        0, int(n_retrieved) - int(n_included) - max(0, int(n_rejected))
+    # Aggregate counts establish neither exclusion reasons nor unrecorded stages.
+    exclusion_summary = (
+        "Source-level exclusion reasons were not recorded in this methods pack; "
+        "receipt-funnel non-admission buckets are not full-text screening reasons.",
     )
-    exclusion_lines: list[str] = []
-    if int(n_rejected) > 0:
-        exclusion_lines.append(
-            "Non-traceable findings (claim could not be linked to source "
-            f"text): {int(n_rejected)} records."
-        )
-    if n_screening_excluded > 0:
-        exclusion_lines.append(
-            "Off-topic or ineligible-population sources removed during "
-            f"title/abstract screening: {n_screening_excluded} records."
-        )
-    if not exclusion_lines:
-        exclusion_lines.append(
-            "No additional records were excluded after final receipt admission; "
-            "upstream non-admission buckets are reported separately in the "
-            "receipt funnel and are not post-admission exclusions."
-        )
-    exclusion_summary = tuple(exclusion_lines)
-    screening_flow = {
-        "n_retrieved": int(n_retrieved),
-        "n_screened": int(n_screened),
-        "n_included": int(n_included),
-        "n_excluded_at_full_text": int(n_rejected),
-    }
+    screening_flow = {key: int(value) for key, value in {
+        "n_retrieved": n_retrieved,
+        "n_screened": n_screened,
+        "n_included": n_included,
+        "n_excluded_at_full_text": n_rejected,
+    }.items() if value is not None}
     if isinstance(receipt_funnel, dict):
         counts = receipt_funnel.get("counts") or {}
         for key in (
@@ -120,7 +99,8 @@ def build_methods_pack(
             "candidate_partial_and_none_only", "candidate_partial_only",
             "original_strict_high_confidence_receipts",
         ):
-            screening_flow[key] = int(counts.get(key) or receipt_funnel.get(key) or 0)
+            if (value := counts.get(key, receipt_funnel.get(key))) is not None:
+                screening_flow[key] = int(value)
         screening_flow["admitted_receipts"] = int(
             counts.get("admitted_receipts") or counts.get("accepted_high_confidence") or 0
         )
@@ -275,7 +255,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         lines += ["", "### Receipt admission funnel", "", "| Admission bucket | n |", "|---|---:|"]
         lines += [f"| {label} | {value} |" for label, value in admission_rows]
         lines += ["", "### Exclusion reasons"]
-    else:
+    elif all(sf.get(key) is not None for key in ("n_retrieved", "n_screened", "n_excluded_at_full_text")):
         lines.extend([
             f"Of {sf.get('n_retrieved', 0)} records retrieved, "
             f"{sf.get('n_screened', 0)} were screened against the "
@@ -285,6 +265,18 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
             "text review. Reasons for exclusion are summarised below.",
             "",
             "### Exclusion reasons",
+        ])
+    else:
+        lines.extend([
+            f"The synthesis includes {sf['n_included']} admitted sources. "
+            "Missing retrieval, screening and full-text exclusion counts are "
+            "not inferred from that total. Recorded stages: "
+            + ("; ".join(f"{key}={sf[key]}" for key in (
+                "n_retrieved", "n_screened", "n_excluded_at_full_text",
+            ) if sf.get(key) is not None) or "none") + ".",
+            "Per-database yields, deduplication counts and screening personnel "
+            "are not documented by these admission counts.",
+            "", "### Exclusion reasons",
         ])
     lines.extend(f"- {r}" for r in pack.exclusion_reason_summary)
     lines.extend([

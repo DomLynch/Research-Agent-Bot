@@ -1085,7 +1085,7 @@ def test_exact_p_value_in_array_is_not_traceable_without_source_excerpt() -> Non
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
-def test_generic_representative_statistic_request_removes_unverified_token() -> None:
+def test_generic_representative_statistic_repair_retains_source_row() -> None:
     ask = (
         "Verify each representative-statistic token in the Findings Map against "
         "the corresponding bundle excerpt; remove tokens that cannot be located "
@@ -1109,12 +1109,23 @@ def test_generic_representative_statistic_request_removes_unverified_token() -> 
     assert revision_coverage.deterministic_known_asks([ask], evidence_rows=rows) == [ask]
     assert "p = 0.001" not in fixed
     assert "exact statistic unavailable in retained source excerpt" not in fixed
-    assert "Han 2020" not in fixed
+    assert "Han 2020" in fixed
     assert "a source-reported estimate" not in fixed
     assert details == ["exact_stat_trace"]
     assert revision_coverage.deterministic_unmet_asks(
         fixed, [ask], evidence_rows=rows,
     ) == []
+    assert repair_revision_quality(fixed, rows, ask) == (fixed, [])
+
+
+def test_findings_map_does_not_present_baseline_balance_as_an_outcome() -> None:
+    row = {"n_claims": 4, "p_values": ["P > .05"], "thesis_text": (
+        "Baseline characteristics of both groups were similar (P > .05). "
+        "Negative symptoms improved versus placebo (P < .001)."
+    )}
+    assert manifest_row_finding(row) == (
+        "4 extracted claim(s); receipt-level direction is the coded finding"
+    )
 
 
 def test_major_claim_trace_revision_adds_requested_source_bound_claims() -> None:

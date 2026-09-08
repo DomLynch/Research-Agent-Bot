@@ -24,7 +24,9 @@ from pathlib import Path
 import pytest
 
 from agent.journal_finalizer import (  # type: ignore[import-not-found]
+    _additive_screening_flow_note,
     _lowercase_first_letter,
+    _phase_a_methods_replace,
     _phase_c_terminology,
     _phase_g_refresh_sidecars,
     _refresh_final_consistency_sidecar,
@@ -38,7 +40,6 @@ from agent.methods_pack import (  # type: ignore[import-not-found]
     render_methods_md,
     write_methods_pack,
 )
-from scripts.journal_finalizer import _phase_a_methods_replace
 
 
 # ---- Fix 1: _lowercase_first_letter ---------------------------------------
@@ -260,15 +261,13 @@ def test_methods_exclusion_reasons_do_not_contradict_zero_excluded() -> None:
     )
     md = render_methods_md(pack, submission_id="run-0000")
     assert "### Exclusion reasons" in md
-    assert "No additional records were excluded after final receipt admission" in md
+    assert "0 were excluded at full-text review" in md
+    assert "Source-level exclusion reasons were not recorded" in md
     assert "Wrong population" not in md
     assert "Duplicate records deduplicated" not in md
 
 
-def test_methods_exclusion_reasons_are_count_backed() -> None:
-    """When exclusions occurred, each listed reason carries its real count and
-    the totals reconcile (50 retrieved - 12 included - 3 non-traceable = 35
-    screened out)."""
+def test_methods_counts_do_not_establish_exclusion_reasons() -> None:
     pack = build_methods_pack(
         review_type="evidence_brief",
         topic="example_topic",
@@ -277,9 +276,32 @@ def test_methods_exclusion_reasons_are_count_backed() -> None:
         outcome_classes=("primary_outcome",),
     )
     md = render_methods_md(pack, submission_id="run-0000")
-    assert "3 records" in md
-    assert "35 records" in md
+    assert "3 were excluded at full-text review" in md
+    assert "Non-traceable findings" not in md
+    assert "Off-topic or ineligible-population" not in md
+    assert "Source-level exclusion reasons were not recorded" in md
     assert "No records were excluded" not in md
+
+
+def test_methods_missing_stage_counts_are_not_admission_counts(tmp_path: Path) -> None:
+    pack = build_methods_pack(
+        review_type="evidence_brief", topic="example", corpus_search_queries=(),
+        n_retrieved=None, n_screened=None, n_included=37, n_rejected=None,
+        outcome_classes=("cognitive",),
+        receipt_funnel={"counts": {"candidate_no_claims": 0, "admitted_receipts": 37}},
+    )
+    assert pack.screening_flow == {"n_included": 37, "candidate_no_claims": 0, "admitted_receipts": 37}
+    md = render_methods_md(pack, submission_id="revision")
+    assert "includes 37 admitted sources" in md
+    assert "37 records retrieved" not in md
+    assert "37 were screened" not in md
+    assert "Recorded stages: none." in md
+    write_methods_pack(tmp_path, pack)
+    assert "not reconstructable" in _additive_screening_flow_note(tmp_path)
+    (tmp_path / "methods_pack.json").write_text(json.dumps({
+        "screening_flow": {"n_screened": None, "n_excluded_at_full_text": None},
+    }))
+    assert "not reconstructable" in _additive_screening_flow_note(tmp_path)
 
 
 def test_methods_pack_legacy_model_swaps_accountability_prose() -> None:

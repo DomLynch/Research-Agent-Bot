@@ -162,19 +162,8 @@ def receipt_direction(row: dict[str, Any]) -> str:
 
 
 def manifest_row_finding(row: dict[str, Any]) -> str:
-    stat = next(iter(traceable_p_values(row)), "")
-    if stat:
-        relation = next(iter(_p_relations(stat)), None)
-        nonsignificant = bool(relation and (
-            relation[0] in {">", ">="} and float(relation[1]) >= 0.05
-            or relation[0] == "=" and float(relation[1]) > 0.05
-        ))
-        prefix = "representative non-significant statistic" if nonsignificant else "representative statistic"
-        suffix = (
-            "; not treated as positive or negative directional support unless source direction is coded"
-            if nonsignificant else "; source-level statistic reported"
-        )
-        return f"{prefix} {stat}{suffix}"
+    # A receipt's first p-value may describe baseline balance, not an outcome.
+    # Endpoint/comparator/statistic attribution belongs in the quantitative index.
     claims = row.get("n_claims")
     if isinstance(claims, int) and claims > 0:
         return f"{claims} extracted claim(s); receipt-level direction is the coded finding"
@@ -511,7 +500,7 @@ def _repair_findings_map_statistics(
             not _stat_supported(match.group(0), row)
             for match in _EFFECT_STAT_RE.finditer(line)
         ):
-            lines[index] = ""
+            lines[index] = ("| " + " | ".join(value.replace("|", "\\|") for value in findings_map_row(row)) + " |\n") if row else ""
     fixed = "".join(lines)
     return (paper_md, 0) if fixed == scope else (paper_md.replace(scope, fixed, 1), 1)
 

@@ -1307,14 +1307,19 @@ def _additive_screening_flow_note(out_dir: Path) -> str:
     flow = pack.get("screening_flow") if isinstance(pack, dict) else {}
     if not isinstance(flow, dict):
         flow = {}
-    screened = int(flow.get("n_screened") or flow.get("n_retrieved") or 0)
-    admitted = int(flow.get("admitted_receipts") or flow.get("n_included") or 0)
-    excluded = int(flow.get("n_excluded_at_full_text") or 0)
-    eligible = max(admitted, screened - excluded)
+    if any(flow.get(key) is None for key in ("n_screened", "n_excluded_at_full_text")):
+        return (
+            "Additive screening flow: not reconstructable from admitted receipts. "
+            "Screening and full-text exclusion counts were not both recorded; "
+            "missing values are not zero, and exclusion reasons are not inferred."
+        )
+    screened = int(flow["n_screened"])
+    admitted = int(flow.get("admitted_receipts", flow.get("n_included", 0)))
+    excluded = int(flow["n_excluded_at_full_text"])
     return (
         "Additive screening flow: records screened "
-        f"({screened}) -> excluded with reasons ({excluded}) -> eligible "
-        f"({eligible}) -> admitted ({admitted}). Claim-binding audit buckets "
+        f"({screened}) -> excluded ({excluded}) -> remaining "
+        f"({screened - excluded}, by subtraction) -> admitted ({admitted}). Claim-binding audit buckets "
         "remain reported separately because they are overlapping diagnostic "
         "states, not additive exclusion rows."
     )

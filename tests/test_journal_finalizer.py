@@ -148,7 +148,8 @@ def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path
     assert logs
     section = fixed.split("### Cardiometabolic Outcomes", 1)[1].split("## References", 1)[0]
     assert "Wang 2024 (Impact of a Precision Intervention for Vascular Health" in section
-    assert "representative statistic p < 0.05" in section
+    assert "54 extracted claim(s)" in section
+    assert "representative statistic" not in section
     assert "direction=unclear; directness=direct; tier=A1" in section
     assert "Direction reconciliation:" not in section
 
@@ -975,8 +976,8 @@ def test_admission_funnel_clarification_adds_additive_screening_flow(tmp_path: P
     fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
 
     assert "Additive screening flow: records screened (50)" in fixed
-    assert "excluded with reasons (10) -> eligible (40) -> admitted (12)" in fixed
-    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
+    assert "excluded (10) -> remaining (40, by subtraction) -> admitted (12)" in fixed
+    assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == [ask]
     assert logs[0].rule == "insert_additive_screening_flow"
 
 
@@ -3058,7 +3059,8 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
     assert "### Findings Map" in fixed
     assert "Cardiometabolic n=1 (direction: null=1; directness: indirect=1; sources: Smith 2024)" in fixed
     assert "| Cardiometabolic | Smith 2024: Clinical source one | direction=null | directness=indirect | B2 |" in fixed
-    assert "finding=representative statistic p = 0.04" in fixed
+    assert "finding=7 extracted claim(s)" in fixed
+    assert "representative statistic" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
     fixed, _ = journal_finalizer._phase_d_source_outcome_class_map(fixed, tmp_path)
@@ -3318,7 +3320,8 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
     assert "Findings Map completeness note: all 9 admitted manifest rows are surfaced below" in fixed
     assert "Pena 2024: G2019S inhibitor abrogates mitochondrial DNA damage" in fixed
     assert "Pena 2024" in fixed and "direction=unclear" in fixed
-    assert "representative non-significant statistic p = 0.92" in fixed
+    assert "finding=2 extracted claim(s)" in fixed
+    assert "representative non-significant statistic" not in fixed
     assert "Hsiao 2026" in fixed and "direction=negative" in fixed
     assert "Ng 2019" in fixed and "direction=null" in fixed
     assert "Shimizu 2026" in fixed and "direction=negative" in fixed
@@ -3674,7 +3677,7 @@ def test_substantive_synthesis_does_not_restore_templates_after_preparation(tmp_
         "thesis_text": "Source excerpts: Resveratrol significantly improved balance and gait speed (all p < 0.05), without affecting resting pain.",
     }]}))
     before, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
-    assert "representative statistic" in before
+    assert "1 extracted claim(s)" in before
     restored_before, _ = journal_finalizer.review_noise_control.restore_surface_floors(
         paper, tmp_path, [], journal_finalizer.FinalizerLogEntry,
     )
@@ -4562,7 +4565,7 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
     assert "- Luo 2025: Effects of L-citrulline supplementation" in fixed
     assert "Synthesis interpretation: These source-level findings connect" in fixed
     assert "Publication-year note: citation years follow the manifest metadata" in fixed
-    assert "finding=representative statistic p < 0.001; source-level statistic reported" in fixed
+    assert "finding=102 extracted claim(s)" in fixed
     assert "No semantically comparable source-pair disagreements" in fixed
     assert "## Gaps Identified" in fixed
     assert "1. Run adequately powered prospective trials" in fixed
@@ -6887,7 +6890,8 @@ def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None
     assert "for its measured endpoint" in fixed
     assert "Direct evidence count is 1/7" in fixed
     assert "Direction-coded source highlights:" in fixed
-    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    # Bare p-values do not repair the requested source-level statistical interpretation.
+    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == [asks[-1]]
 
 
 def test_fourth_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None:

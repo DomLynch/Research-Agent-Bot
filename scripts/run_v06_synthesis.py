@@ -3309,15 +3309,10 @@ async def _run(
         review_type=str(manifest.get("review_type", "")),
         topic=_ACTIVE_TOPIC,
         corpus_search_queries=_search_queries,
-        n_retrieved=int(_funnel.get("retrieved", 0))
-        or int(_funnel.get("n_retrieved", 0))
-        or len(manifest.get("receipts", ())),
-        n_screened=int(_funnel.get("screened", 0))
-        or int(_funnel.get("n_screened", 0))
-        or len(manifest.get("receipts", ())),
+        n_retrieved=_funnel.get("retrieved", _funnel.get("n_retrieved")),
+        n_screened=_funnel.get("screened", _funnel.get("n_screened")),
         n_included=len(manifest.get("receipts", ())),
-        n_rejected=int(_funnel.get("rejected", 0))
-        or int(_funnel.get("n_rejected", 0)),
+        n_rejected=_funnel.get("rejected", _funnel.get("n_rejected")),
         outcome_classes=_outcome_classes,
         source_inventory=retrieval_record.sources,
         receipt_funnel=_funnel,
