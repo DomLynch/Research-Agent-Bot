@@ -26,6 +26,16 @@ def _normalise(text: str) -> str:
     return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
 
 
+def requested_recode_classes(segment: str) -> set[str] | None:
+    # None rejects unsupported restrictions before named-source matching too.
+    scope = re.sub(r"\b(?:protocol|within group) only\b", "", segment)
+    if re.search(r"\b(?:except|excluding|other than|apart from|unless|only|among|within|in|from|with(?! (?:the )?(?:underlying )?source\b)|without|for|whose|where|aged|limited|restricted|involving|that|do not|don't|never|but not|not(?:\W+(?:the|this|that))?\W+source_identity)\b|\b(?:under|over)\s+\d", scope):
+        return None
+    match = re.match(r"^(?:reclassify|recode|correct) (?:the )?(?:evidence classification of )?(?:all |the )?(.+?) (?:records|studies|evidence)\b", segment)
+    classes = set(re.split(r",\s*(?:and\s+)?|\s+and\s+", match[1])) if match else set()
+    return classes if classes <= {"protocol", "protocol only", "multi ingredient", "within group only", "observational"} else set()
+
+
 def _asks_role_reconciliation(text: str) -> bool:
     return _asks_indirect_b2_narrative(text) or (
         any(token in text for token in ("evidence_type", "evidence type"))

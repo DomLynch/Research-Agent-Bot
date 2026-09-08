@@ -25,7 +25,7 @@ import urllib.parse
 import urllib.request
 from collections import Counter
 from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
-from contextlib import contextmanager, suppress
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -84,7 +84,7 @@ from agent.publishing.reconciliation import (  # noqa: E402
     submission_count,
     submission_day_summary,
 )
-from agent.revision_contract import ask_fingerprint, evidence_rows as revision_evidence_rows  # noqa: E402
+from agent.revision_contract import ask_fingerprint, context_fingerprint, evidence_rows as revision_evidence_rows  # noqa: E402
 from agent.revision_claim_trace import major_claim_trace_capacity  # noqa: E402
 from agent.revision_evidence import RECEIPT_CONTRACT_FIELDS, load_revision_evidence  # noqa: E402
 from agent.review_type import (  # noqa: E402
@@ -2406,179 +2406,28 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
         text = paper.read_text(encoding="utf-8")
     except OSError:
         return asks
-    supplement = out_dir / "structured_evidence_tables.md"
-    if supplement.is_file() and not (out_dir / "submission_source_proofs.json").exists():
-        try:
-            text += "\n\n" + supplement.read_text(encoding="utf-8")
-        except OSError:
-            return asks
     manifest = _read_json(out_dir / "manifest.json")
     rows = revision_evidence_rows(out_dir, manifest)
+    try:
+        payload = submit_bridge.build_payload(out_dir, enrich_sources=False)
+    except (OSError, ValueError, KeyError, TypeError):
+        return asks
     unmet = revision_coverage.material_unmet_asks(
         text, feedback, retained_citations=revision_coverage.retained_citation_labels(
             manifest, _read_json(out_dir / "citation_registry.json"),
         ), evidence_rows=rows,
         source_identifier_audit=_read_json(out_dir / "source_identifier_verification.json"),
         required_revisions=required_revisions,
+        submission_payload={key: value for key, value in payload.items() if key != "body_markdown"},
     )
-    return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
+    _write_json(out_dir / REVISION_COVERAGE_GATE, {
+        "passed": not unmet, "ask_count": len(asks), "unmet_asks": unmet,
+        "ask_fingerprint": ask_fingerprint(asks),
+        "context_fingerprint": context_fingerprint(asks, text, rows, payload),
+    })
+    return unmet
 
 
-def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
-    ask_lower = ask.lower()
-    if submit_bridge._asks_source_evidence_span(ask) or submit_bridge._asks_source_locator_membership(ask):
-        try:
-            return submit_bridge.payload_revision_ask_satisfied(out_dir, ask)
-        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
-            return False
-    paper_text = ""
-    with suppress(OSError):
-        paper_text = (out_dir / "full_paper.md").read_text(encoding="utf-8").lower()
-    if revision_coverage.outcome_label_rename(ask):
-        return revision_coverage.outcome_label_cleanup_is_stated(paper_text, ask)
-    if "classification criteria" in ask_lower and all(
-        token in paper_text
-        for token in ("### classification criteria", "**outcome class**", "**directness**", "**evidence tier**")
-    ):
-        return True
-    if (
-        ("mapping table" in ask_lower or "mapping list" in ask_lower or "which of the" in ask_lower)
-        and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
-    ):
-        return True
-    if (
-        (
-            revision_coverage.asks_source_directness_breakdown(ask_lower)
-            or revision_coverage.asks_evidence_type_metadata(ask_lower)
-            or revision_coverage.asks_source_classification_map(ask_lower)
-        )
-        and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
-        and ("low-directness" not in ask_lower or "low-directness" in paper_text)
-        and ("case report" not in ask_lower or ("case report" in paper_text or "case-report" in paper_text))
-        and ("patient education" not in ask_lower or "patient education" not in paper_text)
-    ):
-        return True
-    if (
-        "attribution gap" in ask_lower
-        and "mortality" in ask_lower
-        and "survival" in ask_lower
-        and (
-            "outcome=mortality and survival" in paper_text
-            or "mortality and survival is unsourced" in paper_text
-        )
-    ):
-        return True
-    if (
-        "outcome subsection" in ask_lower
-        and "source" in ask_lower
-        and "evidence domain" in paper_text
-        and "source examples:" in paper_text
-        and "direct-source ceiling:" in paper_text
-    ):
-        return True
-    if (
-        "direct clinical source" in ask_lower
-        and (
-            "direct-source ceiling:" in paper_text
-            or ("### source classification map" in paper_text and "directness=direct" in paper_text)
-        )
-    ):
-        return True
-    if (
-        "limitations" in ask_lower
-        and "protocol" in ask_lower
-        and ("cross-sectional" in ask_lower or "observational" in ask_lower)
-        and "design-limit note:" in paper_text
-        and "causal claims" in paper_text
-    ):
-        return True
-    if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
-        return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
-    if revision_coverage.asks_source_attribution_map(ask_lower):
-        return _paper_has_source_attribution_map(paper_text)
-    if _asks_narrow_conclusion(ask_lower):
-        return _paper_has_bounded_conclusion(paper_text)
-    if _asks_conflict_severity_criteria(ask_lower):
-        return all(
-            token in paper_text
-            for token in (
-                "conflict-map severity note",
-                "severity-level-3",
-                "severity-level-4",
-                "contradiction-map",
-            )
-        )
-    if "truncated" in ask_lower and "abstract" in ask_lower and _abstract_has_complete_sentence(paper_text):
-        return True
-    payload_section_ask = "key findings" in ask_lower or "evidence landscape" in ask_lower
-    payload_clip_ask = "truncated" in ask_lower and "abstract" in ask_lower and "research question" in ask_lower
-    source_topic_ask = "source" in ask_lower and any(token in ask_lower for token in ("address", "off-topic", "off topic", "topic"))
-    source_excerpt_ask = (
-        any(token in ask_lower for token in ("source_bundle", "source bundle", "source", "evidence text"))
-        and any(token in ask_lower for token in ("abstract", "excerpt", "directional coding", "claim extraction"))
-        or bool(submit_bridge.reviewer_unavailable_source_dois(ask))
-    )
-    evidence_type_ask = (
-        "evidence_type" in ask_lower
-        or ("review" in ask_lower and "primary" in ask_lower and ("source_bundle" in ask_lower or "source bundle" in ask_lower))
-    )
-    if not (payload_section_ask or payload_clip_ask or source_topic_ask or source_excerpt_ask or evidence_type_ask):
-        return False
-    try:
-        payload = submit_bridge.build_payload(out_dir)
-    except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
-        return False
-    if source_topic_ask or source_excerpt_ask or evidence_type_ask:
-        bundle = payload.get("source_bundle")
-        if not isinstance(bundle, list) or not bundle:
-            return False
-        rows = [row for row in bundle if isinstance(row, dict)]
-        if source_topic_ask:
-            metadata = payload.get("metadata")
-            topic = str(metadata.get("topic") or "") if isinstance(metadata, dict) else ""
-            aliases = source_gate_aliases(
-                topic, topic_aliases(topic, root=TOPIC_PACKS.parent, include_generated_terms=False),
-            )
-            row_texts = [
-                " ".join(str(row.get(key) or "") for key in ("title", "excerpt", "doi", "id", "url", "evidence_type")).lower()
-                for row in rows
-            ]
-            hits = sum(is_source_topic_specific(topic, text, aliases=aliases) for text in row_texts)
-            if _strict_source_topic_revision_ask(ask_lower):
-                allow_adjacent = "reclassify" in ask_lower or "contextual adjacent" in ask_lower
-                return bool(topic) and all(
-                    is_source_topic_specific(topic, text, aliases=aliases)
-                    or (allow_adjacent and "contextual adjacent" in text)
-                    for text in row_texts
-                )
-            return bool(topic) and hits / len(rows) >= REVISION_SOURCE_BUNDLE_TOPIC_FLOOR
-        if evidence_type_ask and "primary" not in {str(row.get("evidence_type") or "").lower() for row in rows}:
-            return False
-        if source_excerpt_ask:
-            if re.search(r"10\.\d{4,9}/[^\s,;]+", ask, re.I):
-                return submit_bridge.authoritative_doi_repair_satisfied(out_dir, ask)
-            top_rows = rows[:min(14, len(rows))]
-            meaningful = [
-                str(row.get("excerpt") or "")
-                for row in top_rows if submit_bridge._has_authoritative_excerpt(row)
-            ]
-            return len(meaningful) == len(top_rows)
-        return True
-    sections = payload.get("sections", {})
-    if not isinstance(sections, dict):
-        return False
-    if payload_clip_ask:
-        abstract = str(payload.get("abstract") or "").strip()
-        research_question = str(sections.get("Research Question") or "").strip()
-        return bool(
-            abstract
-            and research_question
-            and abstract.endswith((".", "!", "?"))
-            and research_question.endswith((".", "!", "?"))
-        )
-    landscape = str(sections.get("Evidence Landscape") or "")
-    findings = str(sections.get("Key Findings") or "")
-    return bool(findings and landscape and findings != landscape and "|" not in findings)
 
 
 def _paper_has_source_attribution_map(paper_text: str) -> bool:
@@ -3137,6 +2986,14 @@ def _terminal_revision_receipt_preflight(report: Mapping[str, Any]) -> bool:
     return not report.get("passed") and str(report.get("status") or "") == "receipt_preflight_insufficient"
 
 
+def _archive_failed_revision(out_dir: Path) -> None:
+    if out_dir.exists():
+        archive = out_dir.parent / "_failed_revision_repairs"
+        archive.mkdir(exist_ok=True)
+        destination = Path(tempfile.mkdtemp(prefix=f"{out_dir.name}-", dir=archive)) / out_dir.name
+        out_dir.rename(destination)
+
+
 def _repair_existing_run(
     source_dir: Path,
     out_dir: Path,
@@ -3168,8 +3025,8 @@ def _repair_existing_run(
             _write_json(out_dir / "internal_repair_request.json", {"source_run": source_dir.name, "reason": repair_reason})
         from agent.journal_finalizer import finalize_run
         finalize_run(out_dir)
-        if revision_feedback and _unmet_revision_asks(out_dir, revision_feedback):
-            raise ValueError("revision_repair_incomplete")
+        if revision_feedback and (unmet := _unmet_revision_asks(out_dir, revision_feedback)):
+            raise ValueError("revision_repair_incomplete: " + json.dumps(unmet))
         if repair_reason:
             after = paper_path.read_text(encoding="utf-8")
             if after == before and repair_reason != "submission_authority_retry":
@@ -3182,7 +3039,7 @@ def _repair_existing_run(
                     shutil.rmtree(out_dir, ignore_errors=True)
                     return False, f"surface_after_repair_failed:{codes}"
     except (OSError, RuntimeError, ValueError, ImportError) as exc:
-        shutil.rmtree(out_dir, ignore_errors=True)
+        _archive_failed_revision(out_dir)
         return False, f"{type(exc).__name__}: {exc}"
     return True, ""
 
@@ -4956,19 +4813,6 @@ def run_cycle(
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
-                # Coverage gate: a content revise must materially address every
-                # enumerated reviewer ask before it may be submitted.
-                unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
-                if return_code == 0 and revision_feedback:
-                    revision_asks = _revision_asks(
-                        revision_feedback, _required_revision_items(revision_source or {}),
-                    )
-                    _write_json(out_dir / REVISION_COVERAGE_GATE, {
-                        "passed": not unmet,
-                        "ask_count": len(revision_asks),
-                        "ask_fingerprint": ask_fingerprint(revision_asks),
-                        "unmet_asks": unmet,
-                    })
                 # Retraction gate: never submit a paper that cites retracted science.
                 retraction_result = _retracted_cited_sources(out_dir) if return_code == 0 else []
                 retraction_unverified = retraction_result is None
@@ -4990,6 +4834,8 @@ def run_cycle(
                 abstract_overclaim_advisory = bool(overclaims and _final_status_submission_ready(out_dir))
                 if abstract_overclaim_advisory:
                     overclaims = []
+                # Certify only after the lane's final manuscript repair.
+                unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
                 bridge: dict[str, Any] = {}
                 if (
                     return_code == 0

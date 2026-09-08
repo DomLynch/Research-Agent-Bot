@@ -14,7 +14,7 @@ import revision_coverage  # type: ignore[import-not-found]  # noqa: E402
 import review_noise_control  # type: ignore[import-not-found]  # noqa: E402
 from agent import revision_claim_trace  # noqa: E402
 from agent.evidence_lanes import effective_directness  # noqa: E402
-from agent.revision_contract import ask_fingerprint, gate_report  # noqa: E402
+from agent.revision_contract import ask_fingerprint, context_fingerprint, gate_report  # noqa: E402
 from agent.sources.pubmed import pmid_rows_fingerprint  # noqa: E402
 from agent.revision_identity import (  # noqa: E402
     direction_tally_note,
@@ -34,6 +34,17 @@ def _chat(parsed: dict[str, Any]) -> Any:
     async def fake(**_kwargs: Any) -> Any:
         return type("Resp", (), {"parsed": parsed})()
     return fake
+
+
+def _bound_revision_gate(
+    asks: list[str], paper: str, rows: list[dict[str, Any]],
+    unmet: list[str] | tuple[str, ...] = (),
+) -> dict[str, Any]:
+    return {
+        "passed": not unmet, "ask_count": len(asks), "unmet_asks": list(unmet),
+        "ask_fingerprint": ask_fingerprint(asks),
+        "context_fingerprint": context_fingerprint(asks, paper, rows, None),
+    }
 
 
 def test_findings_map_reclassifies_animal_trial_as_context() -> None:
@@ -158,6 +169,24 @@ def test_unmet_asks_fail_closed_on_malformed_verdict(monkeypatch) -> None:
     assert _unmet(["a", "b"], {"addressed": [True]}, monkeypatch) == ["a", "b"]
     assert _unmet(["a"], {"addressed": "nope"}, monkeypatch) == ["a"]
     assert _unmet(["a"], {"addressed": ["false"]}, monkeypatch) == ["a"]
+
+
+@pytest.mark.parametrize("prefix", [0, 16001, 65000])
+def test_revision_judge_receives_middle_table_and_source_evidence(monkeypatch, prefix) -> None:
+    paper = "intro " * prefix + "\n| Source | Finding |\n| Trial | 48% mortality |\n" + "end " * 9000
+    rows = [{"receipt_id": "trial", "verified_source_sections": {"results": "100% survival."}}]
+    ask = "Correct the table's mortality attribution against the trial results."
+    monkeypatch.setattr(revision_coverage, "build_judge_chain", lambda _s: ())
+
+    async def judge(**kwargs):
+        prompt = kwargs["messages"][1]["content"]
+        assert paper in prompt
+        assert "100% survival." in prompt
+        return await _chat({"addressed": [False]})(**kwargs)
+
+    assert revision_coverage.unmet_asks(
+        paper, [ask], evidence_rows=rows, chat=judge, settings=object(),
+    ) == [ask]
 
 
 def test_exact_stat_trace_does_not_collapse_integer_values() -> None:
@@ -427,11 +456,16 @@ def test_pending_protocol_and_reviewer_boilerplate_repairs_converge(tmp_path: Pa
         "passed": False, "ask_count": len(asks), "unmet_asks": asks,
     }))
 
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
+    proof = _bound_revision_gate(asks, fixed, rows, asks)
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps(proof))
     assert gate_report(tmp_path, revision_coverage, refreshed_by="test") == {
-        "passed": True,
-        "ask_count": len(asks),
-        "unmet_asks": [],
-        "refreshed_by": "test",
+        **proof, "refreshed_by": "test",
+    }
+    proof = _bound_revision_gate(asks, fixed, rows)
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps(proof))
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") == {
+        **proof, "refreshed_by": "test",
     }
 
 
@@ -851,7 +885,8 @@ def test_review_role_repair_changes_results_but_preserves_references() -> None:
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
-def test_gate_refresh_preserves_prior_verdict_for_unknown_asks(tmp_path: Path) -> None:
+@pytest.mark.parametrize("rejected", [[0], [1], [0, 1], []])
+def test_gate_refresh_preserves_prior_verdict_for_all_asks(tmp_path: Path, rejected: list[int]) -> None:
     known = (
         "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural "
         "corpus limitation."
@@ -869,28 +904,16 @@ def test_gate_refresh_preserves_prior_verdict_for_unknown_asks(tmp_path: Path) -
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({
         "feedback": f"{known}; {unknown}", "required_revisions": [known, unknown],
     }))
-    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({
-        "passed": False, "ask_count": 2, "unmet_asks": [known],
-    }))
-
-    refreshed = gate_report(tmp_path, revision_coverage, refreshed_by="test")
-    fingerprint = ask_fingerprint([known, unknown])
-
-    assert refreshed == {
-        "passed": True, "ask_count": 2, "unmet_asks": [],
-        "ask_fingerprint": fingerprint, "refreshed_by": "test",
-    }
-    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps({
-        "passed": False, "ask_count": 2, "unmet_asks": [unknown],
-        "ask_fingerprint": fingerprint,
-    }))
+    asks = [known, unknown]
+    proof = _bound_revision_gate(asks, paper, rows, [asks[index] for index in rejected])
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps(proof))
     assert gate_report(tmp_path, revision_coverage, refreshed_by="test") == {
-        "passed": False, "ask_count": 2, "unmet_asks": [unknown],
-        "ask_fingerprint": fingerprint, "refreshed_by": "test",
+        **proof, "refreshed_by": "test",
     }
 
 
-def test_gate_refresh_rejects_stale_unknown_ask_verdict(tmp_path: Path) -> None:
+@pytest.mark.parametrize("mutation", ["paper", "rows", "asks", "count", "ask_fingerprint", "context_fingerprint", "payload", "passed", "unmet_asks"])
+def test_gate_refresh_rejects_stale_proof_until_fresh_approval(tmp_path: Path, mutation: str) -> None:
     known = (
         "Justify inclusion of Wick 2025 under the paper topic or flag it as a structural "
         "corpus limitation."
@@ -908,14 +931,35 @@ def test_gate_refresh_rejects_stale_unknown_ask_verdict(tmp_path: Path) -> None:
     legacy.write_text(json.dumps({
         "passed": True, "ask_count": 2, "unmet_asks": [],
     }))
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
+    asks = [known, first_unknown]
+    proof = _bound_revision_gate(asks, paper, rows)
+    legacy.write_text(json.dumps(proof))
     current = gate_report(tmp_path, revision_coverage, refreshed_by="test")
-    assert current is not None and current["passed"] is True
-    legacy.write_text(json.dumps(current))
-    request.write_text(json.dumps({
-        "required_revisions": [known, "Explain the Discussion's clinical boundary."],
-    }))
+    assert current == {**proof, "refreshed_by": "test"}
+    if mutation == "paper":
+        paper += "\nNew interpretation.\n"
+        (tmp_path / "full_paper.md").write_text(paper)
+    elif mutation == "rows":
+        rows[0]["thesis_text"] = "Changed source evidence."
+        (tmp_path / "manifest.json").write_text(json.dumps({"receipts": rows}))
+    elif mutation == "asks":
+        asks[1] = "Explain the Discussion's clinical boundary."
+        request.write_text(json.dumps({"required_revisions": asks}))
+    else:
+        key = "ask_count" if mutation == "count" else mutation
+        if mutation == "payload":
+            proof["context_fingerprint"] = context_fingerprint(asks, paper, rows, {"title": "Other payload"})
+        else:
+            proof[key] = 0 if mutation == "count" else False if mutation == "passed" else "stale"
+        legacy.write_text(json.dumps(proof))
 
     assert gate_report(tmp_path, revision_coverage, refreshed_by="test") is None
+    proof = _bound_revision_gate(asks, paper, rows)
+    legacy.write_text(json.dumps(proof))
+    assert gate_report(tmp_path, revision_coverage, refreshed_by="test") == {
+        **proof, "refreshed_by": "test",
+    }
 
 
 def test_revision_gate_generated_lifecycle() -> None:
@@ -927,6 +971,7 @@ def test_revision_gate_generated_lifecycle() -> None:
 
     @hypothesis.settings(max_examples=60, deadline=None, derandomize=True, database=None)
     @hypothesis.example(["approve", "repair", "regress", "repair", "new_review", "approve", "corrupt_gate", "reject"])
+    @hypothesis.example(["repair", "approve", "regress", "repair", "reject", "approve"])
     @hypothesis.given(st.lists(st.sampled_from(actions), min_size=1, max_size=20))
     def lifecycle(events: list[str]) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -941,7 +986,8 @@ def test_revision_gate_generated_lifecycle() -> None:
             (run / "manifest.json").write_text(json.dumps({"receipts": rows}))
             paper.write_text(broken)
             repaired_now, review = False, 0
-            approved: bool | None = None
+            proof_state = None
+            prior_unmet: list[str] = []
             unknown = "Improve the Discussion's clinical interpretation (review 0)."
             request.write_text(json.dumps({"required_revisions": [known, unknown]}))
             for action in events:
@@ -949,29 +995,28 @@ def test_revision_gate_generated_lifecycle() -> None:
                     repaired_now = action == "repair"
                     paper.write_text(repaired if repaired_now else broken)
                 elif action in {"approve", "reject"}:
-                    approved = action == "approve"
-                    gate.write_text(json.dumps({
-                        "passed": approved, "ask_count": 2,
-                        "unmet_asks": [] if approved else [unknown],
-                        "ask_fingerprint": ask_fingerprint([known, unknown]),
-                    }))
+                    proof_state = (repaired_now, review)
+                    prior_unmet = [] if action == "approve" else [known, unknown]
+                    gate.write_text(json.dumps(_bound_revision_gate(
+                        [known, unknown], paper.read_text(), rows, prior_unmet,
+                    )))
                 elif action == "new_review":
                     review += 1
                     unknown = f"Improve the Discussion's clinical interpretation (review {review})."
                     request.write_text(json.dumps({"required_revisions": [known, unknown]}))
-                    approved = None
                 else:
                     gate.unlink(missing_ok=True)
                     if action == "corrupt_gate":
                         gate.write_text("{")
-                    approved = None
+                    proof_state = None
                 report = gate_report(run, revision_coverage, refreshed_by="test")
-                if approved is None:
+                if proof_state != (repaired_now, review):
                     assert report is None, events
                     continue
-                expected = ([] if repaired_now else [known]) + ([] if approved else [unknown])
+                expected = [ask for ask in (known, unknown) if ask in prior_unmet or ask == known and not repaired_now]
                 assert report is not None and report["unmet_asks"] == expected, events
                 assert report["passed"] is (not expected), events
+                prior_unmet = expected
                 gate.write_text(json.dumps(report))
                 assert gate_report(run, revision_coverage, refreshed_by="test") == report
 

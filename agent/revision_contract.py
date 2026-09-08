@@ -4,11 +4,15 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 
 def ask_fingerprint(asks: list[str]) -> str:
     return hashlib.sha256(json.dumps(asks, separators=(",", ":")).encode()).hexdigest()
+
+
+def context_fingerprint(asks: list[str], paper: str, rows: list[dict[str, Any]], payload: dict[str, Any] | None) -> str:
+    return hashlib.sha256(json.dumps([asks, paper, rows, payload], sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 
 def feedback(request: Any) -> str:
@@ -25,7 +29,7 @@ def needs_coverage(request: Any) -> bool:
 
 
 def evidence_rows(out_dir: Path, manifest: dict[str, Any]) -> list[dict[str, Any]]:
-    """Review complete frozen abstracts without rewriting the receipt contracts."""
+    """Review frozen source text and tables without rewriting receipt contracts."""
     from agent.revision_evidence import load_revision_evidence
 
     raw = manifest.get("receipts")
@@ -44,11 +48,15 @@ def evidence_rows(out_dir: Path, manifest: dict[str, Any]) -> list[dict[str, Any
     for row in rows:
         record = json.loads((lock.parsed_dir / f"{row['receipt_id']}.paper_sections.json").read_text())
         abstract = record.get("sections", {}).get("abstract")
-        reviewed.append({**row, "verified_abstract": abstract} if isinstance(abstract, str) and abstract.strip() else row)
+        reviewed.append({
+            **row, "verified_source_sections": record.get("sections", {}),
+            "verified_source_tables": record.get("tables", []),
+            **({"verified_abstract": abstract} if isinstance(abstract, str) and abstract.strip() else {}),
+        })
     return reviewed
 
 
-def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str, payload_satisfied: Callable[[str], bool] | None = None) -> dict[str, Any] | None:
+def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str, payload: dict[str, Any] | None = None) -> dict[str, Any] | None:
     def load(name: str) -> dict[str, Any]:
         try:
             value = json.loads((out_dir / name).read_text(encoding="utf-8"))
@@ -65,39 +73,29 @@ def gate_report(out_dir: Path, coverage: Any, *, refreshed_by: str, payload_sati
     asks = coverage.revision_asks(revision_feedback, required if isinstance(required, list) else None)
     manifest = load("manifest.json")
     rows = evidence_rows(out_dir, manifest)
-    known = coverage.deterministic_known_asks(asks, evidence_rows=rows)
-    known_set = set(known) | {ask for ask in asks if payload_satisfied and payload_satisfied(ask)}
-    if not asks or not known_set:
-        return None
-    unknown = [ask for ask in asks if ask not in known_set]
+    text = paper.read_text(encoding="utf-8")
     previous = load("revision_coverage_gate.json")
     previous_unmet = previous.get("unmet_asks")
     fingerprint = ask_fingerprint(asks)
-    request_path = out_dir / "researka_revision_request.json"
-    gate_path = out_dir / "revision_coverage_gate.json"
-    legacy_current = (
-        not previous.get("ask_fingerprint")
-        and gate_path.is_file()
-        and gate_path.stat().st_mtime_ns >= request_path.stat().st_mtime_ns
-    )
-    if unknown and (
-        previous.get("ask_count") != len(asks)
+    context = context_fingerprint(asks, text, rows, payload)
+    if (
+        not asks or previous.get("ask_count") != len(asks)
         or not isinstance(previous_unmet, list)
-        or (previous.get("ask_fingerprint") != fingerprint and not legacy_current)
+        or previous.get("passed") is not (not previous_unmet)
+        or any(ask not in asks for ask in previous_unmet)
+        or previous.get("ask_fingerprint") != fingerprint
+        or previous.get("context_fingerprint") != context
     ):
         return None
     unmet = coverage.deterministic_unmet_asks(
-        paper.read_text(encoding="utf-8"), known,
+        text, asks,
         retained_citations=coverage.retained_citation_labels(manifest, load("citation_registry.json")),
         evidence_rows=rows,
         source_identifier_audit=load("source_identifier_verification.json"),
     )
     prior_unmet = {str(ask) for ask in previous_unmet or ()}
-    unmet.extend(ask for ask in unknown if ask in prior_unmet)
-    report = {
+    unmet = [ask for ask in asks if ask in unmet or ask in prior_unmet]
+    return {
         "passed": not unmet, "ask_count": len(asks), "unmet_asks": unmet,
-        "refreshed_by": refreshed_by,
+        "refreshed_by": refreshed_by, "ask_fingerprint": fingerprint, "context_fingerprint": context,
     }
-    if unknown:
-        report["ask_fingerprint"] = fingerprint
-    return report

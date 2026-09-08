@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
+from importlib import import_module
 from pathlib import Path
 from typing import Any, cast
 
@@ -44,7 +45,9 @@ def test_revision_review_uses_complete_verified_abstract_without_contract_mutati
     raw.mkdir()
     abstract = "Baseline characteristics were similar (P > .05). Negative symptoms improved (P < . 001)."
     (raw / "r1.quant_claims.json").write_text('{"paper_id":"r1"}')
-    (raw / "r1.paper_sections.json").write_text(json.dumps({"sections": {"abstract": abstract}}))
+    sections = {"abstract": abstract, "results": "100% survival in both arms."}
+    tables = [{"caption": "Trial outcomes", "rows": [["Survival", "100%"]]}]
+    (raw / "r1.paper_sections.json").write_text(json.dumps({"sections": sections, "tables": tables}))
     (raw / "citation_registry.json").write_text('{"r1":{"body_citation":"Trial 2024"}}')
     manifest: dict[str, Any] = {"topic": "statins", "receipts": [{**_contract(_receipt()), "thesis_text": "Baseline P > .05."}],
                 "revision_evidence_snapshot": {"required": True}}
@@ -55,6 +58,8 @@ def test_revision_review_uses_complete_verified_abstract_without_contract_mutati
     before = {p: p.read_bytes() for p in snapshot.rglob("*") if p.is_file()}
     rows = evidence_rows(tmp_path, manifest)
     assert rows[0]["verified_abstract"] == abstract
+    assert rows[0]["verified_source_sections"] == sections
+    assert rows[0]["verified_source_tables"] == tables
     assert rows[0]["thesis_text"] == "Baseline P > .05."
     assert manifest["receipts"][0]["thesis_text"] == "Baseline P > .05."
     note = _revision_note("statistic", rows[0], 1, "Correct representative statistic consistent with the source excerpt (P < .001 for negative-symptom improvement).")
@@ -99,6 +104,175 @@ def test_reviewer_unavailable_source_dois_are_explicit_and_exact() -> None:
     assert reviewer_unavailable_source_dois(
         "Verify these DOI sources against authoritative abstracts: 10.1000/blocked",
     ) == set()
+
+
+_CLASS_RECODE_ASK = (
+    "Reclassify protocol-only, multi-ingredient, within-group-only, and observational "
+    "records under the stated directness criteria, recalculate all direct/indirect totals, "
+    "and either provide per-source risk-of-bias judgments or remove A1/decision-grade quality implications."
+)
+
+
+@pytest.fixture
+def class_recode_rows(tmp_path: Path, request) -> dict[str, dict[str, Any]]:
+    from agent.publication_evidence import source_proof_fields
+
+    titles = {
+        "protocol": "Trial rationale and study design",
+        "combination": "Multi-ingredient supplementation in adults: a randomized trial",
+        "observational": "A prospective cohort study of older adults",
+        "within": "Pilot supplementation study in adults",
+        "trial": "A randomized controlled trial in adults",
+        "unknown": "Effects of supplementation",
+    }
+    rows = {f"r_{key}": {**_contract(_receipt()), "receipt_id": f"r_{key}", "source_title": title}
+            for key, title in titles.items()}
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    abstract = getattr(request, "param", "Methods: Only within-group comparisons were performed in this study of supplementation in adults.")
+    (raw / "r_within.quant_claims.json").write_text('{"paper_id":"r_within"}')
+    (raw / "r_within.paper_sections.json").write_text(json.dumps({"sections": {"abstract": abstract}}))
+    (raw / "citation_registry.json").write_text('{}')
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "statins", "receipts": [rows["r_within"]]}))
+    assert create_revision_evidence_snapshot(tmp_path, quant_dir=raw, parsed_dir=raw,
+        citation_registry=raw / "citation_registry.json", receipt_ids={"r_within"})["passed"]
+    lock = load_revision_evidence(tmp_path, quant_dir=raw, parsed_dir=raw)
+    proof_row = {"title": titles["within"], "pmid": "123", "doi": "10.1/example", "excerpt": abstract}
+    proof_row.update(source_proof_fields(proof_row, origin="pubmed", evidence=lock,
+        topic="statins", receipt_id="r_within"))
+    rows["r_within"].update(proof_row)
+    return rows
+
+
+@pytest.mark.parametrize(("ask", "expected"), [
+    (_CLASS_RECODE_ASK, {"protocol", "combination", "within", "observational"}),
+    ("Reclassify observational records under the directness criteria.", {"observational"}),
+    ("Reclassify multi-ingredient records under the directness criteria.", {"combination"}),
+    ("Reclassify within-group-only records under the directness criteria.", {"within"}),
+    ("Recode all observational studies as indirect evidence.", {"observational"}),
+    ("Reclassify protocol-only records as indirect evidence.", {"protocol"}),
+    ("Correct the evidence classification of multi-ingredient records.", {"combination"}),
+    ("Reclassify multi-ingredient and observational evidence; reconcile directness criteria.", set()),
+    ("Recode the multi-ingredient and observational studies to correct their evidence tier.", {"combination", "observational"}),
+    ("Reclassify observational records without changing their directness.", set()),
+    ("Do not " + _CLASS_RECODE_ASK.lower(), set()),
+    ("Never " + _CLASS_RECODE_ASK.lower(), set()),
+    ("Discuss multi-ingredient and observational records under the directness criteria.", set()),
+    ("Reclassify the Methods headings; discuss observational directness criteria.", set()),
+    ("Reclassify protocol-only records under the directness criteria; do not reclassify observational records.", {"protocol"}),
+    ("Reclassify observational records except selected studies under the directness criteria.", set()),
+])
+def test_source_validated_class_recode_authorization(class_recode_rows, ask, expected) -> None:
+    authorized_receipt_contract_fields_by_receipt = import_module("scripts.revision_coverage").authorized_receipt_contract_fields_by_receipt
+
+    before = json.dumps(class_recode_rows, sort_keys=True)
+    allowed = authorized_receipt_contract_fields_by_receipt(ask, class_recode_rows)
+    assert allowed == {f"r_{key}": {"directness", "evidence_tier"} for key in expected}
+    assert json.dumps(class_recode_rows, sort_keys=True) == before
+
+
+def test_class_recode_rejects_unverified_evidence_and_identity_drift(class_recode_rows) -> None:
+    authorized_receipt_contract_fields_by_receipt = import_module("scripts.revision_coverage").authorized_receipt_contract_fields_by_receipt
+
+    within = class_recode_rows["r_within"]
+    for changes in (
+        {"excerpt": within["excerpt"] + " Invented details."},
+        {"pmid": "999"},
+        {"title": "A different source"},
+        {"evidence_origin": "model"},
+    ):
+        row = {**within, **changes, "verified_abstract": within["excerpt"]}
+        assert authorized_receipt_contract_fields_by_receipt(_CLASS_RECODE_ASK, {"r_within": row}) == {}
+    row = {**class_recode_rows["r_unknown"], "directness": "indirect", "evidence_tier": "B2",
+           "thesis_text": within["excerpt"], "verified_abstract": within["excerpt"]}
+    assert authorized_receipt_contract_fields_by_receipt(_CLASS_RECODE_ASK, {"observational_id": row}) == {}
+
+
+@pytest.mark.parametrize(("class_recode_rows", "expected"), [
+    ("Methods: This prospective observational cohort study followed older adults receiving supplementation for six months.", True),
+    ("Methods: Adults received a multi-ingredient supplement or placebo in this randomized clinical trial.", True),
+    ("Background: Only within-group comparisons were performed in previous trials. Methods: We studied supplementation in adults.", False),
+    ("Methods: No multi-ingredient supplement was administered in this clinical study of older adults.", False),
+    ("Methods: Only within-group comparisons were performed at baseline in this randomized controlled trial of adults.", False),
+], indirect=["class_recode_rows"])
+def test_class_recode_uses_own_verified_methods_not_background(class_recode_rows, expected) -> None:
+    authorize = import_module("scripts.revision_coverage").authorized_receipt_contract_fields_by_receipt
+    rows = {"r_within": class_recode_rows["r_within"]}
+    assert authorize(_CLASS_RECODE_ASK, rows) == ({"r_within": {"directness", "evidence_tier"}} if expected else {})
+
+
+@pytest.mark.parametrize("ask", [
+    "Reclassify observational records except cohort_a under the directness criteria.",
+    "Reclassify observational records excluding Study A as indirect evidence.",
+    "Reclassify observational records in women under the directness criteria.",
+    "Recode observational studies as indirect evidence among older adults.",
+    "Reclassify observational records under the directness criteria for women.",
+    "Reclassify cohort_a as indirect evidence only if it enrolled adults.",
+    "Reclassify cohort_a as indirect evidence unless it was randomized.",
+    "Reclassify observational records, not cohort_a, under the directness criteria.",
+    "Reclassify observational records, not Study A, under the directness criteria.",
+    'Reclassify observational records, not "cohort_a", under the directness criteria.',
+    "Reclassify observational records, not (cohort_a), under the directness criteria.",
+    "Reclassify observational records, not the cohort_a, under the directness criteria.",
+    "Reclassify observational records, not cohort_a or cohort_b, under the directness criteria.",
+])
+def test_recode_restrictions_precede_named_and_class_authorization(ask) -> None:
+    authorize = import_module("scripts.revision_coverage").authorized_receipt_contract_fields_by_receipt
+    rows = {"cohort_a": {"source_title": "Prospective cohort study in women"},
+            "cohort_b": {"source_title": "Prospective cohort study in men"}}
+    aliases = {"cohort_a": ("Study A",)}
+    assert authorize(ask, rows, aliases) == {}
+    assert authorize("Reclassify cohort_a as indirect evidence.", rows, aliases) == {
+        "cohort_a": {"directness", "evidence_tier"},
+    }
+    assert authorize("Recode cohort_a as a primary RCT, not a review; correct directness and tier.", rows, aliases) == {
+        "cohort_a": {"directness", "evidence_tier"},
+    }
+
+
+@pytest.mark.parametrize(("template", "allowed"), [
+    ("Reclassify {title} as indirect evidence.", True),
+    ("Reclassify {title} as indirect evidence for older adults.", False),
+    ("Reclassify observational records except {title} under the directness criteria.", False),
+])
+def test_recode_masks_source_identity_but_not_external_restrictions(template, allowed) -> None:
+    authorize = import_module("scripts.revision_coverage").authorized_receipt_contract_fields_by_receipt
+    title = "Effects of supplementation in women"
+    rows = {"r1": {"source_title": title}}
+    assert authorize(template.format(title=title), rows, {"r1": ("Effects",)}) == (
+        {"r1": {"directness", "evidence_tier"}} if allowed else {}
+    )
+
+
+def test_snapshot_source_methods_reach_runner_authorization(tmp_path: Path) -> None:
+    from agent.publication_evidence import source_proof_is_valid
+
+    coverage = import_module("scripts.revision_coverage")
+    authorize = coverage.authorized_receipt_contract_fields_by_receipt
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    row = _contract(_receipt())
+    abstract = "Methods: Only within-group comparisons were performed in this study of supplementation in adults."
+    (raw / "r1.quant_claims.json").write_text('{"paper_id":"r1"}')
+    (raw / "r1.paper_sections.json").write_text(json.dumps({"sections": {"abstract": abstract}}))
+    (raw / "citation_registry.json").write_text('{}')
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "statins", "receipts": [row]}))
+    assert create_revision_evidence_snapshot(tmp_path, quant_dir=raw, parsed_dir=raw,
+        citation_registry=raw / "citation_registry.json", receipt_ids={"r1"})["passed"]
+    lock = load_revision_evidence(tmp_path, quant_dir=raw, parsed_dir=raw, expected_topic="statins")
+    assert not lock.errors
+    assert authorize(_CLASS_RECODE_ASK, lock.receipt_rows) == {}
+    before = {p: p.read_bytes() for p in (tmp_path / SNAPSHOT_DIR).rglob("*") if p.is_file()}
+    frozen_rows = json.dumps(lock.receipt_rows, sort_keys=True)
+    enriched = coverage.snapshot_recode_rows(lock)
+    assert source_proof_is_valid(enriched["r1"])
+    assert enriched["r1"]["excerpt"] == abstract
+    assert all(enriched["r1"][key] == value for key, value in lock.receipt_rows["r1"].items())
+    assert authorize(_CLASS_RECODE_ASK, enriched) == {"r1": {"directness", "evidence_tier"}}
+    assert json.dumps(lock.receipt_rows, sort_keys=True) == frozen_rows
+    assert before == {p: p.read_bytes() for p in before}
+    (lock.parsed_dir / "r1.paper_sections.json").write_text('{"sections":{"abstract":"tampered"}}')
+    assert coverage.snapshot_recode_rows(lock) == {}
 
 
 def test_snapshot_hashes_quant_and_parsed_inputs(tmp_path: Path, monkeypatch) -> None:

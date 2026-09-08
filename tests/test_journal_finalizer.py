@@ -11,6 +11,7 @@ from typing import Any
 
 from agent import journal_finalizer, revision_quality
 from agent.journal_surface_gate import evaluate_journal_surface
+from agent.revision_contract import ask_fingerprint, context_fingerprint
 from agent.sources.pubmed import pmid_rows_fingerprint
 
 
@@ -696,7 +697,7 @@ def test_finalize_run_preserves_unproven_human_longevity_after_surface_restore(t
 
 
 @pytest.mark.parametrize("resolved", [False, True])
-def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path: Path, resolved: bool) -> None:
+def test_phase_g_preserves_payload_bound_rejection_after_finalizer_text(tmp_path: Path, resolved: bool) -> None:
     submission = importlib.import_module("publishing.submission")
 
     ask = (
@@ -715,28 +716,23 @@ def test_phase_g_refreshes_revision_coverage_gate_after_finalizer_text(tmp_path:
         paper = "## Evidence Landscape\n\nDirection coding remains unresolved.\n"
     (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
     (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}), encoding="utf-8")
-    (tmp_path / "revision_coverage_gate.json").write_text(
-        json.dumps({"passed": False, "ask_count": 1, "unmet_asks": [ask]}),
-        encoding="utf-8",
-    )
+    payload = submission.build_payload(tmp_path, enrich_sources=False)
+    proof = {
+        "passed": False, "ask_count": 1, "unmet_asks": [ask],
+        "ask_fingerprint": ask_fingerprint([ask]),
+        "context_fingerprint": context_fingerprint([ask], paper, [], payload),
+    }
+    (tmp_path / "revision_coverage_gate.json").write_text(json.dumps(proof), encoding="utf-8")
 
     logs = journal_finalizer._phase_g_refresh_sidecars(tmp_path)
 
     gate = json.loads((tmp_path / "revision_coverage_gate.json").read_text(encoding="utf-8"))
-    assert gate == {
-        "passed": resolved,
-        "ask_count": 1,
-        "unmet_asks": [] if resolved else [ask],
-        "refreshed_by": "journal_finalizer",
-    }
-    assert any(entry.rule == "refresh_revision_coverage_gate_post_finalizer" for entry in logs)
+    assert gate == proof
+    assert not any(entry.rule == "refresh_revision_coverage_gate_post_finalizer" for entry in logs)
     gate_path = tmp_path / "revision_coverage_gate.json"
     snapshot = (gate_path.read_bytes(), gate_path.stat().st_mtime_ns)
     assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is False
     assert (gate_path.read_bytes(), gate_path.stat().st_mtime_ns) == snapshot
-    gate_path.write_text(json.dumps({"passed": False, "ask_count": 1, "unmet_asks": [ask]}))
-    assert submission._refresh_revision_coverage_gate(tmp_path, {"feedback": ask}) is True
-    assert json.loads(gate_path.read_text()) == {**gate, "refreshed_by": "daily_submit"}
 
 
 def test_source_verification_transparency_is_inserted_into_methods(tmp_path: Path) -> None:
@@ -4175,7 +4171,9 @@ def test_latest_telomere_post_submit_reviewer_asks_are_repaired_generically(tmp_
     }
 
 
-def test_revision_gate_refresh_recomputes_empty_stale_unmet_list(tmp_path: Path) -> None:
+def test_revision_gate_refresh_requires_fresh_bound_proof(tmp_path: Path) -> None:
+    import revision_coverage
+
     feedback = (
         "Populate the Key Findings section with a concrete bullet list tied to the explicit "
         "outcome-class slices, naming which sources support each bullet; Restate the research "
@@ -4206,14 +4204,20 @@ def test_revision_gate_refresh_recomputes_empty_stale_unmet_list(tmp_path: Path)
         "unmet_asks": [],
     }), encoding="utf-8")
 
-    assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is True
-    refreshed = json.loads((tmp_path / "revision_coverage_gate.json").read_text(encoding="utf-8"))
-    assert refreshed == {
-        "passed": True,
-        "ask_count": 5,
-        "unmet_asks": [],
-        "refreshed_by": "journal_finalizer",
+    gate_path = tmp_path / "revision_coverage_gate.json"
+    stale = (gate_path.read_bytes(), gate_path.stat().st_mtime_ns)
+    assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is False
+    assert (gate_path.read_bytes(), gate_path.stat().st_mtime_ns) == stale
+    asks = revision_coverage.revision_asks(feedback)
+    proof = {
+        "passed": True, "ask_count": len(asks), "unmet_asks": [],
+        "ask_fingerprint": ask_fingerprint(asks),
+        "context_fingerprint": context_fingerprint(asks, paper, [], None),
     }
+    gate_path.write_text(json.dumps(proof))
+    assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is True
+    assert json.loads(gate_path.read_text()) == {**proof, "refreshed_by": "journal_finalizer"}
+    assert journal_finalizer._refresh_revision_coverage_gate(tmp_path) is False
 
 
 def test_scope_framing_and_direction_tally_audit_repaired_generically(tmp_path: Path) -> None:
@@ -4507,7 +4511,7 @@ def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_
         "full_paper.audit.json", "full_paper.consistency.json", "full_paper.final_verdict.json",
         "full_paper.journal_surface.json",
     } <= {path.name for path in snapshot}
-    assert json.loads(snapshot[tmp_path / "revision_coverage_gate.json"])["passed"] is True
+    assert json.loads(snapshot[tmp_path / "revision_coverage_gate.json"]) == {"passed": False, "unmet_asks": asks}
     assert not journal_finalizer.finalize_run(tmp_path).paper_changed
     assert {path: path.read_bytes() for path in tmp_path.rglob("*") if path.is_file() and path.name != "journal_finalizer.json"} == snapshot
 

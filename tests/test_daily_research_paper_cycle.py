@@ -6085,7 +6085,8 @@ def _run_coverage_cycle(
 ):
     feedback_seen: list[str | None] = []
     monkeypatch.setattr(cycle, "_run_synthesis", _coverage_fake_synthesis(feedback_seen, paper_md))
-    monkeypatch.setattr(cycle, "_unmet_revision_asks", lambda out_dir, fb: list(unmet))
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", _REAL_UNMET_REVISION_ASKS)
+    monkeypatch.setattr(cycle.revision_coverage, "material_unmet_asks", lambda *_a, **_k: list(unmet))
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs", date="2026-05-28", run_synthesis=True, submit=True,
         remote_loader=lambda: (set(), None), revision_loader=_aspirin_revise_loader,
@@ -6656,89 +6657,10 @@ def test_coverage_unmet_ask_blocks_submit(tmp_path: Path, monkeypatch) -> None:
     assert handled["handled"][0]["status"] == "revision_coverage_unmet"
 
 
-def test_full_research_payload_does_not_claim_obsolete_brief_sections(
-    tmp_path: Path,
-) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\nAbstract overview.\n\n"
-        "## Results\n\n| Outcome | Signal |\n|---|---|\n| immune | mixed |\n\n"
-        "## Conclusion\n\nThe key finding is bounded human application with few direct clinical trials.\n",
-        encoding="utf-8",
-    )
-    _write_json(out_dir / "manifest.json", {"topic": "topic", "receipts": []})
-    _write_json(out_dir / "citation_registry.json", {})
-
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Remove duplication between Evidence Landscape and Key Findings",
-    )
-    assert not cycle._payload_revision_ask_satisfied(out_dir, "tighten the abstract")
 
 
-def test_classification_revision_asks_can_be_satisfied_by_public_sections(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\n"
-        "No source is classified as direct interventional hard-endpoint evidence.\n\n"
-        "## Evidence Snapshot\n\n"
-        "### Classification Criteria\n\n"
-        "- **Outcome class** is assigned from endpoint and claim text.\n"
-        "- **Directness** is coded as direct only when a source tests the topic; "
-        "a qualifying direct source would be a human interventional study.\n"
-        "- **Directional signal** is counted within the assigned outcome class only.\n"
-        "- **Evidence tier** follows the deterministic taxonomy.\n\n"
-        "### Source Classification Map\n\n"
-        "- Hayashi 2025: outcome=contextual adjacent evidence; directness=mechanistic; "
-        "tier=C1; direction=positive; claims=12.\n",
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Define the classification criteria used to assign studies to outcome classes and to code directness.",
-    )
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Provide a mapping table or list showing which of the 28 bundle sources were assigned to which outcome class.",
-    )
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Clarify the definition of 'direct evidence' and provide a qualifying direct source example.",
-    )
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Clarify whether 'no extracted directional signal' means no signal for this specific outcome class.",
-    )
 
 
-def test_conflict_severity_revision_ask_can_be_satisfied_by_public_note(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Methods\n\n"
-        "Conflict-map severity note: severity-level-3 disagreements are defined and scored "
-        "as material null-versus-positive conflicts. severity-level-4 disagreements are "
-        "defined and scored as higher-weight conflicts. The scoring inputs are recorded "
-        "in the supplementary contradiction-map and source-audit sidecars.\n",
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Add a brief explanation in the main text of how 'severity-level-3' and "
-        "'severity-level-4' disagreements are defined and scored, or provide a clear "
-        "pointer to the exact supplementary file where this is defined.",
-    )
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Rewrite the Gaps Identified section with actionable future research steps.",
-    )
 
 
 def test_unmet_revision_asks_uses_deterministic_gate_when_judge_fails_open(tmp_path: Path, monkeypatch) -> None:
@@ -6758,7 +6680,7 @@ def test_unmet_revision_asks_uses_deterministic_gate_when_judge_fails_open(tmp_p
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
 
 
-def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monkeypatch) -> None:
+def test_unmet_revision_asks_requires_quantitative_table_in_outgoing_manuscript(tmp_path: Path, monkeypatch) -> None:
     import revision_coverage  # type: ignore[import-not-found]
 
     out_dir = tmp_path / "run"
@@ -6774,9 +6696,9 @@ def test_unmet_revision_asks_reads_quantitative_supplement(tmp_path: Path, monke
         "| Smith 2024 | mortality | treatment | P > 0.99 | p-value | — |\n",
         encoding="utf-8",
     )
-    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
-    (out_dir / "submission_source_proofs.json").write_text("[]")
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
+    (out_dir / "full_paper.md").write_text((out_dir / "structured_evidence_tables.md").read_text())
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
 def test_unmet_revision_asks_scopes_outcome_rename_to_public_manuscript(tmp_path: Path, monkeypatch) -> None:
@@ -6833,6 +6755,9 @@ def test_numeric_supplement_normalization_clears_live_revision_ask(
     )
     supplement.write_text(normalized, encoding="utf-8")
     assert changed == 2
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == [ask]
+    paper = out_dir / "full_paper.md"
+    paper.write_text(paper.read_text() + "\n\n" + normalized)
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
@@ -6859,7 +6784,7 @@ def test_unmet_revision_asks_accepts_material_directional_explanation(tmp_path: 
     assert _REAL_UNMET_REVISION_ASKS(out_dir, ask) == []
 
 
-def test_deterministic_revision_satisfaction_overrides_stale_judge_block(tmp_path: Path, monkeypatch) -> None:
+def test_deterministic_revision_satisfaction_does_not_override_current_judge_block(tmp_path: Path, monkeypatch) -> None:
     import revision_coverage  # type: ignore[import-not-found]
 
     out_dir = tmp_path / "run"
@@ -6897,453 +6822,48 @@ def test_deterministic_revision_satisfaction_overrides_stale_judge_block(tmp_pat
         "of the conclusion's caveats.; Report actual RoB-2/ROBINS-I/AMSTAR-2 results for included sources, "
         "or remove the framework name if no appraisal was performed.",
     ]
-    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda _paper, _asks: list(asks))
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda _paper, _asks, **_kw: list(asks))
+    (out_dir / "researka_revision_request.json").write_text(json.dumps({"required_revisions": asks}))
 
-    assert _REAL_UNMET_REVISION_ASKS(out_dir, "; ".join(asks)) == []
-
-
-def test_payload_truncation_revision_ask_can_be_satisfied_by_payload(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    long_abstract = (
-        "This synthesis keeps the public abstract sentence safe and bounded. "
-        "It repeats enough context to exceed the remote payload limit while still "
-        "ending at a complete sentence. "
-    ) * 40
-    (out_dir / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\n"
-        f"{long_abstract}\n\n"
-        "## Results\n\nEvidence remains mixed.\n\n"
-        "## Conclusion\n\nThe conclusion is bounded and complete.\n",
-        encoding="utf-8",
-    )
-    _write_json(out_dir / "manifest.json", {"topic": "topic", "receipts": []})
-    _write_json(out_dir / "citation_registry.json", {})
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Fix the truncated text at the end of the Abstract and Research Question sections.",
-    )
+    assert _REAL_UNMET_REVISION_ASKS(out_dir, "; ".join(asks)) == asks
 
 
-def test_abstract_only_truncation_revision_ask_accepts_complete_abstract(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Research Synthesis: Topic\n\n"
-        "## Abstract\n\n"
-        "This abstract is complete and ends with a normal sentence.\n\n"
-        "## Results\n\nEvidence remains mixed.\n",
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(out_dir, "Fix the truncated sentence in the abstract.")
 
 
-def test_payload_source_bundle_revision_ask_can_be_satisfied_by_payload(tmp_path: Path, monkeypatch) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    bundle = [
-        _proven_source(
-            id=str(index + 1), evidence_type="primary",
-            excerpt="This source reports GDF11 dosing, measured outcomes, and directional effects in a bounded experiment.",
-        )
-        for index in range(14)
-    ]
-    bundle.append(_proven_source(
-        id="15", evidence_type="review",
-        excerpt="This review summarizes context without being counted as primary evidence in the bounded synthesis.",
-    ))
-    assert all(cycle.submit_bridge._publication_evidence.source_proof_is_valid(row) for row in bundle)
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle})
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Provide abstracts or meaningful source excerpts in source_bundle so directional coding and claim extraction can be verified.",
-    )
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Clarify why all source_bundle entries have evidence_type review when the manuscript claims primary and review evidence.",
-    )
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
-        "body_markdown": "Supported claim (DOI: 10.1000/kept).",
-        "source_bundle": [{"doi": "10.1000/kept"}],
-    })
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir, "Every DOI/PMID cited in the manuscript must appear in the source bundle."
-    )
 
 
-def test_payload_source_bundle_revision_ask_rejects_generic_registry_summaries(tmp_path: Path, monkeypatch) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
-        "source_bundle": [{"evidence_type": "review", "excerpt": "NCT123 is registered as a clinical trial."}]
-    })
-
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Provide abstracts or meaningful source excerpts in source_bundle.",
-    )
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Clarify why all source_bundle entries have evidence_type review when the manuscript claims primary evidence.",
-    )
 
 
-def test_authoritative_abstract_revision_ask_checks_every_named_doi(
-    tmp_path: Path, monkeypatch,
-) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    excerpt = (
-        "The authoritative abstract reports the study design, population, intervention, "
-        "measured endpoint, and bounded result for this source."
-    )
-    bundle = [
-        _proven_source(doi="10.1000/alpha.1", pmid="123", excerpt=excerpt),
-        _proven_source(doi="10.1000/beta.2", pmid="456", excerpt=excerpt),
-    ]
-    monkeypatch.setattr(
-        cycle.submit_bridge, "build_payload", lambda _out_dir: {"source_bundle": bundle},
-    )
-    ask = (
-        "submitted evidence text could not be reconciled with available authoritative "
-        "abstracts: doi:10.1000/alpha.1, doi:10.1000/beta.2"
-    )
-
-    assert cycle._payload_revision_ask_satisfied(out_dir, ask)
-    monkeypatch.setattr(
-        cycle.submit_bridge, "_revision_gate_report",
-        lambda *_args, payload_satisfied, **_kwargs: {
-            "passed": payload_satisfied(ask),
-            "unmet_asks": [] if payload_satisfied(ask) else [ask],
-        },
-    )
-    assert cycle.submit_bridge._refresh_revision_coverage_gate(out_dir, {})
-    assert json.loads((out_dir / cycle.REVISION_COVERAGE_GATE).read_text()) == {
-        "passed": True, "unmet_asks": [],
-    }
-    other_ask = "Verify the exact p-value reported by doi:10.1000/alpha.1."
-    monkeypatch.setattr(
-        cycle.submit_bridge, "_revision_gate_report",
-        lambda *_args, payload_satisfied, **_kwargs: {
-            "passed": payload_satisfied(other_ask),
-            "unmet_asks": [] if payload_satisfied(other_ask) else [other_ask],
-        },
-    )
-    assert cycle.submit_bridge._refresh_revision_coverage_gate(out_dir, {})
-    assert json.loads((out_dir / cycle.REVISION_COVERAGE_GATE).read_text())["passed"] is False
-    bundle[1]["excerpt"] = ""
-    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
-    bundle[1]["excerpt"] = "Source-bundle audit for this topic reports generated metadata instead of exact source evidence."
-    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
-    bundle[1]["excerpt"] = excerpt
-    bundle.pop()
-    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
-    bundle[:] = [_proven_source(doi="10.1000/kept", excerpt=excerpt)]
-    unavailable = (
-        "Submitted evidence has no independently available authoritative text: "
-        "doi:10.1000/blocked"
-    )
-    assert cycle._payload_revision_ask_satisfied(out_dir, unavailable)
-    bundle.append(_proven_source(doi="doi:10.1000/blocked", excerpt=excerpt))
-    assert not cycle._payload_revision_ask_satisfied(out_dir, unavailable)
 
 
-def test_payload_source_evidence_span_ask_uses_submitter_contract(
-    tmp_path: Path, monkeypatch,
-) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    source = _proven_source(**{
-        "directness": "direct",
-        "doi": "10.1000/alpha.1",
-        "excerpt": (
-            "The randomized trial reported lower body weight and body mass index after "
-            "twelve weeks, with p = 0.01 for both outcomes."
-        ),
-    })
-    monkeypatch.setattr(
-        cycle.submit_bridge, "build_payload",
-        lambda _out_dir: {"source_bundle": [source]},
-    )
-    ask = (
-        "Provide substantive, non-placeholder evidence_span quotes for each load-bearing "
-        "source so numerics can be audited at the bundle level."
-    )
-
-    assert cycle._payload_revision_ask_satisfied(out_dir, ask)
-    source["excerpt"] = "placeholder"
-    assert not cycle._payload_revision_ask_satisfied(out_dir, ask)
 
 
-def test_payload_source_bundle_topicality_revision_ask_requires_all_rows_for_all_sources_ask(
-    tmp_path: Path, monkeypatch,
-) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
-        "metadata": {"topic": "melatonin_aging"},
-        "source_bundle": [
-            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
-            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
-            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on sleep and biomarkers."},
-            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human trial outcomes."},
-            {"title": "Context E", "excerpt": "A broad clinical cohort measured unrelated cardiovascular endpoints."},
-        ],
-    })
-
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Verify that all 50 bundle sources actually address melatonin and aging.",
-    )
 
 
-def test_payload_source_bundle_topicality_revision_ask_accepts_all_specific_rows(tmp_path: Path, monkeypatch) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
-        "metadata": {"topic": "melatonin_aging"},
-        "source_bundle": [
-            {"title": "Trial A", "excerpt": "Melatonin changed an aging-related endpoint in randomized adults."},
-            {"title": "Trial B", "excerpt": "Melatonin was tested in aging patients with inflammatory biomarkers."},
-            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on aging biomarkers."},
-            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human aging-trial outcomes."},
-            {"title": "Mechanistic E", "excerpt": "Melatonin signaling was evaluated in aging-relevant inflammatory pathways."},
-        ],
-    })
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Verify that all 50 bundle sources actually address melatonin and aging.",
-    )
 
 
-def test_payload_source_bundle_topicality_revision_ask_accepts_labeled_adjacent_context(
-    tmp_path: Path, monkeypatch,
-) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
-        "metadata": {"topic": "melatonin_aging"},
-        "source_bundle": [
-            {"title": "Trial A", "excerpt": "Melatonin changed an aging-related endpoint in randomized adults."},
-            {"title": "Trial B", "excerpt": "Melatonin was tested in aging patients with inflammatory biomarkers."},
-            {"title": "Trial C", "excerpt": "A clinical trial measured melatonin effects on aging biomarkers."},
-            {"title": "Review D", "excerpt": "Melatonin review evidence summarized human aging-trial outcomes."},
-            {"title": "Context E", "excerpt": "Contextual adjacent evidence: a broader aging cohort measured cardiovascular endpoints."},
-        ],
-    })
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Remove or reclassify sources whose excerpts clearly address unrelated topics; if contextual adjacent, label explicitly in bundle.",
-    )
 
 
-def test_source_reclassification_ask_accepts_public_classification_map(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "\n".join([
-            "# Paper",
-            "### Source Classification Map",
-            "- Trial A: outcome=Immune and Inflammation; direction=null; directness=direct; tier=A1.",
-            "- Case B: outcome=Contextual Adjacent Evidence; direction=null; directness=indirect; tier=B2.",
-            "Case-report and small-series evidence is coded as low-directness rather than clinical-grade evidence.",
-        ]),
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Reconcile and correct the source bundle: remove off-topic patient education sources; reclassify case reports to a clearly labeled low-directness / case-report tier rather than pooling them with clinical evidence.",
-    )
 
 
-def test_outcome_attribution_gap_ask_accepts_mapped_outcome_row(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "\n".join([
-            "# Paper",
-            "### Source Classification Map",
-            "- Study A: outcome=Mortality and Survival; direction=null; directness=indirect; tier=B2.",
-        ]),
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Resolve the Mortality and Survival attribution gap: either re-attribute the orphaned narrative rows to their correct outcome class or state explicitly that Mortality and Survival is unsourced in the retained corpus.",
-    )
 
 
-def test_thin_brief_revision_asks_accept_deterministic_source_surfaces(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "\n".join([
-            "# Paper",
-            "## Results",
-            "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |",
-            "|---|---|---|---|---|",
-            "| Vascular age / Cardiometabolic | n=1 | null | 1 direct | thin |",
-            "Source examples: Direct vascular-age cohort 2025 (tier=A1; directness=direct; direction=null).",
-            "## Limitations",
-            "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources are retained for context but cannot support causal claims individually.",
-            "## Conclusion",
-            "**Direct-source ceiling:** The direct clinical source set is Direct vascular-age cohort 2025 (tier=A1; directness=direct; direction=null).",
-            "### Source Classification Map",
-            "- Direct vascular-age cohort 2025: outcome=Cardiometabolic; direction=null; directness=direct; tier=A1.",
-        ]),
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Add substantive narrative under each outcome subsection that links at least one specific quantitative or qualitative finding to its source; In the Conclusion, tie the tiered interpretation to the specific bundle.",
-    )
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Clarify which source is the '1 direct clinical source' and state this explicitly so readers can audit the evidence hierarchy.",
-    )
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Expand the Limitations to specifically note that several admitted sources are protocols or cross-sectional observational designs that cannot support causal claims even individually.",
-    )
 
 
-def test_payload_source_bundle_topicality_revision_ask_rejects_polluted_bundle(tmp_path: Path, monkeypatch) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
-    monkeypatch.setattr(cycle.submit_bridge, "build_payload", lambda _out_dir: {
-        "metadata": {"topic": "melatonin_aging"},
-        "source_bundle": [
-            {"title": "Trial A", "excerpt": "Melatonin changed a measured endpoint in randomized adults."},
-            {"title": "Trial B", "excerpt": "Melatonin was tested in patients with inflammatory biomarkers."},
-            {"title": "Context C", "excerpt": "A broad clinical cohort measured unrelated cardiovascular endpoints."},
-            {"title": "Context D", "excerpt": "A generic review covered unrelated surgery outcomes."},
-            {"title": "Context E", "excerpt": "A broad clinical cohort measured unrelated metabolic endpoints."},
-        ],
-    })
-
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Verify that all 50 bundle sources actually address melatonin and aging.",
-    )
 
 
-def test_revision_ask_requires_outcome_findings_mapped_to_source_names(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "\n".join([
-            "# Paper",
-            "## Results",
-            "Source-level findings by outcome class:",
-            "- Smith 2026: outcome=Immune and Inflammation; direction=null; directness=adjacent; tier=B2.",
-            "- Jones 2025: outcome=Mechanistic Signaling; direction=mixed; directness=mechanistic; tier=C1.",
-        ]),
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Attribute each outcome-class finding to specific cited sources by name and year at the finding level.",
-    )
 
 
-def test_revision_ask_accepts_surface_every_admitted_source_map(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "\n".join([
-            "# Paper",
-            "## Evidence Landscape",
-            "### Findings Map",
-            "- Smith 2026: outcome=Immune and Inflammation; direction=null; directness=adjacent; tier=B2.",
-            "- Jones 2025: outcome=Mechanistic Signaling; direction=mixed; directness=mechanistic; tier=C1.",
-        ]),
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Surface every admitted source; redesign outcome taxonomy; recode direction values.",
-    )
 
 
-def test_revision_ask_accepts_source_reclassification_map(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "\n".join([
-            "# Paper",
-            "## Evidence Landscape",
-            "### Source Classification Map",
-            "- Trialists 2026: outcome=Clinical Intervention; direction=mixed; directness=direct; tier=A1.",
-            "- Reviewers 2025: outcome=Contextual Adjacent Evidence; direction=unclear; directness=review; tier=B2.",
-        ]),
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Human intervention studies were misclassified as indirect/review evidence.",
-    )
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Re-tier mechanistic/context sources and reconcile bundle vs manuscript citations.",
-    )
 
 
-def test_revision_ask_rejects_unmapped_outcome_findings(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Paper\n\n## Results\n\nThe immune outcome was mixed, with no source-level map.\n",
-        encoding="utf-8",
-    )
-
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Attribute each outcome-class finding to specific cited sources by name and year at the finding level.",
-    )
 
 
-def test_revision_ask_requires_bounded_conclusion_for_breadth_feedback(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Paper\n\n## Conclusion\n\nThe conclusion is bounded and hypothesis-generating; it does not support clinical efficacy.\n",
-        encoding="utf-8",
-    )
-
-    assert cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Reconcile the conclusion's breadth with the actual evidence slice; narrow the conclusion.",
-    )
 
 
-def test_revision_ask_rejects_overbroad_conclusion(tmp_path: Path) -> None:
-    out_dir = tmp_path / "run"
-    out_dir.mkdir()
-    (out_dir / "full_paper.md").write_text(
-        "# Paper\n\n## Conclusion\n\nThis demonstrates clinical efficacy across the retained evidence.\n",
-        encoding="utf-8",
-    )
 
-    assert not cycle._payload_revision_ask_satisfied(
-        out_dir,
-        "Reconcile the conclusion's breadth with the actual evidence slice; narrow the conclusion.",
-    )
+
 
 
 def test_coverage_repeated_ask_escalates_writer_directive(tmp_path: Path, monkeypatch) -> None:
@@ -8166,6 +7686,12 @@ def test_abstract_overclaim_repair_rechecks_before_submit(tmp_path: Path, monkey
     body = (out_dir / "full_paper.md").read_text(encoding="utf-8")
     assert "suggested by preclinical frailty attenuation" in body
     assert "context-specific cardioprotection signals" in body
+    gate = cycle._read_json(out_dir / cycle.REVISION_COVERAGE_GATE)
+    request = cycle._read_json(out_dir / "researka_revision_request.json")
+    assert gate["context_fingerprint"] == cycle.context_fingerprint(
+        cycle._revision_asks(request["feedback"]), body, [],
+        cycle.submit_bridge.build_payload(out_dir, enrich_sources=False),
+    )
 
 
 def test_failed_delayed_revision_remains_pending_for_next_cycle(tmp_path: Path, monkeypatch) -> None:
@@ -9440,6 +8966,35 @@ def test_content_revision_reuses_existing_run_when_finalizer_covers_asks(tmp_pat
     assert ok is True
     assert error == ""
     assert "Repaired." in (out / "full_paper.md").read_text(encoding="utf-8")
+
+
+def test_incomplete_revision_preserves_draft_and_unmet_report(tmp_path, monkeypatch):
+    import agent.journal_finalizer as finalizer
+
+    source, out = tmp_path / "source", tmp_path / "synthesis-repair"
+    source.mkdir()
+    (source / "full_paper.md").write_text("Original manuscript.")
+    ask = "Add exact source tokens to major claims."
+    proof = {"passed": False, "unmet_asks": [ask]}
+    monkeypatch.setattr(finalizer, "finalize_run", lambda run: (run / "full_paper.md").write_text("Partly repaired manuscript."))
+    def unresolved(run, feedback):
+        assert feedback == ask
+        (run / cycle.REVISION_COVERAGE_GATE).write_text(json.dumps(proof))
+        return [ask]
+    monkeypatch.setattr(cycle, "_unmet_revision_asks", unresolved)
+
+    for _ in range(2):
+        ok, error = cycle._repair_existing_run(source, out, revision_feedback=ask)
+        assert not ok and ask in error and not out.exists()
+
+    archives = list((tmp_path / "_failed_revision_repairs").glob(f"*/{out.name}"))
+    assert len(archives) == 2
+    for archived in archives:
+        assert (archived / "full_paper.md").read_text() == "Partly repaired manuscript."
+        assert json.loads((archived / cycle.REVISION_COVERAGE_GATE).read_text()) == proof
+        assert json.loads((archived / "researka_revision_request.json").read_text())["feedback"] == ask
+    assert cycle.submit_bridge._runs(tmp_path) == []
+    assert (source / "full_paper.md").read_text() == "Original manuscript."
 
 
 def test_unavailable_authority_revision_requires_full_synthesis(tmp_path: Path) -> None:

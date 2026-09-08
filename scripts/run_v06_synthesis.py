@@ -2715,7 +2715,7 @@ async def _run(
         allowed_by_receipt = (
             _revision_coverage.authorized_receipt_contract_fields_by_receipt(
                 revision_feedback,
-                evidence_lock.receipt_rows,
+                _revision_coverage.snapshot_recode_rows(evidence_lock),
                 aliases_by_receipt,
             )
         )

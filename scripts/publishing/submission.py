@@ -1043,12 +1043,12 @@ def _revision_coverage_status(run: Path, *, refreshed: bool = False) -> str:
     return "revision_coverage_unverified"
 
 
-def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any]) -> bool:
+def _refresh_revision_coverage_gate(run: Path, request: dict[str, Any], *, payload: dict[str, Any] | None = None) -> bool:
     try:
         import revision_coverage
         report = _revision_gate_report(
             run, revision_coverage, refreshed_by="daily_submit",
-            payload_satisfied=lambda ask: payload_revision_ask_satisfied(run, ask),
+            payload=payload if payload is not None else build_payload(run, enrich_sources=False),
         )
     except (ImportError, OSError, RuntimeError, TypeError, ValueError):
         return False
@@ -1545,10 +1545,13 @@ def _prepare_submission(
         payload = build_payload(run) if locally_eligible else {}
         fp = _payload_fingerprint(payload) if locally_eligible else paper_sha
         if locally_eligible:
+            status = _revision_coverage_status(
+                run, refreshed=not request or _refresh_revision_coverage_gate(run, request, payload=payload),
+            )
             status = _payload_candidate_status(
                 run, payload, submitted_path, remote_seen=remote_seen or set(),
                 purpose=purpose, explicit_candidate=explicit_candidate,
-            )
+            ) if status == "eligible" else status
             seen_topics.add(topic)
         row = {"run": run.name, "topic": topic, "fingerprint": fp, "status": status}
         considered.append(row)

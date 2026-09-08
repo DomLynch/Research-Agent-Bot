@@ -677,7 +677,7 @@ def test_preflight_changed_cleaned_payload_requires_review_without_rebinding(
 
 
 def _trust_revision_gate(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", lambda *_args: True)
+    monkeypatch.setattr(daily, "_refresh_revision_coverage_gate", lambda *_args, **_kwargs: True)
 
 
 def test_dry_run_selects_eligible_research_paper(tmp_path: Path) -> None:
@@ -1127,7 +1127,7 @@ def test_select_candidate_skips_old_revision_coverage_failure_before_expensive_e
     assert considered[0]["status"] == "revision_coverage_unmet"
 
 
-def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
+def test_select_candidate_cannot_promote_old_semantic_rejection(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -1166,7 +1166,7 @@ def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
         return True, "eligible"
 
     monkeypatch.setattr(daily, "_eligible", fake_eligible)
-    monkeypatch.setattr(daily, "build_payload", lambda _run: {"metadata": {}, "source_bundle": []})
+    monkeypatch.setattr(daily, "build_payload", lambda _run, **_kw: {"metadata": {}, "source_bundle": []})
     monkeypatch.setattr(daily, "_null_coding_audit_status", lambda _payload, _manifest: "eligible")
     monkeypatch.setattr(daily, "_recency_ratio_status", lambda _payload: "eligible")
 
@@ -1175,12 +1175,12 @@ def test_select_candidate_refreshes_old_satisfied_revision_coverage_before_skip(
         tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
     )
 
-    assert selected == run
-    assert considered[0]["status"] == "eligible"
-    assert calls == [run]
+    assert selected is None
+    assert considered[0]["status"] == "revision_coverage_unmet"
+    assert calls == []
     gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
-    assert gate["passed"] is True
-    assert gate["unmet_asks"] == []
+    assert gate["passed"] is False
+    assert gate["unmet_asks"] == [ask]
 
 
 def test_select_candidate_caps_recent_self_heal_attempts(
@@ -4377,7 +4377,7 @@ def test_remote_publication_dedupe_blocks_exact_content_even_as_revision(
     assert ledger["submitted"] == 0
 
 
-def test_missing_revision_coverage_gate_is_refreshed_before_selection(
+def test_missing_revision_coverage_cannot_be_certified_by_section_presence(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     import revision_coverage  # type: ignore[import-not-found]
@@ -4405,11 +4405,9 @@ def test_missing_revision_coverage_gate_is_refreshed_before_selection(
         remote_seen=set(),
     )
 
-    assert selected == run
-    assert considered[0]["status"] == "eligible"
-    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
-    assert gate["passed"] is True
-    assert gate["refreshed_by"] == "daily_submit"
+    assert selected is None
+    assert considered[0]["status"] == "revision_coverage_unverified"
+    assert not (run / daily.REVISION_COVERAGE_GATE).exists()
 
 
 def test_passed_partial_revision_gate_is_fully_revalidated(tmp_path: Path) -> None:
@@ -4422,10 +4420,9 @@ def test_passed_partial_revision_gate_is_fully_revalidated(tmp_path: Path) -> No
     _write_json(run / "researka_revision_request.json", request)
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True, "unmet_asks": [feedback.split(";")[0]]})
 
-    assert daily._refresh_revision_coverage_gate(run, request) is True
+    assert daily._refresh_revision_coverage_gate(run, request) is False
     gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
-    assert gate["passed"] is False
-    assert gate["ask_count"] == 2
+    assert daily._revision_coverage_status(run) == "revision_coverage_unverified"
     assert gate["unmet_asks"]
 
 
@@ -4448,6 +4445,53 @@ def test_stale_passed_revision_gate_fails_closed_when_refresh_is_unverified(
     verified = daily._refresh_revision_coverage_gate(run, request)
     assert verified is False
     assert daily._static_ineligible_status(run, revision_verified=verified) == "revision_coverage_unverified"
+
+
+@pytest.mark.parametrize("change", ["none", "rejected", "paper", "source", "outgoing", "section"])
+def test_revision_proof_binds_judgment_to_final_submission(tmp_path, monkeypatch, change):
+    import daily_research_paper_cycle as cycle
+    import revision_coverage
+
+    run = _run(tmp_path)
+    ask = "Explain the interpretation of population differences."
+    _write_json(run / "researka_revision_request.json", {"feedback": ask, "required_revisions": [ask]})
+    def judge(paper, asks, **context):
+        assert paper == (run / "full_paper.md").read_text()
+        assert context["evidence_rows"]
+        assert context["submission_payload"]["source_bundle"]
+        assert context["submission_payload"]["sections"] == daily.build_payload(run, enrich_sources=False)["sections"]
+        return asks if change == "rejected" else []
+    monkeypatch.setattr(revision_coverage, "unmet_asks", judge)
+    assert cycle._unmet_revision_asks(run, ask) == ([ask] if change == "rejected" else [])
+    if change == "paper":
+        paper = run / "full_paper.md"
+        paper.write_text(paper.read_text() + "\nChanged conclusion.\n")
+    elif change == "source":
+        manifest = json.loads((run / "manifest.json").read_text())
+        manifest["receipts"][0]["thesis_text"] = "Changed source interpretation."
+        _write_json(run / "manifest.json", manifest)
+    elif change in {"outgoing", "section"}:
+        build = daily.build_payload
+        def enriched(path, **kwargs):
+            payload = build(path, **kwargs)
+            if kwargs.get("enrich_sources", True):
+                if change == "section":
+                    payload["sections"] = {}
+                else:
+                    payload["source_bundle"][0]["excerpt"] = "Changed after semantic verification."
+            return payload
+        monkeypatch.setattr(daily, "build_payload", enriched)
+    selected, payload, considered = daily._prepare_submission(
+        tmp_path, tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+        candidate_run=run, purpose="revision", candidate_inside_refresh=False,
+    )
+    assert (selected == run) is (change == "none")
+    assert considered[-1]["status"] == (
+        "eligible" if change == "none" else
+        "revision_coverage_unmet" if change == "rejected" else "revision_coverage_unverified"
+    )
+    if selected:
+        assert payload == daily.build_payload(run, enrich_sources=False)
 
 
 def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
@@ -4474,7 +4518,7 @@ def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
     assert called["refresh"] is True
 
 
-def test_stale_unmet_revision_gate_rechecks_all_asks(tmp_path: Path, monkeypatch) -> None:
+def test_stale_unmet_revision_gate_preserves_uncertified_failure(tmp_path: Path, monkeypatch) -> None:
     from agent import journal_finalizer
     monkeypatch.setattr(journal_finalizer, "finalize_run", lambda _run: None)
     run = _run(tmp_path)
@@ -4511,7 +4555,7 @@ def test_stale_unmet_revision_gate_rechecks_all_asks(tmp_path: Path, monkeypatch
     assert considered[0]["status"] == "revision_coverage_unmet"
     gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
     assert gate["passed"] is False
-    assert gate["ask_count"] == 2
+    assert gate == {"passed": False, "unmet_asks": [ask]}
 
 
 def test_unmet_refreshed_revision_coverage_still_blocks_selection(
@@ -4532,9 +4576,8 @@ def test_unmet_refreshed_revision_coverage_still_blocks_selection(
     )
 
     assert selected is None
-    assert considered[0]["status"] == "revision_coverage_unmet"
-    gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
-    assert gate["passed"] is False
+    assert considered[0]["status"] == "revision_coverage_unverified"
+    assert not (run / daily.REVISION_COVERAGE_GATE).exists()
 
 
 def test_selection_skips_stale_older_runs_for_same_topic(tmp_path: Path) -> None:
@@ -4692,7 +4735,7 @@ def test_selection_repairs_recent_surface_sidecar_before_skip(
     assert considered[0]["status"] == "eligible"
 
 
-def test_selection_repairs_recent_revision_coverage_sidecar_before_skip(
+def test_selection_cannot_clear_semantic_rejection_after_text_repair(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
@@ -4726,10 +4769,10 @@ def test_selection_repairs_recent_revision_coverage_sidecar_before_skip(
         remote_seen=set(),
     )
 
-    assert selected == run
-    assert considered[0]["status"] == "eligible"
+    assert selected is None
+    assert considered[0]["status"] == "revision_coverage_unmet"
     gate = json.loads((run / daily.REVISION_COVERAGE_GATE).read_text(encoding="utf-8"))
-    assert gate["passed"] is True
+    assert gate == {"passed": False, "unmet_asks": [ask]}
 
 
 def test_submit_holds_when_remote_dedupe_fails(tmp_path: Path) -> None:

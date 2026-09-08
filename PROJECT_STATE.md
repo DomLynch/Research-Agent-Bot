@@ -1,5 +1,22 @@
 # PROJECT_STATE.md
 
+## Full-Context Revision Verification - 2026-09-08
+Revision judging now receives the complete manuscript, frozen source sections and
+tables, and outgoing payload fields. A deterministic keyword pass cannot override
+a semantic failure. Coverage receipts bind all asks, manuscript, evidence and
+payload; missing or stale receipts cannot be recertified by the finalizer or
+submission refresh. Enrichment changes are checked against the actual outgoing
+payload. Explicit class-wide evidence-role corrections can authorize only the
+requested fields for source-verified classes; identities remain frozen.
+Offline Resveratrol replay: the complete-context Terra check improved from 0/6
+to 1/6 after existing deterministic repair (missing Findings Map rows). This is
+not a completed manuscript repair or publication receipt. Live v15/600-second
+timeout deployment completed at 16:20 Dubai; this verification patch is separate.
+Local verification: 4,661 passed, 38 skipped, 2 xpassed; quality 343 passed,
+Ruff/mypy and unchanged LOC/complexity/duplication budgets passed.
+Authorized recoding does not prove scientific correction: the multi-ingredient
+Resveratrol record still remains A1/direct in the receipt regeneration canary.
+
 ## Configured Writer Deadlines - 2026-09-08
 Two live Sol calls stopped at the configured 180-second limit. The section
 wrapper now respects the configured provider timeout plus 60 seconds of headroom,
