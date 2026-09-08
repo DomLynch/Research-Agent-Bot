@@ -7,7 +7,28 @@ from typing import Any
 import pytest
 
 from agent import paper_writer_helpers as helpers
-from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
+from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS, format_prompts_for_topic
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("section", tuple(format_prompts_for_topic("resveratrol")))
+async def test_every_section_receives_shared_repair_policy(monkeypatch, section) -> None:
+    prompt = format_prompts_for_topic("resveratrol")[section]
+
+    async def capture(**kwargs):
+        system, user = kwargs["messages"]
+        assert system["content"] == PUBLICATION_REQUIREMENTS + "\n" + prompt
+        assert "reviewer-v15-explicit-repairability" in system["content"]
+        assert "evidence map on the same topic" in system["content"]
+        assert user["content"] == "Correct the source classification."
+        return SimpleNamespace(parsed={"paragraphs": []})
+
+    monkeypatch.setattr(helpers, "chat_json", capture)
+    result = await helpers.call_llm_section(
+        system_prompt=prompt, user_prompt="Correct the source classification.",
+        chain=(), client=None, ledger=None, seed=None,
+    )
+    assert result == {"paragraphs": []}
 
 
 @pytest.mark.asyncio

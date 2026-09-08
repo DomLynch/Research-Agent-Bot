@@ -323,13 +323,23 @@ def test_prompt_uses_body_citations_when_registry_provided() -> None:
 
 
 def test_review_and_repair_use_the_publication_policy() -> None:
-    from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
+    from agent.paper_writer_prompts import PUBLICATION_POLICY_VERSION, PUBLICATION_REQUIREMENTS
     import revision_coverage
 
     system, _ = final_reviewer._build_reviewer_prompt("paper", {"receipts": []}, {})
     repair, _ = final_reviewer._build_repair_prompt([], "paper")
     assert all(prompt.startswith(PUBLICATION_REQUIREMENTS) for prompt in (system, repair, revision_coverage._SYS))
     assert "4/5 in EACH" in system and "Optional style/wording suggestions are not publication blockers" in system
+    assert PUBLICATION_POLICY_VERSION == "reviewer-v15-explicit-repairability"
+    for rule in (
+        "evidence map on the same topic", "every affected section and table",
+        "what new evidence is indispensable", "never claim an unperformed systematic search",
+        "not author-supplied metadata", "never bypass a terminal rejection",
+        "requires supported claims, no overclaim and no unresolved major issues",
+        "Reassess every revise finding as a bounded repair with a concrete correction",
+        "deleting or changing a label cannot make an irreparable finding repairable",
+    ):
+        assert all(rule in prompt for prompt in (system, repair, revision_coverage._SYS))
 
 
 def test_prompt_keeps_same_background_citation_with_distinct_numerics() -> None:

@@ -1,22 +1,22 @@
 """LLM system prompts for generic multi-topic full-paper sections."""
 from __future__ import annotations
 
-PUBLICATION_POLICY_VERSION = "reviewer-v13-repairability"
+PUBLICATION_POLICY_VERSION = "reviewer-v15-explicit-repairability"
 PUBLICATION_REQUIREMENTS = f"""Publication target: {PUBLICATION_POLICY_VERSION}.
 The full manuscript must earn at least 4/5 in EACH of: research_question_quality,
-synthesis_quality, claim_evidence_alignment, limitations_quality, gaps_quality,
-and source_grounding; no average compensates for a weak category. Acceptance also
-requires supported claims, no overclaim and no unresolved major issues. Do not claim acceptance yourself.
-Keep the declared article type, question, population, methods and conclusions consistent.
-Each section contributes to that shared goal while retaining its own format and word budget.
-For tables and prose, distinguish this study's own results from studies it cites;
-keep source, endpoint, comparator, value, significance and direction together.
-Protocols are not completed trials; case series and observational evidence are not RCTs.
-Do not invent methods, evidence classifications or risk-of-bias assessments to meet the rubric.
-Optional style/wording suggestions are not publication blockers. Address prior material
-issues using evidence, keep resolved fixes, and identify unresolved items; do not hide them.
-Correctable errors use existing evidence; a fundamentally new question or missing evidence
-must be flagged, not fabricated. This guidance does not replace source validation or the output schema.
+synthesis_quality, claim_evidence_alignment, limitations_quality, gaps_quality, and source_grounding.
+No average compensates for a weak category. Acceptance requires supported claims, no overclaim and no unresolved major issues. Do not claim acceptance yourself.
+Keep article type, question, population, methods and conclusions consistent; retain each section's format and word budget.
+For prose and tables, keep the cited study's own source, endpoint, comparator, value, significance and direction together, not background-study results.
+Protocols are not completed trials; case series and observational evidence are not RCTs. Do not invent methods, evidence classifications or risk-of-bias assessments.
+Optional style/wording suggestions are not publication blockers. Preserve resolved fixes and disclose unresolved material items.
+Bounded repairs use existing evidence and records: correct attribution, labels, counts and citations, remove unsupported claims and document the actual search.
+Narrow the question and conclusions or reclassify as an evidence map on the same topic when supported; state a concrete scope and reconcile every affected section and table.
+Before declaring repair impossible, assess whether a useful source-grounded map remains; identify what new evidence is indispensable and why narrowing cannot resolve the defect.
+Relabeling must not conceal fabrication, invalid data or contradictions; never claim an unperformed systematic search. Indirect evidence, length, issue count and repair effort alone do not justify rejection.
+Reassess every revise finding as a bounded repair with a concrete correction; deleting or changing a label cannot make an irreparable finding repairable.
+Verdicts and repairability/why_not_revise assessments belong to reviewers, not author-supplied metadata. Follow the permitted revision route; never bypass a terminal rejection or resubmission restriction.
+This guidance does not replace source validation, acceptance requirements or the output schema.
 """
 
 ABSTRACT_SOURCE_RETRY = """Write a source-exact evidence abstract about the supplied topic, 200-280 words; never exceed 300.
