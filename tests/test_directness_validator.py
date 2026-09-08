@@ -69,6 +69,20 @@ def test_classify_paper_tier_keeps_meta_analysis_out_of_direct() -> None:
     assert directness != "direct"
 
 
+def test_canonical_rct_hint_does_not_override_source_protocol(monkeypatch) -> None:
+    monkeypatch.setattr(v06, "_TOPIC_PACK", SimpleNamespace(canonical_rct_paper_ids=("design",)))
+    meta = {
+        "title": "Clinical Evaluation of Effects of Chronic Resveratrol Supplementation on "
+                 "Cerebrovascular Function, Cognition, Mood, Physical Function and General "
+                 "Well-Being in Postmenopausal Women--Rationale and Study Design",
+        "sections": {"abstract": "This methodological paper presents both a scientific "
+                     "rationale and a methodological approach. A clinical trial was designed "
+                     "to test this hypothesis."},
+    }
+    assert v06._classify_paper_tier("design", 1, meta) == ("D1", "protocol")
+    assert v06._classify_paper_tier("design", 1, {}) == ("A1", "direct")
+
+
 def test_off_topic_rct_is_not_admitted_as_direct_receipt(tmp_path: Path, monkeypatch) -> None:
     topic = "therapeutic_plasma_exchange"
     root = tmp_path / topic

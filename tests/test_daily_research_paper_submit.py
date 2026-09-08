@@ -2429,6 +2429,27 @@ def test_researka_quantitative_preflight_uses_cited_evidence_values(tmp_path: Pa
     assert daily._researka_quantitative_trace_status(payload, bundle) == "eligible"
 
 
+@pytest.mark.parametrize("finding,eligible", [
+    ("Mortality was 48% in both treatment groups.", False),
+    ("Survival was 100% in both treatment groups.", True),
+    ("Triglycerides decreased by 48% while mortality was 1.7%.", True),
+    ("Mortality decreased by 48% while triglycerides were 1.7%.", False),
+])
+def test_final_payload_findings_map_preserves_source_outcome_binding(finding, eligible):
+    source = {"cited_as": "Study 2026", "title": "Randomized comparison", "doi": "10.1234/trial.2026",
+              "excerpt": "Survival was 100% in both treatment groups. The trial enrolled 48 participants. "
+                         "Triglycerides decreased by 48% while mortality was 1.7%."}
+    _seal_source(source)
+    assert daily._publication_evidence.source_proof_is_valid(source)
+    body = f"## Results\n\n### Findings Map\n\n| Source | Finding |\n|---|---|\n| Study 2026 [bundle:1] | {finding} |\n"
+    status = daily._researka_quantitative_trace_status({"body_markdown": body, "sections": {"Results": body}}, [source])
+    assert (status == "eligible") is eligible
+    assert daily._researka_quantitative_trace_status({"body_markdown": body + "\n" + body}, [source]) != "eligible"
+    source["verified_abstract"] = source["excerpt"]
+    source["excerpt"] += " Changed after proof creation."
+    assert daily._researka_quantitative_trace_status({"body_markdown": body}, [source]) != "eligible"
+
+
 def test_quantitative_preflight_ignores_identifiers_and_corpus_accounting() -> None:
     text = (
         "GLP-1 therapies are used in type 2 diabetes.\n"

@@ -135,7 +135,6 @@ def build_results_table_with_diagnostic(
         "drop_non_receipt_paper", "drop_surface_gate",
         "drop_missing_canonical_citation", "drop_unowned_result",
     ), 0)
-    rows: list[EvidenceRow] = []
     quarantined: list[dict[str, str]] = []
     if not quant_dir.exists():
         _write_qei_quarantine(quarantine_path, quarantined)
@@ -205,22 +204,36 @@ def build_results_table_with_diagnostic(
             ct = claim.get("claim_type", "")
             value_key = f"{row.source_value}|{row.unit_or_type}"
             candidates.append((score, ct, row, value_key))
+    rows = _select_result_rows(candidates, max_rows)
+    diag["n_after_quotas"] = len(rows)
+    _write_qei_quarantine(quarantine_path, quarantined)
+    if not rows:
+        return "", diag
+    diag["n_rendered"] = len(rows)
+    return _render_md(rows, topic=topic), diag
+
+
+def _select_result_rows(candidates: list[tuple[int, str, EvidenceRow, str]], max_rows: int) -> list[EvidenceRow]:
+    rows: list[EvidenceRow] = []
     candidates.sort(key=lambda t: -t[0])
     cat_count: dict[str, int] = {}
     seen_endpoints: dict[str, int] = {}
     seen_values: set[str] = set()
+    seen_statements: set[tuple[str, str]] = set()
     for _score, ct, row, value in candidates:
+        statement = (row.study_label, row.source_context)
         quota = _CATEGORY_QUOTAS.get(ct, 4)
         if cat_count.get(ct, 0) >= quota:
             continue
         if seen_endpoints.get(row.study_label, 0) >= 4:
             continue
-        if value in seen_values:
+        if value in seen_values or statement in seen_statements:
             continue
         key = f"{row.study_label}|{row.endpoint}"
         if seen_endpoints.get(key, 0) >= 1:
             continue
         rows.append(row)
+        seen_statements.add(statement)
         cat_count[ct] = cat_count.get(ct, 0) + 1
         seen_endpoints[row.study_label] = seen_endpoints.get(
             row.study_label, 0
@@ -229,12 +242,7 @@ def build_results_table_with_diagnostic(
         seen_values.add(value)
         if len(rows) >= max_rows:
             break
-    diag["n_after_quotas"] = len(rows)
-    _write_qei_quarantine(quarantine_path, quarantined)
-    if not rows:
-        return "", diag
-    diag["n_rendered"] = len(rows)
-    return _render_md(rows, topic=topic), diag
+    return rows
 
 
 def format_empty_qei_placeholder(
@@ -283,13 +291,6 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
     raw = (claim.get("raw_text") or "").strip().lower()
     sent = str(claim.get("sentence") or "")
     context = f"{sent} {claim.get('context_window') or ''}".lower()
-    if claim_type == "percentage" and raw == "95%" and "95% ci" in context:
-        return False
-    if claim_type == "percentage" and (
-        "heterogeneity" in context
-        or re.search(r"\bi\s*(?:2|²)\b", context)
-    ):
-        return False
     if claim_type == "mean_sd" and role not in {"effect", "outcome"}:
         return False
     if claim_type == "p_value" and _ambiguous_multi_stat_binding(
@@ -313,6 +314,25 @@ def _row_is_meaningful(claim: dict[str, Any]) -> bool:
     if claim_type == "unit_value" and units in _DOSE_UNITS:
         if endpoint not in _DOSE_ENDPOINTS:
             return False
+    return _statistic_is_result(claim_type, raw, sent, context)
+
+
+def _statistic_is_result(claim_type: str, raw: str, sent: str, context: str) -> bool:
+    if raw and re.search(r"±\s*" + re.escape(raw).replace(r"\ ", r"\s*") + r"(?!\w|\.\d)", sent, re.I):
+        return False
+    if re.search(r"\bbaseline\b", sent, re.I) and re.search(
+        r"\b(?:similar|comparable|balanced|(?:not|no)\b.{0,35}\bdiffer\w*)\b", sent, re.I,
+    ) and not re.search(
+        r"\b(?:adjust\w*|chang\w*|reduc\w*|decreas\w*|increas\w*|improv\w*|follow[ -]?up|after|post\w*)\b", sent, re.I,
+    ):
+        return False
+    if claim_type == "percentage" and raw == "95%" and "95% ci" in context:
+        return False
+    if claim_type == "percentage" and (
+        "heterogeneity" in context
+        or re.search(r"\bi\s*(?:2|²)\b", context)
+    ):
+        return False
     return True
 
 

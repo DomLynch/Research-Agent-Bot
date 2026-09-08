@@ -46,7 +46,7 @@ from agent.publishing.policy import (  # noqa: E402
 )
 from agent.revision_contract import gate_report as _revision_gate_report, needs_coverage as _revision_needs_coverage  # noqa: E402
 from agent.revision_evidence import load_revision_evidence, reviewer_unavailable_source_dois  # noqa: E402
-from agent.revision_quality import resolved_effect_direction, role_outcome_display  # noqa: E402
+from agent.revision_quality import _statistics_are_source_bound, resolved_effect_direction, role_outcome_display  # noqa: E402
 from agent.sources._base import normalize_doi  # noqa: E402
 from agent.topic_display import humanize_topic  # noqa: E402
 from citation_registry import (  # noqa: E402
@@ -895,15 +895,15 @@ def _quantities_agree(claim: str, sources: list[dict[str, Any]]) -> bool:
 def _researka_quantitative_trace_status(
     payload: dict[str, Any], source_bundle: list[dict[str, Any]],
 ) -> str:
-    sections_raw = payload.get("sections")
-    sections = sections_raw if isinstance(sections_raw, dict) else {}
-    conclusion = "\n".join(
-        str(value) for name, value in sections.items()
-        if str(name).strip().lower() == "conclusion"
-    )
-    claims = _quantitative_claim_candidates(
-        "\n".join((str(payload.get("abstract") or ""), conclusion)),
-    )
+    sections = raw if isinstance(raw := payload.get("sections"), dict) else {}
+    conclusion = "\n".join(str(value) for name, value in sections.items()
+                           if str(name).strip().lower() == "conclusion")
+    claims = _quantitative_claim_candidates(f"{payload.get('abstract') or ''}\n{conclusion}")
+    rows = [{"cited_as": row.get("cited_as"),
+             "thesis_text": str(row.get("excerpt") or "") if _publication_evidence.source_proof_is_valid(row) else ""}
+            for row in source_bundle]
+    if not _statistics_are_source_bound(str(payload.get("body_markdown") or ""), rows, tables_only=True):
+        return "researka_quantitative_trace_insufficient:findings_map_source_binding"
     aligned = 0
     for claim in claims:
         indexes = _citation_indexes(claim, source_bundle)

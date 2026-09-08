@@ -1,5 +1,23 @@
 # PROJECT_STATE.md
 
+## Source-Bound Revision Repairs - 2026-09-08
+Primary-outcome declarations now take precedence over incidental statistic counts;
+background-study results do not set the current study's endpoint directions.
+Explicit protocol metadata takes precedence over a topic-pack trial hint, and
+review-authorized outcome corrections refresh their derived endpoint fields.
+The quantitative evidence index excludes detached SDs, baseline-balance results
+and duplicate source statements. Findings Map statistics must match the cited
+source clause, including outcome and comparator, in the final outgoing payload.
+This is not a universal semantic validator for every table or prose paragraph.
+Offline Resveratrol replay preserved 37 source identities/proofs; the regenerated
+Findings Map passes this payload check and is unchanged by a second repair pass.
+The randomized suite passed 4,739 tests (seed 909), with 2 xpasses and 16 existing
+warnings. Quality, type and unchanged LOC gates passed. A pre-existing randomized
+test failure was localized to leaked topic globals and fixed in test teardown.
+Independent review passed after checking signed statistics, comparator positions,
+escaped table cells, duplicate maps and source-label/bundle-index agreement.
+These are local verification results, not deployment or publication receipts.
+
 ## Source Attribution and Shared Review Policy - 2026-09-07
 Writer sections, final review, patch repair and revision coverage now consume
 `reviewer-v13-repairability`: all six categories require at least 4/5, supported

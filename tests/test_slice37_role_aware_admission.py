@@ -10,8 +10,22 @@ background_mechanism). Universal — no per-topic logic.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from types import SimpleNamespace
+
+import pytest
+
+
+@pytest.fixture(autouse=True)
+def _restore_topic_state(monkeypatch):
+    import importlib
+    mod = importlib.import_module("scripts.run_v06_synthesis")
+    monkeypatch.setenv("TOPIC_DOMAIN", os.environ.get("TOPIC_DOMAIN", ""))
+    for module in (mod, mod._audit_v06):
+        for name in ("QUANT_DIR", "PARSED_DIR", "_ACTIVE_TOPIC", "_TOPIC_PACK"):
+            if hasattr(module, name):
+                monkeypatch.setattr(module, name, getattr(module, name))
 
 
 def _seed_topic_dirs(topic_root: Path) -> None:

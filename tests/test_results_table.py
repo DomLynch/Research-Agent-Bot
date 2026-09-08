@@ -65,6 +65,40 @@ def test_source_statistics_are_not_rounded_or_reinterpreted():
         assert row.source_value == raw
 
 
+@pytest.mark.parametrize("raw,sentence,keep", [
+    ("1.01 kg", "Body weight decreased by -0.95 ± 1.01 kg.", False),
+    ("13.6 mg/dL", "Fasting glucose decreased by -7.97±13.6 mg/dL.", False),
+    ("7.6%", "Mean body fat was 32.3 ± 7.6%.", False),
+    ("P > .05", "The groups were similar at baseline (P > .05).", False),
+    ("P > .05", "Change from baseline did not differ between groups (P > .05).", True),
+    ("P = .45", "Baseline-adjusted body weight was similar between groups (P = .45).", True),
+    ("P > .05", "Baseline weight predicted the outcome without significance (P > .05).", True),
+    ("1.01 kg", "After adjustment for baseline BMI, weight decreased by 1.01 kg.", True),
+    ("1.01 kg", "Body weight decreased by 1.01 kg.", True),
+])
+def test_qei_does_not_present_dispersion_or_baseline_balance_as_effect(raw, sentence, keep):
+    row = _claim_to_row({
+        "claim_type": "p_value" if raw.startswith("P") else "unit_value",
+        "endpoint": "body weight", "raw_text": raw, "numeric_values": [1.01],
+        "sentence": sentence,
+    }, paper_id="Source 2026")
+    assert (row is not None) is keep
+
+
+def test_qei_renders_each_source_result_sentence_once(tmp_path):
+    sentence = "Glucose decreased by 2 mg/dL and insulin by 3 mg/dL."
+    (tmp_path / "study.quant_claims.json").write_text(json.dumps({
+        "paper_id": "study", "claims": [
+            {"claim_type": "unit_value", "endpoint": endpoint, "raw_text": f"{value} mg/dL",
+             "numeric_values": [value], "sentence": sentence, "binding_confidence": "high"}
+            for endpoint, value in (("glucose", 2), ("insulin", 3))
+        ],
+    }))
+    text, diagnostic = build_results_table_with_diagnostic(tmp_path, topic="x")
+    assert diagnostic["n_rendered"] == 1
+    assert text.count(sentence) == 1
+
+
 # ---------- citation extraction ------------------------------------
 
 def test_short_citation_extracts_year_from_paper_id():

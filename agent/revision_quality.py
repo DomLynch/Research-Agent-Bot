@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import re
 from collections import Counter
 from collections.abc import Sequence
@@ -12,16 +13,16 @@ from agent import revision_identity as _identity
 from agent.evidence_lanes import is_animal_context
 from agent.outcome_class_remap import outcome_display, refine_other_outcome_class
 from agent.publication_evidence import attach_bundle_references, ordered_source_rows
-from agent.revision_claim_trace import asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
+from agent.revision_claim_trace import _claim_key, _sentences, asks_major_claim_trace, major_claim_trace_is_stated, repair_major_claim_trace
 from agent.template_language import mask_fenced_markdown
 
 
 _EFFECT_STAT_RE = re.compile(
-    r"\b(?:HR|OR|RR|NNT|SMD|MD)\s*(?:=|:)?\s*-?\d+(?:\.\d+)?"
+    r"\b(?:HR|OR|RR|NNT|SMD|MD)\s*(?:=|:|was|is)?\s*[-+\u2212]?\d+(?:\.\d+)?"
     r"|\b(?:95\s*%\s*)?(?:CI|confidence interval)\s*[:=]?\s*"
-    r"\d+(?:\.\d+)?\s*(?:-|–|to)\s*\d+(?:\.\d+)?"
-    r"|\bp\s*(?:<|>|=|≤|≥)\s*(?:0?\.\d+|1(?:\.0+)?)"
-    r"|\b\d+(?:\.\d+)?\s*%(?!\w)",
+    r"[-+\u2212]?\d+(?:\.\d+)?\s*(?:-|–|to)\s*[-+\u2212]?\d+(?:\.\d+)?"
+    r"|\bp\s*(?:<=|>=|<|>|=|≤|≥)\s*(?:0?\.\d+|1(?:\.0+)?)"
+    r"|(?<![\w.])[-+\u2212]?\d+(?:\.\d+)?\s*%(?!\w)",
     re.I,
 )
 _STRONG_CLAIM_RE = re.compile(
@@ -372,7 +373,9 @@ def _count_text(values: Sequence[str] | Any) -> str:
 
 
 def _table_cells(line: str) -> list[str]:
-    return [cell.strip() for cell in line.strip().strip("|").split("|")] if line.startswith("|") and "---" not in line else []
+    cells = [cell.strip() for cell in next(csv.reader([line.strip()], delimiter="|", escapechar="\\", quoting=csv.QUOTE_NONE))] if line.lstrip().startswith("|") else []
+    cells = cells[1:-1] if cells and not cells[-1] else cells[1:]
+    return [] if all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells) else cells
 
 
 def _prose_paragraphs(text: str) -> list[str]:
@@ -414,23 +417,26 @@ def resolved_effect_direction(row: dict[str, Any]) -> str:
 
 
 def _numbers(text: str) -> tuple[str, ...]:
-    values = [
-        f"0{value}" if value.startswith(".") else value
+    return tuple(
+        (f"0{value}" if value.startswith(".") else value).rstrip("0").rstrip(".") if "." in value else value
         for value in re.findall(r"(?<![A-Za-z])(?:\d+\.\d+|\.\d+|\d+)", text)
-    ]
-    return tuple(value.rstrip("0").rstrip(".") if "." in value else value for value in values)
-
-
-def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = False) -> bool:
-    evidence = _row_evidence(row, statistics=not original_only).casefold().replace("–", "-")
-    evidence_numbers = set(_numbers(evidence))
-    metric = next((token for token in ("smd", "nnt", "hr", "or", "rr", "md", "ci", "p", "%") if token in stat.casefold()), "")
-    metric_present = metric == "%" and "%" in evidence or bool(metric and re.search(rf"\b{re.escape(metric)}\b", evidence))
-    p_relations = _p_relations(stat)
-    return (not p_relations or set(p_relations) <= set(_p_relations(evidence))) and metric_present and all(
-        number in evidence_numbers
-        for number in _numbers(stat) if number != "95" or metric != "ci"
     )
+
+
+def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = False, context: str = "") -> bool:
+    """Match a typed statistic, and a complete source clause when context is supplied."""
+    evidence = re.sub(r"[–\u2212]", "-", _row_evidence({**row, "source_title": ""}, statistics=not original_only))
+    def key(value: str) -> tuple:
+        value = re.sub(r"\b(?:was|is)\b", "", re.sub(r"[–\u2212]", "-", value.casefold()))
+        normalized = re.sub(r"\d+(?:\.\d+)?|\.\d+", lambda m: _numbers(m[0])[0], value)
+        return re.sub(r"[\s:=<>≤≥]", "", normalized), _p_relations(value)
+    def context_key(value: str) -> str:
+        value = re.sub(r"[–\u2212]", "-", value).replace("≤", "<=").replace("≥", ">=")
+        return _claim_key(re.sub(r"[-+<>=]", lambda m: f" operator{ord(m[0])} ", value), [row])
+    claim = context_key(re.sub(r"^finding\s*=\s*", "", context, flags=re.I))
+    return any((not context or claim != context_key(stat) and claim == context_key(clause))
+               and any(key(match.group()) == key(stat) for match in _EFFECT_STAT_RE.finditer(clause))
+               for sentence in _sentences(evidence) for clause in (sentence, *sentence.split(";")))
 
 
 def _p_relations(text: str) -> tuple[tuple[str, str], ...]:
@@ -467,39 +473,37 @@ def _stat_is_source_bound(paragraph: str, match: re.Match[str], rows: Sequence[d
     return marker is not None and _stat_supported(match.group(0), row)
 
 
-def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]]) -> bool:
-    prose_ok = all(
+def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]], *, tables_only: bool = False) -> bool:
+    return len(re.findall(r"^### Findings Map\b", paper_md, re.M | re.I)) < 2 and (tables_only or all(
         _stat_is_source_bound(paragraph, match, rows)
         for paragraph in _prose_paragraphs(paper_md) for match in _EFFECT_STAT_RE.finditer(paragraph)
-    )
-    table_ok = all(
-        (row := _table_source_row(line, rows)) is not None
-        and all(_stat_supported(match.group(0), row) for match in _EFFECT_STAT_RE.finditer(line))
+    )) and all(
+        _table_row_supported(line, rows)
         for line in _findings_map(paper_md).splitlines()
-        if line.startswith("|") and _EFFECT_STAT_RE.search(line)
+        if line.lstrip().startswith("|") and _EFFECT_STAT_RE.search(line)
     )
-    return prose_ok and table_ok
 
 
 def _table_source_row(line: str, rows: Sequence[dict[str, Any]]) -> dict[str, Any] | None:
-    return found[0] if len(found := _named_rows(line, rows)) == 1 else None
+    found = _named_rows(line, rows)
+    tokens = re.findall(r"\[bundle:[^\]\n]*(?:\]|$)", line.casefold())
+    return found[0] if _table_cells(line) and len(found) == 1 and all(token == f"[bundle:{rows.index(found[0]) + 1}]" for token in tokens) else None
+
+
+def _table_row_supported(line: str, rows: Sequence[dict[str, Any]]) -> bool:
+    return (row := _table_source_row(line, rows)) is not None and all(_stat_supported(match.group(), row, context=cell) for cell in _table_cells(line) for match in _EFFECT_STAT_RE.finditer(cell))
 
 
 def _repair_findings_map_statistics(
     paper_md: str, rows: Sequence[dict[str, Any]],
 ) -> tuple[str, int]:
     scope = _findings_map(paper_md)
-    if not scope:
-        return paper_md, 0
     lines = scope.splitlines(keepends=True)
     for index, line in enumerate(lines):
-        if not line.startswith("|") or not _EFFECT_STAT_RE.search(line):
+        if not line.lstrip().startswith("|") or not _EFFECT_STAT_RE.search(line):
             continue
-        row = _table_source_row(line, rows)
-        if not row or any(
-            not _stat_supported(match.group(0), row)
-            for match in _EFFECT_STAT_RE.finditer(line)
-        ):
+        if not _table_row_supported(line, rows):
+            row = _table_source_row(line, rows)
             lines[index] = ("| " + " | ".join(value.replace("|", "\\|") for value in findings_map_row(row)) + " |\n") if row else ""
     fixed = "".join(lines)
     return (paper_md, 0) if fixed == scope else (paper_md.replace(scope, fixed, 1), 1)

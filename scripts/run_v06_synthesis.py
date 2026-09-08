@@ -1190,7 +1190,7 @@ def _infer_outcome_class(endpoint: str) -> str:
         "blood pressure", "glucose", "hba1c", "weight", "bmi",
     )):
         return "cardiometabolic"
-    if any(t in label for t in ("cognition", "cognitive", "dementia", "alzheimer")):
+    if any(t in label for t in ("cognition", "cognitive", "memory", "cvlt", "verbal learning", "dementia", "alzheimer")):
         return "cognitive"
     if any(t in label for t in ("mortality", "lifespan", "healthspan", "longevity")):
         return "longevity"
@@ -1343,39 +1343,16 @@ def _claim_topic_effect(claim: dict) -> int:
     placebo_synonyms = (
         pack.placebo_arm_synonyms if pack is not None else {"placebo", "control"}
     )
-    if arm:
-        if arm in active_synonyms:
-            arm_sign = +1
-        elif arm in placebo_synonyms:
-            text = " ".join(str(claim.get(k) or "") for k in (
-                "sentence", "context_window", "raw_text",
-            ))
-            if _active_vs_placebo_context(text):
-                arm_sign = +1
-            else:
-                return 0
-        else:
-            text = " ".join(str(claim.get(k) or "") for k in (
-                "sentence", "context_window", "raw_text",
-            ))
-            if _mentions_any_synonym(text, active_synonyms):
-                arm_sign = +1
-            elif _mentions_any_synonym(text, placebo_synonyms):
-                return 0
-            else:
-                return 0
+    if arm and arm in active_synonyms:
+        return polarity * direction_sign
+    text = " ".join(str(claim.get(k) or "") for k in (
+        "sentence", "context_window", "raw_text",
+    ))
+    if arm and arm in placebo_synonyms:
+        active = _active_vs_placebo_context(text)
     else:
-        text = " ".join(str(claim.get(k) or "") for k in (
-            "sentence", "context_window", "raw_text",
-        ))
-        if _mentions_any_synonym(text, active_synonyms):
-            arm_sign = +1
-        elif _mentions_any_synonym(text, placebo_synonyms):
-            return 0
-        else:
-            return 0
-    drug_movement = direction_sign * arm_sign
-    return polarity * drug_movement
+        active = _mentions_any_synonym(text, active_synonyms)
+    return polarity * direction_sign if active else 0
 
 
 # Backward-compat alias — some legacy call sites may still use the
@@ -1383,14 +1360,50 @@ def _claim_topic_effect(claim: dict) -> int:
 _claim_metformin_effect = _claim_topic_effect
 
 
-def _aggregate_paper(claims: list[dict]) -> dict[str, Any]:
+def _source_outcome_class(current: str, record: dict, claims: list[dict]) -> str:
+    """Prefer declared primary outcomes; titles only resolve unclassified results."""
+    from agent.results_table import _owned_result_sentence
+
+    abstract = str(record["sections"].get("abstract") or "")
+    primary = r"(?:primary|main)\s+(?:outcomes?|endpoints?)"
+    declarations = [s for s in re.split(r"(?<=[.!?])\s+", abstract) if re.search(primary, s, re.I)]
+    if declarations:
+        classes = set()
+        for sentence in declarations:
+            if not _owned_result_sentence(sentence, record):
+                continue
+            for pattern in (
+                rf"([^;:().]+)\([^()]*{primary}[^()]*\)",
+                rf"\b{primary}(?:\s+measure)?\s*(?:was|were|is|are|:|included)\s+(.+)",
+                rf"(.+?)\s+(?:was|were|is|are)\s+(?:the\s+)?{primary}\b",
+            ):
+                if match := re.search(pattern, sentence, re.I):
+                    label = re.split(r";|\b(?:whereas|while|secondary)\b", match[1], maxsplit=1, flags=re.I)[0]
+                    classes.add(_outcome_class_for_endpoint(label.strip()))
+                    break
+        return next(iter(classes)) if len(classes) == 1 and "other" not in classes else current
+    if current in {"other", "contextual_other"} and any(
+        c.get("claim_role") == "effect" for c in claims
+    ):
+        return _outcome_class_for_endpoint(str(record.get("title") or ""))
+    return current
+
+
+def _aggregate_paper(claims: list[dict], *, paper_meta: dict | None = None) -> dict[str, Any]:
     """Roll claims into a significance-aware per-paper summary."""
+    from agent.results_table import _owned_result_sentence
+
+    record = dict(paper_meta or {})
+    sections = dict(record.get("sections") or {})
+    sections.setdefault("abstract", record.get("abstract") or "")
+    record["sections"] = sections
+    owned = [c for c in claims if _owned_result_sentence(str(c.get("sentence") or ""), record)] if any(sections.values()) else claims
     outcome_counter: Counter[str] = Counter()
-    p_values: list[str] = []
-    sample_sizes: list[float] = []
+    p_values = [str(c["raw_text"]).replace("\xa0", " ").strip() for c in claims
+                if c.get("claim_type") == "p_value" and c.get("raw_text")]
     claims_by_endpoint: dict[str, list[dict]] = defaultdict(list)
     endpoint_labels: dict[str, str] = {}
-    for c in claims:
+    for c in owned:
         endpoint = " ".join(str(c.get("endpoint") or "").split())
         if endpoint:
             key = _endpoint_key(endpoint)
@@ -1398,14 +1411,6 @@ def _aggregate_paper(claims: list[dict]) -> dict[str, Any]:
             endpoint_labels.setdefault(key, endpoint)
         if oc := _outcome_class_for_endpoint(endpoint):
             outcome_counter[oc] += 1
-        if c.get("claim_type") == "p_value":
-            raw = c.get("raw_text") or ""
-            if raw:
-                p_values.append(raw.replace("\xa0", " ").strip())
-        if c.get("claim_type") == "sample_size":
-            vals = c.get("numeric_values") or []
-            if vals:
-                sample_sizes.append(vals[0])
 
     dominant_outcome: str = (
         outcome_counter.most_common(1)[0][0]
@@ -1418,19 +1423,15 @@ def _aggregate_paper(claims: list[dict]) -> dict[str, Any]:
     def infer_direction(rows: list[dict]) -> EffectDirection:
         return cast(EffectDirection, _direction.infer_effect_direction(rows, metformin_effect_fn=_claim_metformin_effect))
 
-    effect_direction = infer_direction(claims)
-    endpoint_directions = tuple(
-        (endpoint_labels[key], infer_direction(endpoint_claims))
-        for key, endpoint_claims in list(claims_by_endpoint.items())[:20]
-    )
-
     return {
-        "outcome_class": dominant_outcome,
-        "effect_direction": effect_direction,
+        "outcome_class": _source_outcome_class(dominant_outcome, record, owned),
+        "effect_direction": infer_direction(owned),
         "p_values": p_values,
-        "sample_sizes": sample_sizes,
         "endpoints": tuple(endpoint_labels.values())[:20],
-        "endpoint_directions": endpoint_directions,
+        "endpoint_directions": tuple(
+            (endpoint_labels[key], infer_direction(endpoint_claims))
+            for key, endpoint_claims in list(claims_by_endpoint.items())[:20]
+        ),
         "n_claims": len(claims),
     }
 
@@ -1504,11 +1505,6 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     sections = paper_meta.get("sections")
     if not paper_meta.get("abstract") and isinstance(sections, dict):
         paper_meta = {**paper_meta, "abstract": sections.get("abstract")}
-    pack = _get_topic_pack()
-    is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
-    paper_id_l = paper_id.lower()
-    if any(str(name).lower() in paper_id_l for name in is_rct_papers):
-        return "A1", "direct"
     # Directness validator: a primary randomized trial is direct interventional
     # evidence and can never be 'review'. Reads the title/study_design so a
     # title-only RCT (Monda 2026) is not mislabelled when study_design is blank.
@@ -1516,15 +1512,9 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
         return "A1", "direct"
     # Explicit-field path: metadata sources MAY include these fields
     # directly. Empty/missing fields fall through to inference.
-    explicit_design = paper_meta.get("study_design")
-    explicit_species = paper_meta.get("species")
-    explicit_endpoint_kind = paper_meta.get("endpoint_kind")
-    if explicit_design or explicit_species or explicit_endpoint_kind:
-        cls = _taxonomy.classify_evidence(
-            study_design=explicit_design,
-            species=explicit_species,
-            endpoint_kind=explicit_endpoint_kind,
-        )
+    explicit_fields = {key: paper_meta.get(key) for key in ("study_design", "species", "endpoint_kind")}
+    if any(explicit_fields.values()):
+        cls = _taxonomy.classify_evidence(**explicit_fields)
     else:
         cls = _taxonomy.infer_from_paper_meta(paper_meta)
     # If the deterministic path returns "unknown", fall back to the
@@ -1533,6 +1523,10 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     # ("MASTERS", "MET_PREVENT", "Konopka_2019") — now reads from
     # the active topic pack's canonical_rct_paper_ids.
     if cls.tier == "unknown":
+        pack = _get_topic_pack()
+        is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
+        if any(str(name).lower() in paper_id.lower() for name in is_rct_papers):
+            return "A1", "direct"
         # An identifier namespace is not a study design. Reviews are detected
         # above from title/abstract; an otherwise unknown source stays indirect
         # instead of being promoted to review evidence solely because it has a
@@ -1541,8 +1535,8 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     return cls.tier, cls.directness
 
 
-def _build_population_summary(paper_meta: dict, n_subjects: list[float]) -> str:
-    """Best-effort population summary from paper metadata + sample sizes."""
+def _build_population_summary(paper_meta: dict) -> str:
+    """Best-effort population summary from paper metadata."""
     title = (paper_meta.get("title") or "").lower()
     if "older adults" in title:
         pop = "older adults"
@@ -2027,8 +2021,6 @@ def build_receipts_from_quant_claims(
 
     typed: list[tuple[ReceiptSummary, str]] = []
     for paper_id, claims in by_paper.items():
-        if not claims:
-            continue
         meta = paper_meta_by_id.get(paper_id, {})
         identity = _receipt_topic_identity(paper_id, meta, claims)
         if not receipt_ids and not is_source_topic_specific(topic, identity, aliases=aliases):
@@ -2037,7 +2029,7 @@ def build_receipts_from_quant_claims(
             not receipt_ids and not _receipt_mentions_active_topic(topic, meta, claims)
         ):
             continue
-        agg = _aggregate_paper(claims)
+        agg = _aggregate_paper(claims, paper_meta=meta)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
         if (
             not receipt_ids
@@ -2080,7 +2072,7 @@ def build_receipts_from_quant_claims(
                 ),
             ),
             p_values=tuple(dict.fromkeys(agg["p_values"]))[:40],
-            population_summary=_build_population_summary(meta, agg["sample_sizes"]),
+            population_summary=_build_population_summary(meta),
             endpoints=agg["endpoints"],
             endpoint_directions=agg["endpoint_directions"],
             source_title=meta.get("title"),
@@ -2095,6 +2087,7 @@ def build_receipts_from_quant_claims(
         )
         locked = receipt_contracts.get(paper_id, {})
         allowed = set() if authorized_contract_fields is None else authorized_contract_fields.setdefault(paper_id, set())
+        allowed.update({"endpoints", "endpoint_directions"} if "outcome_class" in allowed else ())
         updates: dict[str, Any] = {}
         for field in dataclasses.fields(receipt):
             name = field.name

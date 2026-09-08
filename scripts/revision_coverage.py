@@ -4,6 +4,7 @@ from __future__ import annotations
 import asyncio
 import re
 from collections.abc import Awaitable, Callable, Collection, Iterable, Mapping, Sequence
+from importlib import import_module
 from typing import Any
 
 from agent.llm_client import LLMError, LLMResponse, build_judge_chain, chat_json
@@ -13,6 +14,7 @@ from agent.reviewer_consistency_repairs import unsupported_general_health_claim_
 from agent.settings import load_settings
 from agent.statistical_consistency import has_adjusted_significance_threshold
 from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
+_taxonomy = import_module(f"{__package__}.evidence_taxonomy" if __package__ else "evidence_taxonomy")
 
 _SYS = PUBLICATION_REQUIREMENTS + "\nYou are a strict manuscript reviewer. Reply with JSON only."
 _USER = (
@@ -304,6 +306,8 @@ def asks_effect_direction_reconciliation(text: str) -> bool:
 def authorized_receipt_contract_fields(text: str) -> set[str]:
     """Receipt fields a reviewer explicitly asked this revision to recode."""
     lower = _normalised_feedback(text)
+    if re.match(r"(?:do not|don't|never)\s+(?:reclassify|recode|change|move|correct)\b", lower):
+        return set()
     fields = {"effect_direction"} if _asks_effect_direction_reconciliation(lower) or "direction coding" in lower and "relabel or reconcile" in lower else set()
     action = any(token in lower for token in (
         "correct", "move", "reclassify", "recode", "reconcile", "reroute",
@@ -328,7 +332,7 @@ def authorized_receipt_contract_fields_by_receipt(
     rows: dict[str, dict[str, Any]],
     aliases_by_receipt: Mapping[str, Collection[str]] | None = None,
 ) -> dict[str, set[str]]:
-    """Map source-specific reviewer recode asks to only the named receipts."""
+    """Scope recodes to named sources or an explicitly requested protocol class."""
     aliases_by_receipt = aliases_by_receipt or {}
     segments = [
         _normalised_feedback(segment)
@@ -358,6 +362,12 @@ def authorized_receipt_contract_fields_by_receipt(
             )
         ]
         fields = authorized_receipt_contract_fields(segment)
+        if not named and fields == {"directness", "evidence_tier"} and re.search(
+            r"^reclassify\s+(?:the\s+)?protocol(?: only)?\b", segment,
+        ):
+            named = [receipt_id for receipt_id, row in rows.items() if _taxonomy.infer_from_paper_meta(
+                {"title": row.get("source_title")},
+            ).directness == "protocol"]
         if not named or not fields or len(named) > 1 and len(fields) > 1 and fields != {"directness", "evidence_tier"}:
             continue
         for receipt_id in named:

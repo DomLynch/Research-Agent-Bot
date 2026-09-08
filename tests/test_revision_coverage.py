@@ -5,6 +5,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import pytest
+
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
@@ -165,6 +167,111 @@ def test_exact_stat_trace_does_not_collapse_integer_values() -> None:
     assert revision_quality_proof_is_stated("Smith 2025 [bundle:1] reported NNT = 10.", ask, rows) is True
     assert revision_quality_proof_is_stated("Smith 2025 [bundle:1] reported NNT = 1.", ask, rows) is False
     assert revision_quality_proof_is_stated("Smith 2025 reported NNT = 10.", ask, rows) is False
+
+
+@pytest.mark.parametrize("source,finding,supported", [
+    ("100% survival.", "48% mortality", False),
+    ("100% survival. We enrolled 48 participants.", "48% mortality", False),
+    ("100% survival. TG reduction was 48%.", "48% mortality", False),
+    ("48% TG reduction, mortality 1.7%.", "48% mortality", False),
+    ("48% TG reduction, mortality 1.7%.", "48% TG reduction, mortality 1.7%", True),
+    ("100% survival.", "100% survival", True),
+    ("Weight changed by -10% from baseline.", "Weight changed by 10% from baseline", False),
+    ("Weight changed by -10% from baseline.", "Weight changed by -10% from baseline", True),
+    ("Weight changed by \u221210% from baseline.", "Weight changed by 10% from baseline", False),
+    ("Weight changed by -10% from baseline.", "Weight changed by \u221210% from baseline", True),
+    ("Change 95% CI -0.40 to 0.98.", "Change 95% CI 0.40 to 0.98", False),
+    ("Change 95% CI -0.40 to 0.98.", "Change 95% CI -0.40 to 0.98", True),
+    ("Weight changed by -10% and triglycerides changed by 10%.", "Weight changed by 10% and triglycerides changed by -10%", False),
+    ("Change 95% CI -0.40-0.98.", "Change 95% CI 0.40--0.98", False),
+    ("Change 95% CI -0.40-0.98.", "Change 95% CI -0.40-0.98", True),
+    ("Mortality HR was 0.72.", "Mortality HR was 0.72", True),
+    ("Weight p < 0.05 and glucose p > 0.05.", "Weight p > 0.05 and glucose p < 0.05", False),
+    ("Weight p <= 0.05 and glucose p > 0.05.", "Weight p \u2264 0.05 and glucose p > 0.05", True),
+    ("The incidence was 48% in pregnancy. Survival was 100% in both groups.", "Survival was 100% in both groups", True),
+    ("Mortality HR = 0.72 (95% CI 0.40-0.98).", "Mortality HR = 0.72 (95% CI 0.40-0.98)", True),
+    ("Mortality HR = 0.72 (95% CI 0.40-0.98).", "Mortality RR = 0.72 (95% CI 0.40-0.98)", False),
+    ("Mortality HR = 0.72 (95% CI 0.40-0.98).", "Mortality HR = 0.72 (90% CI 0.40-0.98)", False),
+    ("Survival was 48% with treatment versus 100% with placebo.", "Survival was 48% with treatment versus 100% with placebo", True),
+    ("Survival was 48% with treatment versus 100% with placebo.", "Survival was 100% with treatment versus 48% with placebo", False),
+    ("Women had 48% survival; men had 100% survival.", "Women had 100% survival", False),
+    ("Treatment did not improve survival (p = 0.48).", "Treatment did not improve survival (p = 0.48)", True),
+    ("Treatment did not improve survival (p = 0.48).", "Treatment did improve survival (p = 0.48)", False),
+    ("Survival p < 0.05.", "Survival p > 0.05", False),
+    ("100% survival.", "100%", False),
+    ("", "48% mortality", False),
+])
+def test_findings_map_statistics_require_source_context(source, finding, supported) -> None:
+    from agent.revision_quality import _repair_findings_map_statistics, _statistics_are_source_bound
+
+    row = {"citation_token": "Smith 2025", "source_title": "Trial outcomes",
+           "verified_abstract": source, "n_claims": 2}
+    paper = "### Findings Map\n\n| Source | Finding |\n|---|---|\n| Smith 2025 | finding=" + finding + " |\n"
+    assert _statistics_are_source_bound(paper, [row]) is supported
+    assert _statistics_are_source_bound(paper, [row], tables_only=True) is supported
+    fixed, changed = _repair_findings_map_statistics(paper, [row])
+    assert changed == int(not supported)
+    assert _statistics_are_source_bound(fixed, [row])
+    assert _repair_findings_map_statistics(fixed, [row]) == (fixed, 0)
+
+
+def test_findings_map_only_mode_does_not_validate_unrelated_prose() -> None:
+    from agent.revision_quality import _statistics_are_source_bound
+
+    row = {"cited_as": "Smith 2025", "thesis_text": "Survival was 100% in both groups."}
+    paper = "### Findings Map\n\n| Source | Finding |\n|---|---|\n| Smith 2025 | Survival was 100% in both groups. |\n"
+    paper += "\n## Discussion\n\nSmith 2025 [bundle:1] reported HR = 999.\n"
+    assert not _statistics_are_source_bound(paper, [row])
+    assert _statistics_are_source_bound(paper, [row], tables_only=True)
+
+
+@pytest.mark.parametrize("finding,index,indent,supported", [
+    ("99% mortality ---", "1", "", False),
+    ("99% mortality ---", "1", "  ", False),
+    ("Survival was 100%; mortality was 0%.", "1", "", True),
+    (r"Triglycerides decreased by 48% \| mortality was 1.7%.", "1", "", True),
+    (r"Mortality decreased by 48% \| triglycerides were 1.7%.", "1", "", False),
+    ("Survival was 100%", "2", "", False),
+    ("Survival was 100%", "0", "", False),
+    ("Survival was 100%", "bad", "", False),
+    ("Survival was 100%", "", "", True),
+    ("Survival was 100%", "1", "  ", True),
+])
+def test_findings_map_parser_and_source_index(finding, index, indent, supported) -> None:
+    from agent.revision_quality import _repair_findings_map_statistics, _statistics_are_source_bound
+
+    rows = [{"cited_as": "Study 2024", "thesis_text": "Survival was 100%; mortality was 0%. "
+             "Triglycerides decreased by 48% | mortality was 1.7%."},
+            {"cited_as": "Other 2023", "thesis_text": "Another outcome was 9%."}]
+    token = f" [bundle:{index}]" if index else ""
+    paper = f"### Findings Map\n\n| Source | Finding |\n|---|---|\n{indent}| Study 2024{token} | {finding} |\n"
+    assert _statistics_are_source_bound(paper, rows, tables_only=True) is supported
+    fixed, changes = _repair_findings_map_statistics(paper, rows)
+    assert changes == int(not supported)
+    assert _statistics_are_source_bound(fixed, rows, tables_only=True)
+    assert _repair_findings_map_statistics(fixed, rows) == (fixed, 0)
+
+
+def test_findings_map_cells_preserve_escapes_and_separator_text() -> None:
+    from agent.revision_quality import _table_cells
+
+    assert _table_cells(r"  | Study | 99% --- | a\|b | \\\\ |") == ["Study", "99% ---", "a|b", "\\\\"]
+    assert _table_cells("| :--- | ---: | :---: |") == []
+
+
+@pytest.mark.parametrize("stat,source,supported", [
+    ("48%", "48 participants had 100% survival.", False),
+    ("48 mg", "48% survival.", False),
+    ("HR = -0.72", "HR = 0.72.", False),
+    ("p < 0.05", "p > 0.05.", False),
+    ("p < .05", "p < 0.050.", True),
+    ("95% CI 0.40-0.98", "95% CI 0.40\u20130.98.", True),
+])
+def test_statistic_presence_keeps_metric_value_relation(stat, source, supported) -> None:
+    from agent.revision_quality import _stat_supported
+
+    assert _stat_supported(stat, {"verified_abstract": source}) is supported
+    assert not _stat_supported(stat, {"source_title": stat}, context=stat)
 
 
 def test_named_source_revisions_are_repaired_from_receipt_truth() -> None:
@@ -2328,6 +2435,23 @@ def test_named_source_reclassification_authorizes_only_coupled_tier_fields() -> 
     assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
         "Correct the evidence classification of Evans 2016 and Richer 2013, which are not completed RCTs.", rows,
     ) == {"Evans 2016": fields, "Richer 2013": fields}
+
+
+def test_protocol_class_recode_does_not_unlock_completed_or_unnamed_studies() -> None:
+    rows = {
+        "evans_2016": {"source_title": "Resveratrol Supplementation: Rationale and Study Design"},
+        "trial": {"source_title": "Resveratrol: a randomized controlled trial"},
+        "unknown": {"source_title": "Effects of resveratrol"},
+    }
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        "Reclassify protocol-only, multi-ingredient, within-group-only, and observational records under the stated directness criteria.", rows,
+    ) == {"evans_2016": {"directness", "evidence_tier"}}
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        "Discuss protocol-only evidence and directness criteria.", rows,
+    ) == {}
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        "Do not reclassify protocol-only records or change their directness.", rows,
+    ) == {}
 
 
 def test_direction_coding_relabel_request_authorizes_only_named_directions() -> None:

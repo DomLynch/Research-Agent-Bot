@@ -323,6 +323,104 @@ def test_locked_receipt_contract_preserves_original_claim_membership(
     assert (preserved.directness, preserved.evidence_tier) == ("mechanistic", "C1")
 
 
+@pytest.mark.parametrize("title,abstract,endpoint,expected", [
+    (
+        "Long-term effects of resveratrol on cognition and cardio-metabolic markers",
+        "We evaluated within individual differences between each treatment period in measures "
+        "of cognition (primary outcome), cerebrovascular function and cardio-metabolic markers "
+        "as secondary outcomes. Compared to placebo, resveratrol supplementation resulted a "
+        "significant 33% improvement in overall cognitive performance (Cohen's d = 0.170, P = 0.005).",
+        "insulin sensitivity", "cognitive",
+    ),
+    (
+        "Effects of resveratrol on memory performance in older adults",
+        "Baseline and follow-up assessments included the California Verbal Learning Task "
+        "(CVLT, main outcome), the ModBent task, and anthropometry. This interventional study "
+        "failed to show significant improvements in verbal memory after 6 months of resveratrol "
+        "in healthy elderly with a wide BMI range.",
+        "body mass index", "cognitive",
+    ),
+    (
+        "Effects of Resveratrol on Cognitive Performance, Mood and Cerebrovascular Function",
+        "Significant improvements were observed in the performance of cognitive tasks in the "
+        "domain of verbal memory (p = 0.041) and in overall cognitive performance (p = 0.020).",
+        "", "cognitive",
+    ),
+    (
+        "Cognitive performance and metabolic effects of resveratrol",
+        "The primary outcome was HbA1c, while cognition was a secondary outcome. "
+        "Resveratrol significantly improved cognition (p = 0.02).",
+        "cognition", "cardiometabolic",
+    ),
+    (
+        "Cognitive performance and metabolic effects of resveratrol",
+        "Cognition was a secondary outcome; the primary outcome was HbA1c. "
+        "Resveratrol significantly improved cognition (p = 0.02).",
+        "cognition", "cardiometabolic",
+    ),
+])
+def test_source_primary_outcome_beats_numeric_frequency(
+    title, abstract, endpoint, expected, monkeypatch, tmp_path,
+) -> None:
+    qdir, pdir = tmp_path / "quant_claims", tmp_path / "parsed"
+    qdir.mkdir()
+    pdir.mkdir()
+    claims = [{
+        "claim_id": str(i), "binding_confidence": "high", "claim_type": "p_value",
+        "claim_role": "effect", "raw_text": "p = 0.02", "endpoint": endpoint,
+        "arm": "resveratrol", "direction": "increase", "sentence": abstract,
+    } for i in range(3)]
+    (qdir / "trial.quant_claims.json").write_text(json.dumps({"paper_id": "trial", "claims": claims}))
+    (pdir / "trial.paper_sections.json").write_text(json.dumps({
+        "paper_id": "trial", "title": title, "sections": {"abstract": abstract},
+    }))
+    monkeypatch.setattr(orch, "QUANT_DIR", qdir)
+    monkeypatch.setattr(orch, "PARSED_DIR", pdir)
+    monkeypatch.setattr(orch, "_load_paper_class_map", lambda: {})
+    contract = {"outcome_class": "contextual_other", "effect_direction": "unclear",
+                "endpoints": ["stale endpoint"], "endpoint_directions": {"stale endpoint": "null"},
+                "n_claims": 3, "thesis_text": "Trial - source excerpts: Frozen source summary.", "p_values": ["p = 0.02"]}
+    args: dict[str, Any] = {"topic": "resveratrol", "receipt_ids": frozenset({"trial"}),
+                            "receipt_contracts": {"trial": contract}}
+    locked = orch.build_receipts_from_quant_claims(**args)[0]
+    assert locked.outcome_class == "contextual_other"
+    assert locked.endpoints == contract["endpoints"]
+    assert locked.endpoint_directions == contract["endpoint_directions"]
+    allowed = {"trial": {"outcome_class"}}
+    revised = orch.build_receipts_from_quant_claims(
+        **args, authorized_contract_fields=allowed,
+    )[0]
+    assert allowed == {"trial": {"outcome_class", "endpoints", "endpoint_directions"}}
+    assert revised.endpoints == ((endpoint,) if endpoint else ())
+    assert "stale endpoint" not in dict(revised.endpoint_directions)
+    assert revised.outcome_class == expected
+    assert revised.receipt_id == locked.receipt_id == "trial"
+    assert revised.n_claims == locked.n_claims == 3
+    assert (revised.thesis_text, revised.p_values, revised.effect_direction) == (
+        locked.thesis_text, locked.p_values, locked.effect_direction,
+    )
+
+
+def test_background_cognitive_null_does_not_determine_endpoint_direction() -> None:
+    own = "Resveratrol significantly improved cognition (p = 0.02)."
+    background = "As previously mentioned, Kennedy et al. and Wightman et al. [17, 18] " \
+                 "found no improvements in cognition with single doses in young cohorts (~20 years)."
+    claims = [
+        {"claim_type": "p_value", "raw_text": "p = 0.02", "claim_role": "effect",
+         "endpoint": "", "direction": "increase", "arm": "resveratrol", "sentence": own},
+        {"claim_type": "unit_value", "raw_text": "20 years", "claim_role": "effect",
+         "endpoint": "cognition", "direction": "no_change", "sentence": background},
+    ]
+    result = orch._aggregate_paper(claims, paper_meta={
+        "title": "Effects of Resveratrol on Cognitive Performance",
+        "sections": {"abstract": own, "discussion": background},
+    })
+    assert result["outcome_class"] == "cognitive"
+    assert result["endpoint_directions"] == ()
+    assert result["n_claims"] == 2
+    assert claims[1]["direction"] == "no_change"
+
+
 def test_restore_revision_citations_is_exact_and_fail_closed(tmp_path: Path) -> None:
     import dataclasses as _dataclasses
     import json as _json
@@ -579,7 +677,6 @@ def test_population_summary_does_not_render_derived_sample_sum() -> None:
     """
     summary = orch._build_population_summary(
         {"title": "older adults trial"},
-        [152.0, 152.0],
     )
     assert summary == "older adults"
 
