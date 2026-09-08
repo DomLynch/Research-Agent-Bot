@@ -899,7 +899,7 @@ def _researka_quantitative_trace_status(
     conclusion = "\n".join(str(value) for name, value in sections.items()
                            if str(name).strip().lower() == "conclusion")
     claims = _quantitative_claim_candidates(f"{payload.get('abstract') or ''}\n{conclusion}")
-    rows = [{"cited_as": row.get("cited_as"),
+    rows = [{"cited_as": row.get("cited_as"), "source_title": row.get("title"),
              "thesis_text": str(row.get("excerpt") or "") if _publication_evidence.source_proof_is_valid(row) else ""}
             for row in source_bundle]
     if not _statistics_are_source_bound(str(payload.get("body_markdown") or ""), rows, tables_only=True):

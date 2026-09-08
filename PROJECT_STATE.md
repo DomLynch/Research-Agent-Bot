@@ -11,12 +11,19 @@ source clause, including outcome and comparator, in the final outgoing payload.
 This is not a universal semantic validator for every table or prose paragraph.
 Offline Resveratrol replay preserved 37 source identities/proofs; the regenerated
 Findings Map passes this payload check and is unchanged by a second repair pass.
-The randomized suite passed 4,739 tests (seed 909), with 2 xpasses and 16 existing
+Numeric source titles are treated as bibliography only in the unique Source
+column; the same text in a finding still requires source support. Repairs respect
+the actual table header and preserve repeated annotation columns by position.
+The randomized suite passed 4,751 tests (seed 909), with 2 xpasses and 16 existing
 warnings. Quality, type and unchanged LOC gates passed. A pre-existing randomized
 test failure was localized to leaked topic globals and fixed in test teardown.
 Independent review passed after checking signed statistics, comparator positions,
 escaped table cells, duplicate maps and source-label/bundle-index agreement.
-These are local verification results, not deployment or publication receipts.
+The core patch is deployed at `cf2fbd85`; the table-layout follow-up has separate
+local checks and an independent PASS (74 focused tests), not a deployment receipt.
+The normal Resveratrol recovery failed before submission at 12:04 Dubai time:
+the configured Codex writer call exceeded 180 seconds. A scheduled revision is
+running separately; no new publication or complete manuscript repair is proven.
 
 ## Source Attribution and Shared Review Policy - 2026-09-07
 Writer sections, final review, patch repair and revision coverage now consume

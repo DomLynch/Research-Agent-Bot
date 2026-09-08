@@ -215,6 +215,17 @@ def test_findings_map_statistics_require_source_context(source, finding, support
     assert _repair_findings_map_statistics(fixed, [row]) == (fixed, 0)
 
 
+def test_findings_map_repair_preserves_repeated_annotation_columns() -> None:
+    from agent.revision_quality import _repair_findings_map_statistics, _statistics_are_source_bound
+
+    rows = [{"cited_as": "Study 2026", "thesis_text": "Mortality was 0%."}]
+    paper = "### Findings Map\n\n| Source | Finding | Notes | Notes |\n|---|---|---|---|\n| Study 2026 | Mortality was 20%. | first | second |\n"
+    fixed, changed = _repair_findings_map_statistics(paper, rows)
+    assert changed == 1 and "| first | second |" in fixed
+    assert _statistics_are_source_bound(fixed, rows, tables_only=True)
+    assert _repair_findings_map_statistics(fixed, rows) == (fixed, 0)
+
+
 def test_findings_map_only_mode_does_not_validate_unrelated_prose() -> None:
     from agent.revision_quality import _statistics_are_source_bound
 

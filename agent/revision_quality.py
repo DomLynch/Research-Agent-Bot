@@ -417,10 +417,8 @@ def resolved_effect_direction(row: dict[str, Any]) -> str:
 
 
 def _numbers(text: str) -> tuple[str, ...]:
-    return tuple(
-        (f"0{value}" if value.startswith(".") else value).rstrip("0").rstrip(".") if "." in value else value
-        for value in re.findall(r"(?<![A-Za-z])(?:\d+\.\d+|\.\d+|\d+)", text)
-    )
+    return tuple((f"0{value}" if value.startswith(".") else value).rstrip("0").rstrip(".") if "." in value else value
+                 for value in re.findall(r"(?<![A-Za-z])(?:\d+\.\d+|\.\d+|\d+)", text))
 
 
 def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = False, context: str = "") -> bool:
@@ -428,8 +426,7 @@ def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = Fal
     evidence = re.sub(r"[–\u2212]", "-", _row_evidence({**row, "source_title": ""}, statistics=not original_only))
     def key(value: str) -> tuple:
         value = re.sub(r"\b(?:was|is)\b", "", re.sub(r"[–\u2212]", "-", value.casefold()))
-        normalized = re.sub(r"\d+(?:\.\d+)?|\.\d+", lambda m: _numbers(m[0])[0], value)
-        return re.sub(r"[\s:=<>≤≥]", "", normalized), _p_relations(value)
+        return re.sub(r"[\s:=<>≤≥]", "", re.sub(r"\d+(?:\.\d+)?|\.\d+", lambda m: _numbers(m[0])[0], value)), _p_relations(value)
     def context_key(value: str) -> str:
         value = re.sub(r"[–\u2212]", "-", value).replace("≤", "<=").replace("≥", ">=")
         return _claim_key(re.sub(r"[-+<>=]", lambda m: f" operator{ord(m[0])} ", value), [row])
@@ -478,33 +475,37 @@ def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]], 
         _stat_is_source_bound(paragraph, match, rows)
         for paragraph in _prose_paragraphs(paper_md) for match in _EFFECT_STAT_RE.finditer(paragraph)
     )) and all(
-        _table_row_supported(line, rows)
+        _table_row_supported(line, rows, _table_header(paper_md))
         for line in _findings_map(paper_md).splitlines()
         if line.lstrip().startswith("|") and _EFFECT_STAT_RE.search(line)
     )
 
 
 def _table_source_row(line: str, rows: Sequence[dict[str, Any]]) -> dict[str, Any] | None:
-    found = _named_rows(line, rows)
-    tokens = re.findall(r"\[bundle:[^\]\n]*(?:\]|$)", line.casefold())
+    found, tokens = _named_rows(line, rows), re.findall(r"\[bundle:[^\]\n]*(?:\]|$)", line.casefold())
     return found[0] if _table_cells(line) and len(found) == 1 and all(token == f"[bundle:{rows.index(found[0]) + 1}]" for token in tokens) else None
 
 
-def _table_row_supported(line: str, rows: Sequence[dict[str, Any]]) -> bool:
-    return (row := _table_source_row(line, rows)) is not None and all(_stat_supported(match.group(), row, context=cell) for cell in _table_cells(line) for match in _EFFECT_STAT_RE.finditer(cell))
+def _table_header(paper_md: str) -> list[str]:
+    return next((cells for line in _findings_map(paper_md).splitlines() if (cells := [c.casefold() for c in _table_cells(line)])), [])
 
 
-def _repair_findings_map_statistics(
-    paper_md: str, rows: Sequence[dict[str, Any]],
-) -> tuple[str, int]:
+def _table_row_supported(line: str, rows: Sequence[dict[str, Any]], header: Sequence[str] = ()) -> bool:
+    # An exact bibliographic citation is not a result claim.
+    return (row := _table_source_row(line, rows)) is not None and all(
+        _stat_supported(match.group(), row, context=cell) for index, cell in enumerate(_table_cells(line)) if index != (header.index("source") if header.count("source") == 1 else None) or re.sub(r"\s*\[bundle:\d+\]", "", cell).strip() != findings_map_row(row)[1] for match in _EFFECT_STAT_RE.finditer(cell))
+
+
+def _repair_findings_map_statistics(paper_md: str, rows: Sequence[dict[str, Any]]) -> tuple[str, int]:
     scope = _findings_map(paper_md)
+    header = _table_header(scope)
     lines = scope.splitlines(keepends=True)
     for index, line in enumerate(lines):
-        if not line.lstrip().startswith("|") or not _EFFECT_STAT_RE.search(line):
-            continue
-        if not _table_row_supported(line, rows):
+        if line.lstrip().startswith("|") and _EFFECT_STAT_RE.search(line) and not _table_row_supported(line, rows, header):
             row = _table_source_row(line, rows)
-            lines[index] = ("| " + " | ".join(value.replace("|", "\\|") for value in findings_map_row(row)) + " |\n") if row else ""
+            values = dict(zip(("outcome class", "source", "direction", "directness", "tier", "evidence role", "finding"), findings_map_row(row))) if row else {}
+            cells = _table_cells(line)
+            lines[index] = ("| " + " | ".join(values.get(name, cells[i] if i < len(cells) else "").replace("|", "\\|") for i, name in enumerate(header)) + " |\n") if row else ""
     fixed = "".join(lines)
     return (paper_md, 0) if fixed == scope else (paper_md.replace(scope, fixed, 1), 1)
 
