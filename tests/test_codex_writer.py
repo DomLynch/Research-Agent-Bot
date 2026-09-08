@@ -5,6 +5,7 @@ import asyncio
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 import httpx
@@ -139,7 +140,17 @@ def test_timeout_and_cancellation_reap_process(cli, tmp_path, case, cancel):
         with pytest.raises(asyncio.CancelledError if cancel else LLMError):
             await task
 
+    started = time.monotonic()
     asyncio.run(run())
+    assert time.monotonic() - started < 15, "cleanup waited for the child's natural exit"
+    # An orphan is reaped by the OS, not by our subprocess wait.
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline:
+        try:
+            os.kill(int(pid_path.read_text()), 0)
+        except ProcessLookupError:
+            break
+        time.sleep(0.01)
     with pytest.raises(ProcessLookupError):
         os.kill(int(pid_path.read_text()), 0)
 
