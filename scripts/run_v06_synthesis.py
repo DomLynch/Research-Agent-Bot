@@ -1565,9 +1565,9 @@ def _extract_canonical_trial_id(claims: list[dict]) -> str | None:
     return None
 
 
-def _shorten_claim_sentence(sentence: str, limit: int = 180) -> str:
+def _shorten_claim_sentence(sentence: str, limit: int | None = None) -> str:
     clean = " ".join((sentence or "").replace("\xa0", " ").split())
-    if len(clean) <= limit:
+    if limit is None or len(clean) <= limit:
         return clean
     end = clean.find(" ", limit - 1)
     return clean if end < 0 else clean[:end] + "…"

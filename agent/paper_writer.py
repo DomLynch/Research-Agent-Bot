@@ -508,7 +508,6 @@ async def write_results_section(
     background_lit_entries: Sequence[Any] | None = None,
 ) -> SynthesisSection:
     """Render Results by outcome-owned packet groups."""
-    _ = rejected
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     for receipt in receipts:
         by_outcome.setdefault(receipt.outcome_class, []).append(receipt)
@@ -528,7 +527,6 @@ async def write_results_section(
     _results_prompt = format_prompts_for_topic(
         topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )["results"]
-    fallback = "## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n"
     floor = SECTION_WORD_FLOORS.get("results", 0)
     per_outcome_floor = floor // max(1, len(by_outcome))
     per_outcome_floor = max(180, min(500, per_outcome_floor))
@@ -563,19 +561,19 @@ async def write_results_section(
             section = build_results_from_parsed(
                 parsed, accepted=group, rejection_reasons=rejection_reasons,
             )
-            if section is None:
+            if section is not None and (words := _section_word_count(section)) > best_words:
+                best, best_words = section, words
+            if section is None or rejection_reasons:
+                print(f"[paper_writer] results/{outcome}: attempt {attempt + 1} rejected: {rejection_reasons}", flush=True)
                 current_prompt = cross_domain_retry_prompt(
                     user, "results", rejection_reasons,
                 )
                 continue
-            words = _section_word_count(section)
-            if words > best_words:
-                best, best_words = section, words
             if best_words >= per_outcome_floor:
                 break
             current_prompt = _build_retry_prompt(
                 user, section_name=f"{outcome} results",
-                target_floor=per_outcome_floor, last_word_count=words,
+                target_floor=per_outcome_floor, last_word_count=best_words,
             )
 
         def _builder(parsed_dict: dict) -> SynthesisSection | None:
@@ -589,6 +587,7 @@ async def write_results_section(
             call_llm_fn=_call_llm_section,
         )
         if best is None:
+            print(f"[paper_writer] results/{outcome}: writer exhausted; using metadata fallback, not validated prose", flush=True)
             best = build_results_from_parsed({"subsections": []}, accepted=group)
         if best is None:
             continue
@@ -603,7 +602,7 @@ async def write_results_section(
             anchors=tuple(anchors),
         )
     return SynthesisSection(
-        name="results", body_md=fallback, anchors=(),
+        name="results", body_md="## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n", anchors=(),
     )
 
 

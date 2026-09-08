@@ -633,6 +633,14 @@ def test_receipt_thesis_preserves_late_source_statistics() -> None:
     thesis = orch._build_receipt_thesis_text("paper", "Safety trial", claims)
 
     assert "81 of 125 [64.8%] vs. 46 of 126 [36.5%]" in thesis
+    sentence = (
+        "Among participants assigned to the intervention or comparator, the prespecified "
+        "analysis of the primary endpoint at the end of the randomized treatment period "
+        "found no significant between-group difference (P = 0.64)."
+    )
+    assert len(sentence) > 180
+    complete = orch._build_receipt_thesis_text("paper", "Safety trial", [{"sentence": sentence}])
+    assert sentence in complete and "P = 0.64" in complete
 
 
 def test_locked_receipt_thesis_allows_only_comparison_completion() -> None:

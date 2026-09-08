@@ -609,7 +609,7 @@ def test_results_builder_keeps_paragraphs_inside_same_outcome_section() -> None:
 
 def test_results_builder_backfills_missing_outcome_sections() -> None:
     accepted = [
-        _accepted("r-cardio", outcome_class="cardiometabolic"),
+        _accepted("r-cardio", outcome_class="cardiometabolic", thesis_text="Trial - source excerpts: Fasting glucose decreased among older adults."),
         _accepted("r-frailty", outcome_class="frailty"),
         replace(
             _accepted("r-animal", outcome_class="cardiometabolic"),
@@ -623,7 +623,7 @@ def test_results_builder_backfills_missing_outcome_sections() -> None:
                 "heading": "Cardiometabolic Outcomes",
                 "paragraphs": [
                     {
-                        "text": "Cardiometabolic findings are bounded.",
+                        "text": "Fasting glucose decreased among older adults [r-cardio].",
                         "receipt_ids": ["r-cardio"],
                     },
                 ],

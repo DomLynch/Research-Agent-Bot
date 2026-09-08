@@ -245,6 +245,38 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
     assert "lifespan" not in immune_body
 
 
+@pytest.mark.parametrize("mixed", [False, True])
+def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch, mixed) -> None:
+    receipts = [_summary("r-a", outcome="cardiometabolic", thesis_text=(
+        "Trial - source excerpts: Fasting glucose decreased among older adults."
+    ))]
+    prompts = []
+
+    async def call(**kwargs):
+        prompts.append(kwargs["user_prompt"])
+        text = "Fasting glucose decreased among older adults [r-a]."
+        if len(prompts) == 1 or mixed:
+            text = "Fasting glucose decreased by 999% among older adults [r-a]."
+        paragraphs = [{"text": text, "receipt_ids": ["r-a"]}]
+        if mixed:
+            paragraphs.append({"text": "Fasting glucose decreased among older adults [r-a].", "receipt_ids": ["r-a"]})
+        return {"subsections": [{"outcome_class": "cardiometabolic", "paragraphs": paragraphs}]}
+
+    async def no_fix(section, **kwargs):
+        return section
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", call)
+    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", no_fix)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 1)
+    result = asyncio.run(write_results_section(
+        receipts, [], _matrix(receipts), _thesis(), topic="metformin", chain=(),
+    ))
+    assert len(prompts) == 2
+    assert "novel_numeric:" in prompts[1] and "999" in prompts[1]
+    assert "Fasting glucose decreased among older adults [r-a]." in result.body_md
+    assert "999" not in result.body_md
+
+
 def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> None:
     prompts: list[str] = []
 
