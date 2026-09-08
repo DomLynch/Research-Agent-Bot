@@ -1,5 +1,15 @@
 # PROJECT_STATE.md
 
+## Configured Writer Deadlines - 2026-09-08
+Two live Sol calls stopped at the configured 180-second limit. The section
+wrapper now respects the configured provider timeout plus 60 seconds of headroom,
+instead of cancelling every longer call at 240 seconds. Deployment targets
+`WRITER_TIMEOUT_SEC=600`; existing per-cycle budgets and scientific gates stay
+unchanged. The legacy shared timeout setting also bounds extractor/judge calls.
+Local verification: 4,753 passed, 2 xpassed, 16 warnings (seed 909); quality,
+mypy and LOC checks passed. Independent cancellation/retry audit passed.
+Deployment and a complete live manuscript still need separate receipts.
+
 ## Source-Bound Revision Repairs - 2026-09-08
 Primary-outcome declarations now take precedence over incidental statistic counts;
 background-study results do not set the current study's endpoint directions.

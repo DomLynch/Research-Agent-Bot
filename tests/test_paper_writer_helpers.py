@@ -11,8 +11,18 @@ from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
 
 
 @pytest.mark.asyncio
-async def test_call_llm_section_retries_one_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
+@pytest.mark.parametrize("configured,expected", [(0, 240), (180, 240), (600, 660)])
+async def test_call_llm_section_retries_one_timeout(monkeypatch: pytest.MonkeyPatch, configured, expected) -> None:
+    from agent.llm_client import CallSpec
+
     calls = 0
+    wait_for = asyncio.wait_for
+
+    async def checked_wait_for(call, timeout):
+        assert timeout == expected
+        return await wait_for(call, timeout)
+
+    monkeypatch.setattr(helpers.asyncio, "wait_for", checked_wait_for)
 
     async def fake_chat_json(**_kwargs: Any) -> SimpleNamespace:
         nonlocal calls
@@ -30,7 +40,7 @@ async def test_call_llm_section_retries_one_timeout(monkeypatch: pytest.MonkeyPa
     out = await helpers.call_llm_section(
         system_prompt="sys",
         user_prompt="user",
-        chain=(),
+        chain=(CallSpec(base_url="codex://chatgpt", api_key="", model="gpt-5.6-sol", timeout_sec=configured),) if configured else (),
         client=None,
         ledger=None,
         seed=None,

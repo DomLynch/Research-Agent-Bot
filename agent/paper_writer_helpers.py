@@ -15,7 +15,7 @@ from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
 logger = logging.getLogger(__name__)
 
 
-# Per-LLM-call timeout: MiMo 180s plus fallback headroom.
+# Minimum wrapper budget; allow the configured provider call to finish first.
 PER_CALL_TIMEOUT_SEC = 240.0
 SECTION_TIMEOUT_RETRIES = 1
 
@@ -33,6 +33,7 @@ async def call_llm_section(
     ledger: CostLedger | None,
     seed: int | None,
 ) -> dict | None:
+    timeout = max(PER_CALL_TIMEOUT_SEC, max((spec.timeout_sec for spec in chain), default=0) + 60)
     for attempt in range(SECTION_TIMEOUT_RETRIES + 1):
         try:
             response = await asyncio.wait_for(
@@ -47,24 +48,22 @@ async def call_llm_section(
                     temperature=0.5,
                     seed=seed,
                 ),
-                timeout=PER_CALL_TIMEOUT_SEC,
+                timeout=timeout,
             )
             break
         except asyncio.TimeoutError:
             if attempt < SECTION_TIMEOUT_RETRIES:
                 logger.warning(
                     "paper_writer LLM call exceeded %.0fs timeout — retrying once",
-                    PER_CALL_TIMEOUT_SEC,
+                    timeout,
                 )
                 continue
             logger.warning(
                 "paper_writer LLM call exceeded %.0fs timeout — moving on",
-                PER_CALL_TIMEOUT_SEC,
+                timeout,
             )
             return None
-    if isinstance(response.parsed, dict):
-        return response.parsed
-    return None
+    return response.parsed if isinstance(response.parsed, dict) else None
 
 
 def section_word_count(section: SynthesisSection) -> int:
