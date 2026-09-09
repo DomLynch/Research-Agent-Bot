@@ -420,6 +420,18 @@ def test_scoped_applies_topic_and_hedge_contract_across_section() -> None:
     ) is None
 
 
+def test_scoped_source_quote_with_metadata_citation_preserves_statistics() -> None:
+    text = "Metformin may affect glucose [n = 24]; metformin effects remain uncertain."
+    receipt = _accepted("r1", thesis_text="Trial - source excerpts: " + text)
+    for prose, ids, valid in ((text, ["r1"], True), (text.replace("24", "25"), ["r1"], False),
+                              (text, ["unknown"], False)):
+        result = build_scoped_from_parsed(
+            {"paragraphs": [{"text": prose, "receipt_ids": ids}]}, name="conclusion",
+            heading="## Conclusion", topic="metformin", accepted=[receipt],
+        )
+        assert (result is not None) == valid
+
+
 def test_scoped_failures_explain_the_actual_retry_contract() -> None:
     from agent.paper_writer_prompts import cross_domain_retry_prompt
 

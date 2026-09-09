@@ -191,23 +191,23 @@ def test_build_user_prompt_keeps_semicolon_examples_inside_revision_ask(monkeypa
     assert "render a clearly labelled markdown table" in revision
 
 
-def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> None:
+def test_results_writer_preserves_outcome_headings_and_source_isolation(monkeypatch) -> None:
     receipts = [
-        _summary("r-immune", outcome="immune"),
-        _summary("r-longevity", outcome="longevity"),
+        _summary("r-immune", outcome="immune", thesis_text="Trial - source excerpts: Immune evidence remains mixed across included sources."),
+        _summary("r-longevity", outcome="longevity", thesis_text="Trial - source excerpts: Longevity evidence discusses lifespan and offspring context."),
     ]
     parsed_by_call = iter([
         {"subsections": [{
             "outcome_class": "immune",
             "paragraphs": [{
-                "text": "Immune evidence remains mixed across included sources.",
+                "text": "Immune evidence remains mixed across included sources [r-immune].",
                 "receipt_ids": ["r-immune"],
             }],
         }]},
         {"subsections": [{
             "outcome_class": "longevity",
             "paragraphs": [{
-                "text": "Longevity evidence discusses lifespan and offspring context.",
+                "text": "Longevity evidence discusses lifespan and offspring context [r-longevity].",
                 "receipt_ids": ["r-longevity"],
             }],
         }]},
@@ -219,17 +219,7 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
         prompts.append(str(kwargs.get("user_prompt") or ""))
         return next(parsed_by_call)
 
-    async def fake_citation_fix(section, **_kwargs):
-        if section and "### Longevity Outcomes" in section.body_md:
-            return SynthesisSection(
-                name="results",
-                body_md=section.body_md.replace("### Longevity Outcomes\n\n", ""),
-                anchors=section.anchors,
-            )
-        return section
-
     monkeypatch.setattr(paper_writer, "_call_llm_section", fake_call)
-    monkeypatch.setattr(paper_writer, "_run_citation_fix_pass", fake_citation_fix)
     monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 0)
 
     section = asyncio.run(write_results_section(
@@ -278,6 +268,84 @@ def test_results_retry_reports_validation_errors_not_fallback_length(monkeypatch
     assert "Fasting glucose decreased among older adults [r-a]." in result.body_md
     assert "999" not in result.body_md
     assert "pancreatic cancer" not in result.body_md
+
+
+@pytest.mark.parametrize("name", ["abstract", "conclusion", "results"])
+@pytest.mark.parametrize("response", [None, {"subsections": None}, {"subsections": [{"paragraphs": None}]},
+                                     {"subsections": [{"paragraphs": ["junk", {"text": ["junk"]}]}]},
+                                     {"subsections": [{"paragraphs": [{"text": "Trial result", "receipt_ids": "r-a"}]}]}])
+def test_exhausted_writer_stops_without_placeholder(monkeypatch, name, response) -> None:
+    async def no_response(**kwargs):
+        return response
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", no_response)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 0)
+    receipts = [_summary("r-a")]
+    if name == "results":
+        call = write_results_section(receipts, [], _matrix(receipts), _thesis(), topic="metformin", chain=())
+    else:
+        kwargs = {"topic": "metformin"} if name == "conclusion" else {}
+        fn = paper_writer._write_scoped_section if kwargs else paper_writer._write_anchored_section
+        call = fn(name=name, heading=f"## {name.title()}", system_prompt="", user_prompt="", accepted=receipts,
+                  chain=(), client=None, ledger=None, seed=None, fallback_body="placeholder", **kwargs)
+    with pytest.raises(ValueError, match=f"writer_section_unavailable:{name}"):
+        asyncio.run(call)
+
+
+@pytest.mark.parametrize("name", ["conclusion", "results"])
+def test_retry_keeps_valid_findings_and_requests_only_missing_text(monkeypatch, name) -> None:
+    receipts = [_summary("r-a", outcome="cardiometabolic", thesis_text=(
+        "Trial - source excerpts: Metformin reduced fasting glucose among older adults. | "
+        "Metformin benefit remains uncertain among older adults."
+    ))]
+    texts = ["Metformin reduced fasting glucose among older adults [r-a].",
+             "Metformin benefit remains uncertain among older adults [r-a]."]
+    prompts = []
+
+    async def call(**kwargs):
+        prompts.append(kwargs["user_prompt"])
+        row = {"text": texts[len(prompts)-1], "receipt_ids": ["r-a"]}
+        return {"paragraphs": [row]} if name == "conclusion" else {"subsections": [{"outcome_class": "cardiometabolic", "paragraphs": [row]}]}
+
+    monkeypatch.setattr(paper_writer, "_call_llm_section", call)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 1)
+    if name == "results":
+        result = asyncio.run(write_results_section(receipts, [], _matrix(receipts), _thesis(), topic="metformin", chain=()))
+    else:
+        result = asyncio.run(paper_writer._write_scoped_section(
+            name=name, heading="## Conclusion", system_prompt="", user_prompt="", topic="metformin",
+            accepted=receipts, chain=(), client=None, ledger=None, seed=None, fallback_body="placeholder"))
+    assert all(text in result.body_md for text in texts)
+    assert texts[0] in prompts[1]
+    assert "Do not repeat" in prompts[1]
+
+
+def test_retention_deduplicates_normalized_prose_without_rewriting_sources() -> None:
+    row = {"text": "Metformin may help.", "receipt_ids": ["r-a"]}
+    rows = paper_writer._retained_paragraphs(None, [row, {**row, "text": "  Metformin  may help. "}, None])
+    assert rows == [row]
+    assert paper_writer._retained_paragraphs(None, None) == []
+
+
+@pytest.mark.parametrize("wrong_first", [False, True])
+@pytest.mark.parametrize("name", ["conclusion", "results"])
+def test_citation_candidate_order_cannot_hide_supported_prose(monkeypatch, name, wrong_first) -> None:
+    text = "Metformin may lower glucose while metformin effects remain uncertain [r-a]."
+    receipts = [_summary("r-a", thesis_text="Trial - source excerpts: " + text.replace(" [r-a]", "")),
+                _summary("r-b", thesis_text="Trial - source excerpts: The intervention harmed muscle strength.")]
+    rows = [{"text": text, "receipt_ids": [rid]} for rid in (["r-b", "r-a"] if wrong_first else ["r-a", "r-b"])]
+    async def call(**kwargs):
+        return {"paragraphs": rows} if name == "conclusion" else {"subsections": [{"paragraphs": rows}]}
+    monkeypatch.setattr(paper_writer, "_call_llm_section", call)
+    monkeypatch.setattr(paper_writer, "SECTION_RETRY_BUDGET", 0)
+    if name == "results":
+        section = asyncio.run(write_results_section(receipts, [], _matrix(receipts), _thesis(), topic="metformin", chain=()))
+    else:
+        section = asyncio.run(paper_writer._write_scoped_section(
+            name=name, heading="## Conclusion", system_prompt="", user_prompt="", topic="metformin",
+            accepted=receipts, chain=(), client=None, ledger=None, seed=None, fallback_body=""))
+    assert len(section.anchors) == 1
+    assert section.anchors[0].receipt_ids == ("r-a",)
 
 
 def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> None:

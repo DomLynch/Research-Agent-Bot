@@ -212,9 +212,9 @@ def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_
                                                   receipt.population_summary)))
         source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "population": receipt.population_summary, "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class, "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
     protected = _CONTINUING_ABBREVIATION_RE.sub(lambda match: match.group().replace(".", "<DOT>"), text)
+    cited_ids = set(_INLINE_RECEIPT_RE.findall(text)) & source_by_id.keys() or set(receipt_ids)
     quoted = _normalize(_INLINE_RECEIPT_RE.sub(lambda match: "" if match[1] in source_by_id else match[0], text)).strip(' ."“”')
-    inline_ids = set(_INLINE_RECEIPT_RE.findall(text)) & source_by_id.keys()
-    if len(inline_ids) == 1 and any(quoted == _normalize(span).strip(' ."“”') for rid in inline_ids
+    if len(cited_ids) == 1 and any(quoted == _normalize(span).strip(' ."“”') for rid in cited_ids & source_by_id.keys()
            for parts in [re.split(r"\bsource excerpts:\s*", receipts_by_id[rid].thesis_text, maxsplit=1, flags=re.I)]
            if len(parts) == 2 for span in parts[1].split(" | ") if len(span.strip()) >= 20):
         return None
@@ -555,6 +555,16 @@ def build_anchored_from_parsed(
     )
 
 
+def _scoped_contract_failures(text: str, topic: str) -> list[str]:
+    reasons = []
+    aliases = _topic_aliases(topic)
+    if aliases and max(text.count(alias) for alias in aliases) < 2:
+        reasons.append(f"topic_alias_under_count:<2:{aliases[0]}")
+    if not any(hedge in text for hedge in _HEDGE_PHRASES):
+        reasons.append("missing_hedge_phrase")
+    return reasons
+
+
 def build_scoped_from_parsed(
     parsed: dict,
     *,
@@ -563,6 +573,7 @@ def build_scoped_from_parsed(
     topic: str,
     accepted: Sequence[ReceiptSummary],
     rejection_reasons: list[str] | None = None,
+    allow_partial: bool = False,
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_by_id = {r.receipt_id: r for r in accepted}
@@ -576,6 +587,8 @@ def build_scoped_from_parsed(
         text = entry.get("text") or ""
         rids = entry.get("receipt_ids") or []
         if not isinstance(text, str) or not isinstance(rids, list):
+            continue
+        if any(_normalize(a.sentence) == _normalize(text) for a in anchors):
             continue
         # Day 10.17 Fix C.3: same fuzzy-id repair as anchored builder.
         repaired_rids, _repair_log = repair_receipt_ids(
@@ -611,14 +624,10 @@ def build_scoped_from_parsed(
             rejection_reasons.append("empty_or_invalid_paragraphs")
         return None
     section_text = _normalize(" ".join(anchor.sentence for anchor in anchors))
-    aliases = _topic_aliases(topic)
-    if aliases and max(section_text.count(alias) for alias in aliases) < 2:
-        if rejection_reasons is not None:
-            rejection_reasons.append(f"topic_alias_under_count:<2:{aliases[0]}")
-        return None
-    if not any(hedge in section_text for hedge in _HEDGE_PHRASES):
-        if rejection_reasons is not None:
-            rejection_reasons.append("missing_hedge_phrase")
+    contract_failures = _scoped_contract_failures(section_text, topic)
+    if rejection_reasons is not None:
+        rejection_reasons.extend(contract_failures)
+    if contract_failures and not allow_partial:
         return None
     return SynthesisSection(
         name=name, body_md="\n".join(body_lines).rstrip() + "\n",
@@ -659,7 +668,8 @@ def build_results_from_parsed(
                 continue
             text = entry.get("text") or ""
             rids = entry.get("receipt_ids") or []
-            if not isinstance(text, str) or not isinstance(rids, list):
+            if (not isinstance(text, str) or not isinstance(rids, list)
+                    or any(_normalize(a.sentence) == _normalize(text) for a in sub_anchors)):
                 continue
             # Day 10.17 Fix C.3: receipt-id typo repair (same as
             # anchored / scoped builders).

@@ -181,6 +181,7 @@ def test_revise_lane_gives_one_review_round_the_full_budget() -> None:
     service = (REPO / "deploy" / "research-agent-paper-revise.service").read_text(encoding="utf-8")
 
     assert "--max-revise-attempts 1" in service
+    assert "--max-attempts 1" in service
     assert "--cycle-budget-sec 10800" in service
     assert "RestartPreventExitStatus=3" in service
     assert "TimeoutStartSec=16200" in service
@@ -4652,7 +4653,8 @@ def test_fresh_publish_tops_up_partial_quant_corpus_before_synthesis(tmp_path: P
     assert ledger["frontier_corpus_seed"]["n_quant_claims_before"] == 4
 
 
-def test_cycle_passes_remaining_budget_to_child_work(tmp_path: Path, monkeypatch) -> None:
+@pytest.mark.parametrize("preflight_exhausts_budget", [False, True])
+def test_cycle_passes_remaining_budget_to_child_work(tmp_path: Path, monkeypatch, preflight_exhausts_budget) -> None:
     _topic(tmp_path, "budget_topic", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
@@ -4673,7 +4675,10 @@ def test_cycle_passes_remaining_budget_to_child_work(tmp_path: Path, monkeypatch
         return {"status": "corpus_ready", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
 
     def fake_receipt(topic: str, out_dir: Path, *, timeout: int | None = None, **_kwargs: Any) -> dict[str, Any]:
+        nonlocal now
         calls["receipt_timeout"] = timeout
+        if preflight_exhausts_budget:
+            now += 40
         return {"passed": True}
 
     def fake_synthesis(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None, **_kwargs: Any) -> int:
@@ -4693,10 +4698,16 @@ def test_cycle_passes_remaining_budget_to_child_work(tmp_path: Path, monkeypatch
         remote_loader=lambda: (set(), None),
         submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
         ensure_corpus=fake_corpus,
-        cycle_budget_seconds=40,
+        cycle_budget_seconds=45,
         clock=fake_clock,
     )
 
+    if preflight_exhausts_budget:
+        assert ledger["status"] == "cycle_budget_exhausted"
+        assert ledger["attempts"][-1]["failure_class"] == "D_no_action"
+        assert "synthesis_timeout" not in calls
+        assert ledger["submitted"] == 0
+        return
     assert ledger["status"] == "submitted_to_researka"
     assert calls["corpus_timeout"] is not None
     assert calls["receipt_timeout"] is not None

@@ -2354,6 +2354,7 @@ def _failure_class(status: str) -> str:
         "retracted_source_cited": "D_no_action",
         "synthesis_failed": "C_writer_fixable",
         "synthesis_timeout": "D_no_action",
+        "cycle_budget_exhausted": "D_no_action",
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
         "strategy_evidence_insufficient": "B_corpus_fixable",
@@ -3712,6 +3713,13 @@ def _attempt_gate_counts(attempts: Sequence[Mapping[str, Any]]) -> dict[str, int
     return dict(sorted(counts.items()))
 
 
+def _cycle_budget_exhausted(ledger: dict[str, Any], elapsed: float, budget: int) -> bool:
+    if budget <= 0 or elapsed < budget:
+        return False
+    ledger.update(status="cycle_budget_exhausted", cycle_elapsed_seconds=int(elapsed), cycle_budget_seconds=budget)
+    return True
+
+
 def run_cycle(
     *,
     runs_root: Path = RUNS,
@@ -3985,12 +3993,7 @@ def run_cycle(
             if max_attempts > 0 and attempt_count >= max_attempts:
                 break
             attempt_count += 1
-            if cycle_budget_seconds > 0 and clock() - started_mono >= cycle_budget_seconds:
-                ledger.update({
-                    "status": "cycle_budget_exhausted",
-                    "cycle_elapsed_seconds": int(clock() - started_mono),
-                    "cycle_budget_seconds": cycle_budget_seconds,
-                })
+            if _cycle_budget_exhausted(ledger, clock() - started_mono, cycle_budget_seconds):
                 break
             revision_source = remote_revision if remote_revision and not attempted else None
             if (
@@ -4604,20 +4607,11 @@ def run_cycle(
             last_attempt: dict[str, Any] | None = None
             revision_round_recorded = False
             for revise_attempt in range(1, max(1, max_revise_attempts) + 1):
-                if cycle_budget_seconds > 0 and clock() - started_mono >= cycle_budget_seconds:
-                    attempt = {
-                        "topic": selected,
-                        "out_dir": out_dir.name,
-                        "revise_attempt": revise_attempt,
-                        "synthesis_return_code": None,
-                        "submit_status": "cycle_budget_exhausted",
-                        "failure_class": "D_no_action",
-                        "submitted": 0,
-                        "cycle_elapsed_seconds": int(clock() - started_mono),
-                        "cycle_budget_seconds": cycle_budget_seconds,
-                    }
-                    ledger["attempts"].append(attempt)
-                    ledger["status"] = "cycle_budget_exhausted"
+                if _cycle_budget_exhausted(ledger, clock() - started_mono, cycle_budget_seconds):
+                    ledger["attempts"].append(_gate_attempt(
+                        selected, out_dir, "cycle_budget_exhausted", revise_attempt=revise_attempt,
+                        cycle_elapsed_seconds=ledger["cycle_elapsed_seconds"], cycle_budget_seconds=cycle_budget_seconds,
+                    ))
                     break
                 source_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
                 resume_name = str((revision_source or {}).get("resume_run") or "")
@@ -4810,6 +4804,13 @@ def run_cycle(
                     last_attempt = attempt
                     break
                 synthesis_kwargs["timeout"] = child_timeout()
+                if _cycle_budget_exhausted(ledger, clock() - started_mono, cycle_budget_seconds):
+                    ledger["attempts"].append(_gate_attempt(
+                        selected, out_dir, "cycle_budget_exhausted",
+                        cycle_elapsed_seconds=ledger["cycle_elapsed_seconds"],
+                        cycle_budget_seconds=cycle_budget_seconds,
+                    ))
+                    break
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)

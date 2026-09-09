@@ -342,6 +342,52 @@ def test_review_and_repair_use_the_publication_policy() -> None:
         assert all(rule in prompt for prompt in (system, repair, revision_coverage._SYS))
 
 
+@pytest.mark.parametrize("repair", [False, True])
+def test_review_prompt_example_matches_strict_patch_schema(monkeypatch, repair) -> None:
+    system, user = (
+        final_reviewer._build_repair_prompt([], "paper") if repair
+        else final_reviewer._build_reviewer_prompt("paper", {"receipts": []}, {})
+    )
+    example, _ = json.JSONDecoder().raw_decode(system[system.index('{"patches":'):])
+    patch = example["patches"][0]
+    assert all(isinstance(patch[key], str) for key in (
+        "id", "patch_type", "severity", "location", "before", "after", "reason",
+    ))
+    assert patch["severity"] == "P1" and patch["after"] == ""
+    monkeypatch.setattr(final_reviewer, "_call_one", AsyncMock(return_value=(example, 10, 20)))
+    raw, _, _ = asyncio.run(final_reviewer._call_one_bounded(
+        system, user, "gpt-5.6-terra", "", "unused", None,
+    ))
+    typed, = final_reviewer._typed_patches(raw)
+    assert typed.severity == "P1" and typed.after == "" and not typed.auto_applicable
+
+
+@pytest.mark.parametrize("with_registry", [False, True])
+def test_reviewer_receives_source_evidence_not_only_classification(with_registry) -> None:
+    from types import SimpleNamespace
+    excerpt = "Trial - source excerpts: The prespecified outcome did not change."
+    registry = {"r1": SimpleNamespace(body_citation="Trial 2026")} if with_registry else None
+    _, user = final_reviewer._build_reviewer_prompt(
+        "paper", {"receipts": [{"receipt_id": "r1", "thesis_text": excerpt}]}, {},
+        citation_registry=registry,
+    )
+    assert excerpt in user
+
+
+@pytest.mark.parametrize("field,value", [
+    ("patch_type", "Claim"), ("severity", "high"), ("before", " "),
+    ("before", None), ("after", None), ("reason", 7),
+])
+def test_review_schema_reports_invalid_field_without_coercion(monkeypatch, field, value) -> None:
+    patch = {"patch_type": "claim", "severity": "P1", "before": "Unsupported claim.",
+             "after": "", "reason": "No source support.", field: value}
+    monkeypatch.setattr(final_reviewer, "_call_one", AsyncMock(return_value=({"patches": [patch]}, 10, 20)))
+    with pytest.raises(ValueError, match=f"missing or invalid fields.*{field}"):
+        asyncio.run(final_reviewer._call_one_bounded(
+            "system", "user", "gpt-5.6-terra", "", "unused", None,
+        ))
+
+
 def test_prompt_keeps_same_background_citation_with_distinct_numerics() -> None:
     """A single background citation can define multiple canonical
     thresholds. The final-layer reviewer must see each token+numeric pair; deduping only by

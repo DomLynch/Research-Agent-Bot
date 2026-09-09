@@ -1,5 +1,19 @@
 # PROJECT_STATE.md
 
+## Retained Writer Repairs and Bounded Revisions - 2026-09-09
+Writer retries retain validated sentences and request only missing/corrected
+content. Exhausted sections now fail explicitly instead of emitting placeholders;
+source support, numeric validation and strict final section checks remain required.
+Review and repair prompts share a valid JSON contract, and reviewers receive
+source excerpts rather than just evidence labels. Final minimums are 400 words
+for Results and 180 for Conclusion; higher writing targets remain unchanged
+(Conclusion retry threshold 250, prompt target 280-380).
+The revise service now limits both topics and review rounds to one per 10800-second
+cycle. Previously one round per topic still allowed several papers to consume the
+same deadline. A deadline recheck after preparation prevents starting synthesis
+with an already exhausted budget. Timeouts and unmet scientific corrections can
+still block an individual paper; these changes do not establish publication.
+
 ## Full-Context Revision Verification - 2026-09-08
 Revision judging now receives the complete manuscript, frozen source sections and
 tables, and outgoing payload fields. A deterministic keyword pass cannot override

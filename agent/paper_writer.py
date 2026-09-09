@@ -307,6 +307,28 @@ def _build_user_prompt(
 # --- Section builders ----------------------------------------------------
 
 
+def _retained_paragraphs(section: SynthesisSection | None, incoming: Any) -> list[dict]:
+    rows: list[dict] = [{"text": a.sentence, "receipt_ids": list(a.receipt_ids)} for a in section.anchors] if section else []
+    seen = {(" ".join(row["text"].split()).casefold(), tuple(row["receipt_ids"])) for row in rows}
+    for row in incoming if isinstance(incoming, list) else []:
+        if not isinstance(row, dict) or not isinstance(text := row.get("text") or row.get("sentence"), str):
+            continue
+        ids = row.get("receipt_ids")
+        if not isinstance(ids, list) or not all(isinstance(rid, str) for rid in ids):
+            continue
+        text = " ".join(text.split())
+        if text and (text.casefold(), tuple(ids)) not in seen:
+            rows.append({**row, "text": text})
+            seen.add((text.casefold(), tuple(ids)))
+    return rows
+
+
+def _retained_retry(prompt: str, section: SynthesisSection | None, parsed: dict) -> str:
+    return (prompt + "\n\nPREVIOUS RESPONSE (repair the failed statements):\n" + json.dumps(parsed)
+            + "\nRETAINED VALIDATED TEXT (already kept; Do not repeat or rewrite it; return only additions/corrections):\n"
+            + json.dumps(_retained_paragraphs(section, [])))
+
+
 async def _write_anchored_section(
     *,
     name: SectionName,
@@ -409,17 +431,8 @@ async def _write_anchored_section(
         call_llm_fn=_call_llm_section,
     )
     if best is None:
-        # Never silent: the fallback body is a ~15-word placeholder that cannot
-        # meet any section floor, so emitting it guarantees a downstream gate
-        # failure. Announce it where the cause is still visible.
-        print(
-            f"[paper_writer] {name}: ALL {SECTION_RETRY_BUDGET + 1} attempts failed; "
-            f"placeholder fallback_body ({len(fallback_body.split())} words, floor {floor})",
-            flush=True,
-        )
-    return best or SynthesisSection(
-        name=name, body_md=fallback_body, anchors=(),
-    )
+        raise ValueError(f"writer_section_unavailable:{name}")
+    return best
 
 
 async def _write_scoped_section(
@@ -451,27 +464,30 @@ async def _write_scoped_section(
             print(f"[paper_writer] {name}: no parseable object (attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})", flush=True)
             continue
         rejection_reasons: list[str] = []
+        combined = {"paragraphs": _retained_paragraphs(best, parsed.get("paragraphs") or [parsed])}
         section = build_scoped_from_parsed(
-            parsed, name=name, heading=heading, topic=topic, accepted=accepted,
-            rejection_reasons=rejection_reasons,
+            combined, name=name, heading=heading, topic=topic, accepted=accepted,
+            rejection_reasons=rejection_reasons, allow_partial=True,
         )
         if section is None:
             print(f"[paper_writer] {name}: rejected (attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1}): {'; '.join(rejection_reasons) or 'invalid_section_shape'}", flush=True)
-            current_prompt = cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
+            current_prompt = _retained_retry(cross_domain_retry_prompt(user_prompt, name, rejection_reasons), best, parsed)
             continue
         words = _section_word_count(section)
         if words > best_words:
             best, best_words = section, words
-        if best_words >= floor or floor == 0:
+        if (best_words >= floor or floor == 0) and not rejection_reasons:
             break
         current_prompt = _build_retry_prompt(
             user_prompt, section_name=str(name),
             target_floor=floor, last_word_count=words,
         )
+        current_prompt = _retained_retry(cross_domain_retry_prompt(current_prompt, name, rejection_reasons), best, parsed)
 
     # Fix #20: citation fix pass.
+    final_reasons: list[str] = []
     def _builder(parsed_dict: dict) -> SynthesisSection | None:
-        return build_scoped_from_parsed(parsed_dict, name=name, heading=heading, topic=topic, accepted=accepted)
+        return build_scoped_from_parsed(parsed_dict, name=name, heading=heading, topic=topic, accepted=accepted, rejection_reasons=final_reasons)
     best = await _run_citation_fix_pass(
         best, base_user_prompt=user_prompt,
         system_prompt=system_prompt, builder_fn=_builder,
@@ -479,19 +495,10 @@ async def _write_scoped_section(
         chain=chain, client=client, ledger=ledger, seed=seed,
         call_llm_fn=_call_llm_section,
     )
+    best = _builder({"paragraphs": _retained_paragraphs(best, [])})
     if best is None:
-        # Never silent: the fallback body is a ~15-word placeholder that cannot
-        # meet any section floor, so emitting it guarantees a downstream gate
-        # failure. Announce it where the cause is still visible.
-        print(
-            f"[paper_writer] {name}: ALL {SECTION_RETRY_BUDGET + 1} attempts "
-            f"failed — emitting placeholder fallback_body "
-            f"({len(fallback_body.split())} words, floor {floor})",
-            flush=True,
-        )
-    return best or SynthesisSection(
-        name=name, body_md=fallback_body, anchors=(),
-    )
+        raise ValueError(f"writer_section_unavailable:{name}:" + "; ".join(dict.fromkeys(final_reasons)))
+    return best
 
 
 async def write_results_section(
@@ -527,9 +534,7 @@ async def write_results_section(
     _results_prompt = format_prompts_for_topic(
         topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )["results"]
-    floor = SECTION_WORD_FLOORS.get("results", 0)
-    per_outcome_floor = floor // max(1, len(by_outcome))
-    per_outcome_floor = max(180, min(500, per_outcome_floor))
+    per_outcome_floor = max(180, min(500, SECTION_WORD_FLOORS.get("results", 0) // max(1, len(by_outcome))))
     result_bodies: list[str] = []
     anchors: list[SynthesisClaimAnchor] = []
     for outcome, group in sorted(by_outcome.items()):
@@ -558,8 +563,16 @@ async def write_results_section(
             if not parsed:
                 continue
             rejection_reasons: list[str] = []
+            subsections = parsed.get("subsections")
+            paragraphs = _retained_paragraphs(best, [row
+                for sub in (subsections if isinstance(subsections, list) else []) if isinstance(sub, dict)
+                for row in _retained_paragraphs(None, sub.get("paragraphs"))])
+            if not paragraphs:
+                current_prompt = user + "\nReturn subsections with source-supported paragraphs; an empty response is not Results."
+                continue
+            combined = {"subsections": [{"outcome_class": outcome, "paragraphs": paragraphs}]}
             section = build_results_from_parsed(
-                parsed, accepted=group, rejection_reasons=rejection_reasons,
+                combined, accepted=group, rejection_reasons=rejection_reasons,
             )
             if section is not None and (words := _section_word_count(section)) > best_words:
                 best, best_words = section, words
@@ -568,6 +581,7 @@ async def write_results_section(
                 current_prompt = cross_domain_retry_prompt(
                     user, "results", rejection_reasons,
                 )
+                current_prompt = _retained_retry(current_prompt, best, parsed)
                 continue
             if best_words >= per_outcome_floor:
                 break
@@ -575,35 +589,19 @@ async def write_results_section(
                 user, section_name=f"{outcome} results",
                 target_floor=per_outcome_floor, last_word_count=best_words,
             )
+            current_prompt = _retained_retry(current_prompt, best, parsed)
 
-        def _builder(parsed_dict: dict) -> SynthesisSection | None:
-            return build_results_from_parsed(parsed_dict, accepted=group)
-
-        best = await _run_citation_fix_pass(
-            best, base_user_prompt=user,
-            system_prompt=_results_prompt, builder_fn=_builder,
-            background_lit_entries=(),
-            chain=chain, client=client, ledger=ledger, seed=seed,
-            call_llm_fn=_call_llm_section,
-        )
-        if best is None:
-            print(f"[paper_writer] results/{outcome}: writer exhausted; using metadata fallback, not validated prose", flush=True)
-            best = build_results_from_parsed({"subsections": []}, accepted=group)
         if best is None:
             continue
-        body = _ensure_outcome_results_heading(best.body_md, outcome)
-        if body:
-            result_bodies.append(body)
-            anchors.extend(best.anchors)
+        result_bodies.append(_ensure_outcome_results_heading(best.body_md, outcome))
+        anchors.extend(best.anchors)
     if result_bodies and anchors:
         return SynthesisSection(
             name="results",
             body_md="## Results\n\n" + "\n\n".join(result_bodies).strip() + "\n",
             anchors=tuple(anchors),
         )
-    return SynthesisSection(
-        name="results", body_md="## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n", anchors=(),
-    )
+    raise ValueError("writer_section_unavailable:results")
 
 
 # --- Top-level renderer --------------------------------------------------

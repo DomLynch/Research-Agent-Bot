@@ -10,7 +10,7 @@ Type=oneshot
 SuccessExitStatus=3
 WorkingDirectory=/opt/research-agent-bot
 EnvironmentFile=/etc/research-agent-bot/research-agent-bot.env
-ExecStart=/usr/bin/flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode revise --run-synthesis --submit --max-revise-attempts 1 --cycle-budget-sec 10800
+ExecStart=/usr/bin/flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock /opt/research-agent-bot/.venv/bin/python scripts/daily_research_paper_cycle.py --mode revise --run-synthesis --submit --max-attempts 1 --max-revise-attempts 1 --cycle-budget-sec 10800
 Environment=PYTHONUNBUFFERED=1
 Environment=RESEARKA_DOI_PREFLIGHT_ENABLED=1
 Restart=on-failure

@@ -55,6 +55,18 @@ PATCH_TYPES = (
     "claim",        # flag-only
     "structure",    # flag-only
 )
+_PATCH_OUTPUT_CONTRACT = (
+    "Output ONLY a JSON object, using this valid example shape:\n"
+    '{"patches": [{"id": "P01", "patch_type": "claim", "severity": "P1", '
+    '"location": "Abstract", "before": "Unsupported claim.", "after": "", '
+    '"reason": "The cited source does not support this claim."}]}\n'
+    "Every patch must contain all seven fields as JSON strings, never null or omitted.\n"
+    f"patch_type must be exactly one of: {', '.join(PATCH_TYPES)}.\n"
+    "severity must be exactly P1 (ship-blocker), P2 (quality), or P3 (polish).\n"
+    "id identifies the patch; location is a section name; before is a nonempty exact paper substring (at most 160 chars).\n"
+    'after is replacement text; use "" for deletion. reason is a one-sentence explanation.\n'
+    'When there are no issues, return {"patches": []}.\n\n'
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -107,18 +119,8 @@ def _build_reviewer_prompt(
         "  structure  — moving sentences, adding/removing sections, "
         "restructuring an argument. FLAG ONLY (the gate cannot "
         "verify structural changes).\n\n"
-        "Output ONLY a JSON object: {\"patches\": [<TypedPatch>...]}\n"
-        "Each TypedPatch:\n"
-        "  {\n"
-        "    \"id\": \"P01\", \"P02\", ...,\n"
-        "    \"patch_type\": one of formatting | numeric | citation | claim | structure,\n"
-        "    \"severity\": \"P1\" (ship-blocker) | \"P2\" (quality) | \"P3\" (polish),\n"
-        "    \"location\": section name (e.g. \"Abstract\", \"Discussion\"),\n"
-        "    \"before\": exact paper substring to replace (≤160 chars),\n"
-        "    \"after\":  replacement text (or empty string for deletion),\n"
-        "    \"reason\": one sentence,\n"
-        "  }\n\n"
-        "RULES:\n"
+        + _PATCH_OUTPUT_CONTRACT
+        + "RULES:\n"
         "1. Do not invent numerics. If you flag a numeric as wrong, set "
         "patch_type=numeric and let the verifier check.\n"
         "2. Prefer minimal diffs. Don't restructure unless absolutely necessary.\n"
@@ -159,13 +161,14 @@ def _build_reviewer_prompt(
             receipt_lines.append(
                 f"- {body_cite}: outcome={r.get('outcome_class', '?')} "
                 f"effect={r.get('effect_direction', '?')} "
-                f"tier={r.get('evidence_tier', '?')}"
+                f"tier={r.get('evidence_tier', '?')}\n  source_excerpt={r.get('thesis_text', '')}"
             )
         receipt_header = "## Allowed body citations — primary evidence (receipts)"
     else:
         receipt_lines = [
             f"- {r.get('receipt_id', '?')}: outcome={r.get('outcome_class', '?')} "
             f"effect={r.get('effect_direction', '?')} tier={r.get('evidence_tier', '?')}"
+            f"\n  source_excerpt={r.get('thesis_text', '')}"
             for r in receipts
         ]
         receipt_header = "## Receipt list (use ONLY these for citations)"
@@ -494,13 +497,15 @@ async def _call_one_bounded(
             raise ValueError("review patch must be an object")
         if patch.get("patch_type") == "unfixable":
             continue
-        if (
-            patch.get("patch_type") not in PATCH_TYPES
-            or patch.get("severity") not in ("P1", "P2", "P3")
-            or not isinstance(patch.get("before"), str) or not patch["before"].strip()
-            or any(not isinstance(patch.get(key), str) for key in ("after", "reason"))
-        ):
-            raise ValueError("review patch has missing or invalid fields")
+        invalid = [field for field, valid in {
+            "patch_type": patch.get("patch_type") in PATCH_TYPES,
+            "severity": patch.get("severity") in ("P1", "P2", "P3"),
+            "before": isinstance(patch.get("before"), str) and bool(patch["before"].strip()),
+            "after": isinstance(patch.get("after"), str),
+            "reason": isinstance(patch.get("reason"), str),
+        }.items() if not valid]
+        if invalid:
+            raise ValueError("review patch has missing or invalid fields: " + ", ".join(invalid))
     return raw, in_tok, out_tok
 
 
@@ -654,10 +659,10 @@ def _build_repair_prompt(
         "  (b) An empty 'after' (delete the whole BEFORE)\n"
         "  (c) JSON with `patch_type='unfixable'` if you cannot "
         "propose a safe edit\n\n"
-        "Output ONLY a JSON object: {\"patches\": [<TypedPatch>...]}\n"
-        "Use the SAME `id` field as the rejected patch. New "
-        "patch_type can stay claim/numeric/citation/formatting/"
-        "structure OR 'unfixable'.\n"
+        + _PATCH_OUTPUT_CONTRACT
+        + "Use the SAME `id` field as the rejected patch. New "
+        "patch_type uses the enum above; ONLY for this repair response, "
+        "'unfixable' is also permitted and means no edit will be applied.\n"
         "Output AT MOST one patch per rejected input.\n"
     )
     rejected_block = []

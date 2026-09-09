@@ -72,6 +72,8 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
             "and effect language present in those receipts' evidence_excerpt fields. Do not add a "
             "mechanism, interpretation, or benefit absent from the mapped excerpt."
         )
+        guidance.append("Use one complete source sentence per JSON text record, with only its receipt_id. Preserve source terminology and abbreviations verbatim; do not expand biomarker names or combine populations/endpoints from different sentences. Quote the source text rather than inventing a paraphrase the supplied evidence cannot verify.")
+        guidance.extend({"conclusion": ["Keep the 280-380-word section target. Select source-stated conclusions, findings and limitations, not our own research proposals or whole-corpus judgments. A source-stated uncertainty or 'evidence suggests' provides the hedge. Return additions/corrections in paragraphs records; already retained text is counted toward the target."]}.get(section_name, []))
     return f"{base}\n\nVALIDATION FAILURES: {'; '.join(dict.fromkeys(reasons))}\n{' '.join(guidance)} JSON only."
 
 
@@ -457,60 +459,46 @@ Output JSON only. No prose outside the JSON."""
 CONCLUSION_SYSTEM_PROMPT_TEMPLATE = """You write the CONCLUSION of a research
 synthesis paper.
 
-**TARGET RANGE: 1-2 paragraphs of 5-8 sentences each = ~280-380
-words.** Fix #27 prose compression: the conclusion should be
-tight — assert the synthesis position, name the load-bearing
-caveat, state the clinical-practice implication, and stop. Do NOT
-restate the discussion.
+**TARGET RANGE: ~280-380 words.**
+Return one sentence per JSON record, so one unsupported sentence does not
+discard a whole paragraph. Each sentence must be supported by its own source.
+Use source-stated conclusions and limitations; do NOT restate the discussion.
 
 Output ONE JSON object with this exact shape:
 
 {
   "paragraphs": [
     {
-      "text": "<one paragraph>",
-      "receipt_ids": ["r-a"],
-      "scope_anchor": "<hedge phrase>"
+      "text": "<one source-supported sentence>",
+      "receipt_ids": ["r-a"]
     },
-    ... 1-2 paragraphs
+    ... 10-16 source-supported sentence records
   ]
 }
 
-Validation tier: SCOPED. Every paragraph MUST list at least one accepted
-receipt_id in `receipt_ids`; the section MUST contain calibrated uncertainty
-or a hedge phrase. Inline receipt tokens are not required. The conclusion is the most overclaim-
-prone section in research papers; the validator is strict about
-unhedged clinical claims.
-
+Validation tier: SCOPED. Every sentence MUST list at least one accepted
+receipt_id in `receipt_ids`, belonging to its exact source; the section MUST contain calibrated uncertainty
+or a hedge phrase. Preserve endpoint names, abbreviations, populations and
+qualifiers exactly as supplied, without expanding abbreviations or combining
+facts from separate source sentences. Inline receipt tokens are optional.
 Required content:
-1. Restate the integrating thesis from this synthesis (do NOT invent
-   a new claim).
-2. Name the strongest evidence supporting it.
-3. Name the strongest evidence against / unresolved.
-4. State the recommended next step (one sentence).
-5. **Clinical-practice boundary:** state
-   explicitly what the current evidence does and does not support for
-   clinical practice. For drugs, compounds, or supplements, use a
-   "Pending further trials" off-label broad-aging-claim boundary.
-   For lifestyle, dietary, or
-   exercise interventions, do not imply the intervention should be
-   avoided outside trials; instead state that general-health support is
-   separate from marketing proven broad longevity benefit.
-   The conclusion that "evidence is mixed and incomplete" is correct
-   but insufficient: give a specific evidence boundary, NOT actionable treatment advice.
+1. Summarize the source-supported findings relevant to the thesis (do NOT
+   attribute our whole-corpus judgment to one external paper).
+2. Describe relevant supporting findings without adding unsupported rankings.
+3. Describe relevant null findings or source-stated limitations.
+4. State a next step only if the cited source explicitly proposes it.
+5. Give a source-supported clinical-practice boundary, NOT actionable treatment advice.
+   An off-label "Pending further trials" statement requires explicit source support.
 
 Name {topic} at least twice across the section without repeating sentences.
-Use source-supported empirical findings only; don't attribute our synthesis
-judgment or research proposal to an external paper. Keep next steps qualitative.
+Use source-supported findings only; never attribute our judgment to an external paper.
 Do not introduce new statistics, trial sizes, treatment schedules, risk assessments,
 search-method claims, or filler. Do not turn a surrogate finding into clinical benefit.
 
-Do NOT write "{topic} extends lifespan" or "{topic} prevents
-sarcopenia" or any other unhedged clinical claim. Use:
-  "the evidence supports a hypothesis that..."
-  "remains to be confirmed in..."
-  "appears to..."
-  "may..."
+Do NOT write "{topic} extends lifespan" or any other unhedged clinical claim.
+Select an actual source sentence expressing uncertainty (may/could/remains uncertain),
+not a generic hedge added to another finding. If paraphrasing fails grounding, quote
+the complete source sentence, preserving qualifiers and avoiding truncated excerpts.
 
 Output JSON only. No prose outside the JSON."""
 
