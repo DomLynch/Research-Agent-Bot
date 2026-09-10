@@ -5,6 +5,7 @@ Pure-function tests; no LLM calls, no network IO.
 """
 from __future__ import annotations
 
+
 import json
 
 import pytest
@@ -22,6 +23,15 @@ from agent.results_table import (
     build_results_table_with_diagnostic,
     format_empty_qei_placeholder,
 )
+
+
+def test_equal_statistics_from_different_studies_are_not_duplicate_evidence() -> None:
+    from agent.results_table import _select_result_rows
+    rows = [EvidenceRow(study, "blood pressure", "treatment", "P < 0.05", "p_value", "P < 0.05", study,
+                        "Treatment reduced blood pressure (P < 0.05).", "P < 0.05")
+            for study in ("Trial 2020", "Trial 2021")]
+    candidates = [(1, "p_value", row, row.source_value) for row in [*rows, rows[0]]]
+    assert _select_result_rows(candidates, 40) == rows
 
 
 # ---------- confidence filter ---------------------------------------

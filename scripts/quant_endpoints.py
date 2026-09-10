@@ -199,11 +199,14 @@ def match_endpoint(
     close_before = sentence.rfind(")", 0, anchor_offset + 1)
     close_after = sentence.find(")", anchor_offset)
     if open_idx > close_before and close_after != -1:
-        preceding = [c for c in candidates if c[4] <= open_idx]
-        if preceding:
-            candidates = preceding
+        prior_groups = list(re.finditer(r"\([^()]*(?<![A-Za-z])\d[^()]*\)", sentence[:open_idx]))
+        start = prior_groups[-1].end() if prior_groups else 0
+        boundary = max(sentence.rfind(",", 0, open_idx), sentence.rfind(";", 0, open_idx)) + 1
+        if not re.fullmatch(r"\s*(?:although|but)\s+(?:this|it)\s+(?:did not reach (?:statistical )?significance|was (?:not )?(?:statistically )?significant)\s*", sentence[boundary:open_idx], re.I):
+            start = max(start, boundary)
+        candidates = [c for c in candidates if start <= c[3] and c[4] <= open_idx]
     candidates.sort(key=lambda t: (t[0], t[1]))
-    return candidates[0][2]
+    return candidates[0][2] if candidates else ""
 
 
 # P1 #2 audit fix: comparator grammar. Sentences like "Compared to

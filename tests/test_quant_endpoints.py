@@ -19,6 +19,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import quant_endpoints  # noqa: E402
 
 
+def test_unknown_endpoint_does_not_borrow_from_next_result() -> None:
+    sentence = "Novel vascular response (d = 0.259, P = 0.032), insulin sensitivity (P = 0.034)."
+    assert quant_endpoints.match_endpoint(sentence, sentence.index("P = 0.032")) == ""
+    assert quant_endpoints.match_endpoint(sentence, sentence.index("P = 0.034")) == "insulin sensitivity"
+
+
+def test_unknown_endpoint_does_not_borrow_from_previous_result_or_covariate() -> None:
+    sentence = "Adjusted for body mass index, 4-m walk speed increased (P = 0.05), and a novel lipid marker increased (P = 0.01)."
+    assert quant_endpoints.match_endpoint(sentence, sentence.index("P = 0.01")) == ""
+    assert quant_endpoints.match_endpoint(sentence, sentence.index("P = 0.05")) == "walk speed"
+    unknown = "Adjusted for body mass index, a novel lipid marker increased (P = 0.01)."
+    assert quant_endpoints.match_endpoint(unknown, unknown.index("P = 0.01")) == ""
+
+
 # ============================================================
 # Endpoint vocab — one test per canonical name proves coverage
 # ============================================================

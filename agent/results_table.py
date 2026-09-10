@@ -74,25 +74,6 @@ class EvidenceRow:
     source_value: str = ""
 
 
-# Per-category row quotas — picks rows so the audit's six Q9 numeric
-# categories (percentage / p_value / ratio / sample_size / dose /
-# speed) all get represented. Without quotas, sample_size dominated
-# (every paper has them) and the body's existing prose numerics
-# overlapped with the table → low UNIQUE-numeric gain. With quotas
-# every category gets fresh corpus-traced numerics that the audit
-# regex counts as distinct values.
-_CATEGORY_QUOTAS = {
-    "percentage": 12,        # most common → biggest unique pool
-    "p_value": 10,           # paper has many distinct p-values
-    "hazard_ratio": 6,
-    "odds_ratio": 4,
-    "risk_ratio": 4,
-    "sample_size": 6,
-    "unit_value": 8,         # doses, ages, durations
-    "confidence_interval": 4,
-}
-
-
 def build_results_table(
     quant_dir: Path, *, topic: str, max_rows: int = _MAX_ROWS,
     accepted_paper_ids: frozenset[str] | None = None,
@@ -216,30 +197,23 @@ def build_results_table_with_diagnostic(
 def _select_result_rows(candidates: list[tuple[int, str, EvidenceRow, str]], max_rows: int) -> list[EvidenceRow]:
     rows: list[EvidenceRow] = []
     candidates.sort(key=lambda t: -t[0])
-    cat_count: dict[str, int] = {}
     seen_endpoints: dict[str, int] = {}
-    seen_values: set[str] = set()
     seen_statements: set[tuple[str, str]] = set()
-    for _score, ct, row, value in candidates:
+    for _score, _ct, row, _value in candidates:
         statement = (row.study_label, row.source_context)
-        quota = _CATEGORY_QUOTAS.get(ct, 4)
-        if cat_count.get(ct, 0) >= quota:
-            continue
         if seen_endpoints.get(row.study_label, 0) >= 4:
             continue
-        if value in seen_values or statement in seen_statements:
+        if statement in seen_statements:
             continue
         key = f"{row.study_label}|{row.endpoint}"
         if seen_endpoints.get(key, 0) >= 1:
             continue
         rows.append(row)
         seen_statements.add(statement)
-        cat_count[ct] = cat_count.get(ct, 0) + 1
         seen_endpoints[row.study_label] = seen_endpoints.get(
             row.study_label, 0
         ) + 1
         seen_endpoints[key] = 1
-        seen_values.add(value)
         if len(rows) >= max_rows:
             break
     return rows
