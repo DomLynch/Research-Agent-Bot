@@ -381,6 +381,7 @@ async def _write_anchored_section(
             print(
                 f"[paper_writer] {name}: parsed object rejected by builder; "
                 f"keys={sorted(parsed)[:6]} "
+                f"reasons={rejection_reasons[:3]} "
                 f"(attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1})",
                 flush=True,
             )

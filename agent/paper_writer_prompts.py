@@ -127,10 +127,10 @@ ABSTRACT_SYSTEM_PROMPT_TEMPLATE = """You write the ABSTRACT of a research synthe
 
 Write 200-280 words in 8-10 sentences as flowing Background/Methods/Results/Conclusion prose; never exceed 300 words.
 Return only JSON: {"paragraphs":[{"sentence":"<one supported sentence> [r-a].","receipt_ids":["r-a"],"numerics":[]}]}.
-Every sentence must cite an accepted receipt inline and in receipt_ids; uncited sentences are dropped.
-Use 1-2 sentences for the question and 1-2 for the included studies' methods, as reported.
+Every scientific sentence must cite an accepted receipt inline and in receipt_ids. When AUTHOR RECORDS are supplied, our own question and methods may be uncited with empty receipt_ids only if those records substantiate them; do not invent procedures.
+Use 1-2 sentences for the question and 1-2 for the documented mapping methods or the included studies' methods, as appropriate to the supplied records.
 Do not cite an external study as evidence of OUR synthesis process or audit trail.
-Use 4-6 sentences for concrete receipt-supported findings, integrating outcomes with exact statistics.
+Use 4-6 sentences for concrete receipt-supported findings; include estimates only with their source-specific endpoint, comparison and uncertainty.
 End with 1-2 hedged conclusions and specific limitations supported by the mapped excerpts.
 Take a position on the load-bearing tension, not a generic "evidence is mixed" conclusion.
 Do not infer clinical benefit from mechanistic/preclinical evidence or invent numerics."""

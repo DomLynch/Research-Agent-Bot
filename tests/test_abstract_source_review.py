@@ -30,9 +30,10 @@ def test_own_abstract_record_requires_exact_review_and_documented_count(change):
 
 @pytest.mark.parametrize("supported", [True, False])
 @pytest.mark.parametrize("bare", [False, True])
-def test_native_abstract_writer_uses_author_records_and_respects_negative_review(monkeypatch, supported, bare):
+@pytest.mark.parametrize("field", ["text", "sentence"])
+def test_native_abstract_writer_uses_author_records_and_respects_negative_review(monkeypatch, supported, bare, field):
     records = {"source_count": 37, "question": "How do study designs affect interpretation?"}
-    proposed = {"paragraphs": [{"text": "This map analyzes 37 retained sources.", "receipt_ids": []}]}
+    proposed = {"paragraphs": [{field: "This map analyzes 37 retained sources.", "receipt_ids": []}]}
     calls = []
     async def writer(**kwargs):
         return deepcopy(proposed["paragraphs"][0] if bare else proposed)
@@ -49,7 +50,7 @@ def test_native_abstract_writer_uses_author_records_and_respects_negative_review
         accepted=[], chain=[], client=None, ledger=None, seed=7, fallback_body="", author_context=records)
     if supported:
         section = asyncio.run(paper_writer._write_anchored_section(**kwargs))
-        assert proposed["paragraphs"][0]["text"] in section.body_md
+        assert proposed["paragraphs"][0][field] in section.body_md
     else:
         with pytest.raises(ValueError, match="writer_section_unavailable:abstract"):
             asyncio.run(paper_writer._write_anchored_section(**kwargs))
