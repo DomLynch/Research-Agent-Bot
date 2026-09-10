@@ -344,7 +344,8 @@ def classify_evidence(
 _TITLE_PROTOCOL_RE = re.compile(
     r"\b(study protocol|trial protocol|research protocol|"
     r"protocol (?:for|of)(?: (?:a|an|the))?|rationale and design|"
-    r"design and rationale|rationale and study design|statistical analysis plan)\b",
+    r"design and rationale|rationale and study design|statistical analysis plan|"
+    r"baseline characteristics and design|design and baseline (?:data|characteristics))\b",
     re.IGNORECASE,
 )
 _TITLE_RCT_RE = re.compile(
@@ -415,6 +416,9 @@ def _is_protocol_paper(title: str, abstract: str) -> bool:
     return bool(_TITLE_PROTOCOL_RE.search(title) or (
         re.search(r"\bstudy design\s*$", title, re.I)
         and re.search(r"\b(?:trial|study) is designed to\b", abstract, re.I)
+    ) or (
+        re.search(r"\bdesign of\b[^.!?]*\b(?:trials?|studies|study)\b", title, re.I)
+        and re.search(r"\b(?:completion\b[^.!?]{0,70}\bexpected|trials? will (?:provide|evaluate)|anticipated \d+ (?:patients|participants))\b", abstract, re.I)
     ) or re.search(r"\b(?:results?|findings) (?:from|of) this protocol (?:are|is) expected\b", abstract, re.I))
 
 

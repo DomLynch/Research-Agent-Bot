@@ -1473,6 +1473,8 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     sections = paper_meta.get("sections")
     if not paper_meta.get("abstract") and isinstance(sections, dict):
         paper_meta = {**paper_meta, "abstract": sections.get("abstract")}
+    if (inferred := _taxonomy.infer_from_paper_meta(paper_meta)).directness == "protocol":
+        return inferred.tier, inferred.directness
     # Directness validator: a primary randomized trial is direct interventional
     # evidence and can never be 'review'. Reads the title/study_design so a
     # title-only RCT (Monda 2026) is not mislabelled when study_design is blank.
@@ -1485,7 +1487,7 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     if any(explicit_fields.values()):
         cls = _taxonomy.classify_evidence(**explicit_fields)
     else:
-        cls = _taxonomy.infer_from_paper_meta(paper_meta)
+        cls = inferred
     # If the deterministic path returns "unknown", fall back to the
     # topic-pack canonical RCT list so existing runs don't regress.
     # Refactor 2026-05-04: was hardcoded to metformin RCT names

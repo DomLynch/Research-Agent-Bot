@@ -4,12 +4,28 @@ from __future__ import annotations
 
 
 import sys
+import json
 from pathlib import Path
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import evidence_taxonomy as et  # type: ignore[import-not-found]  # noqa: E402
+
+
+@pytest.mark.parametrize("meta", json.loads((Path(__file__).parent / "fixtures/publishing_design_reports.json").read_text()))
+@pytest.mark.parametrize("design", ["", "randomized controlled trial"])
+def test_design_only_reports_do_not_become_completed_trials(meta, design):
+    from run_v06_synthesis import _classify_paper_tier
+    assert not et.is_primary_randomized_study(meta["title"], meta["abstract"], study_design=design)
+    assert _classify_paper_tier("anonymous-study", 30, {**meta, "study_design": design}) == ("D1", "protocol")
+
+
+def test_completed_trial_with_design_description_is_still_direct():
+    meta = {"title": "Design and twelve-month results of a randomized treatment trial",
+            "abstract": "We describe the study design and results in adults. Treatment improved grip strength compared with placebo (p=0.01). An extension will provide longer follow-up."}
+    assert et.is_primary_randomized_study(meta["title"], meta["abstract"])
+    assert et.infer_from_paper_meta(meta).directness == "direct"
 
 
 @pytest.mark.parametrize("title,abstract,tier,directness", [
