@@ -578,6 +578,7 @@ def build_scoped_from_parsed(
     accepted: Sequence[ReceiptSummary],
     rejection_reasons: list[str] | None = None,
     allow_partial: bool = False,
+    reviewed: frozenset[tuple[str, tuple[str, ...]]] = frozenset(),
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_by_id = {r.receipt_id: r for r in accepted}
@@ -606,7 +607,7 @@ def build_scoped_from_parsed(
         if not ok:
             rejections.append(reason)
             continue
-        if name == "conclusion" and (
+        if name == "conclusion" and (text.strip(), tuple(sorted(repaired_rids))) not in reviewed and (
             grounding_reason := _source_grounding_reason(text, repaired_rids, accepted_by_id)
         ):
             rejections.append(grounding_reason)

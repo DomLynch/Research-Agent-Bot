@@ -30,6 +30,7 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.prose_grounding import approved as _prose_approved, grounding_context, with_run_grounding  # noqa: E402
 from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
 from agent import publication_evidence as _publication_evidence, revision_claim_trace as _revision_claim_trace  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
@@ -723,6 +724,8 @@ def _verified_complete_quotation(claim: str, source: dict[str, Any]) -> bool:
 
 
 def _cited_claim_aligns(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> bool:
+    if _prose_approved(claim, bundle, indexes):
+        return True
     if len(indexes) == 1 and _verified_complete_quotation(claim, bundle[next(iter(indexes))]):
         return True
     if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
@@ -927,7 +930,12 @@ def _researka_quantitative_trace_status(
     )
 
 
-def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
+def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True, run: Path | None = None) -> str:
+    with grounding_context(run):
+        return _researka_preflight_rules(payload, enforce_recency=enforce_recency)
+
+
+def _researka_preflight_rules(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     if article_type != DEFAULT_ARTICLE_TYPE:
         return "public_surface_not_full_research"
@@ -2340,6 +2348,7 @@ def _prepare_qei_section(paper: str, run: Path, topic: str, source_bundle: list[
     return paper[:position].rstrip() + "\n\n" + table + paper[position:]
 
 
+@with_run_grounding
 def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> bool:
     paper = _BACKGROUND_REFERENCES_RE.sub("", _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), (run / "full_paper.md").read_text(encoding="utf-8")))
     paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
@@ -2389,6 +2398,7 @@ def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_
     return True
 
 
+@with_run_grounding
 def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> dict[str, Any]:
     """Serialize the manuscript without changing its scientific content."""
     paper = (run / "full_paper.md").read_text(encoding="utf-8")
@@ -2521,11 +2531,11 @@ def _trusted_submission_url(url: str) -> bool:
         return False
 
 
-def _submitter(url: str, token: str, agent_slug: str, *, purpose: str = "resubmit") -> Submitter:
+def _submitter(url: str, token: str, agent_slug: str, *, purpose: str = "resubmit", run: Path | None = None) -> Submitter:
     def submit(payload: dict[str, Any]) -> dict[str, Any]:
         if not _trusted_submission_url(url):
             return {"ok": False, "status": 0, "response": "untrusted_submission_url", "preflight": True}
-        preflight_status = _researka_preflight_status(payload)
+        preflight_status = _researka_preflight_status(payload, run=run)
         if preflight_status != "eligible":
             return {"ok": False, "status": 0, "response": preflight_status, "preflight": True}
         metadata = payload.get("metadata")
@@ -2713,7 +2723,7 @@ def _run_cycle_unlocked(
         return ledger
     if submitter is None:
         ledger["submit_token_env"] = token_env
-        submitter = _submitter(_submit_url(), token, str(payload["author_agent_id"]), purpose=purpose)
+        submitter = _submitter(_submit_url(), token, str(payload["author_agent_id"]), purpose=purpose, run=run)
     checked_payload, preflight_report = _run_preflight_qa(payload, run)
     if preflight_report:
         ledger["preflight_qa"] = _preflight_summary(preflight_report)
@@ -2728,7 +2738,7 @@ def _run_cycle_unlocked(
     raw_metadata = payload.get("metadata")
     metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
     ledger["candidate"] = {"run": run.name, "topic": metadata.get("topic"), "fingerprint": fp}
-    preflight_status = _researka_preflight_status(payload)
+    preflight_status = _researka_preflight_status(payload, run=run)
     if preflight_status == "eligible":
         preflight_status = _payload_candidate_status(
             run, payload, submitted_path, remote_seen=remote_seen,

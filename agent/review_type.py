@@ -15,6 +15,7 @@ REVIEW_TYPES: Final[dict[str, str]] = {
     "technical_survey": "Technical survey",
     "management_literature_review": "Management literature review",
     "evidence_map": "Evidence map",
+    "curated_evidence_map": "Curated evidence map",
     "evidence_brief": "Evidence brief",
     "thin_corpus_brief": "Thin-corpus evidence brief",
 }
@@ -22,7 +23,7 @@ COMPACT_REVIEW_TYPES: Final[frozenset[str]] = frozenset({
     "thin_corpus_brief", "evidence_brief", "evidence_map",
 })
 APPRAISAL_OPTIONAL_REVIEW_TYPES: Final[frozenset[str]] = frozenset({
-    "prisma_scr_scoping_synthesis",
+    "prisma_scr_scoping_synthesis", "curated_evidence_map",
 })
 
 DEFAULT_REVIEW_TYPE: Final[str] = "prisma_scr_scoping_synthesis"
@@ -107,6 +108,10 @@ def display_label(token: str) -> str:
 # review-type-specific.
 
 REVIEW_TYPE_SELF_CLAIM_TERMS: Final[dict[str, tuple[str, ...]]] = {
+    "curated_evidence_map": (
+        "systematic review", "scoping review", "meta-analysis",
+        "meta analysis", "prospero", "prisma",
+    ),
     "prisma_scr_scoping_synthesis": (
         "systematic review", "meta-analysis", "meta analysis",
         "prospero", "prisma 2020",

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import dataclasses
 import os
 import re
 from collections.abc import Mapping, Sequence
@@ -16,6 +17,7 @@ from agent.framework_section import (
 )
 from agent.outcome_class_remap import outcome_display
 from agent.paper_writer_builders import (
+    _materialize_inline_receipts,
     build_anchored_from_parsed,
     build_results_from_parsed,
     build_scoped_from_parsed,
@@ -453,6 +455,7 @@ async def _write_scoped_section(
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
     best: SynthesisSection | None = None
     best_words = 0
+    reviewed: set[tuple[str, tuple[str, ...]]] = set()
     current_prompt = user_prompt
     for attempt in range(SECTION_RETRY_BUDGET + 1):
         parsed = await _call_llm_section(
@@ -464,9 +467,20 @@ async def _write_scoped_section(
             continue
         rejection_reasons: list[str] = []
         combined = {"paragraphs": _retained_paragraphs(best, parsed.get("paragraphs") or [parsed])}
+        if name == "conclusion":
+            from agent.prose_grounding import review_statements
+            proposed = [entry for entry in combined["paragraphs"] if isinstance(entry, dict) and isinstance(entry.get("text"), str) and isinstance(entry.get("receipt_ids"), list)]
+            for entry in proposed:
+                entry["text"] = _materialize_inline_receipts(entry["text"], entry["receipt_ids"])
+            if proposed:
+                review = await review_statements(proposed, [dataclasses.asdict(receipt) for receipt in accepted], client=client, ledger=ledger, seed=seed)
+                reviewed.difference_update((proposed[item["row"]]["text"].strip(), tuple(sorted(proposed[item["row"]]["receipt_ids"]))) for item in review["assessments"] if not item["supported"])
+                reviewed.update((proposed[item["row"]]["text"].strip(), tuple(sorted(proposed[item["row"]]["receipt_ids"]))) for item in review["assessments"] if item["supported"])
+                rejection_reasons.extend("source_grounding:" + item["reason"] for item in review["assessments"] if not item["supported"])
+                combined["paragraphs"] = [entry for index, entry in enumerate(proposed) if any(item["row"] == index and item["supported"] for item in review["assessments"])]
         section = build_scoped_from_parsed(
             combined, name=name, heading=heading, topic=topic, accepted=accepted,
-            rejection_reasons=rejection_reasons, allow_partial=True,
+            rejection_reasons=rejection_reasons, allow_partial=True, reviewed=frozenset(reviewed),
         )
         if section is None:
             print(f"[paper_writer] {name}: rejected (attempt {attempt + 1}/{SECTION_RETRY_BUDGET + 1}): {'; '.join(rejection_reasons) or 'invalid_section_shape'}", flush=True)
@@ -486,7 +500,9 @@ async def _write_scoped_section(
     # Fix #20: citation fix pass.
     final_reasons: list[str] = []
     def _builder(parsed_dict: dict) -> SynthesisSection | None:
-        return build_scoped_from_parsed(parsed_dict, name=name, heading=heading, topic=topic, accepted=accepted, rejection_reasons=final_reasons)
+        if name == "conclusion":
+            parsed_dict = {"paragraphs": [entry for entry in parsed_dict.get("paragraphs", []) if (entry.get("text", "").strip(), tuple(sorted(entry.get("receipt_ids", [])))) in reviewed]}
+        return build_scoped_from_parsed(parsed_dict, name=name, heading=heading, topic=topic, accepted=accepted, rejection_reasons=final_reasons, reviewed=frozenset(reviewed))
     best = await _run_citation_fix_pass(
         best, base_user_prompt=user_prompt,
         system_prompt=system_prompt, builder_fn=_builder,

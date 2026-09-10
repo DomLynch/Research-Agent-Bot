@@ -70,8 +70,10 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
             "and effect language present in those receipts' evidence_excerpt fields. Do not add a "
             "mechanism, interpretation, or benefit absent from the mapped excerpt."
         )
-        guidance.append("Use one complete source sentence per JSON text record, with only its receipt_id. Preserve source terminology and abbreviations verbatim; do not expand biomarker names or combine populations/endpoints from different sentences. Quote the source text rather than inventing a paraphrase the supplied evidence cannot verify.")
-        guidance.extend({"conclusion": ["Keep the 280-380-word section target. Select source-stated conclusions, findings and limitations, not our own research proposals or whole-corpus judgments. A source-stated uncertainty or 'evidence suggests' provides the hedge. Return additions/corrections in paragraphs records; already retained text is counted toward the target."]}.get(section_name, []))
+        if section_name == "conclusion":
+            guidance.append("Keep the 280-380-word target and write coherent synthesis paragraphs, not a collection of quotations. Correct only the rejected claims. Compare documented differences across the cited studies without pooling outcomes or claiming clinical benefit. Cite every scientific sentence to its supporting sources. Explain uncertainty using actual limitations; do not invent methods or new research proposals. Already retained text counts toward the target.")
+        else:
+            guidance.append("Use one complete source sentence per JSON text record, with only its receipt_id. Preserve source terminology and abbreviations verbatim; do not expand biomarker names or combine populations/endpoints from different sentences. Quote the source text rather than inventing a paraphrase the supplied evidence cannot verify.")
     return f"{base}\n\nVALIDATION FAILURES: {'; '.join(dict.fromkeys(reasons))}\n{' '.join(guidance)} JSON only."
 
 
@@ -458,27 +460,27 @@ CONCLUSION_SYSTEM_PROMPT_TEMPLATE = """You write the CONCLUSION of a research
 synthesis paper.
 
 **TARGET RANGE: ~280-380 words.**
-Return one sentence per JSON record, so one unsupported sentence does not
-discard a whole paragraph. Each sentence must be supported by its own source.
-Use source-stated conclusions and limitations; do NOT restate the discussion.
+Write 3-4 coherent paragraphs answering the paper's question, integrating
+supported findings and their limits. Each scientific sentence must cite its
+own supporting sources inline. Do not assemble a collection of source quotations.
 
 Output ONE JSON object with this exact shape:
 
 {
   "paragraphs": [
     {
-      "text": "<one source-supported sentence>",
+      "text": "<coherent paragraph with exact inline receipt citations>",
       "receipt_ids": ["r-a"]
     },
-    ... 10-16 source-supported sentence records
+    ... 3-4 source-supported paragraph records
   ]
 }
 
 Validation tier: SCOPED. Every sentence MUST list at least one accepted
-receipt_id in `receipt_ids`, belonging to its exact source; the section MUST contain calibrated uncertainty
-or a hedge phrase. Preserve endpoint names, abbreviations, populations and
-qualifiers exactly as supplied, without expanding abbreviations or combining
-facts from separate source sentences. Inline receipt tokens are optional.
+receipt_id in `receipt_ids`; paragraph metadata must list exactly the sources
+cited in that paragraph. Preserve endpoint names, populations, comparators and
+qualifiers. Accurate paraphrase and bounded comparisons are allowed and will
+receive independent source review. Explain uncertainty using documented limitations.
 Required content:
 1. Summarize the source-supported findings relevant to the thesis (do NOT
    attribute our whole-corpus judgment to one external paper).
@@ -488,15 +490,14 @@ Required content:
 5. Give a source-supported clinical-practice boundary, NOT actionable treatment advice.
    An off-label "Pending further trials" statement requires explicit source support.
 
-Name {topic} at least twice across the section without repeating sentences.
+Clearly identify {topic} without unnecessary repetition.
 Use source-supported findings only; never attribute our judgment to an external paper.
 Do not introduce new statistics, trial sizes, treatment schedules, risk assessments,
 search-method claims, or filler. Do not turn a surrogate finding into clinical benefit.
 
 Do NOT write "{topic} extends lifespan" or any other unhedged clinical claim.
-Select an actual source sentence expressing uncertainty (may/could/remains uncertain),
-not a generic hedge added to another finding. If paraphrasing fails grounding, quote
-the complete source sentence, preserving qualifiers and avoiding truncated excerpts.
+Express uncertainty justified by the supplied evidence. Distinguish the author's
+comparison of cited studies from findings reported by any single external paper.
 
 Output JSON only. No prose outside the JSON."""
 
