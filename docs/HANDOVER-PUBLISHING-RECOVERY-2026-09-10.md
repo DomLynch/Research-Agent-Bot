@@ -93,3 +93,26 @@ Resveratrol native v8 is running on 3aa26988 (37 sources), resistance native v4 
 Prepared review script: `/tmp/v3-standardized-package-review.py`; it reconstructs
 the changed displays, uses the native Abstract writer, then runs complete normal
 review, exit checks, current-request coverage and exact source-hash verification.
+
+## Native second-topic result and final review preparation
+
+Resistance v4 completed with 14/14 and a passing journal surface. Its Abstract
+(243 words in the readiness receipt) and Conclusion (406) remain intact. Two
+Longrak P1s remain: the reviewer compared the Abstract's percentage changes with
+absolute millimetre changes in Results. Both forms are explicitly reported in
+the frozen source; no guessed conversion or numerical substitution is authorized.
+The next review supplies the complete Abstract and Methods context.
+
+The boundary matrix now explicitly includes protocol records in its non-direct
+count, excludes protocols from completed directional findings, and labels
+protocol-only outcomes as not applicable. Latest suite: **4,980 passed**, two
+XPASS, 16 warnings, 153.69s; 415 focused tests, quality 344 and mypy pass.
+Logs: `/tmp/v3-protocol-boundary-{suite,focused,quality,mypy}.log`.
+
+Production fresh jobs were automatically restarting on failure every minute.
+The current job remains active, unchanged, at PID 2215545. A temporary runtime
+override sets `Restart=no` at
+`/run/systemd/system/research-agent-paper-fresh.service.d/90-v3-standardized-maintenance.conf`
+to allow a deployment window when it finishes. **Remove this owned override and
+run daemon-reload after deployment or before ending maintenance**, restoring
+`Restart=on-failure`. Timers remain active; production is still 64086d2f.

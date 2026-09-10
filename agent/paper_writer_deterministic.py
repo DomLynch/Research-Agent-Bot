@@ -227,6 +227,7 @@ def _outcome_rows(
         indirect = len(rs) - direct
         directions = ", ".join(sorted({
             (r.effect_direction or "unclear").replace("_", " ") for r in rs
+            if r.directness != "protocol" and r.evidence_tier != "D1"
         }))
         conflict = max(
             (getattr(t, "severity", 0) or 0 for t in pairs
@@ -236,6 +237,8 @@ def _outcome_rows(
         boundary = "no direct source in this retained set" if direct == 0 else "endpoint and comparator comparability require source-level assessment"
         if conflict >= 4:
             boundary = "recorded disagreement requires endpoint-level assessment"
+        if not directions:
+            directions, boundary = "not applicable", "protocol records; no completed findings"
         rows.append((oc, direct, indirect, directions, boundary))
     return rows
 
@@ -251,7 +254,7 @@ def _append_research_contribution_layer(
         "",
         "### Boundary-Condition Matrix",
         "",
-        "| Outcome class | Direct sources | Indirect / mechanism sources | Direction profile | Interpretation boundary |",
+        "| Outcome class | Direct sources | Indirect / mechanism / protocol sources | Direction profile | Interpretation boundary |",
         "|---|---:|---:|---|---|",
     ]
     for oc, direct, indirect, directions, boundary in rows:

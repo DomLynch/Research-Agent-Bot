@@ -271,3 +271,16 @@ def test_source_counts_do_not_assign_research_priority_or_trial_design() -> None
         assert "participants per arm" not in md
         assert "They do not establish literature coverage, evidence certainty, research priorities" in md
         assert md.index("| cardiometabolic |") < md.index("| frailty |")
+
+
+def test_boundary_matrix_counts_protocols_without_treating_them_as_findings() -> None:
+    receipts = [
+        _r("Protocol 2025", outcome="cardiometabolic", directness="protocol", tier="D1", direction="positive"),
+        _r("Second protocol", outcome="frailty", directness="protocol", tier="D1", direction="positive"),
+        _r("Completed trial", outcome="frailty", direction="null"),
+    ]
+    md = build_what_this_adds_section(receipts, _matrix(receipts), _thesis(), topic="resistance training")
+    assert "Indirect / mechanism / protocol sources" in md
+    assert "| cardiometabolic | 0 | 1 | not applicable | protocol records; no completed findings |" in md
+    assert "| frailty | 1 | 1 | null |" in md
+    assert "positive" not in md
