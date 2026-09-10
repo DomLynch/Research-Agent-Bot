@@ -46,7 +46,7 @@ def approved(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> boo
 def author_context(run: Path, bundle: list[dict[str, Any]]) -> dict[str, Any]:
     manifest = json.loads((run / "manifest.json").read_text())
     methods = run / "methods_pack.json"
-    return {"question": manifest.get("thesis"), "review_type": manifest.get("review_type"),
+    return {"question": manifest.get("research_question") or manifest.get("thesis"), "review_type": manifest.get("review_type"),
             "source_count": len(bundle), "retrieval": manifest.get("retrieval"),
             "methods_record": json.loads(methods.read_text()) if methods.is_file() else {}}
 

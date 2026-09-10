@@ -45,6 +45,19 @@ def test_null_endpoint_requires_a_decisive_valid_comparison(null_p, expected):
     assert ed.infer_effect_direction(claims, metformin_effect_fn=lambda c: c.get("sign", 0)) == expected
 
 
+@pytest.mark.parametrize("role", ["baseline", "population", "background", "dose", "duration", "sample_size", "protocol"])
+def test_non_outcome_records_cannot_supply_nullity_significance_or_effect(role):
+    signed = {"claim_type": "effect", "endpoint": "strength", "sign": 1, "claim_role": "effect"}
+    significant = {"claim_type": "p_value", "endpoint": "strength", "raw_text": "p=0.01", "claim_role": "effect"}
+    descriptor = {"claim_type": "p_value", "endpoint": "age", "raw_text": "p=0.8", "claim_role": role}
+    def infer(rows):
+        return ed.infer_effect_direction(rows, metformin_effect_fn=lambda c: c.get("sign", 0))
+    assert infer([signed, significant, descriptor]) == "positive"
+    assert infer([signed, {**significant, "claim_role": role}]) == "unclear"
+    assert infer([{**signed, "claim_role": role}, significant]) == "unclear"
+    assert infer([descriptor]) == "unclear"
+
+
 def _const(sign: int):
     """Stub `metformin_effect_fn` that always returns the given sign."""
     return lambda c: sign

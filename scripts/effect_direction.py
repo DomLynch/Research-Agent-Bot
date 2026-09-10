@@ -172,6 +172,8 @@ def infer_effect_direction(
 
     Empty claims list returns "unclear" (no information, NOT a null
     measurement) per reviewer P3."""
+    # Baseline balance, dose and sample descriptors cannot establish an outcome.
+    claims = [c for c in claims if c.get("claim_role") not in {"baseline", "population", "background", "dose", "duration", "sample_size", "protocol"}]
     if not claims:
         return "unclear"
 
