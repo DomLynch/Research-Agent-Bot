@@ -211,6 +211,13 @@ def detect_sentence_end_authoryear(paper_md: str) -> list[SurfaceLintFinding]:
     return findings
 
 
+def _fragment_scan_text(text: str) -> str:
+    """Mask table rows and abbreviation periods without changing offsets."""
+    text = re.sub(r"(?m)^[ \t]*\|[^\n]*", lambda m: " " * len(m[0]), text)
+    return re.sub(r"\b(?:vs|e\.g|i\.e|et al|etc|Dr|No)\.",
+                  lambda m: m[0].replace(".", "_"), text, flags=re.I)
+
+
 def detect_sentence_fragments(
     paper_md: str,
 ) -> list[SurfaceLintFinding]:
@@ -231,6 +238,7 @@ def detect_sentence_fragments(
     via strip_sentence_fragments() — the fragment sentence is
     deleted; the surrounding prose holds the argument."""
     findings: list[SurfaceLintFinding] = []
+    paper_md = _fragment_scan_text(paper_md)
     line_starts = _line_indices(paper_md)
     # Pattern A: " {single_letter} {word_starting_with_lowercase}"
     # Anchored to a sentence-like boundary — `.` OR `)` — so we
@@ -321,12 +329,7 @@ def detect_sentence_fragments(
 
 
 def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
-    """Fix #52 auto-fix: delete sentences flagged as fragments.
-    Pure deletion — the fragment is by construction broken/
-    meaningless; no scientific content lost. Surrounding
-    paragraph survives.
-
-    Returns (new_md, n_stripped)."""
+    """Remove detected prose fragments without crossing lines or table cells."""
     findings = detect_sentence_fragments(paper_md)
     if not findings:
         return paper_md, 0
@@ -334,6 +337,7 @@ def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
     # fragment STARTS. Walk forward to the next sentence terminator
     # to identify the FULL fragment span. Then delete it.
     out = paper_md
+    scan = _fragment_scan_text(paper_md)
     n = 0
     # Re-derive offsets from the regexes (cleaner than re-using
     # the SurfaceLintFinding which only carries line numbers).
@@ -350,32 +354,26 @@ def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
     )
     spans: list[tuple[int, int]] = []
     for pat in (pat_a, pat_b):
-        for m in pat.finditer(out):
-            # Fragment starts at m.start()+1 (right after the period
-            # of the GOOD prior sentence) and ends at the next
-            # period (inclusive) — that's the broken sentence.
-            frag_start = m.start() + 1
-            # Find the next sentence terminator
-            next_period = out.find(".", m.end())
-            if next_period == -1:
+        for m in pat.finditer(scan):
+            end = re.search(r"[.!?](?!\d)|\n", scan[m.end():])
+            if end is None or end[0] == "\n":
                 continue
-            frag_end = next_period + 1  # include the period
-            spans.append((frag_start, frag_end))
-    for m in pat_c.finditer(out):
+            spans.append((m.start(1), m.end() + end.end()))
+    for m in pat_c.finditer(scan):
         if m.group(1).lower() in _FILE_EXTENSIONS:
             continue
         frag_start = m.start(1)
-        next_period = out.find(".", m.end())
-        if next_period == -1:
+        end = re.search(r"[.!?](?!\d)|\n", scan[m.end():])
+        if end is None or end[0] == "\n":
             continue
-        spans.append((frag_start, next_period + 1))
-    for m in pat_d.finditer(out):
+        spans.append((frag_start, m.end() + end.end()))
+    for m in pat_d.finditer(scan):
         if m.group(1).lower() in {"mtor", "ph"}:
             continue
-        next_period = out.find(".", m.start())
-        if next_period == -1:
+        end = re.search(r"[.!?](?!\d)|\n", scan[m.start():])
+        if end is None or end[0] == "\n":
             continue
-        spans.append((m.start(), next_period + 1))
+        spans.append((m.start(), m.start() + end.end()))
     if not spans:
         return paper_md, 0
     # Coalesce overlapping spans + apply in reverse order so
@@ -392,7 +390,7 @@ def strip_sentence_fragments(paper_md: str) -> tuple[str, int]:
         n += 1
     # Collapse double spaces / triple newlines that the deletion
     # may have left behind.
-    out = re.sub(r"  +", " ", out)
+    out = "\n".join(line if line.lstrip().startswith("|") else re.sub(r"  +", " ", line) for line in out.split("\n"))
     out = re.sub(r"\n{3,}", "\n\n", out)
     return out, n
 

@@ -9,8 +9,37 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import surface_render_lint as srl  # noqa: E402
+
+
+@pytest.mark.parametrize("label,value", [("Study A", "−0.45"), ("Study B", "1.27")])
+def test_fragment_cleanup_preserves_source_table_and_comparator(label, value):
+    quote = f"Treatment vs. a control group had an estimate of {value}."
+    table = f"| {label} |  Endpoint  | {value} | {quote} |\n"
+    assert srl.detect_sentence_fragments(table) == []
+    assert srl.strip_sentence_fragments(table) == (table, 0)
+    prose = "Valid result. e when paired with exercise. Next finding.\n\n"
+    fixed, count = srl.strip_sentence_fragments(prose + table)
+    assert count == 1 and "e when paired" not in fixed
+    assert fixed.endswith(table)
+
+
+@pytest.mark.parametrize("abbreviation", ["vs.", "e.g.", "i.e.", "et al."])
+def test_fragment_cleanup_respects_abbreviations_in_prose(abbreviation):
+    text = f"The comparison used {abbreviation} a control group with an estimate of −0.45."
+    assert srl.detect_sentence_fragments(text) == []
+    assert srl.strip_sentence_fragments(text) == (text, 0)
+
+
+def test_fragment_cleanup_does_not_stop_at_decimal_or_cross_into_table():
+    text = "Valid result. e when measured at 0.45 units. Next finding."
+    fixed, count = srl.strip_sentence_fragments(text)
+    assert count == 1 and fixed == "Valid result. Next finding."
+    unfinished = "Valid result. e when measured\n| Study | 0.45 |\n"
+    assert srl.strip_sentence_fragments(unfinished) == (unfinished, 0)
 
 
 # ----- detect_orphan_citations -----------------------------------------
