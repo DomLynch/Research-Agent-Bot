@@ -102,6 +102,13 @@ def test_human_observational_cohort_is_b2_not_mechanistic() -> None:
 def test_public_directness_phrase_keeps_observational_human_evidence_visible() -> None:
     phrase = et.public_directness_phrase(["B2"], ["indirect"])
     assert phrase == "human observational/prognostic evidence is present"
+
+
+def test_randomized_design_does_not_override_indirectness() -> None:
+    phrase = et.public_directness_phrase(["A1"], ["indirect"])
+    assert "without established directness" in phrase
+    assert "observational" not in phrase
+    assert "study design is not established" in et.public_directness_phrase([], ["indirect"])
     assert "no direct clinical evidence" not in phrase
 
 

@@ -25,9 +25,7 @@ from typing import Iterable
 
 @dataclass(frozen=True, slots=True, kw_only=True)
 class EvidenceClassification:
-    """One paper's evidence tier + directness + audit rationale.
-
-    Cross-stage object → frozen+slots+kw_only per project rule."""
+    """Source-derived design tier, directness and classification rationale."""
     tier: str           # A1 | A2 | B1 | B2 | C1 | C2 | unknown
     directness: str     # direct | indirect | mechanistic | review | unknown
     rationale: str      # one-sentence why-this-tier (audit trail)
@@ -37,11 +35,13 @@ def public_directness_phrase(tiers: Iterable[str], directnesses: Iterable[str]) 
     """Reader-facing directness phrase from existing tier/directness labels."""
     tier_set = {str(t or "").upper() for t in tiers}
     direct_set = {str(d or "").lower() for d in directnesses}
-    if "A1" in tier_set or "direct" in direct_set:
+    if "direct" in direct_set:
         return "direct interventional evidence is present"
+    if "A1" in tier_set:
+        return "human randomized intervention evidence is present, without established directness to this review question"
     if "A2" in tier_set:
         return "human interventional surrogate-endpoint evidence is present"
-    if "B2" in tier_set or "indirect" in direct_set:
+    if "B2" in tier_set:
         return "human observational/prognostic evidence is present"
     if "B1" in tier_set or "review" in direct_set:
         return "review-level evidence is present"
@@ -49,6 +49,8 @@ def public_directness_phrase(tiers: Iterable[str], directnesses: Iterable[str]) 
         return "preclinical/mechanistic evidence is present"
     if "protocol" in direct_set or "D1" in tier_set:
         return "only registered study protocols (no results reported yet) are present"
+    if "indirect" in direct_set:
+        return "indirect evidence is present; its study design is not established by the directness label"
     return "directness is not yet classifiable from the structured metadata"
 
 

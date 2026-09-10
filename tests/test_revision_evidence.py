@@ -46,7 +46,8 @@ def test_writer_sees_complete_own_result_without_rewriting_locked_claims() -> No
         + " Previous trials reported a 70% improvement."
     )}}
     original = dataclasses.replace(_receipt(), thesis_text="Trial — source excerpts: Baseline scores were comparable (P > .05).")
-    receipt = dataclasses.replace(original, source_result_excerpts=v06._source_result_excerpts(metadata))
+    from scripts.quant_claim_extract import source_result_excerpts
+    receipt = dataclasses.replace(original, source_result_excerpts=source_result_excerpts(metadata))
     assert receipt.source_result_excerpts == (result,)
     assert receipt.thesis_text == original.thesis_text
     assert receipt.p_values == original.p_values

@@ -2316,7 +2316,7 @@ def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_
     # exact body-to-bundle links instead of dropping them at the API boundary.
     source_bundle = _source_bundle(run, limit=max_sources) if enrich_sources else _source_bundle(run, limit=max_sources, enrich=False)
     if re.search(r"^## Quantitative Evidence Index\b", paper, re.M):
-        from agent.results_table import build_results_table
+        from agent.qei_facts import submission_table
 
         snapshot = run / "revision_evidence_snapshot"
         evidence = load_revision_evidence(run, quant_dir=snapshot / "quant_claims", parsed_dir=snapshot / "parsed", expected_topic=topic)
@@ -2326,11 +2326,7 @@ def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_
         rows = _publication_evidence.source_rows(_read_json(evidence.citation_registry), receipts)
         retained = {str(row.get("cited_as") or "") for row in source_bundle}
         tokens = {str(row["receipt_id"]): str(row["body_citation"]) for row in rows if row.get("body_citation") in retained}
-        if (run / "qei_facts.json").exists():
-            from agent.qei_facts import saved_table
-            table = saved_table(run, topic, tokens)
-        else:
-            table = build_results_table(evidence.quant_dir, topic=topic, parsed_dir=evidence.parsed_dir, accepted_paper_ids=frozenset(tokens), citation_tokens_by_paper_id=tokens, quarantine_path=run / "qei_quarantine.json")
+        table = submission_table(run, topic, tokens)
         qei_pattern = r"(?ms)^## Quantitative Evidence Index\b.*?(?=^## |\Z)"
         first_qei = re.search(qei_pattern, paper)
         paper = re.sub(qei_pattern, lambda match: table.rstrip() + "\n\n" if first_qei and match.start() == first_qei.start() else "", paper)

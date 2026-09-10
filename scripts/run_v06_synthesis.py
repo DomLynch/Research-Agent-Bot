@@ -3009,13 +3009,12 @@ async def _run(
         file=sys.stderr,
     )
     (out_dir / "manifest.json").write_text(json.dumps({"topic": topic, "receipts": [dataclasses.asdict(r) for r in receipts]}, indent=2))
-    bglit_entries = list(_bglit.load_registry().values())
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
             writer_receipts, writer_matrix, thesis,
             topic=topic, submission_id=submission_id,
             chain=chain, client=client, ledger=ledger,
-            background_lit_entries=bglit_entries,
+            background_lit_entries=list(_bglit.load_registry().values()),
             qei_citation_tokens_by_paper_id=qei_citation_tokens,
             qei_quarantine_path=out_dir / "qei_quarantined.json",
             review_type=_review_type_effective,

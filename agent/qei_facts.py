@@ -9,8 +9,6 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from agent.llm_client import chat_json
-from agent.publication_evidence import _record_text
-from agent.revision_evidence import load_revision_evidence
 
 FIELDS = ("receipt_id", "source_result_quote", "result_span", "endpoint", "comparison", "estimate", "uncertainty", "significance")
 HEADERS = ("Study", "Endpoint", "Study comparison", "Reported estimate", "Uncertainty", "Significance", "Source result clause")
@@ -25,6 +23,8 @@ estimate must contain an effect size, signed change, paired baseline/follow-up v
 
 
 def source_entries(run: Path, topic: str, tokens: Mapping[str, str]) -> list[dict[str, Any]]:
+    from agent.publication_evidence import _record_text
+    from agent.revision_evidence import load_revision_evidence
     snapshot = run / "revision_evidence_snapshot"
     lock = load_revision_evidence(run, quant_dir=snapshot / "quant_claims", parsed_dir=snapshot / "parsed", expected_topic=topic)
     if lock.mode != "snapshot" or lock.errors or not lock.citation_registry:
@@ -142,3 +142,26 @@ async def prepare_table(run: Path, topic: str, tokens: Mapping[str, str], **call
         raise ValueError("qei_no_source_verified_estimates")
     (run / "qei_facts.json").write_text(json.dumps({"rows": rows}, indent=2))
     return render_rows(rows, topic, tokens)
+
+
+async def writer_table(topic: str, receipts: Any, tokens: Mapping[str, str] | None, quarantine_path: Any, **options: Any) -> str:
+    if quarantine_path is not None and tokens:
+        return await prepare_table(Path(quarantine_path).parent, topic, tokens, **options)
+    from agent.results_table import build_results_table_with_diagnostic, format_empty_qei_placeholder, resolve_accepted_paper_ids
+    corpus = Path(__file__).resolve().parents[1] / "docs/quality-reference" / topic
+    table, diagnostic = build_results_table_with_diagnostic(
+        corpus / "quant_claims", topic=topic, parsed_dir=corpus / "parsed",
+        accepted_paper_ids=resolve_accepted_paper_ids(receipts, corpus / "parsed"),
+        citation_tokens_by_paper_id=tokens, quarantine_path=quarantine_path,
+    )
+    return table or format_empty_qei_placeholder(diagnostic, topic=topic)
+
+
+def submission_table(run: Path, topic: str, tokens: Mapping[str, str]) -> str:
+    if (run / "qei_facts.json").exists():
+        return saved_table(run, topic, tokens)
+    from agent.results_table import build_results_table
+    snapshot = run / "revision_evidence_snapshot"
+    return build_results_table(snapshot / "quant_claims", topic=topic, parsed_dir=snapshot / "parsed",
+                               accepted_paper_ids=frozenset(tokens), citation_tokens_by_paper_id=tokens,
+                               quarantine_path=run / "qei_quarantine.json")

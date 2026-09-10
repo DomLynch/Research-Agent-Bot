@@ -773,43 +773,9 @@ async def render_full_paper(
         )
         if sections["inferential_bridge"].body_md:
             _log_section_done("inferential_bridge", sections["inferential_bridge"])
-    # Universal Q9 structural fix (2026-05-04): deterministic
-    # Quantitative Evidence Index built from raw corpus
-    # quant_claims.json — per-CLAIM rows, not per-receipt, so the
-    # table density doesn't bottleneck on SPAR strictness. No LLM
-    # cost, no fabrication risk; structurally lifts numeric density
-    # without prompt fragility. See agent/results_table.py.
-    #
-    # Receipt-scope (2026-05-05 wave 6): map receipts → corpus
-    # paper_ids via parsed/*.paper_sections.json metadata (DOI / PMID
-    # match). Pass the resulting set to build_results_table so the
-    # QEI only shows papers that actually became receipts in this
-    # synthesis. Universal — same logic for every topic.
-    from agent.results_table import (
-        build_results_table_with_diagnostic,
-        format_empty_qei_placeholder,
-        resolve_accepted_paper_ids,
-    )
-    _repo = _Path(__file__).resolve().parent.parent
-    _quant_dir = _repo / "docs" / "quality-reference" / topic / "quant_claims"
-    _parsed_dir = _repo / "docs" / "quality-reference" / topic / "parsed"
-    if qei_quarantine_path is not None and qei_citation_tokens_by_paper_id:
-        from agent.qei_facts import prepare_table
-        _table_md = await prepare_table(_Path(qei_quarantine_path).parent, topic, qei_citation_tokens_by_paper_id,
-                                       chain=chain, client=client, ledger=ledger, seed=seed, temperature=0.0)
-        _qei_diag = {"n_rendered": _table_md.count("\n|") - 2}
-    else:
-        _table_md, _qei_diag = build_results_table_with_diagnostic(
-            _quant_dir, topic=topic, parsed_dir=_parsed_dir, accepted_paper_ids=resolve_accepted_paper_ids(receipts, _parsed_dir),
-            citation_tokens_by_paper_id=qei_citation_tokens_by_paper_id, quarantine_path=qei_quarantine_path,
-        )
-    # Slice 1 closeout (2026-05-05): empty QEI gets a *diagnostic*
-    # placeholder so reviewers see whether the corpus had zero
-    # claims, all dropped at confidence gate, or all dropped by
-    # topic/receipt guards. The diagnostic dict is also stashed on
-    # the section so manifest-builders can read it.
-    if not _table_md:
-        _table_md = format_empty_qei_placeholder(_qei_diag, topic=topic)
+    from agent.qei_facts import writer_table
+    _table_md = await writer_table(topic, receipts, qei_citation_tokens_by_paper_id, qei_quarantine_path,
+                                   chain=chain, client=client, ledger=ledger, seed=seed, temperature=0.0)
     sections["quantitative_results_table"] = SynthesisSection(
         name="quantitative_results_table",
         body_md=_table_md,
