@@ -30,7 +30,7 @@ from source_topic_specificity import (  # noqa: E402
     topic_aliases, topic_tokens,
 )
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
-from agent.prose_grounding import approved as _prose_approved, grounding_context, with_run_grounding  # noqa: E402
+from agent.prose_grounding import approved as _prose_approved, with_payload_grounding, with_run_grounding  # noqa: E402
 from agent.evidence_lanes import derive_receipt_lane  # noqa: E402
 from agent import publication_evidence as _publication_evidence, revision_claim_trace as _revision_claim_trace  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
@@ -930,12 +930,8 @@ def _researka_quantitative_trace_status(
     )
 
 
-def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True, run: Path | None = None) -> str:
-    with grounding_context(run):
-        return _researka_preflight_rules(payload, enforce_recency=enforce_recency)
-
-
-def _researka_preflight_rules(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
+@with_payload_grounding
+def _researka_preflight_status(payload: dict[str, Any], *, enforce_recency: bool = True) -> str:
     article_type = str(payload.get("article_type") or DEFAULT_ARTICLE_TYPE)
     if article_type != DEFAULT_ARTICLE_TYPE:
         return "public_surface_not_full_research"

@@ -3664,10 +3664,8 @@ async def _run_post_paper_pipeline(
         audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
     # Submission preparation is a visible revision, before the reviewer sees it.
-    from agent.prose_grounding import review_manuscript
-    await review_manuscript(paper_path.parent)
-    from publishing.submission import prepare_submission_manuscript
-    prepare_submission_manuscript(paper_path.parent)
+    from agent.prose_grounding import prepare_reviewed_manuscript
+    await prepare_reviewed_manuscript(paper_path.parent)
     paper_md = paper_path.read_text()
     audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 

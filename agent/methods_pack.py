@@ -294,8 +294,9 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "risk-of-bias claims require populated assessment records.",
         "",
         "### Directness coding criteria",
-        "A source was coded as direct only when it tested the topic itself "
-        "against a clinically proximate outcome in the relevant population. "
+        "Directness describes whether a source tests the topic exposure and an "
+        "in-scope outcome in the relevant population; it does not establish "
+        "clinical benefit, endpoint importance or low risk of bias. "
         "Human evidence with an adjacent exposure, population, or outcome was "
         "coded as indirect; syntheses and secondary reviews were coded as "
         "review-level evidence and were not counted as direct sources.",

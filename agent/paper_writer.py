@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import dataclasses
 import os
 import re
 from collections.abc import Mapping, Sequence
@@ -17,7 +16,6 @@ from agent.framework_section import (
 )
 from agent.outcome_class_remap import outcome_display
 from agent.paper_writer_builders import (
-    _materialize_inline_receipts,
     build_anchored_from_parsed,
     build_results_from_parsed,
     build_scoped_from_parsed,
@@ -43,6 +41,7 @@ from agent.paper_writer_helpers import (
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
 )
 from agent.paper_writer_prompts import cross_domain_retry_prompt
+from agent.prose_grounding import review_writer_paragraphs
 from agent.review_type import COMPACT_REVIEW_TYPES
 from agent.synthesis_schemas import (
     ReceiptSummary,
@@ -467,17 +466,7 @@ async def _write_scoped_section(
             continue
         rejection_reasons: list[str] = []
         combined = {"paragraphs": _retained_paragraphs(best, parsed.get("paragraphs") or [parsed])}
-        if name == "conclusion":
-            from agent.prose_grounding import review_statements
-            proposed = [entry for entry in combined["paragraphs"] if isinstance(entry, dict) and isinstance(entry.get("text"), str) and isinstance(entry.get("receipt_ids"), list)]
-            for entry in proposed:
-                entry["text"] = _materialize_inline_receipts(entry["text"], entry["receipt_ids"])
-            if proposed:
-                review = await review_statements(proposed, [dataclasses.asdict(receipt) for receipt in accepted], client=client, ledger=ledger, seed=seed)
-                reviewed.difference_update((proposed[item["row"]]["text"].strip(), tuple(sorted(proposed[item["row"]]["receipt_ids"]))) for item in review["assessments"] if not item["supported"])
-                reviewed.update((proposed[item["row"]]["text"].strip(), tuple(sorted(proposed[item["row"]]["receipt_ids"]))) for item in review["assessments"] if item["supported"])
-                rejection_reasons.extend("source_grounding:" + item["reason"] for item in review["assessments"] if not item["supported"])
-                combined["paragraphs"] = [entry for index, entry in enumerate(proposed) if any(item["row"] == index and item["supported"] for item in review["assessments"])]
+        combined["paragraphs"], rejection_reasons = await review_writer_paragraphs(name, combined["paragraphs"], accepted, reviewed, client=client, ledger=ledger, seed=seed)
         section = build_scoped_from_parsed(
             combined, name=name, heading=heading, topic=topic, accepted=accepted,
             rejection_reasons=rejection_reasons, allow_partial=True, reviewed=frozenset(reviewed),

@@ -70,10 +70,11 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
             "and effect language present in those receipts' evidence_excerpt fields. Do not add a "
             "mechanism, interpretation, or benefit absent from the mapped excerpt."
         )
-        if section_name == "conclusion":
-            guidance.append("Keep the 280-380-word target and write coherent synthesis paragraphs, not a collection of quotations. Correct only the rejected claims. Compare documented differences across the cited studies without pooling outcomes or claiming clinical benefit. Cite every scientific sentence to its supporting sources. Explain uncertainty using actual limitations; do not invent methods or new research proposals. Already retained text counts toward the target.")
-        else:
-            guidance.append("Use one complete source sentence per JSON text record, with only its receipt_id. Preserve source terminology and abbreviations verbatim; do not expand biomarker names or combine populations/endpoints from different sentences. Quote the source text rather than inventing a paraphrase the supplied evidence cannot verify.")
+        guidance.append(
+            "Keep the 280-380-word target and write coherent synthesis paragraphs, not a collection of quotations. Correct only the rejected claims. Compare documented differences across the cited studies without pooling outcomes or claiming clinical benefit. Cite every scientific sentence to its supporting sources. Explain uncertainty using actual limitations; do not invent methods or new research proposals. Already retained text counts toward the target."
+            if section_name == "conclusion" else
+            "Use one complete source sentence per JSON text record, with only its receipt_id. Preserve source terminology and abbreviations verbatim; do not expand biomarker names or combine populations/endpoints from different sentences. Quote the source text rather than inventing a paraphrase the supplied evidence cannot verify."
+        )
     return f"{base}\n\nVALIDATION FAILURES: {'; '.join(dict.fromkeys(reasons))}\n{' '.join(guidance)} JSON only."
 
 

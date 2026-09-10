@@ -293,7 +293,7 @@ def test_exhausted_writer_stops_without_placeholder(monkeypatch, name, response)
 
 
 @pytest.mark.parametrize("name", ["conclusion", "results"])
-def test_retry_keeps_valid_findings_and_requests_only_missing_text(monkeypatch, name) -> None:
+def test_retry_keeps_valid_findings_and_requests_only_missing_text(monkeypatch, name, scoped_source_review) -> None:
     receipts = [_summary("r-a", outcome="cardiometabolic", thesis_text=(
         "Trial - source excerpts: Metformin reduced fasting glucose among older adults. | "
         "Metformin benefit remains uncertain among older adults."
@@ -329,7 +329,7 @@ def test_retention_deduplicates_normalized_prose_without_rewriting_sources() -> 
 
 @pytest.mark.parametrize("wrong_first", [False, True])
 @pytest.mark.parametrize("name", ["conclusion", "results"])
-def test_citation_candidate_order_cannot_hide_supported_prose(monkeypatch, name, wrong_first) -> None:
+def test_citation_candidate_order_cannot_hide_supported_prose(monkeypatch, name, wrong_first, scoped_source_review) -> None:
     text = "Metformin may lower glucose while metformin effects remain uncertain [r-a]."
     receipts = [_summary("r-a", thesis_text="Trial - source excerpts: " + text.replace(" [r-a]", "")),
                 _summary("r-b", thesis_text="Trial - source excerpts: The intervention harmed muscle strength.")]
@@ -346,6 +346,15 @@ def test_citation_candidate_order_cannot_hide_supported_prose(monkeypatch, name,
             accepted=receipts, chain=(), client=None, ledger=None, seed=None, fallback_body=""))
     assert len(section.anchors) == 1
     assert section.anchors[0].receipt_ids == ("r-a",)
+
+
+@pytest.fixture
+def scoped_source_review(monkeypatch):
+    from agent import prose_grounding
+    async def review(statements, sources, **options):
+        return {"assessments": [{"row": i, "supported": row["receipt_ids"] == ["r-a"],
+                                 "reason": "Checked the fixture source and citation."} for i, row in enumerate(statements)]}
+    monkeypatch.setattr(prose_grounding, "review_statements", review)
 
 
 def test_anchored_writer_materializes_missing_inline_receipts(monkeypatch) -> None:

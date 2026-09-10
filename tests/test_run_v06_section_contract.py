@@ -944,7 +944,7 @@ def test_stage_5c_gates_use_finalized_text_and_refreshed_audit(
 
 def test_stage_5_runs_finalizer_before_surface_gate(tmp_path, monkeypatch) -> None:
     import asyncio
-    from agent import journal_finalizer, journal_surface_gate
+    from agent import journal_finalizer, journal_surface_gate, prose_grounding
 
     class SurfaceReached(Exception):
         pass
@@ -958,6 +958,8 @@ def test_stage_5_runs_finalizer_before_surface_gate(tmp_path, monkeypatch) -> No
         return repair(text, log)
     async def review(*args, **kwargs):
         return [], "", "offline-reviewer", 0.0
+    async def prepare(*args, **kwargs):
+        return None
     def finalize(out_dir, *, repair):
         events.append("finalize")
         text = repair(path.read_text())
@@ -971,6 +973,7 @@ def test_stage_5_runs_finalizer_before_surface_gate(tmp_path, monkeypatch) -> No
 
     monkeypatch.setattr(orch, "_apply_abstract_claim_strength_repair", record_repair)
     monkeypatch.setattr(orch._final_reviewer, "review_paper", review)
+    monkeypatch.setattr(prose_grounding, "prepare_reviewed_manuscript", prepare)
     monkeypatch.setattr(journal_finalizer, "finalize_run", finalize)
     monkeypatch.setattr(journal_surface_gate, "evaluate_journal_surface", surface)
     with pytest.raises(SurfaceReached):
