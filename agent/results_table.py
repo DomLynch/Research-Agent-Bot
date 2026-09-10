@@ -223,35 +223,22 @@ def format_empty_qei_placeholder(
     diagnostic: dict[str, int], *, topic: str,
 ) -> str:
     """Report the actual gate drop counts when no QEI rows survive."""
-    n_files = diagnostic.get("n_quant_files", 0)
-    n_total = diagnostic.get("n_total_claims", 0)
-    n_adm = diagnostic.get("n_admissible", 0)
-    n_topic = diagnostic.get("n_topic_matched", 0)
-    n_meaning = diagnostic.get("n_meaningful", 0)
-    drop_arm = diagnostic.get("drop_off_topic_arm", 0)
-    drop_nr = diagnostic.get("drop_non_receipt_paper", 0)
-    drop_surface = diagnostic.get("drop_surface_gate", 0)
-    drop_cite = diagnostic.get("drop_missing_canonical_citation", 0)
-    return (
-        f"## Quantitative Evidence Index — {topic}\n\n"
-        f"_No qualifying rows. Corpus diagnostic — quant_claims files "
-        f"scanned: **{n_files}**; total claims read: **{n_total}**; "
-        f"admissible (HIGH/PARTIAL confidence): **{n_adm}**; "
-        f"topic-arm matched: **{n_topic}**; semantically meaningful: "
-        f"**{n_meaning}**. Dropped by guards: cross-topic arm = "
-        f"{drop_arm}, non-receipt papers = {drop_nr}, journal surface "
-        f"= {drop_surface}, missing canonical citation = {drop_cite}. "
-        f"See Corpus "
-        f"Expansion To-Do in the final verdict for the actionable "
-        f"gap._\n"
-    )
+    counts = {key: diagnostic.get(key, 0) for key in (
+        "n_quant_files", "n_total_claims", "n_admissible", "n_topic_matched", "n_meaningful",
+        "drop_off_topic_arm", "drop_non_receipt_paper", "drop_surface_gate", "drop_missing_canonical_citation",
+    )}
+    return f"## Quantitative Evidence Index — {topic}\n\n" + (
+        "_No qualifying rows. Corpus diagnostic — quant_claims files scanned: **{n_quant_files}**; "
+        "total claims read: **{n_total_claims}**; admissible (HIGH/PARTIAL confidence): **{n_admissible}**; "
+        "topic-arm matched: **{n_topic_matched}**; semantically meaningful: **{n_meaningful}**. "
+        "Dropped by guards: cross-topic arm = {drop_off_topic_arm}, non-receipt papers = {drop_non_receipt_paper}, "
+        "journal surface = {drop_surface_gate}, missing canonical citation = {drop_missing_canonical_citation}. "
+        "See Corpus Expansion To-Do in the final verdict for the actionable gap._\n"
+    ).format_map(counts)
 
 
 def _row_is_meaningful(claim: dict[str, Any]) -> bool:
-    """Reject unbound endpoints, incompatible units and non-result numerics.
-
-    Binding confidence alone does not establish a statistic's meaning.
-    """
+    """Reject unbound endpoints, incompatible units and non-result numerics."""
     endpoint = (claim.get("endpoint") or "").strip().lower()
     if endpoint in _UNBOUND_ENDPOINTS:
         return False
@@ -336,10 +323,7 @@ def _ambiguous_multi_stat_binding(
 def _claim_to_row(
     claim: dict[str, Any], *, paper_id: str, citation_token: str | None = None,
 ) -> EvidenceRow | None:
-    """Transform one high-confidence claim into a table row.
-    Returns None for claims without a usable numeric value or whose
-    endpoint/unit combination is semantically incoherent (reviewer
-    wave 9 cleanup)."""
+    """Keep only meaningful claims with a usable numeric value."""
     if not _row_is_meaningful(claim):
         return None
     nums = claim.get("numeric_values") or []
@@ -349,27 +333,19 @@ def _claim_to_row(
         float(nums[0])
     except (TypeError, ValueError):
         return None
-    raw = (claim.get("raw_text") or "").strip()
-    units = (claim.get("units") or "").strip()
-    claim_type = (claim.get("claim_type") or "").strip()
-    endpoint = (claim.get("endpoint") or "").strip()
-    arm = (claim.get("arm") or "").strip()
-    role = (claim.get("claim_role") or "").strip()
-    # Unit/type: prefer explicit units, fall back to public claim type.
-    unit_str = units if units else _public_label(claim_type)
-    # Endpoint column: bound endpoint > claim_role > short claim_type.
-    ep = endpoint or role or _public_label(claim_type) or "—"
+    raw = " ".join(str(claim.get("raw_text") or "").split()).replace("|", "&#124;")
+    unit_str = (claim.get("units") or "").strip() or _public_label(claim.get("claim_type") or "")
     citation = citation_token or _short_citation(paper_id)
     return EvidenceRow(
         study_label=citation,
-        endpoint=_truncate(ep, 30),
-        arm=_truncate(arm or "—", 24),
-        value=" ".join(raw.split()).replace("|", "&#124;"),
+        endpoint=_truncate(claim["endpoint"], 30),
+        arm=_truncate(claim.get("arm") or "—", 24),
+        value=raw,
         unit_or_type=_truncate(unit_str, 18),
         statistic="—",
         citation=citation,
         source_context=" ".join(str(claim.get("sentence") or "").split()).replace("|", "&#124;"),
-        source_value=" ".join(raw.split()).replace("|", "&#124;"),
+        source_value=raw,
     )
 
 
@@ -402,13 +378,8 @@ def _publishable_surface_row(row: EvidenceRow) -> bool:
 
 
 def _public_label(value: str) -> str:
-    labels = {
-        "ci": "confidence interval",
-        "mean_sd": "mean ± SD",
-        "p_value": "p-value",
-        "sample_size": "sample size",
-        "unit_value": "unit value",
-    }
+    labels = {"ci": "confidence interval", "mean_sd": "mean ± SD", "p_value": "p-value",
+              "sample_size": "sample size", "unit_value": "unit value"}
     s = (value or "").strip()
     return labels.get(s, outcome_display(s).lower())
 

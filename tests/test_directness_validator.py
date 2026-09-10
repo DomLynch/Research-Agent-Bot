@@ -22,6 +22,28 @@ sys.path.insert(0, str(REPO / "scripts"))
 import run_v06_synthesis as v06  # type: ignore[import-not-found]  # noqa: E402
 
 
+def test_explicit_combination_comparison_does_not_isolate_single_ingredient(monkeypatch) -> None:
+    monkeypatch.setattr(v06, "_ACTIVE_TOPIC", "resveratrol")
+    title = "Combined supplementation with Curcumin and Resveratrol: a randomized trial in patients"
+    abstract = "Patients were randomly assigned to two groups. The control group treated with placebo (Group B)."
+    meta = {"title": title, "abstract": abstract}
+    assert v06._classify_paper_tier("example", 4, meta) == ("A1", "indirect")
+    for adjusted in (
+        abstract.replace("placebo (Group B)", "placebo plus curcumin"),
+        abstract + " Both groups received curcumin.",
+        abstract.replace("two groups", "a factorial design"),
+    ):
+        assert not v06.unisolated_combination(title, adjusted, "resveratrol")
+    assert not v06.unisolated_combination(title, abstract, "curcumin_and_resveratrol")
+    assert not v06.unisolated_combination("A randomized resveratrol trial", abstract, "resveratrol")
+
+
+def test_multi_ingredient_juice_placebo_does_not_establish_ingredient_effect() -> None:
+    title = "A multi-ingredient nutrition supplement intervention: a randomised trial"
+    abstract = "A between-subjects factor of group (placebo, intervention) was used. The placebo contained juice only."
+    assert v06.unisolated_combination(title, abstract, "resveratrol")
+
+
 def test_is_randomized_trial_detects_primary_rct_from_title() -> None:
     monda = {"title": "Metabolic and Orexin-A Responses to Ketogenic Diet and "
                       "Intermittent Fasting: A 12-Month Randomized Trial in "
