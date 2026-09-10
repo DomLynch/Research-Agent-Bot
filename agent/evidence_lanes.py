@@ -165,6 +165,10 @@ def effective_directness(receipt: Any) -> str:
 
 def unisolated_combination(title: str, abstract: str, target: str, aliases: tuple[str, ...] = ()) -> bool:
     """Detect comparisons that do not isolate the target intervention."""
+    from agent.results_table import _owned_result_sentence
+    record = {"sections": {"abstract": abstract}}
+    abstract = " ".join(sentence for sentence in re.split(r"(?<=[.!?])\s+", abstract)
+                        if _owned_result_sentence(sentence, record))
     title, abstract, target = (re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in (title, abstract, target))
     terms = {target, *(re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in aliases)} - {""}
     for term in tuple(terms):

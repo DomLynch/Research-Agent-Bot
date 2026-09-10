@@ -75,6 +75,8 @@ def test_randomized_adjunct_contrast_is_indirect_for_shared_background(target):
     assert not v06.unisolated_combination("Randomized trial", "Participants were randomized to group A or group B.", target)
     assert not v06.unisolated_combination("Randomized trial", f"Participants were randomized to low dose {target} or high dose {target}.", target)
     assert not v06.unisolated_combination("Randomized trial", f"Participants receiving {target} were divided into older and younger groups.", target)
+    assert not v06.unisolated_combination("Randomized trial", f"Previous trials comparing milk and whey informed this study. Participants were randomized to {target} or placebo.", target)
+    assert not v06.unisolated_combination("Randomized trial", f"In a previous study both groups received {target}. Here participants were randomized to {target} or placebo.", target)
 
 
 def test_is_randomized_trial_detects_primary_rct_from_title() -> None:
@@ -92,6 +94,16 @@ def test_protocol_outcomes_are_planned_context_not_observed_findings():
         "abstract": "Participants will be randomized to training or control. Muscle strength is the primary outcome."
     }}
     assert v06._source_outcome_class("muscle_function", record, []) == "contextual_other"
+
+
+@pytest.mark.parametrize("case", json.loads((REPO / "tests/fixtures/publishing_source_roles.json").read_text()), ids=lambda case: case["citation"])
+def test_frozen_sources_follow_shared_comparator_rules(monkeypatch, case):
+    monkeypatch.setattr(v06, "_ACTIVE_TOPIC", case["topic"])
+    monkeypatch.setattr(v06, "_TOPIC_PACK", SimpleNamespace(active_arm_synonyms=("resistance training", "strength training")))
+    record = case["paper_meta"]
+    assert v06._classify_paper_tier("anonymous-source", 5, record) == tuple(case["expected"])
+    if case["expected"][1] == "protocol":
+        assert v06._source_outcome_class("muscle_function", record, []) == "contextual_other"
 
 
 def test_is_randomized_trial_excludes_meta_analyses_and_non_trials() -> None:

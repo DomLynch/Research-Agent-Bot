@@ -1362,7 +1362,7 @@ def _source_outcome_class(current: str, record: dict, claims: list[dict]) -> str
     from agent.results_table import _owned_result_sentence
 
     abstract = str(record["sections"].get("abstract") or "")
-    if _taxonomy.infer_from_paper_meta(record).directness == "protocol":
+    if _classify_paper_tier("", len(claims), record)[1] == "protocol":
         return "contextual_other"
     primary = r"(?:primary|main)\s+(?:outcomes?|endpoints?)"
     declarations = [s for s in re.split(r"(?<=[.!?])\s+", abstract) if re.search(primary, s, re.I)]
@@ -3168,6 +3168,7 @@ async def _run(
 
     manifest = {
         "extractor_version": "v0.6.0",
+        "research_question": _ACTIVE_MANIFEST["research_question"],
         "writer_path": "agent.paper_writer.render_full_paper (production)",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         # Slice 7 step 3 fix: surface topic in manifest so final-layer reviewer
