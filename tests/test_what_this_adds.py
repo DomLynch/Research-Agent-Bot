@@ -222,13 +222,13 @@ def test_section_includes_research_contribution_layer() -> None:
     assert "### Boundary-Condition Matrix" in md
     assert "source counts are cumulative within each outcome class" in md
     assert "reconcile to the Results outcome-class roster" in md
-    assert "### Evidence-Gap Priority" in md
-    assert "### Next-Study Design Recommendation" in md
+    assert "### Evidence-Gap Priority" not in md
+    assert "### Next-Study Design Recommendation" not in md
     assert "| cognitive | 0 | 1 |" in md
-    assert "direct clinical gap" in md
-    assert "at least 200 participants per arm" in md
-    assert "priority population" in md
-    assert "at least 12 months" in md
+    assert "no direct source in this retained set" in md
+    assert "participants per arm" not in md
+    assert "priority population" not in md
+    assert "at least 12 months" not in md
 
 
 def test_research_contribution_layer_humanizes_public_labels() -> None:
@@ -253,17 +253,21 @@ def test_boundary_matrix_merges_canonical_outcome_aliases() -> None:
     assert md.count("| immune and inflammation |") == 1
     assert "| immune and inflammation | 1 | 1 |" in md
     rows = _outcome_rows(receipts, _matrix(receipts))
-    assert rows[0][:2] == (3, "immune_inflammation")
+    assert rows[0][:3] == ("immune_inflammation", 1, 1)
 
 
-def test_next_study_design_targets_highest_priority_gap() -> None:
+def test_source_counts_do_not_assign_research_priority_or_trial_design() -> None:
     receipts = [
         _r("Direct Cardio", outcome="cardiometabolic", directness="direct"),
         _r("Indirect Frailty", outcome="frailty", directness="indirect",
            tier="B2"),
     ]
-    md = build_what_this_adds_section(
-        receipts, _matrix(receipts), _thesis(), topic="caloric restriction",
-    )
-    assert "target the **frailty** evidence gap" in md
-    assert "pre-register the primary endpoint" in md
+    for added in ([], [_r(f"Extra {i}", outcome="frailty") for i in range(8)]):
+        current = receipts + added
+        md = build_what_this_adds_section(current, _matrix(current), _thesis(), topic="caloric restriction")
+        assert f"| frailty | {len(added)} | 1 |" in md
+        assert "target the **frailty** evidence gap" not in md
+        assert "Next-Study Design Recommendation" not in md
+        assert "participants per arm" not in md
+        assert "They do not establish literature coverage, evidence certainty, research priorities" in md
+        assert md.index("| cardiometabolic |") < md.index("| frailty |")

@@ -18,10 +18,10 @@ scientific corrections and resubmission allowed. There is no new public artifact
 
 ## Latest verification
 
-- Full suite: **4,979 passed**, two existing XPASS results, 16 warnings, 158.48s.
-  Log: `/tmp/v3-auth-suite.log`.
+- Full suite: **4,979 passed**, two existing XPASS results, 16 warnings, 154.75s.
+  Log: `/tmp/v3-descriptive-map-suite.log`.
 - Quality: **344 passed**, including LOC/coverage gates; mypy passed.
-  Logs: `/tmp/v3-auth-quality-final2.log`, `/tmp/v3-auth-mypy.log`.
+  Logs: `/tmp/v3-descriptive-map-quality.log`, `/tmp/v3-descriptive-map-mypy.log`.
 - Revision authorization: 340 focused tests pass. The current Core request
   authorizes only Made 2017 and Farzin 2020 effect directions; documentation-only
   requests and unrelated semicolon-separated sources stay locked.
@@ -72,3 +72,24 @@ technical-failure-only fallback. Core and website code are unchanged.
 The prepared `/tmp/v3-standardized-deploy.sh` has not run. Update its expected SHA
 after the final tested commit, read all worker states separately, and deploy only
 when idle using the exclusive prepare lock, clean-tree checks and timer restoration.
+
+## Subsequent template audit
+
+The deterministic contribution section previously assigned research priorities
+from fixed outcome weights and direct-source counts, then invented fixed trial
+sizes and durations. It now reports alphabetically ordered descriptive source
+counts, direction profiles and interpretation limits. The ranked table and
+unsupported study-design recommendation are removed. Regression checks show that
+adding eight sources changes counts without producing a priority or trial design.
+
+Abstract drafting now targets 200–220 words and at most three sources to reserve
+space for final source links and scope annotations; the final 300-word cap stays
+unchanged. The 19-source native Abstract evaluation is still running.
+
+Latest checks: 414 focused tests, full 4,979, quality 344 and mypy pass. Runtime
+checkpoint is d45975cc. Neither active isolated manuscript checkout was updated.
+Resveratrol native v8 is running on 3aa26988 (37 sources), resistance native v4 on
+515e4cca (19 sources). Both require final review on the newest tested templates.
+Prepared review script: `/tmp/v3-standardized-package-review.py`; it reconstructs
+the changed displays, uses the native Abstract writer, then runs complete normal
+review, exit checks, current-request coverage and exact source-hash verification.
