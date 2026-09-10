@@ -2256,6 +2256,24 @@ def test_partial_source_quotation_does_not_bypass_alignment() -> None:
     assert not _verified_complete_quotation('“We found no evidence that resveratrol reduced mortality by 17% [Smith 2020].”', source)
 
 
+def test_patch_reviewer_receives_verified_full_source_packet(tmp_path: Path, monkeypatch) -> None:
+    import final_reviewer
+    monkeypatch.setattr(daily, "ROOT", tmp_path)
+    run = _run(tmp_path)
+    manifest = daily._read_json(run / "manifest.json")
+    manifest["retrieval"] = {"audit": {"metadata_candidates": 4286, "selection": "automated"}}
+    system, prompt = final_reviewer._build_reviewer_prompt("Paper", manifest, {}, run_dir=run)
+    assert "takes precedence over older receipt snippets" in system
+    packet = json.loads(prompt.split("## Verified source packet and frozen retrieval record\n", 1)[1].split("\n\n## Paper full text", 1)[0])
+    assert len(packet["source_bundle"]) == len(manifest["receipts"])
+    assert packet["retrieval_record"] == manifest["retrieval"]
+    assert all(daily._publication_evidence.source_proof_is_valid(row) for row in packet["source_bundle"])
+    frozen = next((run / "revision_evidence_snapshot/parsed").glob("*.json"))
+    frozen.write_text("{}")
+    with pytest.raises(RuntimeError, match="review_source_packet_unverified"):
+        final_reviewer._build_reviewer_prompt("Paper", manifest, {}, run_dir=run)
+
+
 def test_statistical_decimal_spacing_does_not_split_source_sentence() -> None:
     finding = "Negative symptoms improved (F = 12.25, P < . 001). Positive symptoms did not differ (P = . 180)."
     assert daily._revision_claim_trace._sentences(finding) == [

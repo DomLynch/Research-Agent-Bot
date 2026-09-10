@@ -322,6 +322,11 @@ def _split_table_section(paper: str) -> tuple[str, str]:
     return prose_block, table_block
 
 
+def _unverified_numeric_prose(block: str, source_quotes: dict[str, tuple[str, ...]]) -> str:
+    from numeric_role_guard import _is_verified_result_quote
+    return "\n\n".join(part for part in re.split(r"\n\s*\n", block) if not _is_verified_result_quote(part, source_quotes))
+
+
 def _check_numeric_integrity(
     paper: str, corpus_nums: set[str], manifest: dict | None = None,
 ) -> tuple[bool, str]:
@@ -334,6 +339,8 @@ def _check_numeric_integrity(
     """
     # Strip CI-level anchors before splitting (so the strip applies
     # uniformly to both prose and table blocks).
+    from numeric_role_guard import _verified_result_quotes
+    source_quotes = _verified_result_quotes(manifest, QUANT_DIR)
     strict_pool = {canonical_numeric(v) for v in corpus_nums}
     strict_pool.update(_manifest_structural_numerics(manifest))
     # References entries are bibliographic: a cited paper's title can carry
@@ -375,8 +382,10 @@ def _check_numeric_integrity(
             line for line in block.splitlines()
             if not line.lstrip().startswith("|")
         )
+        unverified = _unverified_numeric_prose(block, source_quotes)
         for cat, pat in _PATTERNS_BY_CATEGORY:
             vals = set(re.findall(pat, block))
+            require_pool = set(re.findall(pat, unverified))
             if cat == "percentage":
                 vals = {v for v in vals if 1.0 < float(canonical_numeric(v)) < 1000}
             by_cat.setdefault(cat, set()).update(vals)
@@ -388,7 +397,7 @@ def _check_numeric_integrity(
                     v, canon, str(f),
                     str(int(f)) if f.is_integer() else canon,
                 }
-                if not any(canonical_numeric(c) in pool for c in candidates):
+                if v in require_pool and not any(canonical_numeric(c) in pool for c in candidates):
                     bad.append(v)
             n_total += len(vals)
             n_bad += len(bad)

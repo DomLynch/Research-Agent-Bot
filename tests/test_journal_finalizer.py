@@ -2139,10 +2139,10 @@ def test_run_text_phases_terminal_floor_after_duplicate_intro_cleanup(tmp_path: 
     cross = fixed.split("## Cross-Domain Synthesis", 1)[1].split("## Discussion", 1)[0]
 
     assert len(intro.split()) >= 400
-    assert len(cross.split()) < 850
+    assert len(cross.split()) == 810
     assert orch._insufficient_evidence_owned_section_depth(
         fixed, None,
-    )[1] == "Cross-Domain Synthesis=0/850"
+    ) == ("Cross-Domain Synthesis=810/850",)
     assert "ramadan_fasting_effects" not in fixed
     assert not any(issue.code == "duplicate_paragraph" for issue in report.issues)
     assert not any(
@@ -6157,6 +6157,16 @@ def test_dedupe_keeps_domain_public_extraction_table_with_subset_vocab() -> None
     assert removed == 0
     assert "### Public Study Extraction Table" in out
     assert "| Smith 2024 | randomized trial | older adults |" in out
+
+
+def test_dedupe_preserves_comparison_that_adds_a_distinct_study() -> None:
+    first = "In older adults, treatment reduced systolic blood pressure after eight weeks compared with placebo, with no significant improvement in physical function [Smith 2024]."
+    second = "A separate crossover experiment in healthy volunteers found unchanged vascular responsiveness despite higher circulating metabolite concentrations, illustrating that exposure and physiological benefit need separate measurement [Jones 2025]."
+    paper = f"## Results\n\n{first}\n\n## Conclusion\n\n{first} {second}\n"
+    dedupe = journal_finalizer.review_noise_control._dedupe_repeated_blocks
+    assert dedupe(paper) == (paper, 0)
+    duplicate = paper + f"\n\n{first} {second}\n"
+    assert dedupe(duplicate)[1] == 1
 
 
 def test_unreferenced_citation_ignores_reference_title_fragment() -> None:

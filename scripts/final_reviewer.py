@@ -86,6 +86,7 @@ class TypedPatch:
 def _build_reviewer_prompt(
     paper_md: str, manifest: dict, audit: dict,
     citation_registry: dict | None = None,
+    run_dir: Path | None = None,
 ) -> tuple[str, str]:
     """Build typed-patch instructions and source-aware citation guidance."""
     system = (
@@ -145,6 +146,17 @@ def _build_reviewer_prompt(
         "6. Output AT MOST 25 patches. Triage to highest-severity first.\n"
     )
     n_receipts = len(manifest.get("receipts", []))
+    evidence_section = ""
+    if run_dir is not None:
+        from publishing.submission import _source_bundle
+        from agent.publication_evidence import source_proof_is_valid
+        bundle = _source_bundle(run_dir, limit=n_receipts, enrich=False)
+        if len(bundle) != n_receipts or not all(source_proof_is_valid(row) for row in bundle):
+            raise RuntimeError("review_source_packet_unverified")
+        evidence_section = "\n\n## Verified source packet and frozen retrieval record\n" + json.dumps({
+            "source_bundle": bundle, "retrieval_record": manifest.get("retrieval", {}),
+        }, ensure_ascii=False)
+        system += "The verified source packet takes precedence over older receipt snippets. Missing detail in a receipt snippet alone does not establish that a claim is unsupported. Verify the actual endpoint, comparison, and analysis in the full supplied source context.\n"
     audit_p1 = audit.get("p1_pass", False)
     audit_score = audit.get("score_out_of_10", 0)
     # Fix #11: derive (body_citation, outcome, effect, tier) per receipt.
@@ -202,6 +214,7 @@ def _build_reviewer_prompt(
         f"{receipt_header}\n"
         + "\n".join(receipt_lines)
         + bglit_section
+        + evidence_section
         + "\n\n## Paper full text\n\n```markdown\n"
         + paper_md
         + "\n```\n\nNow produce the JSON patch list."
@@ -676,6 +689,7 @@ async def review_paper(
     client: Any | None = None,
     citation_registry: dict | None = None,
     max_cost_usd: float | None = None,
+    run_dir: Path | None = None,
 ) -> tuple[list[TypedPatch], dict, str, float]:
     """Run the final-layer review. Returns (patches, raw_response,
     model_used, successful-call cost estimate). Fallback fires only on technical
@@ -692,7 +706,7 @@ async def review_paper(
         or None
     )
     system, user = _build_reviewer_prompt(
-        paper_md, manifest, audit, citation_registry=citation_registry,
+        paper_md, manifest, audit, citation_registry=citation_registry, run_dir=run_dir,
     )
     _enforce_cost_cap(
         system, user, model, fallback_model, escalation_model, max_cost_usd,
@@ -811,6 +825,7 @@ def main(argv: list[str] | None = None) -> int:
             fallback_model=args.fallback_model,
             base_url=args.base_url,
             max_cost_usd=args.max_cost_usd,
+            run_dir=paper_path.parent if (paper_path.parent / "revision_evidence_snapshot").is_dir() else None,
         ),
     )
     out_json = paper_path.with_suffix(".review_patches.json")

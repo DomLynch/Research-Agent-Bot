@@ -80,13 +80,13 @@ def test_scoped_result_retains_its_citation_after_metadata_is_removed() -> None:
     assert section.anchors[0].receipt_ids == ("r1",)
 
 
-def test_revision_review_uses_complete_verified_abstract_without_contract_mutation(tmp_path: Path) -> None:
+def test_revision_review_uses_complete_verified_abstract_without_contract_mutation(tmp_path: Path, monkeypatch) -> None:
     from agent.revision_contract import evidence_rows
     from agent.revision_quality import _revision_note, resolved_effect_direction
 
     raw = tmp_path / "raw"
     raw.mkdir()
-    abstract = "Baseline characteristics were similar (P > .05). Negative symptoms improved (P < . 001)."
+    abstract = "Baseline characteristics were similar (P > .05). Negative symptoms improved (P < . 001). Triglycerides decreased (7.64%)."
     (raw / "r1.quant_claims.json").write_text('{"paper_id":"r1"}')
     sections = {"abstract": abstract, "results": "100% survival in both arms."}
     tables = [{"caption": "Trial outcomes", "rows": [["Survival", "100%"]]}]
@@ -115,10 +115,19 @@ def test_revision_review_uses_complete_verified_abstract_without_contract_mutati
     quoted = "Negative symptoms improved (P < . 001) [Trial 2024]."
     quotes = numeric_guard._verified_result_quotes(manifest, snapshot / "quant_claims")
     assert numeric_guard._is_verified_result_quote(quoted, quotes)
+    assert numeric_guard._is_verified_result_quote(quoted.replace("P < . 001", "p<.001"), quotes)
+    assert not numeric_guard._is_verified_result_quote(quoted.replace("P < . 001", "P = .001"), quotes)
     assert not numeric_guard.scan_paper(quoted, manifest=manifest, quant_claims_dir=snapshot / "quant_claims")
     for changed in (quoted.replace("improved", "worsened"), quoted.replace("001", "009"), quoted.replace("Trial 2024", "Wrong 2024")):
         assert not numeric_guard._is_verified_result_quote(changed, quotes)
     assert not numeric_guard._is_verified_result_quote("Negative symptoms improved [Trial 2024].", quotes)
+    audit = import_module("scripts.audit_v06_paper")
+    monkeypatch.setattr(audit, "QUANT_DIR", snapshot / "quant_claims")
+    result = '"Triglycerides decreased (7.64%)" [Trial 2024].'
+    assert audit._check_numeric_integrity(result, set(), manifest)[0]
+    for bad in (result.replace("7.64", "8.64"), result.replace("Trial 2024", "Wrong 2024"),
+                result + "\n\nAn uncited trial reduced mortality by 7.64%."):
+        assert not audit._check_numeric_integrity(bad, set(), manifest)[0]
     assert resolved_effect_direction({**rows[0], "effect_direction": "null", "verified_abstract": "Higher inflammation caused harm (P < .05)."}) == "null"
     assert resolved_effect_direction({**rows[0], "effect_direction": "null", "thesis_text": "Higher inflammation can cause harm.", "p_values": ["P < .001"]}) == "null"
     from agent.revision_consistency import disputed_p_value_near_sources, remove_disputed_p_values_near_sources
@@ -127,6 +136,7 @@ def test_revision_review_uses_complete_verified_abstract_without_contract_mutati
     assert not disputed_p_value_near_sources(ask, text, ["Trial 2024"], ["Trial 2024"])
     assert remove_disputed_p_values_near_sources(ask, text, ["Trial 2024"], ["Trial 2024"]) == text
     (snapshot / "parsed" / "r1.paper_sections.json").write_text('{"sections":{"abstract":"invented result"}}')
+    assert not audit._check_numeric_integrity(result, set(), manifest)[0]
     assert numeric_guard._verified_result_quotes(manifest, snapshot / "quant_claims") == {}
     with pytest.raises(ValueError, match="snapshot_parsed:r1"):
         evidence_rows(tmp_path, manifest)

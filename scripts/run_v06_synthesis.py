@@ -2571,6 +2571,14 @@ def _finalize_synthesis_exit(
     return EXIT_PUBLICATION_READY
 
 
+def _write_review_methods(paper_path: Path, pack: Any) -> str:
+    from agent.methods_pack import render_methods_md, write_methods_pack
+    write_methods_pack(paper_path.parent, pack)
+    methods = render_methods_md(pack, submission_id=paper_path.parent.name)
+    paper_path.write_text(_run_mode.replace_methods_in_paper(paper_path.read_text(), methods))
+    return methods
+
+
 async def _run(
     out_dir: Path,
     *,
@@ -3284,7 +3292,7 @@ async def _run(
     # topic — the pack carries databases / search strings / dates /
     # eligibility / screening flow / extraction fields / RoB approach
     # / synthesis approach / AI-use disclosure / human accountability.
-    from agent.methods_pack import build_methods_pack, write_methods_pack
+    from agent.methods_pack import build_methods_pack
     from agent.outcome_class_remap import outcome_key
     _funnel = manifest.get("receipt_funnel") or {}
     _outcome_classes = sorted({
@@ -3311,7 +3319,7 @@ async def _run(
             or "researka_agent_certified"
         ),
     )
-    write_methods_pack(out_dir, _methods_pack)
+    methods_md = _write_review_methods(paper_path, _methods_pack)
     # Slice 7 step 1: publish manifest as module-global so the
     # consistency audit's _check_numeric_role_guard can resolve
     # receipts → quant_claims for source-context drift detection.
@@ -3678,6 +3686,7 @@ async def _run_post_paper_pipeline(
             paper_md, manifest, audit_report,
             model=_load_settings().final_layer_reviewer_model,
             citation_registry=citation_registry,
+            run_dir=out_dir,
         )
     except RuntimeError as exc:
         # No OPENROUTER_API_KEY OR both primary and fallback failed. Log
