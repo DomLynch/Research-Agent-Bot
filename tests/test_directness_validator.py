@@ -61,6 +61,22 @@ def test_multi_ingredient_juice_placebo_does_not_establish_ingredient_effect() -
     assert v06.unisolated_combination(title, abstract, "resveratrol")
 
 
+@pytest.mark.parametrize("target", ["resistance training", "aerobic exercise", "metformin"])
+def test_randomized_adjunct_contrast_is_indirect_for_shared_background(target):
+    for abstract in (
+        f"The study concerned {target}. Participants were randomly assigned to consume supplements containing either placebo or the active supplement for twelve weeks.",
+        f"Participants underwent {target} and were randomized to leucine or placebo.",
+        f"Secondary analysis of {target}. Participants were enrolled in trials comparing milk and native whey effects on muscle strength.",
+        f"Participants received {target} (XYZ) and were randomized to XYZ plus supplement or XYZ plus placebo.",
+        f"This study examined {target}. Subjects were divided into two groups: placebo capsules and probiotic capsules.",
+    ):
+        assert v06.unisolated_combination("Randomized trial", abstract, target)
+    assert not v06.unisolated_combination("Randomized trial", f"Participants were randomized to {target} or placebo.", target)
+    assert not v06.unisolated_combination("Randomized trial", "Participants were randomized to group A or group B.", target)
+    assert not v06.unisolated_combination("Randomized trial", f"Participants were randomized to low dose {target} or high dose {target}.", target)
+    assert not v06.unisolated_combination("Randomized trial", f"Participants receiving {target} were divided into older and younger groups.", target)
+
+
 def test_is_randomized_trial_detects_primary_rct_from_title() -> None:
     monda = {"title": "Metabolic and Orexin-A Responses to Ketogenic Diet and "
                       "Intermittent Fasting: A 12-Month Randomized Trial in "
@@ -69,6 +85,13 @@ def test_is_randomized_trial_detects_primary_rct_from_title() -> None:
     # study_design field alone is enough
     assert v06._is_randomized_trial({"title": "Effect of TRE", "study_design": "RCT"}) is True
     assert v06._is_randomized_trial({"title": "A randomised controlled trial of ADF"}) is True
+
+
+def test_protocol_outcomes_are_planned_context_not_observed_findings():
+    record = {"title": "A randomized trial protocol", "sections": {
+        "abstract": "Participants will be randomized to training or control. Muscle strength is the primary outcome."
+    }}
+    assert v06._source_outcome_class("muscle_function", record, []) == "contextual_other"
 
 
 def test_is_randomized_trial_excludes_meta_analyses_and_non_trials() -> None:

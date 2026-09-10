@@ -720,13 +720,14 @@ def test_no_benefit_title_guards_positive_effect_direction() -> None:
         "During Leg Immobilization in Healthy, Young Males: "
         "A Randomized Controlled Trial"
     )
-    assert orch._title_guarded_effect_direction(title, "positive") == "null"
+    assert orch._title_guarded_effect_direction(title, "positive") == "unclear"
     assert orch._title_guarded_effect_direction(title, "negative") == "negative"
+    assert orch._title_guarded_effect_direction(title, "mixed") == "mixed"
 
 
 def test_explicit_null_titles_cover_beneficial_and_influence_wording():
-    assert orch._title_guarded_effect_direction('No Beneficial Effects of Resveratrol Supplementation on Atherogenic Risk Factors', 'positive') == 'null'
-    assert orch._title_guarded_effect_direction('Resveratrol Supplementation Does Not Influence Vascular Function', 'unclear') == 'null'
+    assert orch._title_guarded_effect_direction('No Beneficial Effects of Resveratrol Supplementation on Atherogenic Risk Factors', 'positive') == 'unclear'
+    assert orch._title_guarded_effect_direction('Resveratrol Supplementation Does Not Influence Vascular Function', 'unclear') == 'unclear'
 
 
 def test_negated_evidence_does_not_become_positive() -> None:
@@ -761,10 +762,10 @@ def test_explicit_directional_title_does_not_override_null_extraction_signal() -
     assert orch._title_guarded_effect_direction(title, "null") == "null"
 
 
-def test_harm_reduction_title_rescues_unclear_extraction_signal() -> None:
+def test_harm_reduction_title_cannot_supply_missing_extracted_findings() -> None:
     title = "Ergothioneine ameliorates alcoholic fatty liver disease and inflammation"
 
-    assert orch._title_guarded_effect_direction(title, "unclear") == "positive"
+    assert orch._title_guarded_effect_direction(title, "unclear") == "unclear"
 
 
 def test_review_title_without_directional_signal_stays_null() -> None:
@@ -779,12 +780,12 @@ def test_adverse_directional_title_does_not_override_null_extraction_signal() ->
     assert orch._title_guarded_effect_direction(title, "null") == "null"
 
 
-def test_explicit_evidence_text_repairs_unambiguous_direction_miscoding() -> None:
+def test_free_text_does_not_override_structured_direction_evidence() -> None:
     assert orch._title_guarded_effect_direction(
         "Urolithin A effects in human skeletal muscle cells",
         "unclear",
         "Urolithin A augments glucose uptake in human skeletal muscle cells.",
-    ) == "positive"
+    ) == "unclear"
     assert orch._title_guarded_effect_direction(
         "Healthy lifestyle and all-cause mortality among older adults",
         "negative",
@@ -945,6 +946,9 @@ def test_thesis_template_handles_plural_topic_names() -> None:
     )
     assert "the evidence base for" in thesis.text
     assert "curated reference papers, statins shows" not in thesis.text
+    assert "Null findings are recorded in: muscle function" in thesis.text
+    assert "dominate" not in thesis.text and "aging-related" not in thesis.text
+    assert "mechanistic plausibility" not in thesis.text
 
 
 def test_section_backstop_refuses_conclusion_for_plural_topic_names() -> None:

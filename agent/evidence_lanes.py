@@ -163,9 +163,13 @@ def effective_directness(receipt: Any) -> str:
     return "indirect" if directness == "direct" and derive_receipt_lane(receipt) == "animal_preclinical" else directness
 
 
-def unisolated_combination(title: str, abstract: str, target: str) -> bool:
+def unisolated_combination(title: str, abstract: str, target: str, aliases: tuple[str, ...] = ()) -> bool:
     """Detect comparisons that do not isolate the target intervention."""
     title, abstract, target = (re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in (title, abstract, target))
+    terms = {target, *(re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in aliases)} - {""}
+    for term in tuple(terms):
+        terms.update(re.findall(rf"\b{re.escape(term)}\s*\(([a-z]{{2,5}})\)", abstract))
+    target_re = re.compile(r"\b(?:" + "|".join(re.escape(term) for term in sorted(terms, key=len, reverse=True)) + r")\b") if terms else None
     if target:
         shared_target = re.search(
             rf"\b(?:both|all)(?:\s+the)?\s+(?:groups|arms|participants|subjects)\s+"
@@ -174,6 +178,17 @@ def unisolated_combination(title: str, abstract: str, target: str) -> bool:
         )
         if shared_target:
             return True
+    if target_re and target_re.search(abstract):
+        # An explicit randomized contrast defines what the trial isolates;
+        # mentioning the topic elsewhere does not make it the treatment contrast.
+        contrast_text = re.sub(r"\bdivided into(?=[^.;\n]{0,160}\bplacebo\b)", "randomized into", abstract)
+        for match in re.finditer(r"\b(?:randomi[sz]ed|randomly assigned)(?:\s+\w+){0,4}\s+(?:to|into)\s+(.+?)(?=(?<!\d)\.(?!\d)|[;\n]|$)|\btrials comparing\s+([^.;\n]+)", contrast_text):
+            comparison = re.split(r"\b(?:for|during|following|after|effects on)\b", match[1] or match[2], maxsplit=1)[0]
+            arms = re.split(r"\s+(?:or|versus|vs\.?|and)\s+|,\s*", comparison)
+            if len(arms) >= 2 and all(arm.strip() for arm in arms):
+                present = [bool(target_re.search(arm)) for arm in arms]
+                if not any(present) or all(present) and all(re.search(r"\bplus\b|\+", arm) for arm in arms):
+                    return True
     combination = r"\b(?:multi ingredient|combined supplementation|combination)\b"
     if re.search(combination, target) or re.search(r"\band\b|\+", target) or not re.search(combination, title):
         return False

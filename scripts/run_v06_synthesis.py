@@ -1362,6 +1362,8 @@ def _source_outcome_class(current: str, record: dict, claims: list[dict]) -> str
     from agent.results_table import _owned_result_sentence
 
     abstract = str(record["sections"].get("abstract") or "")
+    if _taxonomy.infer_from_paper_meta(record).directness == "protocol":
+        return "contextual_other"
     primary = r"(?:primary|main)\s+(?:outcomes?|endpoints?)"
     declarations = [s for s in re.split(r"(?<=[.!?])\s+", abstract) if re.search(primary, s, re.I)]
     if declarations:
@@ -1440,48 +1442,16 @@ _TITLE_NO_BENEFIT_RE = re.compile(
     r"influence|affect|alter|effect|mass|strength|function|risk|mortality|vascular)",
     re.IGNORECASE,
 )
-_TITLE_POSITIVE_EFFECT_RE = re.compile(
-    r"\b(?:improves?|improvements?|enhances?|augments?|extends?|rescues?|protects?|prevents?)\b"
-    r".{0,80}\b(?:longevity|lifespan|healthspan|survival|function|"
-    r"phenotype|outcome|response|recovery|performance|strength|glucose\s+uptake)\b"
-    r"|\bpromotes?\b.{0,80}\b(?:longevity|lifespan|healthspan|healthy\s+aging)\b"
-    r"|\b(?:ameliorates?|attenuates?|mitigates?|reduces?)\b"
-    r".{0,80}\b(?:disease|damage|injury|inflammation|dysfunction|risk|decline)\b"
-    r"|\binverse(?:ly)?\s+associated\b.{0,80}\b(?:risk|incidence|mortality|dementia)\b"
-    r"|\b(?:lower|reduced)\b.{0,80}\b(?:risk|incidence|mortality)\b",
-    re.IGNORECASE,
-)
-_TITLE_NEGATIVE_EFFECT_RE = re.compile(
-    r"\b(?:increases?|elevates?|raises?|worsens?|exacerbates?|impairs?|"
-    r"accelerates?|induces?)\b.{0,80}\b(?:risk|mortality|decline|dysfunction|"
-    r"damage|disease|senescence|aging|inflammation)\b"
-    r"|\bassociated\s+with\b.{0,80}\b(?:higher|increased|elevated)\b"
-    r".{0,40}\b(?:risk|incidence|mortality|dementia)\b",
-    re.IGNORECASE,
-)
 def _title_guarded_effect_direction(
     title: str, current: str, evidence_text: str = "",
 ) -> str:
     title, current = title or "", current or "unclear"
-    scope = f"{title} {evidence_text}".strip()
     if _revision_quality.protocol_only_source(title, evidence_text):
         return "unclear"
-    if current != "unclear":
-        return "null" if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title) else current
-    no_benefit = bool(_TITLE_NO_BENEFIT_RE.search(scope))
-    directional_scope = _TITLE_NO_BENEFIT_RE.sub("", scope)
-    positive = bool(_TITLE_POSITIVE_EFFECT_RE.search(directional_scope))
-    negative = bool(_TITLE_NEGATIVE_EFFECT_RE.search(directional_scope))
-    if no_benefit and not (positive or negative):
-        return "null"
-    if no_benefit and (positive or negative):
-        return "mixed"
-    if positive and negative:
-        return "mixed"
-    if positive:
-        return "positive"
-    if negative:
-        return "negative"
+    # A conflicting title signals incomplete extraction; it cannot establish
+    # a null result or manufacture an effect absent from the owned findings.
+    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title):
+        return "unclear"
     return current
 
 
@@ -1506,7 +1476,8 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     # evidence and can never be 'review'. Reads the title/study_design so a
     # title-only RCT (Monda 2026) is not mislabelled when study_design is blank.
     if _is_randomized_trial(paper_meta):
-        return "A1", "indirect" if unisolated_combination(str(paper_meta.get("title") or ""), str(paper_meta.get("abstract") or ""), _ACTIVE_TOPIC) else "direct"
+        aliases = tuple(getattr(_get_topic_pack(), "active_arm_synonyms", ()))
+        return "A1", "indirect" if unisolated_combination(str(paper_meta.get("title") or ""), str(paper_meta.get("abstract") or ""), _ACTIVE_TOPIC, aliases) else "direct"
     # Explicit-field path: metadata sources MAY include these fields
     # directly. Empty/missing fields fall through to inference.
     explicit_fields = {key: paper_meta.get(key) for key in ("study_design", "species", "endpoint_kind")}
@@ -2147,7 +2118,7 @@ def build_thesis(
         )
     if null_top:
         parts.append(
-            f"Null findings dominate: "
+            f"Null findings are recorded in: "
             f"{', '.join(null_top)}."
         )
     if non_orth:
@@ -2157,10 +2128,9 @@ def build_thesis(
             "Cross-Domain Synthesis."
         )
     parts.append(
-        f"The {topic} broad aging-related case as currently constituted is "
-        "incomplete: mechanistic plausibility coexists with mixed "
-        "or sparse human-RCT evidence, and the boundary conditions "
-        "remain to be established."
+        "These descriptive codes summarize retained records, not pooled effects "
+        "or evidence certainty. Interpretation must distinguish outcomes, "
+        "comparators, study designs and populations."
     )
     text = " ".join(parts)
     return SynthesisThesis(

@@ -134,6 +134,14 @@ def _negligible(values: list[float]) -> bool:
     return all(abs(v) < 0.01 for v in values)
 
 
+def _reports_null(claim: dict, alpha: float) -> bool:
+    if claim.get("direction") == "no_change":
+        return True
+    comparison = _parse_p_comparison(str(claim.get("raw_text") or ""))
+    return bool(claim.get("claim_type") == "p_value" and claim.get("endpoint")
+                and comparison and comparison[0] in {"=", ">", ">="} and comparison[1] >= alpha)
+
+
 def infer_effect_direction(
     claims: list[dict],
     *,
@@ -172,7 +180,7 @@ def infer_effect_direction(
     sig_positive = False
     sig_negative = False
     any_signed = False
-    explicit_null = False
+    explicit_null = any(_reports_null(c, alpha) for c in claims)
     effect_magnitudes_whitelisted: list[float] = []
 
     for c in claims:
@@ -181,12 +189,6 @@ def infer_effect_direction(
             any_signed = True
         endpoint = (c.get("endpoint") or "").strip()
         ctype = c.get("claim_type") or ""
-        if c.get("direction") == "no_change":
-            explicit_null = True
-        if ctype == "p_value" and endpoint:
-            comparison = _parse_p_comparison(str(c.get("raw_text") or ""))
-            if comparison and comparison[0] in {"=", ">", ">="} and comparison[1] >= alpha:
-                explicit_null = True
         # Magnitude collection: ONLY from effect-type claims AND only
         # for endpoints whose units make the negligible check meaningful.
         if (
