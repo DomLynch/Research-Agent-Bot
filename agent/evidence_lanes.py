@@ -178,6 +178,18 @@ def effective_directness(receipt: Any) -> str:
     return "indirect" if directness == "direct" and derive_receipt_lane(receipt) == "animal_preclinical" else directness
 
 
+def unisolated_combination(title: str, abstract: str, target: str) -> bool:
+    """Recognize explicit binary mixture-versus-placebo comparisons for a single target."""
+    title, abstract, target = (re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in (title, abstract, target))
+    combination = r"\b(?:multi ingredient|combined supplementation|combination)\b"
+    if re.search(combination, target) or re.search(r"\band\b|\+", target) or not re.search(combination, title):
+        return False
+    binary = re.search(r"\btwo (?:groups|arms)\b|\bgroup\s*\(\s*placebo,\s*intervention\s*\)", abstract)
+    placebo = re.search(r"\bcontrol group (?:was )?treated with placebo\s*(?:[.!?]|\(group)|\bplacebo contained[^.!?]+\bonly\b", abstract)
+    shared = re.search(r"\b(?:both|all) groups (?:received|took|were given|were treated)\b|\bfactorial\b", abstract)
+    return bool(binary and placebo and not shared)
+
+
 def _get(receipt: Any, field: str) -> str | None:
     """Universal attr-or-key getter so this works for both
     ReceiptSummary dataclasses and dict receipts (manifest serialised

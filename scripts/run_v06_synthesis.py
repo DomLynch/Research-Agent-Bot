@@ -29,7 +29,8 @@ from agent.llm_client import (  # noqa: E402
 from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
 )
-from agent.evidence_lanes import derive_receipt_lane, effective_directness  # noqa: E402
+from agent.evidence_lanes import derive_receipt_lane, effective_directness, unisolated_combination  # noqa: E402
+from agent.publishing.io import CorruptJsonState, read_json  # noqa: E402
 from agent.paper_writer import MAX_EVIDENCE_CHARS_PER_RECEIPT, render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -1515,7 +1516,7 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     # evidence and can never be 'review'. Reads the title/study_design so a
     # title-only RCT (Monda 2026) is not mislabelled when study_design is blank.
     if _is_randomized_trial(paper_meta):
-        return "A1", "direct"
+        return "A1", "indirect" if unisolated_combination(str(paper_meta.get("title") or ""), str(paper_meta.get("abstract") or ""), _ACTIVE_TOPIC) else "direct"
     # Explicit-field path: metadata sources MAY include these fields
     # directly. Empty/missing fields fall through to inference.
     explicit_fields = {key: paper_meta.get(key) for key in ("study_design", "species", "endpoint_kind")}
@@ -1694,14 +1695,15 @@ def _load_paper_meta_by_id() -> dict[str, dict]:
     return paper_meta_by_id
 
 
-def _load_active_paper_ids() -> set[str] | None:
-    report_path = QUANT_DIR.parent / "_extract_report.json"
-    if not report_path.exists():
-        return None
+def _optional_json_snapshot(path: Path) -> dict[str, Any]:
     try:
-        report = json.loads(report_path.read_text())
-    except json.JSONDecodeError:
-        return None
+        return read_json(path, snapshot=True)
+    except CorruptJsonState:
+        return {}
+
+
+def _load_active_paper_ids() -> set[str] | None:
+    report = _optional_json_snapshot(QUANT_DIR.parent / "_extract_report.json")
     ids = report.get("active_paper_ids") or []
     return {str(x) for x in ids if str(x).strip()} or None
 
@@ -1710,25 +1712,22 @@ def _load_frozen_retrieval_record(
     source_run: Path | None,
 ) -> FrozenRetrievalRecord:
     """Freeze explicit retrieval evidence; never infer it from receipts."""
-    manifest_path = (
-        source_run / "manifest.json"
-        if source_run is not None
-        else QUANT_DIR.parent / "corpus_manifest.json"
-    )
-    try:
-        payload = json.loads(manifest_path.read_text())
-    except (OSError, json.JSONDecodeError):
-        return FrozenRetrievalRecord()
-    if not isinstance(payload, dict):
-        return FrozenRetrievalRecord()
+    manifest_path = source_run / "manifest.json" if source_run is not None else QUANT_DIR.parent / "corpus_manifest.json"
+    payload = _optional_json_snapshot(manifest_path)
     record = frozen_retrieval_record(payload)
     if source_run is not None:
         return record
+    extraction = _optional_json_snapshot(QUANT_DIR.parent / "_extract_report.json")
+    audit = dict(record.audit)
+    if audit and extraction.get("topic") == payload.get("topic"):
+        audit["extraction_counts"] = {key.removeprefix("n_"): value for key, value in extraction.items()
+                                      if key.startswith("n_") and type(value) is int and value >= 0}
     n_active = len(_load_active_paper_ids() or ())
     return dataclasses.replace(
         record,
         n_parsed=record.n_parsed or n_active,
         n_extracted=record.n_extracted or n_active,
+        audit=audit,
     )
 
 

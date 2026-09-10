@@ -1456,9 +1456,11 @@ def test_reconcile_publication_ledgers_date_scope_includes_daily_submit_cycle(tm
     assert ledger["submissions"][1].get("published", 0) == 0
 
 
+@pytest.mark.parametrize("poll_error", [None, "decision_poll_deferred", "HTTPError:503"])
 def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_submit_child(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
+    poll_error: str | None,
 ) -> None:
     runs_root = tmp_path / "runs"
     run = runs_root / "synthesis-direct_accept_topic-v06-DAILY"
@@ -1504,12 +1506,12 @@ def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_sub
                 "doi": "10.17605/OSF.IO/EXIST",
             },
         },
-    }, None))
+    }, poll_error))
 
     result = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-29")
 
     ledger = json.loads((ledger_dir / "2026-06-29-daily-submit.json").read_text(encoding="utf-8"))
-    assert result["status"] == "publication_reconciled"
+    assert result["status"] == ("publication_reconciled_partial" if poll_error else "publication_reconciled")
     assert result["updated_ledgers"] == ["2026-06-29-daily-submit.json"]
     assert ledger["status"] == "published"
     assert ledger["submitted"] == 2
@@ -1523,7 +1525,7 @@ def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_sub
     refreshed = cycle.reconcile_publication_ledgers(runs_root=runs_root, date="2026-06-29")
 
     ledger = json.loads((ledger_dir / "2026-06-29-daily-submit.json").read_text(encoding="utf-8"))
-    assert refreshed["status"] == "publication_reconciled"
+    assert refreshed["status"] == ("publication_reconciled_partial" if poll_error else "publication_reconciled")
     assert ledger["submitted"] == 2
 
 

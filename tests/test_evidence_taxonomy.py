@@ -35,6 +35,15 @@ def test_human_rct_with_clinical_endpoint_is_a1() -> None:
     assert cls.directness == "direct"
 
 
+@pytest.mark.parametrize("design", ["pseudo-randomized", "pseudo randomized", "quasi-randomised", "nonrandomized"])
+def test_nonrandomized_intervention_is_not_promoted_by_placebo_control(design) -> None:
+    title = f"A placebo-controlled {design} trial in adults"
+    abstract = f"Methods: Participants received treatment in this {design} trial. Results: Symptoms decreased."
+    assert not et.is_primary_randomized_study(title, abstract)
+    assert et.infer_from_paper_meta({"title": title, "abstract": abstract}).tier == "B2"
+    assert et.classify_evidence(study_design=title, species="human", endpoint_kind="clinical").tier == "B2"
+
+
 def test_human_rct_with_functional_endpoint_is_a1() -> None:
     """Functional endpoints (walk speed, grip strength) are clinical-
     grade. MET-PREVENT (Witham 2025) belongs here."""

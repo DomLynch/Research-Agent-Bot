@@ -765,6 +765,7 @@ def _phase_a_methods_replace(
             ai_use_disclosure=d["ai_use_disclosure"],
             human_accountability=d["human_accountability"],
             source_inventory=tuple(tuple(row) for row in d.get("source_inventory", ())),
+            retrieval_audit=dict(d.get("retrieval_audit") or {}),
         )
     except (OSError, KeyError, TypeError, json.JSONDecodeError):
         return text, []

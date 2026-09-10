@@ -377,8 +377,8 @@ def _source_recode_classes(row: dict[str, Any]) -> set[str]:
     if classification.directness in {"protocol", "review"}:
         return {"protocol", "protocol only"} if classification.directness == "protocol" else set()
     return {category for category, matched in (
-        ("observational", classification.tier == "B2"),
-        ("multi ingredient", re.search(r"\bmulti ingredient\b", source)),
+        ("observational", classification.tier == "B2" or (bool(title) and title in source and _taxonomy._NONRANDOMIZED_DESIGN_RE.search(title))),
+        ("multi ingredient", re.search(r"\b(?:multi ingredient|combined supplementation)\b", source)),
         ("within group only", not _taxonomy.is_primary_randomized_study(title, source) and re.search(
             r"\b(?:within group only|only within group (?:comparisons|analyses)|within group (?:comparisons|analyses) only)\b", source)),
     ) if matched}

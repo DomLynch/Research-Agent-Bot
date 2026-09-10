@@ -563,6 +563,12 @@ def _manifest_count_values(manifest: dict) -> set[str]:
     values = [manifest.get(key) for key in (
         "n_receipts", "n_high_confidence_claims_total", "n_non_orthogonal_tensions", "total_words")]
     values.extend(counts.values() if isinstance(counts, dict) else ())
+    retrieval = manifest.get("retrieval") or {}
+    audit = retrieval.get("audit") or {}
+    summaries = [retrieval.get("counts", {}), *(audit.get(key, {}) for key in
+                 ("selection_counts", "extraction_counts", "exclusion_reasons"))]
+    summaries.extend({**wave, **wave.get("stats", {})} for wave in audit.get("waves", []))
+    values.extend(value for summary in summaries for value in summary.values() if type(value) is int and value >= 0)
     return {canonical_numeric(str(value)) for value in values if isinstance(value, (int, float))}
 
 

@@ -369,7 +369,7 @@ def _reconcile_publication_ledgers_unlocked(
         poll["error"] = direct_error or decision_error
         latest_decisions = _merge_latest_by_title(
             {} if decision_error else latest_decisions,
-            {} if direct_error else direct_decisions,
+            direct_decisions,
         )
         if latest_decisions:
             _record_review_decisions(ledger_dir, latest_decisions)

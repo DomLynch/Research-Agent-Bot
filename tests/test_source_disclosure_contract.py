@@ -25,7 +25,7 @@ def _build_pack(*, source_inventory: tuple[tuple[str, str], ...] = ()):
     )
 
 
-def test_search_yields_survive_freezing_without_becoming_full_text_exclusions() -> None:
+def test_search_yields_survive_freezing_without_becoming_full_text_exclusions(tmp_path: Path) -> None:
     from dataclasses import replace
     record = frozen_retrieval_record({
         "per_wave_stats": [{"wave": "precision", "raw_total": 12, "wave_unique": 10,
@@ -49,6 +49,13 @@ def test_search_yields_survive_freezing_without_becoming_full_text_exclusions() 
     assert "4 were excluded at full-text" not in text
     assert "No blinded dual human screening" in text
     assert "retrieval_audit" not in replace(_build_pack(), retrieval_audit={}).required_fields_missing()
+    (tmp_path / "methods_pack.json").write_text(json.dumps(pack.to_json()))
+    finalizer = importlib.import_module("scripts.journal_finalizer")
+    settled, _ = finalizer._phase_a_methods_replace("## Methods\nOld.\n## Results\nFindings.\n", tmp_path)
+    assert "| precision | openalex | 4 | timeout |" in settled
+    guard = importlib.import_module("scripts.numeric_role_guard")
+    counts = guard._manifest_count_values({"retrieval": frozen.to_manifest()})
+    assert {"12", "10", "8", "4", "6", "1"} <= counts
 
 
 def test_missing_search_yield_remains_unknown_and_zero_is_preserved() -> None:
@@ -137,8 +144,10 @@ def test_revision_run_does_not_fall_back_to_mutable_corpus_manifest(
     (parsed_dir / "stale.paper_sections.json").write_text("{}")
     (corpus_root / "_extract_report.json").write_text(json.dumps({
         "active_paper_ids": ["paper"],
+        "topic": "urolithin", "n_selected_for_fetch": 7, "n_abstract_fallback": 3,
     }))
     (corpus_root / "corpus_manifest.json").write_text(json.dumps({
+        "topic": "urolithin",
         "retrieved_at": "2026-08-13T19:00:00+00:00",
         "retrieval": {"queries": []},
         "per_wave_stats": [
@@ -177,6 +186,7 @@ def test_revision_run_does_not_fall_back_to_mutable_corpus_manifest(
     )
     assert record.retrieved_at == "2026-08-13T19:00:00+00:00"
     assert record.expected_evidence_slots == ("muscle function",)
+    assert record.audit["extraction_counts"] == {"selected_for_fetch": 7, "abstract_fallback": 3}
 
 
 def test_v06_contract_freezes_only_executed_methods_operations() -> None:
