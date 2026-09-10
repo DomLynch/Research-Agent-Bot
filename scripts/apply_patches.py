@@ -190,10 +190,7 @@ def _has_unsafe_match_boundary(text: str, before: str) -> bool:
 
 
 def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool:
-    """Reviewer patches may simplify table content, but must not
-    delete cells. A row fragment with fewer pipe separators after
-    patching corrupts the public manuscript even when the numeric
-    wording is a safe subset."""
+    """Preserve table shape and required QEI fields under reviewer simplification."""
     if "|" not in before:
         return False
     if not after.strip() and "\n" not in before:

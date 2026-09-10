@@ -1441,9 +1441,9 @@ def _aggregate_paper(claims: list[dict], *, paper_meta: dict | None = None) -> d
 
 _TITLE_NO_BENEFIT_RE = re.compile(
     r"\b(?:does\s+not|did\s+not|fails?\s+to|failed\s+to|"
-    r"(?:without|no)\s+(?:(?:statistically\s+)?significant\s+)?(?:effects?|benefits?|improvements?))\b"
+    r"(?:without|no)\s+(?:(?:statistically\s+)?significant\s+|beneficial\s+)?(?:effects?|benefits?|improvements?))\b"
     r".{0,80}\b(?:preserve|improve|augment|increase|enhance|benefit|"
-    r"effect|mass|strength|function)",
+    r"influence|affect|alter|effect|mass|strength|function|risk|mortality|vascular)",
     re.IGNORECASE,
 )
 _TITLE_POSITIVE_EFFECT_RE = re.compile(

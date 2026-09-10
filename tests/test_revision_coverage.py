@@ -2532,6 +2532,24 @@ def test_receipt_alias_matching_does_not_authorize_prefix_collision() -> None:
     ) == {"topic_effect_10": {"outcome_class"}}
 
 
+def test_direction_rule_recompute_keeps_named_explanatory_scope() -> None:
+    rows = {name: {"source_title": name} for name in ("Made 2017", "Farzin 2020", "Evans 2017")}
+    ask = (
+        "Prespecify and consistently apply the directional-coding rule, then recompute the direction profiles and gap priorities; "
+        "the current map labels explicit null results such as Made 2017 as unclear while labeling selectively favorable but "
+        "predominantly null records such as Farzin 2020 as positive."
+    )
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(
+        ask + "; Document the uncertainty for Evans 2017.", rows,
+    ) == {"Made 2017": {"effect_direction"}, "Farzin 2020": {"effect_direction"}}
+    for documentary in (
+        "Document the directional-coding rule; the current map labels Made 2017 as unclear.",
+        "Do not recompute the direction profiles under the directional-coding rule; the current map labels Made 2017 as unclear.",
+        "Prespecify and apply the directional-coding rule, then recompute the direction profiles; Document Made 2017 uncertainty.",
+    ):
+        assert revision_coverage.authorized_receipt_contract_fields_by_receipt(documentary, rows) == {}
+
+
 def test_receipt_alias_matching_normalizes_dashes_consistently() -> None:
     rows = {"r1": {"source_title": "Long-term trial"}}
 

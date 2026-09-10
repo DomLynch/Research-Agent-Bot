@@ -2260,6 +2260,12 @@ def test_patch_reviewer_receives_verified_full_source_packet(tmp_path: Path, mon
     import final_reviewer
     monkeypatch.setattr(daily, "ROOT", tmp_path)
     run = _run(tmp_path)
+    comparator = 'Both groups completed resistance training; the randomized comparison was leucine versus alanine.'
+    parsed = tmp_path/'docs/quality-reference/topic/parsed/topic_effect_0.paper_sections.json'
+    record = daily._read_json(parsed)
+    record['sections']['methods'] = comparator
+    _write_json(parsed, record)
+    _snapshot_run(run)
     manifest = daily._read_json(run / "manifest.json")
     manifest["retrieval"] = {"audit": {"metadata_candidates": 4286, "selection": "automated"}}
     system, prompt = final_reviewer._build_reviewer_prompt("Paper", manifest, {}, run_dir=run)
@@ -2269,6 +2275,8 @@ def test_patch_reviewer_receives_verified_full_source_packet(tmp_path: Path, mon
     assert packet["retrieval_record"] == manifest["retrieval"]
     assert all(daily._publication_evidence.source_proof_is_valid(row) for row in packet["source_bundle"])
     assert len(packet["own_result_passages"]) == len(manifest["receipts"])
+    assert comparator in [row['methods'] for row in packet['own_result_passages']]
+    assert all(row['abstract'] for row in packet['own_result_passages'])
     assert "If source passages conflict, report the conflict" in system
     frozen = next((run / "revision_evidence_snapshot/parsed").glob("*.json"))
     frozen.write_text("{}")

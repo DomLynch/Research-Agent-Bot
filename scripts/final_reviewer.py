@@ -156,7 +156,9 @@ def _build_reviewer_prompt(
             raise RuntimeError("review_source_packet_unverified")
         evidence_section = "\n\n## Verified source packet and frozen retrieval record\n" + json.dumps({
             "source_bundle": bundle, "retrieval_record": manifest.get("retrieval", {}),
-            "own_result_passages": [{"citation": row.get("citation_token"), "passages": row.get("source_result_excerpts", [])}
+            "own_result_passages": [{"citation": row.get("citation_token"), "passages": row.get("source_result_excerpts", []),
+                                     "abstract": row.get("verified_source_sections", {}).get("abstract", ""),
+                                     "methods": row.get("verified_source_sections", {}).get("methods", "")}
                                     for row in evidence_rows(run_dir, manifest)],
         }, ensure_ascii=False)
         system += "The verified source packet takes precedence over older receipt snippets. Missing detail in a receipt snippet alone does not establish that a claim is unsupported. Verify the actual endpoint, comparison, and analysis in the full supplied source context. If source passages conflict, report the conflict and preserve treatment-group attribution; never select or replace a value by guessing.\n"

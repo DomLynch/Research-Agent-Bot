@@ -1,20 +1,4 @@
-"""Universal evidence-lane engine.
-
-Reviewer feedback 2026-05-14: every source should map to one of six
-canonical evidence lanes so the manuscript can never silently use
-animal/preclinical evidence as human clinical proof — and so reviewers
-can read each subsection knowing what lane the citations come from.
-
-The six lanes are universal across any topic (biomedical, climate,
-materials, economics, social science). For non-biomedical topics, the
-`human_*` lanes still apply when the "subjects" are humans
-(observational social-science data, field studies on participants);
-the `animal_preclinical` lane generalises to "model-system" evidence.
-
-This module is the single source of truth for lane derivation. Both
-the runtime sidecar generator and the journal-surface gate read from
-here.
-"""
+"""Shared source-identity lanes separate model-system evidence from human evidence."""
 from __future__ import annotations
 
 import re

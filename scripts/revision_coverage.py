@@ -307,7 +307,7 @@ def asks_effect_direction_reconciliation(text: str) -> bool:
 def authorized_receipt_contract_fields(text: str) -> set[str]:
     """Receipt fields a reviewer explicitly asked this revision to recode."""
     lower = _normalised_feedback(text)
-    if re.match(r"(?:do not|don't|never)\s+(?:reclassify|recode|change|move|correct)\b", lower):
+    if re.match(r"(?:do not|don't|never)\s+(?:reclassify|recode|change|move|correct|recompute|apply)\b", lower):
         return set()
     fields = {"effect_direction"} if _asks_effect_direction_reconciliation(lower) or "direction coding" in lower and "relabel or reconcile" in lower else set()
     action = any(token in lower for token in (
@@ -405,6 +405,8 @@ def authorized_receipt_contract_fields_by_receipt(
         key, row.get("source_title"), row.get("source_doi"), row.get("source_pmid"),
         *aliases_by_receipt.get(key, ()),
     ) if str(value or "").strip()} for key, row in rows.items()}
+    # Keep a map's explanatory labels attached to the recoding instruction.
+    text = re.sub(r";\s+(?=(?:the )?(?:current )?map labels\b)", ", ", text, flags=re.I)
     segments = (_normalised_feedback(part) for part in re.split(r"(?:\r?\n)+|;\s+", text) if part.strip())
     authorized: dict[str, set[str]] = {}
     for segment in segments:
@@ -2332,6 +2334,9 @@ def _asks_mr_causal_count(text: str) -> bool:
 
 def _asks_effect_direction_reconciliation(text: str) -> bool:
     return (
+        any(token in text for token in ("direction coding rule", "directional coding rule"))
+        and "recompute the direction profiles" in text
+    ) or (
         any(token in text for token in ("effect_direction", "directionality", "direction code"))
         and any(token in text for token in ("actual reported finding", "reported finding", "excerpt", "contradicted", "positive", "negative", "null", "mixed", "unclear"))
         and any(token in text for token in ("align", "correct", "explain", "integrate", "justify", "reclassify", "recode", "reconcile", "remove", "verify"))

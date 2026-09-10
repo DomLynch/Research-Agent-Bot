@@ -68,6 +68,28 @@ def test_duplicate_quarantine_does_not_merge_identical_numbers_across_studies(ro
     assert rejected == [{"row": 1, "reason": "duplicate_or_row_limit"}]
 
 
+@pytest.mark.parametrize('estimate,span,label', [
+    ('r = 0.327', 'correlated with CVR (r = 0.327)', 'Correlation, not a treatment-effect estimate.'),
+    ('from 88.75 to 87.54 kg', 'weight decreased from 88.75 to 87.54 kg', 'Reported before/after values'),
+    ('resveratrol -0.95 kg vs placebo -0.16 kg', 'weight: resveratrol -0.95 kg vs placebo -0.16 kg', 'Reported arm values'),
+    ('from -0.5 to 0.5', 'confidence interval from -0.5 to 0.5', 'Analysis context remains as quoted'),
+])
+def test_rendered_analysis_context_keeps_verbatim_estimate(row, estimate, span, label):
+    record = {**row, 'estimate': estimate, 'result_span': span}
+    before = deepcopy(record)
+    rendered = render_rows([record], 'topic', {'trial':'Trial 2020'})
+    assert label in rendered and estimate in rendered
+    assert 'no SD, SE or confidence-interval interpretation inferred' in rendered
+    assert record == before
+
+
+def test_new_analysis_labels_preserve_legacy_row_quarantine(tmp_path, row):
+    raw = '| ' + ' | '.join(['Trial 2020', *(row[k] for k in ('endpoint','comparison','estimate','uncertainty','significance','result_span'))]) + ' |'
+    (tmp_path/'numeric_claim_quarantine.json').write_text(json.dumps([{'issue_type':'reviewer_numeric_auto_strip','severity':'P1','sentence':raw}]))
+    with pytest.raises(ValueError, match='qei_no_semantically_supported_estimates'):
+        render_rows([row], 'topic', {'trial':'Trial 2020'}, run=tmp_path)
+
+
 @pytest.mark.parametrize("kind", ["complete", "partial", "other_issue", "advisory"])
 @pytest.mark.parametrize("directory", ["", "debug"])
 def test_table_regeneration_respects_only_exact_p1_reviewed_row_removals(tmp_path, row, kind, directory):

@@ -157,8 +157,20 @@ def render_rows(rows: list[dict[str, Any]], topic: str, tokens: Mapping[str, str
              "| " + " | ".join(HEADERS) + " |", "|" + "---|" * len(HEADERS)]
     for row in rows:
         values = (tokens[row["receipt_id"]], *(row[key] for key in ("endpoint", "comparison", "estimate", "uncertainty", "significance", "result_span")))
-        line = "| " + " | ".join(map(cell, values)) + " |"
-        if " ".join(line.split()) not in excluded:
+        original = "| " + " | ".join(map(cell, values)) + " |"
+        note = "Analysis context remains as quoted; randomization alone does not establish a treatment effect."
+        if re.match(r"r\s*=", row['estimate'], re.I):
+            note = "Correlation, not a treatment-effect estimate."
+        elif re.search(r"\b(?:vs\.?|versus)\b", row['estimate'], re.I):
+            note = "Reported arm values; no between-arm difference or interval calculated here."
+        elif re.search(r"\bfrom\s+[+−-]?\d[^;]*\bto\s+[+−-]?\d", row['estimate'], re.I) and not re.search(r"\b(?:CI|interval)\b", row['result_span'], re.I):
+            note = "Reported before/after values, not a between-arm effect size."
+        dispersion = row['uncertainty']
+        if dispersion and dispersion.startswith('±'):
+            dispersion = f"Reported ± dispersion: {dispersion}; no SD, SE or confidence-interval interpretation inferred from the ± symbol alone."
+        displayed = (*values[:2], note + " Study design: " + row['comparison'], row['estimate'], dispersion, *values[5:])
+        line = "| " + " | ".join(map(cell, displayed)) + " |"
+        if not excluded.intersection((" ".join(original.split()), " ".join(line.split()))):
             lines.append(line)
     if len(lines) == 6:
         raise ValueError("qei_no_semantically_supported_estimates")

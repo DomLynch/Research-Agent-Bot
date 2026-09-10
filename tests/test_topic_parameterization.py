@@ -724,6 +724,11 @@ def test_no_benefit_title_guards_positive_effect_direction() -> None:
     assert orch._title_guarded_effect_direction(title, "negative") == "negative"
 
 
+def test_explicit_null_titles_cover_beneficial_and_influence_wording():
+    assert orch._title_guarded_effect_direction('No Beneficial Effects of Resveratrol Supplementation on Atherogenic Risk Factors', 'positive') == 'null'
+    assert orch._title_guarded_effect_direction('Resveratrol Supplementation Does Not Influence Vascular Function', 'unclear') == 'null'
+
+
 def test_negated_evidence_does_not_become_positive() -> None:
     for evidence in (
         "No improvement in muscle strength was observed.",
