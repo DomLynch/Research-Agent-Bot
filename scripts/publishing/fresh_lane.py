@@ -2421,6 +2421,7 @@ def _failure_class(status: str) -> str:
         "abstract_overclaim": "C_writer_fixable",
         "retracted_source_cited": "D_no_action",
         "synthesis_failed": "C_writer_fixable",
+        "local_gate_execution_failed": "D_no_action",
         "synthesis_timeout": "D_no_action",
         "cycle_budget_exhausted": "D_no_action",
         "submission_rejected_by_researka": "C_writer_fixable",
@@ -3143,6 +3144,17 @@ def _submit_current_candidate(
         remote_loader=(lambda: (remote_seen, None)) if submit else None,
         candidate_run=candidate_run,
     )
+
+
+def _synthesis_failure_status(out_dir: Path, return_code: int) -> str:
+    if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
+        return "synthesis_timeout"
+    if return_code == NEEDS_CORPUS_RETURN_CODE:
+        return "needs_corpus_expansion"
+    runtime = _read_json(out_dir / "benchmark_runtime.json")
+    if runtime.get("reason") == "local_gate_execution_failed" and runtime.get("return_code") == return_code:
+        return "local_gate_execution_failed"
+    return "synthesis_failed"
 
 
 def _should_retry_same_topic(attempt: dict[str, Any], *, auto_selected: bool = True) -> bool:
@@ -4931,9 +4943,7 @@ def run_cycle(
                             remote_loader=(lambda: (remote_seen, None)) if submit else None,
                         )
                 gate_status = (
-                    "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
-                    else "needs_corpus_expansion" if return_code == NEEDS_CORPUS_RETURN_CODE
-                    else "synthesis_failed" if return_code != 0
+                    _synthesis_failure_status(out_dir, return_code) if return_code != 0
                     else "retraction_check_unavailable" if retraction_unverified
                     else "retracted_source_cited" if retracted
                     else "numeric_effect_mismatch" if numeric_issues
@@ -4961,6 +4971,7 @@ def run_cycle(
                     "revise_attempt": revise_attempt,
                     "revision_feedback_applied": bool(revision_feedback),
                     "synthesis_return_code": return_code,
+                    "synthesis_error_details": _read_json(out_dir / "benchmark_runtime.json").get("details", []) if return_code else [],
                     "submit_status": submit_status,
                     "bridge_status": bridge_status,
                     "gate_status": gate_status,
@@ -5053,7 +5064,7 @@ def run_cycle(
                     ledger["status"] = "needs_corpus_expansion_no_submission"
                     ledger["no_submission_reason"] = gate_status
                 elif return_code != 0:
-                    ledger["status"] = "synthesis_failed"
+                    ledger.update(status=gate_status, no_submission_reason=gate_status)
                 elif bridge.get("status") == "submitted_to_researka":
                     ledger["status"] = "submitted_to_researka"
                     ledger.pop("no_submission_reason", None)
@@ -5114,7 +5125,7 @@ def run_cycle(
                 _mark_revision_handled(
                     ledger_dir, revision_source, status="revision_coverage_unmet",
                 )
-            if ledger["status"] in {"cycle_budget_exhausted", "retraction_check_unavailable"}:
+            if ledger["status"] in {"cycle_budget_exhausted", "retraction_check_unavailable", "local_gate_execution_failed"}:
                 break
             if ledger["status"] == "submitted_to_researka":
                 submitted_total += int(ledger.get("submitted") or 0)
@@ -5226,7 +5237,7 @@ def main(argv: list[str] | None = None) -> int:
         f"submitted_topic={ledger.get('submitted_topic', '-')} "
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
-    failures = {"submission_failed", "synthesis_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
+    failures = {"submission_failed", "synthesis_failed", "local_gate_execution_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
     if ledger["status"] in failures:
         return 2
     no_output = args.submit and not int(ledger.get("submitted") or 0)

@@ -13625,3 +13625,36 @@ def test_entity_topic_terms_drops_bare_modifier_keeps_synonyms(tmp_path, monkeyp
     assert "zzdrug analogue" in out              # multi-word synonym kept
     assert "zzfield" not in out                  # bare slug modifier dropped
     assert "zzdrug zzfield effects" not in out   # bare slug phrase dropped
+@pytest.mark.parametrize("requested", [None, "aaa_execution"])
+def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monkeypatch, requested):
+    for topic in ("aaa_execution", "zzz_other"):
+        _topic(tmp_path, topic, target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    synthesized = []
+    details = ["journal finalizer did not reach a fixed point (40 passes)"]
+
+    def fail(topic, out_dir, **_kwargs):
+        synthesized.append(topic)
+        _write_json(out_dir / "benchmark_runtime.json", {
+            "return_code": 7, "reason": "local_gate_execution_failed", "details": details,
+        })
+        return 7
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fail)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-09-10", mode="fresh", topic=requested,
+        run_synthesis=True, submit=True, max_attempts=2, max_revise_attempts=3,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_k: pytest.fail("execution failure must not submit"),
+    )
+    assert synthesized == ["aaa_execution"]
+    assert ledger["status"] == "local_gate_execution_failed"
+    assert ledger["no_submission_reason"] == "local_gate_execution_failed"
+    assert ledger["attempts"][0]["failure_class"] == "D_no_action"
+    assert ledger["attempts"][0]["synthesis_error_details"] == details
+    assert ledger["submitted"] == 0

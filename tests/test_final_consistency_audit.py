@@ -2575,3 +2575,22 @@ def test_preclinical_hedge_preserves_source_links_and_converges(locator, already
     assert fixed == sentence + hedge
     assert count == int(not already_hedged)
     assert _hedge_preclinical_translation(fixed) == (fixed, 0)
+@pytest.mark.parametrize("repeats", [1, 2, 40])
+def test_repair_partial_locator_keeps_complete_source_and_scientific_prose(repeats):
+    from apply_consistency_fixes import apply_fixes
+
+    claim = "The experimental comparison remained source-bound [Example 2026] "
+    locator = "[exact source: https://doi.org/10.1234/example.56]"
+    paper = "## Results\n\n" + claim + "[exact source: https://doi " * repeats + locator + ".\n"
+    fixed, _ = apply_fixes(paper, [])
+    assert claim + locator + "." in fixed
+    assert "[exact source: https://doi " not in fixed
+    assert apply_fixes(fixed, [])[0] == fixed
+
+
+def test_repair_partial_locator_does_not_replace_a_different_source():
+    from apply_consistency_fixes import apply_fixes
+
+    markers = "[exact source: https://elsewhere [exact source: https://doi.org/10.1234/example]"
+    paper = "## Results\n\nThe experimental comparison remained source-bound " + markers + ".\n"
+    assert markers in apply_fixes(paper, [])[0]

@@ -2027,21 +2027,10 @@ def apply_fixes(
         "against earlier body paragraphs",
     )
 
-    new_md, n_fused_repeat = re.subn(
-        r"(?P<sentence>[A-Z][^.!?\n]{20,})(?<!doi)\.org/10\.\d{4,9}/"
-        r"[^\s\]]+\]\.\s+(?P=sentence)\.",
-        r"\g<sentence>.", new_md,
+    apply(
+        _repair_locator_artifacts, "malformed_doi_tail",
+        "removed malformed locator fragments; complete source URLs preserved",
     )
-    new_md, n_malformed_doi = re.subn(
-        r"(?<!doi)(?<=[A-Za-z])\.org/10\.\d{4,9}/[^\s\]]+\]", "", new_md,
-        flags=re.I,
-    )
-    if n_fused_repeat or n_malformed_doi:
-        log.append({
-            "fix_type": "malformed_doi_tail",
-            "n_changes": n_fused_repeat + n_malformed_doi,
-            "description": "removed a DOI tail fused onto manuscript prose",
-        })
 
     apply(
         _strip_duplicate_long_sentences, "duplicate_sentence",
@@ -2844,6 +2833,23 @@ _PRECLINICAL_HEDGE_RE = re.compile(
 )
 
 
+def _repair_locator_artifacts(text: str) -> tuple[str, int]:
+    # Collapse interrupted insertions only onto a matching complete locator.
+    text, partial = re.subn(
+        r"\[exact source: (?P<stub>https?://[^\s\[\]]+)\s+"
+        r"(?:\[exact source: (?P=stub)\s+)*"
+        r"(?=\[exact source: (?P=stub)[^\s\[\]]*\])", "", text,
+    )
+    text, fused = re.subn(
+        r"(?P<sentence>[A-Z][^.!?\n]{20,})(?<!doi)\.org/10\.\d{4,9}/"
+        r"[^\s\]]+\]\.\s+(?P=sentence)\.", r"\g<sentence>.", text,
+    )
+    text, malformed = re.subn(
+        r"(?<!doi)(?<=[A-Za-z])\.org/10\.\d{4,9}/[^\s\]]+\]", "", text, flags=re.I,
+    )
+    return text, partial + fused + malformed
+
+
 def _hedge_preclinical_translation(paper_md: str) -> tuple[str, int]:
     stop = re.search(
         r"^##\s+(?:Structured Evidence Tables|Search Provenance|References)\b",
@@ -2852,7 +2858,6 @@ def _hedge_preclinical_translation(paper_md: str) -> tuple[str, int]:
     )
     prose_end = stop.start() if stop else len(paper_md)
     prose = paper_md[:prose_end]
-    tail = paper_md[prose_end:]
     sentence_re = re.compile(r"[^.!?\n#](?:[^.!?\n#]|\.(?=\d))*[.!?]")
     # URL punctuation is not a sentence boundary. Keep offsets unchanged so
     # prose repairs cannot split a source locator or insert text inside it.
@@ -2861,27 +2866,15 @@ def _hedge_preclinical_translation(paper_md: str) -> tuple[str, int]:
         lambda m: "x" * len(m[0].rstrip(".!?")) + m[0][len(m[0].rstrip(".!?")):],
         prose, flags=re.I,
     )
-    out: list[str] = []
-    last = 0
-    n = 0
     matches = list(sentence_re.finditer(masked))
+    insertions: list[int] = []
     for idx, m in enumerate(matches):
-        sent = prose[m.start():m.end()]
-        out.append(prose[last:m.start()])
-        replacement = sent
-        if _PRECLINICAL_TRANSFER_RE.search(m.group(0)):
-            nxt = matches[idx + 1].group(0) if idx + 1 < len(matches) else ""
-            window = m.group(0) + " " + nxt
-            if not _PRECLINICAL_HEDGE_RE.search(window):
-                replacement = (
-                    sent.rstrip()
-                    + " Translational relevance to humans remains uncertain."
-                )
-                n += 1
-        out.append(replacement)
-        last = m.end()
-    out.append(prose[last:])
-    return "".join(out) + tail, n
+        nxt = matches[idx + 1].group(0) if idx + 1 < len(matches) else ""
+        if _PRECLINICAL_TRANSFER_RE.search(m[0]) and not _PRECLINICAL_HEDGE_RE.search(m[0] + " " + nxt):
+            insertions.append(m.end())
+    for end in reversed(insertions):
+        prose = prose[:end] + " Translational relevance to humans remains uncertain." + prose[end:]
+    return prose + paper_md[prose_end:], len(insertions)
 
 
 def _strip_unsourced_background_sentences_inplace(
