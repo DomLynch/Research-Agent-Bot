@@ -89,6 +89,14 @@ def test_is_randomized_trial_detects_primary_rct_from_title() -> None:
     assert v06._is_randomized_trial({"title": "A randomised controlled trial of ADF"}) is True
 
 
+@pytest.mark.parametrize("arms", ["1.0 mg or 2.4 mg", "2.4 mg or placebo", "high intensity or low intensity", "group A or group B"])
+def test_anonymous_dose_or_regimen_arms_do_not_establish_a_different_intervention(arms):
+    abstract = f"This trial evaluated the target intervention. Participants were randomized to {arms} for twelve weeks."
+    assert not v06.unisolated_combination("Randomized trial", abstract, "target intervention")
+    # Named adjunct identities still establish a distinct randomized contrast.
+    assert v06.unisolated_combination("Randomized trial", abstract.replace(arms, "2.4 mg of adjunct or placebo"), "target intervention")
+
+
 def test_protocol_outcomes_are_planned_context_not_observed_findings():
     record = {"title": "A randomized trial protocol", "sections": {
         "abstract": "Participants will be randomized to training or control. Muscle strength is the primary outcome."

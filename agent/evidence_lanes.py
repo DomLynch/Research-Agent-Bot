@@ -174,14 +174,12 @@ def unisolated_combination(title: str, abstract: str, target: str, aliases: tupl
     for term in tuple(terms):
         terms.update(re.findall(rf"\b{re.escape(term)}\s*\(([a-z]{{2,5}})\)", abstract))
     target_re = re.compile(r"\b(?:" + "|".join(re.escape(term) for term in sorted(terms, key=len, reverse=True)) + r")\b") if terms else None
-    if target:
-        shared_target = re.search(
-            rf"\b(?:both|all)(?:\s+the)?\s+(?:groups|arms|participants|subjects)\s+"
-            rf"(?:received|underwent|performed|completed|participated in)\s+"
-            rf"(?:(?:the\s+)?(?:same|identical)\s+)?{re.escape(target)}\b", abstract,
-        )
-        if shared_target:
-            return True
+    if target and re.search(
+        rf"\b(?:both|all)(?:\s+the)?\s+(?:groups|arms|participants|subjects)\s+"
+        rf"(?:received|underwent|performed|completed|participated in)\s+"
+        rf"(?:(?:the\s+)?(?:same|identical)\s+)?{re.escape(target)}\b", abstract,
+    ):
+        return True
     if target_re and target_re.search(abstract):
         # An explicit randomized contrast defines what the trial isolates;
         # mentioning the topic elsewhere does not make it the treatment contrast.
@@ -191,7 +189,9 @@ def unisolated_combination(title: str, abstract: str, target: str, aliases: tupl
             arms = re.split(r"\s+(?:or|versus|vs\.?|and)\s+|,\s*", comparison)
             if len(arms) >= 2 and all(arm.strip() for arm in arms):
                 present = [bool(target_re.search(arm)) for arm in arms]
-                if not any(present) or all(present) and all(re.search(r"\bplus\b|\+", arm) for arm in arms):
+                # Dose/regimen/group labels alone do not identify another intervention.
+                anonymous = all(re.fullmatch(r"(?:\d+(?:\.\d+)?\s*(?:mg|mcg|[µu]?g)(?:/\w+)?|(?:low|high|moderate) (?:dose|intensity|volume|frequency)|(?:group|arm) [a-z\d]+|placebo|control)", arm.strip()) for arm in arms)
+                if not any(present) and not anonymous or all(present) and all(re.search(r"\bplus\b|\+", arm) for arm in arms):
                     return True
     combination = r"\b(?:multi ingredient|combined supplementation|combination)\b"
     if re.search(combination, target) or re.search(r"\band\b|\+", target) or not re.search(combination, title):

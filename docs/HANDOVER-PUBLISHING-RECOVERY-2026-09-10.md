@@ -1,163 +1,174 @@
-# V3 standardized publishing — audit at 2026-09-10 20:13 Dubai
+# V3 standardized publishing — audit at 2026-09-10 21:52 Dubai
 
-Standardized publishing is **not complete**. Production remains clean at
-`b8be7c455cd4f1a923ffefc8f3edb6606793ebf2`. The latest Resveratrol submission
-`237883b1-d115-4f1b-8a6d-190874cf6144` is **REVISE / NOT_PUBLISHED**.
-The user explicitly redirected recovery toward shared, scalable engine fixes;
-stop using manuscript-specific replay-script changes to pursue acceptance.
+The shared fixes are deployed. **Publishing recovery and unattended cross-topic
+repeatability are not yet proven.** Both VPS checkouts are clean at
+`b3984ff6608c67da8c0a379d3a266b20d8d7e950`; the dashboard returned HTTP 200 and
+all six publishing timers were restored. Deployment is not a public paper.
+
+The user requested steps 1–5 with an audit after each, then explicitly rejected
+manuscript-specific shepherding. Continue with shared engine rules, unchanged
+source facts, normal review decisions and canonical submission history.
 
 ## Five-step audit
 
-| Step | Verified | Open |
+| Step | Evidence | Remaining condition |
 |---|---|---|
-| 1. Reconciliation | Bounded reconciliation deployed; two real passes took 57–58 seconds and covered 80 distinct IDs. | No new reconciliation defect established. |
-| 2. Source records before prose | Shared mixed/null aggregation, comparator isolation, protocol routing and Methods scope fixes pass focused checks. Four real adjunct trials now classify as indirect for training, without runtime source-name exceptions. | Some endpoint facts/polarities are missing from extraction. Unknown labels must remain unknown; no blanket recoding. Native manuscript recovery remains to be shown. |
-| 3. Manuscript completeness | Earlier Resveratrol package passed full local gates and normal intake; generic Abstract filler removed. Shared thesis no longer invents null dominance or an aging conclusion. | Complete native generation/review with the shared fixes on distinct topics. |
-| 4. Publishing contract | Live `/contracts/current` confirms reviewer-v15 and 120-character minima for research syntheses. Current Core decision retrieved. | Public calibration is invalid and unbound to the current judge release; independent calibration is not established. |
-| 5. Production and repeatability | Earlier b8 release deployed; submitted run/ledger persisted in both copies. | Shared fixes are not yet deployed. Acceptance, public artifact and unattended cross-topic repeatability remain unproven. |
+| 1. Reconciliation | Bounded reconciliation is deployed. Earlier two real passes covered 80 distinct IDs in 57–58 seconds. The 17:06 UTC receipt completed in 52.065 seconds, with no runtime error and 205 deferred records. | The deferred backlog remains; do not equate a bounded successful pass with every historical record reconciled. |
+| 2. Source records before prose | Shared source-role, comparator, direction and author-record rules pass focused checks. Five unchanged corpora compile without a crash. | Missing endpoint facts remain unknown. Do not promote an unknown direction or treat a protocol as completed efficacy evidence. |
+| 3. Manuscript completeness | Two earlier ordinary full runs exposed reproducible shared defects in quote cleanup and URL word counting; both defects are fixed and regression checked. | Full training and semaglutide runs on the deployed code are active. No completed result on this release yet. |
+| 4. Publishing contract | Actual public contract, latest Resveratrol decision, 15 recent ledger submissions and current semaglutide decision audited. | Public calibration is invalid and unbound to the current judge release. No calibrated-current-judge claim is supported. |
+| 5. Production and repeatability | Both VPS copies have the same clean release, healthy dashboard and six active timers. | A new accepted public artifact and unattended repeatability remain unproven. |
 
-## Shared fixes and audit
+## Shared changes and review
 
-Native validation on training and semaglutide exposed two additional shared
-defects: later outcome refinement overwrote protocol context, and the Abstract
-ran before its actual question and Methods records existed. Both validation runs
-were stopped after inspecting their exact process trees. Production was excluded.
-Neither run is a completed manuscript or successful publication receipt.
+The runtime delta from `b8be7c45` to `b3984ff6` is 56 net added lines across 12
+runtime files. There are no new runtime study-name or submission-ID overrides.
 
-The protocol classification now survives the compiler, Findings Map and final
-table renderer. Replay of all 19 frozen training IDs verifies this without source
-edits. An initial local replay admitted only eight IDs and contained no protocol;
-that failed assertion was diagnostic, not a passing check.
+- Evidence directions use source-owned outcome findings. Significant benefit or
+  harm alongside explicit null endpoints can be mixed. Baseline, population,
+  dose, duration and protocol records cannot establish an outcome. Missing
+  endpoint mappings and ambiguous p-value bounds remain unclear.
+- Randomized contrasts determine what an intervention trial isolates. A target
+  given to both arms does not make a randomized adjunct effect direct evidence
+  for that target. Configured aliases and source-defined abbreviations work
+  without named-study exceptions; dose comparisons remain distinguishable.
+- Protocol/design/baseline reports stay contextual through classification,
+  outcome refinement, Findings Map and final rendering, including when upstream
+  structured metadata calls them randomized trials. Frozen real-source fixtures
+  and completed-trial controls cover this path.
+- The actual research question and Methods records exist before the Abstract.
+  The same question is persisted and used by the grounding reviewer. Mixed or
+  unknown populations are described as the populations represented by admitted
+  sources; the majority population no longer excludes retained minorities.
+- Generic text cleanup no longer interprets `vs. a` inside a source quotation as
+  a broken sentence and deletes through a decimal. Table rows, abbreviations,
+  decimal values and table spacing are preserved. Previously corrupted evidence
+  still fails its evidence gate; the gate was not suppressed.
+- Shared section word counting counts prose and link labels, excluding URL
+  destinations. The Abstract cap remains 300 words, Results floor 400 and
+  Conclusion floor 180. A 301-word Abstract still fails; a 399-word Results
+  section cannot clear its floor by adding a long URL.
+- Reviewer wording that a named source remains miscoded despite contrary findings
+  authorizes only the requested direction field. It does not unlock other source
+  fields or apply a source-specific runtime correction.
 
-One question and Methods pack are now built before drafting, supplied as author
-records, and reused for final Methods. The question helper uses the retained
-corpus and respects an explicit caller question. Three-topic Methods checks and
-writer ordering checks pass. Required quality: 347 passed, no new complexity or
-duplication, Ruff passed; focused checks: 267 passed before the helper move, then
-130 passed for the changed writer/record path and LOC checks. Mypy: 180 files pass.
-No budget or scientific-gate thresholds were increased. See
-`/tmp/v3-author-records-{quality,final-tests,mypy}.log`.
+Audit passes included baseline failure reproduction, real-source replay, anonymous
+IDs, negative controls, propagation review and source-hash verification. The
+quote-corruption trace identified `strip_sentence_fragments` as the actual writer
+of the damaged text. No original validation manuscript was manually corrected.
 
-The final adversarial pass additionally caught non-outcome p-values affecting
-source direction. Explicit baseline/population/background/dose/duration/sample
-size/protocol records are now excluded from that aggregation. A null endpoint
-cannot classify other unclassified endpoints as null. This is a shared rule,
-without source-name exceptions. The final manuscript-grounding reader now also
-prefers the declared research question, retaining thesis fallback for legacy runs.
-Changing the question invalidates a cached grounding review.
+Latest release checks: **443 focused tests passed in 14.00 seconds; required
+quality passed 347 checks; Ruff and typing passed (131 source files).** LOC,
+complexity and duplication budgets were not raised. Logs:
+`/tmp/v3-native-followups-{focused,quality,mypy}.log`.
+The earlier 5,019-test run took 158.32 seconds and preceded these final follow-ups;
+it is not a full-suite receipt for the final release. Repeated broad testing is
+not required without a new relevant failure or change.
 
-Latest focused checks: 178 passed; mandatory quality: 347 passed, no complexity,
-duplication or LOC regression; typing: 180 files passed. The 5,019-test broad run
-(2 existing XPASS, 16 warnings, 158.32 seconds) preceded these final guards; it
-must not be described as a broad run after them. No extra broad run is required
-for these covered follow-ups. Receipts: `/tmp/v3-final-shared-guards-*.log` and
-`.quality-reports/v3-final-shared-audit-2026-09-10.json`.
+## Cross-topic validation on fixed code
 
-Native runs at `93dbfc16` use normal topic configuration, with no review-type
-override or manuscript editing. Training produced a 234-word Abstract, a
-1,104-word Introduction and a 921-word Background; semaglutide produced a
-250-word Abstract. These establish intermediate generation, not completion.
-The final source guard changes compiled evidence for both corpora, so these
-earlier runs cannot certify the final release. Production remains on b8.
+All five source-only CLI preflights passed with source hashes unchanged. Receipt
+counts below come from the canonical `receipt_funnel.json`, not the raw compiler
+count in the temporary driver's entry record.
 
-Final-code native runs started at 16:17:34/37 UTC on `5b17ab66`, in
-`/tmp/v3-audited-engine-20260910`. Drivers 2348977 (training) and 2348978
-(semaglutide) have a 2,100-second bound and persist input hashes. Both use normal
-topic configuration; no manuscript edits or submissions. Logs are
-`/tmp/v3-audited-native-{resistance_training,semaglutide_effects}.log`.
+| Topic | Admitted receipts | Direct receipts | Current meaning |
+|---|---:|---:|---|
+| Resistance training | 19 | 12 | Full normal generation active; source-count requirements pass. |
+| Semaglutide effects | 31 | 11 | Full normal generation active; existing Core revision must be respected. |
+| Vaccine effects | 24 | 3 | Normal candidate policy blocks: direct-source floor is 4. |
+| Plasma exchange adverse rates | 27 | 16 | Source preflight only; no new full manuscript result. |
+| Senescence subgroups | 43 | 3 | Empty-excerpt crash fixed; normal direct-source floor still blocks. |
 
-Cold source-record checks used three additional ledger topics: vaccine effects
-(24 receipts) and plasma exchange (27) passed ordinary CLI preflight with source
-hashes unchanged. Senescence (43) stopped in 6.85 seconds with `empty separator`.
-This was a software exception, not a scientific rejection: an empty comparison
-excerpt reached `str.partition`. A shared two-line guard now returns false for
-absent excerpts and preserves the locked record. Focused checks: 101 passed;
-mandatory quality: 347 passed. The original nonempty comparison-completion
-behavior remains tested. Re-run the unchanged senescence input on the patched
-code before claiming that holdout passed.
+These are 144 receipt entries, not necessarily 144 distinct studies and not five
+publishable papers. The temporary driver incorrectly labelled 29 raw plasma
+records as admitted; the canonical admitted count is 27. The aggregate receipt
+`.tmp/v3-standardized/native-followups-preflight-audit.json` uses the correct count.
 
-The vaccine CLI also produced identical frozen receipt contracts with inherited
-and explicit topic environments. No source or topic-specific fix was applied.
-Source-only preflight is not manuscript generation, acceptance or publication.
+Current runtime: `/tmp/v3-native-followups-20260910` on the VPS, fixed at `b3984ff6`.
+The ordinary `_run_synthesis` path uses each topic's normal configuration, with
+no review-type override, source edits or manual manuscript edits. Parent drivers
+own the child exit status and persist `shared_native_receipt.json`; the bound is
+10,800 seconds. This is a validation harness, not the production scheduler.
 
-- `scripts/effect_direction.py`: significant favorable/adverse findings alongside
-  explicit null findings yield mixed; invalid or ambiguous p-value bounds do not
-  establish a null result. Endpoint-specific checks remain separate.
-- `agent/evidence_lanes.py`: use source-owned randomized contrasts, configured topic
-  aliases and source-defined abbreviations. Shared background treatment is indirect
-  for that target. Prior-study text and demographic splits do not set the current
-  trial contrast; dose comparisons remain distinguishable.
-- `scripts/run_v06_synthesis.py`: use the shared classifier for protocol outcome
-  routing; remove positive/negative title promotion; conflicting title-only evidence
-  stays unclear. Persist the writer's declared research question into Methods.
-  Remove unsupported null-dominance and automatic aging claims from the thesis.
-- `agent/methods_pack.py`: describe the declared analytic scope without inventing
-  prospective eligibility or altering frozen retrieval counts/queries.
-- `scripts/revision_coverage.py`: explicit reviewer statements that named sources
-  remain miscoded despite contrary findings authorize only their direction field.
-  The actual three-source request previously authorized no corrections; now exactly
-  Farzin, Faghihzadeh and Dogan are authorized. No other fields/sources are unlocked.
+- Training started 17:27:48 UTC; driver 2410413, synthesis child 2410430.
+- Semaglutide started 17:27:51 UTC; driver 2410414, child 2410702.
+- Logs: `/tmp/v3-followups-full-{resistance_training,semaglutide_effects}.log`.
+- Outputs: `runs/synthesis-{topic}-followups-full-20260910` under that runtime.
 
-Pass 1 review caught missing propagation from `_ACTIVE_MANIFEST` into the persisted
-manifest; fixed and checked with Python AST. Pass 2 caught sentence punctuation
-loss during source filtering; real-source fixtures exposed it and it was fixed.
-Baseline replay proves the new tests reject the previous mixed-direction and
-four-source comparator behavior. All 37 Resveratrol and 19 training source-file
-hashes remain identical. No manuscript or source fact was manually changed here.
+The vaccine full run was an avoidable harness mistake: it bypassed the existing
+normal candidate-policy check before drafting. After independently confirming
+`direct_receipts_below_floor`, only its inspected process family was stopped at
+17:46:26 UTC. The controller recorded exit -15 and unchanged source hashes. This
+is a negative eligibility result and an incomplete manuscript, not a completed
+full validation. No production worker was stopped. Receipts:
+`/tmp/v3-vaccine-ineligible-{process-audit,stop}.json`.
 
-Checks: broad suite **5,011 passed**, 2 existing XPASS, 16 warnings, 166.83 seconds.
-That run preceded the final one-line persisted-question binding and bounded
-reviewer-authorization addition. Subsequent focused checks: 193 passed for section,
-source and Methods behavior; 396 passed for revision coverage/evidence. Latest
-required quality checks and typing results are in the logs below; report their
-actual final output, not an assumed result. No further full suite is needed unless
-new changes or failures justify it.
+The previous native training/semaglutide runs at `5b17ab66` both completed with
+local gate exit 7. Training's Abstract counted 40 URL components as words;
+semaglutide's source quote was corrupted by generic cleanup. Their local
+scientific reviews were respectively REVISE 26/30 and ACCEPT 27/30. These are
+local reviews, not Core decisions. Source hashes were unchanged and neither was
+submitted. Their actual negative results led to the shared fixes above.
 
-## Current Core and calibration receipts
+## Canonical publication state
 
-The Resveratrol decision completed at **18:47:32 Dubai**, refreshed **18:58:07**.
-Core rated synthesis strong, overclaim none, and requested three bounded fixes:
-Farzin/Faghihzadeh mixed endpoint labels; Dogan's positive label; stale Methods
-eligibility wording. Review provenance is not a published artifact.
+Latest Resveratrol submission `237883b1-d115-4f1b-8a6d-190874cf6144` is
+REVISE / REVISE_TECHNICAL / NOT_PUBLISHED. Its three asks concern source direction
+labels and stale Methods scope. No individual manuscript was edited to force
+these through after the user's cross-topic correction.
 
-Live public contract: https://api.researka.org/contracts/current
-SHA-256: `8f255afd50c7e6b7300cd1fe1d60a388e3186b7e5656ca703453db6907f4d3c3`.
-Research synthesis requires 120 characters per required section; counting rules
-are exposed. `/public/contracts/current` was the wrong route (404); OpenAPI
-identified the actual public route. No Core/website change was needed.
+Semaglutide submission `dfb5094a-d15d-424f-9906-bcaf2c5de37c`, refreshed at
+17:51:22 UTC, remains REVISE / NOT_PUBLISHED, with resubmission allowed. Its
+intake failures identify a protocol used as primary evidence and unmatched DOI
+citations. Empty `required_revisions` does not mean no blocker: inspect
+`gate_failures`. Full receipt: `/tmp/v3-semaglutide-canonical-decision.json`.
+Do not submit the new validation manuscript through an empty isolated ledger.
 
-Live calibration: https://api.researka.org/calibration
-It exposes `gold_set_eval_v3_current.json`, generated July 16, 30 cases,
-`valid=false`, `metrics_complete=false`, `timeline_valid=false`,
-`judge_release_bound=false`, no human signoff. Reported 13/30 accuracy describes
-that old evaluation, not the current judge. The current submission instead names
-`real_gold_set_v1_freeze_receipt.json` with hash `0a3680f266445a6bc3ed1f521620a6122c1a87c86dcd0d9ddf089c5e0055f959`.
-This inconsistency prevents a calibrated-current-judge completion claim.
+The earlier production training R2 at
+`runs/synthesis-resistance_training-v06-DAILY-2026-09-10T15-44-01Z-R2` returned local
+`publication_ready`, but the normal bridge blocked submission with
+`researka_claim_trace_insufficient:cited=20/20,aligned=14/20,required=16`.
+Grounding review identified real unsupported age and outcome details. Preserve
+that block. Local readiness alone is not submission readiness or publication.
 
-The refreshed 19:41 audit of 15 canonical-ledger submissions returned 7 REJECT
-and 8 REVISE, with no fetch errors. This is a dated ledger sample, not a
-new-release success rate or all Core history.
+The 19:41 Dubai audit of 15 recent distinct canonical-ledger submissions found
+8 REVISE, 7 REJECT and no fetch errors. This dated sample is not a success-rate
+measurement for the new release or all of Core's history.
 
-## Receipts and continuation
+Public contract: https://api.researka.org/contracts/current
+Submission policy v2, reviewer-v15-explicit-repairability; research syntheses
+require 120 characters per required section, at least 2,000 body words and
+12 citations. `/public/contracts/current` was the wrong route, not an outage.
 
-- Local logs: `/tmp/v3-universal-{suite,quality,mypy,focused,final-focused}.log`
-  and `/tmp/v3-universal-authorization-tests.log`.
-- `.tmp/v3-standardized/resveratrol-v12-core-decision.json`
-- `.tmp/v3-standardized/core-contracts-current.json`, `core-calibration.json`,
-  `core-openapi.json`, `contract-route-check.json`
-- `.tmp/v3-standardized/shared-rule-mutation-audit.json`
-- `.tmp/v3-standardized/current-revision-authorization-audit.json`
-- `.tmp/v3-standardized/recent-15-submission-audit.json`
-- `.quality-reports/v3-universal-discovery-2026-09-10.json` and
-  `v3-authorization-discovery-2026-09-10.json`: three Semble queries plus CodeGraph
-  impact receipts before each shared-code slice. Ast-grep executable/adapter were
-  unavailable; Python AST checked the observed manifest wiring. No disputed
-  CodeGraph runtime edge required Tree-sitter; no agent handoff required Repomix.
+Public calibration: https://api.researka.org/calibration
+The exposed July 16 evaluation has `valid=false`, incomplete metrics, invalid
+timeline, no human signoff and no binding to the current judge release. Its 13/30
+result is not current-judge accuracy. The current release references a different
+freeze receipt. Core, website, model and provider configuration were not changed.
 
-Production fresh worker PID 2272971 was active on b8 at the last read; drought
-service was failed. Do not update active production code or stop that job.
-All prior temporary service overrides were removed after the b8 deployment.
-Next: isolated normal CLI generation on distinct topics using the shared release,
-then ordinary gates and Core decisions. No topic-specific manuscript edits.
-Results 400 / Conclusion 180 hard minimums, higher writer targets, source identity,
-negative-review handling, models/providers, and Core/website code remain unchanged.
+## Continuation and operating constraints
+
+1. Collect the two complete native results without restarting or altering code
+   merely to fit a manuscript. Review actual gates, source hashes and grounding.
+2. A completed eligible candidate may use the ordinary production publisher,
+   canonical lock and ledgers. Preserve prior REVISE/REJECT history, remote
+   deduplication, scientific checks and the frozen package. A dry-run selection
+   returns before final publishing checks and is not proof of eligibility.
+3. Inspect Core's actual decision and public artifact after any real submission.
+   A valid negative remains blocking; do not relabel it as a recovery success.
+4. Refresh this handover with final native outcomes and remaining blockers.
+
+Actual service names are `research-agent-paper-{fresh,revise,reconcile,prepare,
+daily-submit,drought-guard}.service`. Require `LoadState=loaded` when checking
+idle state; nonexistent `research-agent-bot-fresh.service` returning inactive is
+not evidence. Read worker state separately before any code deployment.
+
+The prepare worker last exited 75 after waiting 900 seconds for its lock; the
+unit treated this as failure and retried. No unit-status workaround was applied.
+The drought guard correctly reports the lack of public publication since August
+15. Do not clear it merely to create a healthy-looking dashboard.
+
+Deployment receipt: `/tmp/v3-shared-fixes-deploy.log`. Discovery and review
+receipts are under `.quality-reports/`, including fragment, scope/word-budget,
+checkpoint, design-report and universal source-rule audits. These and
+`.tmp/v3-standardized/` are local supporting artifacts, not tracked package files.
