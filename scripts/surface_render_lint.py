@@ -26,6 +26,23 @@ import re
 from dataclasses import dataclass
 
 
+def repair_locator_artifacts(text: str) -> tuple[str, int]:
+    # Collapse interrupted insertions only onto a matching complete locator.
+    text, partial = re.subn(
+        r"\[exact source: (?P<stub>https?://[^\s\[\]]+)\s+"
+        r"(?:\[exact source: (?P=stub)\s+)*"
+        r"(?=\[exact source: (?P=stub)[^\s\[\]]*\])", "", text,
+    )
+    text, fused = re.subn(
+        r"(?P<sentence>[A-Z][^.!?\n]{20,})(?<!doi)\.org/10\.\d{4,9}/"
+        r"[^\s\]]+\]\.\s+(?P=sentence)\.", r"\g<sentence>.", text,
+    )
+    text, malformed = re.subn(
+        r"(?<!doi)(?<=[A-Za-z])\.org/10\.\d{4,9}/[^\s\]]+\]", "", text, flags=re.I,
+    )
+    return text, partial + fused + malformed
+
+
 # A `_Cited:` block looks like this in the rendered paper:
 #     "  _Cited: `Walton 2019`, `Konopka 2019`_"
 # We anchor on the line-start (with optional leading 2-space indent)

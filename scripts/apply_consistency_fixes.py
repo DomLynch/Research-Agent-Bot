@@ -32,6 +32,7 @@ from agent.topic_display import humanize_topic, intervention_label
 from agent.outcome_class_remap import outcome_key
 from direction_consistency import repair_abstract_direction_summary
 from evidence_map_summary import signal_summary_cell, source_context_map
+from surface_render_lint import repair_locator_artifacts
 
 __all__ = ["apply_fixes", "main"]
 
@@ -2028,7 +2029,7 @@ def apply_fixes(
     )
 
     apply(
-        _repair_locator_artifacts, "malformed_doi_tail",
+        repair_locator_artifacts, "malformed_doi_tail",
         "removed malformed locator fragments; complete source URLs preserved",
     )
 
@@ -2831,23 +2832,6 @@ _PRECLINICAL_HEDGE_RE = re.compile(
     r"ex\s+vivo|cell\s+culture|rodent)\b",
     re.IGNORECASE,
 )
-
-
-def _repair_locator_artifacts(text: str) -> tuple[str, int]:
-    # Collapse interrupted insertions only onto a matching complete locator.
-    text, partial = re.subn(
-        r"\[exact source: (?P<stub>https?://[^\s\[\]]+)\s+"
-        r"(?:\[exact source: (?P=stub)\s+)*"
-        r"(?=\[exact source: (?P=stub)[^\s\[\]]*\])", "", text,
-    )
-    text, fused = re.subn(
-        r"(?P<sentence>[A-Z][^.!?\n]{20,})(?<!doi)\.org/10\.\d{4,9}/"
-        r"[^\s\]]+\]\.\s+(?P=sentence)\.", r"\g<sentence>.", text,
-    )
-    text, malformed = re.subn(
-        r"(?<!doi)(?<=[A-Za-z])\.org/10\.\d{4,9}/[^\s\]]+\]", "", text, flags=re.I,
-    )
-    return text, partial + fused + malformed
 
 
 def _hedge_preclinical_translation(paper_md: str) -> tuple[str, int]:

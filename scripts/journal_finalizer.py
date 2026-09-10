@@ -555,13 +555,11 @@ def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
 
     out, n = pattern.subn(repl, text)
 
-    def transfer_repl(match: re.Match[str]) -> str:
-        return f"{match.group(1)} not automatically"
-
-    out, n_transfer = transfer_pattern.subn(transfer_repl, out)
+    out, n_transfer = transfer_pattern.subn(r"\1 not automatically", out)
+    out, n_locator = _script_module("surface_render_lint").repair_locator_artifacts(out)
     out, n_source = re.subn(r"\[\s*sources?:\s*([^]]+)\]", r"(\1)", out, flags=re.I)
     out, n_parenthetical = re.subn(r"\(\s+\((?=[^()\n]*\))", "(", out)
-    return (balanced := "\n\n".join(_repair_unbalanced_parentheses(paragraph) for paragraph in out.split("\n\n"))), n + n_transfer + n_source + n_parenthetical + len(out) - len(balanced)
+    return (balanced := "\n\n".join(_repair_unbalanced_parentheses(paragraph) for paragraph in out.split("\n\n"))), n + n_transfer + n_source + n_parenthetical + n_locator + len(out) - len(balanced)
 
 
 def _repair_unbalanced_parentheses(text: str) -> str:
