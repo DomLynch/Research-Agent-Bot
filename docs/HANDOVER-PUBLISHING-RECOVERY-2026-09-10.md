@@ -60,6 +60,26 @@ override or manuscript editing. Training produced a 234-word Abstract, a
 The final source guard changes compiled evidence for both corpora, so these
 earlier runs cannot certify the final release. Production remains on b8.
 
+Final-code native runs started at 16:17:34/37 UTC on `5b17ab66`, in
+`/tmp/v3-audited-engine-20260910`. Drivers 2348977 (training) and 2348978
+(semaglutide) have a 2,100-second bound and persist input hashes. Both use normal
+topic configuration; no manuscript edits or submissions. Logs are
+`/tmp/v3-audited-native-{resistance_training,semaglutide_effects}.log`.
+
+Cold source-record checks used three additional ledger topics: vaccine effects
+(24 receipts) and plasma exchange (27) passed ordinary CLI preflight with source
+hashes unchanged. Senescence (43) stopped in 6.85 seconds with `empty separator`.
+This was a software exception, not a scientific rejection: an empty comparison
+excerpt reached `str.partition`. A shared two-line guard now returns false for
+absent excerpts and preserves the locked record. Focused checks: 101 passed;
+mandatory quality: 347 passed. The original nonempty comparison-completion
+behavior remains tested. Re-run the unchanged senescence input on the patched
+code before claiming that holdout passed.
+
+The vaccine CLI also produced identical frozen receipt contracts with inherited
+and explicit topic environments. No source or topic-specific fix was applied.
+Source-only preflight is not manuscript generation, acceptance or publication.
+
 - `scripts/effect_direction.py`: significant favorable/adverse findings alongside
   explicit null findings yield mixed; invalid or ambiguous p-value bounds do not
   establish a null result. Endpoint-specific checks remain separate.

@@ -648,6 +648,8 @@ def test_locked_receipt_thesis_allows_only_comparison_completion() -> None:
     completed = "Safety trial — source excerpts: Events occurred in 64.8% vs. 36.5%) | Conclusion."
 
     assert orch._completes_locked_comparison(completed, locked)
+    for no_excerpt in (None, "", "Metadata-only record", "Trial — source excerpts: "):
+        assert not orch._completes_locked_comparison(completed, no_excerpt)
     assert not orch._completes_locked_comparison("Safety trial — source excerpts: Different result.", locked)
     assert not orch._completes_locked_comparison(completed.replace("Conclusion.", "Changed."), locked)
     assert not orch._completes_locked_comparison(completed + " | New unrelated excerpt.", locked)
