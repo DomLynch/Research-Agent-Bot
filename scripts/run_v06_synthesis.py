@@ -1545,6 +1545,8 @@ def _shorten_claim_sentence(sentence: str, limit: int | None = None) -> str:
 def _completes_locked_comparison(current: str, locked: Any) -> bool:
     text = str(locked or "")
     excerpt = text.partition("source excerpts: ")[2].partition(" | ")[0]
+    if not excerpt:
+        return False
     prefix, _, suffix = text.partition(excerpt)
     delta = current[len(prefix + excerpt):len(current) - len(suffix) if suffix else None]
     return bool(excerpt and re.search(r"\b(?:vs\.?|versus)\s*$", excerpt, re.I) and current.startswith(prefix + excerpt) and current.endswith(suffix) and re.fullmatch(r"\s+(?:\d+/\d+\s+\()?\d+(?:\.\d+)?%\)\.?", delta))
