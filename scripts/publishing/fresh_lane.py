@@ -5239,7 +5239,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     failures = {"submission_failed", "synthesis_failed", "local_gate_execution_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
     if ledger["status"] in failures:
-        return 2
+        return os.EX_SOFTWARE if ledger["status"] == "local_gate_execution_failed" else 2
     no_output = args.submit and not int(ledger.get("submitted") or 0)
     if no_output and not (args.mode == "revise" and ledger["status"] == "no_revise_pending"):
         return 3

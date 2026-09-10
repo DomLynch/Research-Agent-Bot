@@ -15,5 +15,5 @@ Environment=PYTHONUNBUFFERED=1
 Environment=RESEARKA_DOI_PREFLIGHT_ENABLED=1
 Restart=on-failure
 RestartSec=60
-RestartPreventExitStatus=3
+RestartPreventExitStatus=3 70
 TimeoutStartSec=16200

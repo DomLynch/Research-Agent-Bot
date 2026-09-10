@@ -2444,6 +2444,7 @@ def test_prepare_only_cli_succeeds_only_with_full_buffer(monkeypatch) -> None:
         ("no_publishable_topic_available", 0, 3),
         ("submitted_to_researka", 1, 0),
         ("synthesis_failed", 0, 2),
+        ("local_gate_execution_failed", 0, 70),
         ("submission_failed", 0, 2),
     ],
 )
@@ -2517,6 +2518,16 @@ def test_synthesis_units_share_prepare_exclusion_lock() -> None:
     assert "/usr/bin/flock --conflict-exit-code 75 --shared --wait 4200 /run/research-agent-paper-prepare.lock" in revise
     assert "--max-revise-attempts 1 --cycle-budget-sec 10800" in revise
     assert "TimeoutStartSec=16200" in revise
+
+
+@pytest.mark.parametrize("lane", ["fresh", "revise"])
+def test_software_failure_is_failed_without_service_restart(lane) -> None:
+    unit = (REPO / "deploy" / f"research-agent-paper-{lane}.service").read_text()
+    values = dict(line.split("=", 1) for line in unit.splitlines() if "=" in line)
+    assert values["Restart"] == "on-failure"
+    assert "70" in values["RestartPreventExitStatus"].split()
+    assert "70" not in values["SuccessExitStatus"].split()
+    assert "2" not in values["RestartPreventExitStatus"].split()
 
 
 def test_select_topic_prefers_full_synthesis_ready_corpus(tmp_path: Path, monkeypatch) -> None:

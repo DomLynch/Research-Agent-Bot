@@ -19,6 +19,6 @@ Environment=RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT=200
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_FALLBACK_LIMIT=1000
 Environment=RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED=5
 Restart=on-failure
-RestartPreventExitStatus=3
+RestartPreventExitStatus=3 70
 RestartSec=60
 TimeoutStartSec=14400
