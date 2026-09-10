@@ -342,6 +342,7 @@ async def _write_anchored_section(
     seed: int | None,
     fallback_body: str,
     background_lit_entries: Sequence[Any] | None = None,
+    author_context: Mapping[str, Any] | None = None,
 ) -> SynthesisSection:
     """Build an anchored section with bounded retry plus citation repair."""
     floor = SECTION_WORD_FLOORS.get(str(name), 0)
@@ -349,6 +350,8 @@ async def _write_anchored_section(
     best_words = 0
     current_prompt = user_prompt
     rejected_json: Mapping[str, Any] | None = None
+    reviewed: set[tuple[str, tuple[str, ...]]] = set()
+    author_numerics = frozenset({str(author_context["source_count"])}) if author_context and type(author_context.get("source_count")) is int else frozenset()
     for attempt in range(SECTION_RETRY_BUDGET + 1):
         parsed = await _call_llm_section(
             system_prompt=system_prompt, user_prompt=current_prompt,
@@ -376,9 +379,14 @@ async def _write_anchored_section(
                 continue
             rejected_json = None
         rejection_reasons: list[str] = []
+        if name == "abstract" and author_context:
+            parsed["paragraphs"], rejection_reasons = await review_writer_paragraphs(
+                name, parsed.get("paragraphs", []), accepted, reviewed,
+                author_context=author_context, client=client, ledger=ledger, seed=seed)
         section = build_anchored_from_parsed(
             parsed, name=name, heading=heading, accepted=accepted,
             rejection_reasons=rejection_reasons,
+            reviewed=frozenset(reviewed), author_numerics=author_numerics,
         )
         if section is None:
             print(
@@ -401,7 +409,7 @@ async def _write_anchored_section(
                 )
                 rejected_json = parsed
             else:
-                current_prompt = cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
+                current_prompt = (user_prompt + "\nRevise the unsupported statements using the source and author records. Keep coherent paragraphs and the requested length; cite scientific sentences and leave own methods uncited. Review findings: " + "; ".join(rejection_reasons)) if name == "abstract" and author_context else cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
                 rejected_json = None
             continue
         words = _section_word_count(section)
@@ -422,6 +430,7 @@ async def _write_anchored_section(
     def _builder(parsed_dict: dict) -> SynthesisSection | None:
         return build_anchored_from_parsed(
             parsed_dict, name=name, heading=heading, accepted=accepted,
+            reviewed=frozenset(reviewed), author_numerics=author_numerics,
         )
     best = await _run_citation_fix_pass(
         best, base_user_prompt=user_prompt,
@@ -652,6 +661,7 @@ async def render_full_paper(
     qei_citation_tokens_by_paper_id: Mapping[str, str] | None = None,
     qei_quarantine_path: Any | None = None,
     review_type: str | None = None,
+    author_context: Mapping[str, Any] | None = None,
 ) -> tuple[str, tuple[SynthesisSection, ...]]:
     """Render a full paper, or the compact brief path for thin corpora."""
     _thin = review_type in COMPACT_REVIEW_TYPES
@@ -702,6 +712,8 @@ async def render_full_paper(
         accepted, rejected, matrix, thesis, topic=topic,
         background_lit_entries=background_lit_entries,
     )
+    if author_context:
+        user += "\n\nAUTHOR RECORDS (our own question, corpus and process; external studies are not their authority):\n" + json.dumps(author_context)
     # Refactor 2026-05-04: removed the '**Submission:** `<run-tag>`'
     # line — that's internal pipeline metadata that belongs in the
     # manifest.json / supplement, not in the prose body. Reviewer
@@ -715,11 +727,12 @@ async def render_full_paper(
     print("[paper_writer] starting full-paper render", flush=True)
     sections["abstract"] = await _write_anchored_section(
         name="abstract", heading="## Abstract",
-        system_prompt=_prompts["abstract"], user_prompt=user,
+        system_prompt=_prompts["abstract"], user_prompt=user + ("\nFor the Abstract use separate paragraphs for Background, Methods, Results and Conclusions. Own scope and methods paragraphs must use empty receipt_ids; scientific findings need inline canonical citations in every sentence. Use the documented source count only; keep other quantities in Results. Do not claim procedures absent from author records." if author_context else ""),
         accepted=accepted, chain=chain, client=client, ledger=ledger,
         seed=seed,
         fallback_body="## Abstract\n\nThis synthesis summarizes the accepted receipt set and deterministic audit bundle for the current topic.\n",
         background_lit_entries=background_lit_entries,
+        author_context=author_context,
     )
     abstract_md, _ = repair_abstract_claim_strength(sections["abstract"].body_md)
     if abstract_md != sections["abstract"].body_md:

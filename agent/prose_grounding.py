@@ -68,14 +68,17 @@ def _validate_assessments(statements: Any, assessments: Any) -> None:
 
 async def review_writer_paragraphs(name: str, paragraphs: list[dict[str, Any]], receipts: Any, reviewed: set[tuple[str, tuple[str, ...]]], **options: Any) -> tuple[list[dict[str, Any]], list[str]]:
     from agent.paper_writer_builders import _materialize_inline_receipts
-    if name != "conclusion":
+    if name not in {"conclusion", "abstract"}:
         return paragraphs, []
     proposed = [entry for entry in paragraphs if isinstance(entry, dict) and isinstance(entry.get("text"), str) and isinstance(entry.get("receipt_ids"), list)]
     for entry in proposed:
         entry["text"] = _materialize_inline_receipts(entry["text"], entry["receipt_ids"])
     if not proposed:
         return [], []
-    review = await review_statements(proposed, [dataclasses.asdict(receipt) for receipt in receipts], **options)
+    sources: Any = [dataclasses.asdict(receipt) for receipt in receipts]
+    if name == "abstract":
+        sources = {"receipts": sources, "author_context": options.get("author_context", {})}
+    review = await review_statements(proposed, sources, **options)
     accepted, reasons = [], []
     for item in review["assessments"]:
         entry = proposed[item["row"]]

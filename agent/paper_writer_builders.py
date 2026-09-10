@@ -346,17 +346,18 @@ def _check_anchored_paragraph(
     accepted_numerics: set[str],
     *,
     allow_numerics: bool = True,
+    allow_uncited: bool = False,
 ) -> tuple[bool, str]:
     if not text.strip():
         return False, "empty_paragraph"
     cited = [r for r in receipt_ids if r in accepted_ids]
-    if not cited:
+    if not cited and (not allow_uncited or _INLINE_RECEIPT_RE.search(text)):
         return False, f"no_accepted_anchor:{list(receipt_ids)}"
-    inline = re.compile(r"(?<![A-Za-z0-9_-])(?:" + "|".join(map(re.escape, cited)) + r")(?![A-Za-z0-9_-])")
+    inline = re.compile(r"(?<![A-Za-z0-9_-])(?:" + "|".join(map(re.escape, cited)) + r")(?![A-Za-z0-9_-])") if cited else re.compile(r"(?!)")
     protected = _CONTINUING_ABBREVIATION_RE.sub(
         lambda match: match.group().replace(".", "<DOT>"), text,
     )
-    if any(not inline.search(sentence) for sentence in _SENTENCE_BREAK_RE.split(protected)):
+    if cited and any(not inline.search(sentence) for sentence in _SENTENCE_BREAK_RE.split(protected)):
         return False, "missing_inline_anchor"
     for m in _NUMERIC_RE.finditer(inline.sub("", text)):
         tok = _numeric_token(m.group(0))
@@ -425,6 +426,8 @@ def build_anchored_from_parsed(
     heading: str,
     accepted: Sequence[ReceiptSummary],
     rejection_reasons: list[str] | None = None,
+    reviewed: frozenset[tuple[str, tuple[str, ...]]] = frozenset(),
+    author_numerics: frozenset[str] = frozenset(),
 ) -> SynthesisSection | None:
     accepted_ids = {r.receipt_id for r in accepted}
     accepted_by_id = {r.receipt_id: r for r in accepted}
@@ -460,14 +463,16 @@ def build_anchored_from_parsed(
                 break
         text = _materialize_inline_receipts(text, repaired_rids)
         mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
+        source_reviewed = name == "abstract" and (text.strip(), tuple(sorted(repaired_rids))) in reviewed
         ok, reason = _check_anchored_paragraph(
-            text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts),
+            text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts) | (set(author_numerics) if source_reviewed and not repaired_rids else set()),
             allow_numerics=name not in {"cross_domain_synthesis", "limitations_full"},
+            allow_uncited=source_reviewed and not repaired_rids,
         )
         if not ok:
             rejections.append(reason)
             continue
-        if name in {"abstract", "results"} and (
+        if not source_reviewed and name in {"abstract", "results"} and (
             grounding_reason := _source_grounding_reason(text, repaired_rids, accepted_by_id)
         ):
             rejections.append(grounding_reason)

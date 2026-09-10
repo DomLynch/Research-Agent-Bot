@@ -3026,6 +3026,9 @@ async def _run(
             qei_citation_tokens_by_paper_id=qei_citation_tokens,
             qei_quarantine_path=out_dir / "qei_quarantined.json",
             review_type=_review_type_effective,
+            author_context={"question": thesis.text, "review_type": _review_type_effective,
+                "source_count": len(receipts), "retrieval": retrieval_record.to_manifest(),
+                "receipt_funnel": receipt_funnel},
         )
     print(
         "render_full_paper done.",
