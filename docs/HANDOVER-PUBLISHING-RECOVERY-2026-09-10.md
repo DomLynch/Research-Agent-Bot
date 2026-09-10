@@ -2,8 +2,9 @@
 
 Publishing recovery is **not complete**. Step 1 is deployed and verified.
 The broader repairs are committed and tested, but the full manuscript replay
-still fails scientific review. No new submission or publication was made by
-these recovery canaries.
+has not yet passed scientific review. A second curated-map replay is running
+after the first identified incorrect attribution of our own Methods to external
+studies. No recovery submission or publication has been made.
 
 ## Five-step status
 
@@ -17,7 +18,7 @@ these recovery canaries.
 
 ## Current code and production
 
-- Tested development commit: `15e0eee18b85be029aa5969bdcea1df5c530e9dd`,
+- Tested development commit: `a93a8d4f4c2fa3218d823057579cf474e72d583e`,
   pushed to `codex/01a089bc/main`. Later documentation-only commits may follow.
 - Production `/opt/research-agent-bot` and `/root/Research-Agent-Bot` remain on
   the reconciliation release `64086d2fe119c85529af8e6a3963cb15d9d23920`.
@@ -29,10 +30,10 @@ these recovery canaries.
 
 ## Verification receipts
 
-- Full development suite: **4,905 passed**, two existing XPASS results,
-  16 warnings; 161.70 seconds.
+- Full development suite: **4,922 passed**, two existing XPASS results,
+  16 warnings; 159.03 seconds.
 - `make quality`: passed, including 343 gate/coverage/LOC tests.
-- Mypy: passed for 179 source files. No complexity, duplication or LOC ceiling
+- Mypy: passed for 180 source files. No complexity, duplication or LOC ceiling
   was raised. Obsolete explanatory history was condensed in citation helpers.
 - Focused source/QEI/writer/submission checks: 553 passed.
 - Isolated VPS checks: 144 passed; seven tests skipped because their parsed-PDF
@@ -71,20 +72,38 @@ Literal source tracing and a high deterministic score do not resolve these
 scientific findings. The 29/30 score in the later replay is the deterministic
 publication scorer, not a Core acceptance or an independent semantic verdict.
 
-## Next work and pending scope decision
+## Current recovery route and next audit
 
-The user has been asked whether to target a **curated evidence map** using the
-verified existing records or a **full scoping review** requiring completion of
-the missing search/screening record. No choice was received when this report
-was written. Do not relabel the paper merely to lower its quality requirements.
+We are proceeding with a **full-length curated evidence map** using the verified
+existing records. The optional scope question received no answer; it is not a
+reason to stop the authorized work. The new `curated_evidence_map` type remains
+outside compact types and preserves the 400-word Results / 180-word Conclusion
+minimums. The question, Methods and appraisal disclosure must describe the work
+actually supported by the records.
 
-After settling that scope, reconcile the question, eligibility, Methods and
-metadata; produce a substantive supported Conclusion; and retain unresolved
-review findings until a new full-manuscript review resolves them. Then require
-fresh six-ask coverage, all final gates, a normal Core decision and a verified
-public artifact. Repeat across distinct topics, including a revision, before
-describing publishing as standardized. Preserve the existing 400-word Results
-and 180-word Conclusion minimums throughout this recovery.
+The first curated replay's real Terra review accepted the Abstract's scientific
+findings and limitations, but rejected its question and Methods paragraphs:
+external papers cannot establish our own mapping procedure. The private prose
+review now also receives the run's question, source count, retrieval and Methods
+records. Such author assertions can remain uncited when justified by those
+records; study findings still require their cited sources. Text, source bundle,
+Methods and policy hashes invalidate stale approvals. No cache fields are sent
+to Core, and full manuscript review and normal acceptance remain mandatory.
+
+The source/prose regression suite has 17 passing cases, including changed values,
+source/citation changes, negative/malformed review, author-record attribution,
+changed methods, policy changes, and context isolation. Focused writer/pipeline
+checks passed 139 cases locally and on the isolated VPS. Quality's 343 checks
+and mypy passed without increasing limits. Historical docstrings were condensed;
+AST comparisons proved executable parity for those documentation edits.
+
+The second replay is `/tmp/v3-curated-replay-v2.py` on the isolated VPS; its log
+is `/tmp/v3-curated-replay-v2.log`. It must demonstrate a substantive supported
+Conclusion after the normal pipeline, complete semantic coverage of all six Core
+requests, and every final gate. Then require a normal Core decision and public
+artifact, followed by distinct-topic runs including a revision. Native Abstract
+generation and cross-topic repeatability still need proof; do not call this
+standardized publishing yet.
 
 Replay artifacts are under `.tmp/v3-standardized/runs/`, especially
 `synthesis-resveratrol-parity-replay-20260910` and

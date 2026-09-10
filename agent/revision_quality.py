@@ -162,11 +162,17 @@ def receipt_direction(row: dict[str, Any]) -> str:
     return "unclear"
 
 
+_SOURCE_LAYOUT_NUMBER = r"\d+(?:[A-Z](?:\s*[-–]\s*[A-Z])?)?"
+_SOURCE_LAYOUT_GROUP = rf"(?i:tables?|figures?|figs?\.?)\s*{_SOURCE_LAYOUT_NUMBER}(?:\s*,\s*{_SOURCE_LAYOUT_NUMBER})*"
+_SOURCE_LAYOUT_ONLY = re.compile(rf"\s*\(\s*{_SOURCE_LAYOUT_GROUP}(?:\s*;\s*{_SOURCE_LAYOUT_GROUP})*\s*\)")
+
+
 def manifest_row_finding(row: dict[str, Any]) -> str:
     # Keep the whole verified result: selecting its first p-value can substitute
     # baseline balance or a different endpoint for the actual treatment finding.
     if row.get("verified_source_sections") and (excerpts := row.get("source_result_excerpts")):
-        return str(excerpts[0])
+        # Source layout locators do not name objects in this manuscript.
+        return _SOURCE_LAYOUT_ONLY.sub("", str(excerpts[0]))
     claims = row.get("n_claims")
     if isinstance(claims, int) and claims > 0:
         return f"{claims} extracted claim(s); receipt-level direction is the coded finding"
@@ -387,7 +393,12 @@ def _prose_paragraphs(text: str) -> list[str]:
     ]
 
 
-def _row_evidence(row: dict[str, Any], *, statistics: bool = False) -> str: return re.sub(r"(\bp\s*(?:[<>]=?|=|≤|≥)\s*0?\.)\s+(?=\d)", r"\1", str(row.get("verified_abstract") or _row_evidence(row)), flags=re.I) if statistics else " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
+def _row_evidence(row: dict[str, Any], *, statistics: bool = False) -> str:
+    if not statistics:
+        return " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
+    excerpts = row.get("source_result_excerpts", []) if row.get("verified_source_sections") else []
+    text = "\n".join([str(row.get("verified_abstract") or _row_evidence(row)), *excerpts])
+    return re.sub(r"(\bp\s*(?:[<>]=?|=|≤|≥)\s*0?\.)\s+(?=\d)", r"\1", text, flags=re.I)
 
 
 def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
@@ -430,7 +441,7 @@ def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = Fal
         value = re.sub(r"\b(?:was|is)\b", "", re.sub(r"[–\u2212]", "-", value.casefold()))
         return re.sub(r"[\s:=<>≤≥]", "", re.compile(r"\d+(?:\.\d+)?|\.\d+").sub(lambda m: _numbers(m[0])[0], value)), _p_relations(value)
     def context_key(value: str) -> str:
-        value = re.sub(r"[–\u2212]", "-", value).replace("≤", "<=").replace("≥", ">=")
+        value = re.sub(r"[–\u2212]", "-", _SOURCE_LAYOUT_ONLY.sub("", value)).replace("≤", "<=").replace("≥", ">=")
         return _claim_key(re.sub(r"[-+<>=]", lambda m: f" operator{ord(m[0])} ", value), [row])
     claim = context_key(re.sub(r"^finding\s*=\s*", "", context, flags=re.I))
     return any((not context or claim != context_key(stat) and claim == context_key(clause))
