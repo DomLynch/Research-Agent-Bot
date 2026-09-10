@@ -104,6 +104,45 @@ def test_changed_review_policy_invalidates_cached_support(run, monkeypatch):
         assert not grounding.approved(CLAIM, bundle, {0})
 
 
+def test_own_question_uses_run_records_without_external_attribution(run, monkeypatch):
+    own = "This map compares how population and endpoint differences limit interpretation of the supplied records."
+    manifest = json.loads((run / "manifest.json").read_text())
+    manifest["thesis"] = own
+    (run / "manifest.json").write_text(json.dumps(manifest))
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text().replace("## Abstract\n\n", "## Abstract\n\n" + own + "\n\n"))
+    calls = install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    supplied = json.loads(calls[0]["messages"][1]["content"])
+    assert supplied["sources"]["author_context"]["source_count"] == 1
+    assert supplied["sources"]["author_context"]["question"] == own
+    submission.prepare_submission_manuscript(run, enrich_sources=False)
+    payload = submission.build_payload(run, enrich_sources=False)
+    assert own + "\n" in payload["body_markdown"]
+    assert payload["core_claims_resolved"] is True
+    assert "author_context" not in json.dumps(payload)
+    bundle = grounding._verified_bundle(run)
+    with grounding.grounding_context(run):
+        assert grounding.approved(own, bundle, set())
+        altered = deepcopy(bundle)
+        altered[0]["excerpt"] = "Different evidence."
+        assert not grounding.approved(own, altered, set())
+    (run / "methods_pack.json").write_text(json.dumps({"search_dates": "Changed methods record"}))
+    with grounding.grounding_context(run):
+        assert not grounding.approved(own, bundle, set())
+
+
+def test_author_wording_cannot_bypass_negative_scientific_review(run, monkeypatch):
+    claim = "This map found that resveratrol prevented mortality in all older adults without uncertainty."
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text().replace(CLAIM, claim))
+    install_judge(monkeypatch, supported=False)
+    asyncio.run(grounding.review_manuscript(run))
+    bundle = grounding._verified_bundle(run)
+    with grounding.grounding_context(run):
+        assert not submission._cited_claim_aligns(claim, bundle, set())
+
+
 @pytest.mark.parametrize("assessments", [[], [{"row": 0, "supported": "true", "reason": "yes"}],
     [{"row": 1, "supported": True, "reason": "yes"}], [{"row": 0, "supported": True, "reason": ""}],
     [{"row": 0, "supported": True, "reason": "yes"}] * 2])

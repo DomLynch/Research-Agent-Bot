@@ -320,29 +320,7 @@ def build_what_this_adds_section(
     *,
     topic: str,
 ) -> str:
-    """Fix #25 — DETERMINISTIC `## What This Synthesis Adds` section.
-
-    Returns the section as a raw markdown string so the orchestrator
-    can splice it into the paper at the right position (between
-    Conclusion and References). Returning `str` instead of
-    SynthesisSection avoids polluting the SectionName Literal — the
-    section is structurally a 'what-this-adds' originality block, not
-    one of the eight enumerated section types.
-
-    Templated from receipts + matrix + thesis so the originality
-    claim is grounded in pipeline data, not LLM rhetoric:
-
-      - corpus characterisation (N receipts, N outcome classes,
-        N non-orthogonal tensions)
-      - the picked thesis sentence (verbatim — already trust-spine
-        validated by the thesis tournament)
-      - the load-bearing cross-domain tension (highest severity)
-      - explicit comparison vs the named B1 systematic reviews in
-        the corpus (the 'beyond prior reviews' framing)
-      - one-line statement of the boundary condition the synthesis
-        adds beyond the prior reviews
-
-    Position in the paper: between Conclusion and References."""
+    """Render the contribution from accepted receipts, outcome classes, the chosen thesis and cited comparisons, before References."""
     accepted = list(filter_accepted(receipts))
     n_acc = len(accepted)
     outcome_classes = _outcome_class_set(accepted)

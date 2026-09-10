@@ -777,6 +777,7 @@ def _attach_aligned_claim_references(paper: str, bundle: list[dict[str, Any]]) -
                     generated.add(key)
                 candidate = not _corpus_accounting_only(clean) and (bool(_claim_candidates(clean)) or len(clean) >= 80 and (section in {"abstract", "conclusion"} and any(marker in clean.lower() for marker in _CLAIM_MARKERS) or bool(re.search(r"\b(?:drug|intervention|patients?|participants?|subjects?|therapy|treatment)\s+[a-z]+(?:ed|ing)\b", clean, re.I))))
                 indexes = _citation_indexes(clean, bundle)
+                candidate = candidate and not _prose_approved(clean, bundle, indexes)
                 if candidate and indexes and not _cited_claim_aligns(clean, bundle, indexes):
                     continue
                 if candidate and not indexes:
@@ -814,7 +815,7 @@ def _researka_claim_trace_status(
     prose = "\n".join(line for line in "\n".join([str(payload.get("abstract") or ""), *major]).splitlines() if not line.lstrip().startswith("|"))
     claims = _claim_candidates(prose)[:30]
     indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
-    strict = (len(claims), sum(map(bool, indexes)), sum(any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
+    strict = (len(claims), sum(map(bool, indexes)), sum(_prose_approved(claim, source_bundle, values) or any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
                                                         for claim, values in zip(claims, indexes, strict=True)))
     for count, cited, aligned in (_claim_trace_counts(prose, source_bundle), strict):
         required = (count * 4 + 4) // 5 if count else 0
