@@ -18,6 +18,23 @@ import final_reviewer as gr  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 
+def test_auto_strip_removes_complete_flagged_table_row_and_quarantines_it(monkeypatch, tmp_path):
+    row = "| Trial 2023 | pocket depth | placebo comparison | 4.44 mm to 2.82 mm |"
+    neighbor = "| Other 2024 | glucose | between groups | -6.00 mmol/L |"
+    paper = "## Quantitative Evidence Index\n\n| Study | Endpoint | Comparison | Estimate |\n|---|---|---|---|\n" + row + "\n" + neighbor + "\n"
+    result = ap.PatchResult(patch_id="P-row", patch_type="structure", severity="P1", decision="flagged",
+        reason_for_decision="Unsupported comparison; remove this row.", before="| Trial 2023 | pocket depth |", after="")
+    async def unfixable(*args, **kwargs):
+        return []
+    monkeypatch.setattr(orch._final_reviewer, "repair_flagged_patches", unfixable)
+    cleaned, results = asyncio.run(orch._agent_repair_loop(paper_md=paper, results=[result], manifest={}, paper_path=tmp_path/'full_paper.md'))
+    assert cleaned == paper.replace(row, "")
+    assert neighbor in cleaned
+    assert results[0].decision == "auto_stripped"
+    assert results[0].before == row
+    assert row in (tmp_path/'numeric_claim_quarantine.json').read_text()
+
+
 def test_post_pipeline_passes_configured_final_reviewer_model(tmp_path: Path, monkeypatch) -> None:
     from agent import prose_grounding
     async def prepared(_run):

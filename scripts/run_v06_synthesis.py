@@ -4063,12 +4063,18 @@ async def _agent_repair_loop(
                 continue
             if _patch_applier._has_unsafe_match_boundary(paper_md, r.before):
                 continue
-            paper_md = paper_md.replace(r.before, "", 1)
-            if re.search(r"\d", r.before):
+            before = r.before
+            if "\n" not in before and before.lstrip().startswith("|"):
+                row = next(line for line in paper_md.splitlines() if before in line)
+                if not row.lstrip().startswith("|") or not row.rstrip().endswith("|"):
+                    continue
+                before = row
+            paper_md = paper_md.replace(before, "", 1)
+            if re.search(r"\d", before):
                 _consistency_fixer._append_numeric_quarantine(
                     paper_path.with_name("numeric_claim_quarantine.json") if paper_path is not None else None,
                     [SimpleNamespace(issue_type="reviewer_numeric_auto_strip", severity="P1",
-                                     sentence=r.before, detail=r.reason_for_decision)],
+                                     sentence=before, detail=r.reason_for_decision)],
                 )
             # Tag the result as auto-stripped
             results = [
@@ -4087,7 +4093,7 @@ async def _agent_repair_loop(
                         if rr.patch_id == r.patch_id
                         else rr.reason_for_decision
                     ),
-                    before=rr.before, after=rr.after,
+                    before=before if rr.patch_id == r.patch_id else rr.before, after=rr.after,
                 )
                 for rr in results
             ]
