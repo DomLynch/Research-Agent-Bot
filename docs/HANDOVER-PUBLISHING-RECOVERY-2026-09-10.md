@@ -1,0 +1,93 @@
+# V3 publishing recovery — audited status, 10 September 2026
+
+Publishing recovery is **not complete**. Step 1 is deployed and verified.
+The broader repairs are committed and tested, but the full manuscript replay
+still fails scientific review. No new submission or publication was made by
+these recovery canaries.
+
+## Five-step status
+
+| Step | Implementation and first audit | Second audit / completion status |
+|---|---|---|
+| 1. Bound reconciliation and revision startup | Durable, fair polling with a 60-second budget, bounded individual requests, atomic checkpoints and preservation of partial valid results. | **Complete for reconciliation.** Two actual production service runs finished in 57–58 seconds with exit 0; 80 distinct IDs were retained across passes. This does not prove that a scientific revision completes. |
+| 2. Correct source records, QEI and Methods | Authorized classification corrections preserve all 37 identities. Historical retrieval records distinguish 4,286 metadata candidates, 1,384 retained at metadata selection and 114 extracted records from the 37 admitted receipts. QEI exposes endpoint, study comparison, estimate, uncertainty, significance and exact result clause. | **Open.** Full-source QEI review retained 30 of 31 rows and quarantined an internally conflicting statistic. All six stored revision asks pass structural coverage, but final scientific coverage and manuscript framing remain unproven. |
+| 3. Preserve completeness through repair | Fixed sentence boundaries, numeric-role mistakes, exact-quote formatting and overly aggressive paragraph similarity. Methods are rendered before review; reviewers receive verified source evidence. | **Open.** The original complete run wrote a 484-word Conclusion and ended at 67. A later repair wrote 428 words, but review correctly found an excerpt collection rather than a synthesis; the final Conclusion had 0 words. Required-section gates blocked it. |
+| 4. Align publishing contracts | Current reviewer-v15 policy retained. No model, acceptance threshold, source identity or section-floor waiver. Writer/reviewer source context now includes complete own-result passages, including conflicting passages. | **Partially verified.** A deterministic replay passes 14/14 audits and removes 25 surface failures, leaving the Conclusion blocker. Full semantic review still finds question/methods/synthesis defects. |
+| 5. Prove publication and repeatability | Two controlled manuscript runs and a separate real QEI review were executed without submitting. | **Not complete.** No accepted Core decision or new public artifact; no successful repeatability series across distinct topics. |
+
+## Current code and production
+
+- Tested development commit: `15e0eee18b85be029aa5969bdcea1df5c530e9dd`,
+  pushed to `codex/01a089bc/main`. Later documentation-only commits may follow.
+- Production `/opt/research-agent-bot` and `/root/Research-Agent-Bot` remain on
+  the reconciliation release `64086d2fe119c85529af8e6a3963cb15d9d23920`.
+- Production trees were clean. All three lane timers were active. The latest
+  observed fresh service was failed; revise and reconcile were idle. Timer
+  enablement is not evidence of successful paper generation.
+- The broader scientific repairs have **not** been deployed to production.
+  Do not overwrite an active checkout to test them.
+
+## Verification receipts
+
+- Full development suite: **4,905 passed**, two existing XPASS results,
+  16 warnings; 161.70 seconds.
+- `make quality`: passed, including 343 gate/coverage/LOC tests.
+- Mypy: passed for 179 source files. No complexity, duplication or LOC ceiling
+  was raised. Obsolete explanatory history was condensed in citation helpers.
+- Focused source/QEI/writer/submission checks: 553 passed.
+- Exact runtime tested in the isolated VPS checkout
+  `/tmp/v3-recovery-review-parity-20260910`.
+- Local receipts: `/tmp/v3-final-source-review-suite.log`,
+  `/tmp/v3-qei-consistency-quality-2.log`,
+  `/tmp/v3-qei-consistency-mypy.log`.
+
+## Important scientific findings
+
+The Montoya-Estrada source is internally inconsistent: its Results and abstract
+report total antioxidant capacity increases of 30% for resveratrol plus vitamin
+C and 28% for vitamin C, while its Conclusion says vitamin C increased capacity
+by up to 33%. The previous extractor omitted the relevant Results sentences
+because it missed nominal effect language and changed source typography.
+Those extraction defects are fixed. The new configured Terra review rejected
+the disputed row in 38.21 seconds and retained 30 other rows. It did not replace
+33% with 30%, which would have changed the treatment attribution. All source
+snapshot hashes remained unchanged.
+
+The complete manuscript review also found:
+
+- An unclear research question and a mismatch between measurement-method
+  eligibility wording and the admitted intervention studies.
+- A PRISMA scoping-synthesis claim that the reviewer judged unsupported by the
+  available screening documentation.
+- Directness wording that overstates the clinical proximity of biomarker and
+  pharmacokinetic outcomes; a pseudo-randomized study described as observational.
+- Unsupported source-context tallies and claimed disagreements between studies
+  that both reported favorable inflammatory-marker changes.
+- A Conclusion composed of unintegrated source excerpts. The retry prompt
+  currently steers failed paraphrases toward verbatim source sentences, while
+  the patch process favors deletions. That interaction still needs repair.
+
+Literal source tracing and a high deterministic score do not resolve these
+scientific findings. The 29/30 score in the later replay is the deterministic
+publication scorer, not a Core acceptance or an independent semantic verdict.
+
+## Next work and pending scope decision
+
+The user has been asked whether to target a **curated evidence map** using the
+verified existing records or a **full scoping review** requiring completion of
+the missing search/screening record. No choice was received when this report
+was written. Do not relabel the paper merely to lower its quality requirements.
+
+After settling that scope, reconcile the question, eligibility, Methods and
+metadata; produce a substantive supported Conclusion; and retain unresolved
+review findings until a new full-manuscript review resolves them. Then require
+fresh six-ask coverage, all final gates, a normal Core decision and a verified
+public artifact. Repeat across distinct topics, including a revision, before
+describing publishing as standardized.
+
+Replay artifacts are under `.tmp/v3-standardized/runs/`, especially
+`synthesis-resveratrol-parity-replay-20260910` and
+`synthesis-resveratrol-standardized-20260910-LATEST-DETERMINISTIC`.
+The completed QEI audit is on the isolated VPS at
+`qei-statistical-consistency-audit/`; its copied local review is
+`/tmp/v3-qei-complete-source-review.json`.
