@@ -1006,7 +1006,7 @@ def _check_background_lit_unsourced(
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     try:
         import background_literature as _bg
-        registry = _bg.load_registry()
+        registry = _bg.load_registry(topic=str(manifest.get("topic") or "") if manifest is not None else None)
         repo = Path(__file__).resolve().parent.parent
         topic = (manifest or {}).get("topic") if isinstance(manifest, dict) else None
         quant_claims_dir = (

@@ -550,12 +550,18 @@ def _verified_result_quotes(manifest: dict | None, quant_claims_dir) -> dict[str
     return quotes
 
 
+def _canonical_quoted_text(text: str) -> str:
+    text = re.sub(r"\s+([.,;:!?])", r"\1", " ".join(text.split()))
+    text = re.sub(r"([([])\s+", r"\1", text).strip(' ."“”')
+    return re.sub(r"\b[Pp]\s*[<=>≤≥]\s*(?:\d*\.\s*\d+|\d+)", lambda m: re.sub(r"\s+", "", m[0]).lower(), text)
+
+
 def _is_verified_result_quote(sentence: str, quotes: dict[str, tuple[str, ...]]) -> bool:
     tokens = {f"{match[1]} {match[2]}" for match in _CITATION_TOKEN_RE.finditer(sentence)}
     if len(tokens) != 1 or not (source_quotes := quotes.get(next(iter(tokens)))):
         return False
     prose = re.sub(r"\[(?:bundle:\d+|" + re.escape(next(iter(tokens))) + r")\]", "", sentence).strip(' .\"“”')
-    return any(" ".join(prose.split()) == " ".join(quote.strip(' .\"“”').split()) for quote in source_quotes)
+    return any(_canonical_quoted_text(prose) == _canonical_quoted_text(quote) for quote in source_quotes)
 
 
 def _manifest_count_values(manifest: dict) -> set[str]:

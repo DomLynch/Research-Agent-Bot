@@ -925,16 +925,19 @@ def test_apply_fixes_strips_duplicate_long_sentences() -> None:
     assert any(item["fix_type"] == "duplicate_sentence" for item in log)
 
 
-def test_apply_fixes_does_not_pad_results_after_numeric_strips() -> None:
+def test_apply_fixes_does_not_pad_results_after_numeric_strips(monkeypatch) -> None:
     import sys as _sys
     from pathlib import Path as _Path
     _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
     import apply_consistency_fixes as fixer
+    import audit_v06_paper
+    monkeypatch.setattr(audit_v06_paper, "_ACTIVE_TOPIC", "rapamycin", raising=False)
 
     paper = "## Results\n\n" + " ".join(f"word{i}" for i in range(380))
     out, log = fixer.apply_fixes(paper, [], manifest={"topic": "demo"})
     assert "**Result-interpretation guardrail.**" not in out
     assert fixer._section_word_count(out, "Results") == 380, log
+    assert not audit._check_background_lit_unsourced(paper, {"topic": "demo"})
     assert not any(
         item["fix_type"] == "analytical_depth_backfill"
         and "'Results'" in item["description"]

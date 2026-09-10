@@ -91,17 +91,15 @@ def test_methods_pack_h3_markers_no_longer_say_human_accountability() -> None:
     assert "### Human accountability" not in REQUIRED_METHODS_H3_MARKERS
 
 
-def test_phase_c_calibrates_public_directness_language() -> None:
-    out, log = _phase_c_terminology(
+def test_phase_c_preserves_clinical_scope_without_inventing_hard_endpoints() -> None:
+    original = (
         "The paper has no direct clinical evidence and a direct clinical gap. "
         "Direct clinical evidence carries the highest weight."
     )
-
-    assert "direct clinical evidence" not in out
-    assert "direct clinical gap" not in out
-    assert "direct interventional hard-endpoint evidence" in out
-    assert "direct interventional hard-endpoint gap" in out
-    assert log
+    out, log = _phase_c_terminology(original)
+    assert out == original
+    assert "hard-endpoint" not in out
+    assert not log
 
 
 def test_methods_pack_render_matches_required_markers() -> None:

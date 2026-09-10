@@ -2435,10 +2435,10 @@ def apply_fixes(
     # 850-word Discussion if the only way to fill 850 is via
     # unsourced bg-lit). Q11/Q12 P2 is preferable to C09 P1.
     n_re_stripped = _strip_unsourced_background_sentences_inplace(
-        new_md, [],
+        new_md, [], manifest=manifest, quant_claims_dir=quant_claims_dir,
     )
     if n_re_stripped:
-        new_md = _strip_unsourced_background_sentences(new_md)
+        new_md = _strip_unsourced_background_sentences(new_md, manifest=manifest, quant_claims_dir=quant_claims_dir)
         log.append({
             "fix_type": "background_lit_unsourced_restrip_post_depth",
             "n_changes": n_re_stripped,
@@ -2891,7 +2891,7 @@ def _strip_unsourced_background_sentences_inplace(
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     try:
         import background_literature as _bg
-        registry = _bg.load_registry()
+        registry = _bg.load_registry(topic=str(manifest.get("topic") or "") if manifest is not None else None)
         unsourced = _bg.find_unsourced_background_uses(
             paper_md,
             registry,
@@ -3552,7 +3552,7 @@ def _strip_unsourced_background_sentences(
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     try:
         import background_literature as _bg
-        registry = _bg.load_registry()
+        registry = _bg.load_registry(topic=str(manifest.get("topic") or "") if manifest is not None else None)
     except (ImportError, FileNotFoundError, ValueError):
         return paper_md
     if not registry:

@@ -712,16 +712,14 @@ def _claim_clauses(text: str) -> list[str]:
 
 
 def _verified_complete_quotation(claim: str, source: dict[str, Any]) -> bool:
+    from numeric_role_guard import _canonical_quoted_text
     cited = str(source.get("cited_as") or "")
     if not cited or f"[{cited}]" not in claim or source.get("excerpt_is_complete_field") is not True or not _publication_evidence.source_proof_is_valid(source):
         return False
     if not claim.strip().startswith(('"', '“')) or not claim.strip().endswith(('"', '”')):
         return False
-    def normalized(text: str) -> str:
-        text = re.sub(r"\s+([.,;:!?])", r"\1", " ".join(text.split()))
-        return re.sub(r"([([])\s+", r"\1", text).strip(' ."“”')
-    prose = normalized(re.sub(r"\[(?:bundle:\d+|" + re.escape(cited) + r")\]", "", claim))
-    return len(prose) >= 20 and any(prose == normalized(sentence) for sentence in _revision_claim_trace._sentences(str(source["excerpt"])))
+    prose = _canonical_quoted_text(re.sub(r"\[(?:bundle:\d+|" + re.escape(cited) + r")\]", "", claim))
+    return len(prose) >= 20 and any(prose == _canonical_quoted_text(sentence) for sentence in _revision_claim_trace._sentences(str(source["excerpt"])))
 
 
 def _cited_claim_aligns(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> bool:

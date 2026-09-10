@@ -173,81 +173,12 @@ def _build_reviewer_prompt(
         ]
         receipt_header = "## Receipt list (use ONLY these for citations)"
 
-    # Reviewer wave 10 (2026-05-05) — background-literature awareness fix:
-    # The pipeline allows TWO citation pools in body prose:
-    #   1. Receipts (above) — primary corpus evidence
-    #   2. Background-literature registry — pre-vetted clinical
-    #      thresholds (Studenski 2011, Cesari 2009, Cruz-Jentoft 2019,
-    #      Bohannon 1997, Anisimov 2008, Owen 2000, etc.) admissible
-    #      ONLY when the citation_token appears in the same sentence
-    #      as the threshold value.
-    # Pre-fix reviewer only saw pool #1 and flagged every bg-lit citation
-    # as 'unauthorized', generating dozens of false-positive P1 patches
-    # (rapamycin publication run had 19 unresolved). Now the reviewer sees
-    # both pools and only flags citations not in EITHER.
-    bglit_lines: list[str] = []
-    seen_background_entries: set[tuple[str, str]] = set()
-    try:
-        from pathlib import Path
-        import json as _json
-        # Pool 1: global docs/background_literature.json (canon
-        # citations shared across all topics: gait-speed thresholds,
-        # BMI cutoffs, ADA targets, Cochrane standards).
-        bg_path = (
-            Path(__file__).resolve().parent.parent
-            / "docs" / "background_literature.json"
-        )
-        if bg_path.exists():
-            bg_data = _json.loads(bg_path.read_text())
-            for entry in bg_data.values():
-                if not isinstance(entry, dict):
-                    continue
-                token = (entry.get("citation_token") or "").strip()
-                numeric = (entry.get("numeric") or "").strip()
-                if not token:
-                    continue
-                entry_key = (token, numeric)
-                if entry_key in seen_background_entries:
-                    continue
-                seen_background_entries.add(entry_key)
-                bglit_lines.append(
-                    f"- {token}: {numeric} ({entry.get('context', '')[:60]})"
-                )
-        # Pool 2 (Slice 7 step 3 fix): topic-pack [[background_literature]]
-        # entries (rapamycin pack has Harrison 2009 / Lamming 2012 /
-        # Mannick 2014 / Kahan 2000 / Kennedy 2014 / López-Otín 2013).
-        # Without this, the reviewer flagged every legitimate canon citation
-        # as 'unauthorized' on calibrated rapamycin runs.
-        topic = (manifest.get("topic")
-                 if isinstance(manifest, dict) else None)
-        if topic:
-            tp_path = (
-                Path(__file__).resolve().parent.parent
-                / "topic_packs" / f"{topic}.toml"
-            )
-            if tp_path.exists():
-                import sys as _sys
-                _sys.path.insert(
-                    0, str(Path(__file__).resolve().parent.parent),
-                )
-                from agent.topic_pack import (  # noqa: E402
-                    load_topic_pack as _ltp,
-                )
-                pack = _ltp(tp_path)
-                for entry in pack.background_literature:
-                    token = (entry.citation_token or "").strip()
-                    numeric = (entry.numeric or "").strip()
-                    if not token:
-                        continue
-                    entry_key = (token, numeric)
-                    if entry_key in seen_background_entries:
-                        continue
-                    seen_background_entries.add(entry_key)
-                    bglit_lines.append(
-                        f"- {token}: {numeric} ({entry.context[:60]})"
-                    )
-    except (OSError, ValueError, ImportError):
-        bglit_lines = bglit_lines or []
+    import background_literature as background
+    registry = background.load_registry(topic=str(manifest.get("topic") or ""))
+    bglit_lines = list(dict.fromkeys(
+        f"- {entry.citation_token}: {entry.numeric} ({entry.context[:60]})"
+        for entry in registry.values() if entry.citation_token
+    ))
     bglit_header = (
         "## Allowed body citations — background literature\n\n"
         "These canonical citations are ALSO permitted in body prose, "

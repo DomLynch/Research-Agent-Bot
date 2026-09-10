@@ -300,7 +300,7 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
 
 
 def _token_overlap(a: set[str], b: set[str]) -> float:
-    return len(a & b) / max(1, min(len(a), len(b)))
+    return len(a & b) / max(1, len(a | b))
 
 
 def _cells(line: str) -> list[str]:
