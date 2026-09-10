@@ -170,22 +170,7 @@ def _add_claim_numerics(c: dict, nums: set[str]) -> None:
 def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
     if not isinstance(manifest, dict):
         return set()
-    keys = (
-        "n_receipts", "n_high_confidence_claims_total",
-        "n_non_orthogonal_tensions", "total_words",
-    )
-    out = {
-        canonical_numeric(str(manifest[k]))
-        for k in keys
-        if isinstance(manifest.get(k), (int, float))
-    }
-    counts = ((manifest.get("receipt_funnel") or {}).get("counts") or {})
-    if isinstance(counts, dict):
-        out.update(
-            canonical_numeric(str(v))
-            for v in counts.values()
-            if isinstance(v, (int, float))
-        )
+    out: set[str] = importlib.import_module("scripts.numeric_role_guard")._manifest_count_values(manifest)
     receipts = manifest.get("receipts") or ()
     classes: dict[str, int] = {}
     try:

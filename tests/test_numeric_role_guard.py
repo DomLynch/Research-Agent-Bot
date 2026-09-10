@@ -23,6 +23,32 @@ from numeric_role_guard import (  # type: ignore[import-not-found]  # noqa: E402
 
 # ---------- arithmetic violations -----------------------------------
 
+
+def test_source_duration_is_not_dose_and_cannot_be_used_as_outcome(tmp_path):
+    import json
+    claims = [{"claim_type": "unit_value", "raw_text": "12 weeks", "numeric_values": [12],
+               "units": "weeks", "claim_role": "unknown", "sentence": "The treatment lasted 12 weeks."}]
+    (tmp_path / "r1.quant_claims.json").write_text(json.dumps({"claims": claims}))
+    manifest = {"receipts": [{"receipt_id": "r1", "citation_token": "Trial 2020"}]}
+    assert not scan_paper("The treatment lasted 12 weeks [Trial 2020].", manifest=manifest, quant_claims_dir=tmp_path)
+    assert any(i.issue_type == "source_context_drift" for i in scan_paper(
+        "The baseline outcome was 12 units [Trial 2020].", manifest=manifest, quant_claims_dir=tmp_path))
+
+
+def test_numeric_quarantine_removes_only_the_offending_quoted_paragraph(tmp_path):
+    import json
+    for rid, value in (("r1", 13), ("r2", 2)):
+        (tmp_path / f"{rid}.quant_claims.json").write_text(json.dumps({"claims": [
+            {"numeric_values": [value], "claim_role": "effect", "binding_confidence": "high"}]}))
+    manifest = {"receipts": [{"receipt_id": "r1", "citation_token": "Alpha 2020"},
+                             {"receipt_id": "r2", "citation_token": "Beta 2021"}]}
+    good = '"The outcome increased by 13%" [Alpha 2020].'
+    bad = '"The outcome increased by 9%" [Beta 2021].'
+    paper = good + "\n\n" + bad
+    issues = scan_paper(paper, manifest=manifest, quant_claims_dir=tmp_path)
+    repaired, count = auto_strip_offending_sentences(paper, issues)
+    assert count == 1 and good in repaired and bad not in repaired
+
 def test_arithmetic_violation_metformin_pattern():
     """The exact reviewer-flagged pattern: 0.13 m/s claimed to fall
     at or below 0.1 m/s threshold (0.13 > 0.1, so 'below' is false)."""

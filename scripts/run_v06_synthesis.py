@@ -1277,7 +1277,7 @@ def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
         "evidence_tier": receipt.evidence_tier,
         "directness": receipt.directness,
         "thesis_text": receipt.thesis_text,
-        "source_result_excerpts": list(receipt.source_result_excerpts),
+        "source_result_excerpts": list(getattr(receipt, "source_result_excerpts", ())),
         "population_summary": receipt.population_summary,
         "n_claims": receipt.n_claims,
         "p_values": list(receipt.p_values),

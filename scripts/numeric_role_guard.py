@@ -145,7 +145,7 @@ def _split_sentences(text: str) -> list[str]:
     s = text
     for orig, repl in placeholders:
         s = s.replace(orig, repl)
-    boundary = r"(?<=[.!?])\s+(?=[A-Z(])|^#{1,6}\s+.*$"
+    boundary = r"\n[ \t]*\n|(?<=[.!?])\s+(?=[A-Z(])|^#{1,6}\s+.*$"
     parts = re.split(boundary, s, flags=re.MULTILINE)
     out = []
     for p in parts:
@@ -443,6 +443,19 @@ _PAREN_NUMERIC_RE = re.compile(r"\([^)]*\d+(?:\.\d+)?\s*%?[^)]*\)")
 # Tolerance for numeric equality — "0.13" vs "0.130" or "5" vs "5.0"
 # count as the same number. Tighter than ±5% to keep this a fidelity
 # check, not a fuzzy match.
+def _source_numeric_role(claim: dict) -> str:
+    role = str(claim.get("claim_role") or "outcome").lower().strip()
+    sentence, raw = str(claim.get("sentence") or ""), str(claim.get("raw_text") or "")
+    if not raw or (start := sentence.find(raw)) < 0:
+        return role
+    number = re.match(r"\d+(?:\.\d+)?", raw)
+    if number and claim.get("claim_type") == "unit_value" and _classify_prose_numeric_role(sentence, start, number[0]) == "duration":
+        return "duration"
+    if role == "unknown" and number and re.search(r"\b(?:less than|greater than|below|above)\s*$", sentence[:start], re.I):
+        return "threshold"
+    return role
+
+
 def _build_citation_role_index(
     *, manifest: dict | None,
     bg_lit_registry: dict | None,
@@ -500,7 +513,7 @@ def _build_citation_role_index(
         except (OSError, ValueError):
             continue
         for claim in data.get("claims", []) or []:
-            role = (claim.get("claim_role") or "").strip().lower() or "outcome"
+            role = _source_numeric_role(claim)
             for v in claim.get("numeric_values", []) or []:
                 vstr = str(v) if isinstance(v, (int, float)) else v
                 if not isinstance(vstr, str):
@@ -510,25 +523,53 @@ def _build_citation_role_index(
     return out
 
 
+def _verified_result_quotes(manifest: dict | None, quant_claims_dir) -> dict[str, tuple[str, ...]]:
+    """Independent source proof for complete quotes omitted by old extraction."""
+    import json
+    from pathlib import Path
+    from agent.revision_evidence import load_revision_evidence
+
+    if not manifest or not quant_claims_dir:
+        return {}
+    quant = Path(quant_claims_dir)
+    if quant.parent.name != "revision_evidence_snapshot":
+        return {}
+    lock = load_revision_evidence(quant.parent.parent, quant_dir=quant, parsed_dir=quant.parent / "parsed",
+                                  expected_topic=manifest.get("topic"))
+    if lock.errors or lock.mode != "snapshot" or lock.citation_registry is None:
+        return {}
+    registry = json.loads(lock.citation_registry.read_text())
+    quotes = {}
+    extractor = importlib.import_module("scripts.quant_claim_extract").source_result_excerpts
+    for row in manifest.get("receipts") or ():
+        rid, token = row.get("paper_id") or row.get("receipt_id"), row.get("citation_token")
+        if rid not in lock.receipt_rows or not token or registry.get(rid, {}).get("body_citation") != token:
+            continue
+        record = json.loads((lock.parsed_dir / f"{rid}.paper_sections.json").read_text())
+        quotes[token] = extractor(record)
+    return quotes
+
+
+def _is_verified_result_quote(sentence: str, quotes: dict[str, tuple[str, ...]]) -> bool:
+    tokens = {f"{match[1]} {match[2]}" for match in _CITATION_TOKEN_RE.finditer(sentence)}
+    if len(tokens) != 1 or not (source_quotes := quotes.get(next(iter(tokens)))):
+        return False
+    prose = re.sub(r"\[(?:bundle:\d+|" + re.escape(next(iter(tokens))) + r")\]", "", sentence).strip(' .\"“”')
+    return any(" ".join(prose.split()) == " ".join(quote.strip(' .\"“”').split()) for quote in source_quotes)
+
+
+def _manifest_count_values(manifest: dict) -> set[str]:
+    counts = ((manifest.get("receipt_funnel") or {}).get("counts") or {})
+    values = [manifest.get(key) for key in (
+        "n_receipts", "n_high_confidence_claims_total", "n_non_orthogonal_tensions", "total_words")]
+    values.extend(counts.values() if isinstance(counts, dict) else ())
+    return {canonical_numeric(str(value)) for value in values if isinstance(value, (int, float))}
+
+
 def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
     if not isinstance(manifest, dict):
         return set()
-    keys = (
-        "n_receipts", "n_high_confidence_claims_total",
-        "n_non_orthogonal_tensions", "total_words",
-    )
-    out = {
-        canonical_numeric(str(manifest[k]))
-        for k in keys
-        if isinstance(manifest.get(k), (int, float))
-    }
-    counts = ((manifest.get("receipt_funnel") or {}).get("counts") or {})
-    if isinstance(counts, dict):
-        out.update(
-            canonical_numeric(str(v))
-            for v in counts.values()
-            if isinstance(v, (int, float))
-        )
+    out = _manifest_count_values(manifest)
     receipts = manifest.get("receipts") or ()
     if isinstance(receipts, list):
         rows = [row for row in receipts if isinstance(row, dict)]
@@ -919,10 +960,10 @@ def _classify_prose_numeric_role(
     )
     is_age = re.search(r"\b(?:aged?|years?\s+of\s+age|years?[-\s]old)\b", window)
     is_duration = bool(followed_by_time) and not is_age
+    if is_duration:
+        return "duration"
     # Order matters: more specific patterns checked first
     for pattern, role in _PROSE_ROLE_PATTERNS:
-        if role == "population" and is_duration:
-            continue
         if re.search(pattern, window, flags=re.IGNORECASE):
             return role
     return "outcome"
@@ -942,6 +983,7 @@ _ROLE_COMPATIBILITY: dict[str, frozenset[str]] = {
     "population": frozenset(("population", "baseline", "outcome")),
     "change_score": frozenset(("change_score", "effect", "outcome")),
     "threshold": frozenset(("threshold", "canonical")),
+    "duration": frozenset(("duration",)),
     "dose": frozenset(("dose", "unit_value", "outcome", "effect")),
     "effect": frozenset(("effect", "change_score", "outcome")),
     # 'outcome' is the most permissive default (used when prose
@@ -1265,6 +1307,7 @@ def scan_paper(
         ),
     ))
     body_for_drift = _strip_references_section(prose_md)
+    source_quotes = _verified_result_quotes(manifest, quant_claims_dir)
     drift_sentences = set(_split_sentences(body_for_drift))
     for sentence in _split_sentences(prose_md):
         unanchored_contract = _check_unanchored_hedged_numeric_contract(
@@ -1290,6 +1333,8 @@ def scan_paper(
                 issues.append(issue)
                 break  # one issue per sentence is enough to fail it
         else:
+            if _is_verified_result_quote(sentence, source_quotes):
+                continue
             # Drift check: body only, skip Figure/Table/Eq refs.
             if (
                 sentence in drift_sentences

@@ -24,7 +24,7 @@ __all__ = [
 
 # Matches one-character receipt-id drift without snapping unrelated IDs.
 _RECEIPT_ID_REPAIR_CUTOFF = 0.85
-_CONTINUING_ABBREVIATION_RE = re.compile(r"\b(?:et al\.(?=[ \t]+(?-i:[a-z0-9(]))|vs\.(?=\s+[-+]?\s*\d))", re.I)
+_CONTINUING_ABBREVIATION_RE = re.compile(r"\b(?:et al\.(?=[ \t]+(?-i:[a-z0-9(]))|vs\.(?=\s+[-+]?\s*\d)|p\s*[<=>≤≥]+\s*0?\.(?=[ \t]+\d))", re.I)
 _AMBIGUOUS_ABBREVIATION_RE = re.compile(
     r"\b(?:(?-i:[A-Z])\.|(?:[A-Za-z]\.){2,}|(?:dr|mr|mrs|ms|prof|sr|jr|st|figs?|eqs?|refs?|"
     r"secs?|dept|nos?|vol|inc|ltd|co|etc|approx|vs|cf|et al)\.)[,;:]?\s+",
@@ -609,6 +609,7 @@ def build_scoped_from_parsed(
             [str(r) for r in rids], accepted_ids,
         )
         mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
+        text = _materialize_inline_receipts(text, repaired_rids)
         ok, reason = _check_scoped_paragraph(
             text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts),
         )
