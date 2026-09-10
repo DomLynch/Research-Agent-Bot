@@ -155,9 +155,8 @@ def infer_effect_direction(
          secondary endpoint from re-classifying a null primary outcome
          as positive.
       3. If any significant sign exists:
-            - all positive → positive
-            - all negative → negative
-            - both         → mixed
+            - positive/negative alongside explicit null findings → mixed
+            - otherwise positive only, negative only, or both → positive/negative/mixed
       4. No significant signs:
             - signed-but-negligible-magnitude (whitelisted endpoints) → null
             - claims exist but all unsigned → unclear
@@ -184,6 +183,10 @@ def infer_effect_direction(
         ctype = c.get("claim_type") or ""
         if c.get("direction") == "no_change":
             explicit_null = True
+        if ctype == "p_value" and endpoint:
+            comparison = _parse_p_comparison(str(c.get("raw_text") or ""))
+            if comparison and comparison[0] in {"=", ">", ">="} and comparison[1] >= alpha:
+                explicit_null = True
         # Magnitude collection: ONLY from effect-type claims AND only
         # for endpoints whose units make the negligible check meaningful.
         if (
@@ -211,7 +214,7 @@ def infer_effect_direction(
             elif sign < 0:
                 sig_negative = True
 
-    if sig_positive and sig_negative:
+    if (sig_positive and sig_negative) or (explicit_null and (sig_positive or sig_negative)):
         return "mixed"
     if sig_positive:
         return "positive"

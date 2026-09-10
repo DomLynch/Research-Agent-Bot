@@ -57,6 +57,7 @@ def build_methods_pack(
     search_dates_iso: str = "",
     accountability_model: str = "researka_agent_certified",
     retrieval_audit: dict[str, Any] | None = None,
+    research_question: str = "",
 ) -> MethodsPack:
     frozen_sources = tuple(source_inventory)
     if any(
@@ -66,10 +67,10 @@ def build_methods_pack(
         raise ValueError(
             "source_inventory requires named enabled/succeeded/failed entries"
         )
-    # Universal default eligibility — explicit; caller may override
-    # by passing a richer pack via override fields in a later slice.
     eligibility = (
-        f"Sources whose primary content addresses {topic.replace('_', ' ')}.",
+        (f"Analytic scope: {research_question.strip()} This describes the retained-source analysis, "
+         "not evidence that this criterion was prospectively applied during screening."
+         if research_question.strip() else f"Sources whose primary content addresses {topic.replace('_', ' ')}."),
         "Sources with extractable quantitative or qualitative findings.",
         "Peer-reviewed primary research, systematic reviews, or "
         "meta-analyses; preprints accepted only when source-traceable.",

@@ -9,11 +9,40 @@ finding."""
 from __future__ import annotations
 
 import sys
+import pytest
 from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import effect_direction as ed  # noqa: E402
+
+
+@pytest.mark.parametrize("endpoint,null_endpoint,sign", [
+    ("HbA1c", "blood pressure", 1),
+    ("muscle strength", "lean body mass", 1),
+    ("survival", "quality of life", -1),
+])
+def test_nonnull_and_explicit_null_findings_are_mixed(endpoint, null_endpoint, sign):
+    claims = [
+        {"claim_type": "effect", "endpoint": endpoint, "direction": "increase", "sign": sign},
+        {"claim_type": "p_value", "endpoint": endpoint, "raw_text": "p=0.01"},
+        {"claim_type": "effect", "endpoint": null_endpoint, "direction": "no_change"},
+    ]
+    def infer(rows):
+        return ed.infer_effect_direction(rows, metformin_effect_fn=lambda c: c.get("sign", 0))
+    assert infer(claims) == "mixed"
+    assert infer(list(reversed(claims))) == "mixed"
+    assert infer(claims[:2]) == ("positive" if sign > 0 else "negative")
+
+
+@pytest.mark.parametrize("null_p,expected", [("p=0.6", "mixed"), ("p>0.05", "mixed"), ("p>0.001", "positive"), ("p=9", "positive")])
+def test_null_endpoint_requires_a_decisive_valid_comparison(null_p, expected):
+    claims = [
+        {"claim_type": "effect", "endpoint": "muscle strength", "sign": 1},
+        {"claim_type": "p_value", "endpoint": "muscle strength", "raw_text": "p=0.01"},
+        {"claim_type": "p_value", "endpoint": "lean body mass", "raw_text": null_p},
+    ]
+    assert ed.infer_effect_direction(claims, metformin_effect_fn=lambda c: c.get("sign", 0)) == expected
 
 
 def _const(sign: int):
@@ -350,20 +379,16 @@ def test_per_endpoint_significance_does_not_bleed_across_endpoints() -> None:
             "raw_text": "p < 0.001", "numeric_values": [0.0001],
         },
     ]
-    # The HbA1c claim is significant → contributes to sig_positive.
-    # Walk_speed claim is NOT significant for ITS endpoint → does NOT
-    # contribute. Net: one significant positive claim, no negative
-    # claims → "positive" (the HbA1c improvement). Walk_speed null is
-    # NOT misattributed.
+    # The source has a favorable HbA1c finding and a null walk-speed finding.
+    # The source-level summary is mixed; each endpoint retains its own label.
     result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(1))
-    assert result == "positive"
+    assert result == "mixed"
+    assert ed.infer_effect_direction(claims[:2], metformin_effect_fn=_const(1)) == "null"
+    assert ed.infer_effect_direction(claims[2:], metformin_effect_fn=_const(1)) == "positive"
 
 
-def test_only_significant_negative_endpoint_returns_negative_not_mixed() -> None:
-    """Reviewer P1 follow-up: one significant negative + one signed-but-
-    not-significant positive must return 'negative' (only the
-    significant one counts), NOT 'mixed' (which would require BOTH to
-    be significant)."""
+def test_negative_and_null_endpoints_are_mixed_without_claiming_positive() -> None:
+    """Mixed denotes heterogeneous findings, not proof of opposing benefits."""
     claims: list[dict[str, Any]] = [
         # Significant negative (lean mass blunting)
         {
@@ -391,7 +416,9 @@ def test_only_significant_negative_endpoint_returns_negative_not_mixed() -> None
     result = ed.infer_effect_direction(
         claims, metformin_effect_fn=_per_claim([-1, +1]),
     )
-    assert result == "negative"
+    assert result == "mixed"
+    assert ed.infer_effect_direction(claims[:2], metformin_effect_fn=_const(-1)) == "negative"
+    assert ed.infer_effect_direction(claims[2:], metformin_effect_fn=_const(1)) != "positive"
 
 
 def test_sample_size_numeric_does_not_defeat_negligibility() -> None:

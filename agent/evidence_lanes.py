@@ -164,8 +164,16 @@ def effective_directness(receipt: Any) -> str:
 
 
 def unisolated_combination(title: str, abstract: str, target: str) -> bool:
-    """Recognize explicit binary mixture-versus-placebo comparisons for a single target."""
+    """Detect comparisons that do not isolate the target intervention."""
     title, abstract, target = (re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in (title, abstract, target))
+    if target:
+        shared_target = re.search(
+            rf"\b(?:both|all)(?:\s+the)?\s+(?:groups|arms|participants|subjects)\s+"
+            rf"(?:received|underwent|performed|completed|participated in)\s+"
+            rf"(?:(?:the\s+)?(?:same|identical)\s+)?{re.escape(target)}\b", abstract,
+        )
+        if shared_target:
+            return True
     combination = r"\b(?:multi ingredient|combined supplementation|combination)\b"
     if re.search(combination, target) or re.search(r"\band\b|\+", target) or not re.search(combination, title):
         return False

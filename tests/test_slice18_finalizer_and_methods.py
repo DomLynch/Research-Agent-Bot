@@ -116,6 +116,25 @@ def test_methods_pack_render_matches_required_markers() -> None:
         assert marker in md, f"renderer missing required H3: {marker!r}"
 
 
+@pytest.mark.parametrize("topic,question", [
+    ("resveratrol_measurement_methods", "How are exposure and response endpoints described in the retained adult human records?"),
+    ("resistance_training", "What do randomized training comparisons show about strength?"),
+    ("metformin", "How do clinical and mechanistic findings differ?"),
+])
+def test_methods_uses_declared_analysis_scope_without_inventing_screening(topic, question):
+    pack = build_methods_pack(
+        review_type="curated_evidence_map", topic=topic, research_question=question,
+        corpus_search_queries=("original query",), n_retrieved=None, n_screened=None,
+        n_included=8, n_rejected=None, outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="scope-test")
+    assert question in md
+    assert "Sources whose primary content addresses" not in md
+    assert "prospectively" in pack.eligibility_criteria[0]
+    assert pack.search_strings == ("original query",)
+    assert pack.screening_flow == {"n_included": 8}
+
+
 def test_review_manuscript_receives_the_persisted_methods_record(tmp_path: Path) -> None:
     _write_review_methods = importlib.import_module("scripts.run_v06_synthesis")._write_review_methods
     pack = build_methods_pack(

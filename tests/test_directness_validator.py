@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import sys
+import pytest
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -20,6 +21,22 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 import run_v06_synthesis as v06  # type: ignore[import-not-found]  # noqa: E402
+
+
+@pytest.mark.parametrize("target", ["resistance_training", "aerobic_exercise", "metformin"])
+def test_shared_target_is_not_the_randomized_contrast(monkeypatch, target):
+    monkeypatch.setattr(v06, "_ACTIVE_TOPIC", target)
+    monkeypatch.setattr(v06, "_TOPIC_PACK", None)
+    label = target.replace("_", " ")
+    meta = {"title": "Adjunct supplementation: a randomized controlled trial", "abstract": (
+        f"Both groups received the same {label} intervention. "
+        "Participants were randomized to supplement or placebo."
+    )}
+    assert v06._classify_paper_tier("anonymous", 5, meta) == ("A1", "indirect")
+    meta["abstract"] = f"Participants were randomized to {label} or placebo. Both groups received the same dietary advice."
+    assert v06._classify_paper_tier("anonymous", 5, meta) == ("A1", "direct")
+    meta["abstract"] = f"Both groups received dietary advice. One group received {label}."
+    assert v06._classify_paper_tier("anonymous", 5, meta) == ("A1", "direct")
 
 
 def test_explicit_combination_comparison_does_not_isolate_single_ingredient(monkeypatch) -> None:
