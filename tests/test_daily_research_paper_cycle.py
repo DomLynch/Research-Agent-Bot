@@ -9,6 +9,7 @@ import urllib.request
 
 import pytest
 import yaml
+from hypothesis import HealthCheck, given, settings, strategies as st
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -7336,6 +7337,87 @@ def test_terminal_revision_skips_true_noop_duplicate() -> None:
     }
 
     assert cycle._terminal_revision(row) is True
+
+
+@pytest.mark.parametrize("count", [5, 257])
+def test_submission_decision_poll_budget_checkpoints_and_resumes(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, count: int,
+) -> None:
+    path = tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
+    _write_json(path, [{"submission_id": f"sub-{i}", "title": f"Paper {i}"} for i in range(count)])
+    elapsed = [0.0]
+    fetched: list[str] = []
+
+    def fetch(sid: str):
+        fetched.append(sid)
+        elapsed[0] += 8
+        return {"decision": "revise", "required_revisions": ["Correct source classification."]}, None
+
+    monkeypatch.setattr(cycle.time, "monotonic", lambda: elapsed[0])
+    monkeypatch.setattr(cycle, "SUBMISSION_DECISION_POLL_SECONDS", 24)
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    first, error = cycle._submitted_submission_decisions_by_title(tmp_path)
+    assert elapsed[0] == 24
+    assert len(first) == 3 and error is None
+    assert sum(row.get("decision") == "revise" for row in json.loads(path.read_text())) == 3
+    checkpoint = json.loads((tmp_path / cycle.LEDGER_DIR / cycle.DECISION_POLL_CHECKPOINT).read_text())
+    assert checkpoint["deferred"] == count - 3
+    assert len(checkpoint["attempts"]) == 3
+    cycle._submitted_submission_decisions_by_title(tmp_path)
+    assert len(set(fetched[:count])) == min(count, 6)
+    assert elapsed[0] == 48
+
+
+@settings(max_examples=25, deadline=None, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@given(st.lists(st.integers(min_value=0, max_value=20), min_size=1, max_size=30))
+def test_submission_poll_rotation_does_not_starve_shuffled_duplicate_records(monkeypatch, ids) -> None:
+    elapsed = [0.0]
+    fetched: list[str] = []
+
+    def fetch(sid):
+        elapsed[0] += 8
+        fetched.append(sid)
+        return None, "TimeoutError: timed out"
+
+    monkeypatch.setattr(cycle.time, "monotonic", lambda: elapsed[0])
+    monkeypatch.setattr(cycle, "SUBMISSION_DECISION_POLL_SECONDS", 24)
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        rows = [{"submission_id": str(sid), "title": f"Paper {sid}"} for sid in ids]
+        for _ in range((len(set(ids)) + 2) // 3):
+            before = elapsed[0]
+            cycle._poll_submission_decisions(rows, root)
+            assert elapsed[0] - before <= 24
+        assert set(fetched) == set(map(str, ids))
+        assert len(set(fetched[:len(set(ids))])) == len(set(ids))
+
+
+def test_submission_decision_timeout_progress_cannot_revive_stale_feed_revision(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    rows = [{"submission_id": sid, "title": sid} for sid in ("deferred", "timeout", "good")]
+    _write_json(tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", rows)
+    elapsed = [0.0]
+
+    def fetch(sid):
+        elapsed[0] += 8
+        return (None, "TimeoutError: timed out") if sid == "timeout" else ({"decision": "revise", "required_revisions": ["Correct source classification."]}, None)
+
+    monkeypatch.setattr(cycle.time, "monotonic", lambda: elapsed[0])
+    monkeypatch.setattr(cycle, "SUBMISSION_DECISION_POLL_SECONDS", 16)
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url: ({
+        cycle.submit_bridge._title_marker(sid): {"submissionId": sid, "title": sid, "decision": "revise", "requiredRevisions": ["Stale request."]}
+        for sid in ("deferred", "timeout")
+    }, None))
+    requests, error = cycle._remote_revision_requests(runs_root=tmp_path)
+    assert error is None
+    assert [row["submissionId"] for row in requests] == ["good"]
+    checkpoint = cycle._read_json(tmp_path / cycle.LEDGER_DIR / cycle.DECISION_POLL_CHECKPOINT)
+    assert checkpoint["deferred"] == 1
+    assert checkpoint["attempts"]["timeout"]["error"] == "TimeoutError: timed out"
+    assert cycle._reconciliation_status([], checkpoint) == "decision_reconciliation_incomplete"
 
 
 def test_submission_decision_writeback_preserves_concurrent_append(

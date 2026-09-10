@@ -205,6 +205,8 @@ _RETRYABLE_REVISION_STATUSES = frozenset({
     "terminal_revise_retry_budget_insufficient",
 })
 SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
+SUBMISSION_DECISION_POLL_SECONDS = 60
+DECISION_POLL_CHECKPOINT = "_submission_decision_poll.json"
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
@@ -336,6 +338,10 @@ def _write_reconcile_artifact(
     })
 
 
+def _reconciliation_status(updated: list[str], poll: dict[str, Any]) -> str:
+    if poll.get("blocked_submission_ids") or poll.get("error"):
+        return "publication_reconciled_partial" if updated else "decision_reconciliation_incomplete"
+    return "publication_reconciled" if updated else "no_publication_reconciliation_needed"
 
 
 def _reconcile_publication_ledgers_unlocked(
@@ -355,9 +361,12 @@ def _reconcile_publication_ledgers_unlocked(
     decision_seen: set[str] = set()
     decision_summary: dict[str, Any] = {"counts": {}, "records": []}
     receipts_by_marker: dict[str, dict[str, Any]] = {}
+    poll: dict[str, Any] = {}
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
         direct_decisions, direct_error = _submitted_submission_decisions_by_title(runs_root)
+        poll = _read_json(ledger_dir / DECISION_POLL_CHECKPOINT)
+        poll["error"] = direct_error or decision_error
         latest_decisions = _merge_latest_by_title(
             {} if decision_error else latest_decisions,
             {} if direct_error else direct_decisions,
@@ -395,13 +404,14 @@ def _reconcile_publication_ledgers_unlocked(
                 _record_daily_throughput(ledger_dir, ledger)
             updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}" if submit_ledger else ledger_path.name)
     result = {
-        "status": "publication_reconciled" if updated else "no_publication_reconciliation_needed",
+        "status": _reconciliation_status(updated, poll),
         "checked": checked,
         "updated": len(updated),
         "updated_ledgers": updated,
         "known_fingerprints": len(remote_seen),
         "decision_records": decision_records,
         "decision_summary": decision_summary,
+        "decision_poll": {key: value for key, value in poll.items() if key != "attempts"},
     }
     _write_reconcile_artifact(ledger_dir, date=date, mode=mode, result=result)
     return result
@@ -1086,9 +1096,58 @@ def _decision_ts(row: dict[str, Any]) -> dt.datetime:
     return max(_review_ts(row), _review_ts({"reviewedAt": row.get("updated_at") or row.get("updatedAt")}))
 
 
+def _closed_submission(record: dict[str, Any]) -> bool:
+    return (
+        str(record.get("publication_state") or "").upper() == "PUBLISHED"
+        and record.get("public_visible", record.get("publicVisible")) is True
+    ) or (
+        record.get("closed") is True and record.get("retryable") is not True
+        and str(record.get("decision") or "").lower() in {"reject", "rejected"}
+    )
+
+
+def _poll_submission_decisions(rows: list[dict[str, Any]], runs_root: Path) -> dict[str, tuple[dict[str, Any] | None, str | None]]:
+    path = runs_root / LEDGER_DIR / DECISION_POLL_CHECKPOINT
+    previous = _read_json(path).get("attempts", {})
+    previous = previous if isinstance(previous, dict) else {}
+    records: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        sid = str(row.get("submission_id") or row.get("duplicate_submission_id") or "").strip()
+        records.pop(sid, None)
+        records[sid] = row
+    records.pop("", None)
+    attempts = {sid: previous[sid] for sid in records if isinstance(previous.get(sid), dict)}
+    order = sorted(reversed(records), key=lambda sid: str(attempts.get(sid, {}).get("checked_at") or ""))
+    results: dict[str, tuple[dict[str, Any] | None, str | None]] = {}
+    started = time.monotonic()
+    for sid in order:
+        if _closed_submission(records[sid]):
+            results[sid] = records[sid], None
+        elif time.monotonic() - started + SUBMISSION_DECISION_TIMEOUT_SECONDS <= SUBMISSION_DECISION_POLL_SECONDS:
+            before = time.monotonic()
+            results[sid] = _fetch_submission_decision(sid)
+            attempts[sid] = {
+                "checked_at": dt.datetime.now(dt.UTC).isoformat(),
+                "elapsed_seconds": round(time.monotonic() - before, 3),
+                "error": results[sid][1],
+            }
+    blocked = [sid for sid in records if not results.get(sid, (None, None))[0]]
+    report = {
+        "created_at": dt.datetime.now(dt.UTC).isoformat(), "attempts": attempts,
+        "elapsed_seconds": round(time.monotonic() - started, 3),
+        "deferred": len(records.keys() - results.keys()),
+        "blocked_submission_ids": blocked,
+        "blocked_title_markers": [submit_bridge._title_marker(str(records[sid].get("title") or submit_bridge._paper_title(runs_root / str(records[sid].get("run") or "") / "full_paper.md"))) for sid in blocked],
+    }
+    _write_json(path, report)
+    print(f"[decision-poll] checked={len(results)} deferred={report['deferred']} blocked={len(blocked)} elapsed={report['elapsed_seconds']}s", flush=True)
+    return results
+
+
 def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[dict[str, dict[str, Any]], str | None]:
     submitted_path = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     rows = submit_bridge._ledger_rows(submitted_path)
+    polled = _poll_submission_decisions(rows, runs_root)
     latest: dict[str, dict[str, Any]] = {}
     first_error: str | None = None
     updates: dict[str, dict[str, Any]] = {}
@@ -1105,14 +1164,7 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[di
         if submission_id in seen:
             continue
         seen.add(submission_id)
-        terminal = (
-            str(record.get("publication_state") or "").upper() == "PUBLISHED"
-            and record.get("public_visible", record.get("publicVisible")) is True
-        ) or (
-            record.get("closed") is True and record.get("retryable") is not True
-            and str(record.get("decision") or "").lower() in {"reject", "rejected"}
-        )
-        payload, err = (record, None) if terminal else _fetch_submission_decision(submission_id)
+        payload, err = polled.get(submission_id, (None, "decision_poll_deferred"))
         first_error = first_error or err
         if not payload:
             continue
@@ -1323,7 +1375,10 @@ def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS)
     direct, direct_err = _submitted_submission_decisions_by_title(runs_root)
     latest, err = _latest_reviews_by_title(url)
     known_ids = {row.get("submissionId") for row in direct.values()}
-    latest = {key: row for key, row in latest.items() if (row.get("submissionId") or row.get("submission_id")) not in known_ids}
+    poll = _read_json(runs_root / LEDGER_DIR / DECISION_POLL_CHECKPOINT)
+    known_ids.update(poll.get("blocked_submission_ids") or [])
+    blocked_titles = set(poll.get("blocked_title_markers") or [])
+    latest = {key: row for key, row in latest.items() if (row.get("submissionId") or row.get("submission_id")) not in known_ids and key not in blocked_titles}
     latest = _merge_latest_by_title({} if err else latest, direct)
     if not latest:
         return [], direct_err or err
