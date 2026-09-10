@@ -2493,6 +2493,18 @@ def test_directness_coding_meta_analysis_of_rcts_not_flagged() -> None:
     assert audit._check_directness_coding(manifest) == []
 
 
+@pytest.mark.parametrize("title", [
+    "A placebo-controlled pseudo-randomized crossover trial of botanical agents",
+    "A randomized controlled trial of a multi-ingredient supplement",
+    "A cohort study of biomarker associations",
+])
+def test_primary_design_does_not_certify_directness(title: str) -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "source_title": title, "directness": "indirect"}]}
+    assert audit._check_directness_coding(manifest) == []
+    manifest["receipts"][0]["directness"] = "review"
+    assert audit._check_directness_coding(manifest)
+
+
 def test_directness_coding_consistent_coding_not_flagged() -> None:
     manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
         "source_title": "A systematic review of intermittent fasting"}]}

@@ -88,6 +88,17 @@ def test_p_value_lt_extracted_with_comparator() -> None:
     assert p_claims[0].comparator == "<"
 
 
+def test_baseline_balance_cannot_become_representative_treatment_result() -> None:
+    baseline = "Baseline characteristics did not differ among groups, apart from HDL-c (p = 0.014; data not shown) (Table 2)."
+    result = "XIAP levels were lower than the placebo group (p = 0.047)."
+    record = {"sections": {"results": baseline + " " + result}}
+    assert quant_claim_extract.source_result_excerpts(record) == (result,)
+    claims = quant_claim_extract.extract_from_text(baseline, "results")
+    assert claims and all(claim.claim_role == "population" for claim in claims)
+    longitudinal = "Baseline values declined after treatment compared with placebo (p = 0.014)."
+    assert quant_claim_extract.source_result_excerpts({"sections": {"results": longitudinal}}) == (longitudinal,)
+
+
 def test_multichar_p_value_comparator_is_retained() -> None:
     claims = quant_claim_extract.extract_from_text(
         "The lower bound was reported as p >= .001.", "results",

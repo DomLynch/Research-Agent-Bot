@@ -652,7 +652,7 @@ def _check_directness_coding(manifest: dict) -> list[ConsistencyIssue]:
         problem = ""
         if d == "direct" and is_review:
             problem = "review-titled source coded directness=direct"
-        elif d in ("review", "indirect") and is_primary and not is_review:
+        elif d == "review" and is_primary and not is_review:
             problem = f"primary-study-titled source coded directness={d}"
         if problem:
             issues.append(ConsistencyIssue(
@@ -662,7 +662,7 @@ def _check_directness_coding(manifest: dict) -> list[ConsistencyIssue]:
                 auto_fixable=False,
                 evidence=f"{problem}: {title[:120]}",
                 suggested_fix=(
-                    "Re-code directness to match the source's study design; "
+                    "Reconcile the primary/review role with the source's study design; "
                     "review markers (systematic review / meta-analysis) win over "
                     "a trial mention."
                 ),

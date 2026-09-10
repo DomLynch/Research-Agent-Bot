@@ -392,8 +392,6 @@ def _phase_m_strip_surface_duplicate_paragraphs(
         stripped = para.strip()
         if stripped.startswith("## ") and not stripped.startswith("### "):
             current_section = stripped[3:].strip().lower()
-            if current_section == "conclusion":
-                seen.clear()
         if current_section == "discussion":
             para, removed = _strip_repeated_discussion_sentences(
                 para, discussion_sentences,

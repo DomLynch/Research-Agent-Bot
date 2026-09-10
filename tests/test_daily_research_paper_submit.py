@@ -2226,6 +2226,36 @@ def test_literal_compound_findings_align_with_inline_citation() -> None:
         assert not daily._cited_claim_aligns(incorrect, [source], {0})
 
 
+@pytest.mark.parametrize("finding", [
+    "The oral relative bioavailability of native resveratrol is remarkably low, often reported at less than 1%.",
+    "Compared to placebo, resveratrol elicited 17% increases in CVR to both hypercapnic ( p = 0.010) and cognitive stimuli ( p = 0.002).",
+    "Negative symptoms improved (F = 12.25, P < . 001); general symptoms improved (F = 5.42, P = . 011); positive symptoms did not differ (P = . 180).",
+])
+def test_complete_source_quotation_survives_clause_alignment(finding: str) -> None:
+    source = {"doi": "10.1000/trial", "cited_as": "Smith 2020", "excerpt": finding}
+    _seal_source(source)
+    claim = '“' + finding.rstrip(".").replace("( p", "(p") + ' [Smith 2020] [bundle:1].”'
+    assert daily._cited_claim_aligns(claim, [source], {0})
+    from publishing.submission import _verified_complete_quotation
+    for incorrect in (claim.replace("Smith 2020", "Jones 2020"), claim.replace("resveratrol", "metformin"),
+                      claim.replace("improved", "worsened"), claim.replace("17%", "18%"),
+                      claim.replace(". 001", ". 002"), claim.replace('“', '“In children, ')):
+        if incorrect != claim:
+            assert not _verified_complete_quotation(incorrect, source)
+    source["excerpt"] = finding.replace(".", "!", 1)
+    assert not _verified_complete_quotation(claim, source)
+
+
+def test_partial_source_quotation_does_not_bypass_alignment() -> None:
+    from publishing.submission import _verified_complete_quotation
+    source: dict[str, Any] = {"doi": "10.1000/trial", "cited_as": "Smith 2020",
+              "excerpt": "We found no evidence that resveratrol reduced mortality by 17%."}
+    _seal_source(source)
+    assert not _verified_complete_quotation('“resveratrol reduced mortality by 17% [Smith 2020].”', source)
+    source["excerpt_is_complete_field"] = False
+    assert not _verified_complete_quotation('“We found no evidence that resveratrol reduced mortality by 17% [Smith 2020].”', source)
+
+
 def test_statistical_decimal_spacing_does_not_split_source_sentence() -> None:
     finding = "Negative symptoms improved (F = 12.25, P < . 001). Positive symptoms did not differ (P = . 180)."
     assert daily._revision_claim_trace._sentences(finding) == [

@@ -75,7 +75,7 @@ def test_saved_table_revalidates_source_hashes_and_citations(tmp_path, row, sour
     (quant / "trial.quant_claims.json").write_text(json.dumps({"paper_id": "trial", "claims": []}))
     contracts = [{"receipt_id": "trial", "topic": "resveratrol", "n_claims": 1}]
     registry = run / "citation_registry.json"
-    registry.write_text(json.dumps({"trial": {"body_citation": "Smith 2020"}}))
+    registry.write_text(json.dumps({"trial": {"receipt_id": "trial", "body_citation": "Smith 2020"}}))
     report = create_revision_evidence_snapshot(run, quant_dir=quant, parsed_dir=parsed, citation_registry=registry,
                                               receipt_ids=["trial"], receipt_contracts=contracts, topic="resveratrol")
     assert report["passed"]
@@ -89,11 +89,27 @@ def test_saved_table_revalidates_source_hashes_and_citations(tmp_path, row, sour
     from agent.journal_surface_gate import _qei_shape_issue_messages, _extract_qei_rows, qei_row_issue_messages
     assert not _qei_shape_issue_messages(table)
     assert all(not qei_row_issue_messages(value) for value in _extract_qei_rows(table))
+    from publishing.submission import _prepare_qei_section
+    manifest = json.loads((run / "manifest.json").read_text())
+    bundle = [{"cited_as": "Smith 2020"}]
+    paper = "# Synthesis\n\n## Methods\n\nFrozen source selection.\n\n## Results\n\nFindings.\n"
+    prepared = _prepare_qei_section(paper, run, "resveratrol", bundle, manifest)
+    assert prepared.count("## Quantitative Evidence Index") == 1
+    assert prepared.index("## Quantitative Evidence Index") < prepared.index("## Methods")
+    assert table.strip() in prepared
+    assert _prepare_qei_section(prepared, run, "resveratrol", bundle, manifest) == prepared
+    assert _prepare_qei_section(prepared + "\n" + table, run, "resveratrol", bundle, manifest).count("## Quantitative Evidence Index") == 1
+    (run / "qei_facts.json").write_text(json.dumps({"rows": [{**row, "estimate": "9.62±8.75 mg/dL"}]}))
+    with pytest.raises(ValueError):
+        _prepare_qei_section(paper, run, "resveratrol", bundle, manifest)
+    (run / "qei_facts.json").write_text(json.dumps({"rows": [row]}))
     with pytest.raises(ValueError, match="identity"):
         saved_table(run, "resveratrol", {"trial": "Jones 2021"})
     with pytest.raises(ValueError, match="snapshot"):
         saved_table(run, "metformin", tokens)
     frozen = run / "revision_evidence_snapshot/parsed/trial.paper_sections.json"
     frozen.write_text(frozen.read_text().replace("3.62", "9.62"))
+    with pytest.raises(ValueError, match="qei_source_snapshot_unverified"):
+        _prepare_qei_section(paper, run, "resveratrol", bundle, manifest)
     with pytest.raises(ValueError, match="snapshot"):
         saved_table(run, "resveratrol", tokens)

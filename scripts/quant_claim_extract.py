@@ -397,19 +397,10 @@ _ROLE_KEYWORD_EFFECT = (
 
 
 def _assign_claim_role(sentence: str, section: str) -> str:
-    """Heuristic role tagging from sentence keywords + section.
-    Returns 'effect' | 'dose' | 'duration' | 'population' |
-    'background' | 'unknown'.
+    """Tag background and baseline balance before treatment-effect keywords.
 
-    Phase 2.1 v0.3 reviewer fix: pre-fix prioritized 'effect' first,
-    so a sentence like "Global incidence of T2DM has increased over
-    the past decade" tagged as effect (because of "increased") even
-    though "incidence" / "globally" are clear background signals.
-    Fix: BACKGROUND wins when its keywords co-occur with effect
-    keywords. Effect keywords alone still tag as effect.
-
-    Order: BACKGROUND-strong-signals > EFFECT > DURATION > DOSE >
-    POPULATION > section fallback.
+    Other roles are duration, dose, population, or unknown. Only introduction
+    text has a section-based default; a Results heading cannot certify an effect.
     """
     s = sentence.lower()
     has_effect = any(k in s for k in _ROLE_KEYWORD_EFFECT)
@@ -419,6 +410,8 @@ def _assign_claim_role(sentence: str, section: str) -> str:
     # use one of the effect keywords).
     if has_background:
         return "background"
+    if re.match(r"^baseline (?:characteristics|scores|values|levels)\b", s) and not re.search(r"\b(?:after|change[ds]?|follow[- ]up|post[- ]treatment)\b", s):
+        return "population"
     if has_effect:
         return "effect"
     if any(k in s for k in _ROLE_KEYWORD_DURATION):
