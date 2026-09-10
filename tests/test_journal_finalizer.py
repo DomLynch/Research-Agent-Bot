@@ -17,6 +17,16 @@ from agent.revision_contract import ask_fingerprint, context_fingerprint
 from agent.sources.pubmed import pmid_rows_fingerprint
 
 
+def test_finalizer_preserves_declared_question_during_core_scope_repair(tmp_path: Path) -> None:
+    question = "Within this non-comprehensive source set, how are resveratrol exposure and response endpoints described?"
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": "resveratrol_measurement_methods", "research_question": question}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": "Align the title and research question with the evidence actually synthesized: retitle and frame the article as a map of exposure and response endpoints."}))
+    paper = "## Research Question\n\n" + question + "\n\n## Methods\n\nRetained methods.\n"
+    fixed, _ = journal_finalizer._phase_d_research_question_scope(paper, tmp_path)
+    assert fixed == paper
+    assert "clinical actionability" not in fixed
+
+
 def test_parenthesis_cleanup_preserves_quoted_table_fragments():
     row = '| Salter 2024 | 9.3 ± 3.8 μg/dL) were lower than P2 (11.7 ± 3.8 μg/dL | C levels in A2 (9.3 ± 3.8 μg/dL) were lower than P2 (11.7 ± 3.8 μg/dL, P < 0.05). |'
     paper = '## Quantitative Evidence Index\n\n' + row + '\n\nProse (has an unmatched opening.'

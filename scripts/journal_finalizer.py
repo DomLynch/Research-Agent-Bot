@@ -2963,7 +2963,8 @@ def _phase_d_research_question_scope(
         return text, []
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
     manifest_dict = manifest if isinstance(manifest, dict) else {}
-    question = _research_question_from_feedback(feedback, manifest_dict) or _research_question_from_manifest(manifest_dict)
+    declared = manifest_dict.get("research_question")
+    question = " ".join(declared.split()) if isinstance(declared, str) and declared.strip() else (_research_question_from_feedback(feedback, manifest_dict) or _research_question_from_manifest(manifest_dict))
     if "## Research Question" in text:
         patched, n = re.subn(
             r"(?ms)^## Research Question\s*\n\n.*?(?=^## )",

@@ -26,6 +26,16 @@ from agent.synthesis_schemas import OutcomeClass  # noqa: F401  (Literal import 
 # ---- Direct lookup -------------------------------------------------------
 
 
+@pytest.mark.parametrize("endpoint", ["inspiratory muscle strength index", "forced vital capacity", "running speed corresponding to maximum oxygen uptake"])
+def test_respiratory_endpoints_are_not_general_muscle_function(endpoint: str) -> None:
+    assert remap_outcome_class(endpoint, "muscle_function") == "contextual_other"
+
+
+def test_respiratory_remap_preserves_limb_strength_and_specific_quality_of_life() -> None:
+    assert remap_outcome_class("knee extension muscle strength", "muscle_function") == "muscle_function"
+    assert remap_outcome_class("quality of life in pulmonary rehabilitation", "muscle_function") == "healthspan_qol"
+
+
 def test_emotional_well_being_remaps_to_healthspan_qol() -> None:
     """The headline bug: PEARL "emotional well-being" was tagged 'cognitive'."""
     assert remap_outcome_class("emotional well-being", "cognitive") == "healthspan_qol"
