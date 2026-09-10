@@ -11,6 +11,34 @@ source facts, normal review decisions and canonical submission history.
 
 ## Five-step audit
 
+### Active continuation, 23:55 Dubai
+
+The ordinary fresh service started at 23:43:57 on `b92dd6e7` (runtime `a41bee86`),
+invocation `3c54f04ef2a84e6d9d48eceaa39dd17e`. Its normal selector chose
+`telomere_cardiovascular_effects`; run directory:
+`/opt/research-agent-bot/runs/synthesis-telomere_cardiovascular_effects-v06-DAILY-2026-09-10T19-45-59Z`.
+Abstract, Question, Introduction and Background are complete. Generation is still
+active; no new submission or public artifact is verified. Do not deploy code over
+this worker or count its unfinished manuscript as publishing recovery.
+
+Follow-up `8e83afd6ef4009c73465c92f38349b5428b05d64` is committed and pushed,
+**not deployed**. Audit found that stopping the Python cycle still returned 2,
+causing systemd `Restart=on-failure` to regenerate the paper. The CLI now returns
+70 for `local_gate_execution_failed`; fresh/revise units prevent restart for 70
+while preserving its failed status. Other transient failures retain exit 2.
+Checks: 13 focused tests, required quality 347, Ruff and typing passed. Isolated
+mutation changes the result back from 70 to 2. A real transient systemd diagnostic
+confirmed `Result=exit-code`, `ExecMainStatus=70`, `ActiveState=failed`, `NRestarts=0`;
+only that diagnostic unit was cleaned up. No runtime LOC was added.
+Discovery queries were run before editing; exact `main` lookup was misresolved by
+CodeGraph, so the actual CLI/entrypoint were inspected directly with Python AST.
+Receipts: `.quality-reports/v3-service-restart-{discovery,mutation}.json` and
+`/tmp/v3-service-restart-{focused,quality,mypy,native}.log`.
+Deploy this follow-up only after all publishing workers are idle, and preserve
+the existing fresh-service drop-in (one topic, 10,800 seconds).
+
+### Step status
+
 | Step | Evidence | Remaining condition |
 |---|---|---|
 | 1. Reconciliation | Bounded reconciliation is deployed. Earlier two real passes covered 80 distinct IDs in 57–58 seconds. The 17:06 UTC receipt completed in 52.065 seconds, with no runtime error and 205 deferred records. | The deferred backlog remains; do not equate a bounded successful pass with every historical record reconciled. |
