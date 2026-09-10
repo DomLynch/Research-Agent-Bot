@@ -37,6 +37,33 @@ def _contract(receipt: ReceiptSummary) -> dict[str, object]:
     }
 
 
+def test_writer_sees_complete_own_result_without_rewriting_locked_claims() -> None:
+    from agent.paper_writer_builders import receipt_evidence_text, _source_grounding_reason
+    v06 = import_module("scripts.run_v06_synthesis")
+    result = "Negative symptoms improved more with treatment than placebo (P < . 001)."
+    metadata = {"sections": {"abstract": (
+        "Baseline scores were comparable (P > .05). " + result
+        + " Previous trials reported a 70% improvement."
+    )}}
+    original = dataclasses.replace(_receipt(), thesis_text="Trial — source excerpts: Baseline scores were comparable (P > .05).")
+    receipt = dataclasses.replace(original, source_result_excerpts=v06._source_result_excerpts(metadata))
+    assert receipt.source_result_excerpts == (result,)
+    assert receipt.thesis_text == original.thesis_text
+    assert receipt.p_values == original.p_values
+    assert receipt.n_claims == original.n_claims
+    prompt = receipt_evidence_text(receipt, 1200)
+    assert result in prompt and "70%" not in prompt
+    assert len(prompt) <= 1200
+    assert _source_grounding_reason(result, [receipt.receipt_id], {receipt.receipt_id: receipt}) is None
+    assert _source_grounding_reason(result.replace(". 001", ". 0099"), [receipt.receipt_id], {receipt.receipt_id: receipt})
+    bounded = receipt_evidence_text(receipt, len("Trial — source excerpts: ") + len(result) - 1)
+    assert "Negative symptoms" not in bounded
+    manifest = v06._manifest_receipt_dict(receipt, {})
+    assert manifest["source_result_excerpts"] == [result]
+    assert all(manifest[key] == v06._manifest_receipt_dict(original, {})[key]
+               for key in revision_evidence.RECEIPT_CONTRACT_FIELDS)
+
+
 def test_revision_review_uses_complete_verified_abstract_without_contract_mutation(tmp_path: Path) -> None:
     from agent.revision_contract import evidence_rows
     from agent.revision_quality import _revision_note, resolved_effect_direction
@@ -60,6 +87,9 @@ def test_revision_review_uses_complete_verified_abstract_without_contract_mutati
     assert rows[0]["verified_abstract"] == abstract
     assert rows[0]["verified_source_sections"] == sections
     assert rows[0]["verified_source_tables"] == tables
+    from agent.revision_quality import manifest_row_finding
+    assert "Negative symptoms improved (P < . 001)" in manifest_row_finding(rows[0])
+    assert "P > .05" not in manifest_row_finding(rows[0])
     assert rows[0]["thesis_text"] == "Baseline P > .05."
     assert manifest["receipts"][0]["thesis_text"] == "Baseline P > .05."
     note = _revision_note("statistic", rows[0], 1, "Correct representative statistic consistent with the source excerpt (P < .001 for negative-symptom improvement).")

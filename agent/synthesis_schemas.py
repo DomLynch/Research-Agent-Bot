@@ -148,6 +148,9 @@ class ReceiptSummary:
     source_venue: str | None = None
     endpoints: tuple[str, ...] = ()
     endpoint_directions: tuple[tuple[str, EffectDirection], ...] = ()
+    # Verbatim own-study results from the parsed source, separate from the
+    # immutable admitted-claim contract used for revision continuity.
+    source_result_excerpts: tuple[str, ...] = ()
 
 
 # --- TensionMatrix --------------------------------------------------------

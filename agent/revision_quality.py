@@ -163,8 +163,10 @@ def receipt_direction(row: dict[str, Any]) -> str:
 
 
 def manifest_row_finding(row: dict[str, Any]) -> str:
-    # A receipt's first p-value may describe baseline balance, not an outcome.
-    # Endpoint/comparator/statistic attribution belongs in the quantitative index.
+    # Keep the whole verified result: selecting its first p-value can substitute
+    # baseline balance or a different endpoint for the actual treatment finding.
+    if row.get("verified_source_sections") and (excerpts := row.get("source_result_excerpts")):
+        return str(excerpts[0])
     claims = row.get("n_claims")
     if isinstance(claims, int) and claims > 0:
         return f"{claims} extracted claim(s); receipt-level direction is the coded finding"

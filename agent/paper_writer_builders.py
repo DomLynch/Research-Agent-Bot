@@ -191,13 +191,27 @@ def _is_bibliographic_year(text: str, match: re.Match[str]) -> bool:
     return bool(_YEAR_PREFIX_RE.search(before) or _YEAR_STUDY_RE.match(after) or _YEAR_CITATION_RE.search(before))
 
 
+def receipt_evidence_text(receipt: ReceiptSummary, limit: int | None = None) -> str:
+    """Budget complete result sentences before the historical receipt excerpt."""
+    if not receipt.source_result_excerpts:
+        return receipt.thesis_text if limit is None else receipt.thesis_text[:limit]
+    title, _, historical = receipt.thesis_text.partition("source excerpts:")
+    prefix = title + "source excerpts: "
+    selected: list[str] = []
+    for excerpt in dict.fromkeys((*receipt.source_result_excerpts, *historical.split(" | "))):
+        excerpt = excerpt.strip()
+        if excerpt and (limit is None or len(prefix + " | ".join((*selected, excerpt))) <= limit):
+            selected.append(excerpt)
+    return prefix + " | ".join(selected)
+
+
 def _accepted_numeric_tokens(receipts: Sequence[ReceiptSummary]) -> set[str]:
     # population_summary is source-derived text (e.g. "older adults, age 65+")
     # and carries the enrolment numerics a paragraph legitimately cites. Omitting
     # it made the guard reject sample sizes that DO trace to a receipt -- observed
     # live as novel_numeric:n=125 while 125 was present in the corpus. Still
     # source-bounded: nothing outside the receipts is admitted.
-    corpus = " ".join(value for receipt in receipts for value in (*receipt.p_values, receipt.thesis_text, receipt.population_summary))
+    corpus = " ".join(value for receipt in receipts for value in (*receipt.p_values, receipt_evidence_text(receipt), receipt.population_summary))
     return {_numeric_token(match.group(0)) for match in _NUMERIC_RE.finditer(corpus)}
 
 
@@ -207,7 +221,7 @@ def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_
     from publishing.submission import _evidence_aligns, _source_language_clauses
     source_by_id: dict[str, dict] = {}
     for receipt in (receipts_by_id[rid] for rid in receipt_ids if rid in receipts_by_id):
-        parts = re.split(r"\bsource excerpts:\s*", receipt.thesis_text, maxsplit=1, flags=re.I)
+        parts = re.split(r"\bsource excerpts:\s*", receipt_evidence_text(receipt), maxsplit=1, flags=re.I)
         excerpt = " | ".join(filter(None, (parts[1] if len(parts) == 2 else "", *receipt.p_values,
                                                   receipt.population_summary)))
         source_by_id[receipt.receipt_id] = {"cited_as": "", "title": receipt.source_title or parts[0].rstrip(" -\u2014"), "population": receipt.population_summary, "quote": excerpt, "evidence_span": excerpt, "excerpt": excerpt, "outcome_class": receipt.outcome_class, "effect_direction": receipt.effect_direction, "directness": receipt.directness, "evidence_tier": receipt.evidence_tier}
@@ -215,7 +229,7 @@ def _source_grounding_reason(text: str, receipt_ids: Sequence[str], receipts_by_
     cited_ids = set(_INLINE_RECEIPT_RE.findall(text)) & source_by_id.keys() or set(receipt_ids)
     quoted = _normalize(_INLINE_RECEIPT_RE.sub(lambda match: "" if match[1] in source_by_id else match[0], text)).strip(' ."“”')
     if len(cited_ids) == 1 and any(quoted == _normalize(span).strip(' ."“”') for rid in cited_ids & source_by_id.keys()
-           for parts in [re.split(r"\bsource excerpts:\s*", receipts_by_id[rid].thesis_text, maxsplit=1, flags=re.I)]
+           for parts in [re.split(r"\bsource excerpts:\s*", receipt_evidence_text(receipts_by_id[rid]), maxsplit=1, flags=re.I)]
            if len(parts) == 2 for span in parts[1].split(" | ") if len(span.strip()) >= 20):
         return None
     for sentence in _SENTENCE_BREAK_RE.split(protected):

@@ -524,6 +524,22 @@ def _claim_id(paper_id: str, section: str, kind: str, offset: int) -> str:
     return f"{paper_id}-{section}-{kind}-{offset}"
 
 
+def source_result_excerpts(paper_meta: dict) -> tuple[str, ...]:
+    """Complete own-study result quotes; never infer an endpoint-statistic pair."""
+    from agent.publication_evidence import _record_text
+    from agent.results_table import _owned_result_sentence
+
+    sections = dict(paper_meta.get("sections") or {})
+    sections.setdefault("abstract", paper_meta.get("abstract") or "")
+    record = {**paper_meta, "sections": sections}
+    excerpts: dict[str, None] = {}
+    for section in ("results", "abstract", "conclusion"):
+        for claim in extract_from_text(_record_text(sections.get(section) or ""), section):
+            if claim.claim_role == "effect" and _owned_result_sentence(claim.sentence, record):
+                excerpts.setdefault(claim.sentence, None)
+    return tuple(excerpts)
+
+
 def _extract_p_values(
     text: str, section: str, paper_id: str, sentences: list[tuple[int, str]],
 ) -> list[QuantClaim]:

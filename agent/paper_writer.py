@@ -21,6 +21,7 @@ from agent.paper_writer_builders import (
     build_scoped_from_parsed,
     citation_only_repair,
     citation_only_repair_eligible,
+    receipt_evidence_text,
 )
 from agent.paper_writer_citations import (
     build_background_lit_block as _build_background_lit_block,
@@ -266,9 +267,7 @@ def _build_user_prompt(
                                 MAX_EVIDENCE_CHARS_TOTAL // max(1, len(receipts))))
     for r in receipts:
         paper_tier = _humanize_paper_tier(derive_paper_tier(r))
-        pop = r.population_summary or (
-            "N/A (mechanistic / indirect — no enrolled clinical population)"
-        )
+        pop = r.population_summary or "N/A (mechanistic / indirect — no enrolled clinical population)"
         lines.append(
             f"  - id: {r.receipt_id}\n"
             f"    study_design: {paper_tier}\n"
@@ -278,7 +277,7 @@ def _build_user_prompt(
             f"    canonical_trial_id: {r.canonical_trial_id or '(none)'}\n"
             f"    population: {pop}\n"
             f"    p_values: {list(r.p_values)}\n"
-            f"    evidence_excerpt: {r.thesis_text[:evidence_limit]}"
+            f"    evidence_excerpt: {receipt_evidence_text(r, evidence_limit)}"
         )
     non_orth = matrix.non_orthogonal()
     lines.extend(["", "TENSION MATRIX (non-orthogonal pairs):"])

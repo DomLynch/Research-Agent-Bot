@@ -31,6 +31,7 @@ def needs_coverage(request: Any) -> bool:
 def evidence_rows(out_dir: Path, manifest: dict[str, Any]) -> list[dict[str, Any]]:
     """Review frozen source text and tables without rewriting receipt contracts."""
     from agent.revision_evidence import load_revision_evidence
+    from importlib import import_module
 
     raw = manifest.get("receipts")
     rows = [row for row in raw if isinstance(row, dict)] if isinstance(raw, list) else []
@@ -51,6 +52,7 @@ def evidence_rows(out_dir: Path, manifest: dict[str, Any]) -> list[dict[str, Any
         reviewed.append({
             **row, "verified_source_sections": record.get("sections", {}),
             "verified_source_tables": record.get("tables", []),
+            "source_result_excerpts": import_module("scripts.quant_claim_extract").source_result_excerpts(record),
             **({"verified_abstract": abstract} if isinstance(abstract, str) and abstract.strip() else {}),
         })
     return reviewed

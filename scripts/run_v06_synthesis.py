@@ -1277,6 +1277,7 @@ def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
         "evidence_tier": receipt.evidence_tier,
         "directness": receipt.directness,
         "thesis_text": receipt.thesis_text,
+        "source_result_excerpts": list(receipt.source_result_excerpts),
         "population_summary": receipt.population_summary,
         "n_claims": receipt.n_claims,
         "p_values": list(receipt.p_values),
@@ -1387,6 +1388,11 @@ def _source_outcome_class(current: str, record: dict, claims: list[dict]) -> str
     ):
         return _outcome_class_for_endpoint(str(record.get("title") or ""))
     return current
+
+
+def _source_result_excerpts(paper_meta: dict) -> tuple[str, ...]:
+    from quant_claim_extract import source_result_excerpts
+    return source_result_excerpts(paper_meta)
 
 
 def _aggregate_paper(claims: list[dict], *, paper_meta: dict | None = None) -> dict[str, Any]:
@@ -2079,6 +2085,7 @@ def build_receipts_from_quant_claims(
             source_doi=meta.get("doi"),
             source_pmid=meta.get("pmid"),
             source_venue=meta.get("journal"),
+            source_result_excerpts=_source_result_excerpts(meta),
         )
         receipt = dataclasses.replace(
             receipt, directness=effective_directness(receipt),

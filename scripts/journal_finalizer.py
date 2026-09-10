@@ -4054,8 +4054,7 @@ def _phase_d_proactive_findings_map(
     text: str, out_dir: Path,
 ) -> tuple[str, list[FinalizerLogEntry]]:
     manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    receipts = manifest.get("receipts", []) if isinstance(manifest, dict) else []
-    rows = [row for row in receipts if isinstance(row, dict)] if isinstance(receipts, list) else []
+    rows = _revision_evidence_rows(out_dir, manifest) if isinstance(manifest, dict) else []
     if not rows:
         return text, []
     note = _findings_map_section(rows)
