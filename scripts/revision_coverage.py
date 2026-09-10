@@ -779,7 +779,7 @@ def _asks_two_part_research_question(text: str) -> bool:
 def _asks_concrete_research_question(text: str) -> bool:
     return (
         "research question" in text
-        and any(token in text for token in ("clear", "specific", "concrete", "answerable", "fix", "framing"))
+        and bool(re.search(r"(?<![\w-])(?:clear|specific|concrete|answerable|fix|framing)\b", text))
     )
 
 

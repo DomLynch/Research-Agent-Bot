@@ -82,6 +82,18 @@ def test_text_citation_source_or_topic_changes_cannot_borrow_review(run, monkeyp
         assert not grounding.approved(claim, bundle, {0})
 
 
+@pytest.mark.parametrize("locator,expected", [("https://doi.org/10.1234/trial", True), ("https://doi.org/10.1234/other", False)])
+def test_generated_locator_preserves_only_the_same_reviewed_source(run, monkeypatch, locator, expected):
+    install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    bundle = grounding._verified_bundle(run)
+    rendered = CLAIM[:-1] + f" [bundle:1] [exact source: {locator}]."
+    with grounding.grounding_context(run):
+        assert grounding.approved(rendered, bundle, {0}) is expected
+        assert not grounding.approved(rendered.replace("reduced", "increased"), bundle, {0})
+        assert not grounding.approved(rendered, bundle, set())
+
+
 def test_negative_review_and_corrupted_snapshot_fail_closed(run, monkeypatch):
     calls = install_judge(monkeypatch, supported=False)
     asyncio.run(grounding.review_manuscript(run))

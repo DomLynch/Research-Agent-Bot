@@ -30,6 +30,16 @@ from agent.revision_quality import (  # noqa: E402
 )
 
 
+@pytest.mark.parametrize("semantic_pass", [False, True])
+def test_method_specific_alternative_does_not_require_unrelated_question_template(monkeypatch, semantic_pass):
+    ask = "Align the title and research question with the evidence actually synthesized: retitle and frame the article as a map of exposure and response endpoints, or provide method-specific evidence on assay platforms, validation, calibration, specimen handling, and analytical comparability."
+    paper = "# Resveratrol Exposure and Response Endpoints\n\n## Research Question\n\nWithin this non-comprehensive source set, how are exposure and response endpoints described?\n"
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda *args, **kwargs: [] if semantic_pass else [ask])
+    assert revision_coverage.material_unmet_asks(paper, ask) == ([] if semantic_pass else [ask])
+    assert revision_coverage._asks_concrete_research_question("provide a specific, answerable research question")
+
+
 def _chat(parsed: dict[str, Any]) -> Any:
     async def fake(**_kwargs: Any) -> Any:
         return type("Resp", (), {"parsed": parsed})()

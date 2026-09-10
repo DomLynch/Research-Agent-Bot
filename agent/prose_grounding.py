@@ -29,7 +29,11 @@ def _sources(bundle: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def claim_key(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> str:
-    # Ignore only generated bundle markers and whitespace, never scientific text.
+    from agent.revision_claim_trace import _stable_locator
+    # Only the cited source's generated locator is presentation, not claim text.
+    for index in indexes:
+        if locator := _stable_locator(bundle[index]):
+            claim = claim.replace(f"[exact source: {locator}]", "")
     text = " ".join(re.sub(r"\[bundle:\d+\]", "", claim).split())
     text = re.sub(r"\s+([.,;:!?])", r"\1", text)
     return _hash([text, _sources(bundle), sorted(indexes)])
