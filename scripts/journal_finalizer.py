@@ -218,14 +218,7 @@ def finalize_run(out_dir: Path, *, repair: Callable[[str], str] | None = None) -
 
 
 def _non_convergence_detail(text: str, out_dir: Path, cycle_len: int) -> str:
-    """Name the surface issues that blocked convergence.
-
-    The bare "did not reach a fixed point" surfaced as
-    `exit=7 local_gate_execution_failed`, so a manuscript-quality shortfall was
-    indistinguishable from an infrastructure crash and cost hours to attribute.
-    The repair loop only fails when some surface issue survives every phase, so
-    report which ones -- that is the actionable part.
-    """
+    """Report surviving surface issues to distinguish repair failure from a runtime crash."""
     issues = getattr(_surface_report(text, out_dir), "issues", ())
     seen: list[str] = []
     for issue in issues:

@@ -139,7 +139,17 @@ def validated_rows(proposal: Any, entries: list[dict[str, Any]]) -> tuple[list[d
     return accepted, rejected
 
 
-def render_rows(rows: list[dict[str, Any]], topic: str, tokens: Mapping[str, str]) -> str:
+def _quarantined_rows(run: Path | None) -> set[str]:
+    paths = [run/name for name in ("numeric_claim_quarantine.json", "debug/numeric_claim_quarantine.json")] if run is not None else []
+    batches = [json.loads(path.read_text()) for path in paths if path.exists()]
+    if any(not isinstance(batch, list) for batch in batches):
+        raise ValueError("qei_review_quarantine_invalid")
+    return {" ".join(str(item.get("sentence", "")).split()) for batch in batches for item in batch
+            if isinstance(item, dict) and item.get("issue_type") == "reviewer_numeric_auto_strip" and item.get("severity") == "P1"}
+
+
+def render_rows(rows: list[dict[str, Any]], topic: str, tokens: Mapping[str, str], *, run: Path | None = None) -> str:
+    excluded = _quarantined_rows(run)
     def cell(value: Any) -> str:
         return " ".join(str(value).split()).replace("|", "&#124;") if value is not None else "Not reported in quoted result"
     lines = [f"## Quantitative Evidence Index — {topic}", "",
@@ -147,7 +157,11 @@ def render_rows(rows: list[dict[str, Any]], topic: str, tokens: Mapping[str, str
              "| " + " | ".join(HEADERS) + " |", "|" + "---|" * len(HEADERS)]
     for row in rows:
         values = (tokens[row["receipt_id"]], *(row[key] for key in ("endpoint", "comparison", "estimate", "uncertainty", "significance", "result_span")))
-        lines.append("| " + " | ".join(map(cell, values)) + " |")
+        line = "| " + " | ".join(map(cell, values)) + " |"
+        if " ".join(line.split()) not in excluded:
+            lines.append(line)
+    if len(lines) == 6:
+        raise ValueError("qei_no_semantically_supported_estimates")
     return "\n".join(lines) + "\n"
 
 
@@ -156,7 +170,7 @@ def saved_table(run: Path, topic: str, tokens: Mapping[str, str]) -> str:
     rows, rejected = validated_rows(proposal, source_entries(run, topic, tokens))
     if rejected or not rows:
         raise ValueError("qei_saved_facts_invalid")
-    return render_rows(rows, topic, tokens)
+    return render_rows(rows, topic, tokens, run=run)
 
 
 async def prepare_table(run: Path, topic: str, tokens: Mapping[str, str], **call_options: Any) -> str:
@@ -179,7 +193,7 @@ async def prepare_table(run: Path, topic: str, tokens: Mapping[str, str], **call
     if not rows:
         raise ValueError("qei_no_semantically_supported_estimates")
     facts.write_text(json.dumps({"rows": rows}, indent=2))
-    return render_rows(rows, topic, tokens)
+    return render_rows(rows, topic, tokens, run=run)
 
 
 async def writer_table(topic: str, receipts: Any, tokens: Mapping[str, str] | None, quarantine_path: Any, **options: Any) -> str:

@@ -68,6 +68,30 @@ def test_duplicate_quarantine_does_not_merge_identical_numbers_across_studies(ro
     assert rejected == [{"row": 1, "reason": "duplicate_or_row_limit"}]
 
 
+@pytest.mark.parametrize("kind", ["complete", "partial", "other_issue", "advisory"])
+@pytest.mark.parametrize("directory", ["", "debug"])
+def test_table_regeneration_respects_only_exact_p1_reviewed_row_removals(tmp_path, row, kind, directory):
+    tokens = {"trial": "Smith 2020", "other": "Jones 2021"}
+    other = {**row, "receipt_id": "other"}
+    complete = render_rows([row], "resveratrol", tokens).splitlines()[-1]
+    item = {"issue_type": "reviewer_numeric_auto_strip", "severity": "P1", "sentence": complete}
+    if kind == "partial":
+        item["sentence"] = "| Smith 2020 | HDL cholesterol |"
+    if kind == "other_issue":
+        item["issue_type"] = "unrelated"
+    if kind == "advisory":
+        item["severity"] = "P2"
+    destination = tmp_path/directory
+    destination.mkdir(exist_ok=True)
+    (destination/'numeric_claim_quarantine.json').write_text(json.dumps([item]))
+    table = render_rows([row, other], "resveratrol", tokens, run=tmp_path)
+    assert ("| Smith 2020 |" in table) is (kind != "complete")
+    assert "| Jones 2021 |" in table
+    if kind == "complete":
+        with pytest.raises(ValueError, match="qei_no_semantically_supported_estimates"):
+            render_rows([row], "resveratrol", tokens, run=tmp_path)
+
+
 def test_semantic_review_quarantines_conflicts_and_binds_cache_to_sources(tmp_path, row, source, monkeypatch):
     from agent import qei_facts as qei
     other = {**row, "receipt_id": "other"}

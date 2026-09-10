@@ -203,6 +203,7 @@ EXIT_REQUIRED_ARTIFACT_INVALID = 9
 EXIT_TIMEOUT = 124
 
 _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
+    "numeric_claim_quarantine.json",
     "full_paper.md",
     "structured_evidence_tables.md",
     "manifest.json",
@@ -3970,6 +3971,16 @@ def _is_p1_flagged(r: Any) -> bool:
     )
 
 
+def _reviewer_strip_region(paper_md: str, before: str) -> str:
+    """Remove one uniquely identified region, keeping table rows indivisible."""
+    if not before or paper_md.count(before) != 1 or _patch_applier._has_unsafe_match_boundary(paper_md, before):
+        return ""
+    if "\n" not in before and before.lstrip().startswith("|"):
+        row = next(line for line in paper_md.splitlines() if before in line)
+        return row if row.lstrip().startswith("|") and row.rstrip().endswith("|") else ""
+    return before
+
+
 async def _agent_repair_loop(
     *,
     paper_md: str,
@@ -4055,20 +4066,9 @@ async def _agent_repair_loop(
     # Pure deletion; safer than leaving a flagged patch unresolved.
     if flagged_p1:
         for r in flagged_p1:
-            if not r.before or r.before not in paper_md:
+            before = _reviewer_strip_region(paper_md, r.before)
+            if not before:
                 continue
-            # Only strip if the BEFORE appears exactly once (avoid
-            # accidental over-strip).
-            if paper_md.count(r.before) != 1:
-                continue
-            if _patch_applier._has_unsafe_match_boundary(paper_md, r.before):
-                continue
-            before = r.before
-            if "\n" not in before and before.lstrip().startswith("|"):
-                row = next(line for line in paper_md.splitlines() if before in line)
-                if not row.lstrip().startswith("|") or not row.rstrip().endswith("|"):
-                    continue
-                before = row
             paper_md = paper_md.replace(before, "", 1)
             if re.search(r"\d", before):
                 _consistency_fixer._append_numeric_quarantine(

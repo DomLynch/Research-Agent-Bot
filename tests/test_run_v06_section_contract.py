@@ -168,6 +168,7 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "polish_compiler.md",
         "polish_tensions_appendix.json",
         "structured_output_contract.json",
+        "numeric_claim_quarantine.json",
     ):
         (tmp_path / name).write_text("x")
     (tmp_path / "full_paper.pdf").write_text("x")
@@ -199,6 +200,8 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert moved["polish_compiler.json"] == "audit/polish_compiler.json"
     assert "quality_methods.json" not in moved  # public sidecar stays top-level
     assert "risk_of_bias.json" not in moved
+    assert (tmp_path / "numeric_claim_quarantine.json").exists()
+    assert "numeric_claim_quarantine.json" not in moved
 
 
 def test_organize_run_artifacts_replaces_stale_sidecar(tmp_path: Path) -> None:
