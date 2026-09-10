@@ -548,7 +548,7 @@ def test_all_section_briefs_and_retries_share_evidence_boundaries() -> None:
         assert "original JSON schema" in backstop
         assert "Make each paragraph 8-12 sentences" not in backstop
     for prompt in (prompts["abstract"], ABSTRACT_SOURCE_RETRY):
-        assert "200-280" in prompt and "300" in prompt
+        assert "200-220" in prompt and "300" in prompt
         assert "300-400" not in prompt and "250-350" not in prompt
     for name in ("cross_domain_synthesis", "limitations_full"):
         retry = paper_writer.cross_domain_retry_prompt("base", name, ["novel_numeric:'50'"])

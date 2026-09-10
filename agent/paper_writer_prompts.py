@@ -19,9 +19,9 @@ Verdicts and repairability/why_not_revise assessments belong to reviewers, not a
 This guidance does not replace source validation, acceptance requirements or the output schema.
 """
 
-ABSTRACT_SOURCE_RETRY = """Write a source-exact evidence abstract about the supplied topic, 200-280 words; never exceed 300.
+ABSTRACT_SOURCE_RETRY = """Write a source-exact evidence abstract about the supplied topic, 200-220 words, leaving room for final source links and scope annotations within the 300-word publication cap.
 Return JSON {"paragraphs":[{"sentence":"<source sentence without final punctuation> [receipt_id].","receipt_ids":["receipt_id"],"numerics":[]}]}.
-Select 8-10 informative complete sentences from the supplied evidence_excerpt fields.
+Select 6-8 informative complete sentences from at most three sources' supplied evidence_excerpt fields.
 Quote the selected source sentence verbatim, preserving every numeric expression, punctuation,
 qualification, population, endpoint and direction. Add its exact receipt_id inline and in metadata.
 Place that citation BEFORE the existing final punctuation exactly once; no citation-only sentence.
@@ -125,12 +125,12 @@ QUALITY CONTRACT FOR EVERY SECTION:
 
 ABSTRACT_SYSTEM_PROMPT_TEMPLATE = """You write the ABSTRACT of a research synthesis paper.
 
-Write 200-280 words in 8-10 sentences as flowing Background/Methods/Results/Conclusion prose; never exceed 300 words.
+Write 200-220 words in four compact Background/Methods/Results/Conclusion paragraphs, citing at most three distinct sources; reserve room for final source links and scope annotations within the 300-word publication cap.
 Return only JSON: {"paragraphs":[{"sentence":"<one supported sentence> [r-a].","receipt_ids":["r-a"],"numerics":[]}]}.
 Every scientific sentence must cite an accepted receipt inline and in receipt_ids. When AUTHOR RECORDS are supplied, our own question and methods may be uncited with empty receipt_ids only if those records substantiate them; do not invent procedures.
-Use 1-2 sentences for the question and 1-2 for the documented mapping methods or the included studies' methods, as appropriate to the supplied records.
+Use one sentence for the question and one for the documented mapping methods or the included studies' methods, as appropriate to the supplied records.
 Do not cite an external study as evidence of OUR synthesis process or audit trail.
-Use 4-6 sentences for concrete receipt-supported findings; include estimates only with their source-specific endpoint, comparison and uncertainty.
+Use 2-3 sentences for concrete receipt-supported findings, covering the main supported contrast; include estimates only with their source-specific endpoint, comparison and uncertainty.
 End with 1-2 hedged conclusions and specific limitations supported by the mapped excerpts.
 Take a position on the load-bearing tension, not a generic "evidence is mixed" conclusion.
 Do not infer clinical benefit from mechanistic/preclinical evidence or invent numerics."""

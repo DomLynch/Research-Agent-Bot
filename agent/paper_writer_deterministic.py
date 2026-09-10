@@ -202,14 +202,6 @@ def _load_bearing_tension(matrix: TensionMatrix) -> Any | None:
     return max(pairs, key=lambda t: getattr(t, "severity", 0) or 0)
 
 
-_OUTCOME_IMPORTANCE = {
-    "longevity": 5, "frailty": 4, "muscle_function": 4,
-    "cardiometabolic": 4, "cognitive": 4, "safety": 4,
-    "immune": 3, "immune_inflammation": 3, "oncology": 3, "ophthalmologic": 3,
-    "mechanism": 2, "other": 1,
-}
-
-
 def _public_label(value: str) -> str:
     labels = {
         "cross_domain": "cross-domain",
@@ -226,9 +218,9 @@ def _public_label(value: str) -> str:
 
 def _outcome_rows(
     receipts: Sequence[ReceiptSummary], matrix: TensionMatrix | None,
-) -> list[tuple[int, str, int, int, str, str]]:
+) -> list[tuple[str, int, int, str, str]]:
     pairs = list(getattr(matrix, "non_orthogonal", lambda: [])()) if matrix else []
-    rows: list[tuple[int, str, int, int, str, str]] = []
+    rows: list[tuple[str, int, int, str, str]] = []
     for oc in sorted(_outcome_class_set(receipts)):
         rs = [r for r in receipts if outcome_key(r.outcome_class) == oc]
         direct = sum(1 for r in rs if (r.directness or "").lower() == "direct")
@@ -241,21 +233,16 @@ def _outcome_rows(
              if outcome_key(getattr(t, "outcome_class", "")) == oc),
             default=0,
         )
-        gap = "direct clinical gap" if direct == 0 else "replication gap"
+        boundary = "no direct source in this retained set" if direct == 0 else "endpoint and comparator comparability require source-level assessment"
         if conflict >= 4:
-            gap = "conflict-resolution gap"
-        priority = (
-            _OUTCOME_IMPORTANCE.get(oc, 1)
-            * (3 if direct == 0 else 1)
-            * (2 if conflict >= 3 else 1)
-        )
-        rows.append((priority, oc, direct, indirect, directions, gap))
-    return sorted(rows, key=lambda row: (-row[0], row[1]))
+            boundary = "recorded disagreement requires endpoint-level assessment"
+        rows.append((oc, direct, indirect, directions, boundary))
+    return rows
 
 
 def _append_research_contribution_layer(
     lines: list[str], receipts: Sequence[ReceiptSummary],
-    matrix: TensionMatrix | None, topic: str,
+    matrix: TensionMatrix | None,
 ) -> None:
     rows = _outcome_rows(receipts, matrix)
     if not rows:
@@ -267,50 +254,13 @@ def _append_research_contribution_layer(
         "| Outcome class | Direct sources | Indirect / mechanism sources | Direction profile | Interpretation boundary |",
         "|---|---:|---:|---|---|",
     ]
-    for _, oc, direct, indirect, directions, gap in rows:
+    for oc, direct, indirect, directions, boundary in rows:
         lines.append(
             f"| {_public_label(oc)} | {direct} | {indirect} | "
-            f"{directions or 'unclear'} | {gap} |"
+            f"{directions or 'unclear'} | {boundary} |"
         )
     lines.append("\nMatrix accounting note: Direct and indirect source counts are cumulative within each outcome class and reconcile to the Results outcome-class roster.")
-    top = rows[:5]
-    lines += [
-        "",
-        "### Evidence-Gap Priority",
-        "",
-        "| Priority | Gap | Rationale |",
-        "|---|---|---|",
-    ]
-    for i, (_, oc, direct, indirect, directions, gap) in enumerate(top, 1):
-        n_sources = direct + indirect
-        rationale = (
-            f"{direct} direct and {indirect} indirect "
-            f"{'source' if n_sources == 1 else 'sources'}; "
-            f"direction profile: {directions or 'unclear'}"
-        )
-        lines.append(f"| P{i} | {_public_label(oc)}: {gap} | {rationale} |")
-    _, target_oc, direct, indirect, _, gap = top[0]
-    target = _public_label(target_oc)
-    population = (
-        "adults or older adults with baseline risk in the target outcome domain"
-        if direct == 0 else
-        "the same population type as the strongest direct receipt cluster"
-    )
-    duration = "at least 12 months" if gap == "direct clinical gap" else "at least 24 weeks"
-    sample_size = "at least 200 participants per arm" if direct == 0 else "at least 100 participants per arm"
-    lines += [
-        "",
-        "### Next-Study Design Recommendation",
-        "",
-        f"The next high-yield study for {topic} should target the "
-        f"**{target}** evidence gap, pre-register the primary endpoint, "
-        "separate clinical from mechanistic endpoints, preserve safety "
-        "and adherence capture, and include an analysis plan that can "
-        "falsify the current boundary-condition claim rather than only "
-        f"confirming a favorable direction. Minimum useful design: {sample_size}, "
-        f"a priority population of {population}, and follow-up lasting {duration}; "
-        "shorter or smaller studies should be treated as hypothesis-generating.",
-    ]
+    lines.append("\nThese counts describe retained sources only. They do not establish literature coverage, evidence certainty, research priorities, or a powered study design.")
 
 
 def build_what_this_adds_section(
@@ -386,6 +336,6 @@ def build_what_this_adds_section(
             "them away in narrative summary."
         )
     lines.append("")
-    _append_research_contribution_layer(lines, accepted, matrix, cap)
+    _append_research_contribution_layer(lines, accepted, matrix)
 
     return "\n".join(lines).rstrip() + "\n"
