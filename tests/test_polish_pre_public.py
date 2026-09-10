@@ -7,7 +7,7 @@ regressions are caught."""
 from __future__ import annotations
 
 import sys
-from dataclasses import dataclass
+from dataclasses import replace
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
@@ -69,8 +69,9 @@ def _thesis() -> SynthesisThesis:
 
 def test_humanize_paper_tier_maps_canonical_internal_labels() -> None:
     """Each internal label maps to a human-readable phrase."""
-    assert "RCT (clinical" in _humanize_paper_tier("A1_clinical_RCT")
-    assert "mechanistic" in _humanize_paper_tier("A2_human_mechanistic")
+    assert "randomized controlled trial" in _humanize_paper_tier("A1_clinical_RCT")
+    assert "clinical/functional endpoint" not in _humanize_paper_tier("A1_clinical_RCT")
+    assert "interpret endpoint and comparator fit from the source" in _humanize_paper_tier("A2_human_mechanistic")
     assert "review" in _humanize_paper_tier("B1_review")
     assert "preclinical" in _humanize_paper_tier("C1_preclinical")
     # Unknown labels pass through unchanged (defensive).
@@ -99,7 +100,7 @@ def test_writer_prompt_no_longer_emits_internal_tier_labels() -> None:
             f"Internal label {forbidden!r} leaked into writer prompt"
         )
     # Human-readable form IS present.
-    assert "RCT (clinical" in prompt
+    assert "randomized controlled trial" in prompt
     assert "preclinical" in prompt
 
 
@@ -178,14 +179,9 @@ def test_discussion_prompt_no_internal_label_leaks() -> None:
 # ============ Fix #35 — reference formatting ==========================
 
 
-@dataclass(frozen=True)
-class _Receipt:
-    receipt_id: str = "Walton 2019"
-    source_year: int | None = 2019
-    source_title: str | None = "Test Study"
-    source_venue: str | None = "Aging Cell"
-    source_doi: str | None = "10.1111/acel.13039"
-    source_pmid: str | None = None
+def _reference_receipt() -> ReceiptSummary:
+    return replace(_r(), source_year=2019, source_title="Test Study",
+                   source_venue="Aging Cell", source_doi="10.1111/acel.13039")
 
 
 def test_references_no_space_before_comma() -> None:
@@ -194,7 +190,7 @@ def test_references_no_space_before_comma() -> None:
     'Aging Cell, 2019.' formatting."""
     paper = "## Conclusion\n\nfinal sentence.\n"
     out = orch._append_references_block(
-        paper, [_Receipt()], registry=None,
+        paper, [_reference_receipt()], registry=None,
     )
     # No 'Word , Word' patterns in the References block
     refs_block = out.split("## References")[1]
@@ -207,7 +203,7 @@ def test_references_no_space_before_period() -> None:
     """Pre-fix 'DOI: 10.x .' had a stray space before the period."""
     paper = "## Conclusion\n\nfinal sentence.\n"
     out = orch._append_references_block(
-        paper, [_Receipt()], registry=None,
+        paper, [_reference_receipt()], registry=None,
     )
     refs_block = out.split("## References")[1]
     # Allow ' .' only at the very end of a line if any (should be 0)
@@ -241,18 +237,10 @@ def test_clean_reference_title_strips_trailing_period() -> None:
 def test_references_block_uses_cleaned_title() -> None:
     """End-to-end: a receipt with broken-hyphen title surfaces in
     References with the title cleaned."""
-    @dataclass(frozen=True)
-    class _R:
-        receipt_id: str = "Mohammed 2021"
-        source_year: int | None = 2021
-        source_title: str | None = (
-            "A Critical Review of Anti- Aging Drugs"
-        )
-        source_venue: str | None = "Frontiers"
-        source_doi: str | None = None
-        source_pmid: str | None = None
+    receipt = replace(_r("Mohammed 2021"), source_year=2021,
+                      source_title="A Critical Review of Anti- Aging Drugs", source_venue="Frontiers")
     out = orch._append_references_block(
-        "## Conclusion\n", [_R()], registry=None,
+        "## Conclusion\n", [receipt], registry=None,
     )
     assert "Anti-Aging" in out
     assert "Anti- Aging" not in out

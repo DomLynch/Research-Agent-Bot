@@ -5,6 +5,8 @@ import importlib
 import re
 import time
 import pytest
+
+
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -13,6 +15,14 @@ from agent import journal_finalizer, revision_quality
 from agent.journal_surface_gate import evaluate_journal_surface
 from agent.revision_contract import ask_fingerprint, context_fingerprint
 from agent.sources.pubmed import pmid_rows_fingerprint
+
+
+def test_terminology_cleanup_does_not_upgrade_clinical_evidence():
+    paper = "## Results\n\nDirect clinical evidence concerns glucose biomarkers. The direct clinical trials did not measure mortality.\n"
+    fixed, _ = journal_finalizer._phase_c_terminology(paper)
+    assert fixed == paper
+    assert "hard-endpoint" not in fixed
+    assert "not risk-of-bias judgments" in journal_finalizer._CLASSIFICATION_CRITERIA_NOTE
 
 
 def test_phase_g_refreshes_publication_score(monkeypatch: Any, tmp_path: Path) -> None:

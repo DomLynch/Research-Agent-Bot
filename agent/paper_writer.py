@@ -227,9 +227,9 @@ def _thin_conclusion_note(receipts: Sequence[ReceiptSummary], matrix: TensionMat
 _PAPER_TIER_HUMAN_LABEL: dict[str, str] = {
     # Internal-label forms (from derive_paper_tier when classifier fires)
     "A1_clinical_RCT":
-        "RCT (clinical/functional endpoint)",
+        "randomized controlled trial (interpret endpoints from the source)",
     "A2_human_mechanistic":
-        "RCT (human, mechanistic/biomarker endpoint)",
+        "human intervention study (interpret endpoint and comparator fit from the source)",
     "B1_review":
         "systematic review or meta-analysis",
     "C1_preclinical":
@@ -238,7 +238,7 @@ _PAPER_TIER_HUMAN_LABEL: dict[str, str] = {
         "mixed cluster (multiple study types)",
     # Raw tier-code forms (when derive_paper_tier doesn't subclassify
     # — e.g. tier='C1' input, or 'B2' which has no internal-label form)
-    "A1": "RCT (clinical/functional endpoint)",
+    "A1": "randomized controlled trial (design label, not a quality rating)",
     "A2": "RCT (human, mechanistic/biomarker endpoint)",
     "B1": "systematic review or meta-analysis",
     "B2": "observational cohort",

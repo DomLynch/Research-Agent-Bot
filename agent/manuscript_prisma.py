@@ -179,7 +179,7 @@ def render_retrieval_audit(audit: dict[str, Any]) -> str:
         "| Search wave | Raw records | Unique within wave | Added to corpus | Cumulative corpus |",
         "|---|---:|---:|---:|---:|"]
     def cell(value: Any) -> str:
-        return str(value).replace("|", "/").replace("\n", " ")
+        return str(value).replace("|", "/").replace("\n", " ").replace("_", " ")
     for wave in audit.get("waves", []):
         lines.append("| " + " | ".join(cell(wave.get(key, "Not recorded")) for key in
             ("wave", "raw_total", "wave_unique", "new_to_corpus", "cumulative")) + " |")
@@ -195,7 +195,7 @@ def render_retrieval_audit(audit: dict[str, Any]) -> str:
                        ("extraction_counts", "Extraction report counts"), ("exclusion_reasons", "Metadata exclusion reasons")):
         if rows := audit.get(key):
             lines += ["", f"#### {title}", "", "| Recorded stage or reason | Count |", "|---|---:|"]
-            lines += [f"| {cell(label).replace('_', ' ')} | {cell(value)} |" for label, value in rows.items()]
+            lines += [f"| {cell(label)} | {cell(value)} |" for label, value in rows.items()]
     lines += ["", "Metadata selection used automated title/abstract classification with source-level reasons. "
         "No blinded dual human screening or human full-text eligibility adjudication is evidenced by these records. "
         "Extraction failures and abstract fallbacks are not automatically study exclusions; "

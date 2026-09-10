@@ -711,7 +711,22 @@ def _claim_clauses(text: str) -> list[str]:
     return [clause.strip() for clause in re.split(r"\s*;\s*|,?\s+\b(?:although|but|while|whereas|yet)\b\s+|\s+\band\b\s+(?=(?:(?:can|could|may|might|should|will|would)\s+[a-z]+|[a-z]+(?:ed|ing|s))\b)", text, flags=re.I) if len(_grounding_words(clause)) >= 2]
 
 
+def _verified_complete_quotation(claim: str, source: dict[str, Any]) -> bool:
+    cited = str(source.get("cited_as") or "")
+    if not cited or f"[{cited}]" not in claim or source.get("excerpt_is_complete_field") is not True or not _publication_evidence.source_proof_is_valid(source):
+        return False
+    if not claim.strip().startswith(('"', '“')) or not claim.strip().endswith(('"', '”')):
+        return False
+    def normalized(text: str) -> str:
+        text = re.sub(r"\s+([.,;:!?])", r"\1", " ".join(text.split()))
+        return re.sub(r"([([])\s+", r"\1", text).strip(' ."“”')
+    prose = normalized(re.sub(r"\[(?:bundle:\d+|" + re.escape(cited) + r")\]", "", claim))
+    return len(prose) >= 20 and any(prose == normalized(sentence) for sentence in _revision_claim_trace._sentences(str(source["excerpt"])))
+
+
 def _cited_claim_aligns(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> bool:
+    if len(indexes) == 1 and _verified_complete_quotation(claim, bundle[next(iter(indexes))]):
+        return True
     if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
         return any(_evidence_aligns(claim, bundle[index]) for index in indexes)
     clauses = _claim_clauses(claim)
@@ -2304,6 +2319,29 @@ def _ensure_core_source_traces(paper: str, bundle: list[dict[str, Any]]) -> str:
     return paper
 
 
+def _prepare_qei_section(paper: str, run: Path, topic: str, source_bundle: list[dict[str, Any]], manifest: dict[str, Any]) -> str:
+    from agent.qei_facts import submission_table
+
+    pattern = r"(?ms)^## Quantitative Evidence Index\b.*?(?=^## |\Z)"
+    first = re.search(pattern, paper)
+    if not first and not (run / "qei_facts.json").is_file():
+        return paper
+    snapshot = run / "revision_evidence_snapshot"
+    evidence = load_revision_evidence(run, quant_dir=snapshot / "quant_claims", parsed_dir=snapshot / "parsed", expected_topic=topic)
+    if evidence.mode != "snapshot" or evidence.errors or not evidence.citation_registry:
+        raise ValueError("qei_source_snapshot_unverified")
+    receipts = {str(row["receipt_id"]): row for row in manifest.get("receipts", [])}
+    rows = _publication_evidence.source_rows(_read_json(evidence.citation_registry), receipts)
+    retained = {str(row.get("cited_as") or "") for row in source_bundle}
+    tokens = {str(row["receipt_id"]): str(row["body_citation"]) for row in rows if row.get("body_citation") in retained}
+    table = submission_table(run, topic, tokens).rstrip() + "\n\n"
+    if first:
+        return re.sub(pattern, lambda match: table if match.start() == first.start() else "", paper)
+    boundary = re.search(r"(?m)^## (?:Methods|Results|References)\b", paper)
+    position = boundary.start() if boundary else len(paper)
+    return paper[:position].rstrip() + "\n\n" + table + paper[position:]
+
+
 def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_sources: bool = True) -> bool:
     paper = _BACKGROUND_REFERENCES_RE.sub("", _DOI_TEXT_RE.sub(lambda match: match.group(1) + _clean_doi(match.group(2)), (run / "full_paper.md").read_text(encoding="utf-8")))
     paper = paper.replace("The paper therefore reports a source-directness and outcome-class map rather than a pooled effect.", "This is a source-directness and outcome-class map rather than a pooled effect.").replace("Indirect clinical material, reviews, protocols, and mechanistic work can clarify context and plausibility", "Indirect clinical evidence, reviews, protocols, and mechanistic work can clarify context and plausibility").replace("changing the evidence tier", "changing the source tier")
@@ -2315,21 +2353,7 @@ def prepare_submission_manuscript(run: Path, *, max_sources: int = 1000, enrich_
     # Preserve the agent's existing source URLs, source-level appraisals, and
     # exact body-to-bundle links instead of dropping them at the API boundary.
     source_bundle = _source_bundle(run, limit=max_sources) if enrich_sources else _source_bundle(run, limit=max_sources, enrich=False)
-    if re.search(r"^## Quantitative Evidence Index\b", paper, re.M):
-        from agent.qei_facts import submission_table
-
-        snapshot = run / "revision_evidence_snapshot"
-        evidence = load_revision_evidence(run, quant_dir=snapshot / "quant_claims", parsed_dir=snapshot / "parsed", expected_topic=topic)
-        if evidence.mode != "snapshot" or evidence.errors or not evidence.citation_registry:
-            raise ValueError("qei_source_snapshot_unverified")
-        receipts = {str(row["receipt_id"]): row for row in manifest.get("receipts", [])}
-        rows = _publication_evidence.source_rows(_read_json(evidence.citation_registry), receipts)
-        retained = {str(row.get("cited_as") or "") for row in source_bundle}
-        tokens = {str(row["receipt_id"]): str(row["body_citation"]) for row in rows if row.get("body_citation") in retained}
-        table = submission_table(run, topic, tokens)
-        qei_pattern = r"(?ms)^## Quantitative Evidence Index\b.*?(?=^## |\Z)"
-        first_qei = re.search(qei_pattern, paper)
-        paper = re.sub(qei_pattern, lambda match: table.rstrip() + "\n\n" if first_qei and match.start() == first_qei.start() else "", paper)
+    paper = _prepare_qei_section(paper, run, topic, source_bundle, manifest)
     for row in source_bundle:
         if span := _source_evidence_span(row):
             row["evidence_span"] = span

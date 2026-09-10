@@ -392,6 +392,8 @@ def _phase_m_strip_surface_duplicate_paragraphs(
         stripped = para.strip()
         if stripped.startswith("## ") and not stripped.startswith("### "):
             current_section = stripped[3:].strip().lower()
+            if current_section == "conclusion":
+                seen.clear()
         if current_section == "discussion":
             para, removed = _strip_repeated_discussion_sentences(
                 para, discussion_sentences,
@@ -937,35 +939,10 @@ def _reconcile_animal_role_line(
 def _phase_c_terminology(text: str) -> tuple[str, list[FinalizerLogEntry]]:
     from agent.journal_surface_gate import apply_pipeline_jargon_replacements
     out = apply_pipeline_jargon_replacements(text)
-    out, n_directness = _calibrate_public_directness_language(out)
     if out == text:
         return text, []
     detail = "applied _PIPELINE_JARGON_PUBLIC substitution table"
-    if n_directness:
-        detail += f"; calibrated {n_directness} directness phrase(s)"
     return out, [FinalizerLogEntry(phase="C_terminology", rule="pipeline_jargon_to_academic", n_changes=1, detail=detail)]
-
-
-def _calibrate_public_directness_language(text: str) -> tuple[str, int]:
-    replacements = (
-        ("direct clinical evidence", "direct interventional hard-endpoint evidence"),
-        ("Direct clinical evidence", "Direct interventional hard-endpoint evidence"),
-        ("direct clinical gap", "direct interventional hard-endpoint gap"),
-        ("Direct clinical gap", "Direct interventional hard-endpoint gap"),
-        ("direct clinical records", "direct interventional hard-endpoint records"),
-        ("direct clinical signals", "direct interventional hard-endpoint signals"),
-        ("direct clinical outcomes", "direct interventional hard-endpoint outcomes"),
-        ("direct clinical trials", "direct interventional hard-endpoint trials"),
-        ("direct clinical recommendation", "direct interventional hard-endpoint recommendation"),
-    )
-    out = text
-    n = 0
-    for old, new in replacements:
-        changed = out.count(old)
-        if changed:
-            out = out.replace(old, new)
-            n += changed
-    return out, n
 
 
 # --- Phase H: Topic-slug → display-form normalisation -----------------
@@ -1575,13 +1552,17 @@ _CLASSIFICATION_CRITERIA_NOTE = (
     "Classification criteria: Outcome class assignment follows the primary "
     "endpoint or claim role recorded in the manifest, with contextual adjacent "
     "evidence separated from cardiometabolic, immune, safety, functional, and "
-    "other endpoint classes. Directness is coded as direct when the source tests "
-    "the named exposure or construct in the target population with aging-relevant "
-    "clinical or hard endpoints; indirect when human evidence uses surrogate or "
-    "adjacent endpoints; mechanistic when the evidence is preclinical, pathway, "
-    "or model-based; and review when the source synthesizes rather than directly "
-    "tests effects. Evidence tier records the same hierarchy before claims are "
-    "interpreted."
+    "other endpoint classes. Directness is coded as direct when the named topic, "
+    "population, comparator and outcome fit the review question; indirect when that "
+    "fit is incomplete or a combination does not isolate the topic; mechanistic for "
+    "preclinical or pathway evidence; review for evidence syntheses; and protocol "
+    "for planned studies without results. Randomization alone does not establish "
+    "directness. Uncontrolled observations and protocols cannot establish a direct "
+    "treatment effect. Within-group changes and correlations are distinguished from "
+    "between-group effects. Evidence tier records the source-design category. "
+    "Design tiers, including A1, are not risk-of-bias judgments, "
+    "certainty ratings or evidence of hard endpoints. Source-specific appraisal, "
+    "where available, is reported separately."
 )
 
 _CONFLICT_SEVERITY_NOTE = (

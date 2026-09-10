@@ -188,8 +188,10 @@ def repair_revision_surface(
         section = re.search(rf"^## {target}\b[^\n]*\n(?P<body>.*?)(?=^## |\Z)", text, re.M | re.S)
         if paragraph and section and paragraph not in section.group("body"):
             text = re.sub(r"\n{3,}", "\n\n", text.replace(paragraph, "", 1))
+            def place_paragraph(match: re.Match[str]) -> str:
+                return match.group(1) + "\n" + paragraph + "\n"
             text, n = re.subn(rf"(^## {target}\b[^\n]*\n)",
-                              lambda match: match.group(1) + "\n" + paragraph + "\n", text, count=1, flags=re.M)
+                              place_paragraph, text, count=1, flags=re.M)
             if n:
                 changes.append("tension_section_placement")
     if coverage.asks_mechanistic_content_reconciliation(feedback):
@@ -199,8 +201,10 @@ def repair_revision_surface(
             "sources classified by their primary study role, so this is a classification statement and "
             "not evidence that mechanistic content is absent."
         )
+        def preserve_indent(match: re.Match[str]) -> str:
+            return match.group("lead") + replacement
         text, n = re.subn(r"(?P<lead>[ \t]*)[^.\n]*\bno sources classified primarily as mechanistic\b[^.\n]*\.",
-                          lambda match: match.group("lead") + replacement, text, count=1, flags=re.I)
+                          preserve_indent, text, count=1, flags=re.I)
         if n:
             changes.append("mechanistic_content_framing")
     lower = feedback.lower()
@@ -273,6 +277,9 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
     removed = 0
     for i in range(0, len(chunks), 2):
         block = chunks[i]
+        if re.match(r"^## Conclusion\b", block.strip()):
+            seen.clear()
+            seen_tokens.clear()
         norm = re.sub(r"\s+", " ", block.strip())
         words = norm.split()
         if not norm:
