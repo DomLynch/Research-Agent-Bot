@@ -9,6 +9,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import apply_patches  # noqa: E402
 
 
+def test_numeric_repair_cannot_empty_required_source_traced_qei_cell():
+    before = '| Study 2024 | thickness | HI versus MIX | HI: Δ12%, MIX: Δ19% | Not reported | Not reported | thickness (HI: Δ12%, MIX: Δ19%). |'
+    after = before.replace('| HI: Δ12%, MIX: Δ19% |', '| |')
+    patch = dict(id='P-qei', patch_type='numeric', severity='P1', location='Quantitative Evidence Index', before=before, after=after, reason='Unsupported estimate')
+    paper = '## Quantitative Evidence Index\n\n' + before + '\n'
+    cleaned, results = apply_patches.apply_patches(paper, [patch], _manifest())
+    assert cleaned == paper
+    assert results[0].decision == 'flagged'
+
+
 def _manifest() -> dict:
     return {
         "receipts": [

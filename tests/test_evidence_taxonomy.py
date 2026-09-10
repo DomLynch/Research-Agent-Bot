@@ -2,6 +2,7 @@
 structured metadata. Discriminating tests isolate each tier path."""
 from __future__ import annotations
 
+
 import sys
 from pathlib import Path
 
@@ -514,3 +515,11 @@ def test_public_directness_phrase_protocol_does_not_mask_real_direct() -> None:
     'direct evidence is present' headline."""
     phrase = et.public_directness_phrase(["A1", "D1"], ["direct", "protocol"])
     assert phrase == "direct interventional evidence is present"
+
+
+def test_abstract_explicitly_identifies_future_protocol_results():
+    title = 'Resistance Training in a Multicenter, Randomized Controlled Trial'
+    abstract = 'This trial aims to evaluate an eight-week intervention. The results from this protocol are expected to inform guidelines.'
+    result = et.infer_from_paper_meta({'title':title, 'abstract':abstract})
+    assert (result.tier, result.directness) == ('D1', 'protocol')
+    assert not et.is_primary_randomized_study(title, abstract)

@@ -9,6 +9,7 @@ from __future__ import annotations
 import asyncio
 import json
 import sys
+import pytest
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -18,12 +19,13 @@ import final_reviewer as gr  # type: ignore[import-not-found]  # noqa: E402
 import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 
-def test_auto_strip_removes_complete_flagged_table_row_and_quarantines_it(monkeypatch, tmp_path):
+@pytest.mark.parametrize('target', ['| Trial 2023 | pocket depth |', '4.44 mm to 2.82 mm'])
+def test_auto_strip_removes_complete_flagged_table_row_and_quarantines_it(monkeypatch, tmp_path, target):
     row = "| Trial 2023 | pocket depth | placebo comparison | 4.44 mm to 2.82 mm |"
     neighbor = "| Other 2024 | glucose | between groups | -6.00 mmol/L |"
     paper = "## Quantitative Evidence Index\n\n| Study | Endpoint | Comparison | Estimate |\n|---|---|---|---|\n" + row + "\n" + neighbor + "\n"
     result = ap.PatchResult(patch_id="P-row", patch_type="structure", severity="P1", decision="flagged",
-        reason_for_decision="Unsupported comparison; remove this row.", before="| Trial 2023 | pocket depth |", after="")
+        reason_for_decision="Unsupported comparison; remove this row.", before=target, after="")
     async def unfixable(*args, **kwargs):
         return []
     monkeypatch.setattr(orch._final_reviewer, "repair_flagged_patches", unfixable)

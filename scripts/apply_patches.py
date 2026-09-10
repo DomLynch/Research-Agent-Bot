@@ -200,20 +200,18 @@ def _breaks_markdown_table_shape(location: str, before: str, after: str) -> bool
         # Pure deletion of one pipe-delimited row is applied by
         # _apply_text_patch as whole-row removal, preserving shape.
         return False
+    if "quantitative evidence index" in location.lower() and after.strip().startswith("|"):
+        from agent.qei_facts import SURFACE_FIELDS, surface_row_issues
+        cells = [cell.strip() for cell in after.strip().strip("|").split("|")]
+        if len(cells) == 7 and surface_row_issues(dict(zip(SURFACE_FIELDS[7], cells))):
+            return True
     if "quantitative evidence index" not in location.lower() and "|" not in after:
         return False
     return after.count("|") != before.count("|")
 
 
 def _apply_text_patch(md: str, before: str, after: str) -> str:
-    """Apply an exact patch, expanding table-fragment deletions to rows.
-
-    final-layer reviewer sometimes proposes deleting a pipe-free fragment from a markdown
-    table row. Replacing only the fragment leaves a malformed row and
-    makes the post-apply audit explode. If the patch is a pure deletion
-    and the unique BEFORE text lives inside one markdown table row,
-    remove the whole row instead.
-    """
+    """Apply exact patches; expand single-line table-fragment deletions to rows."""
     if after.strip() or "\n" in before:
         return md.replace(before, after, 1)
     idx = md.find(before)

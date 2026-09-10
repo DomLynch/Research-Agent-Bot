@@ -1507,6 +1507,13 @@ def test_derive_lane_human_rct_ignores_preclinical_background_excerpt() -> None:
     ) == "human_rct"
 
 
+def test_explicit_human_title_does_not_become_animal_from_background():
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(evidence_tier='A1', directness='indirect',
+        title='Supplementation and Resistance Exercise Improve Strength in Healthy Humans',
+        source_excerpt='Prior studies in mice motivated this work.') == 'human_rct'
+
+
 def test_derive_lane_human_rct_ignores_uppercase_arm_acronym() -> None:
     from agent.evidence_lanes import derive_lane
 

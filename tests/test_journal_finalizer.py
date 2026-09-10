@@ -17,6 +17,14 @@ from agent.revision_contract import ask_fingerprint, context_fingerprint
 from agent.sources.pubmed import pmid_rows_fingerprint
 
 
+def test_parenthesis_cleanup_preserves_quoted_table_fragments():
+    row = '| Salter 2024 | 9.3 ± 3.8 μg/dL) were lower than P2 (11.7 ± 3.8 μg/dL | C levels in A2 (9.3 ± 3.8 μg/dL) were lower than P2 (11.7 ± 3.8 μg/dL, P < 0.05). |'
+    paper = '## Quantitative Evidence Index\n\n' + row + '\n\nProse (has an unmatched opening.'
+    cleaned, _ = journal_finalizer._repair_known_grammar_artifacts(paper)
+    assert row in cleaned
+    assert 'Prose has an unmatched opening.' in cleaned
+
+
 def test_surface_cleanup_removes_preflight_whitespace_before_package_freeze():
     paper = "## Discussion\n\nDirect (n=32), indirect (n=4), protocol (n=1). \n\nStudy-specific P < .001 remains unchanged.\t\n"
     expected = paper.replace(". \n", ".\n").replace(".\t\n", ".\n")

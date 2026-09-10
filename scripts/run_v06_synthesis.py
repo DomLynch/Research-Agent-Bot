@@ -3975,9 +3975,10 @@ def _reviewer_strip_region(paper_md: str, before: str) -> str:
     """Remove one uniquely identified region, keeping table rows indivisible."""
     if not before or paper_md.count(before) != 1 or _patch_applier._has_unsafe_match_boundary(paper_md, before):
         return ""
-    if "\n" not in before and before.lstrip().startswith("|"):
+    if "\n" not in before:
         row = next(line for line in paper_md.splitlines() if before in line)
-        return row if row.lstrip().startswith("|") and row.rstrip().endswith("|") else ""
+        if row.lstrip().startswith("|"):
+            return row if row.rstrip().endswith("|") else ""
     return before
 
 

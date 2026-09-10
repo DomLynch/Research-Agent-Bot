@@ -88,6 +88,7 @@ def derive_lane(
     human_signal = human_population and bool(
         HUMAN_TRIAL_SIGNAL_RE.search(identity)
         or _CLINICAL_TRIAL_IDENTITY_RE.search(identity)
+        or re.search(r"\bin (?:healthy |older |younger )?humans?\b", title or "", re.I)
     )
     if direct == "review" or tier == "B1":
         return "review_meta_analysis"

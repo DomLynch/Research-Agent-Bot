@@ -132,9 +132,9 @@ def build_methods_pack(
             "Evidence-tension synthesis: claims grouped by outcome class "
             f"({', '.join(unique_outcome_displays(sorted(outcome_classes), lower=True))}); "
             "within-class agreement, disagreement, and directness gaps "
-            "surfaced explicitly. Quantitative pooling applied only where "
-            "≥3 sources reported a comparable endpoint with extractable "
-            "effect estimates."
+            "surfaced explicitly. These grouped findings do not establish a pooled "
+            "effect. Any quantitative pooling requires separately reported methods "
+            "and results for comparable endpoints and extractable effect estimates."
         ),
         ai_use_disclosure=(
             "Manuscript drafting used large language models under a "

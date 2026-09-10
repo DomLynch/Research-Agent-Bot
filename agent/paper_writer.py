@@ -737,10 +737,9 @@ async def render_full_paper(
         body_md=(
             "## Research Question\n\n"
             f"Within the retained source corpus for {humanize_topic(topic, root=_repo)}, among {population_scope}, "
-            f"do findings for {outcome_scope} support a decision-grade conclusion "
-            "(clinically actionable where applicable), and which population, study-design, "
-            "and directness boundaries keep extrapolation to other outcome classes "
-            "hypothesis-generating?\n"
+            f"what do findings for {outcome_scope} show, and how do population, "
+            "study design, comparator, and directness constrain their interpretation "
+            "and extrapolation to other outcome classes?\n"
         ),
         anchors=(),
     )

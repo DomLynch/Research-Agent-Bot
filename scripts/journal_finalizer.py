@@ -565,6 +565,8 @@ def _repair_known_grammar_artifacts(text: str) -> tuple[str, int]:
 
 
 def _repair_unbalanced_parentheses(text: str) -> str:
+    if any(line.lstrip().startswith("|") for line in text.splitlines()):
+        return text
     chars, stack = list(text), []
     for idx, char in enumerate(chars):
         if char == "(":

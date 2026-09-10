@@ -415,7 +415,7 @@ def _is_protocol_paper(title: str, abstract: str) -> bool:
     return bool(_TITLE_PROTOCOL_RE.search(title) or (
         re.search(r"\bstudy design\s*$", title, re.I)
         and re.search(r"\b(?:trial|study) is designed to\b", abstract, re.I)
-    ))
+    ) or re.search(r"\b(?:results?|findings) (?:from|of) this protocol (?:are|is) expected\b", abstract, re.I))
 
 
 def is_primary_randomized_study(title: str, abstract: str = "", *, study_design: str = "") -> bool:
