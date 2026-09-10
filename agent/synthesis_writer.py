@@ -1,33 +1,4 @@
-"""Synthesis writer — Day 10.4 sectioned paper renderer.
-
-Given N claim receipts + a TensionMatrix + a SynthesisThesis (from
-Day 10.2 + 10.3), produce a `SynthesisPaper` whose `body_md` is the
-full markdown for `paper_synthesis.md`.
-
-Section split (matches `agent/synthesis_schemas.SectionName`):
-
-  Section              Source            Trust contract
-  -------              ------            --------------
-  title                LLM (thesis)      from SynthesisThesis (already validated)
-  thesis               deterministic     wraps SynthesisThesis.text + receipt list
-  evidence_summary     deterministic     table rendered from receipts
-  direct_evidence      deterministic     bullet list from direct receipts
-  indirect_evidence    deterministic     bullet list from mechanistic / review
-  tensions             LLM-anchored      one paragraph per non-orthogonal tension
-  synthesis            LLM-anchored      2-4 paragraphs cross-receipt synthesis
-  limitations          LLM-anchored      bulleted list with receipt anchors
-  spar_adjudication    deterministic     receipt-level SPAR votes table
-  references           deterministic     all source papers cited
-
-LLM-anchored sections share one validator: `validate_anchored_sentence`
-checks (a) `receipt_ids` is a subset of input ids; (b) all numerics
-appear in at least one receipt's p_values + thesis_text. Sentences
-that fail are dropped from the section; if the section ends up empty
-the writer falls back to a deterministic stub paragraph so the paper
-still ships.
-
-Same temperature-0 + seed determinism contract as Day 9.4 / 10.3.
-"""
+"""Render sectioned synthesis from receipts, tensions and a validated thesis. Deterministic evidence tables and anchored LLM prose share source and numeric checks."""
 from __future__ import annotations
 
 import re
@@ -253,15 +224,7 @@ def build_indirect_evidence_section(receipts: Sequence[ReceiptSummary]) -> Synth
 def build_rejected_evidence_section(
     receipts: Sequence[ReceiptSummary],
 ) -> SynthesisSection:
-    """Day 10.10 — quarantine zone for SPAR-rejected receipts.
-
-    Trust-spine ordering: SPAR is the gate. Rejected receipts are NOT
-    cited as evidence in the synthesis (no thesis tournament input,
-    no direct/indirect bullets, no synthesis paragraph anchors). They
-    are listed here for transparency — a reviewer can see WHAT was in
-    the corpus and WHY each rejected one was excluded — without those
-    receipts being granted evidentiary weight.
-    """
+    """List SPAR-rejected receipts for transparency without granting them evidentiary weight."""
     rejected = [r for r in receipts if not is_accepted_for_synthesis(r)]
     if not rejected:
         body = (
@@ -364,17 +327,7 @@ def _build_anchored_section(
     *,
     fallback_body: str,
 ) -> SynthesisSection:
-    """Validate each paragraph's anchor, drop failures, render
-    surviving sentences as bullets. If nothing survives, render the
-    fallback body deterministically.
-
-    Day 10.10: REVERTED Day 10.9's auto-prefix transition logic. The
-    reviewer correctly observed that prepending "Mechanistically, " /
-    "By contrast, " is cosmetic — it games the Q3 audit without
-    addressing the underlying synthesis quality. If the LLM doesn't
-    produce real transitions, the audit should fail Q3 and the
-    operator should fix the prompt or the corpus, not the markdown.
-    """
+    """Validate paragraph anchors and render survivors, using the fallback if empty. Never add cosmetic transitions to satisfy Q3."""
     valid_anchors: list[SynthesisClaimAnchor] = []
     body_lines: list[str] = []
     for p in paragraphs:
@@ -606,18 +559,7 @@ async def render_synthesis_paper(
     ledger: CostLedger | None = None,
     seed: int | None = None,
 ) -> SynthesisPaper:
-    """Render the full synthesis paper.
-
-    Deterministic sections render first (no LLM cost). LLM sections
-    run sequentially (could parallelize in a follow-on; keeping
-    sequential for now so cost ledger entries are deterministic in
-    order — useful for the audit step).
-
-    Returns a SynthesisPaper. body_md is the full markdown for
-    `paper_synthesis.md`. The 8-receipt invariants
-    (`assert_synthesis_invariants`) are not enforced HERE — that's
-    Day 10.5's orchestrator responsibility before the file is written.
-    """
+    """Render deterministic then sequential LLM sections. The orchestrator enforces synthesis invariants before writing."""
     # Day 10.10 reviewer P1: trust-spine ordering. The evidence_summary
     # table and SPAR adjudication / references / quarantine sections
     # cover the FULL corpus (audit transparency requires the reader to

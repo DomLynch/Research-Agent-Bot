@@ -113,6 +113,7 @@ async def review_manuscript(run: Path, **options: Any) -> None:
     topic = json.loads((run / "manifest.json").read_text())["topic"]
     sources = {"bundle": bundle, "own_results": source_entries(run, topic, {rid: row["body_citation"] for rid, row in registry.items()})}
     report = await review_statements(statements, sources, **options)
+    report["policy_hash"] = _hash(_PROMPT)
     report["sources_hash"] = _hash(_sources(bundle))
     report["reviewed_input_hash"] = _hash([statements, report["sources_hash"]])
     (run / "prose_grounding_review.json").write_text(json.dumps(report, indent=2))
@@ -125,7 +126,7 @@ def grounding_context(run: Path | None) -> Iterator[None]:
     if path and path.is_file() and run:
         report = json.loads(path.read_text())
         bundle = _verified_bundle(run)
-        if (report.get("sources_hash") == _hash(_sources(bundle))
+        if (report.get("policy_hash") == _hash(_PROMPT) and report.get("sources_hash") == _hash(_sources(bundle))
                 and report.get("reviewed_input_hash") == _hash([report.get("statements"), report["sources_hash"]])):
             # Recompute keys from the actual reviewed statements and decisions.
             statements = report["statements"]

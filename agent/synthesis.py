@@ -59,18 +59,7 @@ class InsufficientUniqueEvidenceError(ValueError):
 
 
 def unique_evidence_key(r: ReceiptSummary) -> tuple[str, str]:
-    """Identify a receipt by its evidence content.
-
-    Two receipts with the same (canonical_trial_id, normalized thesis
-    signature) are duplicates — same source paper, same load-bearing
-    finding. This is stronger than just trial_id (a single trial can
-    yield multiple distinct findings) and stronger than just thesis
-    text (different trials can have similar prose).
-
-    Returns ("", thesis_sig) when the receipt has no canonical_trial_id
-    so receipts without registry anchoring still dedup against each
-    other on thesis text alone.
-    """
+    """Identify evidence by canonical trial and normalized thesis; unanchored receipts deduplicate by thesis alone."""
     trial = (r.canonical_trial_id or "").upper()
     thesis_sig = " ".join(r.thesis_text.lower().split())[:200]
     return (trial, thesis_sig)
@@ -136,20 +125,7 @@ def dedupe_receipts(
 
 
 def count_unique_trials(summaries: Sequence[ReceiptSummary]) -> int:
-    """Count distinct canonical trials in a receipt corpus.
-
-    Day 10.8a (reviewer P1): the cross-source-synthesis gate must
-    count UNIQUE TRIALS, not unique evidence units. Three distinct
-    findings from MASTERS (lean body mass, thigh muscle area, fiber
-    type) all dedupe to three different evidence keys, but they're
-    one trial — that's same-trial multi-endpoint reporting, not
-    cross-source synthesis.
-
-    Receipts without a canonical_trial_id contribute to the count
-    via their thesis signature (one untrialed thesis = one "trial"
-    for the purposes of the cross-source floor) so unsignposted
-    sources don't bypass the gate.
-    """
+    """Count canonical trials, with thesis signatures for unanchored receipts. Multiple endpoints from one trial count once."""
     trial_set: set[str] = set()
     for r in summaries:
         if r.canonical_trial_id:
@@ -271,14 +247,7 @@ def detect_outcome_class(
     *,
     fallback: OutcomeClass = "other",
 ) -> OutcomeClass:
-    """Pure deterministic classification: substring match against the
-    curated keyword sets per outcome class.
-
-    Order is preserved from `_OUTCOME_KEYWORDS` insertion (specific
-    outcomes first), so when "muscle hypertrophy" and "AMPK signaling"
-    both appear in the same text, muscle_function wins (the load-bearing
-    clinical outcome). Returns `fallback` when no keyword matches.
-    """
+    """Match curated outcome keywords in insertion order, returning fallback if none match."""
     lowered = text.lower()
     for klass, kws in _OUTCOME_KEYWORDS.items():
         for kw in kws:
@@ -302,21 +271,7 @@ def detect_effect_direction(
     outcome_class: OutcomeClass | None = None,
     p_values: Sequence[str] = (),
 ) -> EffectDirection:
-    """Heuristic effect-direction inference from claim text + p-values.
-
-    Rules in priority order (first match wins):
-      1. Mechanism-only outcome → unclear (no clinical direction).
-      2. Null-language phrase present → null.
-      3. Negative-effect verb present → negative.
-      4. Positive-effect verb present → positive.
-      5. Explicit p-value ≥ 0.05 with no other signal → null.
-      6. Otherwise → unclear.
-
-    Day 10.2 NOTE: this is a heuristic, not a perfect classifier. The
-    tension matrix is robust to "unclear" — pairs with unclear
-    direction default to orthogonal (severity 0), so misclassification
-    here loses tension signal but doesn't generate false agreement.
-    """
+    """Infer direction heuristically from outcome, language and p-values. Unclear directions remain orthogonal in the tension matrix."""
     if outcome_class == "mechanism":
         return "unclear"
 
@@ -412,13 +367,7 @@ def _detect_population_summary(
     *,
     directness: str = "indirect",
 ) -> str:
-    """Extract a one-line clinical-population descriptor for direct
-    RCT receipts. Returns "" for any non-direct directness OR when no
-    canonical pattern matches. Default kwarg "indirect" is fail-
-    closed: a future caller that forgets the kwarg gets "" instead
-    of re-introducing the 10.16i bug where mechanistic receipts
-    inherited "type 2" from contextual T2D mentions.
-    """
+    """Extract a matching population for direct RCT receipts; return empty for indirect or unmatched evidence."""
     if directness != "direct":
         return ""
     candidates: list[str] = [thesis_text]
@@ -483,18 +432,7 @@ def build_receipt_summary(
     items_by_ref: Mapping[int, dict],
     spar_review: dict,
 ) -> ReceiptSummary:
-    """Convert one saved claim receipt into a structured ReceiptSummary.
-
-    `claim_graph` is the parsed claim_graph.json (a dict with
-    `claims`, `edges`, `thesis_claim_id`). `items_by_ref` maps each
-    EvidenceItem ref → its dict form (parsed evidence_cards.json
-    entries, but keyed by source.ref for direct lookup). `spar_review`
-    is the parsed spar_review.json.
-
-    Returns a ReceiptSummary with derived outcome_class +
-    effect_direction. These are heuristic; the tension matrix is
-    robust to "other"/"unclear" defaults.
-    """
+    """Derive a ReceiptSummary from claim_graph, ref-keyed evidence items and SPAR review; outcome and direction remain heuristic."""
     claims = claim_graph.get("claims", [])
     thesis_id = claim_graph.get("thesis_claim_id")
     thesis = next(
@@ -692,26 +630,7 @@ def _tension_summary(
 
 
 def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
-    """Pure deterministic classification of one pair (a, b).
-
-    Rules (first match wins):
-      1. outcome_class differs:
-         a. one direct + one mechanistic → mechanism_vs_clinical
-            (Day 10.17 Phase 2 — cross-domain trust hazard: clinical
-            evidence on one outcome must not be fused with mechanistic
-            / preclinical evidence on a different outcome)
-         b. otherwise → orthogonal
-      2. one is direct, the other is mechanistic, same outcome class
-         → indirectness_gap
-      3. on an exact shared endpoint, one effect is null and the other signed
-         → null_vs_positive / null_vs_negative
-      4. on an exact shared endpoint, directions oppose → disagreement
-      5. on an exact shared endpoint, signed directions agree → agreement
-      6. otherwise → orthogonal (both unclear / both null)
-
-    Severity is read from `_SEVERITY` table, applied uniformly per
-    kind so ranking is deterministic.
-    """
+    """Classify domain and directness gaps before shared-endpoint direction comparisons; use the fixed severity table."""
     same_outcome = a.outcome_class == b.outcome_class
     endpoint: str | None = None
     direction_a: EffectDirection | None = None
@@ -796,16 +715,7 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
 def build_tension_matrix(
     summaries: Sequence[ReceiptSummary],
 ) -> TensionMatrix:
-    """Pairwise tension classification across N receipt summaries.
-
-    Returns a TensionMatrix with all C(N, 2) pairs in canonical
-    ordering (a.receipt_id < b.receipt_id lexically). No LLM —
-    deterministic per-pair classification.
-
-    For N ≤ 1, returns an empty `pairs` tuple — there are no pairs
-    to compare, but the matrix shell still carries the receipts so
-    downstream code has something to render.
-    """
+    """Classify all canonical receipt pairs deterministically; zero or one receipt yields an empty matrix."""
     sorted_summaries = sorted(summaries, key=lambda s: s.receipt_id)
     pairs: list[Tension] = []
     for i, a in enumerate(sorted_summaries):

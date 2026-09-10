@@ -95,6 +95,15 @@ def test_negative_review_and_corrupted_snapshot_fail_closed(run, monkeypatch):
             pass
 
 
+def test_changed_review_policy_invalidates_cached_support(run, monkeypatch):
+    install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    bundle = grounding._verified_bundle(run)
+    monkeypatch.setattr(grounding, "_PROMPT", grounding._PROMPT + " New review requirement.")
+    with grounding.grounding_context(run):
+        assert not grounding.approved(CLAIM, bundle, {0})
+
+
 @pytest.mark.parametrize("assessments", [[], [{"row": 0, "supported": "true", "reason": "yes"}],
     [{"row": 1, "supported": True, "reason": "yes"}], [{"row": 0, "supported": True, "reason": ""}],
     [{"row": 0, "supported": True, "reason": "yes"}] * 2])

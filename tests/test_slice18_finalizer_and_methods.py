@@ -153,7 +153,8 @@ def test_methods_pack_defines_direct_indirect_and_review_evidence() -> None:
     md = render_methods_md(pack, submission_id="run-0000")
 
     assert "### Directness coding criteria" in md
-    assert "coded as direct only when" in md
+    assert "Directness describes whether a source tests the topic exposure" in md
+    assert "does not establish clinical benefit" in md
     assert "coded as indirect" in md
     assert "review-level evidence" in md
 
@@ -176,7 +177,8 @@ def test_finalizer_methods_replacement_preserves_directness_criteria(
     finalized, log = _phase_a_methods_replace(paper, tmp_path)
 
     assert "### Directness coding criteria" in finalized
-    assert "coded as direct only when" in finalized
+    assert "Directness describes whether a source tests the topic exposure" in finalized
+    assert "does not establish clinical benefit" in finalized
     assert "Named sources: PubMed (succeeded)" in finalized
     assert "## Results\n\nResults body." in finalized
     assert log and log[0].phase == "A_methods_replace"

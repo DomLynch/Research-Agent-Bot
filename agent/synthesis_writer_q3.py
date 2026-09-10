@@ -1,16 +1,4 @@
-"""Q3 invariant helpers for synthesis_writer (Day 10.16e).
-
-Day 10.16d audit ship-blocked on Q3-mohammed-direct-vs-indirect:
-the brief's Synthesis section produced no paragraph that integrated
-direct + mechanistic receipts. The audit catches this, but only at
-the END — too late to retry. Day 10.16e moves the check inside the
-writer so the LLM gets a chance to fix its output before the audit
-runs.
-
-Why a separate module: keeps `synthesis_writer.py` under the 600
-per-file cloc cap (raised once already; the project's hard rule is
-extract-not-grow when a file would tip over).
-"""
+"""Q3 directness checks inside the writer allow bounded retry before the final audit."""
 from __future__ import annotations
 
 from collections.abc import Sequence
@@ -65,21 +53,7 @@ def _normalize(text: str) -> str:
 def synthesis_has_mixed_directness_anchor(
     section: SynthesisSection, receipts: Sequence[ReceiptSummary],
 ) -> bool:
-    """Q3 invariant — must mirror agent/synthesis_audit.py::_check_q3.
-
-    When the corpus has both `direct` and (`mechanistic` or `indirect`)
-    receipts, the synthesis section must produce ≥1 mixed-directness
-    anchor AND every mixed-directness anchor must start with a
-    transition phrase. Returns True iff the invariant is satisfied
-    (including the uniform-directness vacuous case).
-
-    Day 10.16i fix: previously this returned True as soon as ONE
-    mixed-directness anchor with a transition was found, but the audit
-    fails if ANY mixed-directness anchor lacks a transition. The
-    mismatch let runs slip past the writer's retry only to fail at
-    audit time. Now both predicates use AND semantics: every mixed-
-    directness anchor must comply.
-    """
+    """Mirror synthesis_audit Q3: mixed-directness corpora need a mixed anchor, and every mixed anchor needs a transition. Uniform corpora pass vacuously."""
     by_id = {r.receipt_id: r for r in receipts}
     corpus_dirs = {r.directness for r in receipts}
     has_mixed_corpus = "direct" in corpus_dirs and (

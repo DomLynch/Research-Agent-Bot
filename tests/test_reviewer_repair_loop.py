@@ -19,6 +19,10 @@ import run_v06_synthesis as orch  # type: ignore[import-not-found]  # noqa: E402
 
 
 def test_post_pipeline_passes_configured_final_reviewer_model(tmp_path: Path, monkeypatch) -> None:
+    from agent import prose_grounding
+    async def prepared(_run):
+        return None
+    monkeypatch.setattr(prose_grounding, "prepare_reviewed_manuscript", prepared)
     class _StopAfterReviewer(Exception):
         pass
 
