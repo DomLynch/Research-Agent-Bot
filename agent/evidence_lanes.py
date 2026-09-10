@@ -173,7 +173,9 @@ def unisolated_combination(title: str, abstract: str, target: str, aliases: tupl
     terms = {target, *(re.sub(r"[_\-\u2010-\u2015]+", " ", value.casefold()) for value in aliases)} - {""}
     for term in tuple(terms):
         terms.update(re.findall(rf"\b{re.escape(term)}\s*\(([a-z]{{2,5}})\)", abstract))
-    target_re = re.compile(r"\b(?:" + "|".join(re.escape(term) for term in sorted(terms, key=len, reverse=True)) + r")\b") if terms else None
+    patterns = [re.escape(term) for term in sorted(terms, key=len, reverse=True)]
+    patterns += [re.escape(short) + r"(?=\s+(?:group|arm)s?\b)" for term in terms if (short := re.sub(r"\s+(?:training|exercise|supplementation|treatment|therapy)$", "", term)) != term]
+    target_re = re.compile(r"\b(?:" + "|".join(patterns) + r")\b") if patterns else None
     if target and re.search(
         rf"\b(?:both|all)(?:\s+the)?\s+(?:groups|arms|participants|subjects)\s+"
         rf"(?:received|underwent|performed|completed|participated in)\s+"
@@ -206,8 +208,6 @@ def _get(receipt: Any, field: str) -> str | None:
     """Universal attr-or-key getter so this works for both
     ReceiptSummary dataclasses and dict receipts (manifest serialised
     form)."""
-    if hasattr(receipt, field):
-        return getattr(receipt, field, None)
-    if isinstance(receipt, dict):
+    if isinstance(receipt, dict) and not hasattr(receipt, field):
         return receipt.get(field)
-    return None
+    return getattr(receipt, field, None)

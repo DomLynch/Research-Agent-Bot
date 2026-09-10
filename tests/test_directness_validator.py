@@ -97,6 +97,15 @@ def test_anonymous_dose_or_regimen_arms_do_not_establish_a_different_interventio
     assert v06.unisolated_combination("Randomized trial", abstract.replace(arms, "2.4 mg of adjunct or placebo"), "target intervention")
 
 
+@pytest.mark.parametrize("target", ["resistance training", "aerobic exercise", "metformin therapy"])
+def test_shortened_source_group_labels_retain_target_identity(target):
+    short = target.rsplit(" ", 1)[0]
+    abstract = f"This trial evaluated {target}. Participants were randomized to {short} group or control group."
+    assert not v06.unisolated_combination("Randomized trial", abstract, target)
+    abstract = f"This trial evaluated {target}. Participants were randomized to {short} group plus supplement or {short} group plus placebo."
+    assert v06.unisolated_combination("Randomized trial", abstract, target)
+
+
 def test_protocol_outcomes_are_planned_context_not_observed_findings():
     record = {"title": "A randomized trial protocol", "sections": {
         "abstract": "Participants will be randomized to training or control. Muscle strength is the primary outcome."
