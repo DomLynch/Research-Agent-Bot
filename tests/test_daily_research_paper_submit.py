@@ -2268,6 +2268,8 @@ def test_patch_reviewer_receives_verified_full_source_packet(tmp_path: Path, mon
     assert len(packet["source_bundle"]) == len(manifest["receipts"])
     assert packet["retrieval_record"] == manifest["retrieval"]
     assert all(daily._publication_evidence.source_proof_is_valid(row) for row in packet["source_bundle"])
+    assert len(packet["own_result_passages"]) == len(manifest["receipts"])
+    assert "If source passages conflict, report the conflict" in system
     frozen = next((run / "revision_evidence_snapshot/parsed").glob("*.json"))
     frozen.write_text("{}")
     with pytest.raises(RuntimeError, match="review_source_packet_unverified"):

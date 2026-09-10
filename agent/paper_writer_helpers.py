@@ -67,18 +67,9 @@ async def call_llm_section(
 
 
 def section_word_count(section: SynthesisSection) -> int:
-    """Count a section body the way journal_surface_gate will.
+    """Count rendered body words exactly as the surface gate does.
 
-    The writer retries a section until this count clears SECTION_WORD_FLOORS,
-    but it used to count `body.split()` over text still carrying the
-    per-paragraph "_Cited: `id`_" markers the builder appends. The gate counts
-    \\b\\w+\\b over full_paper.md, i.e. AFTER render strips those markers.
-
-    Measured on a live run: the writer saw 964 words and stopped retrying; the
-    gate then saw 680 against an 850 floor and failed the manuscript. No content
-    was lost -- the writer was satisfied by text the gate never sees. Counting
-    the same text by the same rule makes the retry loop optimise the number that
-    is actually enforced.
+    Exclude the heading and internal citation metadata from the retry target.
     """
     lines = section.body_md.split("\n")
     body = "\n".join(lines[1:]) if lines else ""

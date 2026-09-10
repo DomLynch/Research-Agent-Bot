@@ -1,5 +1,7 @@
 from copy import deepcopy
+import asyncio
 import json
+from types import SimpleNamespace
 
 import pytest
 
@@ -64,6 +66,43 @@ def test_duplicate_quarantine_does_not_merge_identical_numbers_across_studies(ro
     accepted, rejected = validated_rows({"rows": [row, deepcopy(row), second]}, [source, {**source, "receipt_id": "other"}])
     assert accepted == [row, second]
     assert rejected == [{"row": 1, "reason": "duplicate_or_row_limit"}]
+
+
+def test_semantic_review_quarantines_conflicts_and_binds_cache_to_sources(tmp_path, row, source, monkeypatch):
+    from agent import qei_facts as qei
+    other = {**row, "receipt_id": "other"}
+    calls = []
+    async def judge(**kwargs):
+        calls.append(kwargs)
+        supplied = json.loads(kwargs["messages"][1]["content"])["rows"]
+        return SimpleNamespace(model="configured-judge", parsed={"assessments": [
+            {"row": index, "supported": value["receipt_id"] == "other", "reason": "Supported" if value["receipt_id"] == "other" else "Source passages disagree about the same treatment and endpoint."}
+            for index, value in enumerate(supplied)
+        ]})
+    monkeypatch.setattr(qei, "chat_json", judge)
+    monkeypatch.setattr(qei, "build_judge_chain", lambda _settings: ["configured-judge"])
+    accepted = asyncio.run(qei._review_rows(tmp_path, [row, other], [source], chain=["writer"]))
+    assert accepted == [other]
+    assert calls[0]["chain"] == ["configured-judge"]
+    report = json.loads((tmp_path / "qei_review.json").read_text())
+    assert report["reviewed_rows"] == [row, other] and report["assessments"][0]["supported"] is False
+    assert asyncio.run(qei._review_rows(tmp_path, accepted, [source])) == accepted
+    assert len(calls) == 1
+    changed = {**source, "abstract": source["abstract"] + " A source correction changes the interpretation."}
+    assert asyncio.run(qei._review_rows(tmp_path, accepted, [changed])) == accepted
+    assert len(calls) == 2
+
+
+@pytest.mark.parametrize("assessments", [[], [{"row": 0, "supported": "true", "reason": "yes"}],
+    [{"row": 1, "supported": True, "reason": "yes"}], [{"row": 0, "supported": True, "reason": ""}]])
+def test_incomplete_or_malformed_semantic_review_fails_closed(tmp_path, row, source, monkeypatch, assessments):
+    from agent import qei_facts as qei
+    async def judge(**_kwargs):
+        return SimpleNamespace(model="configured-judge", parsed={"assessments": assessments})
+    monkeypatch.setattr(qei, "chat_json", judge)
+    with pytest.raises(ValueError, match="qei_semantic_review_invalid"):
+        asyncio.run(qei._review_rows(tmp_path, [row], [source]))
+    assert not (tmp_path / "qei_review.json").exists()
 
 
 def test_saved_table_revalidates_source_hashes_and_citations(tmp_path, row, source):

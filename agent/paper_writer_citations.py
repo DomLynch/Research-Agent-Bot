@@ -1,22 +1,7 @@
-"""Background-literature citation helpers for the paper writer.
+"""Render allowed background citations and attempt one citation-only repair.
 
-Two related concerns isolated here:
-
-  Fix #18a — `_build_background_lit_block`: format the registry
-              entries as a writer-facing block so MiMo SEES the
-              allowed background citations + the use rule
-              (numeric MUST share a sentence with citation_token).
-
-  Fix #20  — `_run_citation_fix_pass`: after MiMo writes a section,
-              detect any background numeric used WITHOUT its
-              canonical citation in the same sentence, then do ONE
-              re-prompt with explicit fix guidance. Closes the loop
-              between writer + Stage-2 auto-fixer (which previously
-              stripped offending sentences and tanked Q9 density).
-
-Extracted from agent/paper_writer.py to honor the 600 LOC per-file
-hard cap. The writer module imports these helpers and threads
-`background_lit_entries` into each section render."""
+Background numerics require their canonical citation in the same sentence.
+"""
 from __future__ import annotations
 
 from collections.abc import Sequence
@@ -65,14 +50,10 @@ def build_background_lit_block(entries: Sequence[Any] | None) -> str:
 def check_unsourced_background_uses(
     section_md: str, entries: Sequence[Any] | None,
 ) -> list[tuple[str, str, str]]:
-    """Fix #20: detect background-lit numerics used in `section_md`
-    without their canonical citation_token in the SAME sentence.
+    """Apply the Stage-2 background gate before cleanup can remove text.
 
-    Wraps scripts/background_literature.find_unsourced_background_uses
-    so the writer can run the same gate the Stage-2 audit runs — but
-    BEFORE the auto-fixer strips the offending sentence (which was
-    tanking Q9 numeric density). Returns the list of
-    (numeric, citation_token, sentence_snippet) tuples; empty = clean."""
+    Return (numeric, citation_token, sentence_snippet) tuples; empty means clean.
+    """
     if not entries:
         return []
     import sys
@@ -134,21 +115,11 @@ async def run_citation_fix_pass(
     seed: int | None,
     call_llm_fn,
 ) -> SynthesisSection | None:
-    """Fix #20: One-shot re-prompt to add missing background citations.
+    """Try one citation repair; retain it only if the issue count decreases.
 
-    If the section uses background-literature numerics without the
-    canonical citation token in the same sentence, do ONE additional
-    LLM call with explicit fix instructions. Return the improved
-    section if it strictly reduces the issue count; otherwise the
-    original. Cap at 1 attempt — runaway re-prompts would explode
-    cost; if MiMo still won't comply after 1 fix attempt the Stage-2
-    auto-fixer remains the safety net (less density but still safe).
-
-    `call_llm_fn` is injected to keep this module free of paper_writer's
-    private LLM helper (avoids a circular import). It must have the
-    signature `(*, system_prompt, user_prompt, chain, client, ledger,
-    seed) -> dict | None`. `builder_fn(parsed_dict) -> SynthesisSection
-    | None` rebuilds the section from a parsed JSON dict."""
+    Injected call_llm_fn returns parsed JSON; builder_fn validates the section.
+    Remaining issues still reach the Stage-2 gate.
+    """
     if section is None or not background_lit_entries:
         return section
     issues = check_unsourced_background_uses(
