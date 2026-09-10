@@ -419,6 +419,22 @@ def _check_scoped_paragraph(
     return True, "ok"
 
 
+def _anchored_source_status(text: str, ids: Sequence[str], accepted_by_id: Mapping[str, ReceiptSummary],
+    name: SectionName, reviewed: frozenset[tuple[str, tuple[str, ...]]],
+    author_numerics: frozenset[str]) -> tuple[bool, str]:
+    source_reviewed = name == "abstract" and (text.strip(), tuple(sorted(ids))) in reviewed
+    numerics = _accepted_numeric_tokens([accepted_by_id[rid] for rid in ids if rid in accepted_by_id])
+    if source_reviewed and not ids:
+        numerics.update(author_numerics)
+    ok, reason = _check_anchored_paragraph(text, ids, set(accepted_by_id), numerics,
+        allow_numerics=name not in {"cross_domain_synthesis", "limitations_full"},
+        allow_uncited=source_reviewed and not ids)
+    if not ok:
+        return ok, reason
+    grounding = _source_grounding_reason(text, ids, accepted_by_id) if not source_reviewed and name in {"abstract", "results"} else None
+    return not grounding, grounding or "ok"
+
+
 def build_anchored_from_parsed(
     parsed: dict,
     *,
@@ -462,20 +478,9 @@ def build_anchored_from_parsed(
                 text, repaired_rids = re.sub(old_markers, "", re.sub(old_markers, f"[{candidate_ids[0]}]", text, count=1)), candidate_ids
                 break
         text = _materialize_inline_receipts(text, repaired_rids)
-        mapped_receipts = [accepted_by_id[rid] for rid in repaired_rids if rid in accepted_by_id]
-        source_reviewed = name == "abstract" and (text.strip(), tuple(sorted(repaired_rids))) in reviewed
-        ok, reason = _check_anchored_paragraph(
-            text, repaired_rids, accepted_ids, _accepted_numeric_tokens(mapped_receipts) | (set(author_numerics) if source_reviewed and not repaired_rids else set()),
-            allow_numerics=name not in {"cross_domain_synthesis", "limitations_full"},
-            allow_uncited=source_reviewed and not repaired_rids,
-        )
+        ok, reason = _anchored_source_status(text, repaired_rids, accepted_by_id, name, reviewed, author_numerics)
         if not ok:
             rejections.append(reason)
-            continue
-        if not source_reviewed and name in {"abstract", "results"} and (
-            grounding_reason := _source_grounding_reason(text, repaired_rids, accepted_by_id)
-        ):
-            rejections.append(grounding_reason)
             continue
         anchor = SynthesisClaimAnchor(
             sentence=text.strip(),

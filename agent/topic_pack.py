@@ -1,16 +1,4 @@
-"""Topic pack loader — TOML + stdlib `tomllib`. No third-party YAML libs.
-
-Loads a topic pack file (`topic_packs/<topic>.toml`) into a frozen TopicPack
-dataclass and exposes the lookups that downstream stages need:
-- alias whitelist (case-insensitive)
-- canonical-trial expectations (used by qa_report surface check)
-- known_role_overrides — the registry-pinned roles that evidence_cards.py
-  consults BEFORE running the deterministic abstract classifier
-- forbidden-verb sets for role-claim mismatch checks (consumed by validators.py)
-
-This module owns NO classification logic — it's a pure loader + lookup layer.
-Code disposes; this file is the table the code reads.
-"""
+"""TOML loader and immutable lookups for aliases, trials, pinned roles and validator rules; no classification logic."""
 from __future__ import annotations
 
 import re
@@ -76,16 +64,7 @@ class CanonicalTrial:
 
 @dataclass(frozen=True, slots=True)
 class RetrievalSpec:
-    """Slice 6 step 2 (Wave 7 cont., 2026-05-05): structured search
-    parameters for calibrated exhaustive retrieval. Drives the per-
-    source query builder so the same topic pack produces correct
-    advanced queries on PubMed (MeSH+pt+dp), Europe PMC (KW+PUB_TYPE),
-    OpenAlex (concepts+type), Crossref (type+from-pub-date), etc.
-
-    All fields optional with sensible defaults so existing topic packs
-    that lack a [retrieval] block fall back to their corpus_search_queries
-    list unchanged.
-    """
+    """Optional structured source-query parameters; absent blocks preserve corpus_search_queries fallback."""
     topic_terms: tuple[str, ...] = ()       # canonical drug/concept names
     scope_terms: tuple[str, ...] = ()       # relevance context (e.g. aging)
     evidence_types: tuple[str, ...] = ()    # RCT / cohort / meta-analysis
@@ -293,14 +272,7 @@ def _build_canonical_trials(rows: list[dict], path: Path) -> tuple[CanonicalTria
 
 
 def _build_overrides(raw: dict, path: Path) -> Mapping[str, OverrideRecord]:
-    """Build the override map with UPPERCASE keys.
-
-    Canonicalizing the keys at load time means lookup_role_override only
-    needs to upper-case its input — both layers agree on the canonical
-    form. Without this, a TOML file with lowercase `nctXXX` keys would
-    silently fail every lookup. Detecting duplicate keys after
-    upper-casing also catches accidental case-only duplicates.
-    """
+    """Uppercase override keys and reject case-only duplicates for consistent lookup."""
     out: dict[str, OverrideRecord] = {}
     for registry_id, row in raw.items():
         canonical_id = registry_id.strip().upper()
@@ -344,20 +316,8 @@ def load_topic_pack(path: str | Path) -> TopicPack:
 
 
 def _anchor_topic_terms(topic: str, topic_terms: tuple[str, ...]) -> tuple[str, ...]:
-    """Drop bare single-word retrieval terms that are non-entity slug
-    modifiers — the lone ``cancer`` in ``resveratrol_cancer_thresholds`` or
-    ``lifespan`` in ``rapamycin_lifespan_effects``. Such terms OR into the
-    retrieval query (``... OR cancer ...``) and pull off-entity papers (a
-    generic cancer study with no resveratrol), diluting the corpus below the
-    source-precision floor so the topic is abandoned before a paper is written.
-
-    Kept: the primary entity (first slug token), every multi-word phrase, and
-    single-word terms that are NOT slug tokens — genuine synonyms such as
-    ``niacinamide`` for ``nad`` or ``sirolimus`` for ``rapamycin``. The
-    entity/modifier split is read from the topic slug itself (no per-topic word
-    lists), so it is universal across domains. No-op for single-token topics or
-    when the filter would empty the set.
-    """
+    """Remove single-word slug modifiers; retain the entity, phrases and non-slug synonyms.
+    No-op for single-token topics or an empty filtered result."""
     slug_tokens = [t for t in re.findall(r"[a-z0-9]+", topic.lower()) if len(t) >= 3]
     if len(slug_tokens) < 2:
         return topic_terms

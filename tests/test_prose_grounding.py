@@ -161,3 +161,18 @@ def test_curated_map_keeps_full_length_policy():
     assert "curated_evidence_map" not in COMPACT_REVIEW_TYPES
     assert not formal_appraisal_required("curated_evidence_map")
     assert publication_surface("curated_evidence_map") == publication_surface("prisma_scr_scoping_synthesis")
+
+
+@pytest.mark.parametrize("altered", [False, True])
+def test_payload_exports_the_verified_section_containing_its_findings_map_quote(run, altered):
+    from agent.publication_evidence import source_proof_is_valid
+    finding = "Resveratrol reduced fasting glucose by 12% compared with placebo."
+    manifest = json.loads((run / "manifest.json").read_text())
+    manifest["receipts"][0]["source_result_excerpts"] = [finding.replace("12%", "13%") if altered else finding]
+    (run / "manifest.json").write_text(json.dumps(manifest))
+    bundle = submission._source_bundle(run, limit=37, enrich=False)
+    assert len(bundle) == 1 and source_proof_is_valid(bundle[0])
+    assert (finding in bundle[0]["excerpt"]) is (not altered)
+    paper = "### Findings Map\n\n| Source | Finding |\n|---|---|\n| Smith 2020 | finding=" + finding + " |\n"
+    status = submission._researka_quantitative_trace_status({"body_markdown": paper}, bundle)
+    assert (status == "eligible") is (not altered)

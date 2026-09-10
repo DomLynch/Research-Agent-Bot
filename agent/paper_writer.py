@@ -54,12 +54,7 @@ from agent.synthesis_schemas import (
 from agent.synthesis_writer import filter_accepted
 from agent.topic_display import humanize_topic, intervention_label
 
-# Day 10.16c — per-section word-count budgets enforced AT CODE LEVEL.
-# Prompts ask for length; this dict defines the floors that the writer
-# enforces by retrying under-budget sections up to N times. If a section
-# still falls short after retries, it lands as-is and the audit picks
-# up the shortfall via the WORD_COUNT_FLOOR check.
-#
+# Enforce section targets with bounded retries; final gates remain mandatory.
 SECTION_WORD_FLOORS: Mapping[str, int] = {
     "abstract": 200,            # was 250
     "introduction": 800,        # was 1200
@@ -357,12 +352,7 @@ async def _write_anchored_section(
             system_prompt=system_prompt, user_prompt=current_prompt,
             chain=chain, client=client, ledger=ledger, seed=seed,
         )
-        # These two failures used to be bare `continue`s. When every section
-        # call failed, the writer silently emitted its hardcoded fallback_body
-        # (~15 words) for every LLM-written section, the paper failed its word
-        # floors, and the finalizer looped forever on a "section too short"
-        # it could not repair. The gate reported an execution error, so the
-        # cause looked like anything except the writer. Say which step failed.
+        # Report provider/parse failures explicitly instead of emitting a short fallback.
         if not parsed:
             print(
                 f"[paper_writer] {name}: LLM call returned no parseable object "
@@ -379,10 +369,9 @@ async def _write_anchored_section(
                 continue
             rejected_json = None
         rejection_reasons: list[str] = []
-        if name == "abstract" and author_context:
-            parsed["paragraphs"], rejection_reasons = await review_writer_paragraphs(
-                name, parsed.get("paragraphs", []), accepted, reviewed,
-                author_context=author_context, client=client, ledger=ledger, seed=seed)
+        parsed["paragraphs"], rejection_reasons = await review_writer_paragraphs(
+            name, parsed.get("paragraphs", [dict(parsed)]), accepted, reviewed,
+            author_context=author_context, client=client, ledger=ledger, seed=seed)
         section = build_anchored_from_parsed(
             parsed, name=name, heading=heading, accepted=accepted,
             rejection_reasons=rejection_reasons,
@@ -409,7 +398,7 @@ async def _write_anchored_section(
                 )
                 rejected_json = parsed
             else:
-                current_prompt = (user_prompt + "\nRevise the unsupported statements using the source and author records. Keep coherent paragraphs and the requested length; cite scientific sentences and leave own methods uncited. Review findings: " + "; ".join(rejection_reasons)) if name == "abstract" and author_context else cross_domain_retry_prompt(user_prompt, name, rejection_reasons)
+                current_prompt = cross_domain_retry_prompt(user_prompt, name, rejection_reasons, semantic_review=bool(author_context))
                 rejected_json = None
             continue
         words = _section_word_count(section)
@@ -688,10 +677,7 @@ async def render_full_paper(
     rejected = [r for r in receipts if r.spar_verdict not in (
         "accept_clean", "accept_caveated",
     )]
-    # Refactor 2026-05-04: prompts are now topic-templated. Resolve
-    # the topic + drug_class via the topic pack (if available) so
-    # paragraph instructions read 'rapamycin (mTOR inhibitor)' not
-    # 'metformin (biguanide)' for non-metformin runs.
+    # Resolve topic-specific terminology before requesting prose.
     from agent.paper_writer_prompts import format_prompts_for_topic
     drug_class = "drug"
     pack = None
@@ -714,12 +700,7 @@ async def render_full_paper(
     )
     if author_context:
         user += "\n\nAUTHOR RECORDS (our own question, corpus and process; external studies are not their authority):\n" + json.dumps(author_context)
-    # Refactor 2026-05-04: removed the '**Submission:** `<run-tag>`'
-    # line — that's internal pipeline metadata that belongs in the
-    # manifest.json / supplement, not in the prose body. Reviewer
-    # flagged this as 'too much internal pipeline language' and
-    # Fix #56 was already stripping it; now we don't emit it in the
-    # first place.
+    # Keep internal run identifiers in the manifest, outside scientific prose.
     topic_title = humanize_topic(topic, title_case=True, root=_repo)
     title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
     sections: dict[SectionName, SynthesisSection] = {}

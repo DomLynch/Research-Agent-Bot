@@ -1788,6 +1788,12 @@ def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str
     sections = data.get("sections")
     if not isinstance(sections, dict):
         return ""
+    findings = receipt.get("source_result_excerpts")
+    if isinstance(findings, list) and findings:
+        for name in ("abstract", "results", "conclusion", "discussion", "methods"):
+            text = " ".join(str(sections.get(name) or "").split())
+            if _publication_evidence.exact_source_quote(findings[0], text):
+                return text
     # Keep a contiguous passage; background citations are not this study's findings.
     for name in ("abstract", "results", "conclusion", "discussion", "methods"):
         text = " ".join(str(sections.get(name) or "").split())
