@@ -1,73 +1,74 @@
 # V3 publishing recovery — audited working status
 
-Publishing recovery is not yet complete. The current tested runtime is
-`7e449d0abbecf14e28449d367114d240674b67d8`. Production remains on the
-reconciliation release `64086d2fe119c85529af8e6a3963cb15d9d23920` while its fresh
-worker is active. No recovery submission has reached Core acceptance or public
-publication. Resveratrol v7 reached Core through normal submission: `5642c184-d9a3-4736-a8ae-1b1f7371cd7c`; autonomous review is pending.
+Publishing recovery is not yet complete. Production remains on reconciliation
+release `64086d2fe119c85529af8e6a3963cb15d9d23920` while its fresh worker is active.
+Resveratrol v7 reached Core through ordinary submission as
+`5642c184-d9a3-4736-a8ae-1b1f7371cd7c`. Core returned **REVISE**, with five new
+scientific corrections and resubmission allowed. There is no new public artifact.
 
 ## Five-step audit
 
-| Step | Evidence | Remaining completion check |
+| Step | Verified evidence | Remaining completion check |
 |---|---|---|
-| 1. Bound reconciliation | Deployed to both VPS mirrors. Two actual service passes completed in 57–58 seconds with exit 0 and retained progress across 80 distinct submission IDs. Partial results survive deferred requests. | Reconciliation complete; this is not proof of completed scientific revisions. |
-| 2. Correct source records, QEI and Methods | All 37 Resveratrol source identities remain. Corrected design/directness/outcome records and recovered historical metadata-selection and extraction records. The v5 manuscript passed all six normal revision requests. | v7 passed all six revision checks, 14/14 audit, final depth, preflight and frozen-package gates; 37 source snapshots are unchanged. |
-| 3. Preserve manuscript completeness | A normal full-review replay retained a 447-word Conclusion. Native Abstract generation now supports its real sentence schema and rejects unsupported clauses. Fixed a reproduced repair bug that removed only table prefixes, leaving orphan numbers. | v7 passed the live complete-row and full-manuscript checks. Resistance training exposed further punctuation, empty-cell and source-classification defects; fixes pass regression tests and its repaired replay is next. |
-| 4. Align publishing contracts | Final source binding, complete manuscript review, frozen-package checks and revision coverage remain mandatory. Preflight identified two trailing spaces after repair; cleanup now precedes final review. Rejected complete QEI rows remain quarantined through regeneration and artifact organization. | Complete: ordinary preflight passed with identical input/cleaned hashes, no safe fixes, and Core received the exact reviewed v7 package. |
-| 5. Prove publication and repeatability | The third normal Resveratrol attempt submitted successfully after correcting the two local blockers. Native resistance training correctly stopped at its quality gate; its repaired replay remains required. | Core decision, public artifact, additional distinct-topic proof and safe production rollout remain required. |
+| 1. Bound reconciliation | Deployed to both VPS mirrors; two actual passes completed in 57–58 seconds, exit 0, with progress retained across 80 distinct submission IDs. | Complete for bounded reconciliation. |
+| 2. Correct source records, QEI and Methods | V7 retained all 37 sources and passed the prior six asks. Current fixes distinguish correlations, before/after values and arm values; ± dispersion is not promoted to a confidence interval. A real frozen-source replay changes only the two Core-named direction labels, preserving all other classifications. | Generate and review against the current five asks, including honest selection-history limitations and the narrower endpoint-map scope. |
+| 3. Preserve manuscript completeness | V7 passed depth and 14/14 audit. Regressions protect complete table rows, quoted parentheses and required numeric cells. Resistance-training source checks correctly identify Lee as a human trial and Kang as a protocol. | Native resistance-training v4 is running on static 515e4cca; its final gate remains unverified. |
+| 4. Align publishing contracts | Ordinary v7 preflight returned identical input/cleaned hashes and Core received its exact reviewed package. Complete verified Methods and Abstract passages now also reach the final patch reviewer. Quarantined rows remain excluded. | Verify the updated source packet and current-request coverage in the next full review. |
+| 5. Prove publication and repeatability | Ordinary Core submission is demonstrated; a valid negative decision remains binding. | Core acceptance, public artifact, another distinct-topic success and safe production rollout remain unproven. |
 
-## Verification receipts
+## Latest verification
 
-- Full suite: **4,972 passed**, two existing XPASS results, 16 warnings;
-  153.23 seconds. Log: `/tmp/v3-second-topic-suite-final.log`.
-- Quality: passed, including 343 gate/coverage/LOC tests. Mypy: 181 source/test files.
-  Logs: `/tmp/v3-second-topic-quality-final2.log`; no limits were raised.
-- Focused repair/QEI/runner tests: 104 passed locally and on the isolated VPS.
-- The test for partial table-row deletion failed before the repair and passes
-  after it. Tests also cover neighboring rows, partial/unrelated/advisory
-  quarantine entries, historical debug-folder records and preservation through
-  artifact organization.
-- Historical docstring condensation was checked for executable AST equivalence.
-- The deployed reconciliation history was merged into development at `771fa74a`;
-  its source tree exactly matched the already-tested `6b7bb381` tree.
+- Full suite: **4,979 passed**, two existing XPASS results, 16 warnings, 158.48s.
+  Log: `/tmp/v3-auth-suite.log`.
+- Quality: **344 passed**, including LOC/coverage gates; mypy passed.
+  Logs: `/tmp/v3-auth-quality-final2.log`, `/tmp/v3-auth-mypy.log`.
+- Revision authorization: 340 focused tests pass. The current Core request
+  authorizes only Made 2017 and Farzin 2020 effect directions; documentation-only
+  requests and unrelated semicolon-separated sources stay locked.
+- Real frozen-source replay: 37 retained sources; Made unclear→null and Farzin
+  positive→null; other directions, directness, tiers and outcome classes unchanged.
+  Receipt: `.tmp/v3-standardized/current-direction-replay.json`.
+- Complete-source reviewer packet and QEI/title regressions: 84 focused tests pass.
+- No runtime limits, reviewer standards, section floors or model settings changed.
 
-## Running and retained evidence
+## Current Core corrections
 
-The isolated release checkout is `/tmp/v3-standardized-release-20260910` on the
-VPS. Its v7 Resveratrol run preserves the source snapshots and original extracted
-facts, records the five previously reviewed row removals, regenerates the table,
-and runs the normal manuscript pipeline, final-status routine, six-request
-coverage and frozen-package checks. Script: `/tmp/v3-final-package-v7.py`;
-log: `/tmp/v3-final-package-v7.log`.
+1. Distinguish correlation, within-arm change, between-arm effects and variability
+   in the quantitative table, especially Evans, Farzin and Beijers.
+2. Establish the 114-to-37 selection record and six-query/ten-string correspondence,
+   or explicitly describe a non-comprehensive convenience-source analysis.
+3. Apply a consistent direction rule, correct Made and Farzin, then recompute
+   profiles without treating source counts as evidence strength or priority.
+4. Align the title and question with exposure/response endpoints unless actual
+   assay-validation and analytical-comparability evidence is supplied.
+5. Qualify Samsami-Kor 2015: the supplied changes do not establish every outcome
+   as a placebo-relative effect.
 
-The separate native resistance-training run remains on its original `98cce1f7`
-checkout at `/tmp/v3-recovery-review-parity-20260910`. It uses 19 frozen sources;
-its writer produced Results of 880 words and a Conclusion of 443 words. Those
-are drafting measurements, not a final manuscript or publication result.
-Log: `/tmp/v3-resistance-full-v2.log`.
+## Active isolated work
 
-The plasma-exchange probe detected stale handover instructions: the current
-eligible parent has eight substantive revision requests, not the old single
-abstract-matching request. It stopped before generation. Do not reuse the old
-request or the separate terminally rejected parent.
+- Resistance training: `/tmp/v3-standardized-release-20260910`, native run
+  `synthesis-resistance-training-standardized-full-v4-20260910`, 19 frozen sources.
+  Script/log: `/tmp/v3-resistance-full-v4.py` and `.log`. Do not update this active
+  checkout. Its prior v3 repair had an unresolved P1 and stale derived tables;
+  v4 regenerates those through the native pipeline.
+- Resveratrol v8 script is prepared at `/tmp/v3-resveratrol-full-v8.py`, using a
+  separate `/tmp/v3-core-revision-20260910` checkout and the current Core parent.
+  It must pass complete review, depth, source hashes, current-request coverage,
+  preflight and frozen-package checks before ordinary submission.
+- Plasma exchange stopped before generation because its current parent has eight
+  asks rather than the old single request; the separate terminally rejected
+  parent is ineligible.
 
-## Scientific and operational boundaries
+## Boundaries and rollout
 
-The working route is a full-length curated evidence map using verified existing
-records. Results 400 / Conclusion 180 final minimums and higher writer targets
-remain. A1 is a design code, not a quality rating; no formal appraisal, systematic
-screening or pooling is invented. The internally conflicting Montoya-Estrada
-statistic remains excluded; treatment attribution is never guessed.
+Full-length curated evidence maps use verified existing records. Results 400 /
+Conclusion 180 hard minimums and higher generation targets remain. Source counts
+are descriptive. No formal appraisal, systematic selection or pooling is invented.
+The conflicting Montoya-Estrada statistic remains quarantined.
 
-Writers remain configured Sol High; reviewer remains Terra Medium, with the
-existing technical-failure-only fallback policy. Valid negative reviews are
-preserved. Core and website code have not changed.
+Writer/extractor remains Sol High; reviewer remains Terra Medium, with the existing
+technical-failure-only fallback. Core and website code are unchanged.
 
-The deployment script `/tmp/v3-standardized-deploy.sh` is prepared but has not
-run. Update its expected SHA to the final tested release, verify all publishing
-workers are idle in a separate read, then use the existing exclusive prepare
-lock, clean-tree checks and timer restoration. Never update an active checkout.
-
-## Second-topic audit additions
-
-Three reproduced failures now have passing regressions: parenthesis cleanup damaged a verbatim table fragment; a reviewer repair left a blank required estimate; and auto-strip of a pipe-free cell left an orphan row. The source audit also found an explicit healthy-human trial relabelled as animal evidence from background excerpts and a protocol whose future-results statement appeared only in the abstract. Those classification regressions pass. Research-question and Methods templates no longer imply clinical actionability or executed pooling without supporting outputs. The complete suite passes 4,972 tests; two XPASS results and 16 warnings remain as before.
+The prepared `/tmp/v3-standardized-deploy.sh` has not run. Update its expected SHA
+after the final tested commit, read all worker states separately, and deploy only
+when idle using the exclusive prepare lock, clean-tree checks and timer restoration.

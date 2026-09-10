@@ -59,8 +59,7 @@ class PatchResult:
 
 
 def _load_corpus_numerics() -> set[str]:
-    """All numeric tokens from v0.6 high-confidence claims (used to
-    verify numeric patches don't introduce un-traceable values)."""
+    """High-confidence source numerics used to validate proposed numeric patches."""
     nums: set[str] = set()
     for path in QUANT_DIR.glob("*.quant_claims.json"):
         d = json.loads(path.read_text())
