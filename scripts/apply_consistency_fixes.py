@@ -2854,17 +2854,24 @@ def _hedge_preclinical_translation(paper_md: str) -> tuple[str, int]:
     prose = paper_md[:prose_end]
     tail = paper_md[prose_end:]
     sentence_re = re.compile(r"[^.!?\n#](?:[^.!?\n#]|\.(?=\d))*[.!?]")
+    # URL punctuation is not a sentence boundary. Keep offsets unchanged so
+    # prose repairs cannot split a source locator or insert text inside it.
+    masked = re.sub(
+        r"https?://[^\s<>\]]+",
+        lambda m: "x" * len(m[0].rstrip(".!?")) + m[0][len(m[0].rstrip(".!?")):],
+        prose, flags=re.I,
+    )
     out: list[str] = []
     last = 0
     n = 0
-    matches = list(sentence_re.finditer(prose))
+    matches = list(sentence_re.finditer(masked))
     for idx, m in enumerate(matches):
-        sent = m.group(0)
+        sent = prose[m.start():m.end()]
         out.append(prose[last:m.start()])
         replacement = sent
-        if _PRECLINICAL_TRANSFER_RE.search(sent):
+        if _PRECLINICAL_TRANSFER_RE.search(m.group(0)):
             nxt = matches[idx + 1].group(0) if idx + 1 < len(matches) else ""
-            window = sent + " " + nxt
+            window = m.group(0) + " " + nxt
             if not _PRECLINICAL_HEDGE_RE.search(window):
                 replacement = (
                     sent.rstrip()

@@ -2559,3 +2559,19 @@ def test_prose_data_coherence_flags_marginal_with_strong_p():
     assert not audit._check_prose_data_coherence(
         "Samaei 2020: representative non-significant statistic P > 0.05.",
     )
+@pytest.mark.parametrize("locator", [
+    "[exact source: https://doi.org/10.1234/example.56]",
+    "[study](https://example.org/paper?v=1.2#results)",
+    "<https://example.org/paper/1.2>",
+])
+@pytest.mark.parametrize("already_hedged", [False, True])
+def test_preclinical_hedge_preserves_source_links_and_converges(locator, already_hedged):
+    from apply_consistency_fixes import _hedge_preclinical_translation
+
+    hedge = " Translational relevance to humans remains uncertain."
+    sentence = f"Telomerase-deficient mice showed a 12.5% change {locator}."
+    original = sentence + (hedge if already_hedged else "")
+    fixed, count = _hedge_preclinical_translation(original)
+    assert fixed == sentence + hedge
+    assert count == int(not already_hedged)
+    assert _hedge_preclinical_translation(fixed) == (fixed, 0)
