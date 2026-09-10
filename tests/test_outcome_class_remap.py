@@ -26,6 +26,19 @@ from agent.synthesis_schemas import OutcomeClass  # noqa: F401  (Literal import 
 # ---- Direct lookup -------------------------------------------------------
 
 
+@pytest.mark.parametrize("title", ["Protocol for post-stroke training", "Diabetes study protocol", "Kidney treatment trial design"])
+def test_protocol_context_is_preserved_through_later_refinement_and_tables(title):
+    from agent.revision_quality import _findings_map_outcome
+    from scripts.journal_finalizer import _row_outcome_class
+    row = {"receipt_id": "anonymous", "source_title": title, "directness": "protocol", "outcome_class": "contextual_other"}
+    assert refine_other_outcome_class(SimpleNamespace(**row), "contextual_other") == "contextual_other"
+    assert _findings_map_outcome(row) == "Contextual Adjacent Evidence"
+    assert _row_outcome_class(row) == "contextual_other"
+    # A locked legacy classification is not silently recoded by this fallback.
+    row["outcome_class"] = "cardiometabolic"
+    assert _row_outcome_class(row) == "cardiometabolic"
+
+
 @pytest.mark.parametrize("endpoint", ["inspiratory muscle strength index", "forced vital capacity", "running speed corresponding to maximum oxygen uptake"])
 def test_respiratory_endpoints_are_not_general_muscle_function(endpoint: str) -> None:
     assert remap_outcome_class(endpoint, "muscle_function") == "contextual_other"

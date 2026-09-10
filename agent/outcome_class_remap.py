@@ -140,6 +140,8 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
     available before manifest/results rendering. Domain packs can later
     replace the rule tuple without changing the receipt compiler.
     """
+    if str(getattr(receipt, "directness", "") or "").lower() == "protocol" and outcome_key(current_class) == "contextual_other":
+        return "contextual_other"
     text = " ".join(str(getattr(receipt, name, "") or "") for name in ("receipt_id", "source_title", "population_summary")).lower()
     source_override = _lookup_source_text(text)
     if source_override is not None and current_class in {
