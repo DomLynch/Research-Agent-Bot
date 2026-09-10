@@ -397,15 +397,6 @@ def _balanced_cross_domain_groups(
     return None
 
 
-_HEDGE_PHRASES = (
-    "may ", "appears to", "evidence suggests", "remains uncertain",
-    "has been proposed", "the question of whether", "we interpret",
-    "this suggests", "one reading is", "the evidence supports", "in our view",
-    "remains to be confirmed", "is not yet established", "is unresolved", "is unclear",
-    "could ", "might ", "proposed as", "hypothesized", "tentative",
-)
-
-
 def _check_scoped_paragraph(
     text: str,
     receipt_ids: Sequence[str],
@@ -570,13 +561,12 @@ def build_anchored_from_parsed(
 
 
 def _scoped_contract_failures(text: str, topic: str) -> list[str]:
-    reasons = []
+    # Source/numeric checks validate each claim; final review judges calibration.
+    # Repeated names and a hedge keyword establish neither relevance nor caution.
     aliases = _topic_aliases(topic)
-    if aliases and max(text.count(alias) for alias in aliases) < 2:
-        reasons.append(f"topic_alias_under_count:<2:{aliases[0]}")
-    if not any(hedge in text for hedge in _HEDGE_PHRASES):
-        reasons.append("missing_hedge_phrase")
-    return reasons
+    return [f"missing_topic_alias:{aliases[0]}"] if aliases and not any(
+        re.search(r"(?<!\w)" + re.escape(alias) + r"(?!\w)", text) for alias in aliases
+    ) else []
 
 
 def build_scoped_from_parsed(

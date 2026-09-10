@@ -12,30 +12,16 @@ the 600-line per-file budget. Imported and called by compose_appendix.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
+from collections import Counter
+from dataclasses import dataclass, field
 from typing import Any
 
 
 _SOURCE_STATUS_ALIASES = {
-    "enabled": "enabled",
-    "pending": "enabled",
-    "not_attempted": "enabled",
-    "ok": "succeeded",
-    "success": "succeeded",
-    "succeeded": "succeeded",
-    "complete": "succeeded",
-    "completed": "succeeded",
-    "error": "failed",
-    "failed": "failed",
-    "rate_limited": "failed",
-    "auth_failed": "failed",
-    "http_error": "failed",
-    "provider_error": "failed",
-    "server_error": "failed",
-    "transport_error": "failed",
-    "timeout": "failed",
-    "timed_out": "failed",
-    "unavailable": "failed",
+    **dict.fromkeys(("enabled", "pending", "not_attempted"), "enabled"),
+    **dict.fromkeys(("ok", "success", "succeeded", "complete", "completed"), "succeeded"),
+    **dict.fromkeys(("error", "failed", "rate_limited", "auth_failed", "http_error", "provider_error",
+                     "server_error", "transport_error", "timeout", "timed_out", "unavailable"), "failed"),
 }
 _SOURCE_STATUS_PRIORITY = {"enabled": 0, "failed": 1, "succeeded": 2}
 
@@ -50,6 +36,7 @@ class FrozenRetrievalRecord:
     expected_evidence_slots: tuple[str, ...] = ()
     n_parsed: int = 0
     n_extracted: int = 0
+    audit: dict[str, Any] = field(default_factory=dict)
 
     def to_manifest(self) -> dict[str, Any]:
         return {
@@ -64,6 +51,7 @@ class FrozenRetrievalRecord:
                 "parsed": self.n_parsed,
                 "quant_extracted": self.n_extracted,
             },
+            **({"audit": self.audit} if self.audit else {}),
         }
 
 
@@ -175,7 +163,55 @@ def frozen_retrieval_record(manifest: dict[str, Any]) -> FrozenRetrievalRecord:
         n_extracted=_nonnegative_int(
             counts.get("quant_extracted") or funnel.get("quant_claim_files"),
         ),
+        audit=_retrieval_audit(manifest, retrieval),
     )
+
+
+def _retrieval_audit(manifest: dict[str, Any], retrieval: dict[str, Any]) -> dict[str, Any]:
+    if isinstance(retrieval.get("audit"), dict):
+        return retrieval["audit"]
+    if not manifest.get("per_wave_stats"):
+        return {}
+    return {
+        "waves": manifest["per_wave_stats"],
+        "selection_counts": manifest.get("funnel", {}),
+        "exclusion_reasons": dict(Counter(str(row.get("reason") or "Reason not recorded")
+            for row in manifest.get("entries", []) if row.get("keep_for_extraction") is False)),
+    }
+
+
+def render_retrieval_audit(audit: dict[str, Any]) -> str:
+    """Keep recorded search waves distinct from extraction and receipt admission."""
+    if not audit:
+        return ""
+    lines = ["### Recorded retrieval and selection stages", "",
+        "Counts below describe separate recorded stages. Provider yields can overlap; "
+        "a failed provider can return partial results. These are not full-text exclusion counts.", "",
+        "| Search wave | Raw records | Unique within wave | Added to corpus | Cumulative corpus |",
+        "|---|---:|---:|---:|---:|"]
+    def cell(value: Any) -> str:
+        return str(value).replace("|", "/").replace("\n", " ")
+    for wave in audit.get("waves", []):
+        lines.append("| " + " | ".join(cell(wave.get(key, "Not recorded")) for key in
+            ("wave", "raw_total", "wave_unique", "new_to_corpus", "cumulative")) + " |")
+    lines += ["", "| Search wave | Provider | Returned records | Recorded status |", "|---|---|---:|---|"]
+    for wave in audit.get("waves", []):
+        stats = wave.get("stats", {})
+        for key, status in stats.items():
+            if key.startswith("status_"):
+                provider = key.removeprefix("status_")
+                lines.append(f"| {cell(wave.get('wave', 'Not recorded'))} | {cell(provider)} | "
+                             f"{cell(stats.get('raw_' + provider, 'Not recorded'))} | {cell(status)} |")
+    for key, title in (("selection_counts", "Metadata selection counts"),
+                       ("extraction_counts", "Extraction report counts"), ("exclusion_reasons", "Metadata exclusion reasons")):
+        if rows := audit.get(key):
+            lines += ["", f"#### {title}", "", "| Recorded stage or reason | Count |", "|---|---:|"]
+            lines += [f"| {cell(label).replace('_', ' ')} | {cell(value)} |" for label, value in rows.items()]
+    lines += ["", "Metadata selection used automated title/abstract classification with source-level reasons. "
+        "No blinded dual human screening or human full-text eligibility adjudication is evidenced by these records. "
+        "Extraction failures and abstract fallbacks are not automatically study exclusions; "
+        "the retained source set is established separately by receipt admission.", ""]
+    return "\n".join(lines)
 
 
 def source_inventory_summary(sources: tuple[tuple[str, str], ...]) -> str:
@@ -195,88 +231,35 @@ def build_prisma_bridge_appendix(
 ) -> str:
     """Universal across topics; all run facts come from ``manifest``."""
     retrieval = retrieval_record or frozen_retrieval_record(manifest)
-    queries = retrieval.queries
-    inclusion_slots = retrieval.expected_evidence_slots
     sources = retrieval.sources
-
-    n_receipts = manifest.get(
-        "n_receipts", len(manifest.get("receipts") or []),
-    )
-    n_claims = manifest.get("n_high_confidence_claims_total", 0)
-    generated_at = manifest.get("generated_at", "unknown")
-
-    n_parsed = retrieval.n_parsed
-    n_extracted = retrieval.n_extracted
-
-    queries_md = "\n".join(
-        f"  {i+1}. `{q}`" for i, q in enumerate(queries[:10])
-    ) or "  _(no search queries frozen in the run manifest)_"
-    inclusion_md = ", ".join(
-        s.replace("_", " ") for s in inclusion_slots[:10]
-    ) or "_(slot list unavailable in the frozen run manifest)_"
-
+    n_receipts = manifest.get("n_receipts", len(manifest.get("receipts") or []))
+    queries_md = "\n".join(f"  {i + 1}. `{query}`" for i, query in enumerate(retrieval.queries))
+    queries_md = queries_md or "  _(no search queries frozen in the run manifest)_"
     source_statement = source_inventory_summary(sources) if sources else (
         "unavailable; no database coverage or execution claim is made"
     )
-    outcomes_complete = sources and all(
-        status != "enabled" for _, status in sources
-    )
-    query_statement = (
-        f"The query strings below were run against the {len(sources)} source(s) "
-        "recorded in the frozen run manifest."
-        if queries and outcomes_complete else
-        "The frozen run manifest does not evidence both query strings and "
-        "complete source outcomes, so this section makes no query-execution claim."
-    )
     return (
-        "## PRISMA Bridge — Search and Selection Transparency\n"
-        "\n"
-        "This section provides the structured search-and-selection "
-        "disclosure that journal reviewers typically expect. It is "
-        "**not** a full PRISMA 2020 report — there is no PROSPERO "
-        "registration, no blinded dual screening, and no formal "
-        "Cochrane risk-of-bias scoring. It is the journal-polite "
-        "middle ground: full disclosure of the inputs and the gates, "
-        "without overclaiming compliance.\n"
-        "\n"
-        f"**Topic:** {topic}\n"
-        "\n"
-        f"**Frozen source inventory:** {source_statement}. Pipeline build "
-        f"timestamp: `{generated_at}`.\n"
-        f"{query_statement}\n"
-        "\n"
-        f"**Search strings ({len(queries)} declared):**\n"
-        f"{queries_md}\n"
-        "\n"
-        f"**Inclusion criteria** (a paper enters the corpus when):\n"
-        f"  1. Title or abstract matches at least one search string.\n"
-        f"  2. Full-text or extended abstract is parseable into\n"
-        f"     paper_sections.json.\n"
-        f"  3. ≥1 high-confidence quantitative claim is extractable.\n"
-        f"  4. At least one evidence slot is hit: {inclusion_md}.\n"
-        "\n"
-        f"**Exclusion criteria:**\n"
-        f"  - Mechanistic-only papers without quantitative claims.\n"
-        f"  - Off-topic preprints flagged by\n"
-        f"    `agent/corpus_classifier.py` (see source listing).\n"
-        f"  - Papers whose extracted claims failed receipt-level\n"
-        f"    evidence-tier, directness, or binding-confidence checks.\n"
-        "\n"
+        "## PRISMA Bridge — Search and Selection Transparency\n\n"
+        "This disclosure reports recorded retrieval and source-admission stages. "
+        "It does not establish PRISMA 2020 compliance, registration, dual human "
+        "screening or formal risk-of-bias appraisal. See Methods for the review protocol "
+        "and populated appraisal records.\n\n"
+        f"**Topic:** {topic}\n\n"
+        f"**Frozen source inventory:** {source_statement}. "
+        f"Retrieval record date: {retrieval.retrieved_at or 'not recorded'}.\n"
+        "Queries are reproduced as recorded; provider outcomes and partial failures "
+        "are reported separately. An enabled source alone makes no query-execution claim.\n\n"
+        f"**Search strings ({len(retrieval.queries)} declared):**\n{queries_md}\n\n"
+        "**Selection scope:** Source eligibility and admission follow the recorded "
+        "review protocol. Search returns, metadata selection, parsed sources and "
+        "admitted receipts are distinct stages. Diagnostic binding buckets may overlap "
+        "and do not establish full-text exclusion counts or reasons.\n\n"
         f"**Screening counts** (this run):\n"
-        f"  - Papers parsed into the corpus: **{n_parsed}**\n"
-        f"  - Papers with quant-extracted claims: **{n_extracted}**\n"
+        f"  - Papers parsed into the corpus: **{retrieval.n_parsed}**\n"
+        f"  - Papers with quant-extracted claims: **{retrieval.n_extracted}**\n"
         f"  - Papers entering synthesis as receipts: **{n_receipts}**\n"
-        f"  - Total high-confidence bound claims: **{n_claims}**\n"
-        "\n"
-        f"**Why fewer receipts than parsed papers?** The deterministic "
-        f"receipt qualifier requires each accepted receipt to clear "
-        f"evidence-tier, directness, and binding-confidence "
-        f"thresholds. Papers in the corpus that do not clear those "
-        f"thresholds are kept for context (cited as background) but "
-        f"do not enter the synthesis as primary evidence. The "
-        f"declared narrowing is auditable: every excluded paper's "
-        f"`paper_id` and rejection rationale is in the run "
-        f"directory's `claim_graph.json` and `spar_review.json`.\n"
+        f"  - Total high-confidence bound claims: **{manifest.get('n_high_confidence_claims_total', 0)}**\n\n"
+        + render_retrieval_audit(retrieval.audit)
     )
 
 

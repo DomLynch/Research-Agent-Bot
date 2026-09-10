@@ -40,10 +40,8 @@ def cross_domain_retry_prompt(base: str, section_name: str, reasons: list[str]) 
     if section_name == "abstract" and any(r.startswith("source_grounding:") for r in reasons):
         return f"{base}\n\n{ABSTRACT_SOURCE_RETRY}"
     guidance: list[str] = []
-    if any(reason.startswith("topic_alias_under_count:") for reason in reasons):
-        guidance.append("TOPIC RETRY REQUIRED: Name the supplied intervention at least twice across the section, naturally and without repeating sentences.")
-    if "missing_hedge_phrase" in reasons:
-        guidance.append("UNCERTAINTY RETRY REQUIRED: Include an explicit supported boundary using 'remains uncertain', 'may', or 'evidence suggests'.")
+    if any(reason.startswith("missing_topic_alias:") for reason in reasons):
+        guidance.append("TOPIC RETRY REQUIRED: Clearly identify the supplied intervention using its name or a supplied alias, without repeating sentences.")
     if any(reason.startswith("no_accepted_anchor:") for reason in reasons):
         guidance.append("CITATION RETRY REQUIRED: Each entry must list at least one exact accepted receipt_id supporting its text; never invent an ID.")
     if set(reasons) & format_reasons:
@@ -111,9 +109,9 @@ QUALITY CONTRACT FOR EVERY SECTION:
   claims or filler to meet length. Word targets apply to THIS section, not the paper.
 - A hedge does not make an unsupported empirical claim acceptable. Distinguish
   source findings from interpretation; never assert that a source proves our review methods.
-- Respect the section's JSON schema. For SCOPED sections, name the supplied
-  intervention at least twice across the section and include 'may', 'evidence
-  suggests', or 'remains uncertain' where justified. Each paragraph needs mapped IDs.
+- Respect the section's JSON schema. For SCOPED sections, identify the supplied
+  intervention and state source-supported limitations without overstating the findings.
+  Each paragraph needs mapped IDs; adding a hedge never establishes support.
 - Qualitative-only sections must omit quantities even if those values occur in sources.
 ================================================================
 

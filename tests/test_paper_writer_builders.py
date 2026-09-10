@@ -403,7 +403,7 @@ def test_scoped_accepts_anchored_prose_topic_alias() -> None:
     assert section is not None
 
 
-def test_scoped_applies_topic_and_hedge_contract_across_section() -> None:
+def test_scoped_requires_topic_context_without_repetition_or_magic_hedge() -> None:
     parsed = {"paragraphs": [
         {"text": "Metformin evidence is receipt grounded.", "receipt_ids": ["r1"]},
         {"text": "Metformin may remain context dependent.", "receipt_ids": ["r1"]},
@@ -414,6 +414,11 @@ def test_scoped_applies_topic_and_hedge_contract_across_section() -> None:
     )
     assert section is not None
     parsed["paragraphs"][1]["text"] = "The evidence remains descriptive."
+    assert build_scoped_from_parsed(
+        parsed, name="background", heading="## Background",
+        topic="metformin", accepted=[_accepted("r1")],
+    ) is not None
+    parsed["paragraphs"][0]["text"] = "Nonmetformin evidence may remain descriptive."
     assert build_scoped_from_parsed(
         parsed, name="background", heading="## Background",
         topic="metformin", accepted=[_accepted("r1")],
@@ -436,8 +441,7 @@ def test_scoped_failures_explain_the_actual_retry_contract() -> None:
     from agent.paper_writer_prompts import cross_domain_retry_prompt
 
     for text, ids, expected, guidance in (
-        ("BNT162b2 evidence remains uncertain.", ["r1"], "topic_alias_under_count:", "TOPIC RETRY REQUIRED"),
-        ("BNT162b2 evidence concerns BNT162b2.", ["r1"], "missing_hedge_phrase", "UNCERTAINTY RETRY REQUIRED"),
+        ("The evidence remains uncertain.", ["r1"], "missing_topic_alias:", "TOPIC RETRY REQUIRED"),
         ("BNT162b2 may inform BNT162b2 research.", [], "no_accepted_anchor:", "CITATION RETRY REQUIRED"),
     ):
         receipt = _accepted("r1", thesis_text="Test source - source excerpts: " + text)

@@ -178,10 +178,8 @@ def test_methods_pack_dedupes_public_outcome_aliases() -> None:
 
 
 def test_methods_data_items_carries_source_grounding_disclosure() -> None:
-    # Researka repeatedly revised papers (CoQ10, brain_age_mri) asking them to
-    # disclose that the public bundle is reference-level and that stats rest on
-    # extraction artifacts. The Methods Data-items section must carry that
-    # disclosure universally so reviewers stop flagging unverifiable grounding.
+    # Describe source/extraction support without claiming every schema field
+    # is populated or downgrading source-proved bundles to metadata-only.
     pack = build_methods_pack(
         review_type="prisma_scr_scoping_synthesis",
         topic="example_topic",
@@ -191,10 +189,9 @@ def test_methods_data_items_carries_source_grounding_disclosure() -> None:
         accountability_model="researka_agent_certified",
     )
     md = render_methods_md(pack, submission_id="run-0000")
-    assert "calibration rule" in md
-    assert "reference-level metadata" in md
-    assert "exact statistics" in md
-    assert "claim registry" in md
+    assert "traced to source excerpts and structured extraction records" in md
+    assert "A schema field does not establish that every source reported it" in md
+    assert "limited to reference-level metadata" not in md
 
 
 def test_methods_default_rob_wording_does_not_overclaim_populated_appraisal() -> None:
@@ -211,7 +208,7 @@ def test_methods_default_rob_wording_does_not_overclaim_populated_appraisal() ->
     md = render_methods_md(pack, submission_id="run-0000")
     assert "Per-source risk-of-bias was rated" not in md
     assert "limited to populated `risk_of_bias.json` rows" in md
-    assert "risk-of-bias sidecar when populated" in md
+    assert "risk-of-bias claims require populated assessment records" in md
 
 
 def test_methods_pack_renders_receipt_admission_funnel() -> None:

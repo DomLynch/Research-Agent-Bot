@@ -3315,6 +3315,7 @@ async def _run(
         outcome_classes=_outcome_classes,
         source_inventory=retrieval_record.sources,
         receipt_funnel=_funnel,
+        retrieval_audit=retrieval_record.audit,
         search_dates_iso=retrieval_record.retrieved_at,
         accountability_model=str(
             manifest.get("accountability_model")

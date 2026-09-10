@@ -25,6 +25,43 @@ def _build_pack(*, source_inventory: tuple[tuple[str, str], ...] = ()):
     )
 
 
+def test_search_yields_survive_freezing_without_becoming_full_text_exclusions() -> None:
+    from dataclasses import replace
+    record = frozen_retrieval_record({
+        "per_wave_stats": [{"wave": "precision", "raw_total": 12, "wave_unique": 10,
+            "new_to_corpus": 10, "cumulative": 10, "stats": {
+                "status_pubmed": "ok", "raw_pubmed": 8,
+                "status_openalex": "timeout", "raw_openalex": 4,
+            }}],
+        "funnel": {"retrieved": 10, "classified_keep": 6, "classified_drop": 4},
+        "entries": [{"keep_for_extraction": False, "reason": "Off topic"},
+                    {"keep_for_extraction": True, "reason": "Retained"}],
+    })
+    frozen = frozen_retrieval_record({"retrieval": record.to_manifest()})
+    assert frozen.audit == record.audit
+    assert frozen.audit['exclusion_reasons'] == {"Off topic": 1}
+    pack = replace(_build_pack(), retrieval_audit=frozen.audit,
+                   screening_flow={"n_included": 2})
+    text = render_methods_md(pack, submission_id="run-test")
+    assert "| precision | 12 | 10 | 10 | 10 |" in text
+    assert "| precision | openalex | 4 | timeout |" in text
+    assert "| classified drop | 4 |" in text
+    assert "4 were excluded at full-text" not in text
+    assert "No blinded dual human screening" in text
+    assert "retrieval_audit" not in replace(_build_pack(), retrieval_audit={}).required_fields_missing()
+
+
+def test_missing_search_yield_remains_unknown_and_zero_is_preserved() -> None:
+    from agent.manuscript_prisma import render_retrieval_audit
+    text = render_retrieval_audit({"waves": [{"wave": "recall", "stats": {
+        "status_pubmed": "ok", "raw_pubmed": 0, "status_openalex": "timeout",
+    }}]})
+    assert "| recall | pubmed | 0 | ok |" in text
+    assert "| recall | openalex | Not recorded | timeout |" in text
+    assert "| recall | Not recorded | Not recorded | Not recorded | Not recorded |" in text
+    assert frozen_retrieval_record({"receipts": [{"source": "PubMed"}]}).audit == {}
+
+
 def test_frozen_inventory_normalizes_outcomes_and_ignores_receipts() -> None:
     record = frozen_retrieval_record({
         "retrieval": {

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -24,6 +24,7 @@ class MethodsPack:
     ai_use_disclosure: str
     human_accountability: str
     source_inventory: tuple[tuple[str, str], ...] = ()
+    retrieval_audit: dict[str, Any] = field(default_factory=dict)
 
     def to_json(self) -> dict[str, Any]:
         d = asdict(self)
@@ -37,7 +38,7 @@ class MethodsPack:
                 or (isinstance(value, (list, tuple)) and not value)
                 or (isinstance(value, dict) and not any(value.values()))
             )
-        return tuple(name for name, value in self.to_json().items() if missing(value))
+        return tuple(name for name, value in self.to_json().items() if name != "retrieval_audit" and missing(value))
 
 
 def build_methods_pack(
@@ -55,6 +56,7 @@ def build_methods_pack(
     rob_method: str = "",
     search_dates_iso: str = "",
     accountability_model: str = "researka_agent_certified",
+    retrieval_audit: dict[str, Any] | None = None,
 ) -> MethodsPack:
     frozen_sources = tuple(source_inventory)
     if any(
@@ -82,8 +84,9 @@ def build_methods_pack(
     )
     # Aggregate counts establish neither exclusion reasons nor unrecorded stages.
     exclusion_summary = (
-        "Source-level exclusion reasons were not recorded in this methods pack; "
-        "receipt-funnel non-admission buckets are not full-text screening reasons.",
+        "Metadata exclusion reasons are reported in the retrieval audit below; they do not establish full-text eligibility exclusions."
+        if retrieval_audit and retrieval_audit.get("exclusion_reasons") else
+        "Source-level exclusion reasons were not recorded in this methods pack; receipt-funnel non-admission buckets are not full-text screening reasons.",
     )
     screening_flow = {key: int(value) for key, value in {
         "n_retrieved": n_retrieved,
@@ -142,6 +145,7 @@ def build_methods_pack(
         ),
         human_accountability=_accountability_text(accountability_model),
         source_inventory=frozen_sources,
+        retrieval_audit=retrieval_audit or {},
     )
 
 
@@ -180,7 +184,7 @@ def write_methods_pack(out_dir: Path, pack: MethodsPack) -> Path:
 
 
 def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
-    from agent.manuscript_prisma import source_inventory_summary
+    from agent.manuscript_prisma import render_retrieval_audit, source_inventory_summary
     from agent.review_type import display_label
     inventory = pack.source_inventory
     source_disclosure = (
@@ -279,11 +283,15 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
             "", "### Exclusion reasons",
         ])
     lines.extend(f"- {r}" for r in pack.exclusion_reason_summary)
+    if pack.retrieval_audit:
+        lines.extend(["", render_retrieval_audit(pack.retrieval_audit)])
     lines.extend([
         "",
         "### Data items",
-        "The following fields were extracted from each included source: " +
-        ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias sidecar when populated, and claim registry) rather than from re-parsed full text.",  # noqa: E501
+        "The extraction schema comprises: " + ", ".join(pack.data_extraction_fields) +
+        ". Available values are traced to source excerpts and structured extraction records. "
+        "A schema field does not establish that every source reported it or that appraisal was performed; "
+        "risk-of-bias claims require populated assessment records.",
         "",
         "### Directness coding criteria",
         "A source was coded as direct only when it tested the topic itself "

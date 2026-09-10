@@ -190,6 +190,8 @@ def _design_class(design: str) -> str:
         return "protocol"
     if _has_token(design, _DESIGN_REVIEW_STRONG):
         return "review"
+    if _NONRANDOMIZED_DESIGN_RE.search(design):
+        return "observational"
     if _has_token(design, _DESIGN_RCT_TOKENS):
         return "rct"
     if _has_token(design, _DESIGN_OBSERVATIONAL_TOKENS):
@@ -272,7 +274,7 @@ def classify_evidence(
         return EvidenceClassification(
             tier="B2", directness="indirect",
             rationale=(
-                f"human observational cohort{endpoint_note} → B2 "
+                f"human non-randomized / observational study{endpoint_note} → B2 "
                 "(NOT mechanistic — confounding-prone but human-direct)"
             ),
         )
@@ -349,11 +351,11 @@ _TITLE_RCT_RE = re.compile(
 )
 _TITLE_OBSERVATIONAL_RE = re.compile(
     r"\b(cohort|registry|observational|target trial|emulation|"
-    r"retrospective|prospective|case[\-\s]?control|case reports?|case series|case[\-\s]by[\-\s]case|single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed)\b",
+    r"retrospective|prospective|case[\-\s]?control|case reports?|case series|case[\-\s]by[\-\s]case|single[\-\s]?(?:arm|group)|(?:non|pseudo|quasi)[\-\s]?randomi[sz]ed)\b",
     re.IGNORECASE,
 )
 _NONRANDOMIZED_DESIGN_RE = re.compile(
-    r"\b(?:single[\-\s]?(?:arm|group)|non[\-\s]?randomi[sz]ed|observational|retrospective|case reports?|case series|case[\-\s]by[\-\s]case)\b", re.I,
+    r"\b(?:single[\-\s]?(?:arm|group)|(?:non|pseudo|quasi)[\-\s]?randomi[sz]ed|observational|retrospective|case reports?|case series|case[\-\s]by[\-\s]case)\b", re.I,
 )
 _FUTURE_TRIAL_RE = re.compile(
     r"\b(?:trials?\s+(?:are|is)\s+(?:needed|required|warranted)|"
