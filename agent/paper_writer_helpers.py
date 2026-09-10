@@ -3,13 +3,17 @@ from __future__ import annotations
 import asyncio
 import logging
 import re
+from collections import Counter
 from collections.abc import Sequence
 
 import httpx
 
 from agent.llm_client import CallSpec, CostLedger, chat_json
 from agent.journal_surface_gate import _SECTION_CEILINGS
-from agent.synthesis_schemas import SynthesisSection
+from agent.synthesis_schemas import ReceiptSummary, SynthesisSection
+from agent.synthesis_writer import filter_accepted
+from agent.outcome_class_remap import outcome_display
+from agent.topic_display import humanize_topic
 from agent.paper_writer_prompts import PUBLICATION_REQUIREMENTS
 
 logger = logging.getLogger(__name__)
@@ -22,6 +26,27 @@ SECTION_TIMEOUT_RETRIES = 1
 _RENDERED_CITED_RE = re.compile(
     r"(?m)^[ \t]*_Cited:\s*`[^`\n]+`(?:\s*,\s*`[^`\n]+`)*_[ \t]*\n?"
 )
+
+
+def build_research_question(receipts: Sequence[ReceiptSummary], *, topic: str) -> str:
+    """Declare the retained-corpus question before any manuscript prose is written."""
+    from pathlib import Path
+    _repo = Path(__file__).resolve().parent.parent
+    accepted = list(filter_accepted(receipts))
+    outcome_counts = Counter(r.outcome_class for r in accepted)
+    population_counts = Counter(" ".join(r.population_summary.split())[:120].rstrip(" ,.;") for r in accepted)
+    population_counts.pop("", None)
+    ranked_outcomes = sorted(outcome_counts, key=lambda name: (-outcome_counts[name], name))
+    outcome_scope = " and ".join(outcome_display(name).lower() for name in ranked_outcomes[:2])
+    outcome_scope = outcome_scope or "the primary retained outcomes"
+    populations = sorted(population_counts, key=lambda name: (-population_counts[name], name))
+    population_scope = populations[0] if populations else "the populations represented by admitted sources"
+    return (
+        f"Within the retained source corpus for {humanize_topic(topic, root=_repo)}, among {population_scope}, "
+        f"what do findings for {outcome_scope} show, and how do population, "
+        "study design, comparator, and directness constrain their interpretation "
+        "and extrapolation to other outcome classes?"
+    )
 
 
 async def call_llm_section(

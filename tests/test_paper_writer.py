@@ -582,7 +582,8 @@ def test_abstract_retries_over_ceiling_instead_of_returning_it(monkeypatch) -> N
     assert "200-300 words" in calls[1]
 
 
-def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
+@pytest.mark.parametrize("declared_question", ["", "How do direct and indirect vascular findings differ?"])
+def test_thin_brief_render_uses_deterministic_results(monkeypatch, declared_question) -> None:
     receipts = [
         _summary(
             "r-immune", outcome="immune", directness="direct",
@@ -594,7 +595,12 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
         ),
     ]
 
+    seen_abstract_context = {}
+
     async def fake_anchored(**kwargs):
+        if kwargs["name"] == "abstract":
+            seen_abstract_context.update(kwargs["author_context"])
+            assert seen_abstract_context["question"] in kwargs["user_prompt"]
         return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
 
     async def fake_scoped(**kwargs):
@@ -609,7 +615,12 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
     md, sections = asyncio.run(paper_writer.render_full_paper(
         receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
         submission_id="thin-test", chain=(), review_type="thin_corpus_brief",
+        author_context={"question": declared_question, "methods": {"record": "frozen-methods"}},
     ))
+    expected_question = declared_question or paper_writer.build_research_question(receipts, topic="vitamin_d")
+    assert seen_abstract_context["question"] == expected_question
+    assert seen_abstract_context["methods"] == {"record": "frozen-methods"}
+    assert f"## Research Question\n\n{expected_question}\n" in md
     assert "### Immune and Inflammation Outcomes" in md and "### Longevity Outcomes" in md
     assert "Source examples: Direct vascular-age cohort 2025" in md
     assert "**Design-limit note:**" in md and "Vascular aging trial protocol 2026" in md

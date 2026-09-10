@@ -1,4 +1,4 @@
-# V3 standardized publishing — audit at 2026-09-10 19:28 Dubai
+# V3 standardized publishing — audit at 2026-09-10 20:08 Dubai
 
 Standardized publishing is **not complete**. Production remains clean at
 `b8be7c455cd4f1a923ffefc8f3edb6606793ebf2`. The latest Resveratrol submission
@@ -17,6 +17,26 @@ stop using manuscript-specific replay-script changes to pursue acceptance.
 | 5. Production and repeatability | Earlier b8 release deployed; submitted run/ledger persisted in both copies. | Shared fixes are not yet deployed. Acceptance, public artifact and unattended cross-topic repeatability remain unproven. |
 
 ## Shared fixes and audit
+
+Native validation on training and semaglutide exposed two additional shared
+defects: later outcome refinement overwrote protocol context, and the Abstract
+ran before its actual question and Methods records existed. Both validation runs
+were stopped after inspecting their exact process trees. Production was excluded.
+Neither run is a completed manuscript or successful publication receipt.
+
+The protocol classification now survives the compiler, Findings Map and final
+table renderer. Replay of all 19 frozen training IDs verifies this without source
+edits. An initial local replay admitted only eight IDs and contained no protocol;
+that failed assertion was diagnostic, not a passing check.
+
+One question and Methods pack are now built before drafting, supplied as author
+records, and reused for final Methods. The question helper uses the retained
+corpus and respects an explicit caller question. Three-topic Methods checks and
+writer ordering checks pass. Required quality: 347 passed, no new complexity or
+duplication, Ruff passed; focused checks: 267 passed before the helper move, then
+130 passed for the changed writer/record path and LOC checks. Mypy: 180 files pass.
+No budget or scientific-gate thresholds were increased. See
+`/tmp/v3-author-records-{quality,final-tests,mypy}.log`.
 
 - `scripts/effect_direction.py`: significant favorable/adverse findings alongside
   explicit null findings yield mixed; invalid or ambiguous p-value bounds do not
@@ -72,9 +92,9 @@ that old evaluation, not the current judge. The current submission instead names
 `real_gold_set_v1_freeze_receipt.json` with hash `0a3680f266445a6bc3ed1f521620a6122c1a87c86dcd0d9ddf089c5e0055f959`.
 This inconsistency prevents a calibrated-current-judge completion claim.
 
-The 18:43 audit of 15 canonical-ledger submissions returned 7 REJECT, 7 REVISE,
-and the then-pending current submission. The latter subsequently became REVISE.
-This is a dated ledger sample, not a new-release success rate or all Core history.
+The refreshed 19:41 audit of 15 canonical-ledger submissions returned 7 REJECT
+and 8 REVISE, with no fetch errors. This is a dated ledger sample, not a
+new-release success rate or all Core history.
 
 ## Receipts and continuation
 

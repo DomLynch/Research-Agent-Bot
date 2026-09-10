@@ -33,6 +33,7 @@ from agent.paper_writer_deterministic import (
     build_references_full_section,
 )
 from agent.paper_writer_helpers import (
+    build_research_question,
     build_retry_prompt as _build_retry_prompt,
     ceiling_retry_prompt,
     log_section_done as _log_section_done,
@@ -695,16 +696,22 @@ async def render_full_paper(
     _prompts = format_prompts_for_topic(
         topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )
+    author_context = dict(author_context or {})
+    question = str(author_context.get("question") or "").strip() or build_research_question(accepted, topic=topic)
+    author_context["question"] = question
     user = _build_user_prompt(
         accepted, rejected, matrix, thesis, topic=topic,
         background_lit_entries=background_lit_entries,
     )
-    if author_context:
-        user += "\n\nAUTHOR RECORDS (our own question, corpus and process; external studies are not their authority):\n" + json.dumps(author_context)
+    user += "\n\nAUTHOR RECORDS (our own question, corpus and process; external studies are not their authority):\n" + json.dumps(author_context)
     # Keep internal run identifiers in the manifest, outside scientific prose.
     topic_title = humanize_topic(topic, title_case=True, root=_repo)
     title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
-    sections: dict[SectionName, SynthesisSection] = {}
+    sections: dict[SectionName, SynthesisSection] = {
+        "research_question": SynthesisSection(
+            name="research_question", body_md=f"## Research Question\n\n{question}\n", anchors=(),
+        ),
+    }
 
     print("[paper_writer] starting full-paper render", flush=True)
     sections["abstract"] = await _write_anchored_section(
@@ -720,29 +727,6 @@ async def render_full_paper(
     if abstract_md != sections["abstract"].body_md:
         sections["abstract"] = SynthesisSection(name="abstract", body_md=abstract_md, anchors=sections["abstract"].anchors)
     _log_section_done("abstract", sections["abstract"])
-    outcome_counts: dict[str, int] = {}
-    population_counts: dict[str, int] = {}
-    for receipt in accepted:
-        outcome_counts[receipt.outcome_class] = outcome_counts.get(receipt.outcome_class, 0) + 1
-        population = " ".join(receipt.population_summary.split())[:120].rstrip(" ,.;")
-        if population:
-            population_counts[population] = population_counts.get(population, 0) + 1
-    ranked_outcomes = sorted(outcome_counts, key=lambda name: (-outcome_counts[name], name))
-    outcome_scope = " and ".join(outcome_display(name).lower() for name in ranked_outcomes[:2])
-    outcome_scope = outcome_scope or "the primary retained outcomes"
-    populations = sorted(population_counts, key=lambda name: (-population_counts[name], name))
-    population_scope = populations[0] if populations else "the populations represented by admitted sources"
-    sections["research_question"] = SynthesisSection(
-        name="research_question",
-        body_md=(
-            "## Research Question\n\n"
-            f"Within the retained source corpus for {humanize_topic(topic, root=_repo)}, among {population_scope}, "
-            f"what do findings for {outcome_scope} show, and how do population, "
-            "study design, comparator, and directness constrain their interpretation "
-            "and extrapolation to other outcome classes?\n"
-        ),
-        anchors=(),
-    )
     _log_section_done("research_question (deterministic)", sections["research_question"])
     if not _thin:
         sections["introduction"] = await _write_scoped_section(

@@ -40,6 +40,31 @@ def _receipt(rid: str, directness: str) -> ReceiptSummary:
     )
 
 
+@pytest.mark.parametrize("topic", ["resistance_training", "semaglutide_effects", "resveratrol_measurement_methods"])
+def test_writer_records_and_rendered_methods_share_scope_and_frozen_search(topic, tmp_path):
+    from agent.manuscript_prisma import FrozenRetrievalRecord
+
+    retrieval = FrozenRetrievalRecord(
+        sources=(("PubMed", "succeeded"),), queries=("actual recorded search",),
+        retrieved_at="2026-09-09", n_parsed=3, n_extracted=2,
+    )
+    context, pack = orch._build_writer_records(
+        topic=topic, review_type="curated_evidence_map", receipts=[_receipt("source", "direct")],
+        retrieval_record=retrieval, receipt_funnel={},
+    )
+    assert context["question"] in context["methods"]["eligibility_criteria"][0]
+    assert context["source_count"] == 1
+    assert context["retrieval"] == retrieval.to_manifest()
+    assert context["methods"]["search_strings"] == retrieval.queries
+    assert context["methods"]["screening_flow"] == {"n_included": 1, "admitted_receipts": 0}
+    paper = tmp_path / "full_paper.md"
+    paper.write_text("## Abstract\n\nRecorded scope.\n\n## Methods\n\nStale scope.\n")
+    methods = orch._write_review_methods(paper, pack)
+    assert context["question"] in methods
+    assert "actual recorded search" in methods
+    assert json.loads((tmp_path / "methods_pack.json").read_text()) == json.loads(json.dumps(context["methods"]))
+
+
 def test_structured_evidence_p_values_are_normalized_idempotently(tmp_path: Path) -> None:
     tiny_nonzero = f"0.{('0' * 400)}1"
     supplement = tmp_path / "structured_evidence_tables.md"

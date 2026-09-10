@@ -31,6 +31,7 @@ from agent.framework_section import (  # noqa: E402
 )
 from agent.evidence_lanes import derive_receipt_lane, effective_directness, unisolated_combination  # noqa: E402
 from agent.publishing.io import CorruptJsonState, read_json  # noqa: E402
+from agent.paper_writer_helpers import build_research_question  # noqa: E402
 from agent.paper_writer import MAX_EVIDENCE_CHARS_PER_RECEIPT, render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
     strip_rendered_citation_markers as _strip_rendered_citation_markers,
@@ -2536,6 +2537,46 @@ def _finalize_synthesis_exit(
     return EXIT_PUBLICATION_READY
 
 
+def _build_writer_records(
+    *, topic: str, review_type: str, receipts: list[ReceiptSummary],
+    retrieval_record: FrozenRetrievalRecord, receipt_funnel: dict[str, Any],
+) -> tuple[dict[str, Any], Any]:
+    """Build the same question and Methods records for drafting and final rendering."""
+    research_question = build_research_question(receipts, topic=topic)
+    from agent.methods_pack import build_methods_pack
+    from agent.outcome_class_remap import outcome_key
+    receipt_rows = [dataclasses.asdict(r) for r in receipts]
+    _funnel = receipt_funnel or {}
+    _outcome_classes = sorted({
+        outcome_key(str(r.get("outcome_class") or ""))
+        for r in receipt_rows
+        if r.get("outcome_class")
+    })
+    _search_queries = retrieval_record.queries
+    _methods_pack = build_methods_pack(
+        review_type=review_type,
+        topic=topic,
+        corpus_search_queries=_search_queries,
+        research_question=research_question,
+        n_retrieved=_funnel.get("retrieved", _funnel.get("n_retrieved")),
+        n_screened=_funnel.get("screened", _funnel.get("n_screened")),
+        n_included=len(receipt_rows),
+        n_rejected=_funnel.get("rejected", _funnel.get("n_rejected")),
+        outcome_classes=_outcome_classes,
+        source_inventory=retrieval_record.sources,
+        receipt_funnel=_funnel,
+        retrieval_audit=retrieval_record.audit,
+        search_dates_iso=retrieval_record.retrieved_at,
+        accountability_model="researka_agent_certified",
+    )
+    author_context = {
+        "question": research_question, "review_type": review_type,
+        "source_count": len(receipts), "retrieval": retrieval_record.to_manifest(),
+        "receipt_funnel": receipt_funnel, "methods": _methods_pack.to_json(),
+    }
+    return author_context, _methods_pack
+
+
 def _write_review_methods(paper_path: Path, pack: Any) -> str:
     from agent.methods_pack import render_methods_md, write_methods_pack
     write_methods_pack(paper_path.parent, pack)
@@ -2981,6 +3022,11 @@ async def _run(
         "tiered validation)...",
         file=sys.stderr,
     )
+    author_context, _methods_pack = _build_writer_records(
+        topic=topic, review_type=_review_type_effective, receipts=writer_receipts,
+        retrieval_record=retrieval_record, receipt_funnel=receipt_funnel,
+    )
+    (out_dir / "author_records.json").write_text(json.dumps(author_context, indent=2))
     (out_dir / "manifest.json").write_text(json.dumps({"topic": topic, "receipts": [dataclasses.asdict(r) for r in receipts]}, indent=2))
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
@@ -2991,9 +3037,7 @@ async def _run(
             qei_citation_tokens_by_paper_id=qei_citation_tokens,
             qei_quarantine_path=out_dir / "qei_quarantined.json",
             review_type=_review_type_effective,
-            author_context={"question": thesis.text, "review_type": _review_type_effective,
-                "source_count": len(receipts), "retrieval": retrieval_record.to_manifest(),
-                "receipt_funnel": receipt_funnel},
+            author_context=author_context,
         )
     print(
         "render_full_paper done.",
@@ -3257,39 +3301,6 @@ async def _run(
             "directness, source_title+venue+population_summary)"
         ),
     }, indent=2))
-    # Slice 11 (2026-05-14): build PRISMA-ScR Methods pack +
-    # serialise to methods_pack.json sidecar. Universal across any
-    # topic — the pack carries databases / search strings / dates /
-    # eligibility / screening flow / extraction fields / RoB approach
-    # / synthesis approach / AI-use disclosure / human accountability.
-    from agent.methods_pack import build_methods_pack
-    from agent.outcome_class_remap import outcome_key
-    _funnel = manifest.get("receipt_funnel") or {}
-    _outcome_classes = sorted({
-        outcome_key(str(r.get("outcome_class") or ""))
-        for r in manifest.get("receipts", ())
-        if r.get("outcome_class")
-    })
-    _search_queries = retrieval_record.queries
-    _methods_pack = build_methods_pack(
-        review_type=str(manifest.get("review_type", "")),
-        topic=_ACTIVE_TOPIC,
-        corpus_search_queries=_search_queries,
-        research_question=str(manifest.get("research_question") or ""),
-        n_retrieved=_funnel.get("retrieved", _funnel.get("n_retrieved")),
-        n_screened=_funnel.get("screened", _funnel.get("n_screened")),
-        n_included=len(manifest.get("receipts", ())),
-        n_rejected=_funnel.get("rejected", _funnel.get("n_rejected")),
-        outcome_classes=_outcome_classes,
-        source_inventory=retrieval_record.sources,
-        receipt_funnel=_funnel,
-        retrieval_audit=retrieval_record.audit,
-        search_dates_iso=retrieval_record.retrieved_at,
-        accountability_model=str(
-            manifest.get("accountability_model")
-            or "researka_agent_certified"
-        ),
-    )
     methods_md = _write_review_methods(paper_path, _methods_pack)
     # Slice 7 step 1: publish manifest as module-global so the
     # consistency audit's _check_numeric_role_guard can resolve
