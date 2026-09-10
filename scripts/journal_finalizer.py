@@ -533,18 +533,19 @@ def _phase_m_repair_surface_artifacts(text: str) -> tuple[str, list[FinalizerLog
     out, n_headings = _remove_empty_subheadings(out)
     out, n_duplicate = _remove_consecutive_duplicate_headings(out)
     out, n_ref_dump = _remove_public_reference_dump_blocks(out)
+    out, n_trailing = re.subn(r"(?m)[ \t]+$", "", out)
     out, n_limitations = re.subn(r"(?ims)(^## Limitations\b(?:(?!^## ).)*?)(?:the headline statement that\s+)?positive signals appear in\s+(.+?)\s+is anchored", r"\1The reported positive-signal pattern for \2 is anchored", out, count=1)
     if out == text:
         return text, []
     changes = [f"limitations_summary_leak={n_limitations}"] if n_limitations else []
-    for count, label in ((n_grammar, "grammar_artifact"), (n_abbrev, "dangling_abbrev"), (n_headings, "empty_subheading"), (n_duplicate, "duplicate_heading"), (n_ref_dump, "reference_dump")):
+    for count, label in ((n_grammar, "grammar_artifact"), (n_abbrev, "dangling_abbrev"), (n_headings, "empty_subheading"), (n_duplicate, "duplicate_heading"), (n_ref_dump, "reference_dump"), (n_trailing, "trailing_whitespace")):
         if count:
             changes.append(f"{label}={count}")
     return out, [
         FinalizerLogEntry(
             phase="M_surface_artifact_cleanup",
             rule="repair_known_surface_artifacts",
-            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate + n_ref_dump + n_limitations,
+            n_changes=n_grammar + n_abbrev + n_headings + n_duplicate + n_ref_dump + n_limitations + n_trailing,
             detail="; ".join(changes),
         )
     ]

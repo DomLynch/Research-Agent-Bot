@@ -17,6 +17,15 @@ from agent.revision_contract import ask_fingerprint, context_fingerprint
 from agent.sources.pubmed import pmid_rows_fingerprint
 
 
+def test_surface_cleanup_removes_preflight_whitespace_before_package_freeze():
+    paper = "## Discussion\n\nDirect (n=32), indirect (n=4), protocol (n=1). \n\nStudy-specific P < .001 remains unchanged.\t\n"
+    expected = paper.replace(". \n", ".\n").replace(".\t\n", ".\n")
+    cleaned, changes = journal_finalizer._phase_m_repair_surface_artifacts(paper)
+    assert cleaned == expected
+    assert any("trailing_whitespace=2" in entry.detail for entry in changes)
+    assert journal_finalizer._phase_m_repair_surface_artifacts(cleaned) == (cleaned, [])
+
+
 def test_terminology_cleanup_does_not_upgrade_clinical_evidence():
     paper = "## Results\n\nDirect clinical evidence concerns glucose biomarkers. The direct clinical trials did not measure mortality.\n"
     fixed, _ = journal_finalizer._phase_c_terminology(paper)
