@@ -22,6 +22,7 @@ ENDPOINT_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (
     (re.compile(r"\bgeneral\s+health\b", re.I), "healthspan_qol"),
     (re.compile(r"\bvitality\s+scale\b", re.I), "healthspan_qol"),
     (re.compile(r"\bpatient[-\s]?reported\s+outcome\b", re.I), "healthspan_qol"),
+    (re.compile(r"\b(?:inspiratory muscle|pulmonary function|lung function|vital capacity|minute ventilation|tidal volume|aerobic capacity|(?:maximal|maximum) oxygen uptake|ventilation threshold)\b", re.I), "contextual_other"),
 )
 
 SOURCE_TEXT_OUTCOME_PATTERNS: tuple[tuple[re.Pattern[str], str], ...] = (

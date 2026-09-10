@@ -1024,10 +1024,16 @@ def test_restore_contract_collapses_consecutive_qei_headings() -> None:
     assert "57%" in out
 
 
-def test_public_section_backstop_covers_abstract() -> None:
-    md = orch._compile_public_section_backstop("Abstract", 150)
-    assert md.startswith("## Abstract")
-    assert orch._word_count(md) >= 150
+def test_public_section_backstop_does_not_fill_a_rejected_abstract() -> None:
+    paper = "## Abstract\n\nSource claim removed.\n\n## Results\n\nRetained results.\n"
+    section = SynthesisSection(name="abstract", body_md="## Abstract\n\n" + _words(200), anchors=())
+    restored = orch._restore_rendered_section_contract(paper, (section,), prefer_typed_sections=False)
+    assert restored == paper
+    surfaced, _ = orch._restore_public_surface_floors(restored)
+    abstract = orch._rendered_section_match(surfaced, "## Abstract")
+    assert abstract and abstract.group(1).strip() == "Source claim removed."
+    from agent.journal_surface_gate import _section_issue_messages
+    assert "section too short: Abstract 3/150 words" in _section_issue_messages(surfaced)
 
 
 def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
@@ -1054,9 +1060,7 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
     assert "Positive study-level signals concentrate in no dominant outcome class" not in md
     assert "No single positive outcome class dominates the retained corpus" not in md
     assert "the retained direct, adjacent, and context evidence profile defines the scope" not in md
-    assert "This paper synthesizes evidence on Metformin" in md
-    assert "changing the source tier" in md and "changing the evidence tier" not in md
-    assert orch._word_count(md) >= 150
+    assert md == ""
 
 
 def test_public_section_backstop_demarcates_context_rows_from_adjacent_clinical() -> None:
@@ -1134,12 +1138,12 @@ def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() 
     # "immune" now canonicalizes to immune_inflammation, so the two receipts
     # collapse to one class (no duplicate "immune and immune and inflammation").
     assert "immune and immune and inflammation" not in md
-    assert "This paper synthesizes evidence on Metformin" in md
-    assert orch._word_count(md) >= 150
+    assert md == ""
 
 
 def test_public_section_backstop_refuses_evidence_owned_sections() -> None:
     for title, floor in (
+        ("Abstract", 150),
         ("Results", 500),
         ("Cross-Domain Synthesis", 850),
         ("Discussion", 800),

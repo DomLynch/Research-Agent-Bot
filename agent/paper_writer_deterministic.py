@@ -264,6 +264,10 @@ def _append_research_contribution_layer(
         )
     lines.append("\nMatrix accounting note: Direct and indirect source counts are cumulative within each outcome class and reconcile to the Results outcome-class roster.")
     lines.append("\nThese counts describe retained sources only. They do not establish literature coverage, evidence certainty, research priorities, or a powered study design.")
+    lines += [
+        "\n### Future work: testable interpretation",
+        "\nA prospective re-extraction could test the hypothesis that recorded directional differences reflect non-comparable populations, interventions, comparators, endpoints, follow-up or analysis types. Persistent disagreements within prespecified matched strata would count against that explanation. This is an untested synthesis-author proposal; the present map does not establish its result or justify a preferred trial population, sample size or duration.",
+    ]
 
 
 def build_what_this_adds_section(

@@ -545,7 +545,7 @@ def _compile_public_section_backstop(
     title: str, floor: int, existing_text: str = "",
 ) -> str:
     """Compile deterministic framing/disclosure prose, never evidence sections."""
-    allowed = {"Abstract", "Introduction", "Background"}
+    allowed = {"Introduction", "Background"}
     if title not in allowed:
         return ""
     topic = _topic_display_name()
@@ -561,12 +561,6 @@ def _compile_public_section_backstop(
     direct_refs = ctx["direct_refs"]
     mech_refs = ctx["mech_refs"]
     paragraphs_by_title = {
-        "Abstract": [
-            (
-                f"This paper synthesizes evidence on {topic} across the retained "
-                "source corpus and high-confidence extracted claim set."
-            ),
-        ],
         "Introduction": [
             (
                 f"This synthesis evaluates evidence on {topic} across "
