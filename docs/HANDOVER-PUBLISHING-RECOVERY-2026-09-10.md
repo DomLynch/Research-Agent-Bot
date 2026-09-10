@@ -1,8 +1,8 @@
-# V3 standardized publishing — audit at 2026-09-10 22:17 Dubai
+# V3 standardized publishing — audit at 2026-09-10 23:32 Dubai
 
 The shared fixes are deployed. **Publishing recovery and unattended cross-topic
 repeatability are not yet proven.** Both VPS checkouts are clean at
-`9f7a7538fd737483ee905604618443fec6a3b201` (runtime code commit); the dashboard returned HTTP 200 and
+`a41bee86455f2a68be983dee55a49345eee67870` (runtime code commit); the dashboard returned HTTP 200 and
 all six publishing timers were restored. Deployment is not a public paper.
 
 The user requested steps 1–5 with an audit after each, then explicitly rejected
@@ -15,15 +15,16 @@ source facts, normal review decisions and canonical submission history.
 |---|---|---|
 | 1. Reconciliation | Bounded reconciliation is deployed. Earlier two real passes covered 80 distinct IDs in 57–58 seconds. The 17:06 UTC receipt completed in 52.065 seconds, with no runtime error and 205 deferred records. | The deferred backlog remains; do not equate a bounded successful pass with every historical record reconciled. |
 | 2. Source records before prose | Shared source-role, comparator, direction and author-record rules pass focused checks. Five unchanged corpora compile without a crash. | Missing endpoint facts remain unknown. Do not promote an unknown direction or treat a protocol as completed efficacy evidence. |
-| 3. Manuscript completeness | Two earlier ordinary full runs exposed reproducible shared defects in quote cleanup and URL word counting; both defects are fixed and regression checked. | Training completed on b398; semaglutide stopped on a provider timeout. The final arm-label correction has source replay proof, but no new full native generation receipt yet. |
+| 3. Manuscript completeness | Quote cleanup, URL word counting and a DOI-corrupting finalization loop have shared fixes. A sixth topic was selected by the ordinary production scheduler; its failed artifact now passes surface repair through the ordinary repair function. | Training completed on b398; semaglutide timed out. The sixth paper is not journal-ready: its regenerated local verdict remains Trust-Spine Pass / L3, with 36 P2 notes. No manual prose or scientific-fact correction was applied. |
 | 4. Publishing contract | Actual public contract, latest Resveratrol decision, 15 recent ledger submissions and current semaglutide decision audited. | Public calibration is invalid and unbound to the current judge release. No calibrated-current-judge claim is supported. |
-| 5. Production and repeatability | Both VPS copies have the same clean release, healthy dashboard and six active timers. | A new accepted public artifact and unattended repeatability remain unproven. |
+| 5. Production and repeatability | Both VPS copies have the same clean release, healthy dashboard and six active timers. The ordinary submit service finished at 23:30:52 Dubai after checking 179 run records: zero submitted, zero published. | A new accepted public artifact and unattended repeatability remain unproven. Missing final certification artifacts, unmet revisions and quality checks still block the available production runs. |
 
 ## Shared changes and review
 
-The runtime delta from `b8be7c45` to `9f7a7538` is 197 added and 155 deleted
-physical lines: 42 net added lines across 12 runtime files. A prior running note
-said 56 net; the audited Git numstat total is 42. There are no new runtime study-name or submission-ID overrides.
+The runtime delta from `b8be7c45` to `a41bee86455f2a68be983dee55a49345eee67870`
+is 253 added and 201 deleted physical lines: 52 net added lines across 15 runtime
+files. The preceding release was 42 net lines; an older running note incorrectly
+said 56. There are no new runtime study-name or submission-ID overrides.
 
 - Evidence directions use source-owned outcome findings. Significant benefit or
   harm alongside explicit null endpoints can be mixed. Baseline, population,
@@ -58,7 +59,7 @@ IDs, negative controls, propagation review and source-hash verification. The
 quote-corruption trace identified `strip_sentence_fragments` as the actual writer
 of the damaged text. No original validation manuscript was manually corrected.
 
-Latest release checks: **553 focused tests passed in 12.79 seconds; required
+Preceding release checks: **553 focused tests passed in 12.79 seconds; required
 quality passed 347 tests; Ruff and typing passed for both changed modules.** The
 preceding release also passed typing across 131 source files. LOC,
 complexity and duplication budgets were not raised. Logs:
@@ -66,6 +67,78 @@ complexity and duplication budgets were not raised. Logs:
 The earlier 5,019-test run took 158.32 seconds and preceded these final follow-ups;
 it is not a full-suite receipt for the final release. Repeated broad testing is
 not required without a new relevant failure or change.
+
+## Sixth-topic production audit and shared finalizer recovery
+
+The ordinary fresh service selected `telomere_cardiovascular_effects` itself at
+22:20 Dubai. Its source preflight admitted 32 receipts, including 4 direct and
+5 primary-tier receipts. Run:
+`/opt/research-agent-bot/runs/synthesis-telomere_cardiovascular_effects-v06-DAILY-2026-09-10T18-22-59Z`.
+The run generated and reviewed a manuscript, then exited 7 after 2,390 seconds
+with `local_gate_execution_failed`: finalization did not converge in 40 passes.
+Its controller incorrectly treated this software failure as writer-fixable and
+started R2. After independently verifying the service invocation and process
+family, that redundant retry was stopped. No submission occurred in R1.
+
+Root cause: `_hedge_preclinical_translation` treated punctuation inside a DOI URL
+as a sentence ending and inserted a caveat inside the link. Subsequent cleanup
+truncated the URL; source-trace repair then appended another locator each pass.
+The fix masks URL spans for sentence-boundary detection while preserving original
+text offsets. A shared surface helper removes incomplete repeated locator
+prefixes only when the complete surviving URL matches that prefix. The helper is
+used by both writer finalization and ordinary publisher repair. No iteration
+limit, evidence gate, word floor, reviewer decision or model setting was relaxed.
+
+The scheduler now reads the existing benchmark exit receipt, preserves the exact
+software error, stops that cycle and does not regenerate the same or another topic
+after `local_gate_execution_failed`. Transient synthesis retries remain covered.
+
+Two replay audits used an isolated copy and the frozen source snapshot. The first
+ran the Stage 5 callback plus finalizer; the second used ordinary
+`_repair_existing_run`, which finished in 3.34 seconds without a model call.
+Both produced manuscript SHA256
+`a64f2008f8d5188bde236d5beeae3645615d8944c517c09d7af26c325e55b930`.
+The only manuscript change was deletion of 1,053 characters representing 39
+incomplete locator prefixes. All 66 frozen source files, the manifest and numeric
+quarantine were unchanged. Surface checks pass; a second finalization changes
+nothing. The local overall verdict still does not certify journal readiness.
+
+An earlier local diagnostic accidentally used the default corpus directory and
+quarantined three extra claims. That diagnostic is invalid as a native receipt.
+It only affected an isolated copy and was superseded by the frozen-source replay.
+
+Latest relevant checks: 914 passed / 2 existing XPASS before the small extraction;
+16 targeted regressions passed after simplification; 433 finalizer, surface and
+consistency tests passed after wiring ordinary repair. Required quality passed
+347 tests; Ruff, typing, LOC and complexity passed without raised budgets.
+Logs: `/tmp/v3-finalizer-{focused,regression,shared-repair-focused,quality}.log`
+and `/tmp/v3-finalizer-{mypy,shared-mypy}.log`.
+Replay receipts: `.tmp/v3-standardized/frozen-source-finalizer-replay.json` and
+`.tmp/v3-standardized/ordinary-repair-replay.json`.
+Deployment: `/tmp/v3-shared-recovery-deploy.log`, both checkouts clean at `a41bee86`,
+dashboard HTTP 200, six timers restored.
+
+At 23:29:29 Dubai the normal `research-agent-paper-daily-submit.service` was
+started with its unchanged configuration and canonical ledgers, without a forced
+candidate. It finished at 23:30:52 with `no_eligible_research_paper`, zero submitted,
+zero published (exit 3, accepted by the existing service contract). The canonical
+receipt is `/opt/research-agent-bot/runs/_daily_research_paper_ledger/2026-09-10.json`.
+It considered 179 run records: 105 missing required artifacts, 28 topics already
+consumed in the window, 15 failed surface checks, 15 unverified/unmet revision
+coverage, 13 audit failures, 2 final-status failures and 1 preflight-QA block.
+These are run records, not 179 distinct papers or independent experiments.
+
+The sixth-topic R1 still lacks the final surface, verdict and pre-submit gate
+files because its production run stopped before writing them. The ordinary
+publisher correctly refuses that incomplete certification set. The isolated
+repair receipt proves manuscript recovery; it does not fill the production
+certification gap or bypass the full quality gate. R2 remains an incomplete,
+stopped generation. No original production manuscript was manually patched.
+
+The next acceptance check is a complete ordinary run on the deployed fix, followed
+by its real Core decision and public artifact. Existing timers remain active.
+Do not report steps 3/5 or publishing recovery complete from the repair or test
+receipts alone.
 
 ## Cross-topic validation on fixed code
 
