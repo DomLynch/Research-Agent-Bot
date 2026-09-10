@@ -2452,6 +2452,20 @@ def test_receipt_contract_fields_are_authorized_only_by_explicit_recode_asks() -
     ) == set()
 
 
+def test_declarative_direction_corrections_authorize_only_named_direction_fields() -> None:
+    rows = {key: {"source_title": key} for key in ("first", "second", "other")}
+    aliases = {"first": ("First 2020",), "second": ("Second 2015",), "other": ("Other 2024",)}
+    text = "First 2020 and Second 2015 remain coded null even though each contains favorable and null endpoints and meets the stated definition of mixed evidence."
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(text, rows, aliases) == {
+        "first": {"effect_direction"}, "second": {"effect_direction"},
+    }
+    text = "Other 2024 remains coded positive despite extensive null findings; it should be mixed or unclear."
+    assert revision_coverage.authorized_receipt_contract_fields_by_receipt(text, rows, aliases) == {"other": {"effect_direction"}}
+    for prefix in ("should", "must", "may", "can"):
+        assert revision_coverage.authorized_receipt_contract_fields(f"First 2020 {prefix} remain coded null even though secondary results are favorable.") == set()
+    assert revision_coverage.authorized_receipt_contract_fields("Do not change First 2020: it remains coded null despite favorable secondary findings.") == set()
+
+
 def test_receipt_contract_authorization_is_limited_to_named_sources() -> None:
     feedback = (
         "Move Schmid 2021 into the Mechanism outcome class and Dorneles 2020 "

@@ -310,6 +310,8 @@ def authorized_receipt_contract_fields(text: str) -> set[str]:
     if re.match(r"(?:do not|don't|never)\s+(?:reclassify|recode|change|move|correct|recompute|apply)\b", lower):
         return set()
     fields = {"effect_direction"} if _asks_effect_direction_reconciliation(lower) or "direction coding" in lower and "relabel or reconcile" in lower else set()
+    if re.search(r"\bremains? coded (?:positive|negative|null|mixed|unclear) (?:despite|even though)\b", lower) and not re.search(r"\b(?:should|must|can|may|to) remain coded\b", lower):
+        fields.add("effect_direction")
     action = any(token in lower for token in (
         "correct", "move", "reclassify", "recode", "reconcile", "reroute",
         "inconsistent", "misclassified", "not a review", "underlying source",
