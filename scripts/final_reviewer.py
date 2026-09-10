@@ -150,13 +150,16 @@ def _build_reviewer_prompt(
     if run_dir is not None:
         from publishing.submission import _source_bundle
         from agent.publication_evidence import source_proof_is_valid
+        from agent.revision_contract import evidence_rows
         bundle = _source_bundle(run_dir, limit=n_receipts, enrich=False)
         if len(bundle) != n_receipts or not all(source_proof_is_valid(row) for row in bundle):
             raise RuntimeError("review_source_packet_unverified")
         evidence_section = "\n\n## Verified source packet and frozen retrieval record\n" + json.dumps({
             "source_bundle": bundle, "retrieval_record": manifest.get("retrieval", {}),
+            "own_result_passages": [{"citation": row.get("citation_token"), "passages": row.get("source_result_excerpts", [])}
+                                    for row in evidence_rows(run_dir, manifest)],
         }, ensure_ascii=False)
-        system += "The verified source packet takes precedence over older receipt snippets. Missing detail in a receipt snippet alone does not establish that a claim is unsupported. Verify the actual endpoint, comparison, and analysis in the full supplied source context.\n"
+        system += "The verified source packet takes precedence over older receipt snippets. Missing detail in a receipt snippet alone does not establish that a claim is unsupported. Verify the actual endpoint, comparison, and analysis in the full supplied source context. If source passages conflict, report the conflict and preserve treatment-group attribution; never select or replace a value by guessing.\n"
     audit_p1 = audit.get("p1_pass", False)
     audit_score = audit.get("score_out_of_10", 0)
     # Fix #11: derive (body_citation, outcome, effect, tier) per receipt.

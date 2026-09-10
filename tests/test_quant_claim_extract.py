@@ -99,6 +99,17 @@ def test_baseline_balance_cannot_become_representative_treatment_result() -> Non
     assert quant_claim_extract.source_result_excerpts({"sections": {"results": longitudinal}}) == (longitudinal,)
 
 
+def test_own_results_preserve_raw_typography_and_group_comparison() -> None:
+    result = "After treatment, groups A–C showed a decrease of 33% in the marker (0.039 ± 0.015 vs. 0.026 ± 0.014, p = 0.03)."
+    comparison = "The combination had an increase of 30% (p = 0.001), and vitamin C had an increase of 28% (p = 0.03)."
+    disputed = "Vitamin C increased the measured capacity by up to 33%."
+    record = {"sections": {"results": result + " " + comparison, "conclusion": disputed}}
+    assert quant_claim_extract.source_result_excerpts(record) == (result, comparison, disputed)
+    assert quant_claim_extract._split_sentences(result + " " + comparison) == [(0, result), (len(result) + 1, comparison)]
+    prior = "Previous studies found an increase of 44% in capacity."
+    assert not quant_claim_extract.source_result_excerpts({"sections": {"abstract": prior}})
+
+
 def test_multichar_p_value_comparator_is_retained() -> None:
     claims = quant_claim_extract.extract_from_text(
         "The lower bound was reported as p >= .001.", "results",

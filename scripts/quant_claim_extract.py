@@ -367,7 +367,7 @@ _ROLE_KEYWORD_BACKGROUND = (
 )
 _ROLE_KEYWORD_EFFECT = (
     # Direction verbs
-    "increased", "decreased", "improved", "improvement", "improvements",
+    "increased", "decreased", "increase of", "decrease of", "increases", "decreases", "improved", "improvement", "improvements",
     "reduced", "blunted",
     "attenuated", "enhanced", "elevated", "lowered", "diminished",
     "suppressed", "inhibited", "declined", "rose", "rose by",
@@ -480,7 +480,8 @@ def _split_sentences(text: str) -> list[tuple[int, str]]:
     cursor = 0
     decimals = [match.span() for match in _P_VALUE_RE.finditer(text)]
     boundaries = [match.end() for match in _SENTENCE_SPLIT_RE.finditer(text)
-                  if not any(start <= match.start() < end for start, end in decimals)]
+                  if not any(start <= match.start() < end for start, end in decimals)
+                  and not re.search(r"\b(?:vs|e\.g|i\.e|et al)\.$", text[:match.start()], re.I)]
     for end in [*boundaries, len(text)]:
         chunk = text[cursor:end]
         chunk_clean = chunk.strip()
@@ -527,9 +528,9 @@ def source_result_excerpts(paper_meta: dict) -> tuple[str, ...]:
     record = {**paper_meta, "sections": sections}
     excerpts: dict[str, None] = {}
     for section in ("results", "abstract", "conclusion"):
-        for claim in extract_from_text(_record_text(sections.get(section) or ""), section):
-            if claim.claim_role == "effect" and _owned_result_sentence(claim.sentence, record):
-                excerpts.setdefault(claim.sentence, None)
+        for _, sentence in _split_sentences(_record_text(sections.get(section) or "")):
+            if _assign_claim_role(sentence, section) == "effect" and _owned_result_sentence(sentence, record) and extract_from_text(sentence, section):
+                excerpts.setdefault(sentence, None)
     return tuple(excerpts)
 
 
