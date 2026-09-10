@@ -1,4 +1,4 @@
-# V3 standardized publishing — audit at 2026-09-10 19:56 Dubai
+# V3 standardized publishing — audit at 2026-09-10 20:13 Dubai
 
 Standardized publishing is **not complete**. Production remains clean at
 `b8be7c455cd4f1a923ffefc8f3edb6606793ebf2`. The latest Resveratrol submission
@@ -37,6 +37,28 @@ duplication, Ruff passed; focused checks: 267 passed before the helper move, the
 130 passed for the changed writer/record path and LOC checks. Mypy: 180 files pass.
 No budget or scientific-gate thresholds were increased. See
 `/tmp/v3-author-records-{quality,final-tests,mypy}.log`.
+
+The final adversarial pass additionally caught non-outcome p-values affecting
+source direction. Explicit baseline/population/background/dose/duration/sample
+size/protocol records are now excluded from that aggregation. A null endpoint
+cannot classify other unclassified endpoints as null. This is a shared rule,
+without source-name exceptions. The final manuscript-grounding reader now also
+prefers the declared research question, retaining thesis fallback for legacy runs.
+Changing the question invalidates a cached grounding review.
+
+Latest focused checks: 178 passed; mandatory quality: 347 passed, no complexity,
+duplication or LOC regression; typing: 180 files passed. The 5,019-test broad run
+(2 existing XPASS, 16 warnings, 158.32 seconds) preceded these final guards; it
+must not be described as a broad run after them. No extra broad run is required
+for these covered follow-ups. Receipts: `/tmp/v3-final-shared-guards-*.log` and
+`.quality-reports/v3-final-shared-audit-2026-09-10.json`.
+
+Native runs at `93dbfc16` use normal topic configuration, with no review-type
+override or manuscript editing. Training produced a 234-word Abstract, a
+1,104-word Introduction and a 921-word Background; semaglutide produced a
+250-word Abstract. These establish intermediate generation, not completion.
+The final source guard changes compiled evidence for both corpora, so these
+earlier runs cannot certify the final release. Production remains on b8.
 
 - `scripts/effect_direction.py`: significant favorable/adverse findings alongside
   explicit null findings yield mixed; invalid or ambiguous p-value bounds do not

@@ -116,10 +116,12 @@ def test_changed_review_policy_invalidates_cached_support(run, monkeypatch):
         assert not grounding.approved(CLAIM, bundle, {0})
 
 
-def test_own_question_uses_run_records_without_external_attribution(run, monkeypatch):
+@pytest.mark.parametrize("question_field", ["thesis", "research_question"])
+def test_own_question_uses_run_records_without_external_attribution(run, monkeypatch, question_field):
     own = "This map compares how population and endpoint differences limit interpretation of the supplied records."
     manifest = json.loads((run / "manifest.json").read_text())
-    manifest["thesis"] = own
+    manifest["thesis"] = "Earlier integrating thesis."
+    manifest[question_field] = own
     (run / "manifest.json").write_text(json.dumps(manifest))
     paper = run / "full_paper.md"
     paper.write_text(paper.read_text().replace("## Abstract\n\n", "## Abstract\n\n" + own + "\n\n"))
@@ -139,6 +141,12 @@ def test_own_question_uses_run_records_without_external_attribution(run, monkeyp
         altered = deepcopy(bundle)
         altered[0]["excerpt"] = "Different evidence."
         assert not grounding.approved(own, altered, set())
+    manifest[question_field] = "A different analytic question."
+    (run / "manifest.json").write_text(json.dumps(manifest))
+    with grounding.grounding_context(run):
+        assert not grounding.approved(own, bundle, set())
+    manifest[question_field] = own
+    (run / "manifest.json").write_text(json.dumps(manifest))
     (run / "methods_pack.json").write_text(json.dumps({"search_dates": "Changed methods record"}))
     with grounding.grounding_context(run):
         assert not grounding.approved(own, bundle, set())

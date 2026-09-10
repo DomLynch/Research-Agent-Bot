@@ -105,6 +105,11 @@ def test_explicit_no_change_with_nonsignificant_p_returns_null() -> None:
     assert ed.infer_effect_direction(
         claims, metformin_effect_fn=_const(0),
     ) == "null"
+    # A measured null endpoint cannot turn an unclassified second outcome null.
+    assert ed.infer_effect_direction(
+        claims + [{"claim_type": "unit_value", "endpoint": "muscle strength", "raw_text": "20 kg"}],
+        metformin_effect_fn=_const(0),
+    ) == "unclear"
 
 
 def test_witham_met_prevent_null_walk_speed_returns_null() -> None:

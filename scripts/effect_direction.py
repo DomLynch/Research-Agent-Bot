@@ -227,7 +227,8 @@ def infer_effect_direction(
     # Unsigned evidence is not a measured null result. Keep it ambiguous
     # unless an explicit negligible signed magnitude established nullity.
     if not any_signed:
-        if explicit_null and not any(significance_by_endpoint.values()):
+        null_endpoints = {c.get("endpoint") for c in claims if c.get("endpoint") and _reports_null(c, alpha)}
+        if null_endpoints and {c.get("endpoint") for c in claims if c.get("endpoint")} <= null_endpoints and not any(significance_by_endpoint.values()):
             return "null"
         return "unclear"
     # No significant signed evidence.
