@@ -44,6 +44,7 @@ import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
+    AtomicJsonState,
     parse_time as _parse_time,
     read_json as _read_json,
     update_json_list as _update_json_list,
@@ -364,8 +365,7 @@ def _reconcile_publication_ledgers_unlocked(
     poll: dict[str, Any] = {}
     if remote_loader is None:
         latest_decisions, decision_error = _latest_public_decisions_by_title()
-        direct_decisions, direct_error = _submitted_submission_decisions_by_title(runs_root)
-        poll = _read_json(ledger_dir / DECISION_POLL_CHECKPOINT)
+        direct_decisions, direct_error = _submitted_submission_decisions_by_title(runs_root, poll_report=poll)
         poll["error"] = direct_error or decision_error
         latest_decisions = _merge_latest_by_title(
             {} if decision_error else latest_decisions,
@@ -1106,7 +1106,19 @@ def _closed_submission(record: dict[str, Any]) -> bool:
     )
 
 
-def _poll_submission_decisions(rows: list[dict[str, Any]], runs_root: Path) -> dict[str, tuple[dict[str, Any] | None, str | None]]:
+def _checkpoint_decision_poll(path: Path, report: dict[str, Any]) -> None:
+    def merge(current: dict[str, Any]) -> None:
+        attempts = current.get("attempts", {})
+        attempts = attempts if isinstance(attempts, dict) else {}
+        for sid, row in report["attempts"].items():
+            prior = attempts.get(sid, {})
+            if str(row["checked_at"]) >= str(prior.get("checked_at") or ""):
+                attempts[sid] = row
+        current.update({**report, "attempts": attempts})
+    AtomicJsonState[dict[str, Any]](path, dict).update(merge, missing_factory=dict)
+
+
+def _poll_submission_decisions(rows: list[dict[str, Any]], runs_root: Path, report: dict[str, Any] | None = None) -> dict[str, tuple[dict[str, Any] | None, str | None]]:
     path = runs_root / LEDGER_DIR / DECISION_POLL_CHECKPOINT
     previous = _read_json(path).get("attempts", {})
     previous = previous if isinstance(previous, dict) else {}
@@ -1132,22 +1144,23 @@ def _poll_submission_decisions(rows: list[dict[str, Any]], runs_root: Path) -> d
                 "error": results[sid][1],
             }
     blocked = [sid for sid in records if not results.get(sid, (None, None))[0]]
-    report = {
+    report = {} if report is None else report
+    report.update({
         "created_at": dt.datetime.now(dt.UTC).isoformat(), "attempts": attempts,
         "elapsed_seconds": round(time.monotonic() - started, 3),
         "deferred": len(records.keys() - results.keys()),
         "blocked_submission_ids": blocked,
         "blocked_title_markers": [submit_bridge._title_marker(str(records[sid].get("title") or submit_bridge._paper_title(runs_root / str(records[sid].get("run") or "") / "full_paper.md"))) for sid in blocked],
-    }
-    _write_json(path, report)
+    })
+    _checkpoint_decision_poll(path, report)
     print(f"[decision-poll] checked={len(results)} deferred={report['deferred']} blocked={len(blocked)} elapsed={report['elapsed_seconds']}s", flush=True)
     return results
 
 
-def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[dict[str, dict[str, Any]], str | None]:
+def _submitted_submission_decisions_by_title(runs_root: Path = RUNS, *, poll_report: dict[str, Any] | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
     submitted_path = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     rows = submit_bridge._ledger_rows(submitted_path)
-    polled = _poll_submission_decisions(rows, runs_root)
+    polled = _poll_submission_decisions(rows, runs_root, poll_report)
     latest: dict[str, dict[str, Any]] = {}
     first_error: str | None = None
     updates: dict[str, dict[str, Any]] = {}
@@ -1372,10 +1385,10 @@ def _record_revise_reasons(ledger_dir: Path, latest: dict[str, dict[str, Any]]) 
 
 
 def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS) -> tuple[list[dict[str, Any]], str | None]:
-    direct, direct_err = _submitted_submission_decisions_by_title(runs_root)
+    poll: dict[str, Any] = {}
+    direct, direct_err = _submitted_submission_decisions_by_title(runs_root, poll_report=poll)
     latest, err = _latest_reviews_by_title(url)
     known_ids = {row.get("submissionId") for row in direct.values()}
-    poll = _read_json(runs_root / LEDGER_DIR / DECISION_POLL_CHECKPOINT)
     known_ids.update(poll.get("blocked_submission_ids") or [])
     blocked_titles = set(poll.get("blocked_title_markers") or [])
     latest = {key: row for key, row in latest.items() if (row.get("submissionId") or row.get("submission_id")) not in known_ids and key not in blocked_titles}

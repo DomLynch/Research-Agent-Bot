@@ -62,6 +62,21 @@ def test_p_value_no_leading_zero_extracted() -> None:
     assert p_claims[0].numeric_values == (0.003,)
 
 
+@pytest.mark.parametrize("statistic", ["P < . 001", "P < 0. 001", "P < .\u00a0001"])
+def test_spaced_decimal_preserves_source_sentence_and_offset(statistic: str) -> None:
+    result = f"Negative symptoms improved more with treatment than placebo ({statistic})."
+    text = f"Baseline scores were comparable (P > .05). {result} 52 patients completed follow-up."
+    claims = quant_claim_extract.extract_from_text(text, "abstract")
+    effects = [c for c in claims if c.claim_type == "p_value" and c.comparator == "<"]
+    assert len(effects) == 1
+    effect = effects[0]
+    assert effect.numeric_values == (0.001,)
+    assert effect.source_offset == text.index(statistic)
+    assert effect.raw_text == statistic.replace("\u00a0", " ")
+    assert effect.sentence == result.replace("\u00a0", " ")
+    assert quant_claim_extract._split_sentences(text)[-1][1] == "52 patients completed follow-up."
+
+
 def test_p_value_lt_extracted_with_comparator() -> None:
     """'p < .001' — comparator preserved in raw_text."""
     text = "Thigh muscle mass increase (p < .001) was higher in placebo."

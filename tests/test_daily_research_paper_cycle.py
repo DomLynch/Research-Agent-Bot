@@ -1489,7 +1489,7 @@ def test_reconcile_publication_ledgers_uses_direct_accept_decision_for_daily_sub
     }])
     monkeypatch.setattr(cycle.submit_bridge, "_remote_published_fingerprints", lambda: (set(), None))
     monkeypatch.setattr(cycle, "_latest_public_decisions_by_title", lambda: ({}, None))
-    monkeypatch.setattr(cycle, "_submitted_submission_decisions_by_title", lambda _runs_root: ({
+    monkeypatch.setattr(cycle, "_submitted_submission_decisions_by_title", lambda _runs_root, **_kwargs: ({
         cycle.submit_bridge._title_marker("Adjacent Evidence Brief: Direct Accept Topic"): {
             "title": "Adjacent Evidence Brief: Direct Accept Topic",
             "topic": "direct_accept_topic",
@@ -9333,7 +9333,7 @@ def test_revision_polling_survives_public_outage_and_missing_manuscripts(
 
 
 def test_revision_polling_returns_auth_error_when_both_surfaces_fail(tmp_path: Path, monkeypatch) -> None:
-    monkeypatch.setattr(cycle, "_submitted_submission_decisions_by_title", lambda _root: ({}, "HTTPError:401"))
+    monkeypatch.setattr(cycle, "_submitted_submission_decisions_by_title", lambda _root, **_kwargs: ({}, "HTTPError:401"))
     monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url: ({}, "HTTPError:503"))
     assert cycle._remote_revision_requests(runs_root=tmp_path) == ([], "HTTPError:401")
 

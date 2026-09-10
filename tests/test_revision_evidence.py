@@ -190,6 +190,9 @@ def test_class_recode_rejects_unverified_evidence_and_identity_drift(class_recod
 
 @pytest.mark.parametrize(("class_recode_rows", "expected"), [
     ("Methods: This prospective observational cohort study followed older adults receiving supplementation for six months.", True),
+    ("Methods: Treatment was reserved for patients on a case-by-case compassionate care basis. Three cases are presented.", True),
+    ("Methods: Treatment was reserved for patients on a case by case compassionate care basis. Three cases are presented.", True),
+    ("Background: Previous reports describe case-by-case compassionate care. Methods: Adults were randomly assigned to intervention or placebo.", False),
     ("Methods: Adults received a multi-ingredient supplement or placebo in this randomized clinical trial.", True),
     ("Background: Only within-group comparisons were performed in previous trials. Methods: We studied supplementation in adults.", False),
     ("Methods: No multi-ingredient supplement was administered in this clinical study of older adults.", False),

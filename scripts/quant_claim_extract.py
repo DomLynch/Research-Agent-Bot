@@ -226,7 +226,7 @@ def _normalize(text: str) -> str:
 # four standard comparators (we keep the Unicode ≤≥ even though
 # normalization keeps them — they're rare but valid).
 _P_VALUE_RE = re.compile(
-    r"\b([Pp])\s*(<=|>=|[<>=≤≥])\s*(0?\.\d+)\b",
+    r"\b([Pp])\s*(<=|>=|[<>=≤≥])\s*(0?\.[ \t\u00a0]*\d+)\b",
 )
 
 
@@ -485,16 +485,15 @@ def _split_sentences(text: str) -> list[tuple[int, str]]:
     map a numeric match back to its containing sentence."""
     out: list[tuple[int, str]] = []
     cursor = 0
-    for chunk in _SENTENCE_SPLIT_RE.split(text):
+    decimals = [match.span() for match in _P_VALUE_RE.finditer(text)]
+    boundaries = [match.end() for match in _SENTENCE_SPLIT_RE.finditer(text)
+                  if not any(start <= match.start() < end for start, end in decimals)]
+    for end in [*boundaries, len(text)]:
+        chunk = text[cursor:end]
         chunk_clean = chunk.strip()
-        if not chunk_clean:
-            cursor += len(chunk) + 1  # +1 for the consumed delimiter
-            continue
-        idx = text.find(chunk_clean, cursor)
-        if idx < 0:
-            idx = cursor
-        out.append((idx, chunk_clean))
-        cursor = idx + len(chunk_clean)
+        if chunk_clean:
+            out.append((cursor + len(chunk) - len(chunk.lstrip()), chunk_clean))
+        cursor = end
     return out
 
 
@@ -533,7 +532,7 @@ def _extract_p_values(
     out: list[QuantClaim] = []
     for m in _P_VALUE_RE.finditer(text):
         try:
-            value = float(m.group(3))
+            value = float(re.sub(r"\s+", "", m.group(3)))
         except ValueError:
             continue
         out.append(QuantClaim(
