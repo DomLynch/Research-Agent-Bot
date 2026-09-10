@@ -35,8 +35,8 @@ these recovery canaries.
 - Mypy: passed for 179 source files. No complexity, duplication or LOC ceiling
   was raised. Obsolete explanatory history was condensed in citation helpers.
 - Focused source/QEI/writer/submission checks: 553 passed.
-- Exact runtime tested in the isolated VPS checkout
-  `/tmp/v3-recovery-review-parity-20260910`.
+- Isolated VPS checks: 144 passed; seven tests skipped because their parsed-PDF
+  fixtures are absent. Runtime checkout: `/tmp/v3-recovery-review-parity-20260910`.
 - Local receipts: `/tmp/v3-final-source-review-suite.log`,
   `/tmp/v3-qei-consistency-quality-2.log`,
   `/tmp/v3-qei-consistency-mypy.log`.
@@ -83,7 +83,8 @@ metadata; produce a substantive supported Conclusion; and retain unresolved
 review findings until a new full-manuscript review resolves them. Then require
 fresh six-ask coverage, all final gates, a normal Core decision and a verified
 public artifact. Repeat across distinct topics, including a revision, before
-describing publishing as standardized.
+describing publishing as standardized. Preserve the existing 400-word Results
+and 180-word Conclusion minimums throughout this recovery.
 
 Replay artifacts are under `.tmp/v3-standardized/runs/`, especially
 `synthesis-resveratrol-parity-replay-20260910` and
