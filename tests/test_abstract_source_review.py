@@ -29,12 +29,13 @@ def test_own_abstract_record_requires_exact_review_and_documented_count(change):
 
 
 @pytest.mark.parametrize("supported", [True, False])
-def test_native_abstract_writer_uses_author_records_and_respects_negative_review(monkeypatch, supported):
+@pytest.mark.parametrize("bare", [False, True])
+def test_native_abstract_writer_uses_author_records_and_respects_negative_review(monkeypatch, supported, bare):
     records = {"source_count": 37, "question": "How do study designs affect interpretation?"}
     proposed = {"paragraphs": [{"text": "This map analyzes 37 retained sources.", "receipt_ids": []}]}
     calls = []
     async def writer(**kwargs):
-        return deepcopy(proposed)
+        return deepcopy(proposed["paragraphs"][0] if bare else proposed)
     async def reviewer(**kwargs):
         packet = json.loads(kwargs["messages"][1]["content"])
         calls.append(packet)

@@ -3496,7 +3496,7 @@ def _manifest_direction_heterogeneity_note(rows: list[dict[str, Any]]) -> str:
         if len(directions) < 2:
             continue
         cells = [
-            f"{direction}={len(labels)} ({', '.join(list(dict.fromkeys(labels))[:3])})"
+            f"{direction}={len(labels)} ({', '.join(dict.fromkeys(labels))})"
             for direction, labels in sorted(directions.items())
         ]
         parts.append(f"{outcome}: " + "; ".join(cells))

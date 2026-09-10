@@ -37,6 +37,14 @@ def _matrix(*pairs: Tension) -> TensionMatrix:
     return TensionMatrix(receipts=tuple(), pairs=tuple(pairs))
 
 
+def test_discussion_descriptive_categories_do_not_claim_appraisal_or_weighting():
+    text = build_discussion_anchor([_r("source")], _matrix())
+    assert "no formal weighting or study-level appraisal is inferred" in text
+    assert "its size alone cannot establish certainty" in text
+    assert "are therefore weighed together" not in text
+    assert "strongest basis for practical inference" not in text
+
+
 def _t(a, b, *, kind="orthogonal", cls="longevity", sev=0) -> Tension:
     return Tension(
         receipt_a_id=a, receipt_b_id=b,

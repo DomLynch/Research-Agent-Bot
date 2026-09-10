@@ -61,3 +61,12 @@ def test_rendered_methods_retains_required_directness_criteria():
         corpus_search_queries=[], n_retrieved=None, n_screened=None,
         n_included=37, n_rejected=None, outcome_classes=[])
     assert _directness_coding_criteria_are_stated(render_methods_md(pack, submission_id="test"))
+
+
+def test_direction_count_includes_every_named_source_in_its_roster():
+    from journal_finalizer import _manifest_direction_heterogeneity_note
+    rows = [{"citation_token": f"Study{i} 2020", "outcome_class": "cognitive", "directness": "direct",
+             "effect_direction": "unclear" if i < 4 else "positive"} for i in range(5)]
+    note = _manifest_direction_heterogeneity_note(rows)
+    assert "unclear=4" in note
+    assert all(row["citation_token"] in note for row in rows)

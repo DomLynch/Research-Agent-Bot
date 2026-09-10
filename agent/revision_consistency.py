@@ -282,8 +282,8 @@ def _claim_total(rows: Sequence[dict[str, Any]]) -> int:
 def _claim_total_note(rows: Sequence[dict[str, Any]]) -> str:
     return (
         f"Claim-count reconciliation: The authoritative all-corpus total is {_claim_total(rows)} "
-        f"high-confidence extracted claims, computed from extracted-claim counts across {len(rows)} "
-        "included sources; outcome slices partition this total and are not additional claims."
+        f"extracted claims, computed from extracted-claim counts across {len(rows)} "
+        "included sources; outcome slices partition this total and are not additional claims. This inventory count does not establish claim certainty."
     )
 
 
