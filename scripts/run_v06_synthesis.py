@@ -1391,11 +1391,6 @@ def _source_outcome_class(current: str, record: dict, claims: list[dict]) -> str
     return current
 
 
-def _source_result_excerpts(paper_meta: dict) -> tuple[str, ...]:
-    from quant_claim_extract import source_result_excerpts
-    return source_result_excerpts(paper_meta)
-
-
 def _aggregate_paper(claims: list[dict], *, paper_meta: dict | None = None) -> dict[str, Any]:
     """Roll claims into a significance-aware per-paper summary."""
     from agent.results_table import _owned_result_sentence
@@ -1708,9 +1703,7 @@ def _load_active_paper_ids() -> set[str] | None:
     return {str(x) for x in ids if str(x).strip()} or None
 
 
-def _load_frozen_retrieval_record(
-    source_run: Path | None,
-) -> FrozenRetrievalRecord:
+def _load_frozen_retrieval_record(source_run: Path | None) -> FrozenRetrievalRecord:
     """Freeze explicit retrieval evidence; never infer it from receipts."""
     manifest_path = source_run / "manifest.json" if source_run is not None else QUANT_DIR.parent / "corpus_manifest.json"
     payload = _optional_json_snapshot(manifest_path)
@@ -1723,12 +1716,8 @@ def _load_frozen_retrieval_record(
         audit["extraction_counts"] = {key.removeprefix("n_"): value for key, value in extraction.items()
                                       if key.startswith("n_") and type(value) is int and value >= 0}
     n_active = len(_load_active_paper_ids() or ())
-    return dataclasses.replace(
-        record,
-        n_parsed=record.n_parsed or n_active,
-        n_extracted=record.n_extracted or n_active,
-        audit=audit,
-    )
+    return dataclasses.replace(record, n_parsed=record.n_parsed or n_active,
+                               n_extracted=record.n_extracted or n_active, audit=audit)
 
 
 def _strict_clinical_receipt_scope() -> bool:
@@ -1986,6 +1975,7 @@ def build_receipts_from_quant_claims(
     authorized_contract_fields: dict[str, set[str]] | None = None,
 ) -> list[ReceiptSummary]:
     """Build one role-aware receipt per contributing quant-claim paper."""
+    from quant_claim_extract import source_result_excerpts
     paper_meta_by_id = _load_paper_meta_by_id()
     active_paper_ids = None if receipt_ids else _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
@@ -2084,7 +2074,7 @@ def build_receipts_from_quant_claims(
             source_doi=meta.get("doi"),
             source_pmid=meta.get("pmid"),
             source_venue=meta.get("journal"),
-            source_result_excerpts=_source_result_excerpts(meta),
+            source_result_excerpts=source_result_excerpts(meta),
         )
         receipt = dataclasses.replace(
             receipt, directness=effective_directness(receipt),
@@ -3018,6 +3008,7 @@ async def _run(
         "tiered validation)...",
         file=sys.stderr,
     )
+    (out_dir / "manifest.json").write_text(json.dumps({"topic": topic, "receipts": [dataclasses.asdict(r) for r in receipts]}, indent=2))
     bglit_entries = list(_bglit.load_registry().values())
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(

@@ -1,15 +1,4 @@
-"""PRISMA-bridge appendix builder.
-
-Reviewer wave 9 (2026-05-05): journal reviewers expect a structured
-search-and-selection disclosure even when the paper is explicitly NOT
-a PRISMA-compliant systematic review. This module provides the
-journal-polite middle ground: full disclosure of search strings,
-inclusion/exclusion criteria, and screening counts, without
-overclaiming PRISMA 2020 compliance.
-
-Lives in its own module to keep agent/manuscript_appendix.py under
-the 600-line per-file budget. Imported and called by compose_appendix.
-"""
+"""Disclose recorded search, selection and extraction stages without claiming PRISMA compliance."""
 from __future__ import annotations
 
 from collections import Counter

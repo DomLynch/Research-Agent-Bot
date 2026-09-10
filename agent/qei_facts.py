@@ -14,6 +14,9 @@ from agent.revision_evidence import load_revision_evidence
 
 FIELDS = ("receipt_id", "source_result_quote", "result_span", "endpoint", "comparison", "estimate", "uncertainty", "significance")
 HEADERS = ("Study", "Endpoint", "Study comparison", "Reported estimate", "Uncertainty", "Significance", "Source result clause")
+SURFACE_FIELDS = {3: ("study_label", "source_context", "source_value"),
+                  6: ("study_label", "endpoint", "arm", "value", "unit_or_type", "statistic"),
+                  7: ("study_label", "endpoint", "comparison", "estimate", "uncertainty", "significance", "result_span")}
 PROMPT = """Extract up to 32 quantitative result rows, at most four per study. Return {"rows":[{"receipt_id":"...","source_result_quote":"...","result_span":"...","endpoint":"...","comparison":"...","estimate":"...","uncertainty":null,"significance":null}]}.
 Every non-null text must be an EXACT contiguous source quote, preserving case, signs, precision and spacing. source_result_quote must equal one complete own_result_sentences entry. result_span must be one contiguous clause from that quote naming the endpoint and its estimate, with at most ONE p-value. Never splice clauses. endpoint, estimate, uncertainty and significance must each occur verbatim in result_span.
 comparison must be a self-contained exact quote from abstract or methods naming treatment and comparator. Preserve combinations, shared co-interventions, within-group changes and correlations. Study randomization does not turn these into between-group treatment effects. Never attribute a comparator's result to the intervention.
@@ -42,6 +45,20 @@ def source_entries(run: Path, topic: str, tokens: Mapping[str, str]) -> list[dic
 def _literal_span(value: str, text: str, *, numeric: bool = False) -> bool:
     before = r"(?<![\w.+−–\-±/<>=≤≥])" if numeric else (r"(?<!\w)" if value[:1].isalnum() else "")
     return bool(value and re.search(before + re.escape(value) + r"(?!\w|[.,]\d)", text))
+
+
+def surface_row_issues(row: dict[str, str]) -> tuple[str, ...]:
+    return ("QEI fields missing or not traced to result clause",) if (
+        any(not row.get(key, "").strip() for key in SURFACE_FIELDS[7])
+        or not _literal_span(row["estimate"], row["result_span"], numeric=True)
+        or not _literal_span(row["endpoint"], row["result_span"])
+    ) else ()
+
+
+def surface_row_dict(row: Any) -> dict[str, str]:
+    if isinstance(row, dict):
+        return {str(k): str(v) for k, v in row.items()}
+    return {key: str(getattr(row, key, "")) for key in SURFACE_FIELDS[3 if hasattr(row, "source_context") else 6]}
 
 
 def row_issue(row: Any, entries: Mapping[str, dict[str, Any]]) -> str:
@@ -113,6 +130,8 @@ def saved_table(run: Path, topic: str, tokens: Mapping[str, str]) -> str:
 
 
 async def prepare_table(run: Path, topic: str, tokens: Mapping[str, str], **call_options: Any) -> str:
+    if (run / "qei_facts.json").exists():
+        return saved_table(run, topic, tokens)
     entries = source_entries(run, topic, tokens)
     response = await chat_json(messages=[{"role": "system", "content": PROMPT},
                                          {"role": "user", "content": json.dumps(entries)}], **call_options)

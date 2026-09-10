@@ -785,7 +785,6 @@ async def render_full_paper(
     # match). Pass the resulting set to build_results_table so the
     # QEI only shows papers that actually became receipts in this
     # synthesis. Universal — same logic for every topic.
-    from pathlib import Path as _Path
     from agent.results_table import (
         build_results_table_with_diagnostic,
         format_empty_qei_placeholder,
@@ -794,15 +793,16 @@ async def render_full_paper(
     _repo = _Path(__file__).resolve().parent.parent
     _quant_dir = _repo / "docs" / "quality-reference" / topic / "quant_claims"
     _parsed_dir = _repo / "docs" / "quality-reference" / topic / "parsed"
-    _accepted_paper_ids = resolve_accepted_paper_ids(
-        receipts, _parsed_dir,
-    )
-    _table_md, _qei_diag = build_results_table_with_diagnostic(
-        _quant_dir, topic=topic, parsed_dir=_parsed_dir,
-        accepted_paper_ids=_accepted_paper_ids,
-        citation_tokens_by_paper_id=qei_citation_tokens_by_paper_id,
-        quarantine_path=qei_quarantine_path,
-    )
+    if qei_quarantine_path is not None and qei_citation_tokens_by_paper_id:
+        from agent.qei_facts import prepare_table
+        _table_md = await prepare_table(_Path(qei_quarantine_path).parent, topic, qei_citation_tokens_by_paper_id,
+                                       chain=chain, client=client, ledger=ledger, seed=seed, temperature=0.0)
+        _qei_diag = {"n_rendered": _table_md.count("\n|") - 2}
+    else:
+        _table_md, _qei_diag = build_results_table_with_diagnostic(
+            _quant_dir, topic=topic, parsed_dir=_parsed_dir, accepted_paper_ids=resolve_accepted_paper_ids(receipts, _parsed_dir),
+            citation_tokens_by_paper_id=qei_citation_tokens_by_paper_id, quarantine_path=qei_quarantine_path,
+        )
     # Slice 1 closeout (2026-05-05): empty QEI gets a *diagnostic*
     # placeholder so reviewers see whether the corpus had zero
     # claims, all dropped at confidence gate, or all dropped by
@@ -815,10 +815,7 @@ async def render_full_paper(
         body_md=_table_md,
         anchors=(),
     )
-    _log_section_done(
-        "quantitative_results_table (deterministic)",
-        sections["quantitative_results_table"],
-    )
+    _log_section_done("quantitative_results_table", sections["quantitative_results_table"])
     sections["methods"] = build_methods_section(
         receipts, topic=topic, submission_id=submission_id,
     )

@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import Any, Iterable
 
 from agent.outcome_class_remap import outcome_key
+from agent.qei_facts import surface_row_dict as _row_to_dict
 from agent.review_type import COMPACT_REVIEW_TYPES
 
 
@@ -294,6 +295,9 @@ def is_publishable_qei_row(row: Any) -> bool:
 
 
 def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
+    if "result_span" in row:
+        from agent.qei_facts import surface_row_issues
+        return surface_row_issues(row)
     if "source_context" in row:
         context, raw = (re.sub(r"([+\-−–])\s+(?=\d)", r"\1",
                                re.sub(r"\s*([=<>≤≥])\s*", r"\1", " ".join(value.split()).casefold()))
@@ -328,16 +332,11 @@ def qei_row_issue_messages(row: dict[str, str]) -> tuple[str, ...]:
     return tuple(issues)
 
 
-_QEI_FIELDS = {
-    3: ("study_label", "source_context", "source_value"),
-    6: ("study_label", "endpoint", "arm", "value", "unit_or_type", "statistic"),
-}
-
-
 def _extract_qei_rows(paper_md: str) -> Iterable[dict[str, str]]:
+    from agent.qei_facts import SURFACE_FIELDS
     return tuple(
-        dict(zip(_QEI_FIELDS[len(cells)], cells))
-        for _, cells, _ in _qei_cells(paper_md) if len(cells) in _QEI_FIELDS
+        dict(zip(SURFACE_FIELDS[len(cells)], cells))
+        for _, cells, _ in _qei_cells(paper_md) if len(cells) in SURFACE_FIELDS
     )
 
 
@@ -356,6 +355,8 @@ def _qei_cells(paper_md: str) -> Iterable[tuple[str, list[str], int]]:
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if cells == ["Study", "Source context", "Raw statistic"]:
             expected = 3
+        elif cells == ["Study", "Endpoint", "Study comparison", "Reported estimate", "Uncertainty", "Significance", "Source result clause"]:
+            expected = 7
         elif cells[:6] != ["Study", "Endpoint", "Arm", "Value", "Type", "Statistic"]:
             yield line, cells, expected
 
@@ -931,11 +932,6 @@ def _section_body(paper_md: str, heading: str) -> str | None:
     return m.group(1) if m else None
 
 
-def _row_to_dict(row: Any) -> dict[str, str]:
-    if isinstance(row, dict):
-        return {str(k): str(v) for k, v in row.items()}
-    keys = _QEI_FIELDS[3 if hasattr(row, "source_context") else 6]
-    return {key: str(getattr(row, key, "")) for key in keys}
 
 
 def _malformed_study_id(study: str) -> bool:

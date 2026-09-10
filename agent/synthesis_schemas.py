@@ -1,8 +1,4 @@
-"""Synthesis-layer schemas.
-
-LLM proposes; code disposes. These frozen dataclasses carry receipt
-summaries, tensions, thesis candidates, anchored prose, and audit state.
-"""
+"""Frozen synthesis records: proposed facts remain subject to source and manuscript checks."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -109,17 +105,7 @@ TensionKind = Literal[
 
 @dataclass(frozen=True, slots=True)
 class ReceiptSummary:
-    """Compact structured view of one claim receipt.
-
-    Built deterministically from the 8 receipt JSON files (claim_graph,
-    spar_review, evidence_cards). The synthesis layer operates on these
-    summaries, not the raw receipt dirs — keeps the multi-receipt
-    surface small and predictable.
-
-    `outcome_class` and `endpoint_directions` are the load-bearing fields
-    for tension detection; `effect_direction` is the descriptive paper rollup.
-    They're derived from claim text + supporting evidence_cards, not LLM-inferred.
-    """
+    """Source-derived receipt summary; outcome_class and endpoint_directions drive tensions, while effect_direction describes the paper rollup."""
 
     receipt_id: str                # output_dir leaf (e.g. metformin-001-...-abcd)
     receipt_path: str              # filesystem path to the receipt dir
@@ -158,11 +144,7 @@ class ReceiptSummary:
 
 @dataclass(frozen=True, slots=True)
 class Tension:
-    """One pairwise tension between two receipts.
-
-    The (receipt_a_id, receipt_b_id) pair is canonicalized so the
-    comparison `< b` always holds — the matrix doesn't double-count.
-    """
+    """A unique receipt pair, canonicalized with receipt_a_id < receipt_b_id."""
 
     receipt_a_id: str
     receipt_b_id: str
@@ -175,13 +157,7 @@ class Tension:
 
 @dataclass(frozen=True, slots=True)
 class TensionMatrix:
-    """The full pairwise tension structure across N receipts.
-
-    `pairs` is canonical (sorted by receipt_a_id, receipt_b_id). The
-    synthesis writer reads this to render the Tensions section and to
-    drive thesis-candidate validation (a synthesis thesis MUST address
-    ≥1 tension when the matrix has any non-orthogonal entry).
-    """
+    """Canonical receipt pairs; a thesis must address a non-orthogonal tension when one exists."""
 
     receipts: tuple[ReceiptSummary, ...]
     pairs: tuple[Tension, ...]
@@ -196,19 +172,7 @@ class TensionMatrix:
 
 @dataclass(frozen=True, slots=True)
 class SynthesisClaimAnchor:
-    """A single sentence in the synthesis paper, with its receipt anchors.
-
-    Trust contract for synthesis prose: every sentence written by the
-    LLM must produce one of these. `receipt_ids` lists the receipt_id(s)
-    the sentence is grounded in. The synthesis writer's validator
-    rejects any sentence with no anchor or with anchors that reference
-    unknown receipts.
-
-    `numerics` is the set of numeric tokens (p-values, percentages,
-    HR/OR/RR values) the sentence cites. Code disposes by checking each
-    numeric appears in at least one anchored receipt's claim_graph or
-    citation_traces — no new numerics may enter the synthesis layer.
-    """
+    """One proposed sentence, known receipt anchors, and numeric tokens that code must verify against those receipts."""
 
     sentence: str
     receipt_ids: tuple[str, ...]
@@ -220,13 +184,7 @@ class SynthesisClaimAnchor:
 
 @dataclass(frozen=True, slots=True)
 class SynthesisThesisCandidate:
-    """One LLM-proposed candidate for the synthesis thesis.
-
-    Day 10.3 thesis tournament: the LLM proposes K candidates (default 3),
-    each is validated by code (referenced receipts exist, tensions
-    addressed, no new numerics), the picker selects by deterministic
-    score (receipts_referenced > tensions_addressed > brevity).
-    """
+    """Proposed thesis, validated for receipt identity, tension coverage and numeric support before deterministic selection."""
 
     text: str
     receipt_ids_referenced: tuple[str, ...]
@@ -292,13 +250,7 @@ SectionName = Literal[
 
 @dataclass(frozen=True, slots=True)
 class SynthesisSection:
-    """One section of the synthesis paper.
-
-    `body_md` is the rendered markdown for the section. `anchors` lists
-    the per-sentence claim anchors for the LLM-generated sections (empty
-    tuple for deterministic sections — `evidence_summary`,
-    `direct_evidence`, etc.).
-    """
+    """Section markdown plus per-sentence anchors; deterministic sections have no generated anchors."""
 
     name: SectionName
     body_md: str
@@ -307,12 +259,7 @@ class SynthesisSection:
 
 @dataclass(frozen=True, slots=True)
 class SynthesisPaper:
-    """The assembled synthesis artifact.
-
-    `body_md` is the full paper as markdown — what gets written to
-    `paper_synthesis.md`. `sections` carries the structured pieces so
-    audit code can inspect them individually.
-    """
+    """Full manuscript and structured sections retained for audit."""
 
     submission_id: str
     topic: str
@@ -328,18 +275,7 @@ class SynthesisPaper:
 
 @dataclass(frozen=True, slots=True)
 class QualityCheckResult:
-    """One quality-checklist question evaluated against the synthesis paper.
-
-    The 7 questions live in `agent/prompts/judge_quality_checklist.md`,
-    each keyed to a paper from the 7-paper Quality Reference Corpus.
-
-    Day 10.7 (reviewer P2): `applicable=False` means the corpus lacks
-    the evidence type this check evaluates (e.g. no null receipts to
-    test Q2, no safety receipts to test Q6). Vacuous passes (corpus
-    has nothing to check) MUST NOT inflate the audit score — the
-    aggregate is `passed_applicable / total_applicable * 10`, with a
-    minimum-applicable floor before the score is meaningful.
-    """
+    """A rubric check; inapplicable checks cannot inflate scores, and minimum applicable coverage is required."""
 
     question_id: str                # e.g. "Q1-konopka-p008-hedging"
     question: str
@@ -351,12 +287,7 @@ class QualityCheckResult:
 
 @dataclass(frozen=True, slots=True)
 class SynthesisQualityAudit:
-    """The full audit of the synthesis paper against the rubric.
-
-    `score` is the count of passed checks divided by total, scaled to
-    /10. Day 10 ship criterion: ≥8.5/10. Below that, the synthesis is
-    not publishable.
-    """
+    """Applicable rubric checks and their score; publication also requires the current manuscript gates."""
 
     submission_id: str
     checks: tuple[QualityCheckResult, ...]
@@ -372,13 +303,7 @@ class SynthesisInvariantError(AssertionError):
 
 
 def assert_synthesis_invariants(paper: SynthesisPaper) -> None:
-    """Verify the synthesis paper is structurally well-formed.
-
-    - thesis must reference ≥1 receipt
-    - tensions matrix must be canonical (sorted pairs)
-    - every LLM-generated section's anchors must reference real receipts
-    - sections list must include thesis + evidence_summary + references at minimum
-    """
+    """Require a receipt-grounded thesis, canonical tension pairs, valid section anchors and mandatory sections."""
     if not paper.thesis.receipt_ids_referenced:
         raise SynthesisInvariantError(
             "synthesis thesis must reference at least one receipt"

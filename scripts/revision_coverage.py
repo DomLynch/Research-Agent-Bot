@@ -2216,7 +2216,7 @@ def _quantitative_evidence_rows(paper_md: str) -> list[tuple[str, ...]]:
     rows: list[tuple[str, ...]] = []
     for line in _section(paper_md, "Quantitative Evidence Index").splitlines():
         cells = tuple(cell.strip() for cell in line.strip().strip("|").split("|"))
-        if len(cells) != 6 or not any(cells) or cells[0].lower() == "study" or all(
+        if len(cells) not in {6, 7} or not any(cells) or cells[0].lower() == "study" or all(
             cell and set(cell) <= {"-", ":"} for cell in cells
         ):
             continue
@@ -2229,6 +2229,10 @@ _NORMALIZED_P_VALUE_RE = re.compile(r"P\s+(?:=|<|>|\u2264|\u2265)\s+(0(?:\.\d+)?
 
 def _p_value_rows_are_normalized(rows: list[tuple[str, ...]], *, required: bool) -> bool:
     p_rows = [row for row in rows if row[4].lower() in {"p-value", "p value", "p_value"}]
+    for row in rows:
+        if len(row) == 7 and re.match(r"[pP]\s*[=<>≤≥]", row[5]):
+            value = re.sub(r"\s*([=<>≤≥])\s*", r" \1 ", row[5].upper())
+            p_rows.append(("", "", "", re.sub(r" ([.])", r" 0\1", value), "p-value", ""))
     return (not required or bool(p_rows)) and all(
         (match := _NORMALIZED_P_VALUE_RE.fullmatch(row[3])) is not None
         and float(match.group(1)) > 0 for row in p_rows

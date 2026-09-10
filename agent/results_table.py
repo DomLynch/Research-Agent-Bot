@@ -430,10 +430,7 @@ def _confidence_admissible(claim: dict[str, Any]) -> bool:
 def resolve_accepted_paper_ids(
     receipts: Any, parsed_dir: Path,
 ) -> frozenset[str]:
-    """Match accepted receipts to parsed paper IDs by DOI/PMID.
-
-    Empty means no matched evidence; callers must choose their fallback explicitly.
-    """
+    """Match DOI/PMID identities; an empty set means no matched evidence."""
     if not parsed_dir.exists():
         return frozenset()
     receipt_dois: set[str] = set()
@@ -464,10 +461,7 @@ def resolve_accepted_paper_ids(
 
 
 def _load_topic_arm_terms(topic: str) -> frozenset[str]:
-    """Return lowercased active+placebo arm synonyms from the topic
-    pack. Empty set if the pack is missing — caller treats empty as
-    'no filter' for back-compat. Used by _arm_belongs_to_topic to
-    drop cross-topic-arm rows from the table."""
+    """Load topic and comparator terms; a missing pack supplies no arm filter."""
     repo = Path(__file__).resolve().parent.parent
     tp_path = repo / "topic_packs" / f"{topic}.toml"
     try:
@@ -488,13 +482,7 @@ def _load_topic_arm_terms(topic: str) -> frozenset[str]:
 def _arm_belongs_to_topic(
     claim: dict[str, Any], topic_arm_terms: frozenset[str],
 ) -> bool:
-    """Filter out claims whose arm references a non-topic drug.
-
-    - Empty topic_arm_terms (pack missing) → no filtering (back-compat).
-    - Empty claim arm → kept (no cross-topic signal to filter on).
-    - Non-empty arm: must match (case-insensitive substring) at least
-      one topic-pack arm synonym OR be a generic comparator term.
-    """
+    """Require a topic/comparator match when both arm and topic terms are known."""
     arm = (claim.get("arm") or "").strip().lower()
     # Match by substring containment in either direction so 'low-dose
     # aspirin' matches 'aspirin' and vice versa.
