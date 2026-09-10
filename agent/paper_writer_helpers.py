@@ -9,7 +9,7 @@ from collections.abc import Sequence
 import httpx
 
 from agent.llm_client import CallSpec, CostLedger, chat_json
-from agent.journal_surface_gate import _SECTION_CEILINGS
+from agent.journal_surface_gate import _SECTION_CEILINGS, manuscript_word_count
 from agent.synthesis_schemas import ReceiptSummary, SynthesisSection
 from agent.synthesis_writer import filter_accepted
 from agent.outcome_class_remap import outcome_display
@@ -34,13 +34,11 @@ def build_research_question(receipts: Sequence[ReceiptSummary], *, topic: str) -
     _repo = Path(__file__).resolve().parent.parent
     accepted = list(filter_accepted(receipts))
     outcome_counts = Counter(r.outcome_class for r in accepted)
-    population_counts = Counter(" ".join(r.population_summary.split())[:120].rstrip(" ,.;") for r in accepted)
-    population_counts.pop("", None)
+    populations = {" ".join(r.population_summary.split()).rstrip(" ,.;") for r in accepted}
     ranked_outcomes = sorted(outcome_counts, key=lambda name: (-outcome_counts[name], name))
     outcome_scope = " and ".join(outcome_display(name).lower() for name in ranked_outcomes[:2])
     outcome_scope = outcome_scope or "the primary retained outcomes"
-    populations = sorted(population_counts, key=lambda name: (-population_counts[name], name))
-    population_scope = populations[0] if populations else "the populations represented by admitted sources"
+    population_scope = next(iter(populations)) if len(populations) == 1 and "" not in populations else "the populations represented by admitted sources"
     return (
         f"Within the retained source corpus for {humanize_topic(topic, root=_repo)}, among {population_scope}, "
         f"what do findings for {outcome_scope} show, and how do population, "
@@ -98,7 +96,7 @@ def section_word_count(section: SynthesisSection) -> int:
     """
     lines = section.body_md.split("\n")
     body = "\n".join(lines[1:]) if lines else ""
-    return len(re.findall(r"\b\w+\b", strip_rendered_citation_markers(body)))
+    return manuscript_word_count(strip_rendered_citation_markers(body))
 
 
 def strip_rendered_citation_markers(markdown: str) -> str:

@@ -10,6 +10,19 @@ from agent.methods_pack import REQUIRED_METHODS_H3_MARKERS
 from agent.results_table import EvidenceRow
 
 
+def test_source_urls_neither_inflate_word_floors_nor_exhaust_abstract_budget():
+    from agent.journal_surface_gate import _section_issue_messages, manuscript_word_count
+    from agent.paper_writer_helpers import section_word_count
+    from agent.synthesis_schemas import SynthesisSection
+    link = "https://doi.org/10.1234/very-long-source-identifier-with-many-segments"
+    assert manuscript_word_count(f"Supported finding [Source]({link}).") == 3
+    abstract = "## Abstract\n\n" + "word " * 295 + link
+    assert not any("Abstract" in issue for issue in _section_issue_messages(abstract))
+    assert section_word_count(SynthesisSection(name="abstract", body_md=abstract, anchors=())) == 295
+    assert any("Abstract 301/300" in issue for issue in _section_issue_messages("## Abstract\n\n" + "word " * 301 + link))
+    assert any("Results 399/400" in issue for issue in _section_issue_messages("## Results\n\n" + "word " * 399 + link))
+
+
 def _words(n: int, prefix: str = "word") -> str:
     return " ".join(f"{prefix}{i}" for i in range(n))
 

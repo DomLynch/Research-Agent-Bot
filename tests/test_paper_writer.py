@@ -64,6 +64,24 @@ def _matrix(receipts) -> TensionMatrix:
     return TensionMatrix(receipts=tuple(receipts), pairs=())
 
 
+@pytest.mark.parametrize("minority", ["adolescents", "mice", ""])
+def test_question_does_not_exclude_minority_or_unknown_populations(minority):
+    from dataclasses import replace
+    receipts = [_summary("adult-a"), _summary("adult-b"),
+                replace(_summary("other"), population_summary=minority)]
+    question = paper_writer.build_research_question(receipts, topic="semaglutide_effects")
+    assert "among older adults" not in question
+    assert "populations represented by admitted sources" in question
+    assert question == paper_writer.build_research_question(list(reversed(receipts)), topic="semaglutide_effects")
+
+
+def test_question_retains_uniform_population_and_ignores_rejected_sources():
+    from dataclasses import replace
+    receipts = [_summary("adult-a"), _summary("adult-b"),
+                replace(_summary("rejected", spar_verdict="reject"), population_summary="mice")]
+    assert "among older adults" in paper_writer.build_research_question(receipts, topic="resistance_training")
+
+
 # ============================================================
 # Day 10.17 Fix A — accepted-only LLM writer context
 # ============================================================

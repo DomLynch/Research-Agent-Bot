@@ -13,8 +13,7 @@ from agent.review_type import COMPACT_REVIEW_TYPES
 
 def _fold(text: str) -> str:
     # NFKD-fold + strip combining marks + casefold for citation matching.
-    nfkd = unicodedata.normalize("NFKD", text)
-    return "".join(c for c in nfkd if not unicodedata.combining(c)).casefold()
+    return "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c)).casefold()
 
 
 # Bug-fix 2026-05-14: animal/preclinical citations blended into human
@@ -361,6 +360,11 @@ def _qei_cells(paper_md: str) -> Iterable[tuple[str, list[str], int]]:
             yield line, cells, expected
 
 
+def manuscript_word_count(body: str) -> int:
+    """Count prose and link labels; URL destinations do not contribute words."""
+    return len(re.findall(r"\b\w+\b", re.sub(r"https?://[^\s\]<>)]*", "", body)))
+
+
 def _section_issue_messages(paper_md: str, declared_review_type: str | None = None) -> tuple[str, ...]:
     required = _REQUIRED_SECTIONS_THIN if declared_review_type in COMPACT_REVIEW_TYPES else _REQUIRED_SECTIONS
     issues: list[str] = []
@@ -369,7 +373,7 @@ def _section_issue_messages(paper_md: str, declared_review_type: str | None = No
         if body is None:
             issues.append(f"missing required section: {heading}")
             continue
-        n = len(re.findall(r"\b\w+\b", body))
+        n = manuscript_word_count(body)
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
         if (ceiling := _SECTION_CEILINGS.get(heading)) is not None and n > ceiling:
