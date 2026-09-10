@@ -446,7 +446,8 @@ def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = Fal
     claim = context_key(re.sub(r"^finding\s*=\s*", "", context, flags=re.I))
     return any((not context or claim != context_key(stat) and claim == context_key(clause))
                and any(key(match.group()) == key(stat) for match in _EFFECT_STAT_RE.finditer(clause))
-               for sentence in _sentences(evidence) for clause in (sentence, *sentence.split(";")))
+               for passage in evidence.splitlines() for sentence in _sentences(passage)
+               for clause in (sentence, *sentence.split(";")))
 
 
 def _p_relations(text: str) -> tuple[tuple[str, str], ...]:

@@ -32,7 +32,7 @@ def test_unverified_excerpt_does_not_become_a_finding():
 @pytest.mark.parametrize("change", [None, "value", "operator", "endpoint", "unverified", "source"])
 def test_results_statistic_requires_verified_owned_complete_clause(change):
     source = "Symptoms decreased with treatment versus placebo (p < 0.05) (Table 2)."
-    row = {"verified_abstract": "The study compared treatment and placebo.",
+    row = {"verified_abstract": "The study compared treatment and placebo.\nKeywords: symptoms, treatment",
            "verified_source_sections": True, "source_result_excerpts": [source]}
     claim = manifest_row_finding(row)
     if change == "value":

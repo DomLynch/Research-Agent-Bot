@@ -1,10 +1,12 @@
 # V3 publishing recovery — audited status, 10 September 2026
 
 Publishing recovery is **not complete**. Step 1 is deployed and verified.
-The broader repairs are committed and tested, but the full manuscript replay
-has not yet passed scientific review. A second curated-map replay is running
-after the first identified incorrect attribution of our own Methods to external
-studies. No recovery submission or publication has been made.
+The latest full manuscript replay preserves a substantive 447-word Conclusion,
+resolves all eight scientific-review patches, and passes 14/14 structural audits.
+The subsequent rendering audit removes two external table locators without
+changing source files. The normal six-request structural gate now passes;
+a fresh full scientific review and final payload check are next. No recovery
+submission or publication has been made.
 
 ## Five-step status
 
@@ -12,8 +14,8 @@ studies. No recovery submission or publication has been made.
 |---|---|---|
 | 1. Bound reconciliation and revision startup | Durable, fair polling with a 60-second budget, bounded individual requests, atomic checkpoints and preservation of partial valid results. | **Complete for reconciliation.** Two actual production service runs finished in 57–58 seconds with exit 0; 80 distinct IDs were retained across passes. This does not prove that a scientific revision completes. |
 | 2. Correct source records, QEI and Methods | Authorized classification corrections preserve all 37 identities. Historical retrieval records distinguish 4,286 metadata candidates, 1,384 retained at metadata selection and 114 extracted records from the 37 admitted receipts. QEI exposes endpoint, study comparison, estimate, uncertainty, significance and exact result clause. | **Open.** Full-source QEI review retained 30 of 31 rows and quarantined an internally conflicting statistic. All six stored revision asks pass structural coverage, but final scientific coverage and manuscript framing remain unproven. |
-| 3. Preserve completeness through repair | Fixed sentence boundaries, numeric-role mistakes, exact-quote formatting and overly aggressive paragraph similarity. Methods are rendered before review; reviewers receive verified source evidence. | **Open.** The original complete run wrote a 484-word Conclusion and ended at 67. A later repair wrote 428 words, but review correctly found an excerpt collection rather than a synthesis; the final Conclusion had 0 words. Required-section gates blocked it. |
-| 4. Align publishing contracts | Current reviewer-v15 policy retained. No model, acceptance threshold, source identity or section-floor waiver. Writer/reviewer source context now includes complete own-result passages, including conflicting passages. | **Partially verified.** A deterministic replay passes 14/14 audits and removes 25 surface failures, leaving the Conclusion blocker. Full semantic review still finds question/methods/synthesis defects. |
+| 3. Preserve completeness through repair | Fixed sentence boundaries, numeric-role mistakes, exact-quote formatting and overly aggressive paragraph similarity. Methods are rendered before review; reviewers receive verified source evidence. | **Manuscript repair verified.** The latest configured writer produced 437 words; the normal full-review/repair pipeline retained 447, with no numeric issues, all eight review patches resolved and all source hashes unchanged. Final payload and live revision remain to be proved. |
+| 4. Align publishing contracts | Current reviewer-v15 policy retained. No model, acceptance threshold, source identity or section-floor waiver. Writer/reviewer source context now includes complete own-result passages, including conflicting passages. | **Partially verified.** Latest replay passes 14/14 audits. Private source/author-record review preserves justified prose; normal numeric, citation, depth and Core acceptance gates remain. Rendering audit clears the two orphan source-table references and verifies Findings Map statistics against full own-source Results. |
 | 5. Prove publication and repeatability | Two controlled manuscript runs and a separate real QEI review were executed without submitting. | **Not complete.** No accepted Core decision or new public artifact; no successful repeatability series across distinct topics. |
 
 ## Current code and production
@@ -111,3 +113,24 @@ Replay artifacts are under `.tmp/v3-standardized/runs/`, especially
 The completed QEI audit is on the isolated VPS at
 `qei-statistical-consistency-audit/`; its copied local review is
 `/tmp/v3-qei-complete-source-review.json`.
+
+## Latest second audit: Methods and source layout
+
+The first six-request review reported only the classification/quality request
+unmet. A direct audit localized its deterministic failure to a required Methods
+criterion phrase removed during the wording correction. Methods now explicitly
+state when human primary evidence is coded direct and retain the qualification
+that directness establishes neither clinical benefit nor low risk of bias.
+All six requests pass the unchanged structural gate.
+
+The layout audit also found that the statistics checker read abstracts alone.
+It now reads verified own-result excerpts as separate passages. Only pure source
+layout parentheticals are omitted during comparison/rendering; mixed statistical
+parentheticals, altered values, endpoints, operators and wrong-source claims
+still fail. All Findings Map statistics pass that check on the actual manuscript.
+The rendering pass is idempotent, and source snapshot hashes are unchanged.
+
+Focused Methods/source-layout/revision checks: 433 passed. Quality 343 and mypy
+180 files passed. The initial broad run exposed two obsolete wording assertions;
+those are fixed and the broad suite is rerunning. Final isolated replay script:
+`/tmp/v3-curated-final-v3.py`. No production rollout of these changes yet.
