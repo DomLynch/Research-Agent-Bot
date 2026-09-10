@@ -7,6 +7,7 @@ LLM should physically not see what it's not allowed to cite.
 from __future__ import annotations
 
 import asyncio
+from typing import Any
 import pytest
 
 import agent.paper_writer_backstop as writer_backstop
@@ -284,7 +285,7 @@ def test_exhausted_writer_stops_without_placeholder(monkeypatch, name, response)
     if name == "results":
         call = write_results_section(receipts, [], _matrix(receipts), _thesis(), topic="metformin", chain=())
     else:
-        kwargs = {"topic": "metformin"} if name == "conclusion" else {}
+        kwargs: dict[str, Any] = {"topic": "metformin"} if name == "conclusion" else {}
         fn = paper_writer._write_scoped_section if kwargs else paper_writer._write_anchored_section
         call = fn(name=name, heading=f"## {name.title()}", system_prompt="", user_prompt="", accepted=receipts,
                   chain=(), client=None, ledger=None, seed=None, fallback_body="placeholder", **kwargs)
@@ -667,7 +668,8 @@ def test_thin_revision_renders_only_requested_long_form_sections(monkeypatch) ->
     assert "## Research Question" in md
     assert "findings for muscle function" in md
     assert "among older adults" in md
-    assert "population, study-design, and directness boundaries" in md
+    assert "population, study design, comparator, and directness constrain" in md
+    assert "clinically actionable" not in md
     assert "## Cross-Domain Synthesis" in md
     assert "**Author-inference boundary:**" in md
     assert "## Discussion" in md
