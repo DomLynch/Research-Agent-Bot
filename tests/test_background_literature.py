@@ -290,7 +290,7 @@ def test_strip_reuses_numeric_index_only_within_one_call(tmp_path, monkeypatch) 
     from apply_consistency_fixes import _strip_unsourced_background_sentences
 
     registry = _registry(target={"numeric": "7%", "citation_token": "ADA 2024"})
-    monkeypatch.setattr(bg, "load_registry", lambda: registry)
+    monkeypatch.setattr(bg, "load_registry", lambda *, topic=None: registry)
     manifest = {"receipts": [{"receipt_id": "r1", "citation_token": "Trial 2025"}]}
     source = tmp_path / "r1.quant_claims.json"
     source.write_text(json.dumps({"claims": [{

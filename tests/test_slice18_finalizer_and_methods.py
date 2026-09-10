@@ -116,6 +116,30 @@ def test_methods_pack_render_matches_required_markers() -> None:
         assert marker in md, f"renderer missing required H3: {marker!r}"
 
 
+def test_review_manuscript_receives_the_persisted_methods_record(tmp_path: Path) -> None:
+    _write_review_methods = importlib.import_module("scripts.run_v06_synthesis")._write_review_methods
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis", topic="example_topic",
+        corpus_search_queries=("example frozen query",),
+        n_retrieved=120, n_screened=None, n_included=8, n_rejected=None,
+        outcome_classes=("primary_outcome",),
+        source_inventory=(("PubMed", "succeeded"),), search_dates_iso="2026-09-05",
+    )
+    paper = tmp_path / "full_paper.md"
+    paper.write_text("## Introduction\n\nPreserved introduction.\n\n## Methods\n\nStale methods.\n\n## Results\n\nPreserved results.\n")
+    rendered = _write_review_methods(paper, pack)
+    written = paper.read_text()
+    assert rendered.strip() in written
+    assert "example frozen query" in written and "PubMed" in written
+    assert "Stale methods" not in written and written.count("## Methods\n") == 1
+    assert "Preserved introduction." in written and "Preserved results." in written
+    assert json.loads((tmp_path / "methods_pack.json").read_text())["screening_flow"] == {
+        "n_retrieved": 120, "n_included": 8,
+    }
+    assert _write_review_methods(paper, pack) == rendered
+    assert paper.read_text() == written
+
+
 def test_methods_pack_defines_direct_indirect_and_review_evidence() -> None:
     pack = build_methods_pack(
         review_type="prisma_scr_scoping_synthesis",
