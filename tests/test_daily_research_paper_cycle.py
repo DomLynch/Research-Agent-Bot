@@ -2445,6 +2445,7 @@ def test_prepare_only_cli_succeeds_only_with_full_buffer(monkeypatch) -> None:
         ("submitted_to_researka", 1, 0),
         ("synthesis_failed", 0, 2),
         ("local_gate_execution_failed", 0, 70),
+        ("local_gate_blocked", 0, 3),
         ("submission_failed", 0, 2),
     ],
 )
@@ -13637,7 +13638,8 @@ def test_entity_topic_terms_drops_bare_modifier_keeps_synonyms(tmp_path, monkeyp
     assert "zzfield" not in out                  # bare slug modifier dropped
     assert "zzdrug zzfield effects" not in out   # bare slug phrase dropped
 @pytest.mark.parametrize("requested", [None, "aaa_execution"])
-def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monkeypatch, requested):
+@pytest.mark.parametrize("failure", ["local_gate_execution_failed", "local_gate_blocked"])
+def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monkeypatch, requested, failure):
     for topic in ("aaa_execution", "zzz_other"):
         _topic(tmp_path, topic, target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
@@ -13652,20 +13654,20 @@ def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monke
     def fail(topic, out_dir, **_kwargs):
         synthesized.append(topic)
         _write_json(out_dir / "benchmark_runtime.json", {
-            "return_code": 7, "reason": "local_gate_execution_failed", "details": details,
+            "return_code": 7, "reason": failure, "details": details,
         })
         return 7
 
     monkeypatch.setattr(cycle, "_run_synthesis", fail)
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs", date="2026-09-10", mode="fresh", topic=requested,
-        run_synthesis=True, submit=True, max_attempts=2, max_revise_attempts=3,
+        run_synthesis=True, submit=True, max_attempts=2 if failure == "local_gate_execution_failed" else 1, max_revise_attempts=3,
         remote_loader=lambda: (set(), None),
         submit_cycle=lambda **_k: pytest.fail("execution failure must not submit"),
     )
-    assert synthesized == ["aaa_execution"]
-    assert ledger["status"] == "local_gate_execution_failed"
-    assert ledger["no_submission_reason"] == "local_gate_execution_failed"
-    assert ledger["attempts"][0]["failure_class"] == "D_no_action"
+    assert synthesized == ["aaa_execution"] * (1 if failure == "local_gate_execution_failed" else 2)
+    assert ledger["status"] == failure
+    assert ledger["no_submission_reason"] == failure
+    assert ledger["attempts"][0]["failure_class"] == ("D_no_action" if failure == "local_gate_execution_failed" else "C_writer_fixable")
     assert ledger["attempts"][0]["synthesis_error_details"] == details
     assert ledger["submitted"] == 0

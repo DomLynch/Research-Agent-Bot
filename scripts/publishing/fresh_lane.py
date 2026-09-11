@@ -2420,7 +2420,7 @@ def _failure_class(status: str) -> str:
         "numeric_effect_mismatch": "C_writer_fixable",
         "abstract_overclaim": "C_writer_fixable",
         "retracted_source_cited": "D_no_action",
-        "synthesis_failed": "C_writer_fixable",
+        "synthesis_failed": "C_writer_fixable", "local_gate_blocked": "C_writer_fixable",
         "local_gate_execution_failed": "D_no_action",
         "synthesis_timeout": "D_no_action",
         "cycle_budget_exhausted": "D_no_action",
@@ -3152,8 +3152,8 @@ def _synthesis_failure_status(out_dir: Path, return_code: int) -> str:
     if return_code == NEEDS_CORPUS_RETURN_CODE:
         return "needs_corpus_expansion"
     runtime = _read_json(out_dir / "benchmark_runtime.json")
-    if runtime.get("reason") == "local_gate_execution_failed" and runtime.get("return_code") == return_code:
-        return "local_gate_execution_failed"
+    if runtime.get("reason") in {"local_gate_execution_failed", "local_gate_blocked"} and runtime.get("return_code") == return_code:
+        return str(runtime["reason"])
     return "synthesis_failed"
 
 
