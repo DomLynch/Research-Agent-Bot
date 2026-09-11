@@ -13,9 +13,31 @@ from scripts.quality_evidence_map import (
     render_top_tensions_section,
     tensions_from_json,
 )
+from evidence_map_summary import source_context_map
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = REPO_ROOT / "scripts" / "quality_evidence_map.py"
+
+
+def test_source_context_map_accepts_generators() -> None:
+    rows = (
+        row
+        for row in (
+            {
+                "source_title": "Everolimus metastatic cancer trial",
+                "effect_direction": "null",
+                "p_values": ["p < 0.05"],
+            },
+            {
+                "source_title": "Everolimus bone muscle protocol",
+                "effect_direction": "null",
+                "p_values": [],
+            },
+        )
+    )
+    out = source_context_map(rows)
+    assert "Oncology and cancer context: 1 sources" in out
+    assert "Skeletal and muscle context: 1 sources" in out
 
 
 def _sample_manifest() -> dict:

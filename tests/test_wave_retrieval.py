@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import asyncio
 
+from typing import Any
+
 from agent.sources.aggregator import AggregatedHit
 from agent.topic_pack import RetrievalSpec
 from agent.wave_retrieval import (
@@ -16,7 +18,7 @@ from agent.wave_retrieval import (
 
 
 def _spec(**kw) -> RetrievalSpec:
-    base = dict(
+    base: dict[str, Any] = dict(
         topic_terms=("alpha",),
         scope_terms=("aging",),
         evidence_types=("clinical trial",),
@@ -179,3 +181,27 @@ def test_run_waves_returns_per_wave_stats(monkeypatch):
     assert stats[0]["wave"] == "precision"
     assert stats[0]["new_to_corpus"] == 1
     assert stats[0]["cumulative"] == 1
+
+
+def test_run_waves_forwards_source_and_timeout_limits(monkeypatch):
+    calls: list[tuple[tuple[str, ...], float | None]] = []
+
+    async def fake_discover(spec, *, params=None, enabled_sources=None, timeout=None):
+        calls.append((tuple(enabled_sources or ()), timeout))
+        return [], {"raw_total_pre_dedupe": 0, "unique_keys_post_dedupe": 0}
+
+    monkeypatch.setattr(
+        "agent.wave_retrieval.discover_calibrated", fake_discover,
+    )
+
+    asyncio.run(run_waves(
+        _spec(background_allow=("mechanism",)),
+        enabled_sources=("v5_fullraw",),
+        timeout=12.5,
+    ))
+
+    assert calls == [
+        (("v5_fullraw",), 12.5),
+        (("v5_fullraw",), 12.5),
+        (("v5_fullraw",), 12.5),
+    ]

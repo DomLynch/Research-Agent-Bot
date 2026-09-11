@@ -378,7 +378,29 @@ def _is_retryable_error(exc: BaseException) -> bool:
             ),
         ):
             return True
-    return isinstance(exc, (ValueError, KeyError, json.JSONDecodeError))
+    return isinstance(
+        exc, (TimeoutError, ValueError, KeyError, json.JSONDecodeError),
+    )
+
+
+def _review_call_timeout_sec() -> float:
+    raw = os.environ.get("FINAL_LAYER_REVIEW_TIMEOUT_SEC", "120")
+    try:
+        value = float(raw)
+    except ValueError:
+        return 120.0
+    return max(5.0, value)
+
+
+async def _call_one_bounded(
+    system: str, user: str, model: str, api_key: str,
+    base_url: str, client: Any,
+) -> tuple[dict[str, Any], int, int]:
+    timeout = _review_call_timeout_sec()
+    return await asyncio.wait_for(
+        _call_one(system, user, model, api_key, base_url, client),
+        timeout=timeout,
+    )
 
 
 async def _call_with_fallback(
@@ -394,14 +416,14 @@ async def _call_with_fallback(
     except ModuleNotFoundError:
         transport_errors = ()
     retry_errors = transport_errors + (
-        ValueError, KeyError, json.JSONDecodeError,
+        TimeoutError, ValueError, KeyError, json.JSONDecodeError,
     )
     attempts: list[dict[str, Any]] = []
     for model in (primary_model, fallback_model):
         max_attempts = _attempt_count(model, primary_model)
         for attempt in range(1, max_attempts + 1):
             try:
-                parsed, in_tok, out_tok = await _call_one(
+                parsed, in_tok, out_tok = await _call_one_bounded(
                     system, user, model, api_key, base_url, client,
                 )
                 cost = _estimate_cost(model, in_tok, out_tok)
@@ -477,6 +499,27 @@ def _normalize_patch(p_raw: dict, idx: int) -> TypedPatch | None:
         auto_applicable=auto,
         requires_trace=requires_trace,
     )
+
+
+def _patch_dicts(raw: dict) -> list[dict]:
+    patches = raw.get("patches", [])
+    if isinstance(patches, list):
+        return [p for p in patches if isinstance(p, dict)]
+    if isinstance(patches, dict):
+        return [patches]
+    raw["patches_parse_warning"] = type(patches).__name__
+    return []
+
+
+def _typed_patches(raw: dict) -> list[TypedPatch]:
+    out: list[TypedPatch] = []
+    for idx, patch in enumerate(_patch_dicts(raw), start=1):
+        if str(patch.get("patch_type") or "").lower() == "unfixable":
+            continue
+        normalised = _normalize_patch(patch, idx)
+        if normalised is not None:
+            out.append(normalised)
+    return out
 
 
 def _build_repair_prompt(
@@ -559,7 +602,7 @@ async def repair_flagged_patches(
     own_client = client is None
     if own_client:
         import httpx
-        c: Any = httpx.AsyncClient(timeout=300.0)
+        c: Any = httpx.AsyncClient(timeout=_review_call_timeout_sec())
     else:
         c = client
     try:
@@ -569,14 +612,7 @@ async def repair_flagged_patches(
     finally:
         if own_client:
             await c.aclose()
-    out: list[TypedPatch] = []
-    for idx, p_raw in enumerate(raw.get("patches") or []):
-        if (p_raw.get("patch_type") or "").lower() == "unfixable":
-            continue  # Reviewer admits no safe fix; caller may auto-strip
-        np = _normalize_patch(p_raw, idx)
-        if np is not None:
-            out.append(np)
-    return out
+    return _typed_patches(raw)
 
 
 async def review_paper(
@@ -604,18 +640,14 @@ async def review_paper(
     own_client = client is None
     if own_client:
         import httpx
-        c: Any = httpx.AsyncClient(timeout=300.0)
+        c: Any = httpx.AsyncClient(timeout=_review_call_timeout_sec())
     else:
         c = client
     try:
         raw, model_used, cost = await _call_with_fallback(
             system, user, model, fallback_model, api_key, base_url, c,
         )
-        patches: list[TypedPatch] = []
-        for i, p in enumerate(raw.get("patches", []), start=1):
-            norm = _normalize_patch(p, i)
-            if norm is not None:
-                patches.append(norm)
+        patches = _typed_patches(raw)
         escalation_model = (
             escalation_model
             or os.environ.get("FINAL_LAYER_LOW_PATCH_FALLBACK_MODEL", "").strip()
@@ -626,11 +658,7 @@ async def review_paper(
                 esc_raw, in_tok, out_tok = await _call_one(
                     system, user, escalation_model, api_key, base_url, c,
                 )
-                esc_patches: list[TypedPatch] = []
-                for i, p in enumerate(esc_raw.get("patches", []), start=1):
-                    norm = _normalize_patch(p, i)
-                    if norm is not None:
-                        esc_patches.append(norm)
+                esc_patches = _typed_patches(esc_raw)
                 raw = esc_raw
                 patches = esc_patches
                 model_used = f"{model_used}→{escalation_model}"

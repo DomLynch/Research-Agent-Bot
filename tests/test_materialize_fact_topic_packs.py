@@ -199,6 +199,24 @@ def test_materialize_rows_max_created_caps_batch(tmp_path: Path) -> None:
     assert [item["slug"] for item in result["created"]] == ["metformin_metabolism_effects"]
 
 
+def test_materialize_rows_skip_slugs_do_not_consume_created_budget(tmp_path: Path) -> None:
+    rows = [
+        {"topic": "metformin", "sub_topic": "metabolism", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+        {"topic": "acarbose", "sub_topic": "fasting", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},
+    ]
+
+    result = materializer.materialize_rows(
+        rows,
+        db_dir=tmp_path,
+        persist=False,
+        max_created=1,
+        skip_slugs={"metformin_metabolism_effects"},
+    )
+
+    assert [item["slug"] for item in result["created"]] == ["acarbose_fasting_effects"]
+    assert result["skipped"][0]["reason"] == "excluded_topic"
+
+
 def test_materialize_rows_counts_duplicate_slug_once_per_batch(tmp_path: Path) -> None:
     rows = [
         {"topic": "metformin", "sub_topic": "other", "claim_type": "effect_size", "facts": 20, "exact_facts": 20, "papers": 5},

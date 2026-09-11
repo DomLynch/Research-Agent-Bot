@@ -39,6 +39,7 @@ from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
+DISCOVERY_TIMEOUT_SECONDS = 30.0
 
 from agent.sources.aggregator import (  # noqa: E402
     discover, list_available_sources,
@@ -54,7 +55,7 @@ from agent.corpus_pipeline import (  # noqa: E402
     topic_aliases_for_classification,
 )
 import v3_optional_adapters as _optional_adapters  # noqa: E402
-from source_topic_specificity import is_source_topic_specific  # noqa: E402
+from source_topic_specificity import is_source_topic_specific, source_gate_aliases  # noqa: E402
 
 
 def _manifest_entry_to_dict(entry) -> dict[str, Any]:
@@ -94,6 +95,17 @@ def _load_topic_pack(topic: str) -> TopicPack:
     return load_generated_topic_pack(topic, REPO / "topic_packs_db")
 
 
+def _discovery_timeout_seconds() -> float:
+    raw = os.environ.get(
+        "RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS",
+        str(DISCOVERY_TIMEOUT_SECONDS),
+    )
+    try:
+        return min(120.0, max(1.0, float(raw)))
+    except ValueError:
+        return DISCOVERY_TIMEOUT_SECONDS
+
+
 def _corpus_paths(topic: str) -> tuple[Path, Path]:
     base = REPO / "docs" / "quality-reference" / topic
     return base / "quant_claims", base / "parsed"
@@ -124,7 +136,7 @@ def _paper_id_from_hit(hit) -> str:
 
 def _hit_specific_to_topic(topic: str, pack: TopicPack, hit) -> bool:
     text = " ".join(str(getattr(hit, attr, "") or "") for attr in ("title", "abstract", "venue"))
-    return is_source_topic_specific(topic, text, aliases=pack.aliases)
+    return is_source_topic_specific(topic, text, aliases=source_gate_aliases(topic, pack.aliases))
 
 
 def _parsed_paths_for_pmcid(parsed_dir: Path, pmcid: str) -> list[Path]:
@@ -296,7 +308,12 @@ async def _do_seed(
             file=sys.stderr,
         )
         params = resolve_params("calibrated")
-        wave_report = await run_waves(pack.retrieval, params=params)
+        wave_report = await run_waves(
+            pack.retrieval,
+            params=params,
+            enabled_sources=sources,
+            timeout=_discovery_timeout_seconds(),
+        )
         manifest = classify_and_filter(
             wave_report, topic=topic,
             topic_aliases=topic_aliases_for_classification(pack),

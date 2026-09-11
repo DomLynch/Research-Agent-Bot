@@ -65,6 +65,90 @@ def test_methods_not_run_disclosure_is_not_stale_boilerplate() -> None:
     assert stale == []
 
 
+def test_direction_consistency_issues_are_advisory_not_publish_blocking() -> None:
+    manifest = {
+        "writer_path": "agent.paper_writer.render_full_paper (production)",
+        "receipts": [
+            {
+                "receipt_id": "Bliss_2023_review",
+                "body_citation": "Bliss 2023",
+                "outcome_class": "cardiometabolic",
+                "effect_direction": "null",
+            },
+            {
+                "receipt_id": "Lo_2021_trial",
+                "body_citation": "Lo 2021",
+                "outcome_class": "muscle_function",
+                "effect_direction": "positive",
+            },
+            {
+                "receipt_id": "Smith_2022_trial",
+                "body_citation": "Smith 2022",
+                "outcome_class": "skeletal",
+                "effect_direction": "negative",
+            },
+        ],
+    }
+    paper = (
+        "## Abstract\n\n"
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "and muscle function outcome classes, null signals in the skeletal "
+        "outcome class, and negative signals in the retained evidence base.\n\n"
+        "## Results\n\n"
+        "Bliss 2023 surfaces positive signals in cardiometabolic outcomes.\n"
+    )
+    issues = audit.run_audit(paper, manifest, _empty_audit())
+    direction_issues = [
+        i for i in issues
+        if i.issue_type in {
+            "abstract_results_direction_consistency",
+            "metadata_prose_direction_consistency",
+        }
+    ]
+    assert {i.issue_type for i in direction_issues} == {
+        "abstract_results_direction_consistency",
+        "metadata_prose_direction_consistency",
+    }
+    assert all(i.severity == "P2" for i in direction_issues)
+    assert not [i for i in direction_issues if i.severity == "P1"]
+
+
+def _cardiometabolic_split_manifest() -> dict:
+    return {
+        "receipts": [
+            {"receipt_id": "A 2022", "outcome_class": "cardiometabolic", "effect_direction": "positive"},
+            {"receipt_id": "B 2015", "outcome_class": "cardiometabolic", "effect_direction": "null"},
+        ],
+    }
+
+
+def test_outcome_direction_overclaim_is_publish_blocking_p1() -> None:
+    """A per-class direction overclaim vs the receipts (positive-for-both / no
+    null-or-negative while the class carries a null receipt) is a P1 ship
+    blocker, distinct from the advisory C19."""
+    paper = (
+        "## Results\n\n### Cardiometabolic Outcomes\n\n"
+        "The source-traced numerics support a positive direction of effect for "
+        "both pieces of evidence. No source in this outcome class reported a "
+        "null or negative effect.\n\n## References\n\n- **B 2015.** A trial.\n"
+    )
+    issues = audit.run_audit(paper, _cardiometabolic_split_manifest(), _empty_audit())
+    overclaim = [i for i in issues if i.issue_type == "outcome_direction_overclaim"]
+    assert overclaim, "expected an outcome_direction_overclaim issue"
+    assert all(i.severity == "P1" for i in overclaim)
+
+
+def test_honest_outcome_prose_is_not_overclaim_blocked() -> None:
+    """Honest per-class prose that acknowledges the null source must NOT raise
+    the P1 overclaim block (guards against false ship-blocks)."""
+    paper = (
+        "## Results\n\n### Cardiometabolic Outcomes\n\n"
+        "One source reported a positive effect and one reported a null effect.\n"
+    )
+    issues = audit.run_audit(paper, _cardiometabolic_split_manifest(), _empty_audit())
+    assert not [i for i in issues if i.issue_type == "outcome_direction_overclaim"]
+
+
 def test_duplicate_references_section_is_p1() -> None:
     """## References appearing twice = duplicate section bug."""
     paper = (
@@ -854,6 +938,18 @@ def test_background_lit_sourced_passes_stage2() -> None:
         "## Discussion\n\n"
         "Walk-speed declines below 0.8 m/s (Studenski 2011) indicate "
         "frailty risk.\n"
+    )
+    issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
+    bg_issues = [i for i in issues if i.issue_type == "background_lit_unsourced"]
+    assert bg_issues == []
+
+
+def test_background_lit_ignores_references_section_numerics() -> None:
+    paper = (
+        "## Discussion\n\n"
+        "The manuscript body makes no background threshold claim.\n\n"
+        "## References\n\n"
+        "- **Example 2024.** Bibliography title mentions 0.8 m/s without being prose evidence.\n"
     )
     issues = audit.run_audit(paper, _empty_manifest(), _empty_audit())
     bg_issues = [i for i in issues if i.issue_type == "background_lit_unsourced"]
@@ -2022,3 +2118,179 @@ def test_lightweight_public_polish_strips_duplicate_paragraphs_pre_final_audit()
     assert fixed.count("specific interpretive boundary") == 1
     assert "distinct discussion paragraph" in fixed
     assert any(item["fix_type"] == "fuzzy_duplicate_paragraph" for item in log)
+
+
+# --- Certification-integrity checks (2026-06-12) -------------------------
+
+def test_future_dated_citation_is_p1() -> None:
+    registry = {
+        "r1": {"body_citation": "Pragmatic 2035", "source_year": 2035},
+        "r2": {"body_citation": "Real 2024", "source_year": 2024},
+    }
+    issues = audit._check_future_dated_citations(registry, current_year=2026)
+    assert [i.issue_type for i in issues] == ["future_dated_citation"]
+    assert issues[0].severity == "P1"
+    assert "2035" in issues[0].evidence
+
+
+def test_no_future_citation_when_years_past() -> None:
+    registry = {"r1": {"body_citation": "Real 2024", "source_year": 2024}}
+    assert audit._check_future_dated_citations(registry, current_year=2026) == []
+    assert audit._check_future_dated_citations(None, current_year=2026) == []
+
+
+def test_unbacked_appraisal_claim_is_p1(tmp_path: Path) -> None:
+    paper = "## Methods\n\nRisk of bias was rated with RoB-2 and ROBINS-I.\n"
+    issues = audit._check_unbacked_appraisal_claim(paper, tmp_path)
+    assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+    assert issues[0].severity == "P1"
+
+
+def test_appraisal_claim_backed_by_section_passes(tmp_path: Path) -> None:
+    paper = (
+        "## Methods\n\nWe applied RoB-2.\n\n"
+        "## Risk of Bias\n\n| Source | Domain | Judgment |\n| A | randomization | low |\n"
+    )
+    assert audit._check_unbacked_appraisal_claim(paper, tmp_path) == []
+
+
+def test_appraisal_claim_backed_by_populated_sidecar_passes(tmp_path: Path) -> None:
+    (tmp_path / "risk_of_bias.json").write_text(
+        '{"r1": {"tool": "RoB-2", "judgment": "low"}}', encoding="utf-8",
+    )
+    assert audit._check_unbacked_appraisal_claim("AMSTAR-2 was applied.\n", tmp_path) == []
+
+
+def test_appraisal_backed_by_populated_sidecar_in_subfolder(tmp_path: Path) -> None:
+    # The pipeline relocates risk_of_bias.json into an audit/ subfolder, so the
+    # backing artifact must be found recursively, not just at the run root.
+    sub = tmp_path / "audit"
+    sub.mkdir()
+    (sub / "risk_of_bias.json").write_text(
+        '[{"study_id": "Greilberger 2023", "tool": "robins_i", "overall_rating": "some_concerns"}]',
+        encoding="utf-8",
+    )
+    assert audit._check_unbacked_appraisal_claim("RoB-2 and ROBINS-I were applied.\n", tmp_path) == []
+
+
+def test_appraisal_stub_section_with_missing_sidecar_is_unbacked(tmp_path: Path) -> None:
+    # The real metformin defect: a prose RoB section that defers to a sidecar
+    # which was never written, with no in-paper appraisal table.
+    paper = (
+        "### Risk-of-bias appraisal\nPer-source risk-of-bias was rated using "
+        "RoB-2, ROBINS-I, and AMSTAR-2. Ratings recorded in `risk_of_bias.json`.\n"
+    )
+    issues = audit._check_unbacked_appraisal_claim(paper, tmp_path)
+    assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+
+
+def test_empty_sidecar_does_not_back_claim(tmp_path: Path) -> None:
+    (tmp_path / "risk_of_bias.json").write_text("{}", encoding="utf-8")
+    issues = audit._check_unbacked_appraisal_claim("RoB-2 was applied.\n", tmp_path)
+    assert [i.issue_type for i in issues] == ["unbacked_appraisal_claim"]
+
+
+def test_paper_naming_no_framework_does_not_trip() -> None:
+    assert audit._check_unbacked_appraisal_claim("We screened and summarized.\n", None) == []
+
+
+def test_classification_claim_contradiction_is_flagged() -> None:
+    manifest = {"receipts": [{"directness": "direct"}, {"directness": "review"}]}
+    issues = audit._check_source_classification_claims(
+        "The corpus contains no direct sources for the question.\n", manifest,
+    )
+    assert [i.issue_type for i in issues] == ["source_classification_claim_contradiction"]
+
+
+def test_classification_claim_true_to_taxonomy_passes() -> None:
+    # The metformin case: "no mechanistic" when the classifier emitted none
+    # is TRUE to the taxonomy and must NOT flag.
+    manifest = {"receipts": [{"directness": "review"}, {"directness": "indirect"}]}
+    paper = "No sources were classified primarily as mechanistic or model.\n"
+    assert audit._check_source_classification_claims(paper, manifest) == []
+
+
+def test_source_count_mismatch_is_p2() -> None:
+    manifest = {"n_receipts": 56, "receipts": []}
+    issues = audit._check_source_count_consistency(
+        "After screening, 58 studies were included in the synthesis.\n", manifest,
+    )
+    assert [i.issue_type for i in issues] == ["source_count_inconsistency"]
+    assert issues[0].severity == "P2"
+
+
+def test_source_count_match_ignores_screened_yield() -> None:
+    manifest = {"n_receipts": 56, "receipts": []}
+    # "identified 15578 results" must NOT be compared (different stage word).
+    paper = "We identified 15578 results; 56 studies were included.\n"
+    assert audit._check_source_count_consistency(paper, manifest) == []
+
+
+def test_directness_coding_flags_review_titled_coded_direct() -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "direct",
+        "source_title": "Intermittent fasting: a systematic review and meta-analysis"}]}
+    issues = audit._check_directness_coding(manifest)
+    assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
+
+
+def test_directness_coding_review_markers_win_when_coded_direct() -> None:
+    titles = [
+        "A systematic review and meta-analysis of a randomized controlled trial",
+        "A meta-analysis of RCT evidence",
+        "A systematic review of placebo-controlled trials",
+    ]
+    for title in titles:
+        manifest = {"receipts": [{"receipt_id": "r1", "directness": "direct",
+            "source_title": title}]}
+        issues = audit._check_directness_coding(manifest)
+        assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
+
+
+def test_directness_coding_flags_primary_titled_coded_review() -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
+        "source_title": "Effect of fasting on weight: a randomized controlled trial"}]}
+    issues = audit._check_directness_coding(manifest)
+    assert [i.issue_type for i in issues] == ["directness_coding_mismatch"]
+
+
+def test_directness_coding_meta_analysis_of_rcts_not_flagged() -> None:
+    # Review markers win: a meta-analysis OF RCTs names trials but IS a review.
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
+        "source_title": "Intermittent fasting for rheumatic diseases: a systematic "
+        "review and meta-analysis of randomized controlled trials"}]}
+    assert audit._check_directness_coding(manifest) == []
+
+
+def test_directness_coding_consistent_coding_not_flagged() -> None:
+    manifest = {"receipts": [{"receipt_id": "r1", "directness": "review",
+        "source_title": "A systematic review of intermittent fasting"}]}
+    assert audit._check_directness_coding(manifest) == []
+
+
+def test_run_audit_threads_registry_and_run_dir(tmp_path: Path) -> None:
+    registry = {"r1": {"body_citation": "Future 2099", "source_year": 2099}}
+    issues = audit.run_audit(
+        "## Abstract\n\nClean body.\n",
+        _empty_manifest(), _empty_audit(),
+        registry=registry, run_dir=tmp_path, current_year=2026,
+    )
+    assert any(i.issue_type == "future_dated_citation" for i in issues)
+
+
+def test_prose_data_coherence_flags_marginal_with_strong_p():
+    """C22 (Item 1): a significance-weakness qualifier + strong p (<0.01) in one
+    sentence is incoherent — the Tavakoli 'marginal signal (P<0.001)' case.
+    Effect-size words (modest/small) and weak p's are NOT flagged."""
+    flagged = audit._check_prose_data_coherence(
+        "Results showed a marginal adiponectin signal (P < 0.001) in the cohort.",
+    )
+    assert flagged and flagged[0].id == "C22-prose-data-incoherence"
+    assert flagged[0].severity == "P2"
+    # effect-SIZE word + strong p is legitimate (small but precise effect)
+    assert not audit._check_prose_data_coherence(
+        "There was a modest but significant reduction (p < 0.001).",
+    )
+    # weak qualifier + non-strong p is internally consistent
+    assert not audit._check_prose_data_coherence(
+        "A non-significant trend was observed (p = 0.08).",
+    )

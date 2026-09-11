@@ -298,9 +298,47 @@ def test_extract_year_picks_plausible_year_not_n_value() -> None:
 
 
 def test_extract_year_rejects_implausible_years() -> None:
-    """A 4-digit number outside 1990-2100 is not a publication year."""
+    """A 4-digit number outside 1990–current-year is not a publication year."""
     assert cr._extract_year_from_id("PMC123_n_3500_subjects") is None
     assert cr._extract_year_from_id("PMC123_n_1850_subjects") is None
+
+
+def test_future_year_is_implausible_and_clamped() -> None:
+    """A publication year can never be in the future. An ongoing trial's
+    estimated-completion year (e.g. 2035) must normalize to None, not leak
+    a future-dated citation that trips the certification gate."""
+    assert cr._is_plausible_year(cr._current_year()) is True
+    assert cr._is_plausible_year(cr._current_year() + 1) is False
+    assert cr._normalize_pub_year(2035) is None
+    assert cr._normalize_pub_year(cr._current_year()) == cr._current_year()
+    assert cr._normalize_pub_year(None) is None
+    assert cr._normalize_pub_year("not-a-year") is None
+
+
+def test_metadata_citation_renders_future_year_as_undated() -> None:
+    """The exact resveratrol/metformin failure: a HIT source whose only
+    year is a future completion date cites undated ('n.d.'), never '2035'."""
+    cite = cr._body_citation_from_metadata(
+        {"title": "Pragmatic Trial of Metformin for Glucose Intolerance",
+         "year": 2035},
+    )
+    assert cite is not None and cite.endswith("n.d.") and "2035" not in cite
+
+
+def test_build_registry_clamps_future_source_year() -> None:
+    """End-to-end: a receipt with a future source_year yields a registry
+    entry with source_year=None (gate-safe) and no future year in the
+    body citation."""
+    rid = "HIT_pragmatic_trial_of_metformin_for_glucose_intolerance"
+    receipts = [_FakeReceipt(receipt_id=rid, source_year=2035)]
+    # Production passes the parsed metadata; its TITLE drives the citation
+    # while the future YEAR (2035) is rejected — that rejection IS the fix.
+    meta = {rid: {"title": "Pragmatic Trial of Metformin for Glucose Intolerance",
+                  "year": 2035}}
+    entry = cr.build_registry(receipts, meta)[rid]
+    assert entry.source_year is None          # future year clamped → gate-safe
+    assert "2035" not in entry.body_citation  # never render a future date
+    assert entry.body_citation.endswith("n.d.")  # undated form instead
 
 
 def test_validate_body_citation_catches_bare_handles() -> None:
@@ -348,8 +386,10 @@ def test_registry_uses_title_year_for_abstract_fallback_without_authors() -> Non
             },
         },
     )
-    assert registry[receipts[0].receipt_id].body_citation == "Rosuvastatin 2009"
-    assert registry[receipts[1].receipt_id].body_citation == "Bempedoic 2026"
+    # No parsed authors: cite by a short multi-word title phrase, never a lone
+    # leading word (which would masquerade as an author surname). See Fix #3.
+    assert registry[receipts[0].receipt_id].body_citation == "Rosuvastatin to Prevent Vascular 2009"
+    assert registry[receipts[1].receipt_id].body_citation == "Bempedoic Acid versus Statins 2026"
 
 
 def test_build_registry_raises_on_empty_receipt_id() -> None:
@@ -465,8 +505,19 @@ def test_metadata_derived_collision_disambiguator() -> None:
     }
     registry = cr.build_registry(receipts, paper_meta_by_id=paper_meta)
     citations = sorted(e.body_citation for e in registry.values())
-    # Smith 2024 (first) + Smith 2024b (collision suffix)
-    assert citations == ["Smith 2024", "Smith 2024b"]
+    assert citations == ["Smith 2024a", "Smith 2024b"]
+
+
+def test_first_collision_member_gets_a_suffix() -> None:
+    """Regression for Chen 2026a: every distinct source in a collision group
+    must be suffixed, including the first one, so prose and references agree."""
+    receipts = [
+        _FakeReceipt(receipt_id="Chen_2026_sarcopenia_ckm", source_year=2026),
+        _FakeReceipt(receipt_id="Chen_2026_resting_heart_rate", source_year=2026),
+    ]
+    registry = cr.build_registry(receipts)
+    assert registry[receipts[0].receipt_id].body_citation == "Chen 2026a"
+    assert registry[receipts[1].receipt_id].body_citation == "Chen 2026b"
 
 
 def test_same_source_author_year_receipts_share_canonical_token() -> None:
@@ -581,6 +632,26 @@ def test_body_citation_from_metadata_helper_handles_edge_cases() -> None:
         ),
         "year": 2002,
     }) == "ALLHAT 2002"
+
+
+def test_no_author_title_citation_is_multiword_not_fake_surname() -> None:
+    """Regression: closed-access records with no parsed authors must NOT cite
+    as a single leading title word ("Impact 2025") — that masquerades as a
+    fabricated author surname. Emit a short multi-word title phrase instead.
+    Universal across domains (no per-topic word list)."""
+    cite = cr._body_citation_from_metadata({
+        "title": "Impact of Intermittent Fasting on Gut Barrier Function",
+        "year": 2025,
+    })
+    assert cite == "Impact of Intermittent Fasting 2025"
+    # Never a lone word + year (the defect shape a reviewer flagged 3x).
+    assert len(cite.rsplit(" ", 1)[0].split()) >= 2
+    # A leading article is dropped, not used as the citation head.
+    assert cr._body_citation_from_metadata({
+        "title": "The Effect of Metformin on Glucose Metabolism", "year": 2024,
+    }) == "Effect of Metformin on Glucose 2024"
+    # Output is leak-clean.
+    assert not cr.validate_body_citation(cite)
 
 
 def test_year_suffix_after_helper_extracts_correct_year() -> None:
@@ -714,8 +785,18 @@ def test_ascii_fold_latin_diacritics() -> None:
     assert cr._ascii_fold("Hernández") == "Hernandez"
     assert cr._ascii_fold("Müller") == "Muller"
     assert cr._ascii_fold("École") == "Ecole"
-    assert cr._ascii_fold("Łukasz") == "Łukasz"  # Ł has no combining decomp
     assert cr._ascii_fold("plain") == "plain"
+
+
+def test_ascii_fold_stroke_and_ligature_letters() -> None:
+    """Stroke/slash/ligature letters have no NFKD base+combining decomposition,
+    so the pre-fix fold left them for the [^A-Za-z-] strip to DELETE — eating
+    the leading char of a surname (Ławiński → 'awinski', Strømland → 'Strmland').
+    They must transliterate to an ASCII base instead."""
+    assert cr._ascii_fold("Ławiński") == "Lawinski"
+    assert cr._ascii_fold("Strømland") == "Stromland"
+    assert cr._ascii_fold("Đorđević") == "Dordevic"
+    assert cr._ascii_fold("Håkansson") == "Hakansson"  # combining path still OK
 
 
 def test_body_citation_from_metadata_preserves_diacritic_surname() -> None:
@@ -725,3 +806,11 @@ def test_body_citation_from_metadata_preserves_diacritic_surname() -> None:
     meta = {"year": 2024, "authors": ["María Hernández"]}
     cite = cr._body_citation_from_metadata(meta)
     assert cite == "Hernandez 2024", cite
+
+
+def test_body_citation_from_metadata_stroke_surname_not_lowercase() -> None:
+    """Regression for 'awinski 2025': a stroke-letter surname (Ławiński) must
+    yield 'Lawinski 2025', and no citation key may begin lowercase."""
+    cite = cr._body_citation_from_metadata({"year": 2025, "authors": ["Paweł Ławiński"]})
+    assert cite == "Lawinski 2025", cite
+    assert not cite[0].islower()

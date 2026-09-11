@@ -30,6 +30,8 @@ def _summary(
     tier: str = "A1",
     directness: str = "direct",
     spar_verdict: str = "accept_clean",
+    source_title: str | None = None,
+    source_year: int | None = None,
 ) -> ReceiptSummary:
     return ReceiptSummary(
         receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
@@ -40,6 +42,8 @@ def _summary(
         evidence_tier=tier, directness=directness,
         outcome_class=outcome, effect_direction=direction,
         p_values=("p=0.003",), population_summary="older adults",
+        source_title=source_title,
+        source_year=source_year,
     )
 
 
@@ -155,6 +159,27 @@ def test_build_user_prompt_single_revision_ask_renders_one_checklist_item(monkey
     assert "2." not in prompt.split("REVISION FEEDBACK", 1)[1][:200]  # one ask → no second item
 
 
+def test_build_user_prompt_keeps_semicolon_examples_inside_revision_ask(monkeypatch) -> None:
+    monkeypatch.setenv(
+        "RESEARKA_REVISION_FEEDBACK",
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim; "
+        "Resolve the coding note.",
+    )
+    accepted = [_summary("r-A")]
+
+    prompt = _build_user_prompt(
+        accepted, [], _matrix(accepted), _thesis(),
+        topic="young_plasma_parabiosis",
+    )
+    revision = prompt.split("REVISION FEEDBACK", 1)[1]
+
+    assert "1. Differentiate the 17-source bundle" in revision
+    assert "preclinical rodent n=, human n=) so readers can audit the claim" in revision
+    assert "2. Resolve the coding note." in revision
+    assert "render a clearly labelled markdown table" in revision
+
+
 def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> None:
     receipts = [
         _summary("r-immune", outcome="immune"),
@@ -201,16 +226,25 @@ def test_results_writer_wraps_each_outcome_after_citation_fix(monkeypatch) -> No
         topic="caloric_restriction", chain=(),
     ))
 
-    assert "### Immune Outcomes" in section.body_md
+    assert "### Immune and Inflammation Outcomes" in section.body_md
     assert "### Longevity Outcomes" in section.body_md
     assert "r-longevity" not in prompts[0]
     assert "r-immune" not in prompts[1]
-    immune_body = section.body_md.split("### Immune Outcomes", 1)[1].split("###", 1)[0]
+    immune_body = section.body_md.split("### Immune and Inflammation Outcomes", 1)[1].split("###", 1)[0]
     assert "lifespan" not in immune_body
 
 
 def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
-    receipts = [_summary("r-immune", outcome="immune"), _summary("r-longevity", outcome="longevity")]
+    receipts = [
+        _summary(
+            "r-immune", outcome="immune", directness="direct",
+            source_title="Direct vascular-age cohort", source_year=2025,
+        ),
+        _summary(
+            "r-longevity", outcome="longevity", directness="protocol",
+            source_title="Vascular aging trial protocol", source_year=2026,
+        ),
+    ]
 
     async def fake_anchored(**kwargs):
         return SynthesisSection(name=kwargs["name"], body_md=f"{kwargs['heading']}\n\nBrief section.\n", anchors=())
@@ -228,7 +262,10 @@ def test_thin_brief_render_uses_deterministic_results(monkeypatch) -> None:
         receipts, _matrix(receipts), _thesis(), topic="vitamin_d",
         submission_id="thin-test", chain=(), review_type="thin_corpus_brief",
     ))
-    assert "### Immune Outcomes" in md and "### Longevity Outcomes" in md
+    assert "### Immune and Inflammation Outcomes" in md and "### Longevity Outcomes" in md
+    assert "Source examples: Direct vascular-age cohort 2025" in md
+    assert "**Design-limit note:**" in md and "Vascular aging trial protocol 2026" in md
+    assert "**Direct-source ceiling:**" in md and "Direct vascular-age cohort 2025" in md
     assert "## Introduction" not in md and all(s.name != "inferential_bridge" for s in sections)
 
 
@@ -304,7 +341,8 @@ def test_full_render_repairs_abstract_and_discussion_before_assembly(monkeypatch
     assert "**Thesis:**" in md
     assert "**Resolution criteria:**" in md
     assert "substantive discussion" in md
-    assert order.index("backstop") < order.index("conclusion")
+    assert order.count("backstop") == 1
+    assert order.index("conclusion") < order.index("backstop")
 
 
 def test_strip_rendered_citation_markers_removes_body_metadata() -> None:
@@ -463,3 +501,20 @@ def test_conclusion_prompt_retains_overclaim_guard() -> None:
     from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
     assert "extends lifespan" in CONCLUSION_SYSTEM_PROMPT  # in the do-NOT list
     assert "unhedged clinical claim" in CONCLUSION_SYSTEM_PROMPT.lower()
+
+
+def test_writer_prompts_frame_intervention_entity_not_topic_phrase() -> None:
+    """#7: paper_writer feeds intervention_label(topic) — not the raw slug
+    or the multi-token humanized phrase — into the {topic} slot of the
+    section prompts, so the LLM names the compound ('resveratrol'), never
+    'the candidate compound Resveratrol Metabolism Effects'."""
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    from agent.topic_display import intervention_label
+    entity = intervention_label("resveratrol_metabolism_effects")
+    assert entity == "resveratrol"
+    blob = " ".join(
+        format_prompts_for_topic(topic=entity, drug_class="polyphenol").values()
+    )
+    assert "resveratrol" in blob.lower()
+    assert "resveratrol_metabolism_effects" not in blob
+    assert "Resveratrol Metabolism Effects" not in blob

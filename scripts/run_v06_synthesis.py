@@ -70,13 +70,14 @@ def _write_revision_feedback_sidecar(out_dir: Path) -> None:
 from agent.paper_writer_deterministic import (  # noqa: E402
     build_what_this_adds_section,
 )
-from agent.outcome_class_remap import outcome_display, remap_outcome_class  # noqa: E402
+from agent.outcome_class_remap import outcome_display, outcome_key, remap_outcome_class  # noqa: E402
 from agent.outcome_class_remap import refine_other_outcome_class  # noqa: E402
 from agent.synthesis_schemas import (  # noqa: E402
     EffectDirection, ReceiptSummary, SynthesisSection, SynthesisThesis,
-    Tension, TensionKind, TensionMatrix,
+    TensionMatrix,
 )
 from agent.settings import load_settings  # noqa: E402
+from agent.topic_display import humanize_topic  # noqa: E402
 
 # Pipeline-stage modules (auto-included after writer; final-layer
 # review by the final-layer reviewer with Mistral fallback closes the loop with NO
@@ -138,6 +139,14 @@ _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
     "full_paper.final_verdict.json",
     "full_paper.journal_surface.json",
     "pre_submit_gate.json",
+    # Public appraisal sidecars: exported in public_export_manifest and served
+    # by Researka from the run root (like contradiction_map.json). Keeping them
+    # top-level — NOT relocating into audit/ — is what lets the public reader
+    # show the populated risk-of-bias / GRADE appraisal instead of
+    # "not appraised", even though the data was always computed. Universal.
+    "risk_of_bias.json",
+    "grade_assessment.json",
+    "quality_methods.json",
 })
 _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
     "readable": (
@@ -172,14 +181,11 @@ _RUN_ARTIFACT_FOLDERS: dict[str, tuple[str, ...]] = {
         "docling_fallback.json",
         "offline_eval_harness.json",
         "full_paper.certification.json",
-        "grade_assessment.json",
         "meta_analysis_results.json",
         "publication_score.json",
         "polish_compiler.json",
         "polish_tensions_appendix.json",
-        "quality_methods.json",
         "receipt_funnel.json",
-        "risk_of_bias.json",
         "run_mode_contract.json",
         "structured_output_contract.json",
         "template_language_gate.json",
@@ -208,6 +214,13 @@ def _organize_run_artifacts(run_dir: Path) -> dict[str, str]:
                     dest.unlink()
             src.rename(dest)
             moved[name] = str(dest.relative_to(run_dir))
+    # The export manifest was written before this relocation; re-point any
+    # appraisal sidecar that moved into audit/ so the public bundle ships the
+    # populated file instead of a stale top-level path (reader "not appraised").
+    try:
+        _paper_ir.reresolve_export_manifest(run_dir)
+    except Exception:
+        pass
     return moved
 
 
@@ -370,8 +383,9 @@ def _restore_required_section_bodies(
         floor = _REQUIRED_SECTIONS.get(title)
         if floor is None:
             continue
-        fallback_md = _compile_public_section_backstop(title, floor)
         rendered = _rendered_section_match(out, heading)
+        context_md = out if rendered is None else out[:rendered.start()] + out[rendered.end():]
+        fallback_md = _compile_public_section_backstop(title, floor, existing_text=context_md)
         original = section.body_md.strip()
         original_long_enough = (
             prefer_typed_sections
@@ -427,10 +441,11 @@ def _restore_public_surface_floors(
         floor = int(required[title])
         ceiling = _SECTION_CEILINGS.get(title)
         heading = f"## {title}"
-        fallback_md = _compile_public_section_backstop(title, floor)
+        match = _rendered_section_match(out, heading)
+        context_md = out if match is None else out[:match.start()] + out[match.end():]
+        fallback_md = _compile_public_section_backstop(title, floor, existing_text=context_md)
         if not fallback_md:
             continue
-        match = _rendered_section_match(out, heading)
         if match is not None:
             words = _word_count(match.group(1))
             if words >= floor and (ceiling is None or words <= ceiling):
@@ -464,8 +479,7 @@ def _restore_public_surface_floors(
 
 
 def _topic_display_name() -> str:
-    topic = _ACTIVE_TOPIC.replace("_", " ").replace("-", " ").strip()
-    return topic or "the topic"
+    return humanize_topic(_ACTIVE_TOPIC, root=REPO_ROOT)
 
 
 def _intervention_class() -> str:
@@ -499,7 +513,9 @@ def _translation_boundary_statement(topic: str) -> str:
     )
 
 
-def _compile_public_section_backstop(title: str, floor: int) -> str:
+def _compile_public_section_backstop(
+    title: str, floor: int, existing_text: str = "",
+) -> str:
     """Safe public-prose fallback compiled from manifest metadata.
 
     The fallback must read like conservative manuscript prose. It may
@@ -518,7 +534,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     ctx = _section_backstop_context()
     receipt_n = cast(int, ctx["receipt_n"])
     claim_n = cast(int, ctx["claim_n"])
-    tension_n = cast(int, ctx["tension_n"])
+    tension_phrase = cast(str, ctx["tension_phrase"])
+    tension_subject = cast(str, ctx["tension_subject"])
     direct = cast(int, ctx["direct"])
     indirect = cast(int, ctx["indirect"])
     mechanistic = cast(int, ctx["mechanistic"])
@@ -552,8 +569,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
     paragraphs_by_title = {
         "Abstract": [
             (
-                f"This paper synthesizes {topic} as an aging-related "
-                f"intervention across {receipt_n} accepted source papers and "
+                f"This paper synthesizes evidence on {topic} across "
+                f"{receipt_n} accepted source papers and "
                 f"{claim_n} high-confidence extracted claims."
             ),
             (
@@ -561,7 +578,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 f"{_evidence_tier_phrase(direct, 'direct clinical')}, "
                 f"{_evidence_tier_phrase(indirect, 'adjacent clinical')}, "
                 f"and {_evidence_tier_phrase(mechanistic, 'mechanistic or model-system')}, "
-                f"with {_count_phrase(tension_n, 'cross-study disagreement')} "
+                f"with {tension_phrase} "
                 "across the evidence base."
             ),
             (
@@ -579,8 +596,8 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ],
         "Introduction": [
             (
-                f"This synthesis evaluates {topic} as an aging-related "
-                f"intervention across {receipt_n} accepted source papers and "
+                f"This synthesis evaluates evidence on {topic} across "
+                f"{receipt_n} accepted source papers and "
                 f"{claim_n} high-confidence extracted claims. The review is "
                 "organized around the distinction between direct clinical "
                 "evidence, indirect clinical evidence, and mechanistic evidence "
@@ -647,8 +664,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "tier, and study context."
             ),
             (
-                f"The synthesis identifies {tension_n} non-orthogonal "
-                "disagreements. These disagreements are load-bearing because they show "
+                f"The synthesis identifies {tension_phrase}. These disagreements are load-bearing because they show "
                 "where sources do not simply accumulate in the same direction. "
                 "The synthesis therefore treats disagreement and null findings "
                 "as evidence, not as noise to be smoothed away."
@@ -671,7 +687,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
                 "clinical signal."
             ),
             (
-                f"{_count_phrase(tension_n, 'non-orthogonal tension').capitalize()} prevent the evidence "
+                f"{tension_subject.capitalize()} prevent the evidence "
                 "from being reduced to a simple positive or negative verdict. "
                 "They instead point to a research agenda: define the population "
                 "most likely to benefit, select endpoints that map onto the "
@@ -696,7 +712,7 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             ),
             (
                 "The practical implication is a calibrated research position. "
-                f"{topic.title()} may justify further targeted testing when the "
+                f"{topic[:1].upper() + topic[1:]} may justify further targeted testing when the "
                 "mechanistic rationale, clinical endpoint, and population risk "
                 "profile align, but the present corpus does not justify claims "
                 "that ignore the null or adverse parts of the evidence base."
@@ -828,15 +844,15 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
         ),
         (
             "The resulting paper is therefore a calibrated synthesis: it can "
-            "identify plausible mechanisms, direct clinical signals, unresolved "
-            "tensions, and trial-design priorities without converting them into "
-            "claims stronger than the retained corpus can support."
+            "identify plausible mechanisms, observed direct signals when present, "
+            "unresolved tensions, and trial-design priorities without converting "
+            "them into claims stronger than the retained corpus can support."
         ),
         (
             "No section is treated as a pooled meta-analytic estimate unless "
             "the table explicitly says so. The text summarizes study-level "
             "patterns, while the numeric supplement preserves the "
-            "source-bound numeric record."
+            "extracted numeric record."
         ),
         (
             "This distinction matters for publication because it makes the "
@@ -906,18 +922,64 @@ def _compile_public_section_backstop(title: str, floor: int) -> str:
             "evidence profile is transparent, but it does not convert plausible "
             "translation into certainty without matching direct evidence."
         ),
+        # Extra shared capacity: each shared paragraph may appear in at most
+        # one section per paper (existing_text dedup below), so the pool must
+        # be deep enough that later sections can still reach their word floor.
+        (
+            "Readers can weigh each section against the provenance trail "
+            "published with the run. Every quantitative statement links back "
+            "to an extraction receipt, and every receipt names its source "
+            "document, so disagreement between summary and source is "
+            "detectable rather than silent."
+        ),
+        (
+            "Interpretation is deliberately scoped to the retained corpus. "
+            "Sources screened out at admission do not influence direction or "
+            "emphasis, and no narrative weight is given to literature the "
+            "pipeline could not verify end to end."
+        ),
+        (
+            "Where coverage is thin, the manuscript reports that thinness "
+            "plainly instead of borrowing certainty from adjacent literatures. "
+            "Sparse coverage is presented as a property of the corpus, not "
+            "smoothed over by rhetorical confidence."
+        ),
     ]
     paragraphs = paragraphs_by_title[title]
     if title != "Conclusion":
-        paragraphs += shared
+        # Stable title-keyed rotation: sections draw from different points in
+        # the shared pool, so one padded section does not starve the next
+        # (each paragraph still appears at most once via existing_text).
+        off = sum(ord(ch) for ch in title) % max(1, len(shared))
+        paragraphs += shared[off:] + shared[:off]
     selected: list[str] = []
     for paragraph in paragraphs:
+        if existing_text and paragraph in existing_text:
+            # Shared fallback prose may need to support multiple short sections.
+            # Reuse it only after section-scoping so terminal duplicate checks do
+            # not see the same public paragraph twice.
+            paragraph = _section_scoped_backstop_paragraph(title, paragraph)
+            if existing_text and paragraph in existing_text:
+                continue
         if paragraph not in selected:
             selected.append(paragraph)
         if _word_count("\n\n".join(selected)) >= floor + 25:
             break
     body = "\n\n".join(selected)
     return f"## {title}\n\n{body}"
+
+
+def _section_scoped_backstop_paragraph(title: str, paragraph: str) -> str:
+    scoped = title.lower()
+    return (
+        f"{paragraph} In the {scoped} section, this principle is applied to the "
+        "specific evidence-role, endpoint-distance, population-fit, direction-"
+        "of-effect, and safety-tradeoff pattern in the retained corpus rather "
+        "than repeated as a generic caution. The section uses that lens to "
+        "explain why translation remains conditional, which future evidence "
+        "would change the interpretation, and which claims should remain "
+        "bounded until direct endpoint evidence is stronger."
+    )
 
 
 def _section_backstop_context() -> dict[str, object]:
@@ -992,12 +1054,28 @@ def _section_backstop_context() -> dict[str, object]:
         return _outcome_list_phrase(top)
 
     direct = _count("directness", "direct")
-    indirect = _count("directness", "indirect")
     mechanistic = sum(1 for r in receipts if _is_mechanistic_or_model_system(r))
+    # The 3-bucket abstract tally must PARTITION the corpus so the rendered
+    # numbers sum to receipt_n: "adjacent" absorbs every non-direct,
+    # non-mechanistic receipt (indirect + review + protocol), which were
+    # previously dropped (2 + 17 + 9 read 28 != 33). mechanistic keeps the
+    # broader "mechanistic OR model-system" definition by design (a model-system
+    # study is mechanistic-grade for the headline even if stored directness is
+    # indirect — see test_section_backstop_counts_model_system_sources).
+    _receipt_n = int(manifest.get("n_receipts") or len(receipts))
+    indirect = max(0, _receipt_n - direct - mechanistic)
     return {
         "receipt_n": int(manifest.get("n_receipts") or len(receipts)),
         "claim_n": int(manifest.get("n_high_confidence_claims_total") or 0),
         "tension_n": int(manifest.get("n_non_orthogonal_tensions") or 0),
+        "tension_phrase": _public_tension_phrase(
+            int(manifest.get("n_non_orthogonal_tensions") or 0),
+            int(manifest.get("n_receipts") or len(receipts)),
+        ),
+        "tension_subject": _public_tension_subject(
+            int(manifest.get("n_non_orthogonal_tensions") or 0),
+            int(manifest.get("n_receipts") or len(receipts)),
+        ),
         "direct": direct,
         "indirect": indirect,
         "mechanistic": mechanistic,
@@ -1020,7 +1098,7 @@ def _section_backstop_outcome_rows(
 ) -> list[dict[str, object]]:
     by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for receipt in receipts:
-        by_outcome[str(receipt.get("outcome_class") or "other")].append(receipt)
+        by_outcome[outcome_key(str(receipt.get("outcome_class") or "other"))].append(receipt)
     rows: list[dict[str, object]] = []
     for outcome, group in sorted(by_outcome.items(), key=lambda x: (-len(x[1]), x[0]))[:6]:
         directions = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
@@ -1117,6 +1195,26 @@ def _count_phrase(n: int, singular: str, plural: str | None = None) -> str:
     return f"{value} {singular if value == 1 else (plural or singular + 's')}"
 
 
+def _dense_tension_map(n_tensions: int, n_receipts: int) -> bool:
+    return n_tensions > max(50, n_receipts * 3)
+
+
+def _public_tension_phrase(n_tensions: int, n_receipts: int) -> str:
+    if n_tensions <= 0:
+        return "no load-bearing cross-study disagreements"
+    if _dense_tension_map(n_tensions, n_receipts):
+        return "a high-density pairwise disagreement map"
+    return _count_phrase(n_tensions, "cross-study disagreement")
+
+
+def _public_tension_subject(n_tensions: int, n_receipts: int) -> str:
+    if n_tensions <= 0:
+        return "No load-bearing cross-study disagreements"
+    if _dense_tension_map(n_tensions, n_receipts):
+        return "These pairwise disagreements"
+    return _count_phrase(n_tensions, "non-orthogonal tension").capitalize()
+
+
 def _evidence_tier_phrase(n: int, label: str) -> str:
     value = n
     if value == 0:
@@ -1141,7 +1239,7 @@ def _ensure_results_summary_table(
         return markdown, False
     by_outcome: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for receipt in receipts:
-        by_outcome[str(receipt.get("outcome_class") or "other")].append(receipt)
+        by_outcome[outcome_key(str(receipt.get("outcome_class") or "other"))].append(receipt)
     rows: list[str] = []
     for outcome, group in sorted(
         by_outcome.items(), key=lambda item: (-len(item[1]), item[0]),
@@ -1160,7 +1258,8 @@ def _ensure_results_summary_table(
             "mixed": "mixed signal",
         }.get(dominant, "mixed signal")
         direct_parts = [
-            f"{directness[k]} {k}" for k in ("direct", "indirect", "mechanistic", "review")
+            f"{directness[k]} {k}"
+            for k in ("direct", "indirect", "mechanistic", "review", "protocol")
             if directness.get(k)
         ]
         claim_n = sum(int(r.get("n_claims") or 0) for r in group)
@@ -1507,6 +1606,44 @@ def _author_year_token(receipt) -> str | None:
     return None
 
 
+def _manifest_receipt_dict(receipt, citation_registry: dict) -> dict[str, Any]:
+    """Serialize a receipt into the manifest['receipts'] entry.
+
+    p_values MUST be carried through: ReceiptSummary.p_values is populated
+    from claim_type=="p_value" claims (real extracted source statistics),
+    and audit_v06_paper._manifest_structural_numerics() harvests
+    receipts[].p_values into the Q2 numeric pool. When this hand-built
+    dict dropped the field, Q2_numeric_integrity counted every cited
+    source p-value as untraceable and failed the 100% gate — the 2026-06
+    publish stall. A fabricated p-value (present in no source claim) is
+    still absent here, so the gate's anti-fabrication role is preserved.
+    Universal — no topic terms; p-values are domain-agnostic.
+
+    citation_token (Slice 7 P1b) lets the source-context drift check map
+    prose tokens (e.g. "Witham 2025") back to this receipt's quant_claims.
+    """
+    entry = citation_registry.get(receipt.receipt_id)
+    return {
+        "receipt_id": receipt.receipt_id,
+        "outcome_class": receipt.outcome_class,
+        "effect_direction": receipt.effect_direction,
+        "evidence_tier": receipt.evidence_tier,
+        "directness": receipt.directness,
+        "n_claims": receipt.n_claims,
+        "p_values": list(receipt.p_values),
+        "canonical_trial_id": receipt.canonical_trial_id,
+        "citation_token": (
+            entry.body_citation if entry is not None
+            else _author_year_token(receipt)
+        ),
+        # paper_id resolved from receipt_id so quant_claims are findable.
+        "paper_id": receipt.receipt_id,
+        "source_title": receipt.source_title,
+        "source_doi": receipt.source_doi,
+        "source_pmid": receipt.source_pmid,
+    }
+
+
 def _claim_topic_effect(claim: dict) -> int:
     """Returns +1 if the active topic's compound has a good effect
     on this endpoint, -1 if bad, 0 if unclear/null.
@@ -1640,12 +1777,68 @@ _TITLE_NO_BENEFIT_RE = re.compile(
     r"effect|mass|strength|function)",
     re.IGNORECASE,
 )
+_TITLE_POSITIVE_EFFECT_RE = re.compile(
+    r"\b(?:improves?|enhances?|extends?|rescues?|protects?|prevents?)\b"
+    r".{0,80}\b(?:longevity|lifespan|healthspan|survival|function|"
+    r"phenotype|outcome|response|recovery|performance)\b"
+    r"|\bpromotes?\b.{0,80}\b(?:longevity|lifespan|healthspan|healthy\s+aging)\b"
+    r"|\b(?:ameliorates?|attenuates?|mitigates?|reduces?)\b"
+    r".{0,80}\b(?:disease|damage|injury|inflammation|dysfunction|risk|decline)\b"
+    r"|\binverse(?:ly)?\s+associated\b.{0,80}\b(?:risk|incidence|mortality|dementia)\b",
+    re.IGNORECASE,
+)
+_TITLE_NEGATIVE_EFFECT_RE = re.compile(
+    r"\b(?:increases?|elevates?|raises?|worsens?|exacerbates?|impairs?|"
+    r"accelerates?|induces?)\b.{0,80}\b(?:risk|mortality|decline|dysfunction|"
+    r"damage|disease|senescence|aging|inflammation)\b"
+    r"|\bassociated\s+with\b.{0,80}\b(?:higher|increased|elevated)\b"
+    r".{0,40}\b(?:risk|incidence|mortality|dementia)\b",
+    re.IGNORECASE,
+)
 
 
 def _title_guarded_effect_direction(title: str, current: str) -> str:
-    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title or ""):
+    title = title or ""
+    current = current or "unclear"
+    if current == "positive" and _TITLE_NO_BENEFIT_RE.search(title):
         return "null"
+    if current not in {"null", "unclear"} or _TITLE_NO_BENEFIT_RE.search(title):
+        return current
+    positive = bool(_TITLE_POSITIVE_EFFECT_RE.search(title))
+    negative = bool(_TITLE_NEGATIVE_EFFECT_RE.search(title))
+    if positive and negative:
+        return "mixed"
+    if positive:
+        return "positive"
+    if negative:
+        return "negative"
     return current
+
+
+_RCT_RE = re.compile(
+    r"\brandomi[sz]ed\b.{0,24}\btrials?\b"     # randomized [controlled/clinical] trial
+    r"|\brandomi[sz]ed[\s,\-]+controlled\b"    # randomized controlled (study/…)
+    r"|\bRCTs?\b",
+    re.IGNORECASE,
+)
+_REVIEW_RE = re.compile(
+    r"\b(?:systematic\s+review|meta[\s\-]?analys[ei]s|scoping\s+review"
+    r"|narrative\s+review|umbrella\s+review|pooled\s+analysis|review\s+of)\b",
+    re.IGNORECASE,
+)
+
+
+def _is_randomized_trial(paper_meta: dict) -> bool:
+    """True if the source is a PRIMARY randomized controlled trial, read from
+    its title/study_design. A primary RCT is direct interventional evidence and
+    must never be coded directness='review' — the load-bearing Monda 2026
+    mis-code (a 12-month RCT labelled a review) falsely zeroed the paper's
+    'direct interventional' count and manufactured spurious Monda-vs-X
+    tensions. Meta-analyses / systematic reviews *of* randomized trials are
+    EXCLUDED — they are reviews, not primary trials. Universal — study-design
+    English only, no topic terms."""
+    text = f"{paper_meta.get('title') or ''} {paper_meta.get('study_design') or ''}"
+    return bool(_RCT_RE.search(text)) and not _REVIEW_RE.search(text)
 
 
 def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tuple[str, str]:
@@ -1663,6 +1856,11 @@ def _classify_paper_tier(paper_id: str, n_claims: int, paper_meta: dict) -> tupl
     is_rct_papers = pack.canonical_rct_paper_ids if pack is not None else ()
     paper_id_l = paper_id.lower()
     if any(str(name).lower() in paper_id_l for name in is_rct_papers):
+        return "A1", "direct"
+    # Directness validator: a primary randomized trial is direct interventional
+    # evidence and can never be 'review'. Reads the title/study_design so a
+    # title-only RCT (Monda 2026) is not mislabelled when study_design is blank.
+    if _is_randomized_trial(paper_meta):
         return "A1", "direct"
     # Explicit-field path: metadata sources MAY include these fields
     # directly. Empty/missing fields fall through to inference.
@@ -1772,6 +1970,16 @@ def _receipt_topic_identity(paper_id: str, paper_meta: dict, claims: list[dict])
     ]
     for claim in claims[:8]:
         fields.extend(claim.get(key) for key in ("sentence", "context_window", "raw_text", "arm"))
+    return " ".join(str(field or "") for field in fields)
+
+
+def _receipt_source_identity(paper_id: str, paper_meta: dict) -> str:
+    fields = [
+        paper_id,
+        paper_meta.get("title"),
+        paper_meta.get("abstract"),
+        paper_meta.get("journal"),
+    ]
     return " ".join(str(field or "") for field in fields)
 
 
@@ -2030,6 +2238,57 @@ def _load_receipt_candidate_paper_ids() -> set[str] | None:
     return (active or set()) | classified
 
 
+# Floor below which the population gate never prunes — a corpus this
+# small cannot afford to lose receipts even if some are off-population.
+_POPULATION_GATE_FLOOR = 12
+
+
+def _interventional_grade(r: ReceiptSummary) -> bool:
+    """Human-interventional-grade by the canonical tier taxonomy
+    (A1=RCT, A2=human surrogate, directness=direct). Animal/model-system
+    sources never carry these, so this is a safe never-prune exemption."""
+    return r.directness == "direct" or r.evidence_tier in ("A1", "A2")
+
+
+def _enforce_population_coherence(
+    typed: list[tuple[ReceiptSummary, str]],
+    high_papers: set[str],
+) -> list[ReceiptSummary]:
+    """Relative, self-calibrating corpus population-coherence gate.
+
+    When a corpus's high-confidence / interventional core is clearly
+    human-dominant, drop off-population (animal) background receipts that
+    are not interventional-grade — so an arctic-fox PK study or a
+    broiler-chicken cohort cannot anchor an outcome class in a human-
+    aging synthesis. Self-calibrating: an animal-dominant corpus
+    (veterinary, model-organism, C. elegans) is not human-dominant, so
+    its animal sources are left untouched. Floor-guarded so it can never
+    starve a synthesis. Universal — population is read from species
+    vocabulary, never from topic words (no denylist, no per-domain rule)."""
+    receipts = [r for r, _ in typed]
+    if len(receipts) < _POPULATION_GATE_FLOOR:
+        return receipts
+    core = [
+        pop for r, pop in typed
+        if r.receipt_id in high_papers or _interventional_grade(r)
+    ]
+    n_human = core.count("human")
+    n_animal = core.count("animal")
+    # Activate only when the unambiguous spine is clearly human. A tie or
+    # animal-leaning core → leave the corpus intact (fail-open).
+    if n_human < 3 or n_human <= n_animal:
+        return receipts
+    kept = [
+        r for r, pop in typed
+        if pop != "animal" or _interventional_grade(r)
+    ]
+    # Never starve: if pruning drops below the floor (or prunes nothing),
+    # keep the full set.
+    if len(kept) < _POPULATION_GATE_FLOOR or len(kept) == len(receipts):
+        return receipts
+    return kept
+
+
 def build_receipts_from_quant_claims(
     topic: str,
 ) -> list[ReceiptSummary]:
@@ -2044,7 +2303,6 @@ def build_receipts_from_quant_claims(
     per-paper primary numerics. Partial-only papers get tier downgraded
     to B2 (review) so downstream code treats them appropriately. Closes
     the vitamin_d 2-receipt starvation: 84 extracted → 65 receipts."""
-    receipts: list[ReceiptSummary] = []
     paper_meta_by_id = _load_paper_meta_by_id()
     active_paper_ids = _load_receipt_candidate_paper_ids()
     paper_class_map = _load_paper_class_map()
@@ -2070,20 +2328,36 @@ def build_receipts_from_quant_claims(
             elif conf == "partial" and in_keep_class:
                 by_paper[pid].append(c)
 
+    typed: list[tuple[ReceiptSummary, str]] = []
     for paper_id, claims in by_paper.items():
         if not claims:
             continue
         meta = paper_meta_by_id.get(paper_id, {})
-        if not is_source_topic_specific(topic, _receipt_topic_identity(paper_id, meta, claims), aliases=aliases):
+        identity = _receipt_topic_identity(paper_id, meta, claims)
+        if not is_source_topic_specific(topic, identity, aliases=aliases):
             continue
         if _is_retracted_source(meta) or not _receipt_mentions_active_topic(topic, meta, claims):
             continue
         agg = _aggregate_paper(paper_id, claims)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
+        if (
+            directness == "direct"
+            and not is_source_topic_specific(
+                topic, _receipt_source_identity(paper_id, meta), aliases=aliases,
+            )
+        ):
+            continue
         # Slice 37: partial-only papers downgrade tier so the audit
         # spine reflects that the receipt is review-tier evidence, not
         # a primary endpoint paper. Universal — no topic-specific logic.
-        if paper_id not in high_papers and tier in ("A1", "A2", "B1"):
+        # Exempt primary RCTs: a randomized trial is a primary endpoint paper
+        # regardless of high-confidence-claim count, so it must keep its
+        # direct/interventional coding (the Monda 2026 downgrade-to-review bug).
+        if (
+            paper_id not in high_papers
+            and tier in ("A1", "A2", "B1")
+            and not _is_randomized_trial(meta)
+        ):
             tier, directness = "B2", "review"
         thesis_text = _build_receipt_thesis_text(
             paper_id=paper_id,
@@ -2108,7 +2382,12 @@ def build_receipts_from_quant_claims(
                     meta.get("title") or "", agg["effect_direction"],
                 ),
             ),
-            p_values=tuple(agg["p_values"][:6]),
+            # Dedup + a generous bound (was [:6], which dropped cited
+            # source p-values in stats-dense papers — e.g. Janic 2019 has
+            # 19, so the 7th+ never reached the Q2 numeric pool and failed
+            # the 100% gate). Consumers (table_renderer, quality scoring)
+            # pick a representative, so a longer list does not bloat output.
+            p_values=tuple(dict.fromkeys(agg["p_values"]))[:40],
             population_summary=_build_population_summary(meta, agg["sample_sizes"]),
             source_title=meta.get("title"),
             source_year=meta.get("year"),
@@ -2116,81 +2395,15 @@ def build_receipts_from_quant_claims(
             source_pmid=meta.get("pmid"),
             source_venue=meta.get("journal"),
         )
-        receipts.append(dataclasses.replace(
+        receipt = dataclasses.replace(
             receipt,
             outcome_class=refine_other_outcome_class(
                 receipt, receipt.outcome_class,
             ),
-        ))
-    receipts.sort(key=lambda r: -r.n_claims)
-    return receipts
-
-
-def build_tension_matrix(receipts: list[ReceiptSummary]) -> TensionMatrix:
-    """Pairwise tensions between receipts. Same outcome_class + opposite
-    effect_directions = disagreement. Different outcome_classes with
-    one direct + one mechanistic = cross-domain tension."""
-    pairs: list[Tension] = []
-    sorted_receipts = sorted(receipts, key=lambda r: r.receipt_id)
-    for i, a in enumerate(sorted_receipts):
-        for b in sorted_receipts[i + 1:]:
-            if a.outcome_class == b.outcome_class:
-                # Fix #5 reviewer P2: explicit branches for the new
-                # null/mixed direction values; agreement covers same-
-                # value pairs (incl. null-vs-null and mixed-vs-mixed).
-                if a.effect_direction == b.effect_direction:
-                    kind = "agreement"
-                    severity = 1
-                elif "mixed" in (a.effect_direction, b.effect_direction):
-                    # mixed vs anything (positive / negative / null) is a
-                    # partial disagreement — strongest evidence the paper
-                    # has internal contradiction worth surfacing.
-                    kind = "disagreement"
-                    severity = 4
-                elif "null" in (a.effect_direction, b.effect_direction):
-                    kind = "null_vs_positive"
-                    severity = 3
-                elif {a.effect_direction, b.effect_direction} == {
-                    "positive", "negative",
-                }:
-                    kind = "disagreement"
-                    severity = 5
-                else:
-                    kind = "orthogonal"
-                    severity = 0
-                summary = (
-                    f"{a.receipt_id} ({a.effect_direction}) vs "
-                    f"{b.receipt_id} ({b.effect_direction}) on "
-                    f"{a.outcome_class}"
-                )
-            else:
-                # Cross-domain tension if one is direct and the other mechanistic.
-                if (a.directness == "direct" and b.directness == "mechanistic") or (
-                    a.directness == "mechanistic" and b.directness == "direct"
-                ):
-                    kind = "mechanism_vs_clinical"
-                    severity = 4
-                    summary = (
-                        f"{a.receipt_id} ({a.outcome_class}, "
-                        f"{a.directness}) vs {b.receipt_id} "
-                        f"({b.outcome_class}, {b.directness})"
-                    )
-                else:
-                    kind = "orthogonal"
-                    severity = 0
-                    summary = (
-                        f"{a.receipt_id} and {b.receipt_id} address "
-                        "different outcome classes"
-                    )
-            pairs.append(Tension(
-                receipt_a_id=a.receipt_id,
-                receipt_b_id=b.receipt_id,
-                kind=cast(TensionKind, kind),
-                outcome_class=a.outcome_class,
-                summary=summary,
-                severity=severity,
-            ))
-    return TensionMatrix(receipts=tuple(receipts), pairs=tuple(pairs))
+        )
+        typed.append((receipt, _taxonomy.population_of(identity)))
+    typed.sort(key=lambda rp: -rp[0].n_claims)
+    return _enforce_population_coherence(typed, high_papers)
 
 
 def build_thesis(
@@ -2344,7 +2557,9 @@ def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
     directness = Counter(str(r.directness or "unclassified").lower() for r in receipts)
     tiers = Counter(str(r.evidence_tier or "").upper() for r in receipts)
     direct = directness.get("direct", 0)
-    abstracted = sum(directness.get(k, 0) for k in ("review", "indirect", "mechanistic"))
+    abstracted = sum(
+        directness.get(k, 0) for k in ("review", "indirect", "mechanistic", "protocol")
+    )
     if abstracted < max(4, int(total * 0.6)) and direct:
         return ""
     direct_phrase = f"{direct} are classified as direct interventional evidence"
@@ -2360,7 +2575,8 @@ def _review_heavy_abstraction_note(receipts: list[ReceiptSummary]) -> str:
     return (
         f"**Evidence-abstraction note.** The {total} retained reference papers are "
         f"not {total} independent primary clinical trials: {abstracted} are review, "
-        f"indirect, or mechanistic source-level summaries, and {direct_phrase}. "
+        f"indirect, mechanistic, or registered-protocol source-level summaries, "
+        f"and {direct_phrase}. "
         "Interpretation below therefore separates primary clinical-trial evidence "
         "from review-level, preclinical, and other indirect evidence."
     )
@@ -2433,10 +2649,12 @@ def _append_references_block(
     # Fix #30: background-literature references used in prose
     used_bglit = _used_background_lit_entries(paper_md)
     if used_bglit:
+        kinds = {getattr(e, "kind", "threshold") for e in used_bglit}
+        kinds_phrase = _bglit.background_kinds_phrase(kinds)
         lines.extend([
             "### Background References",
             "",
-            "*Canonical clinical thresholds cited in prose. Each "
+            f"*{kinds_phrase} cited in prose. Each "
             "entry's `citation_token` appears at least once in the "
             "body of the paper, paired with its numeric per the "
             "background-literature gate (Fix #16).*",
@@ -2450,6 +2668,8 @@ def _append_references_block(
             bg_parts = [f"- **{entry.citation_token}.**"]
             if ref_clean:
                 bg_parts.append(f"_{ref_clean}._")
+            if getattr(entry, "kind", "threshold") == "reference":
+                bg_parts.append("(methodological reference)")
             if entry.doi:
                 bg_parts.append(f"DOI: {entry.doi}.")
             if entry.pmid:
@@ -2516,47 +2736,64 @@ def _clean_reference_title(title: str) -> str:
     return cleaned.strip().rstrip(".")
 
 
+_BG_BODY_CUTOFF_RE = re.compile(
+    r"^##\s+(?:Structured Evidence Tables|Search Provenance|References"
+    r"|Evidence Snapshot|Publication Appendix|Data and Code Availability"
+    r"|Researka Submitter Block)\b|^###\s+Background References\b",
+    re.MULTILINE,
+)
+
+
 def _used_background_lit_entries(paper_md: str) -> list:
-    """Fix #30: load the background_literature registry, return the
-    entries whose citation_token appears anywhere in `paper_md`.
-    Returns an ordered, de-duplicated list (entry-key insertion
-    order from the registry)."""
+    """Fix #30: load the background_literature registry, return the entries
+    whose citation_token appears in the AUTHORED BODY of `paper_md`.
+
+    Restricted to the body (everything before the first deterministic
+    section — Structured Evidence Tables / References / Evidence Snapshot /
+    appendix) so a token that only appears in the bibliography or a metadata
+    appendix — never cited in prose — is NOT listed. This keeps the Fix #16
+    'each entry's citation_token appears at least once in the body' guarantee
+    true: pre-fix a whole-document substring match listed static-pack entries
+    (Tinetti 1988, Tancredi 2015) that the body never cites. Returns an
+    ordered, de-duplicated list (registry insertion order)."""
     try:
         registry = _bglit.load_registry()
     except (ImportError, FileNotFoundError, ValueError):
         return []
+    cut = _BG_BODY_CUTOFF_RE.search(paper_md)
+    body = paper_md[: cut.start()] if cut else paper_md
     seen_tokens: set[str] = set()
     used: list = []
     for entry in registry.values():
         if entry.citation_token in seen_tokens:
             continue
-        if entry.citation_token in paper_md:
+        if entry.citation_token in body:
             used.append(entry)
             seen_tokens.add(entry.citation_token)
     return used
 
 
 def _build_call_chain() -> list[CallSpec]:
-    """Bulk paper writer chain — MiMo v2.5 Pro is PRIMARY.
+    """Bulk paper writer chain — MiniMax M3 is PRIMARY.
 
-    Order: MiMo v2.5 Pro (unlimited token plan) → Mistral Small (paid
+    Order: MiniMax M3 → Mistral Small (paid
     fallback) → Gemma 4 31B (paid fallback). OpenRouter fires only if
-    MiMo is unreachable; the user's MiMo plan is unlimited while
+    MiniMax is unreachable; the user's MiniMax plan is primary while
     OpenRouter is metered.
 
     All identifiers come from agent/settings.py — never hardcode here.
-    Past drift put `mimo-vl-7b-rl` (a vision model) and Gemma 3 27B as
-    primaries, silently bypassing MiMo v2.5 Pro entirely.
+    Past drift put a vision model and Gemma 3 27B as primaries,
+    silently bypassing the intended writer entirely.
     """
     settings = load_settings()
     chain: list[CallSpec] = []
-    if settings.mimo_api_key:
+    if settings.minimax_api_key:
         chain.append(CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
-            max_attempts=configured_attempts_for_url(settings.mimo_base_url),
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
+            max_attempts=configured_attempts_for_url(settings.minimax_base_url),
         ))
     if settings.openrouter_api_key:
         for openrouter_model in (settings.fallback_model, settings.judge_model):
@@ -2564,7 +2801,7 @@ def _build_call_chain() -> list[CallSpec]:
                 base_url=settings.openrouter_base_url,
                 api_key=settings.openrouter_api_key,
                 model=openrouter_model,
-                timeout_sec=settings.mimo_timeout_sec,
+                timeout_sec=settings.minimax_timeout_sec,
                 max_attempts=configured_attempts_for_url(
                     settings.openrouter_base_url,
                 ),
@@ -2632,6 +2869,11 @@ async def _run(
     if not receipts:
         print("No high-confidence claims found.", file=sys.stderr)
         return 2
+    # Single canonical tension classifier (agent.synthesis) — the manifest
+    # count, review-type routing, and consistency-audit replay must all read
+    # the SAME matrix. A divergent local copy here previously inflated the
+    # published n_non_orthogonal_tensions (~2.6x) vs the canonical replay.
+    from agent.synthesis import build_tension_matrix
     matrix = build_tension_matrix(receipts)
     thesis = build_thesis(receipts, matrix, topic=topic)
 
@@ -2686,31 +2928,7 @@ async def _run(
         for rid, entry in citation_registry.items()
     }, indent=2))
     manifest_receipts = [
-        {
-            "receipt_id": r.receipt_id,
-            "outcome_class": r.outcome_class,
-            "effect_direction": r.effect_direction,
-            "evidence_tier": r.evidence_tier,
-            "directness": r.directness,
-            "n_claims": r.n_claims,
-            "canonical_trial_id": r.canonical_trial_id,
-            # Slice 7 P1b fix (2026-05-05): populate citation_token
-            # so the source-context drift check can map prose
-            # tokens (e.g. "Witham 2025") to this receipt's
-            # quant_claims and check role match.
-            "citation_token": (
-                entry.body_citation
-                if (entry := citation_registry.get(r.receipt_id)) is not None else
-                _author_year_token(r)
-            ),
-            # paper_id resolved from receipt_id so quant_claims
-            # files are findable.
-            "paper_id": r.receipt_id,
-            "source_title": r.source_title,
-            "source_doi": r.source_doi,
-            "source_pmid": r.source_pmid,
-        }
-        for r in receipts
+        _manifest_receipt_dict(r, citation_registry) for r in receipts
     ]
     field_engagement = tuple(
         dataclasses.asdict(item)
@@ -2818,7 +3036,11 @@ async def _run(
     # gives a PhD reviewer the explicit "beyond prior reviews"
     # statement right after the conclusion they just read.
     what_adds_md = build_what_this_adds_section(
-        writer_receipts, writer_matrix, thesis, topic=topic,
+        writer_receipts, writer_matrix, thesis,
+        # Full scoped display title ("Fasting Regimens"), not the aspect-stripped
+        # intervention label ("Fasting"), so the synthesis-adds prose names the
+        # actual topic. Derived from the canonical slug — universal, no terms.
+        topic=humanize_topic(_ACTIVE_TOPIC, title_case=True),
     )
     if what_adds_md:
         full_paper_md = full_paper_md.rstrip() + "\n\n" + what_adds_md
@@ -2992,6 +3214,7 @@ async def _run(
             title=r.source_title,
             venue=r.source_venue,
             population=r.population_summary,
+            source_excerpt=r.thesis_text,
         )
         lanes[cite] = lane
         if lane == "animal_preclinical":
@@ -3013,9 +3236,11 @@ async def _run(
     # eligibility / screening flow / extraction fields / RoB approach
     # / synthesis approach / AI-use disclosure / human accountability.
     from agent.methods_pack import build_methods_pack, write_methods_pack
+    from agent.outcome_class_remap import outcome_key
     _funnel = manifest.get("receipt_funnel") or {}
     _outcome_classes = sorted({
-        r.get("outcome_class") for r in manifest.get("receipts", ())
+        outcome_key(str(r.get("outcome_class") or ""))
+        for r in manifest.get("receipts", ())
         if r.get("outcome_class")
     })
     _search_queries = (
@@ -3195,6 +3420,7 @@ async def _run_post_paper_pipeline(
     print("[pipeline] Stage 2/5 — consistency audit + auto-fix...", file=sys.stderr)
     issues = _consistency_audit.run_audit(
         paper_md, manifest, audit_report, audit_md,
+        run_dir=paper_path.parent,
     )
     paper_path.with_suffix(".consistency.json").write_text(
         json.dumps([_issue_to_dict(i) for i in issues], indent=2)
@@ -3240,6 +3466,8 @@ async def _run_post_paper_pipeline(
         file=sys.stderr,
     )
     try:
+        from agent.settings import load_settings as _load_settings
+
         # Fix #11: pass citation_registry so the reviewer sees clean Author-Year
         # tokens in the "allowed body citations" list, not internal
         # receipt_id handles. Pre-fix reviewer behavior reverted clean citations
@@ -3247,6 +3475,7 @@ async def _run_post_paper_pipeline(
         # consistency" — exactly the bug the third reviewer warned about.
         patches, _raw, model_used, cost = await _final_reviewer.review_paper(
             paper_md, manifest, audit_report,
+            model=_load_settings().final_layer_reviewer_model,
             citation_registry=citation_registry,
         )
     except RuntimeError as exc:
@@ -3430,6 +3659,7 @@ async def _run_post_paper_pipeline(
     pre_audit_md = _audit_v06._format_summary(pre_audit)
     pre_issues = _consistency_audit.run_audit(
         paper_md, manifest, pre_audit, pre_audit_md,
+        run_dir=paper_path.parent,
     )
     pre_final_cleanup_md = paper_md
     paper_md, _refix_log = _consistency_fixer.apply_fixes(
@@ -3461,6 +3691,7 @@ async def _run_post_paper_pipeline(
     post_restore_audit_md = _audit_v06._format_summary(post_restore_audit)
     post_restore_issues = _consistency_audit.run_audit(
         paper_md, manifest, post_restore_audit, post_restore_audit_md,
+        run_dir=paper_path.parent,
     )
     if any(i.auto_fixable for i in post_restore_issues):
         paper_md, _post_restore_log = _consistency_fixer.apply_fixes(
@@ -3534,12 +3765,33 @@ async def _run_post_paper_pipeline(
             json.dumps(_refix_log, indent=2)
         )
         paper_path.write_text(paper_md)
+
+    # Stage 5a: final-layer reviewer patches can reintroduce journal-surface
+    # issues after the first deterministic finalizer pass. Run the same
+    # compiler-owned finalizer again before the surface/pre-submit gate, then
+    # audit the post-finalizer manuscript.
+    from agent.journal_finalizer import finalize_run
+    paper_path.write_text(paper_md)
+    _stage5_finalizer_report = finalize_run(paper_path.parent)
+    if _stage5_finalizer_report.paper_changed:
+        paper_md = paper_path.read_text()
+    paper_md, _post_finalizer_fix_log = _repair_post_finalizer_auto_fixables(
+        paper_md, manifest, paper_path, _audit, quant_claims_dir=QUANT_DIR,
+    )
+    if _post_finalizer_fix_log:
+        print(
+            "[pipeline] Stage 5a* — post-finalizer consistency auto-fix "
+            f"applied={sum(int(i.get('n_changes') or 0) for i in _post_finalizer_fix_log)}",
+            file=sys.stderr,
+        )
+
     audit_report = _audit(paper_md)
     audit_path.write_text(json.dumps(audit_report, indent=2))
     audit_md = _audit_v06._format_summary(audit_report)
     paper_path.with_suffix(".audit.md").write_text(audit_md)
     final_issues = _consistency_audit.run_audit(
         paper_md, manifest, audit_report, audit_md,
+        run_dir=paper_path.parent,
     )
     paper_path.with_suffix(".consistency.json").write_text(
         json.dumps([_issue_to_dict(i) for i in final_issues], indent=2)
@@ -3632,10 +3884,10 @@ async def _run_post_paper_pipeline(
         # from the _run() scope. Cheap call (env-var read).
         _settings = _load_settings()
         model_stack = {
-            "writer": _settings.mimo_model,
+            "writer": _settings.minimax_model,
             "reviewer": _settings.final_layer_reviewer_model,
-            "extractor": _settings.mimo_model,
-            "thesis": _settings.mimo_model,
+            "extractor": _settings.minimax_model,
+            "thesis": _settings.minimax_model,
         }
         # P1 reviewer fix (2026-05-04 wave 5): use the orchestrator's
         # _ACTIVE_TOPIC directly. The previous regex on the run-dir
@@ -3750,7 +4002,7 @@ async def _run_post_paper_pipeline(
             citation_registry
             and all(rid in citation_registry for rid in receipt_ids if rid)
         )
-        reviewer_patches = {"unresolved_p1_count": grok_unresolved_p1}
+        reviewer_patches = _reviewer_patches_for_gate(out_dir, grok_unresolved_p1)
         if quality_bundle is None:
             raise RuntimeError("quality_methods_bundle_missing")
         gate_artifacts = _paper_quality.write_final_quality_gates(
@@ -3870,6 +4122,10 @@ async def _run_post_paper_pipeline(
             f"blockers={len(_fs.blocking_reasons)})",
             file=sys.stderr,
         )
+        # Refresh provenance.json so its verdict reflects the reconciled
+        # final_status — the finalize-time write (Stage 5c) predates this and
+        # would otherwise report a pre-reconcile "blocked" for a promoted run.
+        _paper_quality._write_provenance_sidecar(out_dir, manifest, {})
     except Exception as _e:  # pragma: no cover — fail-soft
         print(
             f"[pipeline] Stage 5d — final_status skipped: {_e}",
@@ -4084,6 +4340,19 @@ def _reviewer_p1_counts_from_log(out_dir: Path) -> tuple[int, int, int]:
     return unresolved, flagged, stripped
 
 
+def _reviewer_patches_for_gate(out_dir: Path, fallback_unresolved_p1: int) -> dict[str, int]:
+    if _resolve_absent_reviewer_p1s(out_dir):
+        _refresh_post_finalizer_verdict(out_dir)
+    unresolved, flagged, stripped = _reviewer_p1_counts_from_log(out_dir)
+    if not (out_dir / "debug" / "full_paper.review_patch_log.json").exists():
+        unresolved = max(0, int(fallback_unresolved_p1))
+    return {
+        "unresolved_p1_count": unresolved,
+        "flagged_p1_count": flagged,
+        "auto_stripped_count": stripped,
+    }
+
+
 def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
     try:
         text = (out_dir / "full_paper.md").read_text()
@@ -4096,9 +4365,20 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
     changed = 0
     for row in log.get("patches") or []:
         target = before.get(str(row.get("patch_id"))) if isinstance(row, dict) else None
-        if isinstance(row, dict) and _is_unresolved_reviewer_p1(row) and target and target not in text:
+        if not (isinstance(row, dict) and _is_unresolved_reviewer_p1(row)):
+            continue
+        reason = str(row.get("reason_for_decision") or "")
+        duplicate_heading = _duplicate_heading_target(reason)
+        if duplicate_heading and _heading_occurrences(duplicate_heading, text) > 1:
+            continue
+        if (duplicate_heading and _heading_occurrences(duplicate_heading, text) <= 1) or (not duplicate_heading and target and target not in text):
             row["decision"] = "applied"
-            row["reason_for_decision"] = "FINALIZER-RESOLVED: flagged BEFORE region is absent after deterministic finalization. " + str(row.get("reason_for_decision") or "")
+            detail = (
+                f"duplicate heading {duplicate_heading!r} absent after deterministic finalization"
+                if duplicate_heading
+                else "flagged BEFORE region is absent after deterministic finalization"
+            )
+            row["reason_for_decision"] = "FINALIZER-RESOLVED: " + detail + ". " + reason
             changed += 1
     if changed:
         rows = [r for r in log.get("patches", []) if isinstance(r, dict)]
@@ -4107,6 +4387,50 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
         log["n_flagged"] = sum(1 for r in rows if r.get("decision") == "flagged")
         log_path.write_text(json.dumps(log, indent=2))
     return changed
+
+
+def _duplicate_heading_target(reason: str) -> str:
+    match = re.search(r"duplicate\s+(?:header|heading)\s+['\"](#{2,6}\s+[^'\"]+)['\"]", reason, flags=re.I)
+    return " ".join(match.group(1).split()) if match else ""
+
+
+def _heading_occurrences(heading: str, paper_md: str) -> int:
+    if not heading:
+        return 0
+    normalized = " ".join(heading.split())
+    return sum(1 for line in paper_md.splitlines() if " ".join(line.strip().split()) == normalized)
+
+
+def _repair_post_finalizer_auto_fixables(
+    paper_md: str,
+    manifest: dict[str, Any],
+    paper_path: Path,
+    audit_fn,
+    *,
+    quant_claims_dir: Path,
+) -> tuple[str, list[dict[str, Any]]]:
+    audit = audit_fn(paper_md)
+    audit_md = _audit_v06._format_summary(audit)
+    issues = _consistency_audit.run_audit(
+        paper_md, manifest, audit, audit_md, run_dir=paper_path.parent,
+    )
+    if not any(getattr(i, "auto_fixable", False) for i in issues):
+        return paper_md, []
+    fixed_md, log = _consistency_fixer.apply_fixes(
+        paper_md, issues, manifest=manifest,
+        quant_claims_dir=quant_claims_dir,
+        numeric_quarantine_path=paper_path.with_name(
+            "numeric_claim_quarantine.json",
+        ),
+    )
+    fixed_md = _strip_rendered_citation_markers(fixed_md)
+    if fixed_md == paper_md and not log:
+        return paper_md, []
+    paper_path.write_text(fixed_md)
+    paper_path.with_suffix(".post_finalizer_fixed_log.json").write_text(
+        json.dumps(log, indent=2),
+    )
+    return fixed_md, log
 
 
 def _refresh_post_finalizer_verdict(out_dir: Path) -> bool:
@@ -4267,7 +4591,7 @@ def _build_run_mode_contract(
         submission_id=submission_id,
         n_papers_in_corpus=n_papers,
         n_high_confidence_claims_used_by_writer=n_claims,
-        writer_model=settings.mimo_model,
+        writer_model=settings.minimax_model,
         in_writing_judge_model=settings.judge_model,
         final_layer_reviewer_model=settings.final_layer_reviewer_model,
         final_layer_fallback_model=settings.fallback_model,

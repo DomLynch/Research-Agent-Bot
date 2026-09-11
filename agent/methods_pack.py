@@ -6,7 +6,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Sequence
 
-from agent.outcome_class_remap import outcome_display
+from agent.outcome_class_remap import unique_outcome_displays
 from agent.selection_flow import receipt_admission_rows
 
 
@@ -73,12 +73,33 @@ def build_methods_pack(
         "confidence interval or credible interval", "p-value", "sample size",
         "follow-up duration", "risk-of-bias rating",
     )
-    exclusion_summary = (
-        f"Non-traceable findings (claim could not be linked to source text): "
-        f"{max(0, n_rejected)} records.",
-        "Wrong population / off-topic sources excluded at screening.",
-        "Duplicate records deduplicated by DOI / PMID before screening.",
+    # Count-backed exclusion summary: state an exclusion reason ONLY when a
+    # real count backs it, so the "Exclusion reasons" list can never
+    # contradict a "0 excluded" screening flow (reviewer-flagged). When no
+    # instrumented gate recorded exclusions, say so plainly instead of
+    # listing phantom reasons. Universal — no per-topic logic.
+    n_screening_excluded = max(
+        0, int(n_retrieved) - int(n_included) - max(0, int(n_rejected))
     )
+    exclusion_lines: list[str] = []
+    if int(n_rejected) > 0:
+        exclusion_lines.append(
+            "Non-traceable findings (claim could not be linked to source "
+            f"text): {int(n_rejected)} records."
+        )
+    if n_screening_excluded > 0:
+        exclusion_lines.append(
+            "Off-topic or ineligible-population sources removed during "
+            f"title/abstract screening: {n_screening_excluded} records."
+        )
+    if not exclusion_lines:
+        exclusion_lines.append(
+            "No records were excluded at the gates instrumented for this "
+            "run: the eligibility criteria above were applied during "
+            "retrieval and claim-binding but produced no post-screening "
+            "exclusions with recorded counts for this corpus."
+        )
+    exclusion_summary = tuple(exclusion_lines)
     screening_flow = {
         "n_retrieved": int(n_retrieved),
         "n_screened": int(n_screened),
@@ -98,10 +119,12 @@ def build_methods_pack(
             counts.get("admitted_receipts") or counts.get("accepted_high_confidence") or 0
         )
     rob = rob_method or (
-        "Per-source risk-of-bias was rated using design-appropriate "
-        "Cochrane RoB-2 (RCTs), ROBINS-I (non-randomised studies), and "
-        "AMSTAR-2 (systematic reviews / meta-analyses). Ratings recorded "
-        "in `risk_of_bias.json`."
+        "Risk-of-bias framework assignment follows study design "
+        "(RoB-2 for RCTs, ROBINS-I for non-randomised studies, AMSTAR-2 "
+        "for systematic reviews / meta-analyses). Public appraisal claims "
+        "are limited to populated `risk_of_bias.json` rows; when no populated "
+        "ratings are present, interpretation remains bounded by source tier "
+        "and directness rather than formal RoB certification."
     )
     return MethodsPack(
         review_type=review_type,
@@ -119,7 +142,7 @@ def build_methods_pack(
         risk_of_bias_approach=rob,
         synthesis_approach=(
             "Evidence-tension synthesis: claims grouped by outcome class "
-            f"({', '.join(outcome_display(c).lower() for c in sorted(outcome_classes))}); "
+            f"({', '.join(unique_outcome_displays(sorted(outcome_classes), lower=True))}); "
             "within-class agreement, disagreement, and directness gaps "
             "surfaced explicitly. Quantitative pooling applied only where "
             "≥3 sources reported a comparable endpoint with extractable "
@@ -150,9 +173,12 @@ _ACCOUNTABILITY_TEXTS: dict[str, str] = {
         "and citation registry, source-bound numeric trace, deterministic "
         "gates (`full_paper.journal_surface.json`, `pre_submit_gate.json`, "
         "`artifact_consistency.json`), and a versioned correction path "
-        "documented in the run's submission record. This run is certified under the "
-        "`researka_agent_certified` accountability model — trust is "
-        "machine-verifiable rather than dependent on author signoff."
+        "documented in the run's submission record. Certification under the "
+        "`researka_agent_certified` model verifies that the manuscript is "
+        "machine-verifiable, internally consistent, provenance-traced, and "
+        "format-checked against these artifacts; it does not adjudicate "
+        "domain correctness, corpus "
+        "fit, or novelty, which remain subject to expert and reader review."
     ),
 }
 
@@ -243,7 +269,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
         "",
         "### Data items",
         "The following fields were extracted from each included source: " +
-        ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias appraisal, and claim registry) rather than from re-parsed full text.",  # noqa: E501
+        ", ".join(pack.data_extraction_fields) + ". Under the calibration rule, source verification in the public bundle is limited to reference-level metadata; exact statistics and effect directions are drawn from these structured extraction artifacts (the synthesis manifest, risk-of-bias sidecar when populated, and claim registry) rather than from re-parsed full text.",  # noqa: E501
         "",
         "### Risk-of-bias appraisal",
         pack.risk_of_bias_approach,

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import re
 from collections.abc import Mapping, Sequence
 from typing import Any
 
@@ -43,6 +44,7 @@ from agent.synthesis_schemas import (
     TensionMatrix,
 )
 from agent.synthesis_writer import filter_accepted
+from agent.topic_display import humanize_topic, intervention_label
 
 # Day 10.16c — per-section word-count budgets enforced AT CODE LEVEL.
 # Prompts ask for length; this dict defines the floors that the writer
@@ -79,10 +81,19 @@ def _revision_feedback_block() -> str:
     feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())[:4000]
     if not feedback:
         return ""
-    # Researka joins requiredRevisions with "; "; enumerate so the writer addresses each distinct ask, not a run-on blob. Topic-agnostic.
-    asks = [a.strip() for a in feedback.split(";") if a.strip()]
+    # Researka joins requiredRevisions with "; ". Split only at independent
+    # revision-action starts so semicolon examples stay inside the ask.
+    starts = (
+        "Add", "Audit", "Clarify", "Correct", "Define", "Differentiate",
+        "Document", "Ensure", "Explain", "Expand", "Fix", "For each",
+        "Hedge", "Include", "Operationalize", "Provide", "Re-extract",
+        "Mark", "Reclassify", "Reconcile", "Regenerate", "Remove", "Repair",
+        "Resolve", "Replace", "Rewrite", "Separate", "Soften", "Update", "Verify",
+    )
+    pattern = r";\s+(?=(?:" + "|".join(re.escape(start) for start in starts) + r")\b)"
+    asks = [a.strip() for a in re.split(pattern, feedback, flags=re.IGNORECASE) if a.strip()]
     body = "\n".join(f"  {i}. {ask}" for i, ask in enumerate(asks, 1))
-    return f"REVISION FEEDBACK — address EACH point below if source-supported:\n{body}\nTreat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics; do not fabricate to satisfy a point you cannot support."
+    return f"REVISION FEEDBACK — address EACH point below if source-supported:\n{body}\nTreat this as reviewer guidance, not evidence. Add only receipt-supported claims, citations, or numerics; do not fabricate to satisfy a point you cannot support. If an ask requests a table, render a clearly labelled markdown table; prose alone does not satisfy table-shaped feedback."
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------
@@ -121,6 +132,21 @@ def _ensure_outcome_results_heading(body_md: str, outcome: str) -> str:
     return f"{heading}\n\n{body}".strip()
 
 
+def _receipt_label(receipt: ReceiptSummary) -> str:
+    title = " ".join(str(receipt.source_title or receipt.receipt_id).split())
+    if len(title) > 90:
+        title = title[:87].rstrip() + "..."
+    return f"{title} {receipt.source_year}" if receipt.source_year else title
+
+
+def _receipt_role(receipt: ReceiptSummary) -> str:
+    return (
+        f"{_receipt_label(receipt)} "
+        f"(tier={receipt.evidence_tier}; directness={receipt.directness}; "
+        f"direction={receipt.effect_direction})"
+    )
+
+
 def _build_thin_results_section(receipts: Sequence[ReceiptSummary], matrix: TensionMatrix) -> SynthesisSection:
     by_outcome: dict[str, list[ReceiptSummary]] = {}
     tensions: dict[str, int] = {}
@@ -132,8 +158,53 @@ def _build_thin_results_section(receipts: Sequence[ReceiptSummary], matrix: Tens
     for outcome, group in sorted(by_outcome.items()):
         tiers = ", ".join(sorted({r.evidence_tier for r in group if r.evidence_tier})) or "not classified"
         directions = ", ".join(sorted({r.effect_direction for r in group if r.effect_direction})) or "not classified"
-        lines += ["", _outcome_results_heading(outcome), "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Evidence tiers: {tiers}. Effect directions: {directions}. Non-orthogonal same-outcome tensions: {tensions.get(outcome, 0)}."]
+        examples = "; ".join(_receipt_role(r) for r in group[:3])
+        lines += ["", _outcome_results_heading(outcome), "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Evidence tiers: {tiers}. Effect directions: {directions}. Non-orthogonal same-outcome tensions: {tensions.get(outcome, 0)}. Source examples: {examples}."]
     return SynthesisSection(name="results", body_md="\n".join(lines).rstrip() + "\n", anchors=())
+
+
+def _append_section_note(section: SynthesisSection, note: str) -> SynthesisSection:
+    if not note or note in section.body_md:
+        return section
+    return SynthesisSection(
+        name=section.name,
+        body_md=section.body_md.rstrip() + "\n\n" + note.rstrip() + "\n",
+        anchors=section.anchors,
+    )
+
+
+def _thin_limitations_note(receipts: Sequence[ReceiptSummary]) -> str:
+    design_limited = [
+        _receipt_label(r) for r in receipts
+        if r.directness in {"protocol", "mechanistic"}
+        or re.search(r"\b(protocol|cross-sectional|observational)\b", r.source_title or "", flags=re.I)
+    ]
+    if not design_limited:
+        return ""
+    shown = "; ".join(design_limited[:5])
+    return (
+        "**Design-limit note:** Protocol, mechanistic, observational, or "
+        f"cross-sectional sources ({shown}) are retained for context but "
+        "cannot support causal claims individually. They bound the evidence "
+        "map and should not be read as direct clinical efficacy evidence."
+    )
+
+
+def _thin_conclusion_note(receipts: Sequence[ReceiptSummary], matrix: TensionMatrix) -> str:
+    direct = [r for r in receipts if r.directness == "direct"]
+    if direct:
+        direct_text = "; ".join(_receipt_role(r) for r in direct[:5])
+    else:
+        direct_text = "no accepted direct source"
+    remainder = max(0, len(receipts) - len(direct))
+    return (
+        "**Direct-source ceiling:** The direct clinical source set is "
+        f"{direct_text}. The remaining {remainder} accepted sources are "
+        "indirect, review, protocol, or mechanistic/contextual evidence, so "
+        "they can refine scope and uncertainty but do not outweigh the direct "
+        f"source role. The conclusion remains bounded by {len(matrix.non_orthogonal())} "
+        "same-outcome tensions and the receipt-level evidence hierarchy."
+    )
 
 
 # Validation helpers + paragraph builders moved to
@@ -387,7 +458,7 @@ async def write_results_section(
     except (ImportError, OSError, ValueError):
         pass
     _results_prompt = format_prompts_for_topic(
-        topic=topic, drug_class=drug_class,
+        topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )["results"]
     fallback = "## Results\n\nAccepted receipts contain source-traced quantitative evidence; per-receipt details remain in the evidence brief and deterministic tables.\n"
     floor = SECTION_WORD_FLOORS.get("results", 0)
@@ -527,7 +598,7 @@ async def render_full_paper(
     except (ImportError, OSError, ValueError):
         pass
     _prompts = format_prompts_for_topic(
-        topic=topic, drug_class=drug_class,
+        topic=intervention_label(topic, root=_repo), drug_class=drug_class,
     )
     user = _build_user_prompt(
         accepted, rejected, matrix, thesis, topic=topic,
@@ -539,7 +610,7 @@ async def render_full_paper(
     # flagged this as 'too much internal pipeline language' and
     # Fix #56 was already stripping it; now we don't emit it in the
     # first place.
-    topic_title = topic.replace("_", " ").replace("-", " ").title()
+    topic_title = humanize_topic(topic, title_case=True, root=_repo)
     title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
     sections: dict[SectionName, SynthesisSection] = {}
 
@@ -675,8 +746,6 @@ async def render_full_paper(
             background_lit_entries=background_lit_entries,
         )
         _log_section_done("discussion", sections["discussion"])
-        from agent.paper_writer_backstop import apply_section_backstop
-        sections = await apply_section_backstop(sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix, chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries, write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section)
     sections["limitations_full"] = await _write_anchored_section(
         name="limitations_full", heading="## Limitations",
         system_prompt=_prompts["limitations_full"], user_prompt=user,
@@ -685,6 +754,10 @@ async def render_full_paper(
         fallback_body="## Limitations\n\nInference is bounded by the accepted receipt set, outcome coverage, and source-traced numeric claims.\n",
         background_lit_entries=background_lit_entries,
     )
+    if _thin:
+        sections["limitations_full"] = _append_section_note(
+            sections["limitations_full"], _thin_limitations_note(accepted),
+        )
     _log_section_done("limitations_full", sections["limitations_full"])
     sections["conclusion"] = await _write_scoped_section(
         name="conclusion", heading="## Conclusion",
@@ -694,6 +767,10 @@ async def render_full_paper(
         fallback_body="## Conclusion\n\nThe conclusion is limited to claims that survive receipt qualification, source-context checks, and final audit gates.\n",
         background_lit_entries=background_lit_entries,
     )
+    if _thin:
+        sections["conclusion"] = _append_section_note(
+            sections["conclusion"], _thin_conclusion_note(accepted, matrix),
+        )
     _log_section_done("conclusion", sections["conclusion"])
     sections["references_full"] = build_references_full_section(receipts)
     _log_section_done("references_full (deterministic)", sections["references_full"])
@@ -704,6 +781,7 @@ async def render_full_paper(
     # audit-gated section that came in below floor. Single-shot to
     # bound wall time.
     if not _thin:
+        from agent.paper_writer_backstop import apply_section_backstop
         sections = await apply_section_backstop(sections, user_prompt=user, section_prompts=_prompts, topic=topic, accepted=accepted, matrix=matrix, chain=chain, client=client, ledger=ledger, seed=seed, background_lit_entries=background_lit_entries, write_anchored_fn=_write_anchored_section, write_scoped_fn=_write_scoped_section)
         from agent.paper_writer_backstop import repair_discussion_minimum_quality
         sections["discussion"] = repair_discussion_minimum_quality(

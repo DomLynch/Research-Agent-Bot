@@ -35,17 +35,17 @@ def _float(name: str, default: float) -> float:
 
 @dataclass(frozen=True, slots=True)
 class Settings:
-    # Provider — primary writer
-    mimo_api_key: str
-    mimo_model: str
-    mimo_base_url: str
-    mimo_timeout_sec: float
+    # Provider — primary writer/extractor
+    minimax_api_key: str
+    minimax_model: str
+    minimax_base_url: str
+    minimax_timeout_sec: float
 
     # OpenRouter — judge primary + shared fallback for writer & judge
     openrouter_api_key: str
     openrouter_base_url: str
     judge_model: str       # Gemma 4 (primary judge)
-    fallback_model: str    # Ministral — shared fallback for MiMo writer AND Gemma judge
+    fallback_model: str    # Ministral — shared fallback for MiniMax writer AND Gemma judge
     final_layer_reviewer_model: str  # final fail-safe reviewer
 
     # Safety rails
@@ -59,13 +59,40 @@ class Settings:
     # Run logging
     runs_dir: str
 
+    @property
+    def mimo_api_key(self) -> str:
+        return self.minimax_api_key
+
+    @property
+    def mimo_model(self) -> str:
+        return self.minimax_model
+
+    @property
+    def mimo_base_url(self) -> str:
+        return self.minimax_base_url
+
+    @property
+    def mimo_timeout_sec(self) -> float:
+        return self.minimax_timeout_sec
+
+
 def load_settings() -> Settings:
     _load_dotenv_if_present()
     return Settings(
-        mimo_api_key=os.environ.get("MIMO_API_KEY", "").strip(),
-        mimo_model=os.environ.get("MIMO_MODEL", "mimo-v2.5-pro"),
-        mimo_base_url=os.environ.get("MIMO_BASE_URL", "https://token-plan-sgp.xiaomimimo.com/v1"),
-        mimo_timeout_sec=_float("MIMO_TIMEOUT_SEC", 180.0),
+        # Legacy MIMO_* fallbacks are deploy-rollback compatibility only.
+        # Remove after 2026-07-10 once all live env files have run on MINIMAX_*.
+        minimax_api_key=(
+            os.environ.get("MINIMAX_API_KEY")
+            or os.environ.get("MIMO_API_KEY", "")
+        ).strip(),
+        minimax_model=os.environ.get("MINIMAX_MODEL")
+        or os.environ.get("MIMO_MODEL", "MiniMax-M3"),
+        minimax_base_url=os.environ.get("MINIMAX_BASE_URL")
+        or os.environ.get("MIMO_BASE_URL", "https://api.minimax.io/anthropic"),
+        minimax_timeout_sec=_float(
+            "MINIMAX_TIMEOUT_SEC",
+            _float("MIMO_TIMEOUT_SEC", 180.0),
+        ),
         openrouter_api_key=os.environ.get("OPENROUTER_API_KEY", "").strip(),
         openrouter_base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         judge_model=os.environ.get("JUDGE_MODEL", "google/gemma-4-31b-it"),

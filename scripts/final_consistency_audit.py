@@ -43,7 +43,14 @@ import json
 import re
 import sys
 from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
 from pathlib import Path
+
+from direction_consistency import (
+    abstract_direction_mismatches,
+    metadata_prose_direction_mismatches,
+    outcome_prose_direction_mismatches,
+)
 
 __all__ = ["ConsistencyIssue", "run_audit", "main"]
 
@@ -99,8 +106,26 @@ def _check_manifest_paper_consistency(
     contradict that count or specifically reject any accepted paper."""
     issues: list[ConsistencyIssue] = []
     accepted_ids = {
-        r["receipt_id"] for r in manifest.get("receipts", [])
+        str(r.get("receipt_id", "")).strip()
+        for r in manifest.get("receipts", [])
+        if isinstance(r, dict) and str(r.get("receipt_id", "")).strip()
     }
+    missing_receipt_ids = sum(
+        1 for r in manifest.get("receipts", [])
+        if isinstance(r, dict) and not str(r.get("receipt_id", "")).strip()
+    )
+    if missing_receipt_ids:
+        issues.append(ConsistencyIssue(
+            id="C01-manifest-receipt-id-missing",
+            severity="P2",
+            issue_type="manifest_receipt_id_missing",
+            auto_fixable=False,
+            evidence=f"{missing_receipt_ids} receipt row(s) lack receipt_id",
+            suggested_fix=(
+                "Populate receipt_id in manifest rows when available. "
+                "Advisory only; missing IDs must not crash or block publication."
+            ),
+        ))
 
     # Build short forms (e.g. "Witham 2025") from accepted receipt_ids.
     # P1 reviewer fix: also extract trial-acronym short forms (e.g.
@@ -345,6 +370,51 @@ def _check_audit_verdict_gate(
     return issues
 
 
+def _check_abstract_results_direction_consistency(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    issues: list[ConsistencyIssue] = []
+    for idx, mismatch in enumerate(abstract_direction_mismatches(paper, manifest), start=1):
+        outcome = mismatch["outcome"]
+        issues.append(ConsistencyIssue(
+            id=f"C18-abstract-results-direction-{idx}",
+            severity="P2",
+            issue_type="abstract_results_direction_consistency",
+            auto_fixable=True,
+            evidence=(
+                f"{outcome}: abstract={mismatch['abstract']} "
+                f"results={mismatch['results']}"
+            ),
+            suggested_fix=(
+                "Rewrite the Abstract direction-summary sentence from "
+                "manifest receipt direction counts. Advisory only; never "
+                "blocks publication."
+            ),
+        ))
+    return issues
+
+
+def _check_metadata_prose_direction_consistency(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    issues: list[ConsistencyIssue] = []
+    for idx, mismatch in enumerate(metadata_prose_direction_mismatches(paper, manifest), start=1):
+        issues.append(ConsistencyIssue(
+            id=f"C19-metadata-prose-direction-{idx}",
+            severity="P2",
+            issue_type="metadata_prose_direction_consistency",
+            auto_fixable=False,
+            evidence=mismatch["evidence"],
+            suggested_fix=(
+                f"Align prose direction for {mismatch['source']} with "
+                f"metadata direction={mismatch['metadata']} rather than "
+                f"prose={mismatch['prose']}. Advisory only; never blocks "
+                "publication."
+            ),
+        ))
+    return issues
+
+
 def _check_broken_paper_id_citations(paper: str) -> list[ConsistencyIssue]:
     """Internal handles leaking into prose. Two shapes:
       a) Truncated Author_Year_TRIAL_keyword_ ids (post-processor miss)
@@ -400,10 +470,347 @@ def _check_broken_paper_id_citations(paper: str) -> list[ConsistencyIssue]:
     return issues
 
 
+# --- Certification-integrity checks (2026-06-12) -------------------------
+# Universal, cross-artifact checks that defend the certification surface: the
+# "0 gate failures" stamp must never sit on top of (a) a citation dated in the
+# future, (b) a named appraisal framework that was never run, (c) a
+# "no <category> sources" claim the classification contradicts, or (d) a source
+# count that disagrees across artifacts. Topic-agnostic — no domain vocabulary;
+# categories and counts are read from the run's own manifest/registry.
+
+# Formal appraisal frameworks a manuscript may *name*. Naming one asserts it
+# was applied, which requires a populated appraisal artifact. A paper that
+# names none simply never trips this check (works for any domain).
+_APPRAISAL_FRAMEWORKS = ("RoB-2", "RoB 2", "ROBINS-I", "AMSTAR-2", "AMSTAR 2", "GRADE")
+
+
+def _check_future_dated_citations(
+    registry: dict | None, *, current_year: int,
+) -> list[ConsistencyIssue]:
+    """A cited source cannot be published after the run. Catches mis-parsed or
+    fabricated publication years (e.g. 'Pragmatic 2035'). Reads source_year
+    from the citation registry — the authoritative year field."""
+    issues: list[ConsistencyIssue] = []
+    rows = registry.values() if isinstance(registry, dict) else []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        year = row.get("source_year")
+        if isinstance(year, int) and year > current_year:
+            cite = str(
+                row.get("body_citation") or row.get("reference_id")
+                or row.get("receipt_id") or "source"
+            )
+            issues.append(ConsistencyIssue(
+                id=f"C20-future-citation-{cite[:24].replace(' ', '_')}",
+                severity="P1",
+                issue_type="future_dated_citation",
+                auto_fixable=False,
+                evidence=f"{cite}: source_year={year} > run year {current_year}",
+                suggested_fix=(
+                    f"Citation '{cite}' is dated {year}, after the run year "
+                    f"{current_year}. Correct the source year or drop the source; "
+                    "a future-dated citation must never pass certification."
+                ),
+            ))
+    return issues
+
+
+def _appraisal_is_backed(paper: str, run_dir: Path | None) -> bool:
+    """True only when a named appraisal framework is backed by *evidence*, not
+    just a heading: either a populated risk-of-bias sidecar, or an in-paper
+    appraisal section containing an actual table (header + ≥1 data row). A
+    prose section that defers to a sidecar which doesn't exist is NOT backing —
+    that is precisely the unbacked-claim failure this gate exists to catch."""
+    if run_dir is not None:
+        # rglob, not glob: the pipeline writes risk_of_bias.json to the run root
+        # but _organize_run_artifacts relocates it into the audit/ subfolder, so
+        # the backing artifact can live at either depth depending on stage.
+        for p in run_dir.rglob("*.json"):
+            if not re.search(r"risk[_-]?of[_-]?bias|appraisal", p.name, re.IGNORECASE):
+                continue
+            try:
+                data = json.loads(p.read_text())
+            except (OSError, ValueError):
+                continue
+            if data:  # non-empty dict/list of ratings
+                return True
+    section = re.search(
+        r"(?im)^#{2,4}\s+(?:risk[ -]of[ -]bias|quality appraisal).*?(?=^#{2,4}\s|\Z)",
+        paper, re.DOTALL,
+    )
+    if section:
+        # Count only non-separator table rows: a header + >=1 data row means a
+        # populated appraisal. An empty scaffold (header + `|---|`) does not.
+        rows = [
+            r for r in re.findall(r"^\s*\|.*\|\s*$", section.group(0), re.MULTILINE)
+            if not re.fullmatch(r"\s*\|[\s:|-]+\|\s*", r)
+        ]
+        if len(rows) >= 2:
+            return True
+    return False
+
+
+def _check_unbacked_appraisal_claim(
+    paper: str, run_dir: Path | None,
+) -> list[ConsistencyIssue]:
+    """Naming a formal risk-of-bias / quality-appraisal framework asserts it
+    was applied. Require backing — a populated risk-of-bias sidecar OR an
+    in-paper appraisal table — else the methodology claim is unbacked."""
+    named = sorted({
+        fw for fw in _APPRAISAL_FRAMEWORKS
+        if re.search(rf"\b{re.escape(fw)}\b", paper)
+    })
+    if not named:
+        return []
+    if _appraisal_is_backed(paper, run_dir):
+        return []
+    return [ConsistencyIssue(
+        id="C21-unbacked-appraisal-claim",
+        severity="P1",
+        issue_type="unbacked_appraisal_claim",
+        auto_fixable=False,
+        evidence=f"names {', '.join(named)} but provides no populated appraisal (no ratings table or sidecar)",
+        suggested_fix=(
+            f"Populate a risk-of-bias / quality-appraisal artifact (one row per "
+            f"source) or remove the {', '.join(named)} claim. A named appraisal "
+            "framework must be backed by an actual appraisal."
+        ),
+    )]
+
+
+def _check_source_classification_claims(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """A 'no <category> sources' claim must agree with the manifest's own
+    classification. Universal: the category set is read from the receipts'
+    directness values, never a hardcoded domain list."""
+    receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
+    present = {str(r.get("directness") or "").lower() for r in receipts}
+    present.discard("")
+    if not present:
+        return []
+    issues: list[ConsistencyIssue] = []
+    patterns = (
+        re.compile(r"\bno\s+([a-z][a-z-]+)\s+(?:sources?|studies)\b", re.IGNORECASE),
+        re.compile(
+            r"\bno\s+sources?\s+(?:were\s+)?classified\s+(?:primarily\s+)?as\s+([a-z][a-z-]+)",
+            re.IGNORECASE,
+        ),
+    )
+    for pat in patterns:
+        for m in pat.finditer(paper):
+            category = m.group(1).lower()
+            if category in present:
+                n = sum(
+                    1 for r in receipts
+                    if str(r.get("directness") or "").lower() == category
+                )
+                issues.append(ConsistencyIssue(
+                    id=f"C22-classification-claim-{m.start()}",
+                    severity="P2",
+                    issue_type="source_classification_claim_contradiction",
+                    auto_fixable=False,
+                    evidence=paper[max(0, m.start() - 20):m.end() + 20].strip()[:200],
+                    suggested_fix=(
+                        f"Prose claims no '{category}' sources, but the "
+                        f"classification table has {n}. Align the claim with the table."
+                    ),
+                ))
+    return issues
+
+
+def _check_source_count_consistency(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """The 'included/retained' source count stated in prose must equal the
+    manifest receipt count (catches the 56-vs-59 cross-artifact drift class).
+    Only the *included* count is compared — 'identified/screened' search yield
+    is legitimately larger and is excluded."""
+    n_receipts = manifest.get("n_receipts")
+    if not isinstance(n_receipts, int) or n_receipts <= 0:
+        n_receipts = len([r for r in manifest.get("receipts", []) if isinstance(r, dict)])
+    if not n_receipts:
+        return []
+    issues: list[ConsistencyIssue] = []
+    pat = re.compile(
+        r"\b(\d{1,4})\s+(?:sources?|studies|papers|references|receipts)\s+"
+        r"(?:were\s+)?(?:included|retained|synthesi[sz]ed|admitted)\b",
+        re.IGNORECASE,
+    )
+    for m in pat.finditer(paper):
+        stated = int(m.group(1))
+        if stated != n_receipts:
+            issues.append(ConsistencyIssue(
+                id=f"C23-source-count-{m.start()}",
+                severity="P2",
+                issue_type="source_count_inconsistency",
+                auto_fixable=False,
+                evidence=paper[max(0, m.start() - 20):m.end() + 20].strip()[:200],
+                suggested_fix=(
+                    f"Prose states {stated} included sources but the manifest has "
+                    f"{n_receipts} receipts; reconcile to a single number."
+                ),
+            ))
+    return issues
+
+
+# Review markers (the source IS a secondary synthesis) vs primary-study
+# markers. Review markers WIN: a meta-analysis *of* randomized trials
+# legitimately names RCTs in its title, so a trial mention does not make a
+# source primary. This inverse-aware rule is why the naive "title says trial ->
+# not a review" check would mis-flag the meta-analyses that dominate
+# evidence-map corpora. Universal study-design vocabulary, no topic terms.
+_REVIEW_TITLE_RE = re.compile(
+    r"\b(systematic review|meta-?analys(?:is|es)?|umbrella review|"
+    r"scoping review|pooled analys(?:is|es)?|narrative review|review of)\b",
+    re.IGNORECASE,
+)
+_PRIMARY_TITLE_RE = re.compile(
+    r"\b(randomi[sz]ed controlled trial|\bRCT\b|controlled clinical (?:study|trial)|"
+    r"double-blind|placebo-controlled|crossover trial|cohort study)\b", re.IGNORECASE,
+)
+
+
+def _check_directness_coding(manifest: dict) -> list[ConsistencyIssue]:
+    """A source's coded `directness` must agree with what its title says it is.
+    Flags two real mis-codings: a review-titled source coded `direct`, or a
+    primary-study-titled source (with NO review markers) coded `review`. Review
+    markers win so meta-analyses of RCTs stay `review` and are not mis-flagged."""
+    issues: list[ConsistencyIssue] = []
+    for r in manifest.get("receipts", []):
+        if not isinstance(r, dict):
+            continue
+        title = str(r.get("source_title") or r.get("body_citation") or "")
+        if not title:
+            continue
+        d = str(r.get("directness") or "").lower()
+        is_review = bool(_REVIEW_TITLE_RE.search(title))
+        is_primary = bool(_PRIMARY_TITLE_RE.search(title))
+        problem = ""
+        if d == "direct" and is_review:
+            problem = "review-titled source coded directness=direct"
+        elif d in ("review", "indirect") and is_primary and not is_review:
+            problem = f"primary-study-titled source coded directness={d}"
+        if problem:
+            issues.append(ConsistencyIssue(
+                id=f"C24-directness-{str(r.get('receipt_id'))[:24]}",
+                severity="P2",
+                issue_type="directness_coding_mismatch",
+                auto_fixable=False,
+                evidence=f"{problem}: {title[:120]}",
+                suggested_fix=(
+                    "Re-code directness to match the source's study design; "
+                    "review markers (systematic review / meta-analysis) win over "
+                    "a trial mention."
+                ),
+            ))
+    return issues
+
+
+def _check_outcome_direction_overclaim(
+    paper: str, manifest: dict,
+) -> list[ConsistencyIssue]:
+    """C20: prose that overclaims an outcome class's direction relative to its
+    receipts' coded effect_direction ("positive for both" / "no source reported
+    null or negative" when the class contains a null/negative receipt) is a hard
+    prose-vs-data contradiction. Unlike the advisory per-token C19, this is a
+    publish blocker (P1) — the verifiable record must not refute the narrative."""
+    issues: list[ConsistencyIssue] = []
+    for idx, mismatch in enumerate(
+        outcome_prose_direction_mismatches(paper, manifest), start=1,
+    ):
+        issues.append(ConsistencyIssue(
+            id=f"C20-outcome-direction-overclaim-{idx}",
+            severity="P1",
+            issue_type="outcome_direction_overclaim",
+            auto_fixable=False,
+            evidence=mismatch["evidence"],
+            suggested_fix=(
+                f"Prose for the {mismatch['outcome']} outcome class overstates "
+                f"direction ({mismatch['claim']}) versus its receipts "
+                f"(directions: {mismatch['directions']}). Restate to match the "
+                "coded effect_direction — acknowledge the null/negative source — "
+                "before publication."
+            ),
+        ))
+    return issues
+
+
+_WEAK_SIG_RE = re.compile(
+    r"\b(?:marginal(?:ly)?|borderline"
+    r"|non\s*-?\s*significan\w*"          # non significant / non-significant / nonsignificant
+    r"|not(?:\s+\w+){0,2}\s+significan\w*"  # not significant / not (very|statistically) significant(ly)
+    r"|trend(?:ing|ed|s)?\s+to(?:ward|wards)?|a\s+trend)\b",
+    re.IGNORECASE,
+)
+
+
+def _has_strong_p_value(sentence: str) -> bool:
+    for m in re.finditer(r"\b[Pp]\s*([<=])\s*(0?\.\d+)", sentence):
+        try:
+            value = float(m.group(2))
+        except ValueError:
+            continue
+        if value < 0.01 or (m.group(1) == "<" and value <= 0.01):
+            return True
+    return False
+
+
+def _check_prose_data_coherence(paper: str) -> list[ConsistencyIssue]:
+    """Flag a significance-WEAKNESS qualifier (marginal / borderline /
+    non-significant / trend-toward) co-occurring with a STRONG p-value (p<0.01)
+    in one sentence — e.g. "a marginal adiponectin signal (P<0.001)". The two
+    contradict (one cannot be marginal/borderline AND strongly significant);
+    this is the prose-vs-data incoherence flagged on the null-coded Tavakoli
+    receipt. Effect-SIZE words (modest/small) are intentionally excluded — a
+    small effect can be highly significant. Flag-only (P2). Universal —
+    statistical English only, no topic/author terms."""
+    body = re.split(r"(?im)^##\s+References\b", paper, maxsplit=1)[0]
+    out: list[ConsistencyIssue] = []
+    seen: set[str] = set()
+    for sentence in re.split(r"(?<=[.!?])\s+", body):
+        if not (_WEAK_SIG_RE.search(sentence) and _has_strong_p_value(sentence)):
+            continue
+        key = sentence.strip()[:80]
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(ConsistencyIssue(
+            id="C22-prose-data-incoherence",
+            severity="P2",
+            issue_type="prose_data_incoherence",
+            auto_fixable=False,
+            evidence=f"weak-significance qualifier with p<0.01 in one sentence: {key}",
+            suggested_fix=(
+                "A 'marginal/borderline/non-significant/trend' description "
+                "contradicts p<0.01 — align the qualifier with the statistic or "
+                "omit one."
+            ),
+        ))
+    return out
+
+
 def run_audit(
     paper_md: str, manifest: dict, audit: dict, audit_md_text: str = "",
+    *, registry: dict | None = None, run_dir: Path | None = None,
+    current_year: int | None = None,
 ) -> list[ConsistencyIssue]:
     issues: list[ConsistencyIssue] = []
+    year = current_year if current_year is not None else datetime.now(timezone.utc).year
+    # Load the citation registry from the run dir when the caller didn't pass
+    # one, so pipeline call sites only need to thread `run_dir`.
+    if registry is None and run_dir is not None:
+        try:
+            registry = json.loads((run_dir / "citation_registry.json").read_text())
+        except (OSError, ValueError):
+            registry = None
+    issues.extend(_check_future_dated_citations(registry, current_year=year))
+    issues.extend(_check_unbacked_appraisal_claim(paper_md, run_dir))
+    issues.extend(_check_prose_data_coherence(paper_md))
+    issues.extend(_check_source_classification_claims(paper_md, manifest))
+    issues.extend(_check_source_count_consistency(paper_md, manifest))
+    issues.extend(_check_directness_coding(manifest))
     issues.extend(_check_manifest_paper_consistency(paper_md, manifest))
     issues.extend(_check_stale_methods(paper_md, manifest))
     issues.extend(_check_stale_spar_in_prose(paper_md, manifest))  # Fix #29
@@ -412,6 +819,13 @@ def run_audit(
     issues.extend(_check_malformed_headers(paper_md))
     issues.extend(_check_repair_artifacts(paper_md))
     issues.extend(_check_audit_verdict_gate(audit, audit_md_text))
+    issues.extend(_check_abstract_results_direction_consistency(
+        paper_md, manifest,
+    ))
+    issues.extend(_check_metadata_prose_direction_consistency(
+        paper_md, manifest,
+    ))
+    issues.extend(_check_outcome_direction_overclaim(paper_md, manifest))
     issues.extend(_check_broken_paper_id_citations(paper_md))
     issues.extend(_check_surface_polish(paper_md))  # Fix #13
     issues.extend(_check_background_lit_unsourced(paper_md, manifest))  # Fix #16
@@ -898,8 +1312,15 @@ def main(argv: list[str] | None = None) -> int:
     audit_md_text = (
         audit_md_path.read_text() if audit_md_path.exists() else ""
     )
+    registry_path = paper_path.parent / "citation_registry.json"
+    registry: dict = (
+        json.loads(registry_path.read_text()) if registry_path.exists() else {}
+    )
 
-    issues = run_audit(paper, manifest, audit, audit_md_text)
+    issues = run_audit(
+        paper, manifest, audit, audit_md_text,
+        registry=registry, run_dir=paper_path.parent,
+    )
     out_json = paper_path.with_suffix(".consistency.json")
     out_md = paper_path.with_suffix(".consistency.md")
     out_json.write_text(json.dumps(
@@ -933,6 +1354,7 @@ _CHANGE_WORDS = (
     "change", "improvement", "increase", "decrease", "difference",
     "delta", "reduction", "rise", "decline", "gain",
 )
+_CHANGE_SPEED_VALUE_RE = re.compile(r"\b\d+(?:\.\d+)?\s*m/s\b", re.IGNORECASE)
 _ABSOLUTE_VALUE_PHRASES = (
     # Threshold-comparison patterns
     "falls below", "below the", "above the", "below clinically",
@@ -1361,9 +1783,15 @@ def _check_change_value_anaphor_misread(
         # Find sentences that contain change-value numerics
         change_sent_indices: dict[str, int] = {}
         for i, sent in enumerate(sentences):
+            sent_lc = sent.lower()
             for numeric in change_value_map:
                 if numeric in sent and numeric not in change_sent_indices:
                     change_sent_indices[numeric] = i
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if change_hits:
+                for numeric in _CHANGE_SPEED_VALUE_RE.findall(sent):
+                    change_sent_indices.setdefault(numeric, i)
+                    change_value_map.setdefault(numeric, set()).update(change_hits)
         if not change_sent_indices:
             continue
         # Now look at subsequent sentences for anaphor + threshold

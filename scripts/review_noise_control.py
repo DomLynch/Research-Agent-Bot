@@ -33,9 +33,15 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     )
     if n:
         changes.append(("expand_contextual_adjacent_evidence_note", n, "clarified contextual-source integration role"))
+    text, n = _repair_public_artifact_phrases(text)
+    if n:
+        changes.append(("repair_public_artifact_phrase", n, f"rewrote {n} public artifact phrase(s)"))
     text, n = _repair_unreferenced_citation_years(text)
     if n:
         changes.append(("repair_unreferenced_citation_year", n, f"aligned {n} inline citation year(s) with References"))
+    text, n = _strip_unsupported_inline_citations(text)
+    if n:
+        changes.append(("strip_unsupported_inline_citation", n, f"removed {n} unsupported inline citation marker(s)"))
     text, n = _dedupe_repeated_blocks(text)
     if n:
         changes.append(("dedupe_repeated_blocks", n, f"removed {n} repeated prose/table block(s)"))
@@ -63,6 +69,25 @@ def apply_review_noise_control(text: str, out_dir: Path) -> tuple[str, list[Chan
     return text, changes
 
 
+def _repair_public_artifact_phrases(text: str) -> tuple[str, int]:
+    replacements = (
+        (r"\bshould be read as\b", "can be interpreted as"),
+        (r"\baccepted receipt bundle contains\b", "included-source bundle includes"),
+        (r"\baccepted receipt bundle\b", "included-source bundle"),
+        (r"\baccepted receipt set\b", "included source set"),
+        (r"\baccepted receipts\b", "included sources"),
+        (r"\baccepted receipt\b", "included source"),
+        (r"\breceipt set\b", "source set"),
+        (r"\bbundle contains\b", "source bundle includes"),
+        (r"\bnot extracted\b", "not available"),
+    )
+    total = 0
+    for pattern, repl in replacements:
+        text, n = re.subn(pattern, repl, text, flags=re.I)
+        total += n
+    return text, total
+
+
 def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
     from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, unreferenced_citation_tokens
     refs_by_author: dict[str, list[str]] = {}
@@ -82,6 +107,38 @@ def _repair_unreferenced_citation_years(text: str) -> tuple[str, int]:
             continue
         out, changed = re.subn(rf"\b{re.escape(token)}\b", candidates[0], out, count=1)
         n += changed
+    return out, n
+
+
+def _strip_unsupported_inline_citations(text: str) -> tuple[str, int]:
+    from agent.journal_surface_gate import _AUTHOR_YEAR_RE, _fold, _reference_entries, unreferenced_citation_tokens
+
+    ref_authors = {
+        _fold(match.group(1))
+        for raw, _folded in _reference_entries(text)
+        if (match := _AUTHOR_YEAR_RE.search(raw))
+    }
+    out = text
+    n = 0
+    for token in unreferenced_citation_tokens(text):
+        match = _AUTHOR_YEAR_RE.fullmatch(token)
+        if not match or _fold(match.group(1)) in ref_authors:
+            continue
+        author, year = match.groups()
+        marker = rf"{re.escape(author)}(?:\s+et\s+al\.)?\s+{re.escape(year)}"
+        out, changed = re.subn(
+            rf"{marker},?\s+as cited across the corpus;?\s*",
+            "",
+            out,
+            count=1,
+        )
+        if not changed:
+            out, changed = re.subn(marker, "", out, count=1)
+        n += changed
+    if n:
+        out = re.sub(r"\(\s*[;,]\s*", "(", out)
+        out = re.sub(r"\(\s*\)", "", out)
+        out = re.sub(r"\s+([,;.])", r"\1", out)
     return out, n
 
 
@@ -171,14 +228,21 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
         if re.match(r"\*\*\s*(?:thesis|resolution\s+criteria)\s*:", norm, flags=re.I):
             continue
         table_like = block.lstrip().startswith("|") and block.count("\n|") >= 1
+        # A bulleted / numbered block is structured enumeration, not prose
+        # recap. Its vocabulary is often a small subset of richer prose (e.g. a
+        # templated search-query list), which falsely trips the asymmetric
+        # near-duplicate test below. Prune lists only on EXACT duplication.
+        list_like = bool(re.match(r"\s*(?:[-*]|\d+[.)])\s", block))
         tokens = set(re.findall(r"[a-z0-9]+", norm.lower()))
-        near_seen = len(words) >= 18 and any(_token_overlap(tokens, prior) >= 0.85 for prior in seen_tokens)
+        near_seen = not list_like and len(words) >= 18 and any(
+            _token_overlap(tokens, prior) >= 0.85 for prior in seen_tokens
+        )
         if (norm in seen and (table_like or len(words) >= 18)) or near_seen:
             chunks[i] = ""
             removed += 1
         else:
             seen.add(norm)
-            if len(words) >= 18 and not table_like:
+            if len(words) >= 18 and not table_like and not list_like:
                 seen_tokens.append(tokens)
     return prefix + "".join(chunks) + tail, removed
 

@@ -11,10 +11,7 @@ from agent.review_type import COMPACT_REVIEW_TYPES
 
 
 def _fold(text: str) -> str:
-    """NFKD-fold + strip combining marks + casefold. Universal — turns
-    Hernández/HERNÁNDEZ/hernandez into one comparable form. Used by the
-    unreferenced-citation check so an inline cite with diacritics and a
-    reference list entry without them still match (or vice versa)."""
+    # NFKD-fold + strip combining marks + casefold for citation matching.
     nfkd = unicodedata.normalize("NFKD", text)
     return "".join(c for c in nfkd if not unicodedata.combining(c)).casefold()
 
@@ -23,14 +20,17 @@ def _fold(text: str) -> str:
 # evidence prose without species framing is a journal desk-reject
 # class. Universal keyword set — no per-topic table; covers organism
 # names + veterinary-journal markers.
+# Keep aligned with scripts/evidence_taxonomy._SPECIES_ANIMAL_TOKENS
+# (the population classifier) so the two species signals don't drift.
 _ANIMAL_KEYWORD_RE = re.compile(
     r"\b("
     r"mice|murine|mouse|rats?|rodents?|"
     r"equids?|equine|horses?|"
-    r"primates?|monkeys?|macaques?|baboons?|"
-    r"dogs?|canine|cats?|feline|"
+    r"primates?|monkeys?|macaques?|baboons?|marmosets?|"
+    r"dogs?|canine|cats?|feline|rabbits?|hamsters?|"
     r"swine|porcine|piglets?|pigs?|"
-    r"sheep|ovine|cattle|bovine|"
+    r"sheep|ovine|goats?|caprine|cattle|bovine|"
+    r"foxe?s?|vulpes|broilers?|chickens?|poultry|fowl|avian|"
     r"zebrafish|c\.\s*elegans|drosophila|yeast|nematodes?|"
     r"veterinary|preclinical|animal\s+model"
     r")\b",
@@ -71,9 +71,7 @@ def _animal_lane_re() -> "re.Pattern[str]":
 
 
 def is_animal_paper(text: str | None) -> bool:
-    """Return True if `text` (title + abstract + journal) mentions a
-    non-human organism or veterinary context. Universal — works across
-    any biological / ecological / agricultural topic."""
+    # Universal: title + abstract + journal mentions non-human evidence.
     if not text:
         return False
     return bool(_ANIMAL_KEYWORD_RE.search(text))
@@ -126,7 +124,7 @@ _PIPELINE_JARGON_PUBLIC: tuple[tuple[str, str], ...] = (
     ("claim atom", "extracted finding"),
     ("endpoint proximity", "clinical directness"),
     ("accepted receipt graph", "included source set"), ("accepted corpus", "included studies"), ("accepted receipts", "included sources"), ("accepted receipt", "included source"),
-    ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"), ("final receipt admission", "final source admission"), ("receipt admission funnel", "source admission funnel"), ("receipt candidates", "source candidates"),
+    ("mechanistic receipts", "mechanistic sources"), ("direct clinical receipts", "direct clinical sources"), ("indirect clinical receipts", "indirect clinical sources"), ("final receipt admission", "final source admission"), ("receipt admission funnel", "source admission funnel"), ("receipt-funnel", "source-selection"), ("receipt candidates", "source candidates"), ("receipt candidate", "source candidate"),
     ("receipt set", "source set"), ("receipt graph", "source set"), ("receipts", "sources"),
     # Word-count-neutral replacement: "structured corpus synthesis"
     # (3 words) → "AI-assisted evidence synthesis" (3 words) so the
@@ -143,16 +141,22 @@ _REFERENCE_DUMP_RE = re.compile(r"\b(?:DOI|PMID):\s*\S+", re.IGNORECASE)
 _HEDGE_FRAGMENT_RE = re.compile(r"^(?:may|might|could|appears|suggests|uncertain|preliminary|context[- ]dependent|not definitive|requires confirmation)\.?$", re.IGNORECASE)
 _MALFORMED_NUMERIC_RE = re.compile(r"(?<![\d,])0{2,}(?:\.\d+)?\s*(?:mg/day|mg|g|mcg|µg|μg|ng|kg|m/s|mmHg)\b", re.IGNORECASE)
 _GRAMMAR_ARTIFACT_RE = re.compile(
-    r"\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
-    r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were))\b",
+    r"(?:\b(?:(?:is|are|was|were)\s+\w+(?:\s+\w+){0,3}\s+to\s+(?:is|are|was|were)"
+    r"|to\s+be(?:\s+\w+){0,5}\s+(?:is|are|was|were)"
+    r"|does\s+not\s+automatically\s+(?:is|are|was|were))\b|(?<=[A-Za-z])\.g\.,)",
     re.IGNORECASE,
+)
+_DUPLICATE_ANY_HEADING_RE = re.compile(r"^(#{2,6})\s+(.+?)\s*\n+(?=\1\s+\2\s*$)|^(##)\s+(Quantitative\s+Evidence\s+Index\b.*)\s*\n+(?=\3\s+Quantitative\s+Evidence\s+Index\b)", re.M)
+_CITATION_ONLY_STUB_RE = re.compile(
+    r"^(?:[A-ZÀ-ÖØ-Þ][A-Za-zÀ-ÖØ-öø-ÿ'’.\-]+|[A-Z]{2,})"
+    r"(?:\s+et\s+al\.)?\s+(?:19|20)\d{2}[a-z]?\s+"
+    r"(?:reported|showed|found|observed|demonstrated|concluded)\.?$"
 )
 _CLASSIFICATION_META_ROW_RE = re.compile(
     r"^\|\s*\*{0,2}(?:outcome class|directness|directional signal|evidence tier)\*{0,2}\b",
     re.IGNORECASE,
 )
 _PUBLIC_SLUG_RE = re.compile(r"\b(?:[a-z][a-z0-9]*_[a-z0-9_]*|glp1|omega3)\b")
-_QEI_HEADING_RE = re.compile(r"^##\s+Quantitative\s+Evidence\s+Index\b.*$", re.M)
 _TABLE_REF_RE = re.compile(r"\bTable\s+(\d+)\b", re.IGNORECASE)
 _UNRESOLVED_TEMPLATE_RE = re.compile(r"(?<![a-z])(?:source|study|trial|paper)\((?:s|es)\)(?![a-z])|\bstudy/studies\b", re.IGNORECASE)
 _COUNT_CLAIM_RE = re.compile(r"\b(?:spans|contains|includes|covers|across)\s+(\d+)\s+(?:curated\s+)?(?:references?|sources?|studies|papers)\b", re.IGNORECASE)
@@ -178,7 +182,6 @@ def evaluate_journal_surface(
     issues: list[SurfaceIssue] = []
     body_md = _journal_body(paper_md)
     low = body_md.lower()
-    qei_heads = list(_QEI_HEADING_RE.finditer(body_md))
     issues.extend(SurfaceIssue("placeholder_prose", pat) for pat in _PLACEHOLDER_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("template_meta", pat) for pat in _META_PATTERNS if pat in low)
     issues.extend(SurfaceIssue("public_artifact", pat) for pat in _PUBLIC_ARTIFACT_PATTERNS if pat in low)
@@ -195,7 +198,7 @@ def evaluate_journal_surface(
     # AI-disclosure sections).
     _body_for_slug_check = re.sub(r"`[^`]*`", "", body_md)
     issues.extend(SurfaceIssue("topic_slug_artifact", f"public topic-slug artifact: {m.group(0)}") for m in _PUBLIC_SLUG_RE.finditer(_body_for_slug_check))
-    issues.extend(SurfaceIssue("duplicate_heading", "duplicate consecutive Quantitative Evidence Index headings") for left, right in zip(qei_heads, qei_heads[1:]) if not body_md[left.end():right.start()].strip())
+    issues.extend(SurfaceIssue("duplicate_heading", f"duplicate consecutive heading: {m.group(2) or m.group(4)}") for m in _DUPLICATE_ANY_HEADING_RE.finditer(body_md))
     if not re.search(r"^##\s+References\b", paper_md, flags=re.M):
         issues.append(SurfaceIssue("structure_surface", "missing required section: References"))
     issues.extend(SurfaceIssue("citation_artifact", msg) for msg in _citation_reference_issue_messages(paper_md))
@@ -211,14 +214,11 @@ def evaluate_journal_surface(
     if declared_review_type:
         issues.extend(SurfaceIssue("review_type_overclaim", msg) for msg in _review_type_overclaim_issue_messages(paper_md, declared_review_type))
         issues.extend(SurfaceIssue("methods_pack_incomplete", msg) for msg in _methods_pack_completeness_issue_messages(paper_md, declared_review_type))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _empty_heading_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_outcome_section_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _results_count_mismatch_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _thin_analytic_paragraph_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _abstract_profile_contradiction_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _conclusion_scope_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _orphan_table_issue_messages(body_md))
-    issues.extend(SurfaceIssue("structure_surface", msg) for msg in _section_issue_messages(body_md, declared_review_type))
+    for _msgs in (
+        _empty_heading_issue_messages(body_md), _results_outcome_section_issue_messages(body_md), _results_count_mismatch_issue_messages(body_md),
+        _thin_analytic_paragraph_issue_messages(body_md), _abstract_profile_contradiction_issue_messages(body_md), _conclusion_scope_issue_messages(body_md),
+        _orphan_table_issue_messages(body_md), _section_issue_messages(body_md, declared_review_type)):
+        issues.extend(SurfaceIssue("structure_surface", msg) for msg in _msgs)
     issues.extend(SurfaceIssue("qei_surface", msg) for msg in _qei_shape_issue_messages(body_md))
     for row in _extract_qei_rows(body_md):
         issues.extend(SurfaceIssue("qei_surface", msg) for msg in qei_row_issue_messages(row))
@@ -325,8 +325,7 @@ def _section_issue_messages(paper_md: str, declared_review_type: str | None = No
         n = len(re.findall(r"\b\w+\b", body))
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
-        ceiling = _SECTION_CEILINGS.get(heading)
-        if ceiling is not None and n > ceiling:
+        if (ceiling := _SECTION_CEILINGS.get(heading)) is not None and n > ceiling:
             issues.append(f"section too long: {heading} {n}/{ceiling} words")
     return tuple(issues)
 
@@ -473,6 +472,8 @@ def _duplicate_adjacent_phrase_issue_messages(text: str) -> tuple[str, ...]:
     for size in range(2, 5):
         for idx in range(0, len(words) - (2 * size) + 1):
             phrase = words[idx:idx + size]
+            if phrase[-1] in {"and", "or"}:
+                continue
             if len(set(phrase)) > 1 and phrase == words[idx + size:idx + (2 * size)]:
                 return (f"duplicate adjacent phrase: {' '.join(phrase)}",)
     return ()
@@ -487,6 +488,8 @@ def _thin_analytic_paragraph_issue_messages(paper_md: str) -> tuple[str, ...]:
         n = len(re.findall(r"[a-z0-9]+", text.lower()))
         if 5 <= n <= 14 and _ANALYTIC_STUB_RE.search(text) and not re.search(r"\d|;|:", text):
             issues.append(f"thin analytical paragraph {idx}: {text}")
+        elif _CITATION_ONLY_STUB_RE.match(text):
+            issues.append(f"citation-only stub paragraph {idx}: {text}")
         elif n >= 6 and re.search(r"(?:\.\.\.|…)$|\b(?:versus|vs|and|or|but|of|to|with|for|than|between|whereas|while)$", re.sub(r"""[\s)\]"'*_`]+$""", "", text), re.I):
             issues.append(f"truncated sentence paragraph {idx}: …{text[-60:]}")
     return tuple(issues)
@@ -715,6 +718,7 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
     refs = _reference_labels(paper_md)
     if not refs:
         return ()
+    reference_title_tokens = _reference_nonlabel_tokens(paper_md)
     seen: set[str] = set()
     out: list[str] = []
     for match in _AUTHOR_YEAR_RE.finditer(_journal_body(paper_md)):
@@ -722,6 +726,8 @@ def unreferenced_citation_tokens(paper_md: str) -> tuple[str, ...]:
         if author.casefold().rstrip(".") in _MONTH_AUTHOR_TOKENS or author.casefold().endswith(("'s", "’s")):
             continue
         token = f"{author} {match.group(2)}"
+        if _fold(token) in reference_title_tokens:
+            continue
         # Compare via _fold so diacritic mismatches (Hernández inline vs
         # Hernandez in References) don't false-positive. Report the
         # original (un-folded) inline token so the issue message
@@ -752,6 +758,16 @@ def _reference_entries(paper_md: str) -> Iterable[tuple[str, str]]:
 
 def _reference_labels(paper_md: str) -> set[str]:
     return {folded for _raw, folded in _reference_entries(paper_md)}
+
+
+def _reference_nonlabel_tokens(paper_md: str) -> set[str]:
+    refs = _section_body(paper_md, "References") or ""
+    out: set[str] = set()
+    for line in refs.splitlines():
+        matches = list(_AUTHOR_YEAR_RE.finditer(line))
+        for match in matches[1:]:
+            out.add(_fold(f"{match.group(1)} {match.group(2)}"))
+    return out
 
 
 def orphan_reference_tokens(paper_md: str) -> tuple[str, ...]:
@@ -785,9 +801,7 @@ _OUTCOME_HEADING_RE = re.compile(r"^###\s+(.+?)\s+Outcomes\s*$", re.M)
 
 
 def _outcome_slug(label: str) -> str:
-    """Universal heading → outcome-class slug. 'Muscle Function' →
-    'muscle_function'; 'Cardiometabolic' → 'cardiometabolic'. No
-    per-topic table; just lowercased + word-joined."""
+    # Universal heading -> outcome-class slug; no per-topic table.
     return outcome_key(label)
 
 
@@ -814,23 +828,37 @@ def _outcome_class_mismatch_issue_messages(
         section_slug = _outcome_slug(m.group(1))
         start = m.end()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(results)
-        body = results[start:end]
-        for am in _AUTHOR_YEAR_RE.finditer(body):
-            cite = f"{am.group(1)} {am.group(2)}"
-            expected = folded_map.get(_fold(cite))
-            if not expected:
+        # Judge routing per SENTENCE, not per citation: a sentence anchored to
+        # this outcome class may reference another class for cross-domain
+        # synthesis ("the exposure in Sahay 2026 maps onto the clinical effects
+        # in Hong 2026") — that is legitimate, not a routing error. Flag only
+        # when this section's class is a strict minority in the sentence (a
+        # genuinely misplaced sentence). Matches the finalizer's sentence-
+        # majority routing (Phase K). Universal — no per-topic knowledge.
+        for sentence in re.split(r"(?<=[.!?])\s+", results[start:end]):
+            cited = [
+                (cite, expected)
+                for am in _AUTHOR_YEAR_RE.finditer(sentence)
+                if (cite := f"{am.group(1)} {am.group(2)}")
+                and (expected := folded_map.get(_fold(cite)))
+            ]
+            if not cited:
                 continue
-            if _outcome_slug(expected) == section_slug:
-                continue
-            key = (_fold(cite), section_slug)
-            if key in seen:
-                continue
-            seen.add(key)
-            issues.append(
-                f"outcome-class mismatch: {cite} "
-                f"(receipt outcome_class={expected!r}) cited in "
-                f"'### {m.group(1)} Outcomes' subsection",
-            )
+            counts = Counter(_outcome_slug(exp) for _, exp in cited)
+            if counts.get(section_slug, 0) == max(counts.values()):
+                continue  # this class is (tied-)dominant -> sentence is anchored here
+            for cite, expected in cited:
+                if _outcome_slug(expected) == section_slug:
+                    continue
+                key = (_fold(cite), section_slug)
+                if key in seen:
+                    continue
+                seen.add(key)
+                issues.append(
+                    f"outcome-class mismatch: {cite} "
+                    f"(receipt outcome_class={expected!r}) cited in "
+                    f"'### {m.group(1)} Outcomes' subsection",
+                )
     return tuple(issues)
 
 

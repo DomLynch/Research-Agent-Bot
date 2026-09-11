@@ -76,6 +76,7 @@ def _public_label(value: Any) -> str:
         "contextual_other": "contextual adjacent evidence",
         "mean_sd": "mean ± SD",
         "null_vs_positive": "null vs positive",
+        "null_vs_negative": "null vs negative",
         "p_value": "p-value",
         "sample_size": "sample size",
         "unit_value": "unit value",
@@ -156,25 +157,45 @@ def _split_population_n(population_summary: str) -> tuple[str, str]:
     return n_str, pop_label or "—"
 
 
+def _parse_p_value(p: str) -> float | None:
+    m = re.search(r"\d*\.?\d+(?:[eE][-+]?\d+)?", p)
+    if not m:
+        return None
+    try:
+        return float(m.group(0))
+    except (ValueError, TypeError):
+        return None
+
+
+def _smallest_p_string(pvals: list[str]) -> str:
+    """Most-significant (smallest) p-value string from a list, or '—'."""
+    cleaned = [p.strip() for p in pvals if p and p.strip()]
+    if not cleaned:
+        return "—"
+    parsed = [(f, p) for p in cleaned if (f := _parse_p_value(p)) is not None]
+    # If nothing parses as a number, emit "—" rather than a non-p-value string
+    # (e.g. CI notation) — honours the "or '—'" contract for both callers.
+    return min(parsed, key=lambda t: t[0])[1] if parsed else "—"
+
+
 def _representative_p_value(r: object) -> str:
     """Smallest (most-significant) p-value from receipt's p_values."""
-    pvals = [p.strip() for p in (getattr(r, "p_values", None) or ())
-             if p and p.strip()]
-    if not pvals:
-        return "—"
-    parsed: list[tuple[float, str]] = []
-    for p in pvals:
-        m = re.search(r"\d*\.?\d+(?:[eE][-+]?\d+)?", p)
-        if not m:
-            continue
-        try:
-            parsed.append((float(m.group(0)), p))
-        except (ValueError, TypeError):
-            continue
-    if not parsed:
-        return pvals[0]
-    parsed.sort(key=lambda t: t[0])
-    return parsed[0][1]
+    return _smallest_p_string(list(getattr(r, "p_values", None) or ()))
+
+
+def _representative_p_value_coherent(r: object) -> str:
+    """Representative p-value reconciled with the coded direction, for the
+    summary surfaces (Table 1 + the public Evidence Snapshot). A receipt coded
+    direction=null must NOT surface a significant p — a bare "null; p<0.001"
+    reads as a contradiction. RESOLVE it (don't merely tag it "off-summary"):
+    keep only the receipt's non-significant p-values and show the smallest, or
+    "—" if it has none. Resolution selects only among the receipt's OWN values
+    — never invents or relabels — so the dense per-endpoint statistics in
+    Table 2 stay the source of truth. Universal."""
+    pvals = [p for p in (getattr(r, "p_values", None) or ()) if p and p.strip()]
+    if str(getattr(r, "effect_direction", "") or "").lower() == "null":
+        pvals = [p for p in pvals if not _has_significant_p_value(p)]
+    return _smallest_p_string(pvals)
 
 
 def _n_claims(r: object) -> str:
@@ -256,7 +277,7 @@ def render_table_1_included_studies(receipts: list) -> str:
             _public_label(getattr(r, "effect_direction", None)),
             _safe(getattr(r, "directness", None), "—"),
             _safe(getattr(r, "canonical_trial_id", None), "—"),
-            _representative_p_value(r),
+            _representative_p_value_coherent(r),
             _n_claims(r),
         ))
     return header + "\n".join(rows) + "\n"
@@ -797,7 +818,7 @@ def _included_study_fill_rate(receipts: list) -> float:
 
 
 def _source_list_label(receipt: Any, idx: int) -> str:
-    for field in ("source_title", "title", "receipt_id"):
+    for field in ("receipt_id", "source_title", "title"):
         value = getattr(receipt, field, None)
         if not _is_missing_public_value(value):
             return _inline_cell(value)
@@ -914,7 +935,7 @@ def render_public_evidence_snapshot(
     else:
         lines.extend(["### Load-Bearing Included Studies", ""])
         for r in ranked:
-            p_value = _representative_p_value(r)
+            p_value = _representative_p_value_coherent(r)
             bits = [
                 _inline_cell(getattr(r, "receipt_id", "—")),
                 f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",

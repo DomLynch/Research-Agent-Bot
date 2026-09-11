@@ -21,6 +21,7 @@ from agent.topic_pack import (
     OverrideRecord,
     TopicPack,
     TopicPackError,
+    _anchor_topic_terms,
     load_topic_pack,
 )
 
@@ -342,10 +343,17 @@ def test_clinical_brief_topic_packs_disable_inference() -> None:
 # --- Slice 21 (target_journal) --------------------------------------------
 
 
-def test_target_journal_defaults_to_none_when_not_declared() -> None:
-    """Existing topic packs without `target_journal` must load with the
-    field defaulting to None — universality preserved across the fleet."""
-    pack = load_topic_pack(METFORMIN_PATH.parent / "vitamin_d.toml")
+def test_target_journal_defaults_to_none_when_not_declared(tmp_path: Path) -> None:
+    """Topic-pack data without `target_journal` still loads with the
+    field defaulting to None — generated/legacy compatibility preserved."""
+    base = "\n".join(
+        line for line in METFORMIN_PATH.read_text().splitlines()
+        if not line.startswith("target_journal = ")
+    )
+    pack_path = tmp_path / "no_target.toml"
+    pack_path.write_text(base)
+
+    pack = load_topic_pack(pack_path)
     assert pack.target_journal is None
 
 
@@ -366,3 +374,42 @@ def test_target_journal_loads_when_declared(tmp_path: Path) -> None:
     assert pack.target_journal == (
         "Open-access general scholarly journal (test)"
     )
+
+
+# --- Retrieval-term entity anchoring (corpus dilution fix) ----------------
+
+def test_anchor_drops_bare_modifier_keeps_entity_and_phrase() -> None:
+    # The lone "cancer" OR-branch pulled generic cancer papers (no
+    # resveratrol), diluting the corpus below the precision floor.
+    out = _anchor_topic_terms(
+        "resveratrol_cancer_thresholds",
+        ("resveratrol cancer thresholds", "resveratrol", "cancer"),
+    )
+    assert "cancer" not in out          # bare slug modifier dropped
+    assert "resveratrol" in out         # primary entity kept
+    assert "resveratrol cancer thresholds" in out  # phrase kept
+
+
+def test_anchor_keeps_non_slug_single_word_synonyms() -> None:
+    # "niacinamide" is a NAD synonym, not a slug token — must survive;
+    # only the bare slug modifier "metabolism" is dropped.
+    out = _anchor_topic_terms(
+        "nad_metabolism_measurement_methods",
+        ("nad metabolism measurement methods", "nad", "metabolism",
+         "nicotinamide riboside", "niacinamide"),
+    )
+    assert "metabolism" not in out
+    assert {"nad", "niacinamide", "nicotinamide riboside"} <= set(out)
+
+
+def test_anchor_is_noop_for_clean_single_entity_pack() -> None:
+    # Working topics (every term already entity-anchored) are unchanged.
+    terms = ("semaglutide intervention semaglutide 2.4 mg effects",
+             "semaglutide", "intervention semaglutide 2.4 mg")
+    assert _anchor_topic_terms(
+        "semaglutide_intervention_semaglutide_2_4_mg_effects", terms,
+    ) == terms
+
+
+def test_anchor_noop_when_it_would_empty_terms() -> None:
+    assert _anchor_topic_terms("a_b_c", ("b",)) == ("b",)

@@ -23,13 +23,15 @@ import argparse
 import json
 import re
 import sys
-import tomllib
 import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Sequence
 from pathlib import Path
 
+from agent.topic_display import humanize_topic, intervention_label
 from agent.outcome_class_remap import outcome_key
+from direction_consistency import repair_abstract_direction_summary
+from evidence_map_summary import signal_summary_cell, source_context_map
 
 __all__ = ["apply_fixes", "main"]
 
@@ -128,6 +130,15 @@ _ET_AL_PAREN_CITE_RE = re.compile(
 _PVALUE_DISPLAY_RE = re.compile(
     r"\b[Pp]\s*([<>=])\s*(0?\.\d+|\.\d+|\d+(?:\.\d+)?)"
 )
+_CHANGE_SPEED_SENTENCE_RE = re.compile(
+    r"\b(?:change|improvement|increase|decrease|difference|delta|"
+    r"reduction|rise|decline|gain)\b[^.!?\n]{0,120}"
+    r"\b\d+(?:\.\d+)?\s*m/s\b|"
+    r"\b\d+(?:\.\d+)?\s*m/s\b[^.!?\n]{0,120}"
+    r"\b(?:change|improvement|increase|decrease|difference|delta|"
+    r"reduction|rise|decline|gain)\b",
+    re.IGNORECASE,
+)
 
 
 _DEPTH_PROTECTED_SECTIONS = {
@@ -184,20 +195,13 @@ def _strip_empty_parenthetical_citations(paper_md: str) -> tuple[str, int]:
     return re.subn(r"\s+\(\s*(?:;\s*)?\)", "", paper_md)
 
 
+def _looks_like_change_speed_sentence(text: str) -> bool:
+    return bool(_CHANGE_SPEED_SENTENCE_RE.search(str(text or "")))
+
+
 def _topic_display_name(topic: str) -> str:
     repo = Path(__file__).resolve().parent.parent
-    pack_path = repo / "topic_packs" / f"{topic}.toml"
-    if pack_path.exists():
-        try:
-            pack = tomllib.loads(pack_path.read_text())
-            aliases = pack.get("aliases") or []
-            for alias in aliases:
-                if isinstance(alias, str) and alias.strip():
-                    if alias.isupper() or "-" in alias or " " in alias:
-                        return alias.strip()[:1].upper() + alias.strip()[1:]
-        except (OSError, ValueError, tomllib.TOMLDecodeError):
-            pass
-    return topic.replace("_", " ").title()
+    return humanize_topic(topic, title_case=True, root=repo)
 
 
 def _normalize_public_topic_slug(
@@ -209,7 +213,12 @@ def _normalize_public_topic_slug(
     if not topic or ("_" not in topic and topic not in {"glp1", "omega3"}):
         return paper_md, 0
     body, tail = _split_public_body(paper_md)
-    display = _topic_display_name(topic)
+    # A raw underscore slug leaking into prose is a COMPOUND-NOUN position
+    # ("studies of resveratrol_metabolism_effects"), so replace it with the
+    # intervention entity ('Resveratrol', 'Urolithin A') — the compound
+    # name, not the multi-token topic phrase that includes aspect words.
+    repo = Path(__file__).resolve().parent.parent
+    display = intervention_label(topic, title_case=True, root=repo)
     pattern = re.compile(rf"\b{re.escape(topic)}\b", re.IGNORECASE)
     body, n = pattern.subn(display, body)
     return body + tail, n
@@ -221,6 +230,7 @@ _PUBLIC_LABELS = {
     "cross_domain": "cross-domain",
     "mean_sd": "mean ± SD",
     "null_vs_positive": "null vs positive",
+    "null_vs_negative": "null vs negative",
     "p_value": "p-value",
     "sample_size": "sample size",
     "unit_value": "unit value",
@@ -693,19 +703,22 @@ def _rebuild_thin_results_from_manifest(paper_md: str, manifest: dict | None) ->
     by_outcome: dict[str, list[dict]] = defaultdict(list)
     for r in receipts:
         by_outcome[str(r.get("outcome_class") or "other")].append(r)
+    topic = str(manifest.get("topic") or "")
+    topic_anchor = _topic_display_name(topic) if topic else ""
     lines = ["## Results", "", "| Outcome class | Corpus slice | Strongest signal | Directness | Main limitation |", "|---|---|---|---|---|"]
     for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
-        dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
         direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
-        dominant, dominant_n = dirs.most_common(1)[0]
         label = outcome.replace("_", " ").title()
-        lines.append(f"| {label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {dominant} signal in {dominant_n}/{len(group)} sources | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
+        row_label = f"{topic_anchor} / {label}" if topic_anchor else label
+        lines.append(f"| {row_label} | n={len(group)}; claims={sum(int(r.get('n_claims') or 0) for r in group)} | {signal_summary_cell(group)} | {direct.most_common(1)[0][1]} {direct.most_common(1)[0][0]} | {'single-source support' if len(group) == 1 else 'primary-tier limited'} |")
+    context_table = source_context_map(receipts)
+    if context_table:
+        lines += ["", context_table.rstrip()]
     lines += ["", "This evidence brief reports outcome packets as a map of retained evidence rather than as a full journal Results narrative or pooled effect estimate."]
     for outcome, group in sorted(by_outcome.items(), key=lambda item: (-len(item[1]), item[0])):
-        dirs = Counter(str(r.get("effect_direction") or "mixed").lower() for r in group)
         direct = Counter(str(r.get("directness") or "indirect").lower() for r in group)
         label = outcome.replace("_", " ").title()
-        lines += ["", f"### {label} Outcomes", "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Directional coding: {', '.join(f'{k}={v}' for k, v in sorted(dirs.items()))}. Directness coding: {', '.join(f'{k}={v}' for k, v in sorted(direct.items()))}."]
+        lines += ["", f"### {label} Outcomes", "", f"{len(group)} included source{'s' if len(group) != 1 else ''} were assigned to this outcome class. Signal summary: {signal_summary_cell(group)}. Directness coding: {', '.join(f'{k}={v}' for k, v in sorted(direct.items()))}."]
     rebuilt = "\n".join(lines).rstrip() + "\n"
     patched = re.sub(r"^##\s+Results\b.*?(?=^##\s+|\Z)", rebuilt + "\n", paper_md, count=1, flags=re.M | re.S)
     return patched, int(patched != paper_md)
@@ -1832,6 +1845,20 @@ def apply_fixes(
             ),
         })
 
+    if manifest is not None:
+        new_md, n_abstract_direction = repair_abstract_direction_summary(
+            new_md, manifest,
+        )
+        if n_abstract_direction:
+            log.append({
+                "fix_type": "abstract_results_direction_consistency_repair",
+                "n_changes": n_abstract_direction,
+                "description": (
+                    "rewrote the Abstract direction-summary sentence from "
+                    "manifest receipt direction counts; advisory repair only"
+                ),
+            })
+
     new_md, n_empty_parens = _strip_empty_parenthetical_citations(new_md)
     if n_empty_parens:
         log.append({
@@ -2655,6 +2682,11 @@ def apply_fixes(
             bg_lit_registry=bg_lit_registry,
             quant_claims_dir=qcd,
         )
+        if n_anaphor_stripped:
+            nrg_issues = [
+                issue for issue in nrg_issues
+                if not _looks_like_change_speed_sentence(getattr(issue, "sentence", ""))
+            ]
         if nrg_issues and _repair is not None:
             new_md, n_repaired = _repair(
                 new_md,
@@ -3452,7 +3484,7 @@ def _strip_change_value_misread_sentences(
                 # endpoint, and value Y was 0.13") falsely
                 # cleared the numeric.
                 from final_consistency_audit import (
-                    _CHANGE_WORD_PROXIMITY_CHARS,
+                    _CHANGE_WORD_PROXIMITY_CHARS, _CHANGE_WORDS,
                 )
                 num_idx = sent_lc.find(numeric.lower())
                 window_start = max(
@@ -3464,7 +3496,7 @@ def _strip_change_value_misread_sentences(
                     + _CHANGE_WORD_PROXIMITY_CHARS,
                 )
                 window = sent_lc[window_start:window_end]
-                has_change = any(w in window for w in change_words)
+                has_change = any(w in window for w in set(change_words) | set(_CHANGE_WORDS))
                 if has_absolute and not has_change:
                     should_drop = True
                     n_stripped += 1
@@ -3497,7 +3529,8 @@ def _strip_change_value_anaphor_sentences(
         if not _audit.QUANT_DIR.exists():
             return paper_md, 0
         from final_consistency_audit import (
-            _CHANGE_WORDS, _ANAPHOR_RE, _THRESHOLD_KEYWORD_RE,
+            _CHANGE_SPEED_VALUE_RE, _CHANGE_WORDS, _ANAPHOR_RE,
+            _THRESHOLD_KEYWORD_RE,
         )
         change_value_map: dict[str, set[str]] = {}
         for qf in _audit.QUANT_DIR.glob("*.quant_claims.json"):
@@ -3538,9 +3571,15 @@ def _strip_change_value_anaphor_sentences(
         # Map: numeric → first sentence index containing it
         change_sent_indices: dict[str, int] = {}
         for i, sent in enumerate(sentences):
+            sent_lc = sent.lower()
             for numeric in change_value_map:
                 if numeric in sent and numeric not in change_sent_indices:
                     change_sent_indices[numeric] = i
+            change_hits = {w for w in _CHANGE_WORDS if w in sent_lc}
+            if change_hits:
+                for numeric in _CHANGE_SPEED_VALUE_RE.findall(sent):
+                    change_sent_indices.setdefault(numeric, i)
+                    change_value_map.setdefault(numeric, set()).update(change_hits)
         if not change_sent_indices:
             out_paragraphs.append(para)
             continue

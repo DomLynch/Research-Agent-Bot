@@ -159,6 +159,7 @@ def build_novel_framework_section(
         label.replace("_", "-") for label in (
             "mechanism_vs_clinical",
             "null_vs_positive",
+            "null_vs_negative",
         ) if label in tension_kinds
     ) or "cross-receipt"
     article = "an" if framework_name[:1].lower() in {"a", "e", "i", "o"} else "a"

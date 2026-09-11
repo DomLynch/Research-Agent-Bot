@@ -16,7 +16,7 @@ from agent.paper_writer_claim_repair import (
     repair_abstract_claim_strength,
     repair_claim_strength,
 )
-from agent.synthesis_schemas import ReceiptSummary
+from agent.synthesis_schemas import EffectDirection, ReceiptSummary
 
 
 def _direct(rid: str) -> ReceiptSummary:
@@ -105,6 +105,53 @@ def test_repair_fires_on_unhedged_causal_verb_citing_mechanistic_receipt() -> No
     assert len(log) == 1
     assert log[0].triggering_verb.lower() == "demonstrates"
     assert "metformin-multi-001-cfab-c04" in log[0].receipt_ids
+
+
+def _direct_dir(rid: str, direction: EffectDirection) -> ReceiptSummary:
+    # Direct + high-tier; caller sets the coded effect_direction. The old
+    # weak_ids (tier-C / mechanistic only) ignored direction, so a
+    # directional claim on a null-coded direct receipt shipped unhedged —
+    # the dominant reviewer revise ask.
+    return ReceiptSummary(
+        receipt_id=rid, receipt_path=f"runs/{rid}", topic="metformin",
+        thesis_text="thesis", spar_verdict="accept_clean",
+        n_claims=1, n_failed_traces=0, canonical_trial_id=f"NCT-{rid}",
+        evidence_tier="A1", directness="direct",
+        outcome_class="longevity", effect_direction=direction,
+        p_values=(), population_summary="older adults",
+    )
+
+
+def test_repair_fires_on_direction_overclaim_against_null_coded_receipt() -> None:
+    """A direct, A1 receipt coded effect_direction='null' must still hedge
+    a causal/directional claim — prose cannot assert a direction the
+    evidence table does not carry."""
+    body = (
+        "Metformin improves survival in older adults "
+        "(metformin-multi-001-null-c07)."
+    )
+    repaired, log = repair_claim_strength(body, [_direct_dir("metformin-multi-001-null-c07", "null")])
+    assert REPAIR_PREFIX in repaired, f"null-direction overclaim not hedged: {repaired!r}"
+    assert len(log) == 1
+    assert "metformin-multi-001-null-c07" in log[0].receipt_ids
+
+
+def test_repair_fires_on_direction_overclaim_against_mixed_coded_receipt() -> None:
+    """A 'mixed' receipt has findings in BOTH directions, so asserting a
+    single direction is an overclaim and must hedge — same as null/unclear."""
+    body = "Metformin improves survival (metformin-multi-001-mixed-c09)."
+    repaired, log = repair_claim_strength(body, [_direct_dir("metformin-multi-001-mixed-c09", "mixed")])
+    assert REPAIR_PREFIX in repaired, f"mixed-direction overclaim not hedged: {repaired!r}"
+    assert len(log) == 1
+
+
+def test_repair_does_not_fire_for_direct_positive_receipt() -> None:
+    """Control: a direct receipt genuinely coded 'positive' is NOT an
+    overclaim — the directional verb is faithful, so no hedge."""
+    body = "Metformin improves survival (metformin-multi-001-pos-c01)."
+    repaired, log = repair_claim_strength(body, [_direct_dir("metformin-multi-001-pos-c01", "positive")])
+    assert REPAIR_PREFIX not in repaired
+    assert log == []
 
 
 def test_repair_fires_on_robust_adjective_citing_mechanistic_receipt() -> None:

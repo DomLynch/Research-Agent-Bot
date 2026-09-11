@@ -88,7 +88,7 @@ except ModuleNotFoundError:
         RemoteProtocolError = RuntimeError
         PoolTimeout = TimeoutError
 
-    httpx = _FakeHttpx()
+    httpx = _FakeHttpx()  # type: ignore[assignment]
 
 from agent.llm_client import (
     CallSpec,
@@ -221,6 +221,15 @@ def _ok_body(content: str = '{"x": 1}', prompt_tok: int = 10, comp_tok: int = 20
     }
 
 
+def _anthropic_ok_body(
+    content: str = '{"x": 1}', input_tok: int = 10, output_tok: int = 20,
+) -> dict:
+    return {
+        "content": [{"type": "text", "text": content}],
+        "usage": {"input_tokens": input_tok, "output_tokens": output_tok},
+    }
+
+
 def _run(coro):
     return asyncio.run(coro)
 
@@ -245,6 +254,49 @@ def test_chat_json_happy_path_returns_parsed() -> None:
     assert resp.input_tokens == 10
     assert resp.output_tokens == 20
     assert resp.model == "test/model"
+
+
+def test_chat_json_anthropic_compatible_minimax_m3() -> None:
+    captured: dict[str, Any] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured["url"] = str(request.url)
+        captured["payload"] = json.loads(request.content)
+        return httpx.Response(200, json=_anthropic_ok_body())
+
+    async def go() -> LLMResponse:
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await chat_json(
+                messages=[
+                    {"role": "system", "content": "Return JSON only."},
+                    {"role": "user", "content": "hi"},
+                ],
+                chain=(
+                    _spec(
+                        model="MiniMax-M3",
+                        base_url="https://api.minimax.io/anthropic",
+                    ),
+                ),
+                client=client,
+                max_tokens=123,
+            )
+        finally:
+            await client.aclose()
+
+    resp = _run(go())
+    assert captured["url"] == "https://api.minimax.io/anthropic/v1/messages"
+    assert captured["payload"] == {
+        "model": "MiniMax-M3",
+        "temperature": 0.2,
+        "max_tokens": 123,
+        "messages": [{"role": "user", "content": "hi"}],
+        "system": "Return JSON only.",
+    }
+    assert resp.parsed == {"x": 1}
+    assert resp.input_tokens == 10
+    assert resp.output_tokens == 20
+    assert resp.model == "MiniMax-M3"
 
 
 def test_chat_json_falls_back_on_5xx() -> None:
@@ -651,14 +703,17 @@ def test_chat_json_seed_forwarded_to_every_chain_spec() -> None:
 
 
 def _settings(
-    mimo_key: str = "mimo-key", openrouter_key: str = "or-key",
+    minimax_key: str = "minimax-key", openrouter_key: str = "or-key",
+    judge_model: str = "google/gemma-4-31b-it",
 ) -> Settings:
     return Settings(
-        mimo_api_key=mimo_key, mimo_model="mimo-v2.5-pro",
-        mimo_base_url="https://m.example/v1", mimo_timeout_sec=30.0,
+        minimax_api_key=minimax_key,
+        minimax_model="MiniMax-M3",
+        minimax_base_url="https://api.minimax.io/anthropic",
+        minimax_timeout_sec=30.0,
         openrouter_api_key=openrouter_key,
         openrouter_base_url="https://or.example/v1",
-        judge_model="google/gemma-4-31b-it",
+        judge_model=judge_model,
         fallback_model="mistralai/mistral-small-2603",
         final_layer_reviewer_model="google/gemini-3.1-flash-lite:exacto",
         bot_enabled=True, daily_cost_cap_usd=10.0,
@@ -667,16 +722,16 @@ def _settings(
     )
 
 
-def test_build_extract_chain_yields_mimo_then_mistral() -> None:
+def test_build_extract_chain_yields_minimax_then_mistral() -> None:
     chain = build_extract_chain(_settings())
     assert len(chain) == 2
-    assert chain[0].model == "mimo-v2.5-pro"
+    assert chain[0].model == "MiniMax-M3"
     assert chain[1].model == "mistralai/mistral-small-2603"
 
 
 def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
     """Specs with empty api_keys stay in the chain — chat_json skips them."""
-    chain = build_extract_chain(_settings(mimo_key=""))
+    chain = build_extract_chain(_settings(minimax_key=""))
     assert len(chain) == 2
     assert chain[0].api_key == ""  # unset, will be skipped at call time
     assert chain[1].api_key == "or-key"
@@ -685,8 +740,8 @@ def test_build_extract_chain_keeps_empty_keys_in_chain() -> None:
 def test_build_extract_chain_uses_settings_timeout() -> None:
     s = _settings()
     chain = build_extract_chain(s)
-    assert chain[0].timeout_sec == s.mimo_timeout_sec
-    assert chain[1].timeout_sec == s.mimo_timeout_sec  # both share MiMo timeout
+    assert chain[0].timeout_sec == s.minimax_timeout_sec
+    assert chain[1].timeout_sec == s.minimax_timeout_sec  # both share MiniMax timeout
 
 
 def test_build_extract_chain_sets_retry_attempts(
@@ -700,22 +755,33 @@ def test_build_extract_chain_sets_retry_attempts(
 # --- build_judge_chain (Day 5.3) -----------------------------------------
 
 
-def test_build_judge_chain_yields_gemma_mimo_mistral() -> None:
-    """SPAR judge chain: Gemma 4 (primary) → MiMo (fallback) → Mistral.
-    Different cognitive style than extract chain — judges benefit from
-    the stronger reasoning model."""
+def test_build_judge_chain_excludes_writer_family() -> None:
+    """Trust-spine rule (judge != writer): the judge chain must never contain
+    the writer/extractor family. Gemma (primary) → Mistral (fallback); the
+    MiniMax writer model is dropped so a provider outage can't route judging
+    back to the writer (never let a model grade its own output)."""
     chain = build_judge_chain(_settings())
-    assert len(chain) == 3
-    assert chain[0].model == "google/gemma-4-31b-it"
-    assert chain[1].model == "mimo-v2.5-pro"
-    assert chain[2].model == "mistralai/mistral-small-2603"
+    models = [s.model for s in chain]
+    assert models == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
+    assert "MiniMax-M3" not in models
 
 
-def test_build_judge_chain_keeps_empty_keys_in_chain() -> None:
-    """Specs with empty api_keys remain in the chain — chat_json skips
-    them at call time. Partial-config envs still produce useful work."""
+def test_build_judge_chain_keeps_empty_keys_but_drops_writer_family() -> None:
+    """Non-writer specs with empty api_keys remain (chat_json skips them at
+    call time); the writer-family spec is dropped regardless of key."""
     chain = build_judge_chain(_settings(openrouter_key=""))
-    assert len(chain) == 3
-    assert chain[0].api_key == ""  # Gemma: skipped at call time
-    assert chain[1].api_key == "mimo-key"  # MiMo: fires
-    assert chain[2].api_key == ""  # Mistral: also under openrouter, skipped
+    assert [s.model for s in chain] == [
+        "google/gemma-4-31b-it",
+        "mistralai/mistral-small-2603",
+    ]
+    assert all(s.api_key == "" for s in chain)  # both under OpenRouter
+
+
+def test_build_judge_chain_drops_writer_family_judge_primary() -> None:
+    """A judge_model misconfigured to the writer's family is dropped rather
+    than allowed to grade its own output; the chain falls through to a
+    non-writer model."""
+    chain = build_judge_chain(_settings(judge_model="MiniMax-M3"))
+    models = [s.model for s in chain]
+    assert "MiniMax-M3" not in models
+    assert "mistralai/mistral-small-2603" in models

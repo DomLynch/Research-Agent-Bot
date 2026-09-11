@@ -23,6 +23,15 @@ Full pytest at current branch validation: 2961 passed, 5 warnings
 Ruff: clean
 ```
 
+## Canonical deploy branch (#9, 2026-06-13)
+The v3 producer deploys from `origin/codex/019e9ce8/main`; the Mac mirror
+tracks `claude/3809304f/main` and the VPS `/opt` + `/root` reset to
+`origin/codex/019e9ce8/main`. These hold identical content — treat
+`codex/019e9ce8/main` as the single source of truth. `origin/claude/finalizer-surface-fix`
+(@ b586c114) is a STALE ancestor, not a separate colleague branch; do not deploy
+or "sync" from it, and do not force-delete remote refs (another session may
+reference them) — consolidation is by convention, not by pruning.
+
 ## System Boundary
 ```text
 research-agent-bot = paper-producing synthesis engine
@@ -67,6 +76,11 @@ No raw-paper shortcut claims in cross-topic or final-paper prose.
 5. Gemini Exacto is the selected reviewer but still needs replay validation
    before being called Grok-equivalent; deterministic gates remain the
    production-critical certification layer.
+6. Tension-count drift follow-up: some manifests have reported
+   `n_non_orthogonal_tensions` above a recomputed
+   `build_tension_matrix(...).non_orthogonal()` count (observed 47 vs 18 on a
+   fasting run). Because evidence-map routing uses this density, reconcile the
+   manifest writer before tuning that routing threshold.
 
 ## Active Plan
 Source of task truth: `docs/active_50_task_plan_2026-05-09.md`.
@@ -92,7 +106,7 @@ ssh -i ~/.ssh/binance_futures_tool root@49.12.7.18 \
 - `select_best_runs()` excludes stale runs missing certification track or complete
   14/14 audit.
 - Meta-synthesis artifact regenerated from corrected run set.
-- LOC budget documented in `DECISIONS.md` and enforced at 21,250 cloc.
+- LOC budget documented in `DECISIONS.md` and enforced at 29,150 cloc.
 - `AGENTS.md`, `PROJECT_STATE.md`, and active task plan match current mission.
 - Full suite and ruff pass.
 - Commit pushed and VPS paths synced clean.

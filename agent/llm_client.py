@@ -69,7 +69,9 @@ _RETRYABLE_HTTP_STATUS = {408, 409, 425, 429, 500, 502, 503, 504}
 # fall back to (0, 0) so cost is recorded as 0 rather than crashing the
 # pipeline when a new model is wired up but not yet priced.
 _PRICING: Mapping[str, tuple[float, float]] = {
-    # MiMo V2.5 Pro (Xiaomi-hosted): $0.14/1M in, $0.28/1M out
+    # MiniMax M3 standard tier, <=512k input tokens: $0.30/1M in, $1.20/1M out
+    "MiniMax-M3": (0.00030, 0.00120),
+    # Legacy MiMo V2.5 Pro (Xiaomi-hosted): $0.14/1M in, $0.28/1M out
     "mimo-v2.5-pro": (0.00014, 0.00028),
     # Mistral Small via OpenRouter: ~$0.10/1M in, ~$0.30/1M out
     "mistralai/mistral-small-2603": (0.00010, 0.00030),
@@ -214,6 +216,37 @@ def _request_headers(spec: CallSpec) -> dict[str, str]:
     return headers
 
 
+def _uses_anthropic_api(spec: CallSpec) -> bool:
+    return "/anthropic" in spec.base_url.lower().rstrip("/")
+
+
+def _anthropic_messages(
+    messages: Sequence[Mapping[str, str]],
+) -> tuple[str | None, list[dict[str, Any]]]:
+    system_parts: list[str] = []
+    out: list[dict[str, Any]] = []
+    for msg in messages:
+        role = str(msg.get("role", "user"))
+        content = str(msg.get("content", ""))
+        if role == "system":
+            system_parts.append(content)
+        else:
+            out.append({"role": role, "content": content})
+    return ("\n\n".join(system_parts) or None, out)
+
+
+def _anthropic_text(body: Mapping[str, Any]) -> str:
+    blocks = body.get("content")
+    if not isinstance(blocks, list):
+        return "{}"
+    text_parts = [
+        block.get("text", "")
+        for block in blocks
+        if isinstance(block, dict) and block.get("type") == "text"
+    ]
+    return "\n".join(part for part in text_parts if isinstance(part, str)) or "{}"
+
+
 def _err_summary(exc: BaseException) -> str:
     text = str(exc).strip()
     if len(text) > 220:
@@ -254,6 +287,36 @@ async def _call_one(
     """Single OpenAI-compatible chat call. Caller catches errors for fallback."""
     if not spec.api_key:
         raise LLMError(f"missing api_key for model={spec.model}")
+    if _uses_anthropic_api(spec):
+        system, anthropic_messages = _anthropic_messages(messages)
+        anthropic_payload: dict[str, Any] = {
+            "model": spec.model,
+            "temperature": temperature,
+            "max_tokens": max_tokens or 4096,
+            "messages": anthropic_messages,
+        }
+        if system:
+            anthropic_payload["system"] = system
+        url = spec.base_url.rstrip("/") + "/v1/messages"
+        response = await client.post(
+            url, json=anthropic_payload, headers=_request_headers(spec),
+            timeout=spec.timeout_sec,
+        )
+        response.raise_for_status()
+        body = response.json()
+        text = _anthropic_text(body)
+        parsed = extract_json(text)
+        usage = body.get("usage", {}) or {}
+        in_tok = int(usage.get("input_tokens", 0) or 0)
+        out_tok = int(usage.get("output_tokens", 0) or 0)
+        return LLMResponse(
+            text=_strip_response(text),
+            parsed=parsed,
+            model=spec.model,
+            input_tokens=in_tok,
+            output_tokens=out_tok,
+            estimated_cost_usd=_estimate_cost(spec.model, in_tok, out_tok),
+        )
     payload: dict[str, Any] = {
         "model": spec.model,
         "temperature": temperature,
@@ -404,57 +467,82 @@ async def chat_json(
 
 
 def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """Fact-extraction default chain: MiMo (primary) → Mistral (fallback).
+    """Fact-extraction default chain: MiniMax (primary) → Mistral (fallback).
 
     Specs with empty api_keys remain in the chain — `chat_json` skips them.
-    A partially-configured environment (only Mistral set, MiMo missing)
+    A partially-configured environment (only Mistral set, MiniMax missing)
     still produces useful work without crashing the pipeline.
     """
     return (
         CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
-            max_attempts=_configured_attempts(settings.mimo_base_url),
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
+            max_attempts=_configured_attempts(settings.minimax_base_url),
         ),
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
 
 
-def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
-    """SPAR judge chain: Gemma 4 (primary) → MiMo (fallback) → Mistral.
-
-    Different cognitive style than `build_extract_chain` — judges
-    benefit from a stronger reasoning model. Empty-api_key specs are
-    skipped at call time so a partial-config env still produces output.
+def _model_family(model: str) -> str:
+    """Coarse provider/family key for a model id, used to keep the SPAR judge
+    in a different family than the writer. ``vendor/model`` -> vendor
+    (``google/gemma-4-31b-it`` -> ``google``); a bare id -> its leading token
+    (``MiniMax-M3`` -> ``minimax``).
     """
-    return (
+    m = model.strip().lower()
+    if not m:
+        return ""
+    return m.split("/", 1)[0] if "/" in m else m.split("-", 1)[0]
+
+
+def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
+    """SPAR judge chain: Gemma 4 (primary) → Mistral (fallback).
+
+    Trust-spine rule — *judge != writer*: a model cannot independently grade
+    its own output, so the judge chain must never contain the writer/extractor
+    family (``settings.minimax_model``). Any writer-family spec is dropped —
+    including a misconfigured primary — so a provider outage can never silently
+    route judging back to the writer. Non-writer specs with empty api_keys are
+    kept (``chat_json`` skips them at call time). Raises if no non-writer judge
+    model remains.
+    """
+    writer_family = _model_family(settings.minimax_model)
+    candidates = (
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.judge_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
         CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
-            max_attempts=_configured_attempts(settings.mimo_base_url),
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
+            max_attempts=_configured_attempts(settings.minimax_base_url),
         ),
         CallSpec(
             base_url=settings.openrouter_base_url,
             api_key=settings.openrouter_api_key,
             model=settings.fallback_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.openrouter_base_url),
         ),
     )
+    chain = tuple(c for c in candidates if _model_family(c.model) != writer_family)
+    if not chain:
+        raise ValueError(
+            "build_judge_chain: no judge model outside the writer family "
+            f"{writer_family!r}; set JUDGE_MODEL/FALLBACK_MODEL to a different "
+            "family than the writer (never let a model grade its own output)."
+        )
+    return chain

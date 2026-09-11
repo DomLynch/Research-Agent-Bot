@@ -66,6 +66,12 @@ _FILE_MAP: dict[str, str] = {
     "contradiction_map.json": "contradiction_map.json",
     "full_paper.docx": "paper.docx",
     "full_paper.pdf": "paper.pdf",
+    # Quality-appraisal sidecars (the reviewer's transparency surface).
+    # _organize_run_artifacts keeps these at the run ROOT (public); export_bundle
+    # falls back to audit/<name> for older runs that pre-date that.
+    "risk_of_bias.json": "risk_of_bias.json",
+    "grade_assessment.json": "grade_assessment.json",
+    "quality_methods.json": "quality_methods.json",
 }
 
 # Files that, if missing, just get skipped (not an error).
@@ -83,6 +89,9 @@ _OPTIONAL = {
     "evidence_table.csv",
     "contradiction_map.json",
     "full_paper.docx",
+    "risk_of_bias.json",
+    "grade_assessment.json",
+    "quality_methods.json",
 }
 
 
@@ -97,6 +106,11 @@ def export_bundle(
     }
     for src_name, dst_name in _FILE_MAP.items():
         src = run_dir / src_name
+        if not src.exists():
+            # Older runs may still hold relocated sidecars under audit/.
+            alt = run_dir / "audit" / Path(src_name).name
+            if alt.exists():
+                src = alt
         if not src.exists():
             if src_name in _OPTIONAL:
                 result["skipped"].append(src_name)

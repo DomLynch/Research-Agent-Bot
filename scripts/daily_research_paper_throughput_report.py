@@ -2,11 +2,15 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
+import os
 import re
+import sys
 import urllib.request
 from pathlib import Path
-from typing import Any
+from typing import Any, TextIO
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from publishing_capacity_plan import live_plan
 
@@ -15,6 +19,15 @@ AGENT_ID = "agent-v3-full-paper"
 AGENT_IDS = frozenset((AGENT_ID, f"{AGENT_ID}-live"))
 RUNS = Path(__file__).resolve().parent.parent / "runs"
 NEXT_RE = re.compile(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
+DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+RUN_TS_RE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}Z")
+
+
+def _report_tz() -> ZoneInfo:
+    try:
+        return ZoneInfo(os.environ.get("RESEARCH_AGENT_REPORT_TZ", "Asia/Dubai"))
+    except ZoneInfoNotFoundError:
+        return ZoneInfo("UTC")
 
 
 def _rows_from_next_html(html: str) -> list[dict[str, Any]]:
@@ -75,24 +88,118 @@ def _read_json(path: Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
+def _parse_iso(value: Any) -> dt.datetime | None:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        parsed = dt.datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
+
+
+def _run_timestamp(value: Any) -> dt.datetime | None:
+    if not isinstance(value, str):
+        return None
+    match = RUN_TS_RE.search(value)
+    if not match:
+        return None
+    date_part, time_part = match.group(0)[:-1].split("T", 1)
+    return _parse_iso(f"{date_part}T{time_part.replace('-', ':')}+00:00")
+
+
+def _row_timestamp(row: dict[str, Any]) -> dt.datetime | None:
+    timestamp = _parse_iso(row.get("started_at"))
+    if timestamp:
+        return timestamp
+    candidate = row.get("candidate")
+    if isinstance(candidate, dict):
+        timestamp = _run_timestamp(candidate.get("run"))
+        if timestamp:
+            return timestamp
+    for key in ("submitted_run", "attempted_run", "out_dir", "run"):
+        timestamp = _run_timestamp(row.get(key))
+        if timestamp:
+            return timestamp
+    return None
+
+
+def _row_report_date(row: dict[str, Any]) -> str:
+    timestamp = _row_timestamp(row)
+    if timestamp:
+        return timestamp.astimezone(_report_tz()).date().isoformat()
+    return str(row.get("date") or "")
+
+
+def _nearby_dates(date: str) -> list[str]:
+    try:
+        day = dt.date.fromisoformat(date)
+    except ValueError:
+        return [date]
+    return [(day + dt.timedelta(days=offset)).isoformat() for offset in (-1, 0, 1)]
+
+
 def _cycle_view(data: dict[str, Any]) -> dict[str, Any]:
     return {k: data.get(k) for k in ("started_at", "mode", "status", "submitted", "published", "attempted_topic")}
 
 
+def _cycle_ledgers_for_report_date(ledger_dir: Path, date: str) -> dict[str, dict[str, Any]]:
+    out: dict[str, dict[str, Any]] = {}
+    for day in _nearby_dates(date):
+        for mode, suffix in (("mixed", ""), ("fresh", "-fresh"), ("revise", "-revise")):
+            row = _read_json(ledger_dir / f"{day}{suffix}.json")
+            if row and _row_report_date(row) == date:
+                current = out.get(mode)
+                if current is None or str(row.get("started_at") or "") > str(current.get("started_at") or ""):
+                    out[mode] = row
+    return out
+
+
+def _submit_ledger_for_report_date(runs_root: Path, date: str) -> dict[str, Any]:
+    ledger_dir = runs_root / "_daily_research_paper_ledger"
+    rows = [
+        row for day in _nearby_dates(date)
+        for row in [_read_json(ledger_dir / f"{day}.json")]
+        if row and _row_report_date(row) == date
+    ]
+    return max(rows, key=lambda row: str(_row_timestamp(row) or row.get("date") or ""), default={})
+
+
+def _throughput_for_report_date(runs_root: Path, date: str) -> dict[str, Any]:
+    ledger_dir = runs_root / "_daily_research_paper_cycle_ledger"
+    days = _read_json(ledger_dir / "_daily_throughput_summary.json").get("days")
+    if not isinstance(days, dict):
+        return {}
+    runs: list[dict[str, Any]] = []
+    for day in _nearby_dates(date):
+        row = days.get(day)
+        day_runs = row.get("runs") if isinstance(row, dict) else None
+        if isinstance(day_runs, list):
+            runs.extend(run for run in day_runs if isinstance(run, dict) and _row_report_date(run) == date)
+    if not runs:
+        row = days.get(date)
+        return row if isinstance(row, dict) else {}
+    latest = max(runs, key=lambda run: str(run.get("started_at") or ""), default={})
+    return {
+        "runs": runs,
+        "submitted": sum(int(run.get("submitted") or 0) for run in runs),
+        "published": sum(int(run.get("published") or 0) for run in runs),
+        "cycles": len(runs),
+        "latest_status": latest.get("status") or "unknown",
+    }
+
+
 def _local_counts(runs_root: Path, date: str) -> dict[str, Any]:
     ledger_dir = runs_root / "_daily_research_paper_cycle_ledger"
-    cycles = {
-        mode: _read_json(ledger_dir / f"{date}{suffix}.json")
-        for mode, suffix in (("mixed", ""), ("fresh", "-fresh"), ("revise", "-revise"))
-    }
+    cycles = _cycle_ledgers_for_report_date(ledger_dir, date)
     cycle = max(
         (row for row in cycles.values() if row),
         key=lambda row: str(row.get("started_at") or ""),
         default={},
     )
-    submit = _read_json(runs_root / "_daily_research_paper_ledger" / f"{date}.json")
+    submit = _submit_ledger_for_report_date(runs_root, date)
     hist = _read_json(ledger_dir / "_blocker_histogram.json")
-    throughput = _read_json(ledger_dir / "_daily_throughput_summary.json").get("days", {}).get(date, {})
+    throughput = _throughput_for_report_date(runs_root, date)
     decisions = _read_json(ledger_dir / "_decisions_by_day.json").get("days", {}).get(date, {})
     raw_blockers = hist.get("blockers")
     blockers = raw_blockers if isinstance(raw_blockers, dict) else {}
@@ -149,7 +256,14 @@ def _rolling_pace_snapshot(runs_root: Path, capacity: dict[str, Any], *, window_
             "source": "_daily_throughput_summary.json",
             "status": "missing_throughput_summary",
         }
-    selected_dates = sorted(str(date) for date in days)[-window_days:]
+    selected_dates = sorted(str(date) for date in days if DAY_KEY_RE.fullmatch(str(date)))[-window_days:]
+    if not selected_dates:
+        return {
+            "window_days": window_days,
+            "observed_days": 0,
+            "source": "_daily_throughput_summary.json",
+            "status": "missing_throughput_summary",
+        }
     selected = [days[date] for date in selected_dates if isinstance(days.get(date), dict)]
     submitted = sum(_int_value(day.get("submitted")) for day in selected)
     published = sum(_int_value(day.get("published")) for day in selected)
@@ -194,6 +308,7 @@ def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict
     submitted = _int_value(throughput.get("submitted"))
     local_published = _int_value(throughput.get("published"))
     public_accepts = _int_value(decisions.get("accept"))
+    observed_published = max(local_published, public_accepts)
     return {
         "required_daily_average": {
             "one_year": _required_daily(one_year),
@@ -203,11 +318,13 @@ def _pace_snapshot(local: dict[str, Any], public: dict[str, Any], capacity: dict
             "local_submitted": submitted,
             "local_published": local_published,
             "public_accepts": public_accepts,
+            "observed_published": observed_published,
         },
         "today_gap_to_two_year_daily_average": {
             "by_local_submissions": max(0.0, round(two_year_daily - submitted, 2)),
             "by_local_published": max(0.0, round(two_year_daily - local_published, 2)),
             "by_public_accepts": max(0.0, round(two_year_daily - public_accepts, 2)),
+            "by_observed_published": max(0.0, round(two_year_daily - observed_published, 2)),
         },
     }
 
@@ -229,13 +346,33 @@ def summarize(date: str, *, runs_root: Path = RUNS, papers_url: str = "https://r
     }
 
 
+def _emit_json(payload: dict[str, Any], *, stream: TextIO | None = None) -> int:
+    out = stream or sys.stdout
+    try:
+        out.write(json.dumps(payload, indent=2, sort_keys=True))
+        out.write("\n")
+        out.flush()
+    except BrokenPipeError:
+        if stream is None:
+            try:
+                devnull = os.open(os.devnull, os.O_WRONLY)
+                os.dup2(devnull, sys.stdout.fileno())
+            except OSError:
+                pass
+        return 0
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("date")
+    parser.add_argument("date", nargs="?")
+    parser.add_argument("--date", dest="date_flag")
     parser.add_argument("--runs-root", type=Path, default=RUNS)
     args = parser.parse_args(argv)
-    print(json.dumps(summarize(args.date, runs_root=args.runs_root), indent=2, sort_keys=True))
-    return 0
+    date = args.date_flag or args.date
+    if not date:
+        parser.error("date is required")
+    return _emit_json(summarize(date, runs_root=args.runs_root))
 
 
 if __name__ == "__main__":

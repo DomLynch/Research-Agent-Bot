@@ -15,6 +15,7 @@ produces a JSON audit report + markdown summary.
 from __future__ import annotations
 
 import argparse
+import importlib
 import json
 import re
 import sys
@@ -83,8 +84,12 @@ def canonical_numeric(s: str) -> str:
 
     Handles grouped thousands such as `26 916` / `26,916` without
     weakening the strict source-trace rule for ordinary prose numbers.
+    Also normalizes a leading bare decimal (`.0038` -> `0.0038`) so a
+    body value written with a leading zero matches a source claim that
+    omitted it (and vice-versa) — common for p-values (`P = .0038`).
     """
-    return _THOUSANDS_SEP_RE.sub("", str(s).strip().lower())
+    v = _THOUSANDS_SEP_RE.sub("", str(s).strip().lower())
+    return f"0{v}" if v.startswith(".") else v
 
 
 def _load_corpus_numerics() -> set[str]:
@@ -182,15 +187,27 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
         )
     receipts = manifest.get("receipts") or ()
     classes: dict[str, int] = {}
+    try:
+        source_context_counts = getattr(
+            importlib.import_module("scripts.evidence_map_summary"),
+            "source_context_counts",
+        )
+    except ModuleNotFoundError:  # pragma: no cover - script execution path
+        source_context_counts = getattr(
+            importlib.import_module("evidence_map_summary"),
+            "source_context_counts",
+        )
     for r in receipts if isinstance(receipts, list) else ():
         if not isinstance(r, dict):
             continue
         for p_value in r.get("p_values") or ():
-            out.update(canonical_numeric(v) for v in re.findall(r"\d+\.?\d*", str(p_value)))
+            out.update(canonical_numeric(v) for v in re.findall(r"\d*\.?\d+", str(p_value)))
         if r.get("outcome_class"):
             key = str(r["outcome_class"])
             classes[key] = classes.get(key, 0) + 1
     out.update(canonical_numeric(str(v)) for v in classes.values())
+    if isinstance(receipts, list):
+        out.update(canonical_numeric(str(v)) for v in source_context_counts(receipts).values())
     plans = manifest.get("_tension_plans")
     if not isinstance(plans, list):
         raw = (manifest.get("tension_elaboration") or {}).get("plans")
@@ -200,7 +217,7 @@ def _manifest_structural_numerics(manifest: dict | None) -> set[str]:
             for v in plan.get("numeric_anchors") or ():
                 s = str(v)
                 out.add(canonical_numeric(s))
-                out.update(canonical_numeric(x) for x in re.findall(r"\d+\.?\d*", s))
+                out.update(canonical_numeric(x) for x in re.findall(r"\d*\.?\d+", s))
     return out
 
 

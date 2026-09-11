@@ -328,22 +328,22 @@ async def _generate_section(
 
 
 def _build_call_chain() -> list[CallSpec]:
-    """Diagnostic-paper writer chain — MiMo v2.5 Pro is PRIMARY.
+    """Diagnostic-paper writer chain — MiniMax M3 is PRIMARY.
 
     Same chain as the production publisher (run_v06_synthesis.py):
-    MiMo v2.5 Pro (unlimited) → Mistral Small (paid) → Gemma 4 31B
+    MiniMax M3 → Mistral Small (paid) → Gemma 4 31B
     (paid). Identifiers come from agent/settings.py — never hardcode
-    here, that's how the previous mimo-vl-7b-rl / gemma-3-27b-it /
+    here, that's how the previous vision-model / gemma-3-27b-it /
     deepseek drift happened.
     """
     settings = load_settings()
     chain: list[CallSpec] = []
-    if settings.mimo_api_key:
+    if settings.minimax_api_key:
         chain.append(CallSpec(
-            base_url=settings.mimo_base_url,
-            api_key=settings.mimo_api_key,
-            model=settings.mimo_model,
-            timeout_sec=settings.mimo_timeout_sec,
+            base_url=settings.minimax_base_url,
+            api_key=settings.minimax_api_key,
+            model=settings.minimax_model,
+            timeout_sec=settings.minimax_timeout_sec,
         ))
     if settings.openrouter_api_key:
         for openrouter_model in (settings.fallback_model, settings.judge_model):
@@ -351,7 +351,7 @@ def _build_call_chain() -> list[CallSpec]:
                 base_url=settings.openrouter_base_url,
                 api_key=settings.openrouter_api_key,
                 model=openrouter_model,
-                timeout_sec=settings.mimo_timeout_sec,
+                timeout_sec=settings.minimax_timeout_sec,
             ))
     return chain
 

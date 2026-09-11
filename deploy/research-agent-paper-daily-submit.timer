@@ -2,8 +2,9 @@
 Description=Run Research Agent v3 daily paper submit
 
 [Timer]
-OnCalendar=*-*-* 09:15:00
-OnCalendar=*-*-* 22:15:00
+# Every 8h, offset +2h after the fresh lane (00/8) so a freshly synthesized
+# paper is ready by the time submit fires. Revise lane stays at 00/4:15.
+OnCalendar=*-*-* 02/8:15:00
 Persistent=false
 Unit=research-agent-paper-daily-submit.service
 

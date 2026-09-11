@@ -17,6 +17,7 @@ Universal — no topic-specific fixtures; uses synthetic minimal sidecars.
 """
 from __future__ import annotations
 
+import importlib
 import json
 from pathlib import Path
 
@@ -24,6 +25,7 @@ from agent.journal_finalizer import (  # type: ignore[import-not-found]
     _lowercase_first_letter,
     _phase_c_terminology,
     _phase_g_refresh_sidecars,
+    _refresh_final_consistency_sidecar,
     _refresh_pre_submit_gate,
     _refresh_readiness_contract_items,
 )
@@ -111,6 +113,23 @@ def test_methods_pack_render_matches_required_markers() -> None:
         assert marker in md, f"renderer missing required H3: {marker!r}"
 
 
+def test_methods_pack_dedupes_public_outcome_aliases() -> None:
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=3,
+        n_screened=3,
+        n_included=3,
+        n_rejected=0,
+        outcome_classes=("immune", "immune_inflammation", "muscle_function"),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "immune and inflammation, immune and inflammation" not in md
+    assert md.count("immune and inflammation") == 1
+    assert "muscle function" in md
+
+
 def test_methods_data_items_carries_source_grounding_disclosure() -> None:
     # Researka repeatedly revised papers (CoQ10, brain_age_mri) asking them to
     # disclose that the public bundle is reference-level and that stats rest on
@@ -129,6 +148,23 @@ def test_methods_data_items_carries_source_grounding_disclosure() -> None:
     assert "reference-level metadata" in md
     assert "exact statistics" in md
     assert "claim registry" in md
+
+
+def test_methods_default_rob_wording_does_not_overclaim_populated_appraisal() -> None:
+    pack = build_methods_pack(
+        review_type="prisma_scr_scoping_synthesis",
+        topic="example_topic",
+        corpus_search_queries=("example query",),
+        n_retrieved=10,
+        n_screened=10,
+        n_included=8,
+        n_rejected=2,
+        outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "Per-source risk-of-bias was rated" not in md
+    assert "limited to populated `risk_of_bias.json` rows" in md
+    assert "risk-of-bias sidecar when populated" in md
 
 
 def test_methods_pack_renders_receipt_admission_funnel() -> None:
@@ -162,6 +198,42 @@ def test_methods_pack_renders_receipt_admission_funnel() -> None:
     assert "not additive exclusion totals" in md
     assert "| Strict high-confidence receipts | 5 |" in md
     assert "| Admitted final receipts | 129 |" in md
+
+
+def test_methods_exclusion_reasons_do_not_contradict_zero_excluded() -> None:
+    """Reviewer-flagged contradiction: the flow reported 0 excluded while the
+    'Exclusion reasons' list still enumerated population/duplicate exclusions.
+    With no recorded exclusions the section must say so — no phantom reasons —
+    while the required H3 marker stays present."""
+    pack = build_methods_pack(
+        review_type="evidence_brief",
+        topic="example_topic",
+        corpus_search_queries=("q",),
+        n_retrieved=12, n_screened=12, n_included=12, n_rejected=0,
+        outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "### Exclusion reasons" in md
+    assert "No records were excluded" in md
+    assert "Wrong population" not in md
+    assert "Duplicate records deduplicated" not in md
+
+
+def test_methods_exclusion_reasons_are_count_backed() -> None:
+    """When exclusions occurred, each listed reason carries its real count and
+    the totals reconcile (50 retrieved - 12 included - 3 non-traceable = 35
+    screened out)."""
+    pack = build_methods_pack(
+        review_type="evidence_brief",
+        topic="example_topic",
+        corpus_search_queries=("q",),
+        n_retrieved=50, n_screened=50, n_included=12, n_rejected=3,
+        outcome_classes=("primary_outcome",),
+    )
+    md = render_methods_md(pack, submission_id="run-0000")
+    assert "3 records" in md
+    assert "35 records" in md
+    assert "No records were excluded" not in md
 
 
 def test_methods_pack_legacy_model_swaps_accountability_prose() -> None:
@@ -250,6 +322,58 @@ def test_phase_g_refreshes_stale_verdict_surface_state(tmp_path: Path) -> None:
     rules = [e.rule for e in log]
     assert "reevaluate_journal_surface_post_finalizer" in rules
     assert "refresh_final_verdict_post_finalizer" in rules
+
+
+def test_refresh_final_consistency_removes_stale_p1_before_verdict(
+    tmp_path: Path,
+) -> None:
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "full_paper.md").write_text(
+        "# Paper\n\n"
+        "## Abstract\n\nBounded synthesis.\n\n"
+        "## Introduction\n\nContext overview.\n\n"
+        "## Methods\n\nSearch strategy described.\n\n"
+        "## Results\n\nFindings remain limited.\n\n"
+        "## Discussion\n\nInterpretation stays cautious.\n\n"
+        "## References\n\n- Smith 2024."
+    )
+    (run / "manifest.json").write_text(json.dumps({
+        "accountability_model": "researka_agent_certified",
+        "n_receipts": 20,
+        "n_high_confidence_claims_total": 100,
+        "n_non_orthogonal_tensions": 20,
+    }))
+    (run / "full_paper.audit.json").write_text(json.dumps({
+        "p1_pass": True,
+        "score_out_of_10": 9.0,
+        "checks": [{"name": "Q1", "passed": True}],
+    }))
+    (run / "full_paper.journal_surface.json").write_text(json.dumps({
+        "passed": True,
+        "issues": [],
+    }))
+    (run / "full_paper.consistency.json").write_text(json.dumps([{
+        "id": "STALE-P1",
+        "severity": "P1",
+        "issue_type": "stale",
+        "auto_fixable": True,
+        "evidence": "text removed by finalizer",
+        "suggested_fix": "Refresh consistency sidecar.",
+    }]))
+
+    assert _refresh_final_consistency_sidecar(run) is True
+    refreshed = json.loads((run / "full_paper.consistency.json").read_text())
+    assert refreshed == []
+
+    _refresh_post_finalizer_verdict = importlib.import_module(
+        "scripts.run_v06_synthesis",
+    )._refresh_post_finalizer_verdict
+
+    assert _refresh_post_finalizer_verdict(run) is True
+    verdict = json.loads((run / "full_paper.final_verdict.json").read_text())
+    assert verdict["verdict"] != "SHIP-BLOCKED"
+    assert verdict["stage2_p1"] == 0
 
 
 def test_phase_g_recomputes_stale_final_status_after_refresh(tmp_path: Path) -> None:
@@ -695,9 +819,16 @@ def test_phase_b_patches_mixed_lane_paragraphs_post_slice27(
         "# Paper\n\n"
         "Some context. Smith 2022 reported a finding; Wilson 2023 confirmed it.\n"
     )
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+    assert _unlabeled_animal_citation_issue_messages(
+        paper, ["Smith 2022"],
+    )
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text != paper
     assert "Additional corpus sources included animal/preclinical evidence;" in new_text
+    assert _unlabeled_animal_citation_issue_messages(
+        new_text, ["Smith 2022"],
+    ) == ()
     assert len(log) == 1
     assert log[0].rule == "animal_preclinical_lead_in"
 
@@ -724,6 +855,43 @@ def test_phase_b_still_skips_paragraphs_with_existing_qualifier(
     new_text, log = _phase_b_lane_qualifier(paper, run)
     assert new_text == paper  # already qualified — no change
     assert log == []
+
+
+def test_run_text_phases_repairs_late_animal_lane_drift(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """Later finalizer phases may reintroduce animal-lane citations; the
+    terminal Phase B pass must clean those before the surface gate reads the
+    manuscript."""
+    import agent.journal_finalizer as finalizer
+    from agent.journal_surface_gate import _unlabeled_animal_citation_issue_messages
+
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "evidence_lanes.json").write_text(json.dumps({
+        "animal_citations": [{"citation": "Smith 2022", "paper_id": "p1"}],
+        "lanes": {"Smith 2022": "animal_preclinical"},
+    }))
+
+    def late_drift(text: str):
+        return (
+            text
+            + "\n\nLate reviewer drift cites Smith 2022 without a lane label.\n",
+            [finalizer.FinalizerLogEntry(
+                phase="test",
+                rule="late_animal_lane_drift",
+                n_changes=1,
+                detail="inserted synthetic drift",
+            )],
+        )
+
+    monkeypatch.setattr(finalizer, "_phase_n_declare_discussion_thesis", late_drift)
+    fixed, log = finalizer._run_text_phases("# Paper\n\nClean paragraph.\n", run)
+
+    assert _unlabeled_animal_citation_issue_messages(fixed, ["Smith 2022"]) == ()
+    assert any(e.rule == "late_animal_lane_drift" for e in log)
+    assert any(e.rule == "animal_preclinical_lead_in" for e in log)
 
 
 def test_phase_b_fires_on_exclusively_animal_lane_paragraph(
@@ -1157,6 +1325,48 @@ def test_phase_k_moves_contextual_prose_out_of_immune_outcome(tmp_path: Path) ->
     assert not any(i.code == "outcome_routing" for i in evaluate_journal_surface(
         new_text,
         citation_outcome_map={"Wu 2025": "contextual_other", "Gorabi 2021": "immune_inflammation"},
+    ).issues)
+    assert log and log[0].rule == "route_paragraph_by_citation_class"
+
+
+def test_phase_k_routes_suffixed_author_year_citations(tmp_path: Path) -> None:
+    """Author-year suffixes must route the same way the surface gate audits them."""
+    from agent.journal_finalizer import _phase_k_route_outcome_paragraphs
+    from agent.journal_surface_gate import evaluate_journal_surface
+
+    run = tmp_path / "r"
+    run.mkdir()
+    (run / "manifest.json").write_text(json.dumps({"receipts": [
+        {"receipt_id": "p1", "outcome_class": "contextual_other"},
+        {"receipt_id": "p2", "outcome_class": "cardiometabolic"},
+    ]}))
+    (run / "citation_registry.json").write_text(json.dumps({
+        "p1": {"body_citation": "Zhang 2026d"},
+        "p2": {"body_citation": "Smith 2024"},
+    }))
+    text = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "Smith 2024 reports cardiometabolic findings.\n\n"
+        "Zhang 2026d describes contextual stress biology.\n\n"
+        "### Contextual Adjacent Evidence Outcomes\n\n"
+        "Contextual records bound interpretation.\n\n"
+        "## Discussion\n"
+    )
+
+    assert any(i.code == "outcome_routing" for i in evaluate_journal_surface(
+        text,
+        citation_outcome_map={"Zhang 2026d": "contextual_other", "Smith 2024": "cardiometabolic"},
+    ).issues)
+    new_text, log = _phase_k_route_outcome_paragraphs(text, run)
+
+    contextual = new_text.split("### Contextual Adjacent Evidence Outcomes", 1)[1].split("##", 1)[0]
+    cardio = new_text.split("### Cardiometabolic Outcomes", 1)[1].split("###", 1)[0]
+    assert "Zhang 2026d" in contextual
+    assert "Zhang 2026d" not in cardio
+    assert not any(i.code == "outcome_routing" for i in evaluate_journal_surface(
+        new_text,
+        citation_outcome_map={"Zhang 2026d": "contextual_other", "Smith 2024": "cardiometabolic"},
     ).issues)
     assert log and log[0].rule == "route_paragraph_by_citation_class"
 

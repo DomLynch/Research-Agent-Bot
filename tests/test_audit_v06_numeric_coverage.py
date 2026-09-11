@@ -115,6 +115,25 @@ def test_manifest_receipt_p_values_are_traceable_structural_numerics() -> None:
     assert ok, msg
 
 
+def test_source_context_map_counts_are_traceable_structural_numerics() -> None:
+    paper = (
+        "Oncology and cancer context: 17 sources; significant source "
+        "statistic in 8/17 sources; receipt-level direction coded null."
+    )
+    receipts = [
+        {
+            "source_title": f"Everolimus oncology cancer study {i}",
+            "effect_direction": "null",
+            "p_values": ["p < 0.05"] if i < 8 else [],
+        }
+        for i in range(17)
+    ]
+    ok, msg = audit._check_numeric_integrity(
+        paper, corpus_nums=set(), manifest={"receipts": receipts},
+    )
+    assert ok, msg
+
+
 def test_evidence_snapshot_representative_p_values_are_appendix_metadata() -> None:
     paper = (
         "## Results\n\nNo reportable p-value here.\n\n"

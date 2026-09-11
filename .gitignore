@@ -12,11 +12,10 @@ logs/
 .cache/
 # Claude Code session state — local IDE artifacts, never commit.
 .claude/
+.codex-worktrees/
 # Ignore generated run artifacts. Keep proof runs outside git; regenerate or
 # recover from the external archive when needed.
 runs/*
-tests_legacy/golden/fixture_runs/
-tests_legacy/golden/fixture_runs_debug/
 *.egg-info/
 .env*
 !.env.example
@@ -29,6 +28,7 @@ scripts/karpathy-loop/diffs/
 # files when they're rewritten. They've snuck into commits before — block them.
 * 2.*
 * [0-9].*
+* 2/
 
 scripts/karpathy-loop/snapshots/
 scripts/karpathy-loop/diffs/
@@ -49,3 +49,7 @@ docs/quality-reference/*/corpus_manifest.md
 docs/quality-reference/*/parsed/
 docs/quality-reference/*/quant_claims/
 docs/quality-reference/*/quant_claims_quarantine/
+# Runtime materialized fact-backed topic packs. Existing tracked records remain
+# tracked; newly generated replenishment packs should not dirty live deploys.
+topic_packs_db/*/latest.json
+topic_packs_db/*/v*.json

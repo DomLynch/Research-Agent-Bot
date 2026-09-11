@@ -20,7 +20,7 @@ research synthesis paper.
 
 Input: a list of non-orthogonal tensions across receipts. Each
 tension is one of: agreement, disagreement, indirectness_gap,
-null_vs_positive.
+null_vs_positive, null_vs_negative.
 
 Output ONE JSON object with this exact shape:
 
@@ -72,6 +72,17 @@ Rules:
   one in turn. Most sentences should cite ≥2 receipt_ids.
 - Take a position. Don't write "Evidence is mixed" — write WHICH
   conditions or mechanisms produce which results, with citations.
+
+Direction fidelity (REQUIRED — the prose direction must match the
+receipt's coded `effect_direction`):
+- A receipt coded `null` or `unclear` did NOT show a directional effect.
+  Do not write that it improved, reduced, increased, lowered, or caused
+  any outcome. State the null/inconclusive result plainly ("X showed no
+  significant effect on Y") and, if relevant, contrast it with receipts
+  that did show a direction.
+- Only assert a positive/negative direction for a receipt whose
+  `effect_direction` is `positive`/`negative`. This applies to every
+  domain — never infer a direction the evidence table does not carry.
 
 Mixed-directness rule (REQUIRED when corpus has both direct and
 mechanistic/indirect receipts):

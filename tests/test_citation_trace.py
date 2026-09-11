@@ -905,3 +905,25 @@ def test_imports_clean() -> None:
     # Re-import everything in one shot
     import agent.citation_trace  # noqa: F401
     assert True
+
+
+def test_trace_alias_match_binds_to_source_ref_and_presence(
+    metformin_pack: TopicPack,
+    drug_client: FixtureDrugAliasClient,
+) -> None:
+    """Item 2: with an EvidenceItem the alias trace is keyed to that source's
+    ref and records whether the alias appears in its abstract (claim-AND-source
+    binding) — replacing the single claim-level ref=0 global-validity check."""
+    claim = _claim(text="Glufomin reduced frailty.", refs=(3,))
+    present = list(trace_alias_match(
+        claim, metformin_pack, drug_client,
+        _item(ref=3, abstract="Glufomin was dosed in this trial."),
+    ))
+    assert present and present[0].ref == 3
+    assert "present in source" in present[0].detail
+    absent = list(trace_alias_match(
+        claim, metformin_pack, drug_client,
+        _item(ref=5, abstract="no compound named here"),
+    ))
+    assert absent and absent[0].ref == 5
+    assert "ABSENT from source" in absent[0].detail

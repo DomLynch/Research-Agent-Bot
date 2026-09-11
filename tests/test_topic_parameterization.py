@@ -363,6 +363,30 @@ def test_title_direction_guard_preserves_positive_when_no_null_cue() -> None:
     assert orch._title_guarded_effect_direction(title, "positive") == "positive"
 
 
+def test_explicit_directional_title_rescues_null_extraction_signal() -> None:
+    title = "Ergothioneine promotes longevity and healthy aging in male mice"
+
+    assert orch._title_guarded_effect_direction(title, "null") == "positive"
+
+
+def test_harm_reduction_title_rescues_unclear_extraction_signal() -> None:
+    title = "Ergothioneine ameliorates alcoholic fatty liver disease and inflammation"
+
+    assert orch._title_guarded_effect_direction(title, "unclear") == "positive"
+
+
+def test_review_title_without_directional_signal_stays_null() -> None:
+    title = "Systematic review and meta-analysis of ergothioneine biomarkers"
+
+    assert orch._title_guarded_effect_direction(title, "null") == "null"
+
+
+def test_adverse_directional_title_rescues_null_extraction_signal() -> None:
+    title = "Exposure increases mortality risk and accelerates biological aging"
+
+    assert orch._title_guarded_effect_direction(title, "null") == "negative"
+
+
 def test_topic_pack_endpoint_polarity_drives_effect_sign() -> None:
     """Topic-pack endpoint polarity must drive non-metformin topics
     without adding scripts/vocab/<topic>.py or Python topic tables."""
@@ -456,7 +480,7 @@ def test_section_backstop_handles_plural_topic_names() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
         orch._ACTIVE_TOPIC = old_topic
 
-    assert "For nad precursors, the final interpretation is deliberately tiered" in backstop
+    assert "For NAD+ precursor, the final interpretation is deliberately tiered" in backstop
     assert "off-label for geroprotection" in backstop
     assert "In conclusion, nad precursors has enough" not in backstop
 

@@ -255,8 +255,9 @@ def _topic_anchors(topic: str) -> tuple[str, ...]:
 
 
 def _classify_tier(role: Role, design: Design, venue: str | None) -> Tier:
-    is_high_impact = bool(venue) and any(
-        marker in venue.lower() for marker in HIGH_IMPACT_VENUES
+    venue_text = venue or ""
+    is_high_impact = bool(venue_text) and any(
+        marker in venue_text.lower() for marker in HIGH_IMPACT_VENUES
     )
     if design in {"rct", "meta_analysis"}:
         return "A1" if is_high_impact else "A2"

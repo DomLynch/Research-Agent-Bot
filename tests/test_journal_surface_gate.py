@@ -309,6 +309,20 @@ def test_abstract_language_gate_blocks_duplicate_phrases_and_templates():
     assert "unresolved public template: source(s)" in details
 
 
+def test_abstract_language_gate_allows_category_list_conjunction_repeat():
+    paper = _paper("| Smith 2024 | safety | older adults | unclear | n/a | B1 |")
+    paper = paper.replace(
+        "## Abstract\n\n" + _words(150, "abstract"),
+        "## Abstract\n\n"
+        "Mixed signals are summarized in cardiometabolic, mortality and survival, "
+        "safety, and safety and comorbidity outcome classes. "
+        + _words(130, "abstract"),
+    )
+    report = evaluate_journal_surface(paper)
+    details = " ".join(i.detail for i in report.issues)
+    assert "duplicate adjacent phrase: safety and" not in details
+
+
 def test_abstract_zero_count_profile_cannot_contradict_body():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
@@ -370,6 +384,14 @@ def test_truncated_sentence_blocks_surface():
     assert any("truncated sentence" in i.detail for i in report.issues)
 
 
+def test_citation_only_reported_stub_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("## Cross-Domain Synthesis\n\n", "## Cross-Domain Synthesis\n\nWu 2025 reported.\n\n", 1)
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any("citation-only stub" in i.detail for i in report.issues)
+
+
 def test_known_grammar_artifact_blocks_surface():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace(
@@ -392,6 +414,18 @@ def test_double_copula_splice_blocks_surface():
     report = evaluate_journal_surface(paper)
     assert not report.passed
     assert any(i.code == "grammar_artifact" and "to be rigorously is" in i.detail for i in report.issues)
+
+
+def test_domain_transfer_grammar_artifact_blocks_surface():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace(
+        "abstract1",
+        "A signal in one domain does not automatically is consistent with the same signal in another.",
+        1,
+    )
+    report = evaluate_journal_surface(paper)
+    assert not report.passed
+    assert any(i.code == "grammar_artifact" and "automatically is" in i.detail for i in report.issues)
 
 
 def test_legitimate_to_be_consistent_sentence_does_not_trigger_grammar_artifact():
@@ -982,6 +1016,28 @@ def test_outcome_class_match_passes() -> None:
     assert not any(i.code == "outcome_routing" for i in report.issues)
 
 
+def test_outcome_cross_reference_in_anchored_sentence_passes() -> None:
+    """Sentence-dominant routing (2026-06-13): a sentence anchored to its own
+    outcome class may reference another class for cross-domain synthesis ("the
+    exposure in Sahay 2026 maps onto the cardiometabolic effects in Hong 2026")
+    without being flagged — the minority cross-reference is legitimate."""
+    paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
+    new_results = (
+        "## Results\n\n"
+        "### Cardiometabolic Outcomes\n\n"
+        "The exposure in Sahay 2026 maps onto the cardiometabolic effects in "
+        "Hong 2026 and Lim 2026.\n\n"
+        "### Frailty Outcomes\n\nFrailty stub.\n\n"
+    )
+    paper = paper.replace(f"## Results\n\n{_words(500, 'results')}\n\n", new_results)
+    report = evaluate_journal_surface(paper, citation_outcome_map={
+        "Sahay 2026": "dosing_pharmacokinetics",
+        "Hong 2026": "cardiometabolic",
+        "Lim 2026": "cardiometabolic",
+    })
+    assert not any(i.code == "outcome_routing" for i in report.issues)
+
+
 def test_outcome_routing_check_skipped_without_map() -> None:
     """Backward-compat: no map → no check (previous callers untouched)."""
     paper = _paper("| Smith 2024 | endpoint | arm | 1 | mg | — |")
@@ -1241,6 +1297,18 @@ def test_derive_lane_animal_overrides_tier() -> None:
         evidence_tier="A1", directness="direct",
         title="Caloric restriction in obese equids",
         venue="Journal of Veterinary Internal Medicine",
+    ) == "animal_preclinical"
+
+
+def test_derive_lane_source_excerpt_flips_generic_title() -> None:
+    """Species named only in the body text (not the title) still flips the
+    lane — a generic-titled study whose claim excerpt says 'arctic foxes'
+    is animal_preclinical, not human_observational."""
+    from agent.evidence_lanes import derive_lane
+    assert derive_lane(
+        evidence_tier="B2", directness="indirect",
+        title="Steroidogenesis under seasonal photoperiod",
+        source_excerpt="testicular steroidogenesis in male arctic foxes",
     ) == "animal_preclinical"
 
 
@@ -1855,32 +1923,77 @@ def test_finalizer_phase_f_adds_missing_outcome_subsections(tmp_path) -> None:
     assert "### Frailty Outcomes" in new_text
 
 
+def test_finalizer_closes_orphan_references_terminally(tmp_path) -> None:
+    """Orphan-reference closure must survive every later section rebuild.
+
+    Regression for the 2026-06-11 publish stall: the in-loop closure inserted
+    an inline supporting-corpus cluster, but surface-floor/structural rebuilds
+    that ran afterwards dropped it, so the gate still saw bibliography entries
+    as uncited. The terminal closure pass guarantees the cluster persists.
+    """
+    import json as _json
+    from agent.journal_finalizer import finalize_run
+    from agent.journal_surface_gate import orphan_reference_tokens
+    (tmp_path / "audit").mkdir()
+    # A body that cites nobody + a References section listing two papers ->
+    # both are orphans until the closure cluster is appended inline.
+    (tmp_path / "full_paper.md").write_text(
+        "## Abstract\n\n" + ("alpha " * 60) + "\n\n"
+        "## Discussion\n\n" + ("discussion " * 60) + "\n\n"
+        "## References\n\n"
+        "- **Zarate 2019.** A mitochondrial peptide study. DOI: 10.1/x.\n"
+        "- **Okada 2017.** Another corpus source. DOI: 10.2/y.\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}), encoding="utf-8")
+    assert len(orphan_reference_tokens((tmp_path / "full_paper.md").read_text())) == 2
+    finalize_run(tmp_path)
+    final = (tmp_path / "full_paper.md").read_text()
+    assert orphan_reference_tokens(final) == ()
+    assert "catalogued for completeness" in final
+
+
 def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
     import json as _json
     from agent.journal_finalizer import finalize_run
     (tmp_path / "audit").mkdir()
     (tmp_path / "full_paper.md").write_text(
         "## Abstract\n\nA.\n\n"
-        "## Cross-Domain Synthesis\n\nShort.\n\n"
+        "## Cross-Domain Synthesis\n\nA 2026 and B 2026 disagree on dosing.\n\n"
         "## Discussion\n\nD.\n"
     )
     (tmp_path / "manifest.json").write_text(_json.dumps({"receipts": []}))
     (tmp_path / "audit" / "tension_elaboration_plans.json").write_text(_json.dumps({
-        "plans": [{
-            "paper_a": "A 2026",
-            "paper_b": "B 2026",
-            "outcome_class": "dosing_pharmacokinetics",
-            "conflict_type": "disagreement",
-            "severity": 4,
-            "numeric_anchors": {"p = 0.002": 1},
-            "hypotheses": ["dose-regime difference"],
-        }],
+        "plans": [
+            {
+                "paper_a": "A 2026",
+                "paper_b": "B 2026",
+                "outcome_class": "dosing_pharmacokinetics",
+                "conflict_type": "disagreement",
+                "severity": 4,
+                "numeric_anchors": {"p = 0.002": 1},
+                "hypotheses": ["dose-regime difference"],
+            },
+            {
+                # Papers the document never cites: the row must be dropped,
+                # or it would trip the unreferenced-citation gate.
+                "paper_a": "Uncited 2025",
+                "paper_b": "Ghost 2024",
+                "outcome_class": "other",
+                "conflict_type": "null_vs_positive",
+                "severity": 3,
+                "hypotheses": ["x"],
+            },
+        ],
     }))
     finalize_run(tmp_path)
     new_text = (tmp_path / "full_paper.md").read_text()
     assert "Dosing and Pharmacokinetics" in new_text
     assert "dosing_pharmacokinetics" not in new_text
     assert "0.002" not in new_text
+    assert "severity 4" not in new_text
+    assert "null_vs_positive" not in new_text
+    assert "Uncited 2025" not in new_text and "Ghost 2024" not in new_text
 
 
 def test_finalizer_phase_m_applies_general_review_noise_controls(tmp_path) -> None:

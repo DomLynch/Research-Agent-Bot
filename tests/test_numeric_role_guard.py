@@ -698,6 +698,27 @@ def test_untraceable_numeric_guard_allows_manifest_brief_counts(tmp_path):
     assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
 
 
+def test_untraceable_numeric_guard_allows_source_context_counts(tmp_path):
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    paper = (
+        "Oncology and cancer context: 17 sources; significant source "
+        "statistic in 8/17 sources; receipt-level direction coded null."
+    )
+    receipts = [
+        {
+            "source_title": f"Everolimus oncology cancer study {i}",
+            "effect_direction": "null",
+            "p_values": ["p < 0.05"] if i < 8 else [],
+        }
+        for i in range(17)
+    ]
+    issues = scan_paper(
+        paper, manifest={"receipts": receipts}, quant_claims_dir=qc_dir,
+    )
+    assert [i for i in issues if i.issue_type == "untraceable_numeric"] == []
+
+
 def test_scan_paper_back_compat_no_kwargs_works():
     """Existing callers passing only paper_md (no manifest /
     bg_lit) keep working — drift check is silently disabled."""
@@ -943,3 +964,25 @@ def test_role_drift_fail_soft_when_source_lacks_claim_role(tmp_path):
     drift = [i for i in issues if i.issue_type == "source_context_drift"]
     # Without claim_role on source, fail-soft passes
     assert drift == []
+
+
+def test_duration_numeric_not_classified_as_population():
+    """Item 6b: a numeric followed by a time unit is a study DURATION, never a
+    participant count — 'enrolled ... over 12 months' must not render as a
+    population descriptor. Ages ('aged 65 years') stay population."""
+    from numeric_role_guard import _classify_prose_numeric_role as role  # noqa: PLC0415
+
+    def r(sent, num):
+        return role(sent, sent.index(num), num)
+
+    # durations must NOT be population
+    assert r("Monda 2026 enrolled 400 adults over 12 months", "12") != "population"
+    assert r("a 12-month randomized trial enrolled patients", "12") != "population"
+    assert r("Recruited 150 subjects for 6 weeks", "6") != "population"
+    # genuine counts + ages stay population
+    assert r("Monda 2026 enrolled 400 adults over 12 months", "400") == "population"
+    assert r("older adults aged 65 years received it", "65") == "population"
+    assert r("a cohort of 65-year-old participants", "65") == "population"
+    # plural "years old" with a population cue must stay population (is_age
+    # broadening) — not be skipped as a duration
+    assert r("participants 65 years old at entry", "65") == "population"

@@ -9,6 +9,7 @@ from agent.final_gate import (
     GateResult,
     GateThresholds,
     evaluate_final_gate,
+    landscape_thresholds,
 )
 
 
@@ -233,3 +234,38 @@ def test_gate_result_failures_are_tuple() -> None:
     assert isinstance(r, GateResult)
     assert isinstance(r.failures, tuple)
     assert isinstance(r.warnings, tuple)
+
+
+# --- evidence_map zero-tension landscape relaxation (publish-consistency fix) -
+
+def test_landscape_thresholds_relaxes_only_tension_for_zero_tension() -> None:
+    th = landscape_thresholds(n_receipts=12, n_tensions=0)
+    assert th is not None and th.min_tensions == 0
+    # every other integrity threshold is unchanged from the default
+    assert th.min_numeric_coverage == DEFAULT_THRESHOLDS.min_numeric_coverage
+    assert th.min_rob_coverage == DEFAULT_THRESHOLDS.min_rob_coverage
+    assert th.min_grade_coverage == DEFAULT_THRESHOLDS.min_grade_coverage
+    assert th.min_receipts == DEFAULT_THRESHOLDS.min_receipts
+
+
+def test_landscape_thresholds_none_for_tensioned_or_empty() -> None:
+    assert landscape_thresholds(n_receipts=12, n_tensions=3) is None  # has tension
+    assert landscape_thresholds(n_receipts=0, n_tensions=0) is None   # no corpus
+
+
+def test_zero_tension_corpus_blocked_by_default_but_passes_as_landscape() -> None:
+    inputs = _green_inputs(n_tensions=0, n_receipts=12)
+    assert evaluate_final_gate(inputs).passed is False  # default min_tensions=1 blocks
+    th = landscape_thresholds(inputs.n_receipts, inputs.n_tensions)
+    assert evaluate_final_gate(inputs, thresholds=th).passed is True
+
+
+def test_landscape_relaxation_does_not_waive_other_integrity_failures() -> None:
+    # A zero-tension corpus that also fails an integrity check still fails —
+    # landscape lifts ONLY the tension floor, nothing else.
+    inputs = _green_inputs(n_tensions=0, n_receipts=12, rob_coverage=0.1)
+    th = landscape_thresholds(inputs.n_receipts, inputs.n_tensions)
+    result = evaluate_final_gate(inputs, thresholds=th)
+    assert result.passed is False
+    assert any("rob_coverage" in f for f in result.failures)
+    assert not any("n_tensions" in f for f in result.failures)

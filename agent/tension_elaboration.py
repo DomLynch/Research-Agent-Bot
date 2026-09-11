@@ -45,6 +45,13 @@ HYPOTHESIS_REGISTRY: Mapping[str, tuple[str, str]] = {
         "Effect is endpoint-distance dependent: positive at proximal endpoints, null at distal endpoints.",
         "Effect is population-stratified: detectable only in subgroups with elevated baseline pathway activity.",
     ),
+    # Sign-agnostic mirror of null_vs_positive: the same two mechanisms
+    # explain a signed-vs-null split regardless of the sign, so a negative
+    # signed arm must not silently fall back to DEFAULT_HYPOTHESES.
+    "null_vs_negative": (
+        "Effect is endpoint-distance dependent: signed at proximal endpoints, null at distal endpoints.",
+        "Effect is population-stratified: detectable only in subgroups with elevated baseline pathway activity.",
+    ),
     "disagreement": (
         "Dose-regime difference: intermittent vs chronic dosing produces qualitatively different effects.",
         "Co-intervention interaction: a concurrent intervention (e.g., exercise) modifies the drug effect.",
@@ -167,13 +174,23 @@ def _selection_key(record: TensionRecord) -> tuple[int, float, int, str]:
 
 
 def select_top_tensions(
-    records: Sequence[TensionRecord], *, top_n: int = DEFAULT_TOP_N
+    records: Sequence[TensionRecord], *, top_n: int = DEFAULT_TOP_N,
+    max_per_anchor: int = 1,
 ) -> list[TensionPlan]:
     """Select up to top_n tensions and emit deterministic paragraph plans.
 
     Sort order: severity DESC, total weight DESC, best directness DESC,
     tension_id ASC (final tie-break). Returns at most top_n plans; fewer
-    when len(records) < top_n. Raises ValueError on duplicate tension_id."""
+    when len(records) < top_n. Raises ValueError on duplicate tension_id.
+
+    `max_per_anchor` caps how many SELECTED tensions may reference any one
+    paper. A single discounted outlier conflicts with every other receipt,
+    so its C(N,1) pairs rank near-identically and would otherwise flood the
+    top-N with near-duplicate tensions the narrative explicitly discounts.
+    Greedy in rank order: a tension is skipped once either of its papers
+    has hit the cap, so distinct second-anchor tensions still surface.
+    Topic-agnostic — anchors are paper ids, never topic words. Pass 0 to
+    disable the cap."""
     if top_n <= 0:
         raise ValueError(f"top_n must be positive, got {top_n}")
     seen: set[str] = set()
@@ -182,7 +199,20 @@ def select_top_tensions(
             raise ValueError(f"duplicate tension_id: {r.tension_id!r}")
         seen.add(r.tension_id)
     ranked = sorted(records, key=_selection_key)
-    return [build_plan(r) for r in ranked[:top_n]]
+    anchor_count: dict[str, int] = {}
+    chosen: list[TensionRecord] = []
+    for r in ranked:
+        if len(chosen) >= top_n:
+            break
+        if max_per_anchor > 0 and (
+            anchor_count.get(r.paper_a, 0) >= max_per_anchor
+            or anchor_count.get(r.paper_b, 0) >= max_per_anchor
+        ):
+            continue
+        chosen.append(r)
+        anchor_count[r.paper_a] = anchor_count.get(r.paper_a, 0) + 1
+        anchor_count[r.paper_b] = anchor_count.get(r.paper_b, 0) + 1
+    return [build_plan(r) for r in chosen]
 
 
 def build_plan(record: TensionRecord) -> TensionPlan:

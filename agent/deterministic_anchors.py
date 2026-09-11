@@ -28,11 +28,15 @@ from agent.synthesis_schemas import ReceiptSummary, TensionMatrix
 def build_cross_domain_anchor(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix,
+    *,
+    existing_text: str = "",
 ) -> str:
     """Generate a deterministic anchor paragraph for the Cross-Domain
     Synthesis section. Summarizes outcome-class coverage, effect-
     direction distribution per class, and the corpus's tension
-    structure. ~150-250 words, all corpus-traced."""
+    structure. ~150-250 words, all corpus-traced. `existing_text` is
+    accepted for uniform anchor-call signature; this anchor carries no
+    generic hedge to dedup, so it is unused here."""
     accepted = [
         r for r in receipts
         if r.spar_verdict in ("accept_clean", "accept_caveated")
@@ -89,14 +93,34 @@ def build_cross_domain_anchor(
     return "\n".join(paragraphs)
 
 
+# Stable substring carried by BOTH the discussion and conclusion hedge
+# blocks. The generic conservative-framing hedge is appended at most
+# once per paper: if this marker is already present anywhere in the
+# assembled sections, later anchors emit only their corpus-derived
+# structural block and skip the (duplicative) hedge.
+CONSERVATIVE_FRAMING_MARKER = "deliberately conservative"
+
+
+def _join_anchor_blocks(structural: str, hedge: str, existing_text: str) -> str:
+    """Always keep the corpus-derived structural block; drop the generic
+    hedge when its canonical marker already appears in `existing_text`
+    (cross-section + re-run dedup). Universal — no topic words."""
+    if hedge and CONSERVATIVE_FRAMING_MARKER not in existing_text:
+        return structural + "\n\n" + hedge
+    return structural
+
+
 def build_discussion_anchor(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix,
+    *,
+    existing_text: str = "",
 ) -> str:
     """Discussion-section anchor. Summarizes evidence-tier
     distribution, directness, p-value coverage, and population
     framing. Corpus-derived deterministic paragraph (~150-220
-    words)."""
+    words). The generic interpretation-constraints hedge is omitted when
+    `existing_text` already carries it (see CONSERVATIVE_FRAMING_MARKER)."""
     accepted = [
         r for r in receipts
         if r.spar_verdict in ("accept_clean", "accept_caveated")
@@ -122,10 +146,12 @@ def build_discussion_anchor(
         f"{d} (n={n})" for d, n in direct_counts.most_common()
     ) or "directness unbound"
 
-    return "\n\n".join([
+    structural = "\n\n".join([
         "### Evidence Summary",
         f"The evidence base for this synthesis comprises {len(accepted)} accepted receipts. The evidence-tier distribution is: {tier_str}. By directness, the breakdown is: {direct_str}. {n_with_p} of {len(accepted)} receipts carry at least one p-value in their bound claims, providing the quantitative basis for the effect-direction conclusions argued above. The receipt-tier mapping matters because direct clinical trials, indirect clinical evidence, reviews, and mechanistic papers carry different interpretive weight.",
         f"Populations covered span {len(populations)} distinct summaries across the receipt set: {_format_populations(populations)}. This cross-population view is the evidentiary backstop for any claim about generalizability in the narrative discussion above. Where the paper argues a boundary condition by population, this enumeration documents which receipts the boundary draws from.",
+    ])
+    hedge = "\n\n".join([
         "### Interpretation constraints",
         ("The discussion interprets evidence boundaries rather than converting every extracted result into a recommendation. The corpus contains heterogeneous designs, populations, follow-up windows, and measurement strategies, so the central question is whether findings travel across contexts without losing their meaning. Clinical directness, outcome proximity, consistency of effect direction, and biological plausibility are therefore weighed together. Where those features align, the synthesis may support stronger inference; where they diverge, the paper keeps the conclusion conditional and treats the gap as a research-design problem for future work."),
         ("The receipt set also warrants a cautious distinction between statistical signal and aging relevance. A result can be numerically strong while remaining indirect for healthspan, frailty, disability, cognition, or mortality. Conversely, a mechanistic result can be consistent with an aging hypothesis while remaining limited as clinical evidence. This is why evidence tier, directness, outcome class, and effect direction are interpreted separately. The interpretation remains qualified whenever a conclusion depends on transfer from a surrogate endpoint, a short follow-up interval, a selected clinical population, or a small number of direct trials."),
@@ -135,29 +161,41 @@ def build_discussion_anchor(
         ("This section also constrains how readers should use the paper. It is not a treatment guideline, a pooled efficacy estimate, or a claim that all receipt classes have equal evidentiary weight. It is a structured map of what the current corpus can and cannot justify. The strongest claims should come from direct human receipts with traceable numerics and aligned outcomes. Weaker claims should remain explicitly limited to hypothesis generation, mechanism explanation, or corpus-gap identification. When future retrieval adds new receipts, the interpretation can change without changing the evidentiary standard. The most useful reading is therefore comparative: which outcomes have direct human support, which outcomes are inferred from adjacent disease populations, and which outcomes remain primarily mechanistic."),
         ("Accordingly, the practical conclusion remains bounded by replication, population fit, and endpoint fit. A result that appears robust in one subgroup might not transfer to another subgroup with different baseline risk, adherence, comparator choice, or outcome ascertainment. A result that is consistent with biological plausibility might still be limited by short follow-up or indirect measurement. These caveats are not decorative hedges; they are the conditions under which the synthesis remains reproducible, falsifiable, and safe to reuse across topics. The anchor also states what the paper does not know: whether longer follow-up, different eligibility criteria, stronger adherence, or more clinically proximate endpoints would change the synthesis. That uncertainty should remain visible in every topic until the receipt set directly resolves it, and it should keep downstream conclusions provisional when the corpus is broad but still uneven across designs, outcomes, or populations."),
     ])
+    return _join_anchor_blocks(structural, hedge, existing_text)
 
 
 def build_conclusion_anchor(
     receipts: Sequence[ReceiptSummary],
     matrix: TensionMatrix,
+    *,
+    existing_text: str = "",
 ) -> str:
     """Conclusion-section anchor. Gives the paper a bounded, corpus-derived
     closing when the LLM returns a tiny conclusion and the retry does not
-    improve it."""
+    improve it. The generic conservative-framing hedge is omitted when
+    `existing_text` already carries it (see CONSERVATIVE_FRAMING_MARKER)."""
     accepted = [r for r in receipts if r.spar_verdict in ("accept_clean", "accept_caveated")]
     if not accepted:
         return ""
     tier_counts: Counter[str] = Counter(r.evidence_tier for r in accepted if r.evidence_tier)
     direct_counts: Counter[str] = Counter(r.directness for r in accepted if r.directness)
     direction_counts: Counter[str] = Counter(r.effect_direction for r in accepted if r.effect_direction)
-    n_tensions = len(matrix.pairs)
+    # Canonical public count = non-orthogonal tensions (== manifest
+    # n_non_orthogonal_tensions), the value every other surface uses. Using
+    # len(matrix.pairs) here leaked the full pairwise count (e.g. 528 vs 86).
+    n_tensions = len(matrix.non_orthogonal())
     n_with_p = sum(1 for r in accepted if r.p_values)
-    return "\n\n".join([
+    structural = "\n\n".join([
         "### Bounded conclusion",
         f"This synthesis supports a bounded interpretation across {len(accepted)} accepted receipts. The evidence tiers are {_format_kinds(tier_counts)}, and directness is {_format_kinds(direct_counts)}. Effect directions are {_format_kinds(direction_counts)}, with {n_with_p} receipts carrying source-traced p-values and {n_tensions} documented cross-receipt tensions. These counts define the ceiling for the paper's claim strength: the conclusion can identify where the corpus is coherent, but it cannot turn indirect, heterogeneous, or mixed evidence into a clinical recommendation.",
-        "The practical result is therefore conservative. Positive or negative signals should be read only inside the populations, outcome classes, follow-up windows, and evidence tiers represented in the accepted receipts. Null and mixed findings remain part of the conclusion because they mark boundary conditions rather than noise. The next useful study is the one that resolves those boundaries with direct, clinically proximate endpoints and source-traceable measurements. Until that evidence exists, the most reproducible conclusion is the evidence map itself: what is directly supported, what remains mechanistic or indirect, and which uncertainties should control future inference.",
+        "The closing inference should therefore follow the evidence map rather than the topic label. Direct human receipts carry the most weight when they measure clinically proximate outcomes in the population under review. Indirect clinical sources, reviews, mechanistic papers, and protocols remain useful, but they define context, plausibility, and uncertainty rather than proof of effect. Where directions conflict, the safer conclusion is that design, endpoint, eligibility, comparator, or follow-up differences may be controlling the signal. Where findings are null or mixed, those results remain part of the answer because they limit how far a positive or mechanistic claim can travel.",
+        "The practical takeaway is bounded and revisable. The paper should be read as a source-traced map of what the current receipt set can support, not as a treatment guideline or a pooled efficacy claim. A stronger future conclusion would require aligned direct evidence, durable endpoints, and fewer unresolved cross-receipt tensions. Until then, the responsible conclusion is to preserve uncertainty, state the strongest supported signal narrowly, make the remaining research gaps visible, and keep downstream reuse tied to the same receipt-level limits.",
+    ])
+    hedge = "\n\n".join([
+        "The practical result is therefore deliberately conservative. Positive or negative signals should be read only inside the populations, outcome classes, follow-up windows, and evidence tiers represented in the accepted receipts. Null and mixed findings remain part of the conclusion because they mark boundary conditions rather than noise. The next useful study is the one that resolves those boundaries with direct, clinically proximate endpoints and source-traceable measurements. Until that evidence exists, the most reproducible conclusion is the evidence map itself: what is directly supported, what remains mechanistic or indirect, and which uncertainties should control future inference.",
         "This closing statement is intentionally limited to corpus structure. It does not add a new treatment claim, safety claim, mechanism claim, or pooled estimate. It records the inference boundary that follows from the accepted receipts: stronger conclusions require aligned direct evidence, clinically meaningful endpoints, and fewer unresolved contradictions; weaker or indirect findings remain useful for hypothesis generation and study design. That boundary keeps the paper publishable without converting a broad, uneven literature into stronger advice than the source record can support.",
     ])
+    return _join_anchor_blocks(structural, hedge, existing_text)
 
 
 def _format_kinds(kinds: Counter[str]) -> str:

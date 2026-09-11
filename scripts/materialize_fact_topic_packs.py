@@ -188,9 +188,11 @@ def materialize_rows(
     persist: bool,
     quality_mode: str = "standard",
     max_created: int | None = None,
+    skip_slugs: set[str] | None = None,
 ) -> dict[str, Any]:
     created: list[dict[str, Any]] = []
     skipped: list[dict[str, Any]] = []
+    skip_slugs = skip_slugs or set()
     candidates = []
     for row in rows:
         seed_terms = tuple(
@@ -207,6 +209,9 @@ def materialize_rows(
     for row, pack, record in candidates:
         if pack.status != "proceed" or pack.validation_errors:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": pack.stop_reason or pack.validation_errors})
+            continue
+        if pack.slug in skip_slugs:
+            skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "excluded_topic"})
             continue
         if pack.slug in batch_slugs:
             skipped.append({"topic": pack.topic, "slug": pack.slug, "reason": "duplicate_batch_slug"})

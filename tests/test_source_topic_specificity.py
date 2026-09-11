@@ -79,6 +79,22 @@ def test_source_gate_aliases_drop_broad_one_token_aliases_for_composite_topics()
     assert aliases == ("digital frailty index",)
 
 
+def test_longevity_topic_rejects_generic_entity_disease_source() -> None:
+    assert not is_source_topic_specific(
+        "microbiome_longevity",
+        "Microbiome and response to therapy in triple negative breast cancer: a systematic review",
+        aliases=source_gate_aliases("microbiome_longevity", ("microbiome longevity", "microbiome")),
+    )
+
+
+def test_longevity_topic_accepts_entity_with_longevity_scope() -> None:
+    assert is_source_topic_specific(
+        "microbiome_longevity",
+        "Gut microbiome signatures of longevity and healthy aging in older adults",
+        aliases=source_gate_aliases("microbiome_longevity", ("microbiome longevity", "microbiome")),
+    )
+
+
 def test_composite_topic_rejects_broad_alias_only_source() -> None:
     aliases = source_gate_aliases(
         "digital_frailty_index",
@@ -119,6 +135,31 @@ def test_age_clock_topics_reject_broad_omics_without_age_clock_context() -> None
     assert not is_source_topic_specific(
         "metabolomic_age_clocks",
         "Untargeted metabolomics biomarkers of frailty in adults",
+        aliases=aliases,
+    )
+
+
+def test_age_clock_source_gate_drops_broad_platform_aliases() -> None:
+    aliases = source_gate_aliases(
+        "plasma_proteomic_age_clocks",
+        (
+            "plasma proteomic age clocks",
+            "plasma proteomics",
+            "proteomic aging clock",
+            "blood protein age",
+        ),
+    )
+
+    assert "plasma proteomics" not in aliases
+    assert "proteomic aging clock" in aliases
+    assert not is_source_topic_specific(
+        "plasma_proteomic_age_clocks",
+        "Plasma Proteomics Identifies Potential Pancreatic Cancer Risk Indicators in Type 2 Diabetes",
+        aliases=aliases,
+    )
+    assert is_source_topic_specific(
+        "plasma_proteomic_age_clocks",
+        "A plasma proteomic age clock for multimorbidity risk in older adults",
         aliases=aliases,
     )
 

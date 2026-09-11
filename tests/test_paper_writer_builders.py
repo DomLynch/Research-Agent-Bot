@@ -216,8 +216,9 @@ def test_results_builder_keeps_paragraphs_inside_same_outcome_section() -> None:
     section = build_results_from_parsed(parsed, accepted=accepted)
 
     assert section is not None
-    assert "### Immune Outcomes" in section.body_md
-    immune_body = section.body_md.split("### Immune Outcomes", 1)[1].split("###", 1)[0]
+    # "immune" canonicalizes to immune_inflammation (merged singleton classes).
+    assert "### Immune and Inflammation Outcomes" in section.body_md
+    immune_body = section.body_md.split("### Immune and Inflammation Outcomes", 1)[1].split("###", 1)[0]
     assert "`r-immune`" in immune_body
     assert "`r-frailty`" not in immune_body
 
@@ -275,6 +276,6 @@ def test_results_builder_merges_duplicate_llm_outcome_subsections() -> None:
     section = build_results_from_parsed(parsed, accepted=accepted)
 
     assert section is not None
-    assert section.body_md.count("### Immune Outcomes") == 1
+    assert section.body_md.count("### Immune and Inflammation Outcomes") == 1
     assert "Immune first paragraph." in section.body_md
     assert "Immune second paragraph." in section.body_md

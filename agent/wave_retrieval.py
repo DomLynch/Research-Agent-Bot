@@ -27,7 +27,7 @@ actual retrieval calls discover_calibrated() per wave.
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
-from typing import Any
+from typing import Any, Iterable
 
 from agent.retrieval_modes import (
     RetrievalParams, resolve_params,
@@ -97,6 +97,8 @@ def compose_waves(base: RetrievalSpec) -> list[Wave]:
 async def run_waves(
     base: RetrievalSpec, *,
     params: RetrievalParams | None = None,
+    enabled_sources: Iterable[str] | None = None,
+    timeout: float | None = None,
 ) -> WaveReport:
     """Run all waves derived from base spec, accumulate deduped
     hits across waves, assign each unique paper to its first-touched
@@ -115,7 +117,12 @@ async def run_waves(
                 "wave": wave.label, "skipped": "cap_triggered",
             })
             continue
-        hits, stats = await discover_calibrated(wave.spec, params=p)
+        hits, stats = await discover_calibrated(
+            wave.spec,
+            params=p,
+            enabled_sources=enabled_sources,
+            timeout=timeout or 120.0,
+        )
         new_keys = 0
         for hit in hits:
             key = _key_from_aggregated(hit)

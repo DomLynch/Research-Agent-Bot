@@ -325,6 +325,35 @@ def test_tension_null_vs_positive_when_one_null_one_signed() -> None:
     assert matrix.pairs[0].severity == 4
 
 
+def test_tension_null_vs_negative_when_signed_arm_negative() -> None:
+    """#5: a null arm vs a NEGATIVE signed arm must label as
+    null_vs_negative (not null_vs_positive) so the public label matches the
+    signed arm's true direction. Same severity (4) as null_vs_positive."""
+    null_t = _summary("null-trial", outcome="frailty", direction="null")
+    neg_t = _summary("negative-frailty", outcome="frailty", direction="negative")
+    matrix = build_tension_matrix([null_t, neg_t])
+    assert len(matrix.pairs) == 1
+    assert matrix.pairs[0].kind == "null_vs_negative"
+    assert matrix.pairs[0].severity == 4
+    assert "negative" in matrix.pairs[0].summary
+
+
+def test_tension_orthogonal_for_non_opposable_directions() -> None:
+    """A pair only conflicts when its directions are genuinely opposed. Pairs
+    where neither side asserts an opposable direction (unclear/mixed, both
+    mixed, null/mixed, both unclear) stay orthogonal — they do NOT inflate the
+    tension count. Locks the seam a reviewer flagged as manufacturing tensions."""
+    combos: tuple[tuple[EffectDirection, EffectDirection], ...] = (
+        ("unclear", "mixed"), ("mixed", "mixed"),
+        ("null", "mixed"), ("unclear", "unclear"),
+    )
+    for da, db in combos:
+        a = _summary(f"a-{da}-{db}", outcome="muscle_function", direction=da)
+        b = _summary(f"b-{da}-{db}", outcome="muscle_function", direction=db)
+        matrix = build_tension_matrix([a, b])
+        assert matrix.pairs[0].kind == "orthogonal", f"{da} vs {db}"
+
+
 def test_tension_indirectness_gap_when_direct_meets_mechanistic() -> None:
     """MASTERS (direct A1, muscle, negative) and a synthetic mechanism-
     of-muscle receipt (mechanistic, unclear) → indirectness_gap. This
@@ -352,6 +381,25 @@ def test_tension_orthogonal_when_both_unclear() -> None:
     b = _summary("mech-b", outcome="mechanism", direction="unclear", directness="mechanistic")
     matrix = build_tension_matrix([a, b])
     assert matrix.pairs[0].kind == "orthogonal"
+
+
+def test_tension_mechanism_vs_clinical_for_direct_vs_review_cross_outcome() -> None:
+    """Regression (Fix #1): a direct trial vs a review-tier source on a
+    DIFFERENT outcome is a cross-domain mechanism_vs_clinical tension. The
+    retired duplicate classifier in run_v06 only recognised
+    directness=='mechanistic' here, so it mislabelled direct-vs-review and
+    direct-vs-indirect pairs orthogonal and inflated the published
+    non-orthogonal count (~2.6x) vs this canonical classifier — now the single
+    source feeding the manifest count, review-type routing, and audit replay."""
+    direct_t = _summary(
+        "trial", outcome="muscle_function", direction="positive", directness="direct",
+    )
+    review_t = _summary(
+        "review", outcome="frailty", direction="mixed", directness="review",
+    )
+    matrix = build_tension_matrix([direct_t, review_t])
+    assert len(matrix.pairs) == 1
+    assert matrix.pairs[0].kind == "mechanism_vs_clinical"
 
 
 # ============================================================
@@ -894,3 +942,18 @@ def test_build_receipt_summary_pulls_p_values_from_thesis() -> None:
     # ("attenuated" IS a negative verb, so this comes back as negative,
     # which is correct for Konopka's framing)
     assert summary.effect_direction == "negative"
+
+
+def test_classify_pair_null_vs_requires_comparable_strata() -> None:
+    """Item 4: a null mechanistic (preclinical) finding vs a signed clinical
+    one (same outcome, different strata) is NOT a null_vs disagreement — it
+    falls to orthogonal, dissolving the spurious all-vs-one severity-4 cluster.
+    Comparable strata (both non-mechanistic) still form a real null_vs."""
+    from agent.synthesis import _classify_pair  # noqa: PLC0415
+    mech_null = _summary("MECH", direction="null", directness="mechanistic")
+    clin_neg = _summary("CLIN", direction="negative", directness="indirect")
+    assert _classify_pair(mech_null, clin_neg).kind == "orthogonal"
+    # both non-mechanistic → genuine null_vs preserved
+    a = _summary("A", direction="null", directness="indirect")
+    b = _summary("B", direction="negative", directness="indirect")
+    assert _classify_pair(a, b).kind == "null_vs_negative"

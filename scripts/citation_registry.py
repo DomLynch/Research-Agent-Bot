@@ -19,17 +19,34 @@ allowed-shape list (Surname YYYY / Surname et al YYYY / PMCID YYYY)."""
 from __future__ import annotations
 
 import dataclasses
+import datetime as dt
 import re
 import unicodedata
 from dataclasses import dataclass
 
 
+# Latin-script letters whose modification is a stroke/slash/ligature have NO
+# NFKD base+combining decomposition, so NFKD leaves them intact and the
+# downstream [^A-Za-z-] strip then DELETES them — corrupting surnames
+# (Ławiński → "awinski", Strømland → "Strmland", Đorđević → "orevic").
+# Transliterate them to an ASCII base first. Standard Unicode→ASCII set,
+# domain-agnostic (any Latin-script author, any field).
+_TRANSLIT = {
+    "Ł": "L", "ł": "l", "Ø": "O", "ø": "o", "Đ": "D", "đ": "d",
+    "Ð": "D", "ð": "d", "Þ": "Th", "þ": "th", "Æ": "Ae", "æ": "ae",
+    "Œ": "Oe", "œ": "oe", "ß": "ss", "Ħ": "H", "ħ": "h",
+    "İ": "I", "ı": "i",
+}
+
+
 def _ascii_fold(text: str) -> str:
-    """NFKD-decompose then strip combining marks. Universal — turns any
-    Latin-script accent into its ASCII base (Hernández → Hernandez,
-    Müller → Muller, École → Ecole). Used so the author-year token in
-    References matches inline citations whatever diacritics the source
-    metadata carries. No per-language table."""
+    """Transliterate stroke/ligature letters, then NFKD-decompose and strip
+    combining marks. Universal — turns any Latin-script letter into its ASCII
+    base (Hernández → Hernandez, Müller → Muller, Ławiński → Lawinski,
+    Strømland → Stromland). Used so the author-year token in References matches
+    inline citations whatever diacritics the source metadata carries, and so a
+    leading non-decomposable letter is never dropped. No per-language table."""
+    text = "".join(_TRANSLIT.get(c, c) for c in text)
     nfkd = unicodedata.normalize("NFKD", text)
     return "".join(c for c in nfkd if not unicodedata.combining(c))
 
@@ -59,9 +76,27 @@ class CitationEntry:
 # multi-word surnames (Van de Werf, O'Brien, Smith-Jones).
 _PMCID_RE = re.compile(r"^(PMC\d{6,9})(?:_|$)")
 _YEAR_RE = re.compile(r"^(20\d{2}|19\d{2})$")
-# Plausibility window for inferred publication years.
+# Plausibility window for inferred publication years. The upper bound is
+# the current year, not a fixed ceiling: a publication year can never be
+# in the future. Without this a source carrying a future date (e.g. an
+# ongoing trial's estimated completion year, 2035) leaks a future-dated
+# citation that correctly trips the certification gate. Universal — no
+# topic logic; a future year is invalid in every domain.
 _MIN_PLAUSIBLE_YEAR = 1990
-_MAX_PLAUSIBLE_YEAR = 2100
+
+
+def _current_year() -> int:
+    return dt.date.today().year
+
+
+def _normalize_pub_year(value: object) -> int | None:
+    """Coerce a raw year to a plausible publication year, or None when it
+    is missing / unparseable / out-of-window / in the future."""
+    try:
+        year = int(str(value).strip())
+    except (TypeError, ValueError):
+        return None
+    return year if _is_plausible_year(year) else None
 
 
 def _body_citation_for(receipt_id: str, source_year: int | None = None) -> str:
@@ -110,7 +145,7 @@ def _body_citation_for(receipt_id: str, source_year: int | None = None) -> str:
 
 
 def _is_plausible_year(y: int) -> bool:
-    return _MIN_PLAUSIBLE_YEAR <= y <= _MAX_PLAUSIBLE_YEAR
+    return _MIN_PLAUSIBLE_YEAR <= y <= _current_year()
 
 
 # Lowercase nobiliary particles preserved as-is in surnames (the
@@ -228,10 +263,13 @@ def build_registry(
     if any body_citation matches a blocked pattern."""
     registry: dict[str, CitationEntry] = {}
     paper_meta_by_id = paper_meta_by_id or {}
-    # Track (surname, year) collisions across the whole registry so
-    # we can apply a/b/c disambiguator suffixes deterministically.
-    body_citation_counts: dict[str, int] = {}
-    canonical_by_source: dict[tuple[str, str], str] = {}
+    # Track distinct source-level citation bases before assigning suffixes.
+    # Standard citation convention is Smith 2024a / Smith 2024b, not
+    # Smith 2024 / Smith 2024b. Duplicate receipts for the same DOI/PMID/PMCID
+    # still share one token.
+    prepared: list[tuple[int, object, str, int | None, tuple[str, str]]] = []
+    citation_base_by_source: dict[tuple[str, str], str] = {}
+    source_order: list[tuple[str, str]] = []
     for idx, r in enumerate(receipts, start=1):
         receipt_id = getattr(r, "receipt_id", "") or ""
         if not receipt_id.strip():
@@ -242,37 +280,46 @@ def build_registry(
         # Prefer metadata-derived Author-Year for PMC papers; fall
         # back to receipt_id-derived form (legacy + Walton-style).
         meta = paper_meta_by_id.get(receipt_id, {})
-        source_year = getattr(r, "source_year", None)
-        body_citation = (
-            _author_year_citation_from_id(receipt_id, source_year)
-            or _body_citation_from_metadata(meta)
-            or _body_citation_for(receipt_id, source_year=source_year)
-        )
-        leaks = validate_body_citation(body_citation)
-        if leaks:
-            raise ValueError(
-                f"Generated body_citation for {receipt_id!r} matches "
-                f"blocked pattern(s) {leaks}: {body_citation!r}"
-            )
+        # Normalize once: every citation-derivation path and the stored
+        # source_year use the clamped year, so a future date never renders.
+        source_year = _normalize_pub_year(getattr(r, "source_year", None))
         source_key = _source_key(r)
-        if source_key and source_key in canonical_by_source:
-            body_citation = canonical_by_source[source_key]
-        else:
-            # Disambiguate collisions: Smith 2024 → Smith 2024a, Smith 2024b
-            body_citation_counts[body_citation] = (
-                body_citation_counts.get(body_citation, 0) + 1
+        group_key = source_key or ("receipt_id", receipt_id)
+        if group_key not in citation_base_by_source:
+            body_citation = (
+                _author_year_citation_from_id(receipt_id, source_year)
+                or _body_citation_from_metadata(meta)
+                or _body_citation_for(receipt_id, source_year=source_year)
             )
-            if body_citation_counts[body_citation] > 1:
-                suffix = chr(ord("a") + body_citation_counts[body_citation] - 1)
-                body_citation = f"{body_citation}{suffix}"
-            if source_key:
-                canonical_by_source[source_key] = body_citation
+            leaks = validate_body_citation(body_citation)
+            if leaks:
+                raise ValueError(
+                    f"Generated body_citation for {receipt_id!r} matches "
+                    f"blocked pattern(s) {leaks}: {body_citation!r}"
+                )
+            citation_base_by_source[group_key] = body_citation
+            source_order.append(group_key)
+        prepared.append((idx, r, receipt_id, source_year, group_key))
+
+    groups_by_base: dict[str, list[tuple[str, str]]] = {}
+    for group_key in source_order:
+        groups_by_base.setdefault(citation_base_by_source[group_key], []).append(group_key)
+    citation_by_source: dict[tuple[str, str], str] = {}
+    for base, group_keys in groups_by_base.items():
+        if len(group_keys) == 1:
+            citation_by_source[group_keys[0]] = base
+            continue
+        for suffix_index, group_key in enumerate(group_keys):
+            citation_by_source[group_key] = f"{base}{_alpha_suffix(suffix_index)}"
+
+    for idx, r, receipt_id, source_year, group_key in prepared:
+        body_citation = citation_by_source[group_key]
         reference_id = f"R{idx:02d}"
         entry = CitationEntry(
             receipt_id=receipt_id,
             body_citation=body_citation,
             reference_id=reference_id,
-            source_year=getattr(r, "source_year", None),
+            source_year=source_year,  # normalized above (no future years)
             source_doi=getattr(r, "source_doi", None),
             source_pmid=getattr(r, "source_pmid", None),
             source_pmcid=getattr(r, "source_pmcid", None),
@@ -281,6 +328,17 @@ def build_registry(
         )
         registry[receipt_id] = entry
     return registry
+
+
+def _alpha_suffix(index: int) -> str:
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    out = ""
+    i = index
+    while True:
+        out = letters[i % len(letters)] + out
+        i = i // len(letters) - 1
+        if i < 0:
+            return out
 
 
 def _source_key(receipt) -> tuple[str, str] | None:
@@ -302,14 +360,15 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     suffix handles collisions."""
     if not meta:
         return None
-    year = meta.get("year")
-    if not year:
+    raw_year = meta.get("year")
+    if not raw_year:
         return None
     authors = meta.get("authors") or []
-    try:
-        year_str = str(int(year))
-    except (ValueError, TypeError):
-        return None
+    # A present-but-future/implausible year (e.g. an ongoing trial's 2035
+    # completion estimate) must never render as a real publication year:
+    # cite the source undated ("n.d.") instead of fabricating a future date.
+    normalized = _normalize_pub_year(raw_year)
+    year_str = str(normalized) if normalized is not None else "n.d."
     if not authors:
         return _title_citation_from_metadata(meta, year_str)
     first_author = (authors[0] or "").strip()
@@ -325,12 +384,19 @@ def _body_citation_from_metadata(meta: dict) -> str | None:
     )
     if not surname or surname.lower() in _GENERIC_AUTHOR_TOKENS:
         return _title_citation_from_metadata(meta, year_str)
+    # A citation key must never begin lowercase (defense-in-depth if any glyph
+    # still slips through the fold above).
+    surname = surname[:1].upper() + surname[1:]
     return f"{surname} {year_str}"
 
 
-_TITLE_CITATION_SKIP: frozenset[str] = frozenset({
-    "a", "an", "the", "study", "effect", "effects", "role",
-    "association", "associations", "comparison", "comparative",
+# Common English function words kept lowercase inside a title-derived
+# citation phrase. Domain-agnostic (biomedical, AI, business, any field) —
+# used only to format the no-author title fallback below.
+_TITLE_CONNECTORS: frozenset[str] = frozenset({
+    "a", "an", "the", "of", "on", "in", "for", "and", "or", "to", "with",
+    "by", "from", "at", "as", "vs", "versus", "into", "within", "among",
+    "between", "during", "after", "before", "via",
 })
 
 _GENERIC_AUTHOR_TOKENS: frozenset[str] = frozenset({
@@ -342,19 +408,31 @@ _GENERIC_AUTHOR_TOKENS: frozenset[str] = frozenset({
 def _title_citation_from_metadata(meta: dict, year_str: str) -> str | None:
     """Fallback for abstract-only hits with no author metadata.
 
-    Closed-access DOI/HIT records often have title+year but no parsed
-    authors. A conservative title-derived token is better than leaking
-    internal handles into public prose.
+    Closed-access DOI/HIT records often carry title+year but no parsed
+    authors. A title-derived token beats leaking an internal handle into
+    public prose — but it must read as a TITLE, not a fabricated surname:
+    a lone leading word ("Impact 2025", "Effect 2025") is indistinguishable
+    from an author-year cite. So emit a short multi-word title phrase
+    ("Impact of Intermittent Fasting 2025"), capped at the third content
+    word, connectors preserved. Universal across domains — no word list.
     """
     title = str(meta.get("title") or "").strip()
+    # A parenthesised study/trial acronym is a recognised short name.
     for acronym in re.findall(r"\(([A-Z][A-Z0-9-]{2,})\)", title):
         return f"{acronym.split('-', 1)[0]} {year_str}"
-    for token in re.findall(r"[A-Za-z][A-Za-z\-]{2,}", title):
-        cleaned = token.strip("-")
-        if cleaned.lower() in _TITLE_CITATION_SKIP:
-            continue
-        return f"{_smart_title(cleaned)} {year_str}"
-    return None
+    phrase: list[str] = []
+    content = 0
+    for word in re.findall(r"[A-Za-z][A-Za-z'’\-]*", title):
+        connector = word.lower() in _TITLE_CONNECTORS
+        if connector and not phrase:
+            continue  # never lead with an article / preposition
+        phrase.append(word.lower() if connector else _smart_title(word.strip("-")))
+        content += 0 if connector else 1
+        if content >= 3:
+            break
+    while phrase and phrase[-1].lower() in _TITLE_CONNECTORS:
+        phrase.pop()  # never end on a connector
+    return f"{' '.join(phrase)} {year_str}" if phrase else None
 
 
 def _safe_variants_across_registry(

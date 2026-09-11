@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import importlib
 import sys
 from pathlib import Path
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-import apply_consistency_fixes as fixes  # type: ignore[import-not-found]  # noqa: E402
-import review_noise_control as noise  # type: ignore[import-not-found]  # noqa: E402
+fixes: Any = importlib.import_module("apply_consistency_fixes")
+noise: Any = importlib.import_module("review_noise_control")
 
 
 def test_public_snake_case_labels_normalize_in_body_only() -> None:
@@ -325,13 +327,43 @@ def test_lightweight_polish_rebuilds_thin_results_from_manifest() -> None:
         "### Longevity Outcomes\n\n"
         "\n\n## References\n\n- Smith 2024.\n"
     )
-    manifest = {"review_type": "thin_corpus_brief", "receipts": [
+    manifest = {"review_type": "thin_corpus_brief", "topic": "everolimus", "receipts": [
         {"outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "indirect", "n_claims": 3},
         {"outcome_class": "longevity", "effect_direction": "positive", "directness": "review", "n_claims": 2},
     ]}
     out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
-    assert "| Cardiometabolic | n=1; claims=3 | null signal" in out
+    assert "| Everolimus / Cardiometabolic | n=1; claims=3 | no extracted directional signal in 1/1 sources" in out
     assert "Broken duplicate paragraph" not in out
+    assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
+
+
+def test_lightweight_polish_preserves_source_statistic_signal_in_thin_results() -> None:
+    paper = "## Results\n\nBroken.\n\n## References\n\n- Smith 2024.\n"
+    manifest = {"review_type": "thin_corpus_brief", "topic": "everolimus", "receipts": [
+        {
+            "outcome_class": "contextual_other",
+            "effect_direction": "null",
+            "directness": "indirect",
+            "n_claims": 28,
+            "p_values": ["p < 0.001"],
+            "source_title": "STAT3 Polymorphism Associates With mTOR Inhibitor-Induced Interstitial Lung Disease in Patients With Renal Cell Carcinoma",
+        },
+        {
+            "outcome_class": "immune_inflammation",
+            "effect_direction": "null",
+            "directness": "review",
+            "n_claims": 17,
+            "p_values": ["P = 0.025"],
+            "source_title": "TORC1 Inhibition with RTB101 to Decrease Respiratory Tract Infections in Older Adults",
+        },
+    ]}
+    out, log = fixes.apply_lightweight_public_polish(paper, manifest=manifest)
+    assert "significant source statistic in 1/1 sources; receipt-level direction coded null" in out
+    assert "Signal summary: significant source statistic in 1/1 sources; receipt-level direction coded null" in out
+    assert "no extracted directional signal" not in out
+    assert "Source-context map" in out
+    assert "Oncology and cancer context" in out
+    assert "Infectious-disease and immunology context" in out
     assert any(i["fix_type"] == "thin_results_rebuild" for i in log)
 
 
@@ -401,6 +433,54 @@ def test_lightweight_polish_repairs_missing_sentence_spaces() -> None:
     assert "Practice change. Harrison" in out
     assert "replication. Likewise" in out
     assert any(i["fix_type"] == "sentence_spacing_normalization" for i in log)
+
+
+def test_apply_fixes_repairs_abstract_direction_summary_from_manifest() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "and muscle function outcome classes, null signals in the skeletal "
+        "outcome class, and negative signals in the retained evidence base. "
+        "The paper therefore interprets the corpus cautiously.\n\n"
+        "## Results\n\n"
+        "Results text.\n"
+    )
+    manifest = {"receipts": [
+        {"outcome_class": "cardiometabolic", "effect_direction": "null"},
+        {"outcome_class": "muscle_function", "effect_direction": "positive"},
+        {"outcome_class": "skeletal", "effect_direction": "negative"},
+    ]}
+    out, log = fixes.apply_fixes(paper, [], manifest=manifest)
+    abstract = out.split("## Results", 1)[0]
+    assert "Positive study-level signals are summarized in the muscle function outcome class" in abstract
+    assert "null signals are summarized in the cardiometabolic outcome class" in abstract
+    assert "negative signals are summarized in the skeletal outcome class" in abstract
+    assert "Positive study-level signals are summarized in the cardiometabolic" not in abstract
+    assert any(
+        i["fix_type"] == "abstract_results_direction_consistency_repair"
+        for i in log
+    )
+
+
+def test_apply_fixes_does_not_repair_abstract_without_receipts() -> None:
+    paper = (
+        "## Abstract\n\n"
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "outcome class, null signals in the skeletal outcome class, and "
+        "negative signals in the retained evidence base.\n\n"
+        "## Results\n\n"
+        "Results text.\n"
+    )
+    out, log = fixes.apply_fixes(paper, [], manifest={"receipts": []})
+    assert (
+        "Positive study-level signals are summarized in the cardiometabolic "
+        "outcome class, null signals in the skeletal outcome class, and "
+        "negative signals in the retained evidence base."
+    ) in out
+    assert not [
+        i for i in log
+        if i["fix_type"] == "abstract_results_direction_consistency_repair"
+    ]
 
 
 def test_lightweight_polish_repairs_accidental_h3_split() -> None:

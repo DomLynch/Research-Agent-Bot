@@ -314,6 +314,54 @@ def test_table_1_includes_representative_p_value_column() -> None:
     assert "17" in md  # n_claims rendered
 
 
+def test_representative_p_value_coherent_reconciles_null_with_significant_stat() -> None:
+    """A receipt coded direction=null must NOT surface a significant p (an
+    incoherent 'null; p<0.001'). It is RESOLVED — not tagged: the null receipt
+    shows its smallest NON-significant p, or '—' if it has none. A signed
+    receipt keeps its significant stat. Resolution only selects among the
+    receipt's own values."""
+    @dataclass
+    class _RNull:
+        effect_direction: str = "null"
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.20")
+
+    @dataclass
+    class _RNullAllSig:
+        effect_direction: str = "null"
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
+
+    @dataclass
+    class _RPos:
+        effect_direction: str = "positive"
+        p_values: tuple[str, ...] = ("p < 0.001",)
+
+    assert tr._representative_p_value_coherent(_RNull()) == "p = 0.20"
+    assert tr._representative_p_value_coherent(_RNullAllSig()) == "—"
+    assert tr._representative_p_value_coherent(_RPos()) == "p < 0.001"
+
+
+def test_table_1_null_direction_does_not_surface_bare_significant_p_value() -> None:
+    """Integration: the incoherent 'direction=null; p<0.001' pairing from the
+    resveratrol Chen-2015 row renders RESOLVED in Table 1 — the null row shows
+    no significant p (here '—', as both its p's are significant) and no
+    '(off-summary)' tag."""
+    @dataclass
+    class _R:
+        receipt_id: str = "Chen 2015"
+        evidence_tier: str = "A1"
+        directness: str = "direct"
+        outcome_class: str = "cardiometabolic"
+        effect_direction: str = "null"
+        population_summary: str | None = "NAFLD, n=60"
+        canonical_trial_id: str | None = None
+        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
+        n_claims: int = 5
+
+    md = tr.render_table_1_included_studies([_R()])
+    assert "(off-summary)" not in md
+    assert "p < 0.001" not in md  # significant p never surfaced beside null
+
+
 def test_table_1_falls_back_to_dash_when_no_p_value() -> None:
     """Receipt without p_values → '—' in p-value column (no fabrication)."""
     @dataclass
@@ -361,6 +409,16 @@ def test_representative_p_value_falls_back_to_first_when_unparseable() -> None:
 
     # First parseable is "p = 0.02" → wins (only parseable one)
     assert tr._representative_p_value(_R()) == "p = 0.02"
+
+
+def test_representative_p_value_dash_when_all_unparseable() -> None:
+    """Bug-4: when NO value parses as a number, emit '—' rather than a
+    non-p-value string in the summary cell."""
+    @dataclass
+    class _R:
+        p_values: tuple[str, ...] = ("not reported", "see table", "NS")
+
+    assert tr._representative_p_value(_R()) == "—"
 
 
 def test_representative_p_value_helper_returns_dash_when_empty() -> None:
@@ -592,6 +650,17 @@ def test_public_evidence_snapshot_exposes_classification_criteria_and_mapping() 
     assert "Yiallourou 2025: outcome=cognitive; directness=indirect; tier=B2" in md
     assert "|---|" not in md
     assert "\n|" not in md
+
+
+def test_source_classification_map_uses_body_citation_label() -> None:
+    receipt = _FakeReceipt(receipt_id="Uhlig-Reche 2025")
+    setattr(receipt, "source_title", "The Effect of Eight Weeks of Passive Heat Therapy")
+
+    md = tr.render_public_evidence_snapshot([receipt])
+    source_map = md.split("### Source Classification Map", 1)[1]
+
+    assert "Uhlig-Reche 2025: outcome=longevity" in source_map
+    assert "The Effect of Eight Weeks" not in source_map
 
 
 def test_public_evidence_snapshot_hides_low_fill_included_studies_preview() -> None:

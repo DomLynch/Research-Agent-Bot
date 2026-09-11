@@ -255,10 +255,10 @@ def _chain() -> tuple[Any, ...]:
 
     settings = load_settings()
     return (
-        CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.final_layer_reviewer_model, settings.mimo_timeout_sec),
-        CallSpec(settings.mimo_base_url, settings.mimo_api_key, settings.mimo_model, settings.mimo_timeout_sec),
-        CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.judge_model, settings.mimo_timeout_sec),
-        CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.fallback_model, settings.mimo_timeout_sec),
+        CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.final_layer_reviewer_model, settings.minimax_timeout_sec),
+        CallSpec(settings.minimax_base_url, settings.minimax_api_key, settings.minimax_model, settings.minimax_timeout_sec),
+        CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.judge_model, settings.minimax_timeout_sec),
+        CallSpec(settings.openrouter_base_url, settings.openrouter_api_key, settings.fallback_model, settings.minimax_timeout_sec),
     )
 
 
@@ -451,7 +451,7 @@ async def _main_async(args: argparse.Namespace) -> int:
     chain = _chain()
     sem = asyncio.Semaphore(args.concurrency)
     if args.repair_partials:
-        results = [
+        partial_results = [
             _repair_existing_partials(
                 p, endpoint_map=endpoint_map,
                 endpoint_patterns=endpoint_patterns, arms=arms,
@@ -461,7 +461,7 @@ async def _main_async(args: argparse.Namespace) -> int:
         ]
         by_id = {p.paper_id: p for p in candidates}
         if args.apply:
-            for row in results:
+            for row in partial_results:
                 claims = row.get("claims") or []
                 if claims:
                     _apply_claims(by_id[row["paper_id"]], claims)
@@ -470,10 +470,10 @@ async def _main_async(args: argparse.Namespace) -> int:
             "mode": "repair_partials",
             "apply": bool(args.apply),
             "candidates": len(candidates),
-            "papers_rescued": sum(1 for r in results if int(r.get("accepted") or 0) > 0),
-            "claims_accepted": sum(int(r.get("accepted") or 0) for r in results),
+            "papers_rescued": sum(1 for r in partial_results if int(r.get("accepted") or 0) > 0),
+            "claims_accepted": sum(int(r.get("accepted") or 0) for r in partial_results),
             "cost_log": ledger.to_dict(),
-            "results": results,
+            "results": partial_results,
         }
         args.report.write_text(json.dumps(report, indent=2) + "\n")
         print(json.dumps({

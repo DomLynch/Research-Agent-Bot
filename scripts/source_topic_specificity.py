@@ -15,9 +15,8 @@ MIN_SPECIFIC_GENERATED_PACK_CANDIDATES = 3
 MIN_GENERATED_PACK_TOKENS = 2
 
 TOPIC_STOPWORDS = {
-    "aging", "ageing", "longevity", "research", "synthesis", "paper",
-    "effect", "effects", "therapy", "treatment", "evidence",
-    "optimization",
+    "research", "synthesis", "paper", "effect", "effects", "therapy",
+    "treatment", "evidence", "optimization", "subgroup", "subgroups",
 }
 PHRASE_FRAGMENT_WORDS = {
     "and", "as", "at", "by", "for", "from", "in", "of", "on", "respectively",
@@ -28,6 +27,11 @@ BIOMED_ANCHORS = {
     "adult", "aged", "animal", "biomarker", "cell", "clinical", "cohort",
     "disease", "health", "human", "inflammation", "intervention", "mice",
     "mouse", "patient", "randomized", "rat", "review", "trial",
+}
+SCOPE_TOKENS = {"age", "aging", "healthspan", "lifespan", "longevity"}
+SCOPE_ANCHORS = {
+    "aged", "aging", "anti-aging", "elderly", "geriatric", "healthspan",
+    "lifespan", "longevity", "older adult", "older people",
 }
 
 DRIFT_RESCUE_ANCHORS = {
@@ -45,7 +49,7 @@ NON_BIOMED_DRIFT = {
 
 def topic_tokens(topic: str) -> list[str]:
     return [
-        token for token in re.findall(r"[a-z0-9]+", topic.replace("_", " ").lower())
+        token for token in _words(topic)
         if len(token) >= 3 and token not in TOPIC_STOPWORDS
     ]
 
@@ -94,18 +98,11 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
     admission. A source-gate alias must overlap the topic text itself.
     """
     topic_text = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
-    topic_raw_tokens = {
-        _specificity_token(token) for token in re.findall(r"[a-z0-9]+", topic_text)
-        if len(token) > 2 and token not in TOPIC_STOPWORDS
-    }
+    topic_raw_tokens = _gate_tokens(topic_text)
     raw_aliases = [str(alias or "").strip() for alias in aliases]
     acronym_aliases: set[str] = set()
     for phrase in (topic_text, *raw_aliases):
-        phrase_tokens = [
-            _specificity_token(token)
-            for token in re.findall(r"[a-z0-9]+", phrase.replace("_", " ").replace("-", " ").lower())
-            if len(token) > 2 and token not in TOPIC_STOPWORDS
-        ]
+        phrase_tokens = _gate_token_list(phrase)
         if len(phrase_tokens) >= 2:
             acronym_aliases.add("".join(token[0] for token in phrase_tokens))
     out: list[str] = []
@@ -114,10 +111,7 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
         norm = " ".join(raw.replace("_", " ").replace("-", " ").lower().split())
         if not norm:
             continue
-        alias_tokens = {
-            _specificity_token(token) for token in re.findall(r"[a-z0-9]+", norm)
-            if len(token) > 2 and token not in TOPIC_STOPWORDS
-        }
+        alias_tokens = _gate_tokens(norm)
         acronym_alias = norm in acronym_aliases or bool(re.fullmatch(r"[A-Z0-9]{2,8}", raw))
         if (
             len(topic_raw_tokens) > 1
@@ -125,17 +119,39 @@ def source_gate_aliases(topic: str, aliases: Iterable[str]) -> tuple[str, ...]:
             and not acronym_alias
         ):
             continue
+        overlap = len(topic_raw_tokens & alias_tokens)
         min_overlap = 2 if len(topic_raw_tokens) >= 3 else 1
+        enough_topic_coverage = (
+            len(topic_raw_tokens) < 4
+            or overlap / max(1, len(topic_raw_tokens)) >= 0.75
+        )
         if (
             acronym_alias
             or norm in topic_text
             or topic_text in norm
-            or len(topic_raw_tokens & alias_tokens) >= min_overlap
+            or (overlap >= min_overlap and enough_topic_coverage)
         ):
             if norm not in seen:
                 seen.add(norm)
                 out.append(raw)
     return tuple(out)
+
+
+def _gate_tokens(text: str) -> set[str]:
+    return set(_gate_token_list(text))
+
+
+def _gate_token_list(text: str) -> list[str]:
+    out: list[str] = []
+    for raw in _words(text):
+        token = _specificity_token(raw)
+        if len(token) > 2 and token not in TOPIC_STOPWORDS:
+            out.append(token)
+    return out
+
+
+def _words(text: object) -> list[str]:
+    return re.findall(r"[a-z0-9]+", str(text).replace("_", " ").replace("-", " ").lower())
 
 
 def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = ()) -> bool:
@@ -146,7 +162,7 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     normalized_tokens = [_specificity_token(token) for token in tokens]
     haystack_tokens = {
         _specificity_token(token)
-        for token in re.findall(r"[a-z0-9]+", haystack)
+        for token in _words(haystack)
         if len(token) > 2
     }
     token_hits = sum(1 for token in normalized_tokens if token in haystack_tokens)
@@ -164,6 +180,12 @@ def is_source_topic_specific(topic: str, text: str, *, aliases: Iterable[str] = 
     specific_hits = [token for token in normalized_tokens if token in haystack_tokens and token not in BIOMED_ANCHORS]
     missing_tokens = [token for token in normalized_tokens if token not in haystack_tokens]
     if specific_hits and all(token in BIOMED_ANCHORS for token in missing_tokens):
+        return True
+    if (
+        specific_hits
+        and all(token in BIOMED_ANCHORS | SCOPE_TOKENS for token in missing_tokens)
+        and any(anchor in haystack for anchor in SCOPE_ANCHORS)
+    ):
         return True
     # Single-token topics can be specific with a biomedical anchor. Multi-token
     # topics need more than one generic biomedical word; otherwise broad source
@@ -220,7 +242,7 @@ def _generic_fallback_topic(topic: str) -> bool:
 
 def _fragment_topic(topic: str) -> bool:
     text = " ".join(str(topic or "").replace("_", " ").replace("-", " ").lower().split())
-    words = re.findall(r"[a-z0-9]+", text)
+    words = _words(text)
     if not words:
         return True
     if "na" in words or any(a == "n" and b == "a" for a, b in zip(words, words[1:])):
@@ -240,7 +262,7 @@ def _pack_tokens(raw_terms: Iterable[object]) -> set[str]:
     return {
         _normalize_pack_token(token)
         for term in raw_terms
-        for token in re.findall(r"[a-z0-9]+", str(term).lower())
+        for token in _words(term)
         if len(token) > 2 and token not in TOPIC_STOPWORDS
     }
 

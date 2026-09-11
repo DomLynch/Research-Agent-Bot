@@ -23,6 +23,7 @@ from agent.final_gate import (
     GateResult,
     RECOMMENDED_SOURCE_CITATIONS,
     evaluate_final_gate,
+    landscape_thresholds,
 )
 from agent.final_gate_mapper import build_gate_inputs
 from agent.forest_plot_svg import render_forest_plot_svg
@@ -168,6 +169,104 @@ def build_quality_method_payloads(
     return rob_payload, grade_payload
 
 
+def _write_rob_consistency_sidecar(out_dir: Path, rob_payload: list[dict[str, Any]]) -> None:
+    """Advisory: flag any study whose stated overall_rating understates its
+    worst domain (RoB worst-domain rule), via the rubric tree. Writes
+    rob_consistency.json. Fail-open — never breaks finalize. Currently expected
+    to report 0 inconsistent because `_overall` already derives worst-domain;
+    it is a forward guard for when independent per-domain ratings feed in."""
+    try:
+        from agent.risk_of_bias_schema import DomainAssessment, StudyAssessment
+        from agent.rob_consistency import inconsistent_studies
+        studies = [
+            StudyAssessment(
+                study_id=s["study_id"], design=s["design"], tool=s["tool"],
+                domains=tuple(
+                    DomainAssessment(
+                        domain=d["domain"], rating=d["rating"],
+                        rationale=d.get("rationale", ""),
+                    )
+                    for d in s["domains"]
+                ),
+                overall_rating=s["overall_rating"], notes=s.get("notes", ""),
+            )
+            for s in rob_payload
+        ]
+        bad = inconsistent_studies(studies)
+        payload = {
+            "n_studies": len(studies),
+            "n_inconsistent": len(bad),
+            "inconsistent": [
+                {
+                    "study_id": r.study_id,
+                    "stated_overall": r.stated_rating,
+                    "worst_domain": r.worst_domain,
+                    "worst_domain_rating": r.worst_domain_rating,
+                    "message": r.message,
+                }
+                for r in bad
+            ],
+        }
+        (out_dir / "rob_consistency.json").write_text(json.dumps(payload, indent=2))
+    except Exception:
+        # advisory sidecar only — must never block finalize
+        pass
+
+
+def _write_provenance_sidecar(
+    out_dir: Path, manifest: dict[str, Any], gate_result: dict[str, Any],
+) -> None:
+    """Tamper-evident provenance receipt for the shipped paper: binds the
+    author/reviewer model families + verdict + SHA-256 of full_paper.md, so a
+    reader can re-hash and confirm the artifact is the one that was graded.
+    Fail-open; writes provenance.json to the RUN DIR (not the submitted
+    bundle, to avoid Researka payload-validation risk)."""
+    try:
+        from agent.provenance_sidecar import write_provenance_sidecar
+        artifact = out_dir / "full_paper.md"
+        if not artifact.is_file():
+            return
+        author_model = "unknown"
+        reviewer_models = ["unknown"]
+        try:
+            from agent.settings import load_settings
+            s = load_settings()
+            author_model = getattr(s, "minimax_model", "") or "unknown"
+            reviewer_models = [
+                m for m in (
+                    getattr(s, "judge_model", ""),
+                    getattr(s, "final_layer_reviewer_model", ""),
+                ) if m
+            ] or ["unknown"]
+        except Exception:
+            pass  # model names are best-effort; SHA + verdict still bind
+        # Verdict prefers the AUTHORITATIVE final_status.json (submission_ready),
+        # which is written/reconciled AFTER finalize — so a paper promoted by the
+        # post-finalize reconcile is reported correctly. Falls back to the
+        # finalize-time gate's `passed` (GateResult has no status/level field)
+        # when final_status.json isn't on disk yet; default "blocked" on missing.
+        verdict = "ready" if gate_result.get("passed") else "blocked"
+        fs_path = out_dir / "final_status.json"
+        if fs_path.is_file():
+            try:
+                fs = json.loads(fs_path.read_text(encoding="utf-8"))
+                if "submission_ready" in fs:
+                    verdict = "ready" if fs.get("submission_ready") else "blocked"
+            except (OSError, ValueError):
+                pass
+        write_provenance_sidecar(
+            out_dir,
+            run_id=out_dir.name,
+            artifact_path=artifact,
+            author_model=author_model,
+            reviewer_models=reviewer_models,
+            verdict=verdict,
+            generated_at=str(manifest.get("generated_at") or ""),
+        )
+    except Exception:
+        pass
+
+
 def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_dir: Path) -> dict[str, Any]:
     rob_payload, grade_payload = build_quality_method_payloads(receipts, parsed_dir)
     outcomes = {str(r.get("outcome_class") or "other") for r in receipts}
@@ -178,6 +277,7 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
         outcome_count=len(outcomes),
     )
     (out_dir / "risk_of_bias.json").write_text(json.dumps(rob_payload, indent=2))
+    _write_rob_consistency_sidecar(out_dir, rob_payload)
     (out_dir / "grade_assessment.json").write_text(json.dumps(grade_payload, indent=2))
     (out_dir / "quality_methods.md").write_text(bundle.markdown)
     summary = {
@@ -194,13 +294,23 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
 
 
 def render_quality_section_for_paper(bundle: Any) -> str:
-    lines = [
-        "## Risk of Bias and GRADE",
-        "",
+    has_rob = bool(getattr(bundle, "rob_assessments", ()))
+    has_grade = bool(getattr(bundle, "grade_assessments", ()))
+    intro = (
         "Risk-of-bias and certainty judgments are generated as structured "
         "sidecars from the accepted receipt set. The manuscript reports the "
         "study-level overall rating and outcome-level certainty label; the "
-        "full domain table is preserved in `quality_methods.md`.",
+        "full domain table is preserved in `quality_methods.md`."
+        if has_rob or has_grade
+        else "No populated public risk-of-bias or GRADE rows were available "
+        "for this run. Interpretation therefore remains bounded by source "
+        "tier, directness, and receipt traceability rather than formal "
+        "RoB/GRADE appraisal."
+    )
+    lines = [
+        "## Risk of Bias and GRADE",
+        "",
+        intro,
         "",
         "### Risk-of-Bias Summary",
         "",
@@ -593,9 +703,15 @@ def build_journal_readiness_contract(
         ), f"claims={claims}; citation_registry_complete={citation_registry_complete}",
             "Repair claim extraction or citation registry before manuscript use."),
         _readiness_item(6, "evidence_graph", (
-            "pass" if outcomes and tensions > 0 else "not_ready"
+            # The outcome graph is "built" once there is >=1 outcome class.
+            # Zero non-orthogonal tensions is a valid finding for a
+            # landscape / agreement corpus (the evidence-map path exists for
+            # exactly these null-dominant briefs), so it must not block a paper
+            # that otherwise carries a full outcome graph. Universal — no topic
+            # knowledge; tensions stay reported as a richness signal.
+            "pass" if outcomes else "not_ready"
         ), f"outcome_classes={len(outcomes)}; tensions={tensions}",
-            "Build outcome/tension graph before rendering prose."),
+            "Build the outcome graph (>=1 outcome class) before rendering prose."),
         _readiness_item(7, "deterministic_manuscript_compiler", (
             "pass" if bool(journal_surface.get("passed")) else "not_ready"
         ), f"journal_surface_passed={bool(journal_surface.get('passed'))}",
@@ -675,7 +791,13 @@ def write_final_quality_gates(
     )
     runtime_issue = _runtime_integrity_issue(out_dir)
     runtime_failure = str(runtime_issue["detail"]) if runtime_issue else None
-    gate = _gate_with_runtime_integrity(evaluate_final_gate(inputs), runtime_failure)
+    gate = _gate_with_runtime_integrity(
+        evaluate_final_gate(
+            inputs,
+            thresholds=landscape_thresholds(inputs.n_receipts, inputs.n_tensions),
+        ),
+        runtime_failure,
+    )
 
     field = json.loads((out_dir / "field_engagement.json").read_text()) if (out_dir / "field_engagement.json").exists() else []
     supported = sum(1 for item in field if item.get("status") in {"support", "extends"})
@@ -737,4 +859,5 @@ def write_final_quality_gates(
     score_payload = {"inputs": dataclasses.asdict(score_inputs), "result": dataclasses.asdict(score)}
     (out_dir / "publication_score.json").write_text(json.dumps(score_payload, indent=2))
     (out_dir / "publication_score.md").write_text("# Publication Score\n\n" + score.summary + "\n")
+    _write_provenance_sidecar(out_dir, manifest, dataclasses.asdict(gate))
     return {"template": template, "gate": gate, "score": score}

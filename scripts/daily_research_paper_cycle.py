@@ -15,15 +15,18 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import tomllib
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections import Counter
-from collections.abc import Callable, Iterator
+from collections.abc import Callable, Collection, Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import daily_research_paper_submit as submit_bridge
 
@@ -35,6 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # ModuleNotFoundError for scripts.review_noise_control and falls back to a
 # full rewrite, burning the 2-hour cycle budget.
 sys.path.insert(0, str(ROOT))
+import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
 
@@ -45,18 +49,21 @@ CORPORA = ROOT / "docs" / "quality-reference"
 LEDGER_DIR = "_daily_research_paper_cycle_ledger"
 BLOCKER_HISTOGRAM = "_blocker_histogram.json"
 HANDLED_REVISIONS = "_handled_revision_requests.json"
+REVISION_COVERAGE_GATE = "revision_coverage_gate.json"
 DAILY_THROUGHPUT_SUMMARY = "_daily_throughput_summary.json"
 DECISIONS_BY_DAY = "_decisions_by_day.json"
 REVISE_REASONS = "_revise_reasons.json"
+DAY_KEY_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # A Researka revise may be re-processed up to this many rounds per artifact
 # before it is treated as permanently handled. Single-round handling left
 # papers stuck after one revise; the cap lets feedback-aware re-renders iterate
 # while bounding resubmissions to the live platform.
 MAX_REVISE_ROUNDS = 3
-PREFLIGHT_MIN_RECEIPTS = 15
+PREFLIGHT_MIN_RECEIPTS = DEFAULT_THRESHOLDS.min_receipts
 PREFLIGHT_MIN_QUANT_CLAIMS = 10
 PREFLIGHT_MIN_TENSIONS = 3
 PREFLIGHT_MIN_PRIMARY_TIER = 1
+SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT = max(PREFLIGHT_MIN_RECEIPTS * 2, PREFLIGHT_MIN_QUANT_CLAIMS)
 PREFLIGHT_MAX_RECEIPTS = 500
 PREFLIGHT_MAX_TENSIONS = 50_000
 PREFLIGHT_MAX_OUTCOMES = 12
@@ -65,13 +72,27 @@ SURFACE_REPEAT_THRESHOLD = 2
 WRITER_GATE_REPEAT_THRESHOLD = 2
 HISTOGRAM_ISSUE_THRESHOLD = 5
 AUTO_SEED_LIMIT = 120
+TOPIC_SUPPLY_REFRESH_LIMIT = 500
+TOPIC_SUPPLY_REFRESH_MAX_CREATED = 20
+TOPIC_SUPPLY_STRATEGIES = (
+    "fact-intervention-cross",
+    "fact-field-cross",
+    "fact-pair-cross",
+    "grouped",
+)
+SEED_TOPIC_TIMEOUT_SECONDS = 600
+PUBLISH_SEED_TIMEOUT_SECONDS = 120
 CORPUS_REPAIR_LIMIT = 1
+SOURCE_PRECISION_REPAIR_SCAN_LIMIT = 3
 RECEIPT_PREFLIGHT_REPAIR_ROUNDS = 2
-SOURCE_TOPIC_REPAIR_FLOOR = 0.50
+SOURCE_TOPIC_REPAIR_FLOOR = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR
+DEFAULT_CYCLE_TIMEZONE = "Asia/Dubai"
 REVISION_SOURCE_BUNDLE_TOPIC_FLOOR = 0.80
 DECISION_POLL_SECONDS = 900
 DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
+MIN_REVISE_RETRY_BUDGET_SECONDS = 1200
+SYNTHESIS_TIMEOUT_RETURN_CODE = 124
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 FRAME_MIN_FULL_SCORE = 0.65
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -82,15 +103,35 @@ _TERMINAL_REVISION_STATUSES = frozenset({
     "researka_revision_fingerprint",
     "research_revision_fingerprint",
     "retracted_source_cited",
+    "terminal_revision_source_manifest_unavailable",
+    "terminal_receipt_preflight_insufficient",
     "terminal_surface_repeat",
     "terminal_source_precision_repair_incomplete",
-    "terminal_receipt_preflight_insufficient",
 })
+_ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES = frozenset({
+    "terminal_domain_scope_mismatch",
+    "terminal_latest_run_missing_manifest",
+    "terminal_revise_retry_budget_insufficient",
+})
+_RETRYABLE_REVISION_STATUSES = frozenset({
+    "revision_coverage_unmet",
+    "synthesis_timeout",
+    # Back-compat for rows written before synthesis timeouts became retryable.
+    "terminal_synthesis_timeout",
+})
+DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = 3600
+RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS = int(os.environ.get(
+    "RESEARCH_AGENT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS",
+    str(DEFAULT_RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS),
+))
+SUBMISSION_DECISION_LOOKBACK = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_LOOKBACK", "20"))
+SUBMISSION_DECISION_TIMEOUT_SECONDS = int(os.environ.get("RESEARCH_AGENT_SUBMISSION_DECISION_TIMEOUT_SECONDS", "8"))
 
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
 SubmitCycle = Callable[..., dict[str, Any]]
 CorpusBuilder = Callable[..., dict[str, Any]]
 RevisionLoader = Callable[[], tuple[list[dict[str, Any]], str | None]]
+PublishedLoader = Callable[[], tuple[set[str], str | None]]
 Sleeper = Callable[[float], None]
 
 
@@ -107,7 +148,7 @@ def _cycle_ledger_path(ledger_dir: Path, date: str, mode: str) -> Path:
 def _record_daily_throughput(ledger_dir: Path, ledger: dict[str, Any]) -> None:
     date = str(ledger.get("date") or "")
     started_at = str(ledger.get("started_at") or "")
-    if not date or not started_at:
+    if not DAY_KEY_RE.fullmatch(date) or not started_at:
         return
     path = ledger_dir / DAILY_THROUGHPUT_SUMMARY
     data = _read_json(path)
@@ -167,7 +208,34 @@ def _submit_ledger_paths_for_reconciliation(runs_root: Path, date: str | None) -
     return sorted(path for path in ledger_dir.glob("*.json") if not path.name.startswith("_"))
 
 
-def _ledger_run_names(ledger: dict[str, Any]) -> list[str]:
+def _refresh_submit_day_summary(ledger: dict[str, Any], runs_root: Path) -> bool:
+    date = str(ledger.get("date") or "")
+    if not DAY_KEY_RE.fullmatch(date):
+        return False
+    summary = ledger.get("day_summary")
+    summary = summary if isinstance(summary, dict) else {}
+    before = dict(summary)
+    durable_submitted = submit_bridge._submitted_count_for_date(
+        runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
+        date,
+    )
+    day_summary = {
+        "submitted": max(
+            durable_submitted,
+            int(ledger.get("submitted") or 0),
+            int(summary.get("submitted") or 0),
+        ),
+        "published": max(
+            int(ledger.get("published") or 0),
+            int(summary.get("published") or 0),
+        ),
+    }
+    if day_summary["submitted"] or day_summary["published"]:
+        ledger["day_summary"] = day_summary
+    return ledger.get("day_summary") != before
+
+
+def _ledger_run_names(ledger: dict[str, Any], *, submitted_only: bool = True) -> list[str]:
     names: list[str] = []
     for key in ("submitted_run", "attempted_run", "out_dir"):
         value = ledger.get(key)
@@ -180,10 +248,23 @@ def _ledger_run_names(ledger: dict[str, Any]) -> list[str]:
             names.append(value)
     attempts = ledger.get("attempts")
     for attempt in attempts if isinstance(attempts, list) else []:
-        if not isinstance(attempt, dict) or not int(attempt.get("submitted") or 0):
+        if not isinstance(attempt, dict):
+            continue
+        if submitted_only and not int(attempt.get("submitted") or 0):
             continue
         for key in ("submitted_run", "out_dir"):
             value = attempt.get(key)
+            if isinstance(value, str) and value:
+                names.append(value)
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        if submitted_only and not int(submission.get("submitted") or 0):
+            continue
+        candidate = submission.get("candidate")
+        if isinstance(candidate, dict):
+            value = candidate.get("run")
             if isinstance(value, str) and value:
                 names.append(value)
     return list(dict.fromkeys(names))
@@ -200,26 +281,180 @@ def _publication_markers_for_run(runs_root: Path, run_name: str) -> set[str]:
     return markers
 
 
-def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_seen: set[str]) -> bool:
-    if not int(ledger.get("submitted") or 0):
-        return False
+def _submitted_title_marker_counts(runs_root: Path) -> Counter[str]:
+    run_names: set[str] = set()
+    for ledger_dir in (runs_root / LEDGER_DIR, runs_root / submit_bridge.LEDGER_DIR):
+        for path in ledger_dir.glob("*.json"):
+            if path.name.startswith("_"):
+                continue
+            ledger = _read_json(path)
+            if int(ledger.get("submitted") or 0):
+                run_names.update(_ledger_run_names(ledger))
+    for row in submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"):
+        raw_run = row.get("run")
+        if isinstance(raw_run, str) and raw_run:
+            run_names.add(raw_run)
+    counts: Counter[str] = Counter()
+    for run_name in run_names:
+        paper = runs_root / run_name / "full_paper.md"
+        if paper.exists():
+            marker = submit_bridge._title_marker(submit_bridge._paper_title(paper))
+            if marker:
+                counts[marker] += 1
+    return counts
+
+
+def _remote_has_submission_marker(remote_seen: set[str]) -> bool:
+    return any(marker.startswith("submission:") for marker in remote_seen)
+
+
+def _publication_matches_for_run(
+    runs_root: Path,
+    run_name: str,
+    remote_seen: set[str],
+    title_marker_counts: Counter[str],
+) -> set[str]:
+    matches = _publication_markers_for_run(runs_root, run_name) & remote_seen
+    if not matches:
+        return set()
+    paper = runs_root / run_name / "full_paper.md"
+    if not paper.exists():
+        return matches
+    title_marker = submit_bridge._title_marker(submit_bridge._paper_title(paper))
+    if title_marker in matches and title_marker_counts.get(title_marker, 0) > 1:
+        matches.remove(title_marker)
+    return matches
+
+
+def _ledger_submission_markers(ledger: dict[str, Any]) -> set[str]:
+    markers: set[str] = set()
+    response = ledger.get("submission")
+    response = response.get("response") if isinstance(response, dict) else {}
+    if isinstance(response, dict):
+        markers.update(
+            submit_bridge._submission_marker(value)
+            for value in submit_bridge._submission_ids_from_response(response)
+        )
+    attempts = ledger.get("attempts")
+    for attempt in attempts if isinstance(attempts, list) else []:
+        if not isinstance(attempt, dict):
+            continue
+        values = attempt.get("submission_markers")
+        if isinstance(values, list):
+            markers.update(
+                value for value in values
+                if isinstance(value, str) and value.startswith("submission:")
+            )
+    submissions = ledger.get("submissions")
+    for submission in submissions if isinstance(submissions, list) else []:
+        if not isinstance(submission, dict):
+            continue
+        values = submission.get("submission_markers")
+        if isinstance(values, list):
+            markers.update(
+                value for value in values
+                if isinstance(value, str) and value.startswith("submission:")
+            )
+    return markers
+
+
+def _submit_bridge_submission_markers_by_run(runs_root: Path, run_names: set[str]) -> dict[str, set[str]]:
+    if not run_names:
+        return {}
+    markers_by_run: dict[str, set[str]] = {}
+    ledger_dir = runs_root / submit_bridge.LEDGER_DIR
+    for path in ledger_dir.glob("*.json"):
+        if path.name.startswith("_"):
+            continue
+        ledger = _read_json(path)
+        submissions = ledger.get("submissions")
+        if isinstance(submissions, list):
+            for submission in submissions:
+                if not isinstance(submission, dict):
+                    continue
+                candidate = submission.get("candidate")
+                run_name = candidate.get("run") if isinstance(candidate, dict) else None
+                if isinstance(run_name, str) and run_name in run_names:
+                    markers_by_run.setdefault(run_name, set()).update(
+                        _ledger_submission_markers(submission),
+                    )
+            continue
+        matched_runs = set(_ledger_run_names(ledger)) & run_names
+        if matched_runs:
+            markers = _ledger_submission_markers(ledger)
+            for run_name in matched_runs:
+                markers_by_run.setdefault(run_name, set()).update(markers)
+    for row in submit_bridge._ledger_rows(ledger_dir / "_submitted_fingerprints.json"):
+        raw_run = row.get("run")
+        if not isinstance(raw_run, str) or raw_run not in run_names:
+            continue
+        markers = markers_by_run.setdefault(raw_run, set())
+        submission_id = row.get("submission_id")
+        if isinstance(submission_id, str) and submission_id:
+            markers.add(submit_bridge._submission_marker(submission_id))
+        for key in ("fingerprint", "paper_sha256", *submit_bridge.PUBLICATION_IDENTITY_KEYS):
+            value = row.get(key)
+            if isinstance(value, str) and value:
+                markers.add(value if value.startswith("sha256:") else f"sha256:{value}")
+    return markers_by_run
+
+
+def _submit_bridge_submission_markers_for_runs(runs_root: Path, run_names: set[str]) -> set[str]:
+    markers: set[str] = set()
+    for values in _submit_bridge_submission_markers_by_run(runs_root, run_names).values():
+        markers.update(values)
+    return markers
+
+
+def _reconcile_published_ledger(
+    ledger: dict[str, Any],
+    runs_root: Path,
+    remote_seen: set[str],
+    title_marker_counts: Counter[str] | None = None,
+) -> bool:
     if int(ledger.get("published") or 0):
         changed = False
-        if str(ledger.get("status") or "") == "submitted_to_researka":
+        if str(ledger.get("status") or "") != "published":
             ledger["status"] = "published"
             changed = True
         before = len(ledger)
         ledger.pop("no_submission_reason", None)
         return changed or len(ledger) != before
     matches: set[str] = set()
+    matched_runs: set[str] = set()
     submitted_runs = set(_ledger_run_names(ledger))
-    for run_name in submitted_runs:
-        matches.update(_publication_markers_for_run(runs_root, run_name) & remote_seen)
+    title_marker_counts = title_marker_counts or _submitted_title_marker_counts(runs_root)
+    if int(ledger.get("submitted") or 0):
+        exact_markers = _ledger_submission_markers(ledger) or _submit_bridge_submission_markers_for_runs(runs_root, submitted_runs)
+        if exact_markers:
+            matches.update(exact_markers & remote_seen)
+            if not matches and _remote_has_submission_marker(remote_seen):
+                return False
+        if not matches:
+            for run_name in submitted_runs:
+                run_matches = _publication_matches_for_run(runs_root, run_name, remote_seen, title_marker_counts)
+                if run_matches:
+                    matched_runs.add(run_name)
+                    matches.update(run_matches)
+    else:
+        marker_map = _submit_bridge_submission_markers_by_run(
+            runs_root,
+            set(_ledger_run_names(ledger, submitted_only=False)),
+        )
+        for run_name, markers in marker_map.items():
+            run_matches = markers & remote_seen
+            if run_matches:
+                matched_runs.add(run_name)
+                matches.update(run_matches)
+        if not matches:
+            return False
     if not matches:
         return False
+    if not submitted_runs:
+        submitted_runs = matched_runs
+    ledger["submitted"] = 1
     ledger["published"] = 1
-    if str(ledger.get("status") or "") == "submitted_to_researka":
-        ledger["status"] = "published"
+    ledger["status"] = "published"
     ledger.pop("no_submission_reason", None)
     ledger["publication_reconciliation"] = {
         "source": "remote_publications",
@@ -228,10 +463,11 @@ def _reconcile_published_ledger(ledger: dict[str, Any], runs_root: Path, remote_
     }
     attempts = ledger.get("attempts")
     for attempt in attempts if isinstance(attempts, list) else []:
-        if not isinstance(attempt, dict) or not int(attempt.get("submitted") or 0):
+        if not isinstance(attempt, dict):
             continue
         attempt_run = str(attempt.get("submitted_run") or attempt.get("out_dir") or "")
         if not attempt_run or attempt_run in submitted_runs:
+            attempt["submitted"] = 1
             attempt["published"] = 1
     return True
 
@@ -247,6 +483,15 @@ def reconcile_publication_ledgers(
     if remote_error:
         return {"status": "remote_dedupe_failed", "reason": remote_error, "checked": 0, "updated": 0}
     ledger_dir = runs_root / LEDGER_DIR
+    title_marker_counts = _submitted_title_marker_counts(runs_root)
+    decision_records = 0
+    decision_seen: set[str] = set()
+    if remote_loader is None:
+        latest_decisions, decision_error = _latest_public_decisions_by_title()
+        if not decision_error:
+            _record_review_decisions(ledger_dir, latest_decisions)
+            decision_seen = _public_decision_markers(latest_decisions)
+            decision_records = len(latest_decisions)
     checked = 0
     updated: list[str] = []
     for ledger_path in _ledger_paths_for_reconciliation(ledger_dir, date, mode):
@@ -254,7 +499,10 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        if _reconcile_published_ledger(ledger, runs_root, remote_seen):
+        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
+        if not changed and decision_seen:
+            changed = _reconcile_published_ledger(ledger, runs_root, decision_seen, title_marker_counts)
+        if changed:
             _write_json(ledger_path, ledger)
             _record_daily_throughput(ledger_dir, ledger)
             updated.append(ledger_path.name)
@@ -263,7 +511,12 @@ def reconcile_publication_ledgers(
         if not ledger:
             continue
         checked += 1
-        if _reconcile_published_ledger(ledger, runs_root, remote_seen):
+        changed = _reconcile_published_ledger(ledger, runs_root, remote_seen, title_marker_counts)
+        if not changed and decision_seen:
+            changed = _reconcile_published_ledger(ledger, runs_root, decision_seen, title_marker_counts)
+        if int(ledger.get("published") or 0):
+            changed = _refresh_submit_day_summary(ledger, runs_root) or changed
+        if changed:
             _write_json(ledger_path, ledger)
             updated.append(f"{submit_bridge.LEDGER_DIR}/{ledger_path.name}")
     return {
@@ -272,6 +525,7 @@ def reconcile_publication_ledgers(
         "updated": len(updated),
         "updated_ledgers": updated,
         "known_fingerprints": len(remote_seen),
+        "decision_records": decision_records,
     }
 
 
@@ -300,6 +554,100 @@ def discover_topics(
         ):
             topics.add(topic)
     return sorted(topics)
+
+
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.getenv(name, str(default)))
+    except ValueError:
+        return default
+
+
+def _topic_supply_refresh_enabled() -> bool:
+    return os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_REFRESH", "1").strip().lower() not in {
+        "0", "false", "no", "off",
+    }
+
+
+def _topic_supply_strategies() -> list[str]:
+    first = os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_STRATEGY", TOPIC_SUPPLY_STRATEGIES[0]).strip()
+    if first not in TOPIC_SUPPLY_STRATEGIES:
+        first = TOPIC_SUPPLY_STRATEGIES[0]
+    return [first, *(strategy for strategy in TOPIC_SUPPLY_STRATEGIES if strategy != first)]
+
+
+def _refresh_topic_supply(
+    topic_pack_db: Path | None = None,
+    *,
+    skip_slugs: set[str] | None = None,
+) -> dict[str, Any]:
+    """Materialize fact-backed generated packs when the fresh topic pool is empty."""
+    if not _topic_supply_refresh_enabled():
+        return {"status": "topic_supply_refresh_disabled", "created": []}
+    try:
+        import materialize_fact_topic_packs as materializer  # type: ignore[import-not-found]
+    except Exception as exc:  # pragma: no cover - import/environment guard
+        return {"status": "topic_supply_refresh_unavailable", "error": str(exc), "created": []}
+    dsn = materializer.dsn_from_env()
+    base_url, token = materializer.http_credentials_from_env()
+    if not dsn and not (base_url and token):
+        return {"status": "topic_supply_refresh_not_configured", "created": []}
+    quality_mode = os.getenv("RESEARCH_AGENT_TOPIC_SUPPLY_QUALITY_MODE", "high-precision")
+    limit = _env_int("RESEARCH_AGENT_TOPIC_SUPPLY_LIMIT", TOPIC_SUPPLY_REFRESH_LIMIT)
+    max_created = _env_int("RESEARCH_AGENT_TOPIC_SUPPLY_MAX_CREATED", TOPIC_SUPPLY_REFRESH_MAX_CREATED)
+    attempts: list[dict[str, Any]] = []
+    errors: dict[str, str] = {}
+    skipped: list[dict[str, Any]] = []
+    for strategy in _topic_supply_strategies():
+        try:
+            if dsn:
+                rows = materializer.fetch_rows(
+                    dsn=dsn, min_exact_facts=2, min_papers=2, limit=limit, strategy=strategy,
+                )
+            else:
+                rows = materializer.fetch_rows_http(
+                    base_url=base_url, token=token, min_exact_facts=2,
+                    min_papers=2, limit=limit, strategy=strategy,
+                )
+            result = materializer.materialize_rows(
+                rows,
+                db_dir=topic_pack_db or TOPIC_PACKS_DB,
+                persist=True,
+                quality_mode=quality_mode,
+                max_created=max_created,
+                skip_slugs=skip_slugs,
+            )
+        except Exception as exc:
+            errors[strategy] = str(exc)
+            continue
+        created = result.get("created", [])
+        skipped.extend(result.get("skipped", []) or [])
+        attempts.append({
+            "strategy": strategy,
+            "rows": len(rows),
+            "created": len(created),
+            "skipped": len(result.get("skipped", []) or []),
+        })
+        if created:
+            return {
+                **result,
+                "skipped": skipped,
+                "status": "topic_supply_refreshed",
+                "strategy": strategy,
+                "strategies_attempted": attempts,
+                "quality_mode": quality_mode,
+            }
+    if attempts:
+        return {
+            "created": [],
+            "skipped": skipped,
+            "status": "topic_supply_no_new_packs",
+            "strategy": attempts[-1]["strategy"],
+            "strategies_attempted": attempts,
+            "quality_mode": quality_mode,
+            **({"strategy_errors": errors} if errors else {}),
+        }
+    return {"status": "topic_supply_refresh_failed", "errors": errors, "created": []}
 
 
 def _generated_pack_records(topic_pack_db: Path | None = None) -> list[dict[str, Any]]:
@@ -332,6 +680,31 @@ def _parse_time(value: str) -> dt.datetime | None:
     except ValueError:
         return None
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
+
+
+def _parse_review_time(value: str) -> dt.datetime | None:
+    value = str(value or "").strip()
+    if DAY_KEY_RE.fullmatch(value):
+        timezone: dt.tzinfo
+        try:
+            timezone = ZoneInfo(os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE))
+        except ZoneInfoNotFoundError:
+            timezone = dt.UTC
+        return dt.datetime.fromisoformat(value).replace(tzinfo=timezone).astimezone(dt.UTC)
+    return _parse_time(value)
+
+
+def _default_cycle_date(now: dt.datetime | None = None) -> str:
+    timezone_name = os.getenv("RESEARCH_AGENT_CYCLE_TIMEZONE", DEFAULT_CYCLE_TIMEZONE)
+    timezone: dt.tzinfo
+    try:
+        timezone = ZoneInfo(timezone_name)
+    except ZoneInfoNotFoundError:
+        timezone = dt.UTC
+    current = now or dt.datetime.now(dt.UTC)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=dt.UTC)
+    return current.astimezone(timezone).date().isoformat()
 
 
 def _latest_topic_run(topic: str, runs_root: Path) -> Path | None:
@@ -387,16 +760,86 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 # domain-specific knowledge).
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "cycle_budget_exhausted", "current_run_not_submitted",
-                                  "synthesis_failed", "terminal_surface_repeat",
-                                  "final_status_not_ready"})
+                                  "synthesis_failed", "synthesis_timeout", "terminal_synthesis_timeout",
+                                  "corpus_seed_failed",
+                                  "terminal_surface_repeat"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
                                         "receipt_preflight_insufficient"})
 _SOURCE_PRECISION_STATUS = "source_topic_precision_low"
 _CORPUS_REPAIR_STATUSES = _PREFLIGHT_BLOCK_STATUSES | {"retracted_source_cited", _SOURCE_PRECISION_STATUS}
+_NO_AUTO_RETRY_STATUSES = frozenset({"journal_surface_failed", "journal_surface_not_passed"})
 
 
-def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+def _surface_ready_after(topic: str, runs_root: Path | None, failure_at: dt.datetime) -> bool:
+    """A newer ready artifact proves a prior deterministic surface failure is stale."""
+    if runs_root is None:
+        return False
+    runs = sorted(runs_root.glob(f"synthesis-{topic}-v*-*"), key=lambda p: p.stat().st_mtime, reverse=True)
+    for run in (p for p in runs if p.is_dir()):
+        updated_at = max(
+            (dt.datetime.fromtimestamp(p.stat().st_mtime, dt.UTC)
+             for p in (run, run / "final_status.json", run / "full_paper.journal_surface.json", run / "full_paper.md")
+             if p.exists()),
+            default=None,
+        )
+        if (
+            updated_at
+            and updated_at >= failure_at
+            and _final_status_submission_ready(run)
+            and _read_json(run / "full_paper.journal_surface.json").get("passed") is True
+        ):
+            return True
+        if _surface_passes_current_finalizer(run):
+            return True
+    return False
+
+
+def _declared_review_type(run: Path) -> str:
+    return str(_read_json(run / "manifest.json").get("review_type") or "")
+
+
+def _surface_passes_current_finalizer(run: Path) -> bool:
+    """True when current finalizer code can clear a stale surface sidecar."""
+    if not (run / "full_paper.md").is_file():
+        return False
+    try:
+        with tempfile.TemporaryDirectory(prefix="v3-surface-probe-") as tmp:
+            probe = Path(tmp) / run.name
+            shutil.copytree(run, probe)
+            from agent.journal_finalizer import finalize_run
+            from agent.journal_surface_gate import evaluate_journal_surface
+
+            finalize_run(probe)
+            paper = (probe / "full_paper.md").read_text(encoding="utf-8")
+            return evaluate_journal_surface(
+                paper,
+                declared_review_type=_declared_review_type(probe),
+            ).passed
+    except (OSError, RuntimeError, ValueError, ImportError):
+        return False
+
+
+def _revision_coverage_passes_current_finalizer(run: Path, feedback: str) -> bool:
+    """True when current code can clear a stale revision-coverage failure."""
+    if not feedback or not (run / "full_paper.md").is_file():
+        return False
+    try:
+        with tempfile.TemporaryDirectory(prefix="v3-revision-coverage-probe-") as tmp:
+            probe = Path(tmp) / run.name
+            shutil.copytree(run, probe)
+            _write_json(probe / "researka_revision_request.json", {"feedback": feedback})
+            from agent.journal_finalizer import finalize_run
+
+            finalize_run(probe)
+            return not _unmet_revision_asks(probe, feedback)
+    except (OSError, RuntimeError, ValueError, ImportError):
+        return False
+
+
+def _surface_repeat_topics(
+    ledger_dir: Path, *, now: dt.datetime | None = None, runs_root: Path | None = None,
+) -> set[str]:
     """Topics where the SAME deterministic gate failed >= SURFACE_REPEAT_THRESHOLD
     times within the failure-cooldown window. Re-rendering from scratch cannot
     change a deterministic gate's outcome, so skip the topic until the failure
@@ -406,7 +849,8 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
 
     Reads the CUMULATIVE per-(topic, gate) timestamp log in the blocker
     histogram — the daily ledger is rewritten each run, so it cannot hold a
-    cross-run count. Windowed so a topic auto-recovers once its corpus is fixed.
+    cross-run count. Windowed so a topic auto-recovers once its corpus is fixed
+    or a newer same-topic artifact passes the same readiness/surface checks.
     Universal — keyed on the gate code itself, not on any specific gate."""
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
@@ -416,40 +860,40 @@ def _surface_repeat_topics(ledger_dir: Path, *, now: dt.datetime | None = None) 
         if (
             not topic
             or code in _NON_REPEAT_STATUSES
+            or code in _PREFLIGHT_BLOCK_STATUSES
             or _failure_class(code).startswith("C_")
             or not isinstance(stamps, list)
         ):
             continue
-        recent = sum(1 for s in stamps if (t := _parse_time(str(s))) and t >= cutoff)
-        if recent >= SURFACE_REPEAT_THRESHOLD:
+        recent_stamps = [(t, str(s)) for s in stamps if (t := _parse_time(str(s))) and t >= cutoff]
+        if recent_stamps and len(recent_stamps) >= SURFACE_REPEAT_THRESHOLD:
+            latest_failure = max(t for t, _ in recent_stamps)
+            if _surface_ready_after(topic, runs_root, latest_failure):
+                continue
             out.add(topic)
     return out
 
 
-def _recent_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
-    out: set[str] = set()
-    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
-        topic, _, code = str(key).partition("\x1f")
-        if topic and code not in _NON_REPEAT_STATUSES and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
-    return out
-
-
 def _recent_blocked_topics_by_status(
-    ledger_dir: Path, statuses: set[str] | frozenset[str], *, now: dt.datetime | None = None,
+    ledger_dir: Path,
+    statuses: Collection[str] | None = None,
+    *,
+    now: dt.datetime | None = None,
 ) -> set[str]:
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
     repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
     out: set[str] = set()
     for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
         topic, _, code = str(key).partition("\x1f")
-        if topic and code in statuses and isinstance(stamps, list):
+        allowed = code in statuses if statuses is not None else code not in _NON_REPEAT_STATUSES
+        if topic and allowed and isinstance(stamps, list):
             if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
                 out.add(topic)
     return out
+
+
+def _recent_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    return _recent_blocked_topics_by_status(ledger_dir, now=now)
 
 
 def _recent_preflight_blocked_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -497,27 +941,18 @@ def _writer_gate_repeat_policy(
 
 
 def _corpus_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
-    out: set[str] = set()
-    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
-        topic, _, code = str(key).partition("\x1f")
-        if topic and code in _CORPUS_REPAIR_STATUSES and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
-    return out
+    return _recent_blocked_topics_by_status(ledger_dir, _CORPUS_REPAIR_STATUSES, now=now)
 
 
 def _source_precision_repair_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
-    cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(hours=RECENT_FAILURE_COOLDOWN_HOURS)
-    repeats = _read_json(ledger_dir / BLOCKER_HISTOGRAM).get("repeats", {})
-    out: set[str] = set()
-    for key, stamps in repeats.items() if isinstance(repeats, dict) else []:
-        topic, _, code = str(key).partition("\x1f")
-        if topic and code == _SOURCE_PRECISION_STATUS and isinstance(stamps, list):
-            if any((t := _parse_time(str(s))) and t >= cutoff for s in stamps):
-                out.add(topic)
-    return out
+    return _recent_blocked_topics_by_status(ledger_dir, {_SOURCE_PRECISION_STATUS}, now=now)
+
+
+def _source_precision_repair_publishable(repair: Mapping[str, Any]) -> bool:
+    return (
+        repair.get("status") == "source_precision_repaired"
+        and int(repair.get("n_quant_claims") or 0) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+    )
 
 
 def _unrepairable_source_precision_topics(ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
@@ -553,39 +988,81 @@ def _current_low_source_precision_topics(topics: list[str]) -> set[str]:
     return out
 
 
+def _source_precision_retained_claim_count(topic: str) -> int:
+    _ok, _status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+    return max(0, _quant_claim_count(topic) - len(misses))
+
+
+def _source_precision_repair_candidate(topic: str) -> bool:
+    return _topic_has_quant_floor(topic)
+
+
 def _revision_requests_source_precision(feedback: str) -> bool:
     text = str(feedback or "").lower()
+    if any(token in text for token in ("off-topic", "off topic", "unrelated topic", "unrelated topics")):
+        return True
     return "source" in text and any(token in text for token in (
-        "off-topic", "off topic", "source bundle", "directly address",
-        "directly addresses", "narrow the source", "remove or reclassify",
-        "unrelated topic", "unrelated topics", "operationalize",
+        "directly address", "directly addresses", "narrow the source",
+        "remove or reclassify", "operationalize",
     ))
 
 
+def _topic_family(topic: str) -> str:
+    """Grouping key for sibling topic slugs: the lead entity token (first alnum
+    token >= 3 chars). A cooldown on one variant (e.g. ``nad_effects``) then also
+    covers its siblings (``nad_biomarker_effects``, ``nad_metabolism_effects``)
+    so the cycle stops walking every near-duplicate slug of an entity it just
+    covered. Universal — derived from the slug, mirroring the entity used by
+    ``_topic_retrieval_terms``; no per-topic or per-domain word lists."""
+    tokens = [t for t in re.findall(r"[a-z0-9]+", topic.lower()) if len(t) >= 3]
+    return tokens[0] if tokens else " ".join(str(topic).lower().split())
+
+
 def _recent_submitted_topics(topics: list[str], ledger_dir: Path, *, now: dt.datetime | None = None) -> set[str]:
+    """Candidate topics in cooldown: those whose *family* (lead entity) was
+    submitted within PUBLISHED_TOPIC_COOLDOWN_DAYS. Family-level so distinct
+    sibling slugs of a just-covered entity are held too (and re-selectable once
+    the window lapses), not just the exact slug."""
     path = ledger_dir.parent / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     try:
         rows = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         rows = []
     cutoff = (now or dt.datetime.now(dt.UTC)) - dt.timedelta(days=PUBLISHED_TOPIC_COOLDOWN_DAYS)
-    topic_set = set(topics)
-    out: set[str] = set()
+    recent_families: set[str] = set()
     for row in rows if isinstance(rows, list) else []:
-        if not isinstance(row, dict) or str(row.get("topic") or "") not in topic_set:
+        if not isinstance(row, dict):
             continue
+        topic = str(row.get("topic") or "")
         when = _parse_time(str(row.get("date") or row.get("submitted_at") or ""))
-        if when and when >= cutoff:
-            out.add(str(row["topic"]))
-    return out
+        if topic and when and when >= cutoff:
+            recent_families.add(_topic_family(topic))
+    return {topic for topic in topics if _topic_family(topic) in recent_families}
 
 
 def _published_topics(topics: list[str], markers: set[str], ledger_dir: Path | None = None) -> set[str]:
+    """Topics the fresh cycle must skip: (1) recently-submitted families still in
+    cooldown (rate-limit, expires — covers sibling slugs of the same entity), and
+    (2) ALREADY-PUBLISHED ones (permanent).
+
+    The remote-title exclusion was previously gated on `ledger_dir is None`, but
+    select_topic — the only caller — always passes a ledger_dir, so that branch
+    never ran: published topics were excluded only while their submission
+    cooldown held, then became re-selectable, re-synthesized, and dedup'd at
+    submit (a fresh non-revision re-run of a published title always returns
+    duplicate_remote_publication). Applying the remote-published exclusion
+    unconditionally stops the cycle burning synthesis on already-published
+    topics. Universal — keys on the run's own deterministic topic->title, no
+    topic terms. Re-publishing an updated paper is the revise cycle's job."""
     out = _recent_submitted_topics(topics, ledger_dir) if ledger_dir else set()
+    topic_markers = {m.removeprefix("topic:") for m in markers if m.startswith("topic:")}
     title_markers = [m.removeprefix("title:") for m in markers if m.startswith("title:")]
     for topic in topics:
+        if submit_bridge._normalized_key(topic) in topic_markers:
+            out.add(topic)
+            continue
         display = submit_bridge._normalized_key(submit_bridge._display_topic(topic))
-        if ledger_dir is None and display and any(display in marker for marker in title_markers):
+        if display and any(display in marker for marker in title_markers):
             out.add(topic)
     return out
 
@@ -602,12 +1079,16 @@ def _review_rows(payload: Any) -> list[dict[str, Any]]:
 def _review_ts(row: dict[str, Any]) -> dt.datetime:
     """Parse a review row's decision timestamp for latest-wins comparison.
     Unparseable timestamps sort oldest so they never mask a dated decision."""
-    raw = str(row.get("reviewedAt") or row.get("reviewed_at") or "")
-    try:
-        parsed = dt.datetime.fromisoformat(raw)
-    except ValueError:
-        return dt.datetime.min.replace(tzinfo=dt.UTC)
-    return parsed if parsed.tzinfo else parsed.replace(tzinfo=dt.UTC)
+    raw = str(
+        row.get("reviewedAt")
+        or row.get("reviewed_at")
+        or row.get("createdAt")
+        or row.get("created_at")
+        or row.get("publishedAt")
+        or row.get("published_at")
+        or ""
+    )
+    return _parse_review_time(raw) or dt.datetime.min.replace(tzinfo=dt.UTC)
 
 
 def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
@@ -644,6 +1125,97 @@ def _latest_reviews_by_title(url: str | None = None) -> tuple[dict[str, dict[str
     return latest, None
 
 
+def _submission_decision_url(submission_id: str) -> str:
+    base = os.getenv("RESEARKA_URL", "https://api.researka.org").rstrip("/")
+    return f"{base}/submissions/{urllib.parse.quote(submission_id.strip())}/decision"
+
+
+def _fetch_submission_decision(submission_id: str) -> tuple[dict[str, Any] | None, str | None]:
+    token, _token_env = submit_bridge._token()
+    headers = {"Accept": "application/json"}
+    if token:
+        headers.update({"Authorization": f"Bearer {token}", "x-api-key": token})
+    try:
+        req = urllib.request.Request(_submission_decision_url(submission_id), headers=headers)
+        with urllib.request.urlopen(req, timeout=SUBMISSION_DECISION_TIMEOUT_SECONDS) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            return None, None
+        return None, f"HTTPError:{exc.code}"
+    except (OSError, urllib.error.URLError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return None, f"{type(exc).__name__}: {exc}"
+    return payload if isinstance(payload, dict) else None, None
+
+
+def _submitted_submission_decisions_by_title(runs_root: Path = RUNS) -> tuple[dict[str, dict[str, Any]], str | None]:
+    rows = submit_bridge._ledger_rows(runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    latest: dict[str, dict[str, Any]] = {}
+    first_error: str | None = None
+    for record in reversed(rows[-SUBMISSION_DECISION_LOOKBACK:]):
+        submission_id = str(record.get("submission_id") or "").strip()
+        run = runs_root / str(record.get("run") or "")
+        paper = run / "full_paper.md"
+        if not submission_id or not paper.exists():
+            continue
+        payload, err = _fetch_submission_decision(submission_id)
+        first_error = first_error or err
+        if not payload:
+            continue
+        title = submit_bridge._paper_title(paper)
+        row = {
+            "artifactType": "research_paper",
+            "agentId": submit_bridge._agent_slug(),
+            "artifactId": payload.get("decision_object_id") or payload.get("decision_id"),
+            "submissionId": submission_id,
+            "title": title,
+            "topic": record.get("topic") or submit_bridge._run_topic(run),
+            "decision": payload.get("decision"),
+            "reviewedAt": record.get("submitted_at") or record.get("date"),
+            "required_revisions": payload.get("required_revisions") or [],
+            "review_summary": payload.get("review_summary"),
+            "publication": payload.get("publication"),
+        }
+        key = submit_bridge._title_marker(title)
+        if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+            latest[key] = row
+    return latest, None if latest else first_error
+
+
+def _merge_latest_by_title(*sources: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    latest: dict[str, dict[str, Any]] = {}
+    for source in sources:
+        for key, row in source.items():
+            if key and (key not in latest or _review_ts(row) > _review_ts(latest[key])):
+                latest[key] = row
+    return latest
+
+
+def _latest_public_decisions_by_title() -> tuple[dict[str, dict[str, Any]], str | None]:
+    reviews, review_error = _latest_reviews_by_title()
+    papers, paper_error = _latest_reviews_by_title(os.getenv("RESEARKA_PAPERS_URL", "https://researka.org/papers"))
+    latest = _merge_latest_by_title({} if review_error else reviews, {} if paper_error else papers)
+    if latest:
+        return latest, None
+    return {}, review_error or paper_error
+
+
+def _public_decision_markers(rows: dict[str, dict[str, Any]]) -> set[str]:
+    markers: set[str] = set()
+    for row in rows.values():
+        decision = str(row.get("decision") or "").strip().lower()
+        status = str(row.get("status") or "").strip().lower()
+        if decision not in {"accept", "accepted"} and status not in {"accepted", "public", "published"}:
+            continue
+        title = str(row.get("title") or "")
+        if title:
+            markers.update(submit_bridge._title_markers(title))
+        topic = row.get("topic")
+        if isinstance(topic, str) and topic.strip():
+            markers.add(submit_bridge._topic_marker(topic))
+    return markers
+
+
 def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]) -> None:
     if not latest:
         return
@@ -667,7 +1239,14 @@ def _record_review_decisions(ledger_dir: Path, latest: dict[str, dict[str, Any]]
             "title": title,
             "decision": row.get("decision"),
             "status": row.get("status"),
-            "reviewed_at": row.get("reviewedAt") or row.get("reviewed_at"),
+            "reviewed_at": (
+                row.get("reviewedAt")
+                or row.get("reviewed_at")
+                or row.get("createdAt")
+                or row.get("created_at")
+                or row.get("publishedAt")
+                or row.get("published_at")
+            ),
         }
         records = [
             existing for existing in records
@@ -726,7 +1305,7 @@ def _revise_reason_bucket(text: str) -> str:
 
 
 def _required_revision_items(row: dict[str, Any]) -> list[str]:
-    raw = row.get("requiredRevisions")
+    raw = row.get("requiredRevisions") or row.get("required_revisions")
     return [str(item).strip() for item in raw if str(item).strip()] if isinstance(raw, list) else []
 
 
@@ -750,39 +1329,141 @@ def _calibration_only_revision(text: str) -> bool:
     )
 
 
-def _remote_revision_requests(url: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
+def _revision_requests_domain_scope_reset(feedback: str) -> bool:
+    lower = " ".join(str(feedback or "").lower().split())
+    has_domain_frame = any(
+        term in lower
+        for term in ("geroscience", "anti-aging", "anti aging", "longevity", "healthspan")
+    )
+    if not has_domain_frame:
+        return False
+    fixable_content_markers = (
+        "add the missing",
+        "admitted source",
+        "bundle source",
+        "actual reported finding",
+        "clinical actionability",
+        "direction value",
+        "evidence landscape",
+        "excluded-with-reasons",
+        "hard-endpoint",
+        "key findings",
+        "mechanistic/alt",
+        "preprint",
+        "publication status",
+        "receipt-level direction",
+        "outcome slice",
+        "recode",
+        "screening flow",
+        "surface every",
+    )
+    if any(marker in lower for marker in fixable_content_markers):
+        return False
+    frame = r"(?:framing|overlay)"
+    patterns = (
+        rf"does not support\b.{{0,120}}\b{frame}\b",
+        rf"\b{frame}\b.{{0,120}}\bdoes not support\b",
+        r"does not match\b.{0,120}\bactual (?:research )?question\b",
+        r"actual (?:research )?question\b.{0,120}\bdoes not match\b",
+        rf"\bremove\b.{{0,120}}\b{frame}\b",
+        rf"\b{frame}\b.{{0,120}}\bremove\b",
+    )
+    return any(
+        re.search(pattern, segment)
+        for segment in re.split(r"(?:;|\.)\s+", lower)
+        for pattern in patterns
+    )
+
+
+def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS) -> tuple[list[dict[str, Any]], str | None]:
     latest, err = _latest_reviews_by_title(url)
     if err:
         return [], err
+    if url is None:
+        direct, direct_err = _submitted_submission_decisions_by_title(runs_root)
+        latest = _merge_latest_by_title(latest, direct)
+        err = direct_err if not latest else None
     out: list[dict[str, Any]] = []
     for row in latest.values():
         required = _actionable_revisions(row)
         if str(row.get("decision") or "").lower() != "revise" or not required:
             continue  # only route revises that carry concrete, actionable required revisions
         out.append({
-            "artifactId": row.get("artifactId"),
-            "submissionId": row.get("submissionId"),
+            "artifactId": row.get("artifactId") or row.get("artifact_id"),
+            "submissionId": row.get("submissionId") or row.get("submission_id"),
             "title": row.get("title"),
+            "topic": row.get("topic"),
             "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
             "feedback": " ".join("; ".join(required).split())[:4000],
         })
-    return out, None
+    return sorted(out, key=_review_ts, reverse=True), None
+
+
+def _load_remote_revision_requests(runs_root: Path) -> tuple[list[dict[str, Any]], str | None]:
+    try:
+        return _remote_revision_requests(runs_root=runs_root)
+    except TypeError as exc:
+        if "unexpected keyword argument 'runs_root'" not in str(exc):
+            raise
+        return _remote_revision_requests()
 
 
 def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]] | None = None) -> set[str]:
     """Revision keys (paper-title markers) that have hit the per-paper round
-    cap. A paper may be re-processed up to MAX_REVISE_ROUNDS times across cycles
-    (one row appended per round); once the count reaches the cap the paper is
-    treated as permanently handled so it stops monopolising the cycle and the
-    bot rotates to fresh topics. Counting is by title — Researka mints a new
-    artifactId per submission, so artifactId counts never accumulate."""
+    cap for the active reviewer request. A paper may be re-processed up to
+    MAX_REVISE_ROUNDS times per request; older handled rows do not exhaust a
+    newer reviewedAt for the same title. Counting is by title — Researka mints
+    a new artifactId per submission, so artifactId counts never accumulate."""
     data = _read_json(ledger_dir / HANDLED_REVISIONS)
     rows = data.get("handled")
     if not isinstance(rows, list):
         return set()
+    active_reviewed = {
+        _revision_key(row): _parse_review_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
+        for row in (active_requests or [])
+    }
+    active_submission_ids: dict[str, set[str]] = {}
+    for row in active_requests or []:
+        submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
+        if submission_id:
+            active_submission_ids.setdefault(_revision_key(row), set()).add(submission_id)
+
+    def _row_applies_to_active_request(row: dict[str, Any]) -> bool:
+        reviewed_at = active_reviewed.get(_revision_key(row))
+        if reviewed_at is None:
+            return True
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        return bool(handled_at and handled_at >= reviewed_at)
+
+    def _submitted_row_is_superseded_by_active_decision(row: dict[str, Any]) -> bool:
+        if str(row.get("status") or "") != "submitted_to_researka":
+            return False
+        active_ids = active_submission_ids.get(_revision_key(row))
+        if not active_ids:
+            return False
+        row_submission_id = str(row.get("submissionId") or row.get("submission_id") or "").strip()
+        return not row_submission_id or row_submission_id in active_ids
+
+    def _retryable_status_in_cooldown(row: dict[str, Any]) -> bool:
+        if str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES:
+            return False
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        if handled_at is None:
+            return True
+        return dt.datetime.now(dt.UTC) - handled_at < dt.timedelta(
+            seconds=RETRYABLE_REVISION_STATUS_COOLDOWN_SECONDS,
+        )
+
     counts = Counter(
         submit_bridge._title_marker(str(row.get("title") or ""))
-        for row in rows if isinstance(row, dict) and row.get("title")
+        for row in rows
+        if (
+            isinstance(row, dict)
+            and row.get("title")
+            and _row_applies_to_active_request(row)
+            and not _submitted_row_is_superseded_by_active_decision(row)
+            and (str(row.get("status") or "") not in _RETRYABLE_REVISION_STATUSES or _retryable_status_in_cooldown(row))
+        )
     )
     terminal = {
         submit_bridge._title_marker(str(row.get("title") or ""))
@@ -790,23 +1471,45 @@ def _handled_revision_ids(ledger_dir: Path, active_requests: list[dict[str, Any]
         if (
             isinstance(row, dict)
             and row.get("title")
-            and str(row.get("status") or "") in _TERMINAL_REVISION_STATUSES
+            and (
+                str(row.get("status") or "") in _TERMINAL_REVISION_STATUSES
+                or (
+                    str(row.get("status") or "") in _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES
+                    and _row_applies_to_active_request(row)
+                )
+            )
         )
     }
     handled = terminal | {key for key, n in counts.items() if n >= MAX_REVISE_ROUNDS}
-    active_reviewed = {
-        _revision_key(row): _parse_time(str(row.get("reviewedAt") or row.get("reviewed_at") or ""))
-        for row in (active_requests or [])
-    }
     for row in rows:
         if not isinstance(row, dict) or row.get("status") != "submitted_to_researka":
+            continue
+        if _submitted_row_is_superseded_by_active_decision(row):
             continue
         key = _revision_key(row)
         handled_at = _parse_time(str(row.get("handled_at") or ""))
         reviewed_at = active_reviewed.get(key)
-        if reviewed_at is None or (handled_at and (reviewed_at is None or handled_at >= reviewed_at)):
+        if reviewed_at is None or (handled_at and handled_at >= reviewed_at):
             handled.add(key)
     return handled
+
+
+def _handled_revision_statuses(ledger_dir: Path, key: str, reviewed_at: str = "") -> tuple[str, ...]:
+    rows = _read_json(ledger_dir / HANDLED_REVISIONS).get("handled")
+    if not isinstance(rows, list):
+        return ()
+    reviewed = _parse_review_time(reviewed_at)
+    statuses: list[str] = []
+    for row in rows:
+        if not isinstance(row, dict) or str(row.get("key") or _revision_key(row)) != key:
+            continue
+        handled_at = _parse_time(str(row.get("handled_at") or ""))
+        if reviewed and handled_at and handled_at < reviewed:
+            continue
+        status = str(row.get("status") or "")
+        if status:
+            statuses.append(status)
+    return tuple(statuses)
 
 
 def _revision_key(row: dict[str, Any]) -> str:
@@ -825,6 +1528,9 @@ def _mark_revision_handled(ledger_dir: Path, row: dict[str, Any], *, status: str
         "key": _revision_key(row),
         "status": status,
         "title": row.get("title"),
+        "artifactId": row.get("artifactId") or row.get("artifact_id"),
+        "submissionId": row.get("submissionId") or row.get("submission_id"),
+        "reviewedAt": row.get("reviewedAt") or row.get("reviewed_at"),
         "handled_at": dt.datetime.now(dt.UTC).isoformat(),
     })
     _write_json(path, {"handled": rows[-100:]})
@@ -835,18 +1541,23 @@ def _pending_remote_revision(
     ledger_dir: Path,
     *,
     loader: RevisionLoader | None = None,
+    published_loader: PublishedLoader | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
-    rows, error = (loader or _remote_revision_requests)()
+    rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
     if error:
         return None, error
     handled = _handled_revision_ids(ledger_dir, rows)
+    remote_seen: set[str] = set()
+    if published_loader is not None:
+        remote_seen, _remote_error = published_loader()
     submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
     records: list[Any] = raw_records if isinstance(raw_records, list) else []
     for request in rows:
-        if _revision_key(request) in handled:
-            continue
+        request_key = _revision_key(request)
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
+        request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
+        matches: list[tuple[dict[str, Any], Path, str]] = []
         for record in records if isinstance(records, list) else []:
             if not isinstance(record, dict):
                 continue
@@ -854,14 +1565,52 @@ def _pending_remote_revision(
             paper = run / "full_paper.md"
             if not paper.exists():
                 continue
+            record_topic = str(record.get("topic") or submit_bridge._run_topic(run))
             markers = {
                 str(record.get("fingerprint") or ""),
                 submit_bridge._title_marker(submit_bridge._paper_title(paper)),
             }
-            if title_marker in markers:
-                request["topic"] = record.get("topic") or submit_bridge._run_topic(run)
-                request["source_run"] = run.name
-                return request, None
+            if title_marker in markers or (request_topic and request_topic == submit_bridge._normalized_key(record_topic)):
+                matches.append((record, run, record_topic))
+        if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
+            continue
+        if request_key in handled:
+            handled_statuses = set(_handled_revision_statuses(
+                ledger_dir, request_key, str(request.get("reviewedAt") or request.get("reviewed_at") or ""),
+            ))
+            current_code_repairs_surface = (
+                "terminal_surface_repeat" in handled_statuses
+                and bool(matches)
+                and _surface_passes_current_finalizer(matches[-1][1])
+            )
+            current_code_clears_domain_scope = (
+                "terminal_domain_scope_mismatch" in handled_statuses
+                and not _revision_requests_domain_scope_reset(str(request.get("feedback") or ""))
+            )
+            current_code_clears_revision_coverage = (
+                bool(handled_statuses & {
+                    "revision_coverage_unmet",
+                    "terminal_revise_retry_budget_insufficient",
+                })
+                and bool(matches)
+                and _revision_coverage_passes_current_finalizer(matches[-1][1], str(request.get("feedback") or ""))
+            )
+            current_code_clears_source_manifest = (
+                "terminal_revision_source_manifest_unavailable" in handled_statuses
+                and _revision_requests_source_precision(str(request.get("feedback") or ""))
+            )
+            if not (
+                current_code_repairs_surface
+                or current_code_clears_domain_scope
+                or current_code_clears_revision_coverage
+                or current_code_clears_source_manifest
+            ):
+                continue
+        if matches:
+            record, run, record_topic = matches[-1]
+            request["topic"] = record_topic
+            request["source_run"] = run.name
+            return request, None
     return None, None
 
 
@@ -870,11 +1619,15 @@ def _pending_remote_revision_topics(
     ledger_dir: Path,
     *,
     loader: RevisionLoader | None = None,
+    published_loader: PublishedLoader | None = None,
 ) -> tuple[set[str], str | None]:
-    rows, error = (loader or _remote_revision_requests)()
+    rows, error = loader() if loader else _load_remote_revision_requests(runs_root)
     if error:
         return set(), error
     handled = _handled_revision_ids(ledger_dir, rows)
+    remote_seen: set[str] = set()
+    if published_loader is not None:
+        remote_seen, _remote_error = published_loader()
     submitted = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
     raw_records = json.loads(submitted.read_text(encoding="utf-8")) if submitted.exists() else []
     records: list[Any] = raw_records if isinstance(raw_records, list) else []
@@ -883,14 +1636,44 @@ def _pending_remote_revision_topics(
         if _revision_key(request) in handled:
             continue
         title_marker = submit_bridge._title_marker(str(request.get("title") or ""))
+        request_topic = submit_bridge._normalized_key(str(request.get("topic") or ""))
+        matched_topics: set[str] = set()
+        matched_published = False
         for record in records:
             if not isinstance(record, dict):
                 continue
             run = runs_root / str(record.get("run") or "")
             paper = run / "full_paper.md"
-            if paper.exists() and title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)):
-                out.add(str(record.get("topic") or submit_bridge._run_topic(run)))
+            if not paper.exists():
+                continue
+            record_topic = str(record.get("topic") or submit_bridge._run_topic(run))
+            if title_marker == submit_bridge._title_marker(submit_bridge._paper_title(paper)) or (
+                request_topic and request_topic == submit_bridge._normalized_key(record_topic)
+            ):
+                matched_topics.add(record_topic)
+                matched_published = matched_published or _submitted_record_is_published(record, paper, remote_seen)
+        if not matched_published:
+            out.update(matched_topics)
     return out, None
+
+
+def _submitted_record_is_published(record: dict[str, Any], paper: Path, remote_seen: set[str]) -> bool:
+    markers = {
+        str(record.get("fingerprint") or ""),
+        str(record.get("paper_sha256") or ""),
+        str(record.get("content_hash") or ""),
+        str(record.get("submission_payload_hash") or ""),
+        str(record.get("submission_identity_key") or ""),
+    }
+    submission_id = record.get("submission_id")
+    if isinstance(submission_id, str) and submission_id.strip():
+        markers.add(submit_bridge._submission_marker(submission_id))
+    if paper.exists():
+        markers.add(submit_bridge._sha256(paper))
+        title = submit_bridge._paper_title(paper)
+        if title:
+            markers.add(submit_bridge._title_marker(title))
+    return bool({marker for marker in markers if marker} & remote_seen)
 
 
 def _terminal_topics(
@@ -935,6 +1718,7 @@ def _poll_remote_revision(
     ledger_dir: Path,
     *,
     loader: RevisionLoader | None = None,
+    published_loader: PublishedLoader | None = None,
     seconds: int = DECISION_POLL_SECONDS,
     interval_seconds: int = DECISION_POLL_INTERVAL_SECONDS,
     sleeper: Sleeper = time.sleep,
@@ -951,7 +1735,12 @@ def _poll_remote_revision(
     last_error = None
     while True:
         meta["attempts"] = int(meta["attempts"]) + 1
-        revision, error = _pending_remote_revision(runs_root, ledger_dir, loader=loader)
+        revision, error = _pending_remote_revision(
+            runs_root,
+            ledger_dir,
+            loader=loader,
+            published_loader=published_loader,
+        )
         if revision:
             meta.update({"matched": True})
             return revision, meta
@@ -993,6 +1782,40 @@ def _topic_support_score(topic: str) -> int:
     return _quant_claim_count(topic)
 
 
+def _topic_has_quant_floor(topic: str) -> bool:
+    return _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
+
+
+def _fresh_seed_candidate(topic: str) -> bool:
+    if _topic_has_quant_floor(topic):
+        return True
+    if (TOPIC_PACKS / f"{topic}.toml").exists():
+        return True
+    record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+    return not record or _topic_support_score(topic) >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT
+
+
+def _fresh_corpus_repair_candidate(topic: str) -> bool:
+    record = _read_json(TOPIC_PACKS_DB / topic / "latest.json")
+    count = record.get("candidate_count")
+    return not isinstance(count, int) and not _fresh_seed_candidate(topic)
+
+
+def _has_clean_ready_topic(
+    topics: list[str],
+    *,
+    exclude: set[str],
+    source_precision_blocked: set[str],
+) -> bool:
+    return any(
+        candidate not in exclude
+        and candidate not in source_precision_blocked
+        and _publication_track_topic(candidate)
+        and _topic_has_quant_floor(candidate)
+        for candidate in topics
+    )
+
+
 def select_topic(
     topics: list[str],
     ledger_dir: Path,
@@ -1000,6 +1823,7 @@ def select_topic(
     runs_root: Path = RUNS,
     remote_seen: set[str] | None = None,
     exclude: set[str] | None = None,
+    allow_recent_blocked_fallback: bool = True,
 ) -> str | None:
     blocked = _published_topics(topics, remote_seen or set(), ledger_dir)
     candidates = [topic for topic in topics if topic not in blocked and topic not in (exclude or set())]
@@ -1007,9 +1831,29 @@ def select_topic(
         return None
     recent_blocked = _recent_blocked_topics(ledger_dir)
     fresh_candidates = [topic for topic in candidates if topic not in recent_blocked and _recent_failed_attempts(topic, ledger_dir) == 0]
-    candidates = fresh_candidates or candidates
-    pool = [topic for topic in candidates if _publication_track_topic(topic)] or candidates
-    return min(pool, key=lambda topic: (-_publication_score(topic, ledger_dir, runs_root), -_topic_support_score(topic), _attempted_at(topic, ledger_dir), topic))
+    if fresh_candidates:
+        candidates = fresh_candidates
+    elif not allow_recent_blocked_fallback:
+        return None
+    pool = [topic for topic in candidates if _publication_track_topic(topic) and _fresh_seed_candidate(topic)]
+    if not pool:
+        return None
+    # Prefer topics with a local corpus first; empty generated frontier topics
+    # belong behind publishable corpora so the publish lane does not spend the
+    # whole window seeding. Within that ready pool, frontier-advance still holds:
+    # a never-attempted topic outranks any already-attempted one.
+    # Within each group the existing order still applies — publication score,
+    # then fact support, then least-recently attempted. Revisiting proven
+    # topics is the revise cycle's job, not the fresh cycle's.
+    untried = {topic for topic in pool if _topic_run_stats(topic, runs_root)[0] == 0}
+    return min(pool, key=lambda topic: (
+        0 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS else 1,
+        0 if topic in untried else 1,
+        -_publication_score(topic, ledger_dir, runs_root),
+        -_topic_support_score(topic),
+        _attempted_at(topic, ledger_dir),
+        topic,
+    ))
 
 
 def _topic_status_map(
@@ -1049,11 +1893,21 @@ def _preflight_reason_survives_corpus_refresh(reason: str) -> bool:
     return reason.startswith(("n_receipts=", "n_tensions=", "n_outcome_classes=")) and reason.endswith("(split topic)")
 
 
-def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_claims: int | None = None) -> dict[str, Any]:
-    latest = _latest_topic_run(topic, runs_root)
+def _preflight(
+    topic: str,
+    runs_root: Path,
+    ledger_dir: Path,
+    *,
+    current_quant_claims: int | None = None,
+    ignore_recent_failures: bool = False,
+    source_run: Path | None = None,
+) -> dict[str, Any]:
+    latest = source_run if source_run and source_run.is_dir() else _latest_topic_run(topic, runs_root)
     counts = _manifest_counts(latest)
     publication_track = _publication_track_topic(topic)
     reasons = []
+    if not publication_track:
+        reasons.append("target_journal_not_declared")
     if latest and not counts["has_manifest"]:
         reasons.append("latest_run_missing_manifest")
     if counts["has_manifest"] and counts["n_receipts"] < PREFLIGHT_MIN_RECEIPTS:
@@ -1069,7 +1923,7 @@ def _preflight(topic: str, runs_root: Path, ledger_dir: Path, *, current_quant_c
     if counts["has_manifest"] and counts["n_outcome_classes"] > PREFLIGHT_MAX_OUTCOMES:
         reasons.append(f"n_outcome_classes={counts['n_outcome_classes']} > {PREFLIGHT_MAX_OUTCOMES} (split topic)")
     recent_failures = _recent_failed_attempts(topic, ledger_dir)
-    if recent_failures and not publication_track:
+    if recent_failures and not publication_track and not ignore_recent_failures:
         reasons.append(f"recent_failed_attempts={recent_failures} within {RECENT_FAILURE_COOLDOWN_HOURS}h")
     if current_quant_claims is not None and current_quant_claims >= PREFLIGHT_MIN_QUANT_CLAIMS:
         # A prior failed run's manifest can be stale after corpus repair/backfill.
@@ -1131,9 +1985,12 @@ def _paper_strategy(corpus: dict[str, Any], preflight: dict[str, Any], revision_
 
 def _failure_class(status: str) -> str:
     code = status.split(":", 1)[0]
+    if code in _TERMINAL_REVISION_STATUSES or code in _ACTIVE_REVIEW_TERMINAL_REVISION_STATUSES:
+        return "D_no_action"
     return {
         "journal_surface_not_passed": "A_compiler_fixable",
         "journal_surface_failed": "A_compiler_fixable",
+        "final_status_not_ready": "A_compiler_fixable",
         "final_verdict_not_aaa": "A_compiler_fixable",
         "pre_submit_not_passed": "A_compiler_fixable",
         "audit_not_all_green": "C_writer_fixable",
@@ -1142,30 +1999,30 @@ def _failure_class(status: str) -> str:
         "abstract_overclaim": "C_writer_fixable",
         "retracted_source_cited": "D_no_action",
         "synthesis_failed": "C_writer_fixable",
+        "synthesis_timeout": "D_no_action",
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
         "strategy_evidence_insufficient": "B_corpus_fixable",
         "source_topic_precision_low": "B_corpus_fixable",
+        "recency_ratio_low": "B_corpus_fixable",
         "preflight_insufficient_corpus": "B_corpus_fixable",
+        "preflight_thin_quant_corpus": "B_corpus_fixable",
         "corpus_missing_dry_run": "B_corpus_fixable",
         "corpus_seed_empty": "B_corpus_fixable",
         "corpus_seed_failed": "B_corpus_fixable",
         "receipt_preflight_insufficient": "B_corpus_fixable",
+        # Back-compat for blocker rows written before audit failures were
+        # routed through audit_not_all_green.
+        "audit_p1_failed": "C_writer_fixable",
         "missing": "C_writer_fixable",
-        "duplicate_submission_fingerprint": "D_no_action",
-        "duplicate_remote_publication": "D_no_action",
-        "researka_revision_fingerprint": "D_no_action",
-        "research_revision_fingerprint": "D_no_action",
         "superseded_topic_run": "D_no_action",
-        "terminal_surface_repeat": "D_no_action",
-        "terminal_source_precision_repair_incomplete": "D_no_action",
-        "terminal_receipt_preflight_insufficient": "D_no_action",
+        "terminal_synthesis_timeout": "D_no_action",
     }.get(code, "unknown")
 
 
 def _revision_asks(feedback: str) -> list[str]:
     """The enumerated reviewer asks recovered from the '; '-joined feedback."""
-    return [a.strip() for a in feedback.split(";") if a.strip()]
+    return revision_coverage.revision_asks(feedback)
 
 
 def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
@@ -1174,13 +2031,8 @@ def _unmet_revision_asks(out_dir: Path, feedback: str) -> list[str]:
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
-    import revision_coverage
     text = paper.read_text(encoding="utf-8")
-    asks = _revision_asks(feedback)
-    unmet = revision_coverage.deterministic_unmet_asks(text, asks)
-    for ask in revision_coverage.unmet_asks(text, asks):
-        if ask not in unmet:
-            unmet.append(ask)
+    unmet = revision_coverage.material_unmet_asks(text, feedback)
     return [ask for ask in unmet if not _payload_revision_ask_satisfied(out_dir, ask)]
 
 
@@ -1201,8 +2053,58 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
         and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
     ):
         return True
+    if (
+        (
+            revision_coverage.asks_source_directness_breakdown(ask_lower)
+            or revision_coverage.asks_evidence_type_metadata(ask_lower)
+            or revision_coverage.asks_source_classification_map(ask_lower)
+        )
+        and all(token in paper_text for token in ("### source classification map", "outcome=", "directness=", "tier="))
+        and ("low-directness" not in ask_lower or "low-directness" in paper_text)
+        and ("case report" not in ask_lower or ("case report" in paper_text or "case-report" in paper_text))
+        and ("patient education" not in ask_lower or "patient education" not in paper_text)
+    ):
+        return True
+    if (
+        "attribution gap" in ask_lower
+        and "mortality" in ask_lower
+        and "survival" in ask_lower
+        and (
+            "outcome=mortality and survival" in paper_text
+            or "mortality and survival is unsourced" in paper_text
+        )
+    ):
+        return True
+    if (
+        "outcome subsection" in ask_lower
+        and "source" in ask_lower
+        and "evidence domain" in paper_text
+        and "source examples:" in paper_text
+        and "direct-source ceiling:" in paper_text
+    ):
+        return True
+    if (
+        "direct clinical source" in ask_lower
+        and (
+            "direct-source ceiling:" in paper_text
+            or ("### source classification map" in paper_text and "directness=direct" in paper_text)
+        )
+    ):
+        return True
+    if (
+        "limitations" in ask_lower
+        and "protocol" in ask_lower
+        and ("cross-sectional" in ask_lower or "observational" in ask_lower)
+        and "design-limit note:" in paper_text
+        and "causal claims" in paper_text
+    ):
+        return True
     if "direct evidence" in ask_lower and any(token in ask_lower for token in ("definition", "qualifying", "qualify", "0/")):
         return "qualifying direct source" in paper_text or "direct interventional hard-endpoint evidence" in paper_text
+    if revision_coverage.asks_source_attribution_map(ask_lower):
+        return _paper_has_source_attribution_map(paper_text)
+    if _asks_narrow_conclusion(ask_lower):
+        return _paper_has_bounded_conclusion(paper_text)
     if _asks_conflict_severity_criteria(ask_lower):
         return all(
             token in paper_text
@@ -1285,6 +2187,39 @@ def _payload_revision_ask_satisfied(out_dir: Path, ask: str) -> bool:
     return bool(findings and landscape and findings != landscape and "|" not in findings)
 
 
+def _paper_has_source_attribution_map(paper_text: str) -> bool:
+    has_map = (
+        "### source classification map" in paper_text
+        or "### findings map" in paper_text
+        or "source-level findings by outcome class" in paper_text
+        or "source examples:" in paper_text
+    )
+    has_fields = all(token in paper_text for token in ("outcome=", "directness=", "tier="))
+    has_author_year = bool(re.search(r"\b[a-z][a-z-]{2,}\s+(?:19|20)\d{2}\b", paper_text, re.I))
+    return has_map and has_fields and has_author_year
+
+
+def _asks_narrow_conclusion(ask_lower: str) -> bool:
+    return (
+        "conclusion" in ask_lower
+        and any(token in ask_lower for token in ("breadth", "narrow", "bounded", "translation", "overclaim"))
+    )
+
+
+def _paper_has_bounded_conclusion(paper_text: str) -> bool:
+    match = re.search(r"^##\s+conclusion\b(?P<body>.*?)(?=^##\s+|\Z)", paper_text, re.M | re.S)
+    conclusion = match.group("body") if match else paper_text[-1200:]
+    bounded = any(token in conclusion for token in (
+        "bounded", "hypothesis-generating", "adjacent", "mechanistic",
+        "does not support", "cannot support", "insufficient", "limited",
+    ))
+    overbroad = any(token in conclusion for token in (
+        "establishes", "demonstrates", "proves", "supports clinical",
+        "supports causal",
+    ))
+    return bounded and not overbroad
+
+
 def _abstract_has_complete_sentence(paper_text: str) -> bool:
     match = re.search(r"^##\s+abstract\b(?P<body>.*?)(?=^##\s+|\Z)", paper_text, flags=re.M | re.S)
     body = " ".join((match.group("body") if match else "").split())
@@ -1326,7 +2261,6 @@ def _abstract_overclaims(out_dir: Path) -> list[str]:
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
-    import revision_coverage
     return revision_coverage.unsupported_abstract_claims(paper.read_text(encoding="utf-8"))
 
 
@@ -1334,7 +2268,6 @@ def _numeric_effect_direction_issues(out_dir: Path) -> list[str]:
     paper = out_dir / "full_paper.md"
     if not paper.is_file():
         return []
-    import revision_coverage
     return revision_coverage.numeric_effect_direction_issues(paper.read_text(encoding="utf-8"))
 
 
@@ -1376,14 +2309,25 @@ def _escalate_feedback(feedback: str, unmet: list[str]) -> str:
     bounded re-render, not skimmed again."""
     return (
         "PRIOR REVISION DID NOT ADDRESS THESE REQUIRED POINTS — you MUST make a "
-        f"substantive change to satisfy EACH: {'; '.join(unmet)}. {feedback}"
+        f"substantive change to satisfy EACH: {'; '.join(unmet)}"
     )
+
+
+def _set_known_blocker_class(row: dict[str, Any], status: str) -> str:
+    klass = _failure_class(status)
+    if row.get("class") in {None, "", "unknown"} and klass != "unknown":
+        row["class"] = klass
+    return klass
 
 
 def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
     path = ledger_dir / BLOCKER_HISTOGRAM
     data = _read_json(path)
     blockers = data.setdefault("blockers", {})
+    if isinstance(blockers, dict):
+        for code, row in blockers.items():
+            if isinstance(row, dict):
+                _set_known_blocker_class(row, str(code))
     # Cumulative per-(topic, gate) failure timestamps — the daily ledger is
     # rewritten each run and cannot hold a cross-run count, so the repeat-skip
     # heuristic reads this instead. Windowed to the failure cooldown.
@@ -1397,7 +2341,9 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
         if not status or status in {"eligible", "submitted_to_researka"}:
             continue
         code = status.split(":", 1)[0]
-        item = blockers.setdefault(code, {"count": 0, "class": _failure_class(status), "samples": []})
+        klass = _failure_class(status)
+        item = blockers.setdefault(code, {"count": 0, "class": klass, "samples": []})
+        _set_known_blocker_class(item, status)
         item["count"] = int(item.get("count") or 0) + 1
         item["last_seen"] = date
         sample = {k: row.get(k) for k in ("topic", "run", "out_dir", "status", "gate_status", "submit_status") if row.get(k) is not None}
@@ -1408,7 +2354,7 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
             kept = [s for s in repeats.get(key, []) if (t := _parse_time(str(s))) and t >= cutoff]
             kept.append(now_dt.isoformat())
             repeats[key] = kept[-12:]
-            if _failure_class(code).startswith("C_"):
+            if klass.startswith("C_"):
                 prior = writer_runs.get(key, [])
                 kept_rows = [
                     r for r in prior
@@ -1432,6 +2378,15 @@ def _record_blockers(ledger_dir: Path, date: str, rows: list[dict[str, Any]]) ->
     return {"path": path.name, "issue_candidates": sorted(set(issue_candidates))}
 
 
+def _record_attempt_blocker(
+    ledger_dir: Path,
+    date: str,
+    ledger: dict[str, Any],
+    attempt: dict[str, Any],
+) -> None:
+    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+
+
 @contextmanager
 def _lock(ledger_dir: Path, name: str = ".lock", *, block: bool = False) -> Iterator[bool]:
     """Advisory file lock. Distinct `name`s are independent locks, so the fresh
@@ -1448,6 +2403,29 @@ def _lock(ledger_dir: Path, name: str = ".lock", *, block: bool = False) -> Iter
         handle.write(str(os.getpid()))
         handle.flush()
         yield True
+
+
+def _remaining_timeout(
+    timeout: int | None,
+    *,
+    started_mono: float,
+    cycle_budget_seconds: int,
+    clock: Callable[[], float],
+) -> int | None:
+    limits: list[int] = []
+    if timeout and timeout > 0:
+        limits.append(timeout)
+    if cycle_budget_seconds > 0:
+        remaining = int(cycle_budget_seconds - (clock() - started_mono))
+        limits.append(max(1, remaining))
+    return min(limits) if limits else None
+
+
+def _insufficient_revise_retry_budget(remaining: int | None, cycle_budget_seconds: int) -> bool:
+    if remaining is None or cycle_budget_seconds <= 0:
+        return False
+    floor = min(MIN_REVISE_RETRY_BUDGET_SECONDS, max(1, cycle_budget_seconds // 2))
+    return remaining < floor
 
 
 def _run_synthesis(
@@ -1469,7 +2447,16 @@ def _run_synthesis(
             env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback[:4000]
         if review_type_override:
             env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
-    result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
+    try:
+        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
+    except subprocess.TimeoutExpired as exc:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(out_dir / "synthesis_timeout.json", {
+            "topic": topic,
+            "timeout_seconds": timeout,
+            "error": f"{type(exc).__name__}: {exc}",
+        })
+        return SYNTHESIS_TIMEOUT_RETURN_CODE
     return int(result.returncode)
 
 
@@ -1498,14 +2485,19 @@ def _receipt_preflight(
             shutil.rmtree(probe_dir, ignore_errors=True)
         counts = report.get("counts") if isinstance(report, dict) else {}
         n_receipts = int(counts.get("admitted_receipts") or 0) if isinstance(counts, dict) else 0
+        previous_best = best_receipts
         best_receipts = max(best_receipts, n_receipts)
         probes.append({"return_code": rc, "n_receipts": n_receipts, "min_receipts": min_receipts})
         if rc == 0 and n_receipts >= min_receipts:
             break
+        if rc == 0 and n_receipts == 0:
+            break
+        if round_idx > 0 and rc == 0 and best_receipts <= previous_best:
+            break
         if round_idx >= rounds:
             break
         current_quant_claims = _quant_claim_count(topic)
-        if rc != 0 and not (best_receipts or current_quant_claims):
+        if not best_receipts or (rc != 0 and not current_quant_claims):
             break
         corpus_repair = _repair_topic_corpus(
             topic,
@@ -1529,6 +2521,95 @@ def _receipt_preflight(
         "probes": probes,
         **({"repairs": repairs} if repairs else {}),
     }
+
+
+def _existing_receipt_preflight(source_run: Path | None) -> dict[str, Any] | None:
+    if source_run is None or not source_run.is_dir():
+        return None
+    counts = _manifest_counts(source_run)
+    n_receipts = int(counts.get("n_receipts") or 0)
+    n_tensions = int(counts.get("n_tensions") or 0)
+    n_primary = int(counts.get("n_primary_tier") or 0)
+    min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    if (
+        n_receipts < min_receipts
+        or n_tensions < PREFLIGHT_MIN_TENSIONS
+        or n_primary < PREFLIGHT_MIN_PRIMARY_TIER
+    ):
+        return None
+    return {
+        "passed": True,
+        "status": "receipt_preflight_existing_ok",
+        "n_receipts": n_receipts,
+        "n_tensions": n_tensions,
+        "n_primary_tier": n_primary,
+        "min_receipts": min_receipts,
+    }
+
+
+def _source_manifest_receipt_ids(source_run: Path | None) -> list[str]:
+    manifest = _read_json(source_run / "manifest.json") if source_run else {}
+    receipts = manifest.get("receipts")
+    if not isinstance(receipts, list):
+        return []
+    return [
+        str(row.get("receipt_id") or "")
+        for row in receipts
+        if isinstance(row, dict) and str(row.get("receipt_id") or "")
+    ]
+
+
+def _source_manifest_availability(topic: str, source_run: Path | None) -> dict[str, Any] | None:
+    receipt_ids = _source_manifest_receipt_ids(source_run)
+    if not receipt_ids:
+        return None
+    qdir = CORPORA / topic / "quant_claims"
+    available_ids = {rid for rid in receipt_ids if (qdir / f"{rid}.quant_claims.json").is_file()}
+    min_receipts = DEFAULT_THRESHOLDS.min_receipts
+    missing = [rid for rid in receipt_ids if rid not in available_ids]
+    return {
+        "passed": len(available_ids) >= min_receipts,
+        "status": "source_manifest_available" if len(available_ids) >= min_receipts else "source_manifest_unavailable",
+        "source_run": source_run.name if source_run else "",
+        "n_source_receipts": len(receipt_ids),
+        "n_available_quant_claim_files": len(available_ids),
+        "min_receipts": min_receipts,
+        "missing_receipt_ids": missing[:20],
+    }
+
+
+def _restore_source_manifest_quant_claims(topic: str, source_run: Path | None) -> dict[str, Any]:
+    receipt_ids = _source_manifest_receipt_ids(source_run)
+    qdir = CORPORA / topic / "quant_claims"
+    quarantine = CORPORA / topic / "quant_claims_quarantine"
+    restored: list[str] = []
+    missing = [rid for rid in receipt_ids if not (qdir / f"{rid}.quant_claims.json").is_file()]
+    for rid in missing:
+        candidates = sorted(
+            quarantine.glob(f"*/{rid}.quant_claims.json"),
+            key=lambda p: p.stat().st_mtime,
+            reverse=True,
+        )
+        if not candidates:
+            continue
+        qdir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(candidates[0], qdir / f"{rid}.quant_claims.json")
+        restored.append(rid)
+    return {
+        "status": "source_manifest_quant_claims_restored" if restored else "source_manifest_quant_claims_missing",
+        "source_run": source_run.name if source_run else "",
+        "n_missing_before": len(missing),
+        "n_restored": len(restored),
+        "restored_receipt_ids": restored[:20],
+    }
+
+
+def _terminal_revision_receipt_preflight(report: Mapping[str, Any]) -> bool:
+    """A revise corpus that cannot pass receipt preflight should not monopolise
+    later revise windows for the same reviewer request."""
+    if report.get("passed") or str(report.get("status") or "") != "receipt_preflight_insufficient":
+        return False
+    return True
 
 
 def _repair_existing_run(
@@ -1561,7 +2642,7 @@ def _repair_existing_run(
                 return False, "repair_noop"
             if repair_reason == "journal_surface_not_passed":
                 from agent.journal_surface_gate import evaluate_journal_surface
-                surface = evaluate_journal_surface(after)
+                surface = evaluate_journal_surface(after, declared_review_type=_declared_review_type(out_dir))
                 if not surface.passed:
                     codes = ",".join(sorted({issue.code for issue in surface.issues}))
                     shutil.rmtree(out_dir, ignore_errors=True)
@@ -1587,8 +2668,52 @@ def _current_gate_status(bridge: dict[str, Any], run_name: str) -> str:
     return str(bridge.get("status") or "")
 
 
-def _should_retry_same_topic(attempt: dict[str, Any]) -> bool:
+def _submit_current_candidate(
+    *,
+    runs_root: Path,
+    date: str,
+    submit: bool,
+    remote_seen: set[str],
+    candidate_run: Path,
+) -> dict[str, Any]:
+    bridge = submit_bridge.run_cycle(
+        runs_root=runs_root,
+        date=date,
+        submit=submit,
+        remote_loader=(lambda: (remote_seen, None)) if submit else None,
+        candidate_run=candidate_run,
+    )
+    if bridge.get("status") != "no_eligible_research_paper":
+        return bridge
+    candidate_path, considered = submit_bridge.select_candidate(
+        runs_root,
+        runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
+        remote_seen=remote_seen,
+        candidate_run=candidate_run,
+    )
+    if candidate_path is None:
+        return bridge
+    first_bridge = bridge
+    bridge = submit_bridge.run_cycle(
+        runs_root=runs_root,
+        date=date,
+        submit=submit,
+        remote_loader=(lambda: (remote_seen, None)) if submit else None,
+        candidate_run=candidate_run,
+    )
+    bridge["retry_after_no_eligible"] = {
+        "first_status": first_bridge.get("status"),
+        "first_considered": first_bridge.get("considered"),
+        "eligibility_recheck": considered,
+    }
+    return bridge
+
+
+def _should_retry_same_topic(attempt: dict[str, Any], *, auto_selected: bool = True) -> bool:
     if int(attempt.get("submitted") or 0):
+        return False
+    status = str(attempt.get("gate_status") or attempt.get("submit_status") or "").split(":", 1)[0]
+    if auto_selected and status in _NO_AUTO_RETRY_STATUSES:
         return False
     if str(attempt.get("failure_class") or "").startswith(("B_", "D_")):
         return False
@@ -1604,6 +2729,15 @@ def _same_gate_failure_count(attempts: list[dict[str, Any]], topic: str, status:
         if row.get("topic") == topic
         and not int(row.get("submitted") or 0)
         and str(row.get("gate_status") or row.get("submit_status") or "").split(":", 1)[0] == code
+    )
+
+
+def _same_topic_retry_count(attempts: list[dict[str, Any]], topic: str) -> int:
+    return sum(
+        1 for row in attempts
+        if row.get("topic") == topic
+        and not int(row.get("submitted") or 0)
+        and str(row.get("failure_class") or "").startswith(("A_", "C_"))
     )
 
 
@@ -1623,6 +2757,40 @@ def _auto_seed_limit() -> int:
         return max(1, int(os.environ.get("RESEARCH_AGENT_AUTO_SEED_LIMIT", str(AUTO_SEED_LIMIT))))
     except ValueError:
         return AUTO_SEED_LIMIT
+
+
+def _seed_topic_timeout(timeout: int | None) -> int:
+    try:
+        cap = max(1, int(os.environ.get("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", str(SEED_TOPIC_TIMEOUT_SECONDS))))
+    except ValueError:
+        cap = SEED_TOPIC_TIMEOUT_SECONDS
+    return min(timeout, cap) if timeout and timeout > 0 else cap
+
+
+def _publish_seed_timeout(timeout: int | None) -> int:
+    try:
+        cap = max(1, int(os.environ.get(
+            "RESEARCH_AGENT_PUBLISH_SEED_TIMEOUT_SECONDS",
+            os.environ.get("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", str(PUBLISH_SEED_TIMEOUT_SECONDS)),
+        )))
+    except ValueError:
+        cap = PUBLISH_SEED_TIMEOUT_SECONDS
+    return min(timeout, cap) if timeout and timeout > 0 else cap
+
+
+def _seed_discovery_timeout() -> float:
+    raw = os.environ.get("RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS", "30")
+    try:
+        return min(120.0, max(1.0, float(raw)))
+    except ValueError:
+        return 30.0
+
+
+def _seed_sources() -> list[str]:
+    raw = os.environ.get("RESEARCH_AGENT_SEED_SOURCES", "").strip()
+    if raw:
+        return [part for part in re.split(r"[,\s]+", raw) if part]
+    return []
 
 
 def _corpus_repair_limit() -> int:
@@ -1662,11 +2830,38 @@ def _seed_topic(
         sys.executable, "scripts/seed_topic_corpus.py", "--topic", topic,
         "--limit", str(seed_limit), "--max-per-source", str(seed_limit),
     ]
+    sources = _seed_sources()
+    if sources:
+        cmd.extend(["--sources", *sources])
     if force_extract:
         cmd.append("--force-extract")
+    env = os.environ.copy()
+    v5_configured = (
+        env.get("V5_MEMO_FULL_RAW_CORPUS_SEARCH_URL")
+        and env.get("V5_MEMO_FULL_RAW_CORPUS_TOKEN")
+    )
+    uses_v5 = not sources or "v5_fullraw" in sources
+    if v5_configured and uses_v5 and "V5_MEMO_FULL_RAW_QUERY_TIMEOUT" not in env:
+        env["V5_MEMO_FULL_RAW_QUERY_TIMEOUT"] = str(_seed_discovery_timeout())
+    seed_timeout = _seed_topic_timeout(timeout)
     try:
-        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, capture_output=True, text=True)
-    except (OSError, subprocess.TimeoutExpired) as exc:
+        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=seed_timeout, capture_output=True, text=True, env=env)
+    except subprocess.TimeoutExpired as exc:
+        after = _quant_claim_count(topic)
+        status = "corpus_seeded" if after else "corpus_seed_failed"
+        stderr = exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else str(exc.stderr or "")
+        return {
+            "status": status,
+            "return_code": SYNTHESIS_TIMEOUT_RETURN_CODE,
+            "n_quant_claims_before": before,
+            "n_quant_claims": after,
+            "seed_limit": seed_limit,
+            "seed_timeout_seconds": seed_timeout,
+            "seed_timeout_expired": True,
+            "error": f"{type(exc).__name__}: {exc}",
+            "stderr_tail": stderr[-1200:],
+        }
+    except OSError as exc:
         return {
             "status": "corpus_seed_failed",
             "return_code": None,
@@ -1687,12 +2882,18 @@ def _seed_topic(
     }
 
 
-def _ensure_topic_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+def _ensure_topic_corpus(
+    topic: str,
+    *,
+    dry_run: bool,
+    timeout: int | None = None,
+    min_quant_claims: int = 1,
+) -> dict[str, Any]:
     before = _quant_claim_count(topic)
-    if before:
+    if before >= min_quant_claims:
         return {"status": "corpus_ready", "n_quant_claims": before}
     if dry_run:
-        return {"status": "corpus_missing_dry_run", "n_quant_claims": 0}
+        return {"status": "corpus_missing_dry_run", "n_quant_claims": before}
     return _seed_topic(topic, timeout=timeout)
 
 
@@ -1729,6 +2930,90 @@ def _quant_claim_identity(path: Path) -> str:
     return " ".join(str(field or "") for field in fields).lower()
 
 
+def _entity_topic_terms(topic: str) -> tuple[str, ...]:
+    """Entity/synonym retrieval terms for *topic*, minus the bare slug phrase
+    and bare non-leading slug modifiers (e.g. ``lifespan`` in
+    ``rapamycin_lifespan_effects``). Reads only the generated pack record so
+    .toml-only field-named topics (e.g. ``metabolomic_age_clocks``) yield ()
+    and keep the gate's existing behavior. The entity/modifier split is read
+    from the slug itself (no per-topic word lists), universal across domains.
+    """
+    try:
+        record = json.loads((TOPIC_PACKS_DB / topic / "latest.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ()
+    pack_data = record.get("pack_data") if isinstance(record.get("pack_data"), dict) else record
+    retrieval = pack_data.get("retrieval") if isinstance(pack_data, dict) else {}
+    raw = retrieval.get("topic_terms", ()) if isinstance(retrieval, dict) else ()
+    slug_tokens = [t for t in re.findall(r"[a-z0-9]+", topic.lower()) if len(t) >= 3]
+    modifiers = set(slug_tokens[1:]) if len(slug_tokens) >= 2 else set()
+    entity = slug_tokens[0] if slug_tokens else ""
+    slug_phrase = " ".join(topic.replace("_", " ").replace("-", " ").lower().split())
+    seen: set[str] = set()
+    out: list[str] = []
+    for term in raw:
+        norm = " ".join(str(term).replace("_", " ").replace("-", " ").lower().split())
+        if not norm or norm == slug_phrase or norm in seen:
+            continue
+        if " " not in norm and norm != entity and norm in modifiers:
+            continue
+        seen.add(norm)
+        out.append(norm)
+    return tuple(out)
+
+
+def _on_entity_quant_claims(paths: Sequence[Path], entity_terms: Sequence[str]) -> set[Path]:
+    """Subset of *paths* whose identity names the topic entity or a synonym."""
+    if not entity_terms:
+        return set()
+    on_entity: set[Path] = set()
+    for path in paths:
+        haystack = " ".join(_quant_claim_identity(path).replace("_", " ").replace("-", " ").lower().split())
+        # Word-boundary match so a short entity token (``nad``) does not
+        # substring-hit unrelated words (``gonad``, ``nadolol``); multi-word
+        # synonyms ("nicotinamide riboside") still match as a phrase.
+        if any(re.search(rf"\b{re.escape(term)}\b", haystack) for term in entity_terms):
+            on_entity.add(path)
+    return on_entity
+
+
+_MODIFIER_SUFFIXES = ("ization", "isation", "ism", "ies", "ing", "es", "s")
+
+
+def _modifier_stem(word: str) -> str:
+    """Morphological stem of a slug modifier so the scope match catches the
+    whole word family — ``metabolism`` -> ``metabol`` (prefix-matches
+    metabolic/metabolite), ``regimens`` -> ``regimen`` — not just the literal
+    slug token. Strips a small fixed set of common English suffixes with a
+    length guard; universal, no per-topic word lists. A modifier with no
+    strippable suffix (``lifespan``, ``cardiovascular``) is returned unchanged,
+    so content scopes keep their exact prefix match. This unblocks genuine
+    aspect topics (a fasting-metabolism corpus where studies say "metabolic
+    rate", not the literal word "metabolism") WITHOUT relaxing the floor, so a
+    thin variant with too few on-aspect sources still fails the gate."""
+    w = word.lower()
+    for suf in _MODIFIER_SUFFIXES:
+        if w.endswith(suf) and len(w) - len(suf) >= 4:
+            return w[: len(w) - len(suf)]
+    return w
+
+
+def _claim_text_has_scope(path: Path, modifiers: Sequence[str]) -> bool:
+    """True if the source's full claim text evidences a non-entity topic
+    modifier (e.g. ``lifespan``), not just the entity in its title. A lifespan
+    study may title itself "survival", so the modifier is matched against the
+    whole claim record, not the title identity. Modifiers are slug-derived (no
+    per-topic word lists) and matched by morphological STEM so the whole word
+    family counts (see _modifier_stem)."""
+    if not modifiers:
+        return True
+    try:
+        body = path.read_text(encoding="utf-8", errors="ignore").lower()
+    except OSError:
+        return False
+    return any(re.search(rf"\b{re.escape(_modifier_stem(m))}", body) for m in modifiers)
+
+
 def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> tuple[bool, str, list[Path]]:
     floor = submit_bridge.SOURCE_TOPIC_PRECISION_FLOOR if floor is None else floor
     tokens = submit_bridge._topic_tokens(topic)
@@ -1745,18 +3030,51 @@ def _quant_claim_source_precision(topic: str, *, floor: float | None = None) -> 
     hits = len(paths) - len(misses)
     ratio = hits / len(paths)
     if ratio < floor:
+        # Drift matcher requires the literal slug modifier (``lifespan``) so a
+        # genuine entity-only paper ("Rapamycin extends survival in aged mice")
+        # scores off-topic and the whole corpus is quarantined to zero. When the
+        # ratio is below the floor, fall back to an entity-grounded ABSOLUTE
+        # count: keep the subset whose identity names the entity/synonym and
+        # pass iff that core meets the synthesis minimum. misses become the
+        # off-entity remainder, so the (forced) quarantine strips only those and
+        # never the on-entity core. An empty core (generic same-field bundle)
+        # still fails — this is not a ratio relaxation.
+        entity_terms = _entity_topic_terms(topic)
+        on_entity = _on_entity_quant_claims(paths, entity_terms)
+        # Codex adversarial review (2026-06-13): an entity-only core can be a
+        # generic entity corpus, not the scoped compound topic — exactly the
+        # dilution this gate exists to catch. Require the retained core to ALSO
+        # evidence a non-entity slug modifier (``lifespan`` for
+        # rapamycin_lifespan) in its claim text, so the core is genuinely
+        # topic-specific and not just every paper that names the drug. Modifiers
+        # are slug-derived (no per-topic word lists); single-entity topics have
+        # none and keep the entity-only core.
+        ent_words = {w for term in entity_terms for w in str(term).split()}
+        modifiers = tuple(t for t in tokens if t not in ent_words)
+        if modifiers:
+            on_entity = {p for p in on_entity if _claim_text_has_scope(p, modifiers)}
+        if len(on_entity) >= PREFLIGHT_MIN_QUANT_CLAIMS:
+            scoped_misses = [path for path in paths if path not in on_entity]
+            return (
+                True,
+                f"source_topic_precision_scoped_floor:{len(on_entity)}>={PREFLIGHT_MIN_QUANT_CLAIMS}"
+                f"(ratio={hits}/{len(paths)}<{floor:.2f})",
+                scoped_misses,
+            )
         return False, f"source_topic_precision_low:{hits}/{len(paths)}<{floor:.2f}", misses
     return True, f"source_topic_precision_ok:{hits}/{len(paths)}", misses
 
 
 def _repair_low_source_precision_corpus(
     topic: str, *, dry_run: bool, timeout: int | None = None, force: bool = False,
+    reseed: bool = True,
 ) -> dict[str, Any]:
     ok, before_status, misses = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     if ok and not (force and misses):
         n_quant_claims = _quant_claim_count(topic)
         return {
             "status": "source_precision_ready" if n_quant_claims else "source_precision_repair_incomplete",
+            "topic": topic,
             "source_topic_precision": before_status,
             "n_quant_claims": n_quant_claims,
         }
@@ -1764,6 +3082,7 @@ def _repair_low_source_precision_corpus(
     if dry_run:
         return {
             "status": "source_precision_repair_dry_run",
+            "topic": topic,
             "source_topic_precision_before": before_status,
             "off_topic_quant_claims": len(misses),
             "n_quant_claims": before,
@@ -1777,10 +3096,14 @@ def _repair_low_source_precision_corpus(
         quarantine.mkdir(parents=True, exist_ok=True)
         shutil.move(str(path), str(quarantine / path.name))
         moved += 1
-    seed = _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+    seed = (
+        _repair_topic_corpus(topic, dry_run=False, timeout=timeout)
+        if reseed
+        else {"status": "source_precision_pruned", "n_quant_claims": _quant_claim_count(topic)}
+    )
     ok_after, after_status, misses_after = _quant_claim_source_precision(topic, floor=SOURCE_TOPIC_REPAIR_FLOOR)
     post_seed_moved = 0
-    if not ok_after:
+    if not ok_after and reseed:
         post_seed_dir = quarantine / "post_seed"
         for path in misses_after:
             if not path.exists():
@@ -1792,6 +3115,7 @@ def _repair_low_source_precision_corpus(
     n_quant_claims = _quant_claim_count(topic)
     return {
         "status": "source_precision_repaired" if ok_after and n_quant_claims else "source_precision_repair_incomplete",
+        "topic": topic,
         "source_topic_precision_before": before_status,
         "source_topic_precision_after": after_status,
         "off_topic_quant_claims_quarantined": moved + post_seed_moved,
@@ -1799,7 +3123,49 @@ def _repair_low_source_precision_corpus(
         "post_seed_quarantined": post_seed_moved,
         "n_quant_claims_before": before,
         "n_quant_claims": n_quant_claims,
+        "reseed": reseed,
         "seed": seed,
+    }
+
+
+def _source_precision_attempt(
+    topic: str,
+    out_dir: Path,
+    gate_status: str,
+    *,
+    corpus: Mapping[str, Any],
+    source_repair: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    attempt: dict[str, Any] = {
+        "topic": topic,
+        "out_dir": out_dir.name,
+        "synthesis_return_code": None,
+        "submit_status": gate_status,
+        "gate_status": gate_status,
+        "failure_class": _failure_class(gate_status),
+        "submitted": 0,
+        "corpus": dict(corpus),
+    }
+    if source_repair is not None:
+        attempt["source_precision_repair"] = dict(source_repair)
+    return attempt
+
+
+def _gate_attempt(
+    topic: str,
+    out_dir: Path,
+    gate_status: str,
+    **extra: Any,
+) -> dict[str, Any]:
+    return {
+        "topic": topic,
+        "out_dir": out_dir.name,
+        "synthesis_return_code": None,
+        "submit_status": gate_status,
+        "gate_status": gate_status,
+        "failure_class": _failure_class(gate_status),
+        "submitted": 0,
+        **extra,
     }
 
 
@@ -1827,6 +3193,15 @@ def run_cycle(
 ) -> dict[str, Any]:
     started_at = dt.datetime.now(dt.UTC).isoformat()
     started_mono = clock()
+
+    def child_timeout() -> int | None:
+        return _remaining_timeout(
+            timeout,
+            started_mono=started_mono,
+            cycle_budget_seconds=cycle_budget_seconds,
+            clock=clock,
+        )
+
     mode = mode if mode in {"fresh", "revise", "mixed"} else "mixed"
     ledger_dir = runs_root / LEDGER_DIR
     ledger_path = _cycle_ledger_path(ledger_dir, date, mode)
@@ -1872,14 +3247,22 @@ def run_cycle(
         remote_revision: dict[str, Any] | None = None
         terminal_excluded: set[str] = set()
         if submit and topic is None and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
-            remote_revision, revision_error = _pending_remote_revision(runs_root, ledger_dir, loader=revision_loader)
+            remote_revision, revision_error = _pending_remote_revision(
+                runs_root,
+                ledger_dir,
+                loader=revision_loader,
+                published_loader=lambda: (remote_seen, None),
+            )
             ledger["remote_revisions"] = {"checked": True, "matched": bool(remote_revision)}
             if revision_error:
                 ledger["remote_revisions"]["error"] = revision_error
         pending_revision_excluded: set[str] = set()
         if submit and topic is None and mode == "fresh" and revision_loader is None and submit_cycle is None:
             pending_revision_excluded, revision_error = _pending_remote_revision_topics(
-                runs_root, ledger_dir, loader=revision_loader,
+                runs_root,
+                ledger_dir,
+                loader=revision_loader,
+                published_loader=lambda: (remote_seen, None),
             )
             ledger["pending_revision_exclusions"] = {"checked": True, "topics": sorted(pending_revision_excluded)}
             if revision_error:
@@ -1903,7 +3286,7 @@ def run_cycle(
         # them only burns a slot (plan F). Excluded from fresh auto-selection
         # below, and pending revises for such topics are marked terminal in the
         # loop (a forced --topic is left untouched on purpose).
-        surface_repeat = _surface_repeat_topics(ledger_dir)
+        surface_repeat = _surface_repeat_topics(ledger_dir, runs_root=runs_root)
         if surface_repeat:
             ledger["surface_repeat_excluded_topics"] = sorted(surface_repeat)
         preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
@@ -1920,35 +3303,99 @@ def run_cycle(
         if writer_gate_policy:
             ledger["writer_gate_repeat_policy"] = writer_gate_policy
         submitted_topics = _recent_submitted_topics(topics, ledger_dir)
+        published_topics = _published_topics(topics, remote_seen, ledger_dir)
         corpus_repaired_ok: set[str] = set()
         source_precision_repaired_ok: set[str] = set()
+        current_source_precision: set[str] = set()
+        recent_source_precision_failed: set[str] = set()
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
         if source_precision_auto_excluded:
             ledger["source_precision_unrepairable_topics"] = sorted(source_precision_auto_excluded)
         if run_synthesis and mode != "revise" and topic is None:
             repairs: list[dict[str, Any]] = []
             current_source_precision = _current_low_source_precision_topics(topics)
+            recent_source_precision_failed = _source_precision_repair_topics(ledger_dir)
+            if remote_revision:
+                current_source_precision.discard(str(remote_revision.get("topic") or ""))
             if current_source_precision:
                 ledger["source_precision_backlog_topics"] = sorted(current_source_precision)
                 ledger["source_precision_backlog_count"] = len(current_source_precision)
+            if recent_source_precision_failed:
+                ledger["source_precision_recent_blocked_topics"] = sorted(recent_source_precision_failed)
+                source_precision_auto_excluded |= recent_source_precision_failed
             repairable = (
                 _corpus_repair_topics(ledger_dir) | current_source_precision
-            ) - terminal_excluded - submitted_topics - pending_revision_excluded
+            ) - terminal_excluded - submitted_topics - published_topics - pending_revision_excluded - surface_repeat - writer_gate_skip - recent_source_precision_failed
             source_precision_repairable = _source_precision_repair_topics(ledger_dir) | current_source_precision
-            for repair_topic in sorted(repairable)[:_corpus_repair_limit()]:
+            selectable_before_repair = select_topic(
+                topics,
+                ledger_dir,
+                runs_root=runs_root,
+                remote_seen=remote_seen,
+                exclude=(
+                    terminal_excluded | submitted_topics | published_topics
+                    | pending_revision_excluded | surface_repeat | preflight_blocked
+                    | writer_gate_skip | source_precision_auto_excluded | current_source_precision
+                ),
+            )
+            ready_before_repair = (
+                bool(selectable_before_repair)
+                and _topic_has_quant_floor(str(selectable_before_repair))
+            )
+            if selectable_before_repair:
+                repairable = set() if ready_before_repair else repairable & current_source_precision
+                if ready_before_repair:
+                    source_precision_auto_excluded |= current_source_precision
+            source_precision_repair_attempted: set[str] = set()
+            repair_timeout = _publish_seed_timeout(timeout)
+            repair_order = sorted(
+                (
+                    repair_topic for repair_topic in repairable
+                    if (
+                        repair_topic in source_precision_repairable
+                        and _source_precision_repair_candidate(repair_topic)
+                    )
+                    or _fresh_corpus_repair_candidate(repair_topic)
+                ),
+                key=lambda t: (
+                    -_source_precision_retained_claim_count(t) if t in source_precision_repairable else -_quant_claim_count(t),
+                    -_quant_claim_count(t),
+                    -_topic_support_score(t),
+                    _attempted_at(t, ledger_dir),
+                    t,
+                ),
+            )
+            repair_successes = 0
+            repair_scan_limit = max(_corpus_repair_limit(), SOURCE_PRECISION_REPAIR_SCAN_LIMIT)
+            for repair_topic in repair_order[:repair_scan_limit]:
                 if repair_topic in source_precision_repairable:
-                    repair = _repair_low_source_precision_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                    source_precision_repair_attempted.add(repair_topic)
+                    repair = _repair_low_source_precision_corpus(
+                        repair_topic, dry_run=synthesis_dry_run, timeout=repair_timeout,
+                    )
                 else:
-                    repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=timeout)
+                    repair = _repair_topic_corpus(repair_topic, dry_run=synthesis_dry_run, timeout=repair_timeout)
                 repairs.append({"topic": repair_topic, **repair})
-                if int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS:
+                repair_publishable = (
+                    _source_precision_repair_publishable(repair)
+                    if repair_topic in source_precision_repairable
+                    else int(repair.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
+                )
+                if repair_publishable:
                     if repair_topic not in receipt_preflight_blocked:
                         preflight_blocked.discard(repair_topic)
                         surface_repeat.discard(repair_topic)
                         corpus_repaired_ok.add(repair_topic)
-                if repair.get("status") == "source_precision_repaired":
+                if _source_precision_repair_publishable(repair):
                     source_precision_repaired_ok.add(repair_topic)
-            source_precision_auto_excluded |= current_source_precision - source_precision_repaired_ok
+                if repair_publishable:
+                    repair_successes += 1
+                    if repair_successes >= _corpus_repair_limit():
+                        break
+            unrepaired_attempted = source_precision_repair_attempted - source_precision_repaired_ok
+            unattempted_source_precision = current_source_precision - source_precision_repaired_ok - source_precision_repair_attempted
+            source_precision_auto_excluded -= source_precision_repaired_ok
+            source_precision_auto_excluded |= unrepaired_attempted | unattempted_source_precision
             if source_precision_auto_excluded:
                 ledger["source_precision_auto_excluded_topics"] = sorted(source_precision_auto_excluded)
             if repairs:
@@ -1959,6 +3406,7 @@ def run_cycle(
             submitted=submitted_topics,
         )
         attempted: set[str] = set()
+        topic_supply_refreshed = False
         submitted_total = 0
         attempt_count = 0
         while True:
@@ -1982,63 +3430,261 @@ def run_cycle(
                 if not ledger["attempts"]:
                     ledger["status"] = "no_revise_pending"
                 break
+            dynamic_preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
+            dynamic_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
+            dynamic_receipt_preflight_blocked = set() if topic else _recent_receipt_preflight_blocked_topics(ledger_dir)
+            dynamic_receipt_preflight_blocked -= corpus_repaired_ok | source_precision_repaired_ok
+            if dynamic_preflight_blocked != preflight_blocked:
+                preflight_blocked = dynamic_preflight_blocked
+                ledger["preflight_blocked_topics"] = sorted(preflight_blocked)
+            if dynamic_receipt_preflight_blocked != receipt_preflight_blocked:
+                receipt_preflight_blocked = dynamic_receipt_preflight_blocked
             excluded = attempted | terminal_excluded | pending_revision_excluded | surface_repeat | preflight_blocked | writer_gate_skip | source_precision_auto_excluded
-            repaired_candidates = sorted((corpus_repaired_ok | source_precision_repaired_ok) - excluded)
+            selection_excluded = set(excluded)
+            if topic is None and mode != "revise" and current_source_precision:
+                recent_blocked = _recent_blocked_topics(ledger_dir)
+                clean_ready_now = _has_clean_ready_topic(
+                    topics,
+                    exclude=selection_excluded | submitted_topics | published_topics | recent_blocked,
+                    source_precision_blocked=current_source_precision,
+                )
+                if clean_ready_now:
+                    selection_excluded |= current_source_precision - source_precision_repaired_ok
+            repaired_candidates = sorted(
+                topic for topic in (corpus_repaired_ok | source_precision_repaired_ok) - selection_excluded
+                if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
+            )
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
-                else topic or select_topic(repaired_candidates or topics, ledger_dir, runs_root=runs_root, remote_seen=remote_seen, exclude=excluded)
+                else topic or select_topic(
+                    repaired_candidates or topics,
+                    ledger_dir,
+                    runs_root=runs_root,
+                    remote_seen=remote_seen,
+                    exclude=selection_excluded,
+                    allow_recent_blocked_fallback=not (mode == "fresh" and submit and topic is None),
+                )
             )
+            if not selected and not revision_source and topic is None and mode != "revise":
+                retryable_preflight = {
+                    t for t in preflight_blocked - receipt_preflight_blocked
+                    if _topic_has_quant_floor(t)
+                }
+                if retryable_preflight:
+                    selected = select_topic(
+                        topics,
+                        ledger_dir,
+                        runs_root=runs_root,
+                        remote_seen=remote_seen,
+                        exclude=selection_excluded - retryable_preflight,
+                        allow_recent_blocked_fallback=not (mode == "fresh" and submit),
+                    )
+                    if selected:
+                        ledger["preflight_reseed_selected"] = selected
             if not selected:
-                ledger["status"] = "no_unpublished_topic_available"
-                break
-            numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
+                if (
+                    ledger["attempts"]
+                    and submit
+                    and mode == "fresh"
+                    and topic is None
+                    and current_source_precision
+                ):
+                    fallback_order = sorted(
+                        (
+                            repair_topic for repair_topic in current_source_precision
+                            if repair_topic not in (
+                                terminal_excluded | submitted_topics | published_topics
+                                | pending_revision_excluded | surface_repeat | writer_gate_skip
+                                | attempted | recent_source_precision_failed
+                            )
+                            and _source_precision_repair_candidate(repair_topic)
+                        ),
+                        key=lambda t: (
+                            -_source_precision_retained_claim_count(t),
+                            -_quant_claim_count(t),
+                            -_topic_support_score(t),
+                            _attempted_at(t, ledger_dir),
+                            t,
+                        ),
+                    )
+                    fallback_repairs: list[dict[str, Any]] = []
+                    for repair_topic in fallback_order[:max(_corpus_repair_limit(), SOURCE_PRECISION_REPAIR_SCAN_LIMIT)]:
+                        repair = _repair_low_source_precision_corpus(
+                            repair_topic, dry_run=synthesis_dry_run, timeout=_publish_seed_timeout(child_timeout()),
+                        )
+                        fallback_repairs.append({"topic": repair_topic, **repair})
+                        if _source_precision_repair_publishable(repair):
+                            source_precision_repaired_ok.add(repair_topic)
+                            source_precision_auto_excluded.discard(repair_topic)
+                            selected = repair_topic
+                            break
+                    if fallback_repairs:
+                        ledger["source_precision_fallback_repairs"] = fallback_repairs
+                    if selected:
+                        ledger["source_precision_fallback_selected"] = selected
+                if not selected and mode == "fresh" and topic is None and not topic_supply_refreshed:
+                    topic_supply_refreshed = True
+                    skip_slugs = selection_excluded | submitted_topics | published_topics
+                    refresh = _refresh_topic_supply(TOPIC_PACKS_DB, skip_slugs=skip_slugs)
+                    ledger["topic_supply_refresh"] = refresh
+                    if refresh.get("created"):
+                        topics = discover_topics()
+                        ledger["topic_supply_topic_count_after_refresh"] = len(topics)
+                        selected = select_topic(
+                            topics,
+                            ledger_dir,
+                            runs_root=runs_root,
+                            remote_seen=remote_seen,
+                            exclude=selection_excluded,
+                            allow_recent_blocked_fallback=False,
+                        )
+                    if selected:
+                        ledger["topic_supply_selected_after_refresh"] = selected
+                if not selected:
+                    ledger["status"] = "no_unpublished_topic_available"
+                    break
             stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
             out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}"
-            ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
-            if not run_synthesis:
-                ledger["status"] = "dry_run_selected_topic"
-                break
-            # A pending revise whose topic keeps failing the SAME deterministic gate
-            # cannot be fixed by re-rendering — mark it terminal so it stops
-            # monopolising revise slots instead of re-synthesising every cycle.
-            if revision_source and selected in surface_repeat:
+            seeded_frontier_corpus: dict[str, Any] | None = None
+            if not revision_source and submit and mode == "fresh" and not _topic_has_quant_floor(selected):
+                frontier_timeout = _publish_seed_timeout(child_timeout())
+                seeded_frontier_corpus = (
+                    ensure_corpus(selected, dry_run=synthesis_dry_run, timeout=frontier_timeout)
+                    if ensure_corpus
+                    else _ensure_topic_corpus(
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=frontier_timeout,
+                        min_quant_claims=PREFLIGHT_MIN_QUANT_CLAIMS,
+                    )
+                )
+                ledger["frontier_corpus_seed"] = {"topic": selected, **seeded_frontier_corpus}
+            if (
+                not revision_source
+                and submit
+                and mode == "fresh"
+                and not _topic_has_quant_floor(selected)
+            ):
+                frontier_preflight = _quant_claim_preflight(seeded_frontier_corpus or {})
+                frontier_status = str((seeded_frontier_corpus or {}).get("status") or "no_ready_corpus_available")
+                if not frontier_preflight["passed"] and frontier_status in {"corpus_ready", "corpus_seeded"}:
+                    frontier_status = "preflight_thin_quant_corpus"
                 attempt: dict[str, Any] = {
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "synthesis_return_code": None,
-                    "submit_status": "terminal_surface_repeat",
-                    "gate_status": "terminal_surface_repeat",
-                    "failure_class": _failure_class("terminal_surface_repeat"),
+                    "submit_status": frontier_status,
+                    "failure_class": "B_corpus_fixable",
                     "submitted": 0,
+                    "corpus": seeded_frontier_corpus or {},
                 }
+                if not frontier_preflight["passed"]:
+                    attempt["preflight"] = frontier_preflight
+                ledger["attempts"].append(attempt)
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                ledger.update({
+                    "status": "no_ready_corpus_available",
+                    "attempted_topic": selected,
+                    "attempted_run": out_dir.name,
+                    "selected_without_quant_floor": selected,
+                })
+                attempted.add(selected)
+                continue
+            numeric_review_type = _numeric_density_downshift(_latest_topic_run(selected, runs_root))
+            ledger.update({"topic": selected, "out_dir": out_dir.name, "attempted_topic": selected, "attempted_run": out_dir.name})
+            if not run_synthesis:
+                ledger["status"] = "dry_run_selected_topic"
+                break
+            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
+            if revision_source and _revision_requests_domain_scope_reset(revision_feedback):
+                gate_status = "terminal_domain_scope_mismatch"
+                attempt = _gate_attempt(selected, out_dir, gate_status)
+                ledger["attempts"].append(attempt)
+                ledger["status"] = "revise_terminal_domain_scope_mismatch"
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                attempted.add(selected)
+                remote_revision = None
+                continue
+            # A pending revise whose topic keeps failing the SAME deterministic gate
+            # cannot be fixed by re-rendering — mark it terminal so it stops
+            # monopolising revise slots instead of re-synthesising every cycle.
+            if revision_source and selected in surface_repeat:
+                attempt = _gate_attempt(selected, out_dir, "terminal_surface_repeat")
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_surface_repeat"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status="terminal_surface_repeat")
                 attempted.add(selected)
                 remote_revision = None
                 continue
             if revision_source and selected in _unrepairable_source_precision_topics(ledger_dir):
                 gate_status = "terminal_source_precision_repair_incomplete"
-                attempt = {
-                    "topic": selected,
-                    "out_dir": out_dir.name,
-                    "synthesis_return_code": None,
-                    "submit_status": gate_status,
-                    "gate_status": gate_status,
-                    "failure_class": _failure_class(gate_status),
-                    "submitted": 0,
-                }
+                attempt = _gate_attempt(selected, out_dir, gate_status)
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "revise_terminal_source_precision_repair_incomplete"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                 attempted.add(selected)
                 remote_revision = None
                 continue
-            corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
+            revision_source_run = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+            existing_source_preflight = _existing_receipt_preflight(revision_source_run) if revision_source else None
+            corpus_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
+            corpus: dict[str, Any]
+            if existing_source_preflight:
+                corpus = {
+                    "status": "corpus_ready",
+                    "source": "existing_source_manifest",
+                    "source_run": revision_source_run.name if revision_source_run else "",
+                    "n_quant_claims": max(
+                        PREFLIGHT_MIN_QUANT_CLAIMS,
+                        int(existing_source_preflight.get("n_receipts") or 0),
+                    ),
+                }
+            elif seeded_frontier_corpus is not None:
+                corpus = seeded_frontier_corpus
+            else:
+                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=corpus_timeout)
             ledger["corpus"] = corpus
+            revision_source_repair = _revision_requests_source_precision(revision_feedback)
+            source_manifest_availability = (
+                _source_manifest_availability(selected, revision_source_run)
+                if existing_source_preflight
+                else None
+            )
+            if (
+                source_manifest_availability
+                and not source_manifest_availability.get("passed")
+                and revision_source
+            ):
+                restore = _restore_source_manifest_quant_claims(selected, revision_source_run)
+                source_manifest_availability = _source_manifest_availability(selected, revision_source_run)
+                ledger["source_manifest_restore"] = {
+                    **restore,
+                    "availability_after": source_manifest_availability,
+                }
+            if (
+                source_manifest_availability
+                and not source_manifest_availability.get("passed")
+                and not revision_source_repair
+            ):
+                gate_status = "terminal_revision_source_manifest_unavailable"
+                attempt = _gate_attempt(
+                    selected,
+                    out_dir,
+                    gate_status,
+                    source_manifest_availability=source_manifest_availability,
+                )
+                ledger["attempts"].append(attempt)
+                ledger["status"] = gate_status
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                if revision_source:
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    remote_revision = None
+                attempted.add(selected)
+                continue
             if corpus.get("status") not in {"corpus_ready", "corpus_seeded"}:
                 attempt = {
                     "topic": selected,
@@ -2051,12 +3697,57 @@ def run_cycle(
                 }
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "corpus_unavailable_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 attempted.add(selected)
                 continue
-            revision_feedback = str(revision_source.get("feedback") or "") if revision_source else ""
-            revision_source_repair = _revision_requests_source_precision(revision_feedback)
-            source_precision_ok, _, source_precision_misses = _quant_claim_source_precision(selected, floor=SOURCE_TOPIC_REPAIR_FLOOR)
+            source_precision_ok, source_precision_status, source_precision_misses = _quant_claim_source_precision(
+                selected, floor=SOURCE_TOPIC_REPAIR_FLOOR,
+            )
+            seeded_new_corpus = (
+                corpus.get("status") == "corpus_seeded"
+                and int(corpus.get("n_quant_claims_before") or 0) == 0
+            )
+            if seeded_new_corpus and not revision_source and not source_precision_ok:
+                retained = max(0, _quant_claim_count(selected) - len(source_precision_misses))
+                if retained >= SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT:
+                    source_repair = _repair_low_source_precision_corpus(
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=corpus_timeout,
+                        force=True,
+                        reseed=False,
+                    )
+                    ledger["source_precision_repair"] = {"topic": selected, **source_repair}
+                    corpus = (ensure_corpus or _ensure_topic_corpus)(
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=corpus_timeout,
+                    )
+                    ledger["corpus"] = corpus
+                    if _source_precision_repair_publishable(source_repair):
+                        source_precision_ok = True
+                        source_precision_misses = []
+                        source_precision_repaired_ok.add(selected)
+                    else:
+                        attempt = _source_precision_attempt(
+                            selected,
+                            out_dir,
+                            _SOURCE_PRECISION_STATUS,
+                            corpus=corpus,
+                            source_repair=source_repair,
+                        )
+                        ledger["attempts"].append(attempt)
+                        ledger["status"] = "source_precision_repair_incomplete_no_submission"
+                        _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                        attempted.add(selected)
+                        continue
+                else:
+                    attempt = _source_precision_attempt(selected, out_dir, source_precision_status, corpus=corpus)
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = "source_precision_repair_deferred_no_submission"
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                    attempted.add(selected)
+                    continue
             source_precision_has_misses = (
                 source_precision_ok
                 and bool(source_precision_misses)
@@ -2071,12 +3762,22 @@ def run_cycle(
                     and int(corpus.get("n_quant_claims") or 0) >= PREFLIGHT_MIN_QUANT_CLAIMS
                 )
             )
+            if revision_source and existing_source_preflight and not revision_source_repair:
+                source_precision_needs_repair = False
+            source_precision_repair_cleared = False
             if selected not in source_precision_repaired_ok and source_precision_needs_repair:
                 source_repair = _repair_low_source_precision_corpus(
-                    selected, dry_run=synthesis_dry_run, timeout=timeout, force=revision_source_repair or source_precision_has_misses,
+                    selected,
+                    dry_run=synthesis_dry_run,
+                    timeout=corpus_timeout,
+                    force=revision_source_repair or source_precision_has_misses,
                 )
                 ledger["source_precision_repair"] = {"topic": selected, **source_repair}
-                corpus = (ensure_corpus or _ensure_topic_corpus)(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                corpus = (ensure_corpus or _ensure_topic_corpus)(
+                    selected,
+                    dry_run=synthesis_dry_run,
+                    timeout=corpus_timeout,
+                )
                 ledger["corpus"] = corpus
                 if source_repair.get("status") == "source_precision_repair_incomplete":
                     gate_status = (
@@ -2084,29 +3785,29 @@ def run_cycle(
                         if revision_source
                         else _SOURCE_PRECISION_STATUS
                     )
-                    attempt = {
-                        "topic": selected,
-                        "out_dir": out_dir.name,
-                        "synthesis_return_code": None,
-                        "submit_status": gate_status,
-                        "gate_status": gate_status,
-                        "failure_class": _failure_class(gate_status),
-                        "submitted": 0,
-                        "corpus": corpus,
-                        "source_precision_repair": source_repair,
-                    }
+                    attempt = _source_precision_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        corpus=corpus,
+                        source_repair=source_repair,
+                    )
                     ledger["attempts"].append(attempt)
                     ledger["status"] = (
                         "revise_terminal_source_precision_repair_incomplete"
                         if revision_source
                         else "source_precision_repair_incomplete_no_submission"
                     )
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                         remote_revision = None
                     attempted.add(selected)
                     continue
+                source_precision_repair_cleared = source_repair.get("status") in {
+                    "source_precision_ready",
+                    "source_precision_repaired",
+                }
             quant_preflight = _quant_claim_preflight(corpus)
             quant_corpus_repairs: list[dict[str, Any]] = []
             if not quant_preflight["passed"] and not synthesis_dry_run:
@@ -2114,14 +3815,16 @@ def run_cycle(
                     corpus_repair = _repair_topic_corpus(
                         selected,
                         dry_run=False,
-                        timeout=timeout,
+                        timeout=corpus_timeout,
                         seed_limit=_auto_seed_limit() * (round_idx + 2),
                     )
                     quant_corpus_repairs.append(corpus_repair)
                     if corpus_repair.get("status") not in {"corpus_ready", "corpus_seeded", "corpus_repaired"}:
                         break
                     refreshed = (ensure_corpus or _ensure_topic_corpus)(
-                        selected, dry_run=synthesis_dry_run, timeout=timeout,
+                        selected,
+                        dry_run=synthesis_dry_run,
+                        timeout=corpus_timeout,
                     )
                     if int(refreshed.get("n_quant_claims") or 0) >= int(corpus_repair.get("n_quant_claims") or 0):
                         corpus = refreshed
@@ -2146,7 +3849,7 @@ def run_cycle(
                     attempt["quant_corpus_repairs"] = quant_corpus_repairs
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "preflight_skipped_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 attempted.add(selected)
                 continue
             preflight = _preflight(
@@ -2154,20 +3857,41 @@ def run_cycle(
                 runs_root,
                 ledger_dir,
                 current_quant_claims=int(corpus.get("n_quant_claims") or 0),
+                ignore_recent_failures=bool(
+                    revision_source and (existing_source_preflight or source_precision_repair_cleared)
+                ),
+                source_run=revision_source_run if revision_source else None,
             )
             if not preflight["passed"]:
+                terminal_missing_manifest = (
+                    revision_source is not None
+                    and "latest_run_missing_manifest" in preflight.get("reasons", [])
+                )
+                gate_status = (
+                    "terminal_latest_run_missing_manifest"
+                    if terminal_missing_manifest
+                    else "preflight_insufficient_corpus"
+                )
                 attempt = {
                     "topic": selected,
                     "out_dir": out_dir.name,
                     "synthesis_return_code": None,
-                    "submit_status": "preflight_insufficient_corpus",
-                    "failure_class": "B_corpus_fixable",
+                    "submit_status": gate_status,
+                    "gate_status": gate_status,
+                    "failure_class": _failure_class(gate_status),
                     "submitted": 0,
                     "preflight": preflight,
                 }
                 ledger["attempts"].append(attempt)
-                ledger["status"] = "preflight_skipped_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                ledger["status"] = (
+                    "revise_terminal_latest_run_missing_manifest"
+                    if terminal_missing_manifest
+                    else "preflight_skipped_no_submission"
+                )
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                if terminal_missing_manifest and revision_source is not None:
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    remote_revision = None
                 attempted.add(selected)
                 continue
             strategy = _paper_strategy(corpus, preflight, revision_feedback)
@@ -2184,7 +3908,7 @@ def run_cycle(
                 }
                 ledger["attempts"].append(attempt)
                 ledger["status"] = "strategy_skipped_no_submission"
-                ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source:
                     _mark_revision_handled(ledger_dir, revision_source, status="strategy_evidence_insufficient")
                 attempted.add(selected)
@@ -2223,15 +3947,41 @@ def run_cycle(
                     ledger["attempts"].append(attempt)
                     ledger["status"] = "cycle_budget_exhausted"
                     break
-                revision_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+                source_base_dir = runs_root / str(revision_source.get("source_run") or "") if revision_source else None
+                revision_base_dir = source_base_dir
                 if revise_attempt > 1:
-                    revision_base_dir = out_dir
+                    previous_out_dir = out_dir
+                    if not revision_source or _existing_receipt_preflight(previous_out_dir):
+                        revision_base_dir = previous_out_dir
                     stamp = dt.datetime.now(dt.UTC).strftime("%Y-%m-%dT%H-%M-%SZ")
                     out_dir = runs_root / f"synthesis-{selected}-v06-DAILY-{stamp}-R{revise_attempt}"
                     ledger.update({"out_dir": out_dir.name, "attempted_run": out_dir.name})
                 repair_reason = ""
                 if revise_attempt > 1 and last_attempt and revision_base_dir:
                     repair_reason = _repair_reason_for_retry(revision_base_dir, last_attempt)
+                retry_budget = child_timeout()
+                if (
+                    revision_source
+                    and revise_attempt > 1
+                    and revision_feedback
+                    and not repair_reason
+                    and _insufficient_revise_retry_budget(retry_budget, cycle_budget_seconds)
+                ):
+                    gate_status = "terminal_revise_retry_budget_insufficient"
+                    attempt = _gate_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        revise_attempt=revise_attempt,
+                        remaining_budget_seconds=retry_budget,
+                    )
+                    ledger["attempts"].append(attempt)
+                    ledger["status"] = gate_status
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                    remote_revision = None
+                    attempted.add(selected)
+                    break
                 feedback_applied = bool(revision_feedback)
                 # Researka content revises carry reviewer feedback that must reach the
                 # feedback-aware writer (_run_synthesis injects RESEARKA_REVISION_FEEDBACK);
@@ -2249,7 +3999,6 @@ def run_cycle(
                     )
                 synthesis_kwargs: dict[str, Any] = {
                     "dry_run": synthesis_dry_run,
-                    "timeout": timeout,
                     "revision_feedback": revision_feedback or None,
                 }
                 if review_type_override:
@@ -2257,49 +4006,58 @@ def run_cycle(
                 receipt_preflight = (
                     {"passed": True}
                     if existing_repair
-                    else _receipt_preflight(
+                    else _existing_receipt_preflight(revision_base_dir)
+                    if revision_source
+                    else None
+                )
+                receipt_timeout = child_timeout() if revision_source else _publish_seed_timeout(child_timeout())
+                if receipt_preflight is None:
+                    receipt_preflight = _receipt_preflight(
                         selected,
                         out_dir,
-                        timeout=timeout,
-                        repair=not revision_source,
+                        timeout=receipt_timeout,
+                        repair=True,
                         dry_run=synthesis_dry_run,
                     )
-                )
                 if not receipt_preflight.get("passed"):
-                    gate_status = (
-                        "terminal_receipt_preflight_insufficient"
-                        if revision_source
-                        else str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
+                    gate_status = str(receipt_preflight.get("status") or "receipt_preflight_insufficient")
+                    if revision_source and _terminal_revision_receipt_preflight(receipt_preflight):
+                        gate_status = "terminal_receipt_preflight_insufficient"
+                    attempt = _gate_attempt(
+                        selected,
+                        out_dir,
+                        gate_status,
+                        revise_attempt=revise_attempt,
+                        receipt_preflight=receipt_preflight,
                     )
-                    attempt = {
-                        "topic": selected,
-                        "out_dir": out_dir.name,
-                        "revise_attempt": revise_attempt,
-                        "synthesis_return_code": None,
-                        "submit_status": gate_status,
-                        "gate_status": gate_status,
-                        "failure_class": _failure_class(gate_status),
-                        "submitted": 0,
-                        "receipt_preflight": receipt_preflight,
-                    }
                     ledger["attempts"].append(attempt)
                     ledger["status"] = (
                         "revise_terminal_receipt_preflight_insufficient"
+                        if gate_status == "terminal_receipt_preflight_insufficient"
+                        else
+                        "revise_receipt_preflight_skipped_no_submission"
                         if revision_source
                         else "receipt_preflight_skipped_no_submission"
                     )
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                     if revision_source:
                         _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
                         remote_revision = None
                     attempted.add(selected)
                     break
+                synthesis_kwargs["timeout"] = child_timeout()
                 return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 if revision_source and out_dir.exists():
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
                 # Coverage gate: a content revise must materially address every
                 # enumerated reviewer ask before it may be submitted.
                 unmet = _unmet_revision_asks(out_dir, revision_feedback) if (return_code == 0 and revision_feedback) else []
+                if return_code == 0 and revision_feedback:
+                    _write_json(out_dir / REVISION_COVERAGE_GATE, {
+                        "passed": not unmet,
+                        "ask_count": len(_revision_asks(revision_feedback)),
+                        "unmet_asks": unmet,
+                    })
                 # Retraction gate: never submit a paper that cites retracted science.
                 retracted = _retracted_cited_sources(out_dir) if return_code == 0 else []
                 # Claim-support gate: never submit an abstract whose claims the
@@ -2321,34 +4079,13 @@ def run_cycle(
                     # lock so they never race the fingerprint-dedupe / double-submit.
                     with _lock(ledger_dir, ".submit.lock", block=True):
                         if submit_cycle is None:
-                            bridge = submit_bridge.run_cycle(
+                            bridge = _submit_current_candidate(
                                 runs_root=runs_root,
                                 date=date,
                                 submit=submit,
-                                remote_loader=(lambda: (remote_seen, None)) if submit else None,
+                                remote_seen=remote_seen,
                                 candidate_run=out_dir,
                             )
-                            if bridge.get("status") == "no_eligible_research_paper":
-                                candidate_path, considered = submit_bridge.select_candidate(
-                                    runs_root,
-                                    runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json",
-                                    remote_seen=remote_seen,
-                                    candidate_run=out_dir,
-                                )
-                                if candidate_path is not None:
-                                    first_bridge = bridge
-                                    bridge = submit_bridge.run_cycle(
-                                        runs_root=runs_root,
-                                        date=date,
-                                        submit=submit,
-                                        remote_loader=(lambda: (remote_seen, None)) if submit else None,
-                                        candidate_run=out_dir,
-                                    )
-                                    bridge["retry_after_no_eligible"] = {
-                                        "first_status": first_bridge.get("status"),
-                                        "first_considered": first_bridge.get("considered"),
-                                        "eligibility_recheck": considered,
-                                    }
                         else:
                             bridge = submit_cycle(
                                 runs_root=runs_root,
@@ -2357,7 +4094,8 @@ def run_cycle(
                                 remote_loader=(lambda: (remote_seen, None)) if submit else None,
                             )
                 gate_status = (
-                    "synthesis_failed" if return_code != 0
+                    "synthesis_timeout" if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE
+                    else "synthesis_failed" if return_code != 0
                     else "retracted_source_cited" if retracted
                     else "numeric_effect_mismatch" if numeric_issues
                     else "abstract_overclaim" if overclaims
@@ -2407,10 +4145,17 @@ def run_cycle(
                     attempt["abstract_overclaim_advisory"] = True
                     attempt["abstract_overclaim_advisory_claims"] = advisory_overclaims
                 source_precision_retry = False
+                prospective_same_gate_failures = (
+                    0 if (revision_source and revision_feedback)
+                    else _same_gate_failure_count([*ledger["attempts"], attempt], selected, gate_status)
+                )
                 if gate_status.split(":", 1)[0] == _SOURCE_PRECISION_STATUS:
-                    source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
-                    attempt["source_precision_repair"] = source_repair
-                    source_precision_retry = source_repair.get("status") == "source_precision_repaired"
+                    if prospective_same_gate_failures >= 2:
+                        attempt["source_precision_repair_skipped"] = "repeat_gate"
+                    else:
+                        source_repair = _repair_low_source_precision_corpus(selected, dry_run=synthesis_dry_run, timeout=timeout)
+                        attempt["source_precision_repair"] = source_repair
+                        source_precision_retry = _source_precision_repair_publishable(source_repair)
                 if repair_attempted:
                     attempt["repair_attempted"] = True
                 if repair_error:
@@ -2421,12 +4166,21 @@ def run_cycle(
                     attempt["review_type_override"] = review_type_override
                 if submitted_any:
                     attempt.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
+                    submission_markers = sorted(_ledger_submission_markers(bridge))
+                    if submission_markers:
+                        attempt["submission_markers"] = submission_markers
                     ledger.update({"submitted_topic": submitted_topic or selected, "submitted_run": submitted_run or out_dir.name})
                 ledger["attempts"].append(attempt)
-                same_gate_failures = 0 if (revision_source and revision_feedback) else _same_gate_failure_count(ledger["attempts"], selected, gate_status)
+                same_gate_failures = prospective_same_gate_failures
                 if same_gate_failures >= 2:
                     attempt["same_gate_repeat_count"] = same_gate_failures
                     attempt["same_gate_repeat_stop"] = True
+                same_topic_retries = (
+                    0 if revision_source else _same_topic_retry_count(ledger["attempts"], selected)
+                )
+                if same_topic_retries >= 2:
+                    attempt["same_topic_retry_count"] = same_topic_retries
+                    attempt["same_topic_retry_stop"] = True
                 last_attempt = attempt
                 ledger["synthesis_return_code"] = return_code
                 ledger["submit_bridge"] = bridge
@@ -2435,13 +4189,23 @@ def run_cycle(
                     revision_feedback = str(bridge["revision_feedback"])
                     attempt["revision_feedback_received"] = bool(revision_feedback)
                 if gate_status and gate_status != "eligible":
-                    ledger["blocker_histogram"] = _record_blockers(ledger_dir, date, [attempt])
+                    _record_attempt_blocker(ledger_dir, date, ledger, attempt)
                 if revision_source and gate_status.split(":", 1)[0] in _TERMINAL_REVISION_STATUSES:
                     _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
-                if return_code != 0:
+                elif revision_source and gate_status == "revision_coverage_unmet":
+                    _mark_revision_handled(ledger_dir, revision_source, status=gate_status)
+                if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
+                    if revision_source:
+                        timeout_status = "synthesis_timeout"
+                        attempt["revision_timeout_status"] = timeout_status
+                        _mark_revision_handled(ledger_dir, revision_source, status=timeout_status)
+                    ledger["status"] = "synthesis_timeout_no_submission"
+                    ledger["no_submission_reason"] = gate_status
+                elif return_code != 0:
                     ledger["status"] = "synthesis_failed"
                 elif bridge.get("status") == "submitted_to_researka":
                     ledger["status"] = "submitted_to_researka"
+                    ledger.pop("no_submission_reason", None)
                     if (
                         submit
                         and mode != "fresh"  # fresh lane ships and exits; the revise lane handles decisions
@@ -2454,6 +4218,7 @@ def run_cycle(
                             runs_root,
                             ledger_dir,
                             loader=revision_loader,
+                            published_loader=lambda: (remote_seen, None),
                             seconds=decision_poll_seconds,
                             interval_seconds=decision_poll_interval_seconds,
                             sleeper=decision_sleep,
@@ -2473,7 +4238,12 @@ def run_cycle(
                         ledger["no_submission_reason"] = gate_status
                 if source_precision_retry and revise_attempt < max(1, max_revise_attempts):
                     continue
-                if same_gate_failures >= 2 or revise_attempt >= max(1, max_revise_attempts) or not _should_retry_same_topic(attempt):
+                if (
+                    same_topic_retries >= 2
+                    or same_gate_failures >= 2
+                    or revise_attempt >= max(1, max_revise_attempts)
+                    or not _should_retry_same_topic(attempt, auto_selected=topic is None and not revision_source)
+                ):
                     break
             if ledger["status"] == "cycle_budget_exhausted":
                 break
@@ -2528,7 +4298,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     ledger = run_cycle(
         runs_root=args.runs_root,
-        date=args.date or dt.datetime.now(dt.UTC).date().isoformat(),
+        date=args.date or _default_cycle_date(),
         run_synthesis=args.run_synthesis,
         synthesis_dry_run=args.synthesis_dry_run,
         submit=args.submit,

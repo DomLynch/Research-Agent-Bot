@@ -359,3 +359,78 @@ def test_lower_case_design_string_classifies_correctly() -> None:
         study_design="randomized", species="human", endpoint_kind="clinical",
     )
     assert cls.tier == "A1"
+
+
+# ----- Registered-protocol detection (credibility-killer fix) ----------
+
+
+def test_registered_protocol_is_not_direct_a1() -> None:
+    """A registered trial protocol matches the RCT tokens ('randomized,
+    double-blind, placebo-controlled') but has NO results — it must NOT
+    be graded A1/direct efficacy evidence."""
+    cls = et.classify_evidence(
+        study_design="randomized double-blind placebo-controlled study protocol",
+        species="human",
+        endpoint_kind="clinical",
+    )
+    assert cls.tier == "D1"
+    assert cls.directness == "protocol"
+    assert cls.directness != "direct"
+
+
+def test_protocol_title_infers_protocol_not_a1() -> None:
+    """Title-driven inference: a protocol paper announces itself in its
+    title — graded D1/protocol, never A1, despite RCT keywords."""
+    meta = {
+        "title": (
+            "Resveratrol in older adults: rationale and design of a "
+            "randomized, double-blind, placebo-controlled trial"
+        ),
+        "abstract": "We will randomize 200 participants ... endpoint walk speed.",
+    }
+    cls = et.infer_from_paper_meta(meta)
+    assert cls.tier == "D1"
+    assert cls.directness == "protocol"
+
+
+def test_results_rct_mentioning_protocol_in_abstract_stays_a1() -> None:
+    """Precision guard: a RESULTS RCT that merely references 'the study
+    protocol' in its abstract must stay graded on its real design (A1),
+    not be downgraded. Protocol detection is title-only."""
+    meta = {
+        "title": "A randomized controlled trial of resveratrol in older adults",
+        "abstract": (
+            "Following the study protocol, we randomized 200 patients; "
+            "walk speed improved (p<0.01)."
+        ),
+    }
+    cls = et.infer_from_paper_meta(meta)
+    assert cls.tier == "A1"
+    assert cls.directness == "direct"
+
+
+def test_protocol_for_a_systematic_review_is_protocol_not_review() -> None:
+    """A protocol *for* a systematic review (Cochrane-style) has no
+    results either — protocol wins over the review bucket."""
+    cls = et.classify_evidence(
+        study_design="protocol for a systematic review and meta-analysis",
+        species=None,
+        endpoint_kind=None,
+    )
+    assert cls.tier == "D1"
+    assert cls.directness == "protocol"
+
+
+def test_public_directness_phrase_protocol_only() -> None:
+    """A corpus of only registered protocols is reported as such — never
+    as direct or preclinical evidence."""
+    phrase = et.public_directness_phrase(["D1", "D1"], ["protocol", "protocol"])
+    assert "protocol" in phrase
+    assert "direct" not in phrase
+
+
+def test_public_directness_phrase_protocol_does_not_mask_real_direct() -> None:
+    """A protocol mixed with real direct evidence must not suppress the
+    'direct evidence is present' headline."""
+    phrase = et.public_directness_phrase(["A1", "D1"], ["direct", "protocol"])
+    assert phrase == "direct interventional evidence is present"

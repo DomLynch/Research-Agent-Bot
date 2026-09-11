@@ -14,6 +14,7 @@ RESEARKA_BASE = "https://database.researka.org"
 TOPIC_PAPERS_PATH = "/api/v1/papers/topic"
 FACT_SEARCH_PATH = "/api/v1/tier2/facts/search"
 CORPUS_SEARCH_PATH = "/api/v1/search"
+REQUEST_TIMEOUT_SECONDS = 30.0
 _FIRST_WORD_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_\-]+)")
 
 
@@ -137,7 +138,7 @@ class ResearkaClient:
                 RESEARKA_BASE + path,
                 json=body,
                 headers={"X-Researka-Token": token, "User-Agent": USER_AGENT, "Accept": "application/json"},
-                timeout=20.0,
+                timeout=REQUEST_TIMEOUT_SECONDS,
             )
         except httpx.HTTPError as exc:
             return None, "transport_error", f"{type(exc).__name__}: {str(exc)[:160]}"
@@ -162,7 +163,8 @@ class ResearkaClient:
         cap = max(1, min(int(limit), 50))
         fact_result, paper_result, corpus_result = await asyncio.gather(
             self._post(client, token, FACT_SEARCH_PATH, {
-                "query": query, "top_k": cap, "min_confidence": "high", "numeric_only": True,
+                "query": query, "top_k": cap, "min_confidence": "high",
+                "numeric_only": True, "strict_audit_required": True,
             }),
             self._post(client, token, TOPIC_PAPERS_PATH, {
                 "topic": topic, "limit": cap, "include_facts": True,

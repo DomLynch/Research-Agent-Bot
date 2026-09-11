@@ -185,9 +185,17 @@ def infer_effect_direction(
         return "positive"
     if sig_negative:
         return "negative"
-    # No significant signed evidence.
+    # Significant but unsigned evidence is not a null result. This
+    # happens when the source reports a significant statistic but the
+    # extracted effect claim cannot safely infer polarity for the active
+    # intervention/outcome. Keep it ambiguous rather than manufacturing
+    # a contradiction between "significant p-value" and "null direction".
+    any_significant = any(significance_by_endpoint.values())
     if not any_signed:
+        if any_significant:
+            return "unclear"
         return "null"
+    # No significant signed evidence.
     if effect_magnitudes_whitelisted and _negligible(
         effect_magnitudes_whitelisted
     ):

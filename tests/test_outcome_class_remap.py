@@ -192,3 +192,85 @@ def test_refined_outcome_vocabulary_has_public_labels_and_keys() -> None:
     assert outcome_display("safety_comorbidity") == "Safety and Comorbidity"
     assert outcome_key("Safety and Comorbidity Outcomes") == "safety_comorbidity"
     assert outcome_key("skeletal fracture bone") == "skeletal_fracture_bone"
+
+
+def test_refine_other_does_not_misfile_supplementation_as_pharmacokinetics() -> None:
+    """Feedback #3: 'supplementation' is an intervention descriptor, not a
+    pharmacokinetic outcome — it appears in nearly every supplement study's
+    title. A supplement study with a non-PK focus that fell into 'other' must
+    NOT be reclassified as dosing/pharmacokinetics."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Resveratrol supplementation and cardiovascular outcomes",
+        population_summary="older adults",
+    )
+    assert refine_other_outcome_class(receipt, "other") != "dosing_pharmacokinetics"
+
+
+def test_refine_other_keeps_genuine_pharmacokinetics() -> None:
+    """A genuine dose / pharmacokinetic study still routes correctly."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Pharmacokinetic dose-response study",
+        population_summary="",
+    )
+    assert refine_other_outcome_class(receipt, "other") == "dosing_pharmacokinetics"
+
+
+def test_refine_other_does_not_misfile_skeletal_muscle_as_bone() -> None:
+    """'Skeletal muscle' must route to muscle_function, not the bone class —
+    the bare 'skeletal' needle previously substring-matched it as bone."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Treadmill exercise alleviates methylglyoxal-induced skeletal muscle dysfunction",
+        population_summary="aged mice",
+    )
+    result = refine_other_outcome_class(receipt, "other")
+    assert result != "skeletal_fracture_bone"
+    assert result == "muscle_function"
+
+
+def test_refine_other_keeps_genuine_bone_as_bone() -> None:
+    """A genuine bone-outcome study still routes to the bone class."""
+    receipt = SimpleNamespace(
+        receipt_id="r",
+        source_title="Effect of the intervention on bone fracture risk and osteoporosis",
+        population_summary="postmenopausal women",
+    )
+    assert refine_other_outcome_class(receipt, "other") == "skeletal_fracture_bone"
+
+
+def test_immune_and_immune_inflammation_canonicalize_together() -> None:
+    """The two near-duplicate immune classes collapse to one canonical key so a
+    corpus does not fragment into two singleton sections."""
+    assert outcome_key("immune") == outcome_key("immune_inflammation")
+    assert outcome_key("immune") == "immune_inflammation"
+
+
+def test_dosing_pharmacokinetics_needles_carry_no_topic_specific_compounds() -> None:
+    """Universal-no-hardcoding: the dosing class must not bake in topic-specific
+    drug/compound names (e.g. vitamin-D forms) — those belong in topic packs,
+    not the universal outcome vocabulary."""
+    from agent.outcome_class_remap import OUTCOME_VOCAB
+    needles = OUTCOME_VOCAB["dosing_pharmacokinetics"][2]
+    assert "cholecalciferol" not in needles
+    assert "calcifediol" not in needles
+    assert "supplementation" not in needles
+
+
+def test_mechanistic_other_routes_to_mechanism_not_catchall() -> None:
+    """5a: a mechanistic-directness source whose outcome WHAT is not classifiable
+    becomes 'mechanism' (a real class), not the 'contextual_other' catch-all —
+    draining the junk drawer. Non-mechanistic 'other' stays contextual_other,
+    and non-'other' classes are never rewritten. Universal — directness only."""
+    mech = SimpleNamespace(
+        receipt_id="", source_title="murine BHB-chromatin study",
+        population_summary="", directness="mechanistic",
+    )
+    assert refine_other_outcome_class(mech, "other") == "mechanism"
+    obs = SimpleNamespace(
+        receipt_id="", source_title="murine BHB-chromatin study",
+        population_summary="", directness="indirect",
+    )
+    assert refine_other_outcome_class(obs, "other") == "contextual_other"
+    assert refine_other_outcome_class(mech, "cardiometabolic") == "cardiometabolic"

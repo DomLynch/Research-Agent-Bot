@@ -67,6 +67,8 @@ def public_directness_phrase(tiers: Iterable[str], directnesses: Iterable[str]) 
         return "review-level evidence is present"
     if {"C1", "C2"} & tier_set or "mechanistic" in direct_set:
         return "preclinical/mechanistic evidence is present"
+    if "protocol" in direct_set or "D1" in tier_set:
+        return "only registered study protocols (no results reported yet) are present"
     return "directness is not yet classifiable from the structured metadata"
 
 
@@ -81,10 +83,18 @@ _SPECIES_HUMAN_TOKENS: tuple[str, ...] = (
     "children",
 )
 _SPECIES_ANIMAL_TOKENS: tuple[str, ...] = (
-    "mouse", "mice", "rat", "rats", "c. elegans", "c elegans",
-    "worm", "worms", "yeast", "drosophila", "fly", "flies",
-    "monkey", "monkeys", "non-human primate", "marmoset", "marmosets",
-    "dog", "dogs", "rabbit", "rabbits",
+    "mouse", "mice", "murine", "rat", "rats", "rodent", "rodents",
+    "c. elegans", "c elegans", "nematode", "nematodes",
+    "worm", "worms", "yeast", "drosophila", "fly", "flies", "zebrafish",
+    "monkey", "monkeys", "macaque", "macaques", "baboon", "baboons",
+    "non-human primate", "nonhuman primate", "marmoset", "marmosets",
+    "dog", "dogs", "rabbit", "rabbits", "hamster", "hamsters",
+    "guinea pig", "fox", "foxes", "vulpes",
+    "broiler", "broilers", "chicken", "chickens", "poultry", "fowl",
+    "avian", "cow", "cows", "cattle", "bovine",
+    "pig", "pigs", "piglet", "piglets", "porcine", "swine",
+    "sheep", "ovine", "goat", "goats", "caprine",
+    "horse", "horses", "equine",
 )
 
 # Design markers — STRONG (high-precision) vs WEAK (broader, lower
@@ -121,6 +131,17 @@ _DESIGN_PRECLINICAL_TOKENS: tuple[str, ...] = (
     "animal study", "preclinical", "in vivo", "in vitro",
     "cell culture", "cell line", "molecular study", "biochemical",
 )
+# Registered study protocols / design papers announce a trial but carry
+# NO results yet. Their strings match the RCT tokens above
+# ("randomized, double-blind, placebo-controlled") so they MUST be
+# detected first — otherwise a protocol is misgraded as A1 direct
+# efficacy evidence. Topic-agnostic markers: design/plan papers across
+# any domain phrase themselves this way.
+_DESIGN_PROTOCOL_TOKENS: tuple[str, ...] = (
+    "study protocol", "trial protocol", "research protocol",
+    "protocol for a", "protocol for the", "rationale and design",
+    "design and rationale", "statistical analysis plan",
+)
 
 
 def _normalize(value: str | None) -> str:
@@ -139,16 +160,53 @@ def _is_animal(species: str) -> bool:
     return _has_token(species, _SPECIES_ANIMAL_TOKENS)
 
 
+# Free-text population classifier. `_is_human`/`_is_animal` substring-
+# match the *controlled* `species` metadata field; `population_of` scans
+# *free text* (title + abstract + claim sentences) so it must be word-
+# boundary-anchored — bare "rat" must not fire inside "literature",
+# "cow" inside "coworker", "fox" inside "foxglove". Lookarounds (not
+# \b) so multi-word / punctuated tokens ("guinea pig", "c. elegans")
+# anchor correctly.
+def _word_boundary_re(tokens: tuple[str, ...]) -> "re.Pattern[str]":
+    parts = sorted((re.escape(t) for t in tokens), key=len, reverse=True)
+    return re.compile(r"(?<![a-z])(?:" + "|".join(parts) + r")(?![a-z])", re.I)
+
+
+_HUMAN_TEXT_RE = _word_boundary_re(_SPECIES_HUMAN_TOKENS)
+_ANIMAL_TEXT_RE = _word_boundary_re(_SPECIES_ANIMAL_TOKENS)
+
+
+def population_of(text: str) -> str:
+    """Classify a source's study population from free text as
+    'human' | 'animal' | 'unknown'.
+
+    Human markers win ties: a translational "mouse model of human
+    disease" source stays 'human' and is therefore never pruned on
+    population grounds — only an unambiguously non-human source (an
+    animal marker present, no human marker) is classifiable 'animal'.
+    Universal species vocabulary — no per-topic tokens. Consumed by the
+    relative corpus population-coherence gate in run_v06_synthesis."""
+    blob = _normalize(text)
+    if _HUMAN_TEXT_RE.search(blob):
+        return "human"
+    if _ANIMAL_TEXT_RE.search(blob):
+        return "animal"
+    return "unknown"
+
+
 def _design_class(design: str) -> str:
-    """Bucket a design string into one of: rct | observational | review |
-    preclinical | unknown.
+    """Bucket a design string into one of: protocol | rct | observational |
+    review | preclinical | unknown.
 
     P1 reviewer fix: substring matching (not exact-string) so canonical
     publication_type values from PubMed/CrossRef classify correctly:
       - 'Randomised, double-blind, placebo-controlled trial' → rct
       - 'Phase 3 randomized controlled trial' → rct
-    Order: strong review markers FIRST so 'systematic review of
-    randomized controlled trials' is review, not RCT."""
+    Order: protocol markers FIRST (a protocol string also contains the
+    RCT tokens), then strong review markers (so 'systematic review of
+    randomized controlled trials' is review, not RCT)."""
+    if _has_token(design, _DESIGN_PROTOCOL_TOKENS):
+        return "protocol"
     if _has_token(design, _DESIGN_REVIEW_STRONG):
         return "review"
     if _has_token(design, _DESIGN_RCT_TOKENS):
@@ -173,6 +231,21 @@ def classify_evidence(
     design = _design_class(_normalize(study_design))
     sp = _normalize(species)
     ek = _normalize(endpoint_kind)
+
+    if design == "protocol":
+        # Registered protocol / design paper: the trial is announced but
+        # NO outcomes are reported yet. It is neither primary nor direct
+        # evidence — grade it lowest-weight (D1) with a dedicated
+        # directness so downstream excludes it from direct-efficacy
+        # comparisons instead of crediting it as an A1 result.
+        return EvidenceClassification(
+            tier="D1", directness="protocol",
+            rationale=(
+                "registered study protocol / design paper — trial "
+                "announced but NO results reported yet → D1, excluded "
+                "from direct-efficacy evidence"
+            ),
+        )
 
     if design == "rct" and _is_human(sp):
         # P2 reviewer fix: surrogate endpoints (HbA1c, BP, LDL) are
@@ -279,6 +352,16 @@ def classify_evidence(
 # fields. Title-keyword heuristics — NOT a substitute for metadata
 # annotation, but lets the deterministic classifier produce
 # reasonable defaults on the existing corpus.
+# Registered-protocol markers. Matched against the TITLE ONLY (see
+# infer_from_paper_meta): a protocol paper announces itself in its
+# title, whereas a results paper that merely mentions "the study
+# protocol" in its abstract must NOT be downgraded.
+_TITLE_PROTOCOL_RE = re.compile(
+    r"\b(study protocol|trial protocol|research protocol|"
+    r"protocol for (?:a|an|the)|rationale and design|"
+    r"design and rationale|statistical analysis plan)\b",
+    re.IGNORECASE,
+)
 _TITLE_RCT_RE = re.compile(
     r"\b(randomi[sz]ed|RCT|placebo[\-\s]?controlled|double[\-\s]?blind)\b",
     re.IGNORECASE,
@@ -335,13 +418,19 @@ def infer_from_paper_meta(paper_meta: dict) -> EvidenceClassification:
     (title + abstract). For corpora that haven't been annotated with
     explicit fields yet.
 
-    Order: review FIRST (P1 reviewer fix — 'Systematic review of RCTs'
-    is B1, not A1). Then RCT, observational, preclinical."""
+    Order: protocol FIRST (a registered protocol has no results — never
+    A1), then review ('Systematic review of RCTs' is B1, not A1), then
+    RCT, observational, preclinical."""
     title = paper_meta.get("title") or ""
     abstract = paper_meta.get("abstract") or ""
     haystack = f"{title} {abstract}"
 
-    if _TITLE_REVIEW_RE.search(haystack):
+    # Protocol detection on TITLE ONLY for precision — a results paper
+    # that references "the study protocol" in its abstract stays graded
+    # on its actual design.
+    if _TITLE_PROTOCOL_RE.search(title):
+        design = "study protocol"
+    elif _TITLE_REVIEW_RE.search(haystack):
         design = "systematic review"
     elif _TITLE_RCT_RE.search(haystack):
         design = "randomized controlled trial"

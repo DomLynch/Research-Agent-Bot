@@ -100,6 +100,8 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
         "offline_eval_harness.json",
         "quality_methods.json",
         "quality_methods.md",
+        "risk_of_bias.json",
+        "grade_assessment.json",
         "polish_compiler.json",
         "polish_compiler.md",
         "polish_tensions_appendix.json",
@@ -115,7 +117,13 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "debug" / "full_paper.review_patch_log.json").exists()
     assert (tmp_path / "audit" / "full_paper.certification.json").exists()
     assert (tmp_path / "readable" / "full_paper.certification.md").exists()
-    assert (tmp_path / "audit" / "quality_methods.json").exists()
+    # Public appraisal sidecars stay top-level (served by Researka from the run
+    # root) — NOT relocated into audit/, else the public reader shows
+    # "not appraised" despite a populated appraisal.
+    assert (tmp_path / "quality_methods.json").exists()
+    assert (tmp_path / "risk_of_bias.json").exists()
+    assert (tmp_path / "grade_assessment.json").exists()
+    assert not (tmp_path / "audit" / "risk_of_bias.json").exists()
     assert (tmp_path / "audit" / "polish_compiler.json").exists()
     assert (tmp_path / "audit" / "polish_tensions_appendix.json").exists()
     assert (tmp_path / "audit" / "biomed_normalization.json").exists()
@@ -126,7 +134,9 @@ def test_organize_run_artifacts_keeps_core_top_level(tmp_path: Path) -> None:
     assert (tmp_path / "plots" / "full_paper.pdf").exists()
     assert (tmp_path / "readable" / "quality_methods.md").exists()
     assert (tmp_path / "plots" / "forest_plots").is_dir()
-    assert moved["quality_methods.json"] == "audit/quality_methods.json"
+    assert moved["polish_compiler.json"] == "audit/polish_compiler.json"
+    assert "quality_methods.json" not in moved  # public sidecar stays top-level
+    assert "risk_of_bias.json" not in moved
 
 
 def test_organize_run_artifacts_replaces_stale_sidecar(tmp_path: Path) -> None:
@@ -325,6 +335,37 @@ def test_section_backstop_counts_model_system_sources_from_receipts() -> None:
         orch._ACTIVE_MANIFEST = old_manifest
     assert ctx["mechanistic"] == 1
     assert ctx["mech_refs"] == "Gong 2022"
+
+
+def test_abstract_source_type_tally_partitions_corpus() -> None:
+    """The abstract direct/adjacent/mechanistic tally must sum to n_receipts:
+    review + protocol receipts (previously dropped, so 2+17+9 read 28 != 33)
+    are folded into 'adjacent' so the three buckets partition the corpus."""
+    old_manifest = orch._ACTIVE_MANIFEST
+    try:
+        receipts = (
+            [{"directness": "direct", "evidence_tier": "A1", "effect_direction": "positive",
+              "outcome_class": "cardiometabolic", "citation_token": f"D{i}"} for i in range(2)]
+            + [{"directness": "indirect", "evidence_tier": "B2", "effect_direction": "null",
+                "outcome_class": "contextual_other", "citation_token": f"I{i}"} for i in range(17)]
+            + [{"directness": "mechanistic", "evidence_tier": "C1", "effect_direction": "null",
+                "outcome_class": "contextual_other", "citation_token": f"M{i}"} for i in range(8)]
+            + [{"directness": "review", "evidence_tier": "B1", "effect_direction": "positive",
+                "outcome_class": "cardiometabolic", "citation_token": f"R{i}"} for i in range(5)]
+            + [{"directness": "protocol", "evidence_tier": "D1", "effect_direction": "unclear",
+                "outcome_class": "contextual_other", "citation_token": "P0"}]
+        )
+        orch._ACTIVE_MANIFEST = {
+            "n_receipts": 33,
+            "n_high_confidence_claims_total": 10,
+            "n_non_orthogonal_tensions": 0,
+            "receipts": receipts,
+        }
+        ctx = orch._section_backstop_context()
+    finally:
+        orch._ACTIVE_MANIFEST = old_manifest
+    assert int(ctx["direct"]) + int(ctx["indirect"]) + int(ctx["mechanistic"]) == 33  # type: ignore[call-overload]
+    assert ctx["direct"] == 2
 
 
 def test_review_heavy_abstraction_note_distinguishes_reference_papers_from_trials() -> None:
@@ -683,6 +724,17 @@ def test_stage_5c_repairs_abstract_before_surface_gate() -> None:
     )
 
 
+def test_stage_5_runs_finalizer_before_surface_gate() -> None:
+    source = Path(orch.__file__).read_text(encoding="utf-8")
+    stage = source.split("# Stage 5: Final audit + UNIFIED verdict", 1)[1]
+    stage = stage.split("# Stage 5b:", 1)[0]
+    assert (
+        stage.index("_apply_abstract_claim_strength_repair")
+        < stage.index("finalize_run")
+        < stage.index("evaluate_journal_surface")
+    )
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (
@@ -747,6 +799,21 @@ def test_public_section_backstop_bounds_no_positive_abstract_profile() -> None:
     assert "the retained clinical and adjacent evidence profile defines the scope" in md
 
 
+def test_aggregate_paper_keeps_significant_unsigned_statistics_unclear() -> None:
+    agg = orch._aggregate_paper("vascular-unsigned", [
+        {
+            "claim_type": "p_value",
+            "endpoint": "estimated pulse wave velocity",
+            "raw_text": "p < 0.001",
+            "numeric_values": [0.001],
+        },
+        {"claim_type": "endpoint", "endpoint": "estimated pulse wave velocity"},
+    ])
+
+    assert agg["effect_direction"] == "unclear"
+    assert agg["p_values"] == ["p < 0.001"]
+
+
 def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() -> None:
     old_manifest = orch._ACTIVE_MANIFEST
     try:
@@ -773,8 +840,10 @@ def test_public_section_backstop_avoids_duplicate_and_join_for_outcome_labels() 
     finally:
         orch._ACTIVE_MANIFEST = old_manifest
 
+    # "immune" now canonicalizes to immune_inflammation, so the two receipts
+    # collapse to one class (no duplicate "immune and immune and inflammation").
     assert "immune and immune and inflammation" not in md
-    assert "negative signals cluster in the immune, immune and inflammation outcome classes" in md
+    assert "the immune and inflammation outcome class" in md
 
 
 def test_public_section_backstop_covers_results_without_duplicate_paragraphs() -> None:
@@ -874,6 +943,32 @@ def test_results_summary_treats_null_as_unadjudicated_not_negative() -> None:
     assert "no extracted directional signal in 2/2 sources" in out
     assert "directness: 2 review" in out
     assert "null signal in 2/2 sources" not in out
+
+
+def test_results_summary_merges_alias_outcome_labels() -> None:
+    paper = "## Results\n\nBody.\n"
+    manifest = {"receipts": [
+        {"outcome_class": "immune", "effect_direction": "null", "directness": "direct", "n_claims": 54},
+        {"outcome_class": "immune_inflammation", "effect_direction": "null", "directness": "review", "n_claims": 69},
+    ]}
+    out, inserted = orch._ensure_results_summary_table(paper, manifest)
+
+    assert inserted is True
+    assert out.count("- Immune and Inflammation:") == 1
+    assert "- Immune and Inflammation: n=2; claims=123; no extracted directional signal in 2/2 sources" in out
+    assert "directness: 1 direct; 1 review" in out
+
+
+def test_section_backstop_rows_merge_alias_outcome_labels() -> None:
+    rows = orch._section_backstop_outcome_rows([
+        {"outcome_class": "immune", "effect_direction": "null", "directness": "direct", "n_claims": 54},
+        {"outcome_class": "immune_inflammation", "effect_direction": "null", "directness": "review", "n_claims": 69},
+    ])
+
+    assert len(rows) == 1
+    assert rows[0]["label"] == "Immune and Inflammation"
+    assert rows[0]["n"] == 2
+    assert rows[0]["claims"] == 123
 
 
 def test_canonical_rct_topic_pack_override_wins_before_abstract_inference() -> None:

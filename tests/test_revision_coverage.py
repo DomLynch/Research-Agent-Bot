@@ -102,6 +102,36 @@ def test_deterministic_unmet_accepts_source_directness_breakdown() -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_flags_direct_vs_adjacent_scope_statement() -> None:
+    ask = (
+        "Clarify the scope statement: explicitly state which included sources are direct "
+        "ABT-263 (navitoclax) studies versus other senolytics used as adjacent context, "
+        "and justify why each non-ABT-263 source is included in an ABT-263 evidence map."
+    )
+    paper = "## Evidence Landscape\n\nThe source set is mixed.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_direct_vs_adjacent_scope_statement() -> None:
+    ask = (
+        "Clarify the scope statement: explicitly state which included sources are direct "
+        "ABT-263 (navitoclax) studies versus other senolytics used as adjacent context, "
+        "and justify why each non-ABT-263 source is included in an ABT-263 evidence map."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source directness breakdown: 1/3 retained sources directly address the stated topic "
+        "and aging-relevant hard endpoints; 2/3 are adjacent contextual sources.\n\n"
+        "### Source Classification Map\n\n"
+        "- Smith 2024: outcome=longevity; direction=positive; directness=direct; tier=A1.\n"
+        "- Jones 2025: outcome=contextual adjacent evidence; direction=null; directness=adjacent; tier=B2.\n"
+        "- Lee 2026: outcome=mechanism; direction=unclear; directness=mechanistic; tier=C1.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_general_vs_direct_source_breakdown() -> None:
     ask = (
         "Clarify which of the 52 sources directly address a composite digital "
@@ -128,6 +158,97 @@ def test_deterministic_unmet_accepts_general_vs_direct_source_breakdown() -> Non
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_revision_asks_splits_strengthen_followup() -> None:
+    feedback = (
+        "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function).; "
+        "Strengthen the Tensions and Gaps section by naming specific disagreements."
+    )
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function).",
+        "Strengthen the Tensions and Gaps section by naming specific disagreements.",
+    ]
+
+
+def test_deterministic_unmet_accepts_subgroup_lens_narrative() -> None:
+    ask = (
+        "Add a narrative synthesis section that explicitly maps findings to the five subgroup "
+        "lenses (frailty, sarcopenic obesity, CKM stage, diabetes comorbidity, intervention type) "
+        "using the admitted sources, rather than only listing source counts."
+    )
+    paper = (
+        "## Results\n\n"
+        "Narrative subgroup synthesis maps source findings across the five subgroup lenses. "
+        "Frailty is represented by Nguyen 2025 and Garcia 2026, while sarcopenic obesity is "
+        "represented by Zhang 2025. CKM stage is represented by Chen 2026 and An 2026. "
+        "Diabetes comorbidity is represented by Nielsen 2026, and intervention type separates "
+        "exercise, vaccination, pharmacologic, and invasive-procedure records. These source-linked "
+        "lenses define boundary conditions rather than simple counts, and the narrative explains "
+        "why each source supports only bounded subgroup inference across the admitted evidence set."
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_keeps_subgroup_lens_ask_without_sources() -> None:
+    ask = (
+        "Add a narrative synthesis section that explicitly maps findings to the five subgroup "
+        "lenses (frailty, sarcopenic obesity, CKM stage, diabetes comorbidity, intervention type) "
+        "using the admitted sources, rather than only listing source counts."
+    )
+    paper = (
+        "## Results\n\n"
+        "Narrative subgroup synthesis maps frailty, sarcopenic obesity, CKM stage, diabetes "
+        "comorbidity, and intervention type across the admitted evidence set, but only as "
+        "unattributed category labels without source-linked findings."
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_underpopulated_outcome_attribution_and_tensions() -> None:
+    asks = [
+        (
+            "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function, "
+            "Immune Inflammation, Safety, Safety and Comorbidity) with at least one or two "
+            "attributed findings each, drawn from the source bundle, or remove the headers if no "
+            "findings are retained."
+        ),
+        "Strengthen the Tensions and Gaps section by naming specific disagreements among the retained sources.",
+    ]
+    paper = (
+        "## Results\n\n"
+        "### Longevity Outcomes\n\nZhao 2025 reports cardiovascular mortality risk in frailty cohorts.\n\n"
+        "### Muscle Function Outcomes\n\nChu 2026 reports exercise-related functional contrasts.\n\n"
+        "### Immune and Inflammation Outcomes\n\nWard 2026 reports inflammatory-marker associations.\n\n"
+        "### Safety Outcomes\n\nLong 2026 reports dose-stratified safety signals.\n\n"
+        "### Safety and Comorbidity Outcomes\n\nFu 2026 reports CKM-related diagnostic value.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-Gap Priority: the named disagreements below identify unresolved gaps.\n\n"
+        "- Severity 5 disagreement: You 2026 vs Delaney 2025; tension in cardiometabolic direction.\n"
+        "- Severity 5 disagreement: Liu 2026 vs Delaney 2025; tension in cardiometabolic direction.\n"
+        "- Severity 4 disagreement: Wolfe 2025 vs You 2026; conflict between null and negative findings.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_unmet_keeps_underpopulated_outcome_ask_without_attribution() -> None:
+    ask = (
+        "Expand the underpopulated outcome-class subsections (Longevity, Muscle Function, "
+        "Immune Inflammation) with at least one or two attributed findings each, drawn from "
+        "the source bundle, or remove the headers if no findings are retained."
+    )
+    paper = (
+        "## Results\n\n"
+        "### Longevity Outcomes\n\nThis subsection has no source attribution.\n\n"
+        "### Muscle Function Outcomes\n\nThis subsection has no source attribution.\n\n"
+        "### Immune and Inflammation Outcomes\n\nThis subsection has no source attribution.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
 
 
 def test_deterministic_unmet_accepts_topic_fit_rationale_for_umbrella_source_ask() -> None:
@@ -188,7 +309,7 @@ def test_deterministic_unmet_accepts_evidence_type_metadata_resolution() -> None
     paper = (
         "## Methods\n\n"
         "### Source Classification Map\n\n"
-        "Evidence_type labels were resolved against excerpts: review records with RCT excerpt data "
+        "Evidence type labels were resolved against excerpts: review records with RCT excerpt data "
         "were reclassified under classification criteria that separate review, RCT, and trial evidence.\n"
     )
 
@@ -200,7 +321,7 @@ def test_deterministic_unmet_accepts_evidence_type_metadata_in_evidence_snapshot
     paper = (
         "## Evidence Snapshot\n\n"
         "### Source Classification Map\n\n"
-        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts; "
+        "Evidence type metadata note: evidence-type labels are resolved against source excerpts; "
         "review, RCT/trial, and excerpt evidence are reclassified under the source classification map.\n"
     )
 
@@ -255,6 +376,38 @@ def test_deterministic_unmet_accepts_umbrella_source_inclusion_rationale() -> No
         "Inclusion rationale: sources that directly addresses frailty-index operationalization are "
         "kept as direct; contextual digital-biomarker sources are reclassified as adjacent and not "
         "used for broad claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_primary_content_reclassification_rationale() -> None:
+    ask = (
+        "Prune or reclassify cited sources whose primary content is not about "
+        "cardiovascular subgroups."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        "cardiovascular subgroups directly or provide adjacent/contextual boundary "
+        "evidence for the same construct. Adjacent sources are reclassified as "
+        "boundary evidence rather than used for broad efficacy claims.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_operational_subgroup_definition() -> None:
+    ask = (
+        "Define 'cardiovascular subgroup' operationally at the start "
+        "(which subgrouping axes, which population strata, which outcomes)."
+    )
+    paper = (
+        "## Evidence Snapshot\n\n"
+        "Topic-fit rationale: Sources are retained only when they operationalize "
+        "cardiovascular subgroups directly or provide adjacent/contextual boundary "
+        "evidence for the same construct. Adjacent sources are reclassified as "
+        "boundary evidence rather than used for broad efficacy claims.\n"
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
@@ -353,7 +506,7 @@ def test_deterministic_unmet_live_top_bucket_matrix() -> None:
         "### Source Classification Map\n\n"
         "- Smith 2024: outcome=cardiometabolic; directness=direct; tier=A1.\n"
         "- Jones 2025: outcome=contextual adjacent evidence; directness=adjacent; tier=B2.\n\n"
-        "Evidence_type metadata note: evidence_type labels are resolved against source excerpts; "
+        "Evidence type metadata note: evidence-type labels are resolved against source excerpts; "
         "review, RCT/trial, and excerpt evidence are reclassified under the source classification map.\n\n"
         "## Gaps Identified\n\n"
         "1. Run a powered prospective trial in the priority population with a prespecified "
@@ -939,6 +1092,26 @@ def test_deterministic_unmet_accepts_admission_funnel_distinct_opposite_counts()
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_accepts_coherent_admission_funnel_note() -> None:
+    ask = (
+        "Reconcile the admission funnel numbers to a single coherent accounting, "
+        "and explain how '63 admitted sources' is derived."
+    )
+    paper = (
+        "## Source Admission Funnel\n\n"
+        "| Admission bucket | n |\n"
+        "|---|---:|\n"
+        "| Mixed partial-or-none claim-binding candidates | 70 |\n"
+        "| Admitted final sources | 63 |\n\n"
+        "Admission-bucket note: The funnel rows are audit categories, not an "
+        "additive conservation table. No-extractable-claim, mixed partial-or-none, "
+        "partial-only, and admitted-final-source counts can be equal or overlap "
+        "because they describe different screening and claim-binding states.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
 def test_deterministic_unmet_flags_missing_single_source_proportionality() -> None:
     ask = (
         "For single-source outcome classes (frailty, immune/inflammation, muscle function), "
@@ -953,6 +1126,21 @@ def test_deterministic_unmet_flags_missing_single_source_proportionality() -> No
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_n_equals_one_context_only_statement() -> None:
+    ask = (
+        "For outcome classes with n=1 sources, either merge them into adjacent "
+        "classes or explicitly flag them as context-only and do not present them "
+        "as parallel evidence domains."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Single-source outcome classes are treated as hypothesis-generating and "
+        "receive proportional narrative depth rather than standalone evidentiary weight.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
 def test_deterministic_unmet_accepts_single_source_proportionality_statement() -> None:
@@ -1304,6 +1492,100 @@ def test_deterministic_unmet_accepts_named_numeric_correction_without_audit_ask(
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
 
 
+def test_deterministic_unmet_rejects_non_significant_source_still_positive() -> None:
+    ask = (
+        "Reconcile the Brouwers 2016 frailty coding: if p=0.88 is the headline statistic, "
+        "the source should be recoded as null/mixed in the frailty outcome class, or the "
+        "'positive signal' label should be removed and the non-significant result stated explicitly."
+    )
+    weak = (
+        "## Abstract\n\n"
+        "Numeric correction: Brouwers 2016 reported a non-significant result (p = 0.88); "
+        "this synthesis treats that finding as non-significant. Positive study-level signals "
+        "are summarized in the frailty outcome class.\n\n"
+        "## Evidence Landscape\n\n"
+        "### Frailty\n\n"
+        "positive signal in 1/1 sources.\n"
+        "- Brouwers 2016: outcome=Frailty; direction=positive; directness=indirect; "
+        "tier=B2; finding=representative statistic p = 0.88.\n"
+    )
+    repaired = weak.replace("Positive study-level signals", "Non-significant or mixed study-level signals").replace(
+        "positive signal in 1/1 sources", "non-significant or mixed signal in 1/1 sources",
+    ).replace("direction=positive", "direction=null").replace("Numeric correction:", "Numeric reconciliation note:")
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_named_numeric_correction_ignores_unrelated_positive_sources() -> None:
+    ask = (
+        "Resolve the Brouwers 2016 direction coding inconsistency: either confirm the "
+        "positive frailty coding with the supporting statistic, or correct to unclear/null "
+        "to match the p=0.88 numeric correction."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Numeric reconciliation note: Brouwers 2016 reported a non-significant mapped "
+        "comparison (p = 0.88); this synthesis treats that mapped comparison, not every "
+        "within-source contrast, as non-significant.\n\n"
+        "| Outcome | Summary |\n"
+        "|---|---|\n"
+        "| Treatment response | positive signal in 1/1 sources from Liu 2026 |\n"
+        "| Frailty | non-significant or mixed signal in 1/1 sources from Brouwers 2016 |\n\n"
+        "- Brouwers 2016: outcome=Frailty; direction=null; finding=representative statistic p=0.88.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_substantive_conclusion_ask_requires_source_pattern_conclusion() -> None:
+    ask = (
+        "Clarify in the Conclusion what the evidence actually shows about telomere cancer effects, "
+        "not just what kind of evidence it is. A conclusion that only describes its own epistemic "
+        "status is not informative."
+    )
+    weak = "## Conclusion\n\nThe conclusion is bounded and hypothesis-generating.\n"
+    repaired = (
+        "## Conclusion\n\n"
+        "Substantive conclusion for Telomere Cancer Effects: the retained source set shows "
+        "prognostic and survival-marker evidence n=3, causal-risk and Mendelian-randomization "
+        "evidence n=2, and treatment/intervention-response evidence n=1; receipt-level "
+        "directions positive=2, null=1, unclear=3. These source patterns support bounded "
+        "risk-marker, causal, mechanistic, or treatment-response hypotheses and do not "
+        "establish standalone clinical actionability.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_unmet_requires_full_corpus_sources_in_result_sections() -> None:
+    ask = (
+        "Add the missing bundle sources to the Results outcome slices (Andreikos 2024, "
+        "Chen 2023, Wan 2023) so the evidence map covers the full admitted corpus."
+    )
+    weak = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "- Andreikos 2024: outcome=Frailty; direction=null; directness=indirect; tier=B2.\n"
+        "- Chen 2023: outcome=Cancer Risk; direction=mixed; directness=review; tier=B1.\n"
+        "- Wan 2023: outcome=Mechanism; direction=unclear; directness=mechanistic; tier=C1.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis:\n\n"
+        "- Andreikos 2024: outcome=Frailty; direction=null; directness=indirect; tier=B2.\n"
+    )
+    repaired = weak + (
+        "- Chen 2023: outcome=Cancer Risk; direction=mixed; directness=review; tier=B1.\n"
+        "- Wan 2023: outcome=Mechanism; direction=unclear; directness=mechanistic; tier=C1.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
 def test_deterministic_unmet_flags_unclear_table_vs_positive_negative_narrative() -> None:
     ask = (
         "Reconcile the Evidence Landscape table signals (predominantly 'unclear') with the "
@@ -1331,3 +1613,901 @@ def test_deterministic_unmet_accepts_unclear_table_reconciled_with_narrative() -
     )
 
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_null_coded_directional_reconciliation() -> None:
+    ask = (
+        "Resolve the disconnect between the '47/48 null-coded' framing and the clearly directional "
+        "findings visible in the source bundle excerpts."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded positive, "
+        "negative, or mixed effect was extracted for that specific outcome class. Positive and mixed "
+        "signals in other outcome classes are separately reported.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_removed_unbundled_citations() -> None:
+    ask = (
+        "Remove or add to the source bundle the citations Ioannidis 2005, Studenski 2011, "
+        "and Perera 2006, which appear in the prose but are not in the source_bundle list."
+    )
+    paper = "## References\n\n- **Huang 2025.** Registry-backed source.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_replaced_structured_table_stubs() -> None:
+    ask = (
+        "Replace the 'See the structured evidence table' stubs with one or two short prose "
+        "paragraphs per outcome class that name the specific sources driving the dominant signal."
+    )
+    paper = (
+        "## Results\n\n"
+        "The frailty slice is driven by Sanz 2021, with no second same-outcome source to "
+        "create a direct disagreement. The muscle-function slice is driven by Correa 2022 "
+        "and Oliveira 2026, while the broader clinical bridge remains uncertain.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_requires_consistent_source_count_bundle_reconciliation() -> None:
+    ask = (
+        "Reconcile the in-text source count (52) with the actual source bundle and either "
+        "restore missing bundle entries or correct the count; for every named author-year "
+        "citation in the prose, verify a plausible bundle counterpart exists."
+    )
+    reconciled = (
+        "## Methods\n\n"
+        "Of 172 records in the receipt-candidate union, 52 were classified as source "
+        "candidates and 52 were admitted as traceable synthesis sources. The source bundle "
+        "therefore contains 52 references with DOI/PMID traceability where available; "
+        "author-year citations in the prose are matched to the reference list.\n"
+    )
+    inconsistent = reconciled + "\n## Results\n\nThis paper synthesizes 49 included sources.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(reconciled, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(inconsistent, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_citation_traceability_map_note() -> None:
+    ask = (
+        "Provide a complete, auditable in-text citation list mapping every author-year "
+        "prose reference to a specific source bundle entry; add a methods_pack.json-style "
+        "table or appendix in the manuscript itself so the reader can verify grounding "
+        "without external artifacts."
+    )
+    missing = "## Evidence Snapshot\n\n### Source Classification Map\n\n- Smith 2024: outcome=frailty.\n"
+    repaired = (
+        "## Evidence Snapshot\n\n"
+        "Citation traceability map: author-year prose citations are reconciled to specific "
+        "source-bundle entries in the in-manuscript Source Classification Map and References "
+        "section; `manifest.json`, `citation_registry.json`, and `methods_pack.json` provide "
+        "the complete machine-readable mapping.\n\n"
+        "### Source Classification Map\n\n- Smith 2024: outcome=frailty.\n\n"
+        "## References\n\n- **Smith 2024.** Example source.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(missing, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_concrete_tensions_and_gap_priority() -> None:
+    ask = (
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions "
+        "(e.g. source A vs source B) and tie each to specific sources."
+    )
+    paper = (
+        "## Cross-Domain Synthesis\n\n"
+        "### Load-Bearing Tensions\n\n"
+        "- Severity 5 disagreement: Paradoxical 2026 vs Nong 2025; the sources report opposing longevity directions.\n"
+        "- Severity 5 disagreement: Pei 2023 vs Gan 2026; the sources disagree on safety comorbidity direction.\n"
+        "- Severity 5 disagreement: Zhuang 2025 vs Zeng 2025; the sources conflict on deficiency prevalence.\n\n"
+        "### Evidence-Gap Priority\n\n"
+        "| Priority | Gap | Rationale |\n|---|---|---|\n| P1 | longevity conflict-resolution gap | opposing source directions |\n"
+    )
+    weak = (
+        "## Cross-Domain Synthesis\n\n"
+        "There are several tensions. Future research should resolve the gaps.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_specific_cross_source_disagreements() -> None:
+    ask = (
+        "Expand the Tensions and Gaps section to enumerate at least three specific "
+        "cross-source disagreements with named sources on each side."
+    )
+    paper = (
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-source disagreement counts are manifest-derived.\n"
+        "- Grazuleviciene 2026 vs Durstenfeld 2026: surfaced tension/disagreement in Cardiometabolic because directions are null versus unclear.\n"
+        "- Salerno 2026 vs Riquelme-Hernandez 2026: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are unclear versus null.\n"
+        "- Liu 2025 vs Garcia 2026: surfaced tension/disagreement in Frailty because directions are unclear versus null.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_requires_replaced_surface_tensions() -> None:
+    ask = (
+        "Replace the three Curran 2025-based 'surfaced tensions' with genuinely "
+        "comparable within-outcome tensions. A cross-species, cross-population, "
+        "cross-endpoint disagreement is not a meaningful tension to surface."
+    )
+    stale = (
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: unresolved.\n"
+        "- Zhao 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
+        "- Pei 2024 vs Curran 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus positive.\n"
+        "- Zhao 2024 vs Ministrini 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are negative versus null.\n"
+    )
+    repaired = (
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: within-outcome contrasts remain.\n"
+        "- Katayoshi 2023 vs Martens 2018: surfaced tension/disagreement in Cardiometabolic because directions are null versus unclear.\n"
+        "- Yi 2022 vs Simic 2020: surfaced tension/disagreement in Dosing Pharmacokinetics because directions are unclear versus null.\n"
+        "- Gao 2025 vs Simon 2024: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are null versus unclear.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(stale, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_known_accepts_auditable_tension_and_source_verdict_asks() -> None:
+    asks = [
+        "Define and operationalize the '727 non-orthogonal tensions' figure: show the calculation, restrict to verifiable within-class disagreement pairs, or remove the claim if it cannot be auditable.",
+        "Expand the Tensions and Gaps section to enumerate the cross-study contradictions actually discussed in the body rather than restating a generic call for future trials.",
+        "Provide a one-line directness/direction verdict per cited source in the Findings Map rather than collapsing to 'no extracted directional signal in X/N sources,' so readers can trace each mapped claim to its coded outcome.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Source directness breakdown: 1/3 retained sources directly address the stated topic and hard endpoints; "
+        "2/3 are adjacent, contextual, review-level, or mechanistic.\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2024: outcome=cardiometabolic; direction=positive; directness=direct; tier=A1; finding=representative statistic p = 0.04.\n"
+        "- Jones 2025: outcome=cardiometabolic; direction=null; directness=review; tier=B1; finding=12 extracted claim(s).\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"
+        "- Patel 2023 vs Chen 2022: surfaced tension/disagreement in Immune because directions are mixed versus negative.\n"
+        "- Lee 2021 vs Rao 2020: surfaced tension/disagreement in Safety because directions are unclear versus null.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_coverage_accepts_vascular_source_level_revision_bundle() -> None:
+    feedback = (
+        "Recode directional findings to match source abstracts; remove/qualify 11/13 null framing as receipt-level not source-level; "
+        "Include all 13 admitted sources in Evidence Landscape tables; remove repetitive boilerplate and replace with findings; "
+        "Enumerate the 12 cross-study disagreements or replace the count with a qualitative description of where the disagreements lie; "
+        "Expand Key Findings with concrete bounded findings per outcome class from source abstracts; "
+        "Strengthen Gaps with at least 3 concrete actionable studies."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Directional coding note: Null or no extracted directional signal means no coded positive, "
+        "negative, or mixed effect was extracted for that specific outcome class. Positive and mixed "
+        "signals in other outcome classes are separately reported.\n\n"
+        "Substantive evidence synthesis: The manifest includes 13 retained sources, 1 direct-source "
+        "row, and receipt-level directional coding across null=8, positive=1, unclear=4. "
+        "Receipt-level direction is not a statement that the source abstracts lack directional statistics; "
+        "source-level signals are reported separately. No extracted directional signal is a receipt-level "
+        "code proportion (8/13), not absence of source-level support.\n\n"
+        "### Findings Map\n\n"
+        "- Sheng 2025: outcome=Contextual Adjacent Evidence; direction=null; directness=indirect; "
+        "tier=B2; finding=representative statistic p < 0.001; source-level statistic reported.\n"
+        "- Wang 2024: outcome=Cardiometabolic; direction=positive; directness=direct; "
+        "tier=A1; finding=representative statistic p < 0.05; source-level statistic reported.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: First, the strongest source-level signals are bounded "
+        "rather than broad clinical proof (Wang 2024: outcome=Cardiometabolic; direction=positive; "
+        "directness=direct; tier=A1; finding=representative statistic p < 0.05; source-level statistic reported). "
+        "Source-level findings by outcome class: Cardiometabolic: Wang 2024 "
+        "(representative statistic p < 0.05; direction=positive; directness=direct; tier=A1). "
+        "Second, null and unclear receipt-level rows are given equal interpretive weight. "
+        "Synthesis interpretation: source-level findings connect risk-marker, mechanistic, and intervention-adjacent "
+        "signals into follow-up hypotheses. "
+        "The bounded conclusion follows from the balance of source direction, outcome class, "
+        "evidence tier, and directness rather than from source count alone.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Wang 2024 vs Rodilla 2026: surfaced tension/disagreement in Cardiometabolic because directions are positive versus null.\n"
+        "- Luo 2025 vs Lu 2026: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are null versus unclear.\n"
+        "- Sheng 2025 vs Vicente-Gabriel 2024: surfaced tension/disagreement in Contextual Adjacent Evidence because directions are null versus unclear.\n\n"
+        "## Gaps Identified\n\n"
+        "1. Run adequately powered prospective trials in the priority population with prespecified clinical endpoints and at least 2-year follow-up.\n"
+        "2. Standardize exposure, comparator, dose, measurement timing, and endpoint definitions before attempting pooled effects.\n"
+        "3. Add safety endpoints in direct human studies with patient-relevant function measures.\n"
+    )
+
+    assert asks == [
+        "Recode directional findings to match source abstracts; remove/qualify 11/13 null framing as receipt-level not source-level.",
+        "Include all 13 admitted sources in Evidence Landscape tables; remove repetitive boilerplate and replace with findings.",
+        "Enumerate the 12 cross-study disagreements or replace the count with a qualitative description of where the disagreements lie.",
+        "Expand Key Findings with concrete bounded findings per outcome class from source abstracts.",
+        "Strengthen Gaps with at least 3 concrete actionable studies.",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_coverage_accepts_surface_every_admitted_source_feedback() -> None:
+    ask = "Surface every admitted source; redesign outcome taxonomy; recode direction values."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2026: outcome=Immune and Inflammation; direction=null; directness=adjacent; tier=B2.\n"
+        "- Jones 2025: outcome=Mechanistic Signaling; direction=mixed; directness=mechanistic; tier=C1.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_coverage_accepts_human_intervention_reclassification_feedback() -> None:
+    ask = "Human intervention studies were misclassified as indirect/review evidence."
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Source Classification Map\n\n"
+        "- Trialists 2026: outcome=Clinical Intervention; direction=mixed; directness=direct; tier=A1.\n"
+        "- Reviewers 2025: outcome=Contextual Adjacent Evidence; direction=unclear; directness=review; tier=B2.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_coverage_accepts_vascular_latest_reviewer_asks() -> None:
+    asks = [
+        "Write an actual Key Findings section that names 3-5 specific, source-anchored findings and then interpret them as hypotheses worth follow-up.",
+        "Add a synthesis paragraph that connects across outcome classes.",
+        "Reconcile or flag the 2026 publication-year citations with their 2025 DOI/PubMed dates, or move them to in press status with a note.",
+        "Specify what kinds of cross-study disagreement the 12 disagreements represent.",
+        "Tighten the conclusion to distinguish contextual evidence from a viable geroscience intervention target.",
+    ]
+    paper = (
+        "## Evidence Landscape\n\n"
+        "Substantive evidence synthesis: The manifest includes 13 retained sources. "
+        "Receipt-level direction is not a statement that the source abstracts lack directional statistics.\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis:\n\n"
+        "Source-level findings by outcome class:\n\n"
+        "- Contextual Adjacent Evidence: Sheng 2025 (estimated pulse wave velocity and coronary artery disease; "
+        "finding=representative statistic p < 0.001; direction=null; directness=indirect; tier=B2).\n"
+        "- Cardiometabolic: Wang 2024 (Tai Chi RCT; finding=representative statistic p < 0.05; "
+        "direction=unclear; directness=direct; tier=A1).\n\n"
+        "- Sheng 2025: estimated pulse wave velocity and coronary artery disease; "
+        "finding=representative statistic p < 0.001; outcome=Contextual Adjacent Evidence; "
+        "direction=null; directness=indirect; tier=B2.\n"
+        "- Luo 2025: L-citrulline supplementation and arterial stiffness; "
+        "finding=representative statistic p = 0.0007; outcome=Contextual Adjacent Evidence; "
+        "direction=null; directness=review; tier=B2.\n\n"
+        "Synthesis interpretation: source-level findings connect risk-marker, mechanistic, and "
+        "intervention-adjacent signals into follow-up hypotheses. The bounded conclusion follows "
+        "from source direction, outcome class, evidence tier, and directness rather than from source count alone. "
+        "Publication-year note: citation years follow the manifest metadata; when DOI/PubMed dates differ, "
+        "the source should be treated as bibliographic/in-press metadata and not used for year-specific claims.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived claim-level counts.\n"
+        "- Sheng 2025 vs Luo 2025: surfaced tension/disagreement in Contextual Adjacent Evidence because "
+        "directions are null versus unclear; this reflects endpoint, population, directness, or study-design heterogeneity.\n"
+        "- Wang 2024 vs Azizzadeh 2026: surfaced tension/disagreement in Cardiometabolic because "
+        "directions are null versus null; this reflects endpoint, population, directness, or study-design heterogeneity.\n"
+        "- Nguyen 2026 vs Alanis 2025: surfaced tension/disagreement in Mechanism because "
+        "directions are null versus null; this reflects endpoint, population, directness, or study-design heterogeneity.\n\n"
+        "## Conclusion\n\n"
+        "The current corpus is non-supportive for clinical efficacy claims. It is not proof of a viable "
+        "geroscience intervention target; it supports only hypothesis generation and structured follow-up.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_revision_asks_splits_latest_vascular_feedback_starts() -> None:
+    feedback = (
+        "Populate Key Findings and each per-outcome-class subsection with concrete prose "
+        "that names individual cited sources.; Reconcile the outcome-class directional "
+        "coding with the actual source bundle.; Rewrite the Search Summary to describe "
+        "the actual selection logic.; In Limitations, add a specific statement about "
+        "forward-dated citations.; Tighten the Conclusion so that the tiered reading is "
+        "grounded in named source-level findings."
+    )
+
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == [
+        "Populate", "Reconcile", "Rewrite", "In", "Tighten",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks[:3]) == asks[:3]
+
+
+def test_forward_dated_ai_disclosure_ask_accepts_methods_relocation() -> None:
+    ask = (
+        "In Limitations, add a specific statement about forward-dated (2026) "
+        "citations and the implications for reproducibility, and remove or "
+        "relocate the AI-use disclosure so it does not crowd the substantive sections."
+    )
+    paper = (
+        "## Methods\n\n"
+        "### AI-use disclosure\n\n"
+        "Source retrieval and prose drafting were assisted by large language models "
+        "under a deterministic audit-trail protocol.\n\n"
+        "## Results\n\n"
+        "The evidence map is summarized.\n\n"
+        "## Limitations\n\n"
+        "Forward-dated 2026 citations are retained only as bibliographic/in-press "
+        "metadata; their reproducibility implications are bounded by the dated "
+        "source records and they are not used for year-specific claims.\n\n"
+        "## Conclusion\n\n"
+        "The synthesis remains hypothesis-generating.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_forward_dated_ai_disclosure_ask_flags_crowded_limitations() -> None:
+    ask = (
+        "In Limitations, add a specific statement about forward-dated (2026) "
+        "citations and the implications for reproducibility, and remove or "
+        "relocate the AI-use disclosure so it does not crowd the substantive sections."
+    )
+    paper = (
+        "## Limitations\n\n"
+        "Forward-dated 2026 citations are retained only as bibliographic/in-press "
+        "metadata; their reproducibility implications are bounded by the source records.\n\n"
+        "### AI-use disclosure\n\n"
+        "Source retrieval and prose drafting were assisted by large language models.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_specific_findings_by_source_map() -> None:
+    ask = (
+        "For each outcome class, extract at least 2-3 specific findings from "
+        "individual cited sources (study design, population, effect direction, "
+        "effect size where available) and present them in prose, not just in the "
+        "coding tally."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2024: outcome=Cardiometabolic; direction=mixed; directness=indirect; "
+        "tier=B2; finding=12 extracted claim(s); receipt-level direction is the coded finding.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_key_findings_source_verdict_ask_accepts_structured_source_synthesis() -> None:
+    ask = (
+        "Replace the Key Findings section with distinct, evidence-tied findings: "
+        "for each outcome class, state what the retained sources show (with at "
+        "least one effect size or directional statement per source), rather than "
+        "restating the conclusion."
+    )
+    paper = (
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: First, the strongest source-level "
+        "signals are bounded rather than broad clinical proof "
+        "(Sun 2026: outcome=Cardiometabolic; direction=unclear; directness=review; "
+        "tier=B1; claims=249; Shen 2026: outcome=Contextual Adjacent Evidence; "
+        "direction=mixed; directness=review; tier=B1; claims=234). Second, negative "
+        "and null rows are given equal interpretive weight.\n\n"
+        "## Conclusion\n\n"
+        "The conclusion stays bounded.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_revision_asks_splits_soften_and_mark_actions() -> None:
+    feedback = (
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions; "
+        "Soften or qualify the positive signal coding for single-source slices; "
+        "Mark external non-corpus references as illustrative rather than bundle sources."
+    )
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Expand the Tensions and Gaps section with at least 3–5 concrete tensions.",
+        "Soften or qualify the positive signal coding for single-source slices.",
+        "Mark external non-corpus references as illustrative rather than bundle sources.",
+    ]
+
+
+def test_revision_asks_splits_resolve_action_after_example_semicolon() -> None:
+    feedback = (
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim; "
+        "Resolve the source coding by stating the exact sample sizes."
+    )
+
+    assert revision_coverage.revision_asks(feedback) == [
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim.",
+        "Resolve the source coding by stating the exact sample sizes.",
+    ]
+
+
+def test_revision_asks_splits_either_and_accepts_findings_map_revise_shape() -> None:
+    feedback = (
+        "Reconstruct the Findings Map so that each retained source has an explicit "
+        "per-source direction on its primary outcome, with the specific effect "
+        "estimate or qualitative finding attached.; "
+        "Reconcile the abstract's '2 direct / 12 adjacent / 1 mechanistic' framing "
+        "with the Findings Map's 'direct / indirect / mechanistic' framing, or "
+        "define 'adjacent' and 'indirect' consistently across all sections.; "
+        "Expand the Tensions and Gaps section to enumerate the specific 26 "
+        "cross-study disagreements by pairing source A vs source B.; "
+        "Either remove sources whose design is review/perspective/bioinformatics "
+        "from the admitted direct-evidence counting, or relabel them and report "
+        "RoB judgments for the admitted RCT and cohort sources."
+    )
+    paper = (
+        "## Abstract\n\n"
+        "The evidence profile contains 2 direct clinical sources, 12 adjacent "
+        "clinical sources, and 1 mechanistic source.\n\n"
+        "## Evidence Snapshot\n\n"
+        "Source directness breakdown: 2/15 retained sources directly address the "
+        "stated topic and aging-relevant hard endpoints; 13/15 are adjacent, "
+        "contextual, review-level, or mechanistic and are used only to bound "
+        "interpretation. Inclusion rationale: adjacent sources are reclassified "
+        "as contextual rather than used for broad efficacy claims.\n\n"
+        "### Findings Map\n\n"
+        "- Smith 2024: outcome=Longevity; direction=positive; directness=direct; "
+        "tier=A1; finding=representative statistic p = 0.04.\n"
+        "- Jones 2025: outcome=Longevity; direction=null; directness=indirect; "
+        "tier=B2; finding=12 extracted claim(s).\n\n"
+        "Risk-of-bias appraisal summary: The public appraisal artifact reports "
+        "2 source-level rating rows; overall ratings are low=1, some concerns=1.\n\n"
+        "## Tensions and Gaps\n\n"
+        "Evidence-gap priority: cross-study disagreement counts are manifest-derived.\n"
+        "- Smith 2024 vs Jones 2025: surfaced tension/disagreement in Longevity because directions are positive versus null.\n"
+        "- Patel 2023 vs Chen 2022: surfaced tension/disagreement in Immune because directions are mixed versus negative.\n"
+        "- Lee 2021 vs Rao 2020: surfaced tension/disagreement in Safety because directions are unclear versus null.\n"
+    )
+
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 4
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(paper, asks) == []
+
+
+def test_deterministic_unmet_requires_species_study_design_summary_table() -> None:
+    ask = (
+        "Differentiate the 17-source bundle by species and study design in one summary table "
+        "(e.g., preclinical rodent n=, human n=) so readers can audit the claim."
+    )
+    prose_only = (
+        "## Evidence Landscape\n\n"
+        "The bundle includes preclinical rodent studies and human cohort evidence, "
+        "so species and study design are mixed.\n"
+    )
+    tabled = (
+        "## Evidence Landscape\n\n"
+        "### Species and Study-Design Summary\n\n"
+        "| Evidence group | Study-design signal | n | Example sources | Interpretation boundary |\n"
+        "|---|---|---:|---|---|\n"
+        "| Preclinical rodent n=12 | animal/preclinical experiment | 12 | Smith 2024 | Mechanistic only. |\n"
+        "| Human n=2 | observational/donor or cohort evidence | 2 | Parker 2020 | Association only. |\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(prose_only, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(tabled, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_single_source_map_caveats() -> None:
+    ask = (
+        "Soften or qualify the 'positive signal' coding for single-source slices "
+        "(Dosing/PK, Frailty, Skeletal/Bone) and add explicit hypothesis-generating caveats in the map."
+    )
+    paper = (
+        "## Evidence Landscape\n\n"
+        "| Outcome | Evidence |\n|---|---|\n"
+        "| Dosing and Pharmacokinetics | n=1; positive signal; single-source slice; hypothesis-generating |\n"
+        "| Frailty | n=1; positive signal; single-source slice; hypothesis-generating |\n"
+        "| Skeletal, Fracture, and Bone | n=1; null signal; single-source slice; hypothesis-generating |\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_claim_count_audit_note() -> None:
+    ask = (
+        "Audit the claim count for the Dosing and Pharmacokinetics slice "
+        "(79 claims attributed to one mouse PK study) against the claim registry "
+        "and report the corrected number, or explain the claim-derivation protocol if 79 is accurate."
+    )
+    weak = "## Evidence Landscape\n\nDosing and Pharmacokinetics contains 79 claims.\n"
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Claim-count audit note: The Dosing and Pharmacokinetics slice count is derived "
+        "from the claim registry. The claim-derivation protocol counts extracted claim "
+        "records, not independent studies: 1 retained source contributes 79 extracted "
+        "claim(s) in this slice. A high count from one source is therefore interpreted "
+        "as source-bounded density, not independent studies or pooled effect certainty.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_source_identifier_gap_note() -> None:
+    ask = (
+        "Add an explicit verification-gap note for sources without DOIs, distinguishing "
+        "them from peer-reviewed sources in the source-context map."
+    )
+    weak = "## Evidence Landscape\n\nThe source-context map lists all retained rows.\n"
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Source-context verification gap: 2 source-bundle records have no DOI, PMID, "
+        "PMCID, or trial identifier in the available metadata. They remain traceable "
+        "source-bundle records, but are distinguished from externally identifier-verified "
+        "peer-reviewed sources in the source-context map and do not independently upgrade "
+        "evidence certainty.\n"
+    )
+
+    assert revision_coverage.deterministic_known_asks([ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+    assert revision_coverage.deterministic_unmet_asks(repaired, [ask]) == []
+
+
+def test_deterministic_unmet_accepts_combination_product_positive_signal_boundary() -> None:
+    ask = (
+        "Reclassify or re-label the 'immune and inflammation positive signal' as a "
+        "combination-product signal, not a spermidine-monotherapy signal; add a single "
+        "sentence in the Findings Map table and Results Summary flagging that the 2/3 "
+        "positive sources include one combination-product RCT and one preclinical GWI "
+        "mouse model."
+    )
+    paper = (
+        "## Results Summary\n\n"
+        "The Felix 2024 RCT used a combination product containing spermidine and "
+        "hesperidin, so its positive immune/inflammation findings cannot be attributed "
+        "to spermidine monotherapy. Trivedi 2026 is a Gulf War Illness mouse model and "
+        "is therefore not a human clinical confirmation.\n"
+    )
+    weak = (
+        "## Results Summary\n\n"
+        "The immune and inflammation outcome class contains positive spermidine signals.\n"
+    )
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(weak, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_external_references_marked_illustrative() -> None:
+    ask = (
+        "Mark external non-corpus references (e.g. Ioannidis 2005) as illustrative "
+        "rather than bundle sources, or remove them."
+    )
+    paper = (
+        "## Discussion\n\n"
+        "The surrogate-endpoint caution that Ioannidis 2005 frames as a general "
+        "methodological problem is used here only as an illustrative benchmark, "
+        "not as a source-bundle claim.\n"
+    )
+    unmarked = "## Discussion\n\nIoannidis 2005 shows the central result.\n"
+
+    assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == []
+    assert revision_coverage.deterministic_unmet_asks(unmarked, [ask]) == [ask]
+
+
+def test_deterministic_unmet_accepts_thin_brief_revision_surface_notes() -> None:
+    asks = [
+        "Add substantive narrative under each outcome subsection (Contextual Adjacent Evidence, Cardiometabolic, Deficiency Prevalence, Longevity, Mechanism, Safety and Comorbidity) that links at least one specific quantitative or qualitative finding to its source, or explicitly state null/mechanistic-only status; In the Conclusion, tie the tiered interpretation to the specific bundle: name which 1 direct source carries the most interpretive weight and explain why the remaining 12 sources do not change that weight.",
+        "Expand the Limitations to specifically note that several admitted sources are protocols or cross-sectional observational designs that cannot support causal claims even individually.",
+    ]
+    weak = (
+        "## Results\n\n"
+        "| Evidence domain | Corpus slice | Strongest signal | Directness | Main limitation |\n"
+        "|---|---|---|---|---|\n"
+        "| Vascular age / Cardiometabolic | n=1 | null | 1 direct | thin |\n\n"
+        "### Source Classification Map\n\n"
+        "- Wang 2024: outcome=cardiometabolic; directness=direct; tier=A1; direction=null.\n\n"
+        "## Limitations\n\nThin corpus.\n\n"
+        "## Conclusion\n\nThe conclusion is bounded.\n"
+    )
+    repaired = weak.replace(
+        "## Results\n\n",
+        "## Results\n\n"
+        "Source examples: Cardiometabolic: Wang 2024 (tier=A1; directness=direct; direction=null).\n\n",
+    ).replace(
+        "## Limitations\n\nThin corpus.\n",
+        "## Limitations\n\n"
+        "**Design-limit note:** Protocol, mechanistic, observational, or cross-sectional sources "
+        "are retained for context but cannot support causal claims individually.\n\n"
+        "Thin corpus.\n",
+    ).replace(
+        "## Conclusion\n\nThe conclusion is bounded.\n",
+        "## Conclusion\n\n"
+        "**Direct-source ceiling:** The direct clinical source set is Wang 2024. "
+        "The remaining accepted sources are indirect, review, protocol, mechanistic, "
+        "or contextual evidence and do not outweigh the direct-source interpretation.\n\n"
+        "The conclusion is bounded.\n",
+    )
+
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(weak, asks) == asks
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_post_submit_feedback_splits_into_material_asks() -> None:
+    feedback = (
+        "Populate the Key Findings section with a concrete bullet list tied to the explicit "
+        "outcome-class slices, naming which sources support each bullet; Restate the research "
+        "question to match the two-part claim in the abstract (prognostic value of shorter LTL "
+        "for survival; causal-risk direction of genetically predicted longer LTL) and explicitly "
+        "answer both halves in the body; Reconcile the corpus-size claims (e.g., 'n=7 causal-risk/MR', "
+        "'25 sources', 'n=17 contextual') with the actual supplied bundle and the funnel counts; "
+        "correct any overcounts or label them as 'classified' vs 'admitted' consistently; Move "
+        "direction-coding 'unclear' status to a more visible position in the narrative so readers "
+        "know that the bulk of significant statistics in this corpus are polarity-unsigned at extraction; "
+        "Reduce redundant repetition of the evidence-honesty note across Abstract, Research Question, "
+        "and Conclusion."
+    )
+
+    asks = revision_coverage.revision_asks(feedback)
+
+    assert len(asks) == 5
+    assert [ask.split(" ", 1)[0] for ask in asks] == ["Populate", "Restate", "Reconcile", "Move", "Reduce"]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+
+
+def test_latest_telomere_post_submit_feedback_requires_strict_markers() -> None:
+    asks = revision_coverage.revision_asks(
+        "Populate the Key Findings section with a concrete bullet list tied to the explicit "
+        "outcome-class slices, naming which sources support each bullet; Restate the research "
+        "question to match the two-part claim in the abstract (prognostic value of shorter LTL "
+        "for survival; causal-risk direction of genetically predicted longer LTL) and explicitly "
+        "answer both halves in the body; Reconcile the corpus-size claims with the actual supplied "
+        "bundle and the funnel counts; Move direction-coding 'unclear' status to a more visible "
+        "position in the narrative; Reduce redundant repetition of the evidence-honesty note."
+    )
+    weak = (
+        "## Research Question\n\n"
+        "For Telomere Cancer Effects, what does retained evidence show about prognostic or "
+        "risk-marker associations across outcome classes?\n\n"
+        "## Key Findings\n\n"
+        "Key findings from source synthesis: Sasmita 2025: outcome=Contextual Adjacent Evidence; "
+        "direction=unclear; directness=review.\n\n"
+        "## Conclusion\n\n"
+        "Substantive conclusion: the retained source set shows causal-risk and Mendelian-randomization "
+        "evidence n=7. Evidence-honesty note: bounded.\n\n"
+        "## Abstract\n\nEvidence-honesty note: bounded.\n"
+    )
+    repaired = (
+        "## Abstract\n\nEvidence-honesty note: bounded.\n\n"
+        "## Research Question\n\n"
+        "Two-part research question: (1) Does the retained evidence address prognostic value of shorter "
+        "LTL for survival? (2) Does the retained evidence address genetically predicted longer LTL and "
+        "cancer risk? The synthesis answers both halves using admitted source counts, manifest "
+        "outcome-class slices, direction coding, tier, and directness limits.\n\n"
+        "## Key Findings\n\n"
+        "Direction-coding visibility note: 17/25 admitted sources are coded unclear at receipt level.\n\n"
+        "Corpus-count reconciliation: count-bearing slices use manifest outcome classes from admitted "
+        "sources; classified source candidates and admitted source counts are not interchangeable.\n\n"
+        "Outcome-class key findings:\n\n"
+        "- Contextual Adjacent Evidence: admitted n=17; direction coding unclear=15/null=2; "
+        "directness review=5/indirect=12; supported by Sasmita 2025 and Markozannes 2022.\n\n"
+        "## Conclusion\n\n"
+        "Substantive conclusion: the retained source set shows 25 sources across Contextual Adjacent "
+        "Evidence admitted n=17 and Mortality Survival admitted n=3; receipt-level directions "
+        "unclear=17, null=5, positive=2, negative=1.\n"
+    )
+
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_scope_framing_and_direction_tally_audit_are_structural_asks() -> None:
+    feedback = (
+        "Resolve the scope framing. Either retitle and reframe the evidence map as "
+        "'Clinical applications across heterogeneous indications' and drop the anti-aging "
+        "framing, or restrict the map to aging-relevant evidence; Make the directional "
+        "tallies auditable. Provide, in the supplement or inline, the per-source "
+        "direction/directness/tier table so counts in the prose can be verified against "
+        "the retained sources."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = "## Research Question\n\nWhat does this evidence map show?\n\n## Key Findings\n\n"
+    repaired = (
+        "## Research Question\n\n"
+        "Scope-framing note: This evidence map frames the target intervention as clinical "
+        "applications across heterogeneous indications rather than as standalone anti-aging "
+        "or longevity proof. Aging-relevant interpretation is restricted to source rows whose "
+        "metadata directly support it.\n\n"
+        "## Key Findings\n\n"
+        "Per-source direction/directness/tier audit table:\n\n"
+        "| Source | Outcome class | Direction | Directness | Tier |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| Boada 2020 | Contextual Adjacent Evidence | direction=mixed | directness=direct | tier=A1 |\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == ["Resolve", "Make"]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_second_revise_feedback_splits_and_requires_markers() -> None:
+    feedback = (
+        "Restructure outcome-class taxonomy to separate: (a) telomere length as cancer "
+        "prognostic biomarker, (b) telomere length as incident cancer risk factor/MR/causal, "
+        "(c) telomere biology mechanisms in tumor cells ALT/TERT, (d) treatment-induced "
+        "telomere change, (e) telomere-targeted or supplement interventions. Current "
+        "seven-class taxonomy mixes these.; Reconcile directional map with coded extraction: "
+        "either re-extract/code directions for all sources, or remove per-class directional "
+        "summary and state corpus is predominantly unclear-coded and does not support "
+        "directional map.; Remove Jaeger 2024 from cancer-effects bundle or move to clearly "
+        "labeled non-cancer evidence annex; healthy-volunteer supplement RCT not appropriate "
+        "as direct contextual evidence for telomere-cancer effects.; Recode Ha 2023 in "
+        "Mortality and Survival: EFS P=.903 no significant difference; classify null, not "
+        "\"significant source statistic in 3/3 sources\", or define significant as \"source "
+        "reports p-value.\"; Clarify admission funnel arithmetic: whether 41/8/48/20/3 buckets "
+        "are mutually exclusive/overlapping/sequential; reconcile strict high-confidence=3 vs "
+        "admitted final=25; explain why 25 not 3 source base.; Tighten conclusion so it does "
+        "not present bounded risk-marker, causal, mechanistic, or treatment-response hypotheses "
+        "as equally supported when corpus is skewed toward prognostic biomarker studies, MR risk "
+        "and mechanistic ALT minority slices."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = (
+        "## Evidence Landscape\n\nThe corpus is heterogeneous.\n\n"
+        "## Key Findings\n\nThe directional map is broad.\n\n"
+        "## Conclusion\n\nThe evidence supports bounded risk-marker, causal, mechanistic, "
+        "and treatment-response hypotheses equally.\n"
+    )
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "Outcome-taxonomy separation note: this separates prognostic and survival-marker evidence, "
+        "causal-risk and Mendelian-randomization evidence, biology-mechanism and molecular-context "
+        "evidence, and treatment or intervention-response supplement evidence.\n\n"
+        "Directional-map boundary: Because 17/25 retained sources are predominantly unclear-coded "
+        "at receipt level, the corpus does not support a standalone directional map.\n\n"
+        "Source-scope annex note: Jaeger 2024 is retained only as non-topic/contextual annex evidence "
+        "and is not pooled as direct evidence for the target outcome.\n\n"
+        "Numeric reconciliation note: Ha 2023 reported a non-significant mapped comparison "
+        "(p = .903); this synthesis treats that mapped comparison as non-significant.\n\n"
+        "Admission-bucket note: the source-selection buckets are not an additive conservation "
+        "table and are claim-binding states. Strict high-confidence subset note: 3 strict "
+        "high-confidence receipts are a quality subset, not the synthesis denominator; the "
+        "admitted source base remains 25.\n\n"
+        "## Key Findings\n\nKey findings remain source-linked.\n\n"
+        "## Conclusion\n\n"
+        "Dominant source pattern: prognostic and survival-marker evidence represents 17/25 "
+        "retained sources. Minority slices are causal-risk and Mendelian-randomization evidence "
+        "n=4, biology-mechanism and molecular-context evidence n=3, treatment or intervention-response "
+        "evidence n=1. These source-role strata are not weighed equally and the paper does not "
+        "establish standalone clinical actionability.\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == [
+        "Restructure",
+        "Reconcile",
+        "Remove",
+        "Recode",
+        "Clarify",
+        "Tighten",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_third_revise_feedback_splits_and_requires_markers() -> None:
+    feedback = (
+        "Add a clearly scoped Key Findings section that names the 2-3 most-supported "
+        "outcome-specific signals with their source citations, rather than only a "
+        "methodological header.; Reconcile the five-domain vs. seven-slice source "
+        "stratification: either consolidate to five outcome domains matching the abstract, "
+        "or correct the abstract to state seven slices with their n counts.; Recompute "
+        "and report the actual MR/ causal-risk source count from the bundle (Wan 2023, "
+        "Song 2022, Chen 2023, Markozannes 2022, plus any others) rather than asserting "
+        "an unsupported 7/25 figure.; Reclassify Jaeger 2024 as direct interventional "
+        "evidence (RCT with TL endpoint) and adjust the direct-evidence count and the "
+        "'0/25 direct sources' statement in Gaps Identified accordingly.; Surface the "
+        "direction-coded findings for at least the top-cited sources in each outcome "
+        "class so that significant source statistic rows are interpretable."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = "## Key Findings\n\nKey findings from source synthesis.\n\n## Conclusion\n\nBounded.\n"
+    repaired = (
+        "## Evidence Landscape\n\n"
+        "MR/causal-risk source count: 4/25 retained sources (Wan 2023, Song 2022, "
+        "Chen 2023, Markozannes 2022).\n\n"
+        "Direct-interventional endpoint correction: Jaeger 2024 is counted as direct "
+        "interventional endpoint evidence. Direct evidence count is 1/25; RCT endpoint "
+        "evidence is separated from hard clinical-outcome proof.\n\n"
+        "## Key Findings\n\n"
+        "Most-supported outcome-specific signals:\n\n"
+        "- Sarkar 2026 (representative statistic p = 0.0005; direction=unclear; source-level statistic reported).\n\n"
+        "Stratification reconciliation note: The five-domain source-role summary "
+        "(causal-risk and Mendelian-randomization evidence n=4) is separate from "
+        "the seven-slice outcome-class table (Mortality and Survival n=3); both "
+        "reconcile to the same retained source denominator.\n\n"
+        "Direction-coded source highlights:\n\n"
+        "- Chen 2023 (representative statistic p = 0.04; direction=null; source-level statistic reported).\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == ["Add", "Reconcile", "Recompute", "Reclassify", "Surface"]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []
+
+
+def test_latest_telomere_fourth_revise_feedback_splits_and_requires_markers() -> None:
+    feedback = (
+        "Reconcile each cited source's effect_direction with the actual reported finding "
+        "in excerpt; remove or correct contradicted directionality (Brouwers 2016, "
+        "Alhareeri 2020, Sasmita 2025, Ha 2023).; Verify/reconcile admission counts "
+        "and receipt-level direction tallies (n=24, negative=1, null=5, positive=2, "
+        "unclear=16) against source bundle.; Reframe research question and conclusion "
+        "so Telomere Cancer Effects is bounded to retained set: adjacent biomarkers, "
+        "prognostic associations, MR causal signals; not direct interventional/clinical "
+        "efficacy.; Separate MR cancer-risk sources (Li 2026, Chen 2023, Wan 2023, "
+        "Song 2022) from mechanistic/ALT sources (Brown 2026, Genetta 2026, Aierken "
+        "2026, Xu 2024, Afolabi 2026) when describing disagreements; don't pool.; "
+        "Add explicit statement no direct interventional hard-endpoint sources admitted; "
+        "conclusion bounded to association/mechanism/hypothesis-generation; remove "
+        "clinical actionability/anti-aging framing.; Verify 2026-dated sources for "
+        "actual publication status and preprint vs peer-reviewed distinction; flag preprints."
+    )
+    asks = revision_coverage.revision_asks(feedback)
+    weak = (
+        "## Key Findings\n\n"
+        "Telomere evidence is mixed and clinically actionable.\n\n"
+        "## Conclusion\n\n"
+        "This supports an anti-aging framing.\n"
+    )
+    repaired = (
+        "## Research Question\n\n"
+        "Scope-bounded research question note: This paper asks what the admitted source "
+        "set shows across adjacent biomarkers, prognostic associations, MR causal signals, "
+        "and mechanism; it is not direct interventional or clinical efficacy evidence.\n\n"
+        "## Key Findings\n\n"
+        "Effect-direction reconciliation note:\n\n"
+        "- Brouwers 2016: direction=null; actual reported finding=manifest-coded source finding.\n"
+        "- Alhareeri 2020: direction=positive; actual reported finding=manifest-coded source finding.\n"
+        "- Sasmita 2025: direction=unclear; actual reported finding=manifest-coded source finding.\n"
+        "- Ha 2023: direction=null; actual reported finding=manifest-coded source finding.\n\n"
+        "Admission and direction-tally reconciliation: n=24; negative=1; null=5; "
+        "positive=2; unclear=16. These counts use admitted manifest receipts.\n\n"
+        "MR/mechanism disagreement separation note: MR/Mendelian rows (Li 2026, Chen 2023, "
+        "Wan 2023, Song 2022) are interpreted separately from mechanistic/ALT rows "
+        "(Brown 2026, Genetta 2026, Aierken 2026, Xu 2024, Afolabi 2026) and are not pooled.\n\n"
+        "No direct interventional hard-endpoint sources were admitted: manifest hard-endpoint "
+        "rows=0 (none). The conclusion is bounded to association, mechanism, and "
+        "hypothesis-generation rather than clinical actionability.\n\n"
+        "Publication-status/preprint note: 2026-dated manifest sources are Li 2026, "
+        "Brown 2026, Genetta 2026; preprint candidates flagged by manifest metadata: none.\n\n"
+        "## Conclusion\n\n"
+        "Scope-bounded research question note: not direct interventional or clinical efficacy.\n"
+    )
+
+    assert [ask.split(" ", 1)[0] for ask in asks] == [
+        "Reconcile",
+        "Verify/reconcile",
+        "Reframe",
+        "Separate",
+        "Add",
+        "Verify",
+    ]
+    assert revision_coverage.deterministic_known_asks(asks) == asks
+    assert set(revision_coverage.deterministic_unmet_asks(weak, asks)) == set(asks)
+    assert revision_coverage.deterministic_unmet_asks(repaired, asks) == []

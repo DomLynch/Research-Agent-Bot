@@ -8,8 +8,9 @@ Hard rules:
 These rules are the structural defense against drafter-style bloat. Raising
 them requires a DECISIONS.md entry justifying the new ceiling.
 
-Current ceiling: 21,250 LOC (raised 2026-05-09 from 20,750 by
-publication scoring and hazard-ratio normalization). Earlier waves:
+Current ceiling: 29,150 LOC (raised 2026-06-10 from 24,150 by
+operator request for 5,000 LOC of headroom while keeping the per-file cap).
+Earlier waves:
 
 Wave 15 - Publication scorer + HR normalizer (20,750 -> 21,250):
 agent/publication_scorer.py adds a deterministic panel-rubric scorecard for
@@ -227,7 +228,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 24150  # Slice 31 (2026-05-16) compressed to fit under Wave 60 ceiling — NO new budget bump. Reviewer doctrine 2026-05-16: cut/simplify; do not raise the ceiling to absorb new code. Wave 61 (24200) reverted; `agent/review_type.py` `downshift_review_type_for_thin_corpus` docstring + threshold comments tightened by ~7 LOC. Wave 60 (2026-05-15): +50 for Slice 29 readiness-contract multi-item refresh. Wave 59 (2026-05-15): +50 for Slice 28 Phase H topic-slug normalisation. Wave 58 (2026-05-15): +50 for Slice 19 Phase G surface re-evaluation. Wave 57 (2026-05-14): +50 for Slice 18 prose polish + accountability split + initial Phase G sidecar reconciliation.
+TOTAL_LIMIT = 29150  # 2026-06-10 operator-approved +5,000 headroom over 24,150; per-file cap remains the anti-bloat guardrail.
 PER_FILE_LIMIT = 800  # Wave 49 limit retained: journal_surface_gate must stay ≤800 LOC. Editorial-register checks live in their semantic-home modules (review_type.py, methods_pack.py) — gate.py is the orchestrator over universal-prose-surface checks (jargon, refs, lanes, thesis, novelty).
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

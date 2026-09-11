@@ -115,6 +115,53 @@ def test_low_patch_short_paper_does_not_escalate() -> None:
     assert client.post.call_count == 1
 
 
+def test_review_paper_tolerates_non_list_patches() -> None:
+    client = MagicMock()
+    client.post = AsyncMock(return_value=_mock_chat_response(
+        "google/gemini-3.1-flash-lite:exacto", {"patches": 0},
+    ))
+
+    patches, raw, _model_used, _cost = asyncio.run(
+        final_reviewer.review_paper(
+            "short clean paper",
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="google/gemini-3.1-flash-lite:exacto",
+            fallback_model="mistralai/mistral-small-2603",
+            api_key="test-key",
+            client=client,
+        )
+    )
+
+    assert patches == []
+    assert raw["patches_parse_warning"] == "int"
+
+
+def test_low_patch_escalation_tolerates_non_list_patches() -> None:
+    client = MagicMock()
+    client.post = AsyncMock(side_effect=[
+        _mock_chat_response("google/gemini-3.1-flash-lite:exacto", {"patches": []}),
+        _mock_chat_response("x-ai/grok-4.3", {"patches": 0}),
+    ])
+
+    patches, raw, model_used, _cost = asyncio.run(
+        final_reviewer.review_paper(
+            "word " * 10_001,
+            {"receipts": []},
+            {"p1_pass": True, "score_out_of_10": 10},
+            model="google/gemini-3.1-flash-lite:exacto",
+            fallback_model="mistralai/mistral-small-2603",
+            escalation_model="x-ai/grok-4.3",
+            api_key="test-key",
+            client=client,
+        )
+    )
+
+    assert patches == []
+    assert raw["patches_parse_warning"] == "int"
+    assert model_used == "google/gemini-3.1-flash-lite:exacto→x-ai/grok-4.3"
+
+
 def test_primary_retry_recovers_before_mistral() -> None:
     """A transient primary parse miss should retry the primary before fallback."""
     client = MagicMock()
@@ -163,6 +210,37 @@ def test_mistral_fallback_when_primary_fails(
     assert client.post.call_count == 3
     # Mistral pricing (0.20/0.60 per Mtok), still > 0
     assert cost > 0
+
+
+def test_primary_wallclock_timeout_falls_back(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """A hung primary reviewer must not trap the revise lane indefinitely."""
+    monkeypatch.setattr(final_reviewer, "_PRIMARY_ATTEMPTS", 1)
+    monkeypatch.setattr(final_reviewer, "_review_call_timeout_sec", lambda: 0.01)
+
+    class Client:
+        calls = 0
+
+        async def post(self, *_args, **_kwargs):
+            self.calls += 1
+            if self.calls == 1:
+                await asyncio.sleep(60)
+            return _mock_chat_response(
+                "mistralai/mistral-small-2603", {"patches": []},
+            )
+
+    client = Client()
+    parsed, model_used, _cost = asyncio.run(
+        final_reviewer._call_with_fallback(
+            "sys", "user", "google/gemini-3.1-flash-lite:exacto",
+            "mistralai/mistral-small-2603",
+            "test-key", "https://openrouter.ai/api/v1", client,
+        )
+    )
+    assert model_used == "mistralai/mistral-small-2603"
+    assert client.calls == 2
+    assert parsed["_review_attempts"][0]["error_type"] == "TimeoutError"
 
 
 def test_reviewer_extracts_json_from_prose_or_fence() -> None:

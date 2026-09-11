@@ -1067,8 +1067,8 @@ def _post_apply_audit_safe(
 
       - Q2 numeric trace stays at-or-better than pre-patch
         (no new untraceable numerics introduced)
-      - Stage-2 consistency P1+P2 count stays at-or-better than
-        pre-patch (no new audit issues introduced)
+      - Stage-2 blocking/actionable count stays at-or-better than
+        pre-patch (advisory direction-consistency notes do not block)
 
     The pre-patch baseline is computed inside the same call so we
     measure DELTA, not absolute (existing pre-patch issues persist
@@ -1112,20 +1112,27 @@ def _post_apply_audit_safe(
         )
     except Exception as e:  # noqa: BLE001
         return True, f"Stage-2 consistency failed ({e}); skip"
+    advisory_issue_types = {
+        "abstract_results_direction_consistency",
+        "metadata_prose_direction_consistency",
+        "manifest_receipt_id_missing",
+    }
     pre_count = sum(
-        1 for i in pre_issues if i.severity in ("P1", "P2")
+        1 for i in pre_issues
+        if i.severity in ("P1", "P2") and i.issue_type not in advisory_issue_types
     )
     post_count = sum(
-        1 for i in post_issues if i.severity in ("P1", "P2")
+        1 for i in post_issues
+        if i.severity in ("P1", "P2") and i.issue_type not in advisory_issue_types
     )
     if post_count > pre_count:
         return False, (
-            f"Stage-2 P1+P2 count regressed "
+            f"Stage-2 blocking/actionable count regressed "
             f"({pre_count} → {post_count})"
         )
     return True, (
-        f"post-apply audit clean: Q2 unchanged, Stage-2 "
-        f"{pre_count} → {post_count} P1+P2"
+        f"post-apply audit clean: Q2 unchanged, Stage-2 actionable "
+        f"{pre_count} → {post_count}"
     )
 
 

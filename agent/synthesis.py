@@ -599,6 +599,7 @@ _SEVERITY: Mapping[TensionKind, int] = {
     # variant is the cross-domain version of the same trust hazard.
     "mechanism_vs_clinical": 3,
     "null_vs_positive": 4,
+    "null_vs_negative": 4,
     "disagreement": 5,
 }
 
@@ -622,7 +623,7 @@ def _tension_summary(kind: TensionKind, a: ReceiptSummary, b: ReceiptSummary) ->
             f"{a.outcome_class}; {b.receipt_id} reports {b.effect_direction} "
             f"on the same outcome — direct conflict"
         )
-    if kind == "null_vs_positive":
+    if kind in ("null_vs_positive", "null_vs_negative"):
         signed = a if a.effect_direction != "null" else b
         nullish = b if a.effect_direction != "null" else a
         return (
@@ -695,12 +696,21 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
         # mechanism_vs_clinical rule above. Resolves an asymmetry the
         # reviewer flagged (cross-outcome direct+indirect was severity
         # 3 but same-outcome direct+indirect was severity 0).
+        # A null-vs tension is a real disagreement only between COMPARABLE
+        # evidence strata. A null mechanistic (preclinical) finding paired with
+        # a signed clinical one — or vice-versa — is a mechanism-vs-clinical
+        # relationship, not a disagreement; pairing a human study against
+        # non-comparable animal/in-vitro work manufactured the spurious
+        # all-vs-one severity-4 cluster the reviewer flagged. Such pairs fall
+        # through to orthogonal. Universal — directness only, no topic terms.
+        # (direct-vs-non-direct is already routed to indirectness_gap above.)
+        comparable = (a.directness == "mechanistic") == (b.directness == "mechanistic")
         if (a_direct and b_non_direct) or (b_direct and a_non_direct):
             kind = "indirectness_gap"
-        elif a.effect_direction == "null" and b.effect_direction in {"positive", "negative"}:
-            kind = "null_vs_positive"
-        elif b.effect_direction == "null" and a.effect_direction in {"positive", "negative"}:
-            kind = "null_vs_positive"
+        elif comparable and a.effect_direction == "null" and b.effect_direction in {"positive", "negative"}:
+            kind = "null_vs_positive" if b.effect_direction == "positive" else "null_vs_negative"
+        elif comparable and b.effect_direction == "null" and a.effect_direction in {"positive", "negative"}:
+            kind = "null_vs_positive" if a.effect_direction == "positive" else "null_vs_negative"
         elif {a.effect_direction, b.effect_direction} == {"positive", "negative"}:
             kind = "disagreement"
         elif (

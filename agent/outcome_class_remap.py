@@ -2,9 +2,9 @@
 from __future__ import annotations
 
 import re
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 
-__all__ = ["ENDPOINT_REMAP", "ENDPOINT_PATTERNS", "BIOMEDICAL_OTHER_OUTCOME_RULES", "OUTCOME_VOCAB", "outcome_display", "outcome_key", "remap_outcome_class", "refine_other_outcome_class", "is_known_misclassification"]
+__all__ = ["ENDPOINT_REMAP", "ENDPOINT_PATTERNS", "BIOMEDICAL_OTHER_OUTCOME_RULES", "OUTCOME_VOCAB", "outcome_display", "outcome_key", "unique_outcome_displays", "remap_outcome_class", "refine_other_outcome_class", "is_known_misclassification"]
 
 # PEARL trial QoL endpoints belong under healthspan_qol.
 ENDPOINT_REMAP: Mapping[str, str] = dict.fromkeys((
@@ -29,21 +29,26 @@ OUTCOME_VOCAB: Mapping[str, tuple[str, tuple[str, ...], tuple[str, ...]]] = {
     "cognitive": ("Cognitive", (), ()),
     "contextual_other": ("Contextual Adjacent Evidence", ("contextual other", "adjacent evidence"), ()),
     "deficiency_prevalence": ("Deficiency Prevalence", ("deficiency prevalence",), ("deficiency", "insufficiency", "prevalence", "serum", "status")),
-    "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "supplementation", "pharmacokinetic", "cholecalciferol", "calcifediol")),
+    "dosing_pharmacokinetics": ("Dosing and Pharmacokinetics", ("dosing pharmacokinetics",), ("dose", "dosing", "pharmacokinetic")),
     "frailty": ("Frailty", (), ()),
     "healthspan_qol": ("Healthspan and Quality of Life", ("healthspan qol", "quality of life"), ()),
-    "immune": ("Immune", (), ()),
-    "immune_inflammation": ("Immune and Inflammation", ("immune inflammation",), ("inflammation", "immune", "sepsis", "infection", "cytokine")),
+    # "immune" is merged into immune_inflammation (same domain) so a corpus
+    # does not fragment into two singleton sections; outcome_key canonicalizes
+    # both ids to immune_inflammation.
+    "immune_inflammation": ("Immune and Inflammation", ("immune inflammation", "immune"), ("inflammation", "immune", "sepsis", "infection", "cytokine")),
     "longevity": ("Longevity", (), ()),
     "mechanism": ("Mechanism", (), ()),
     "mortality_survival": ("Mortality and Survival", ("mortality survival",), ("mortality", "survival", "death", "cause_specific_death")),
-    "muscle_function": ("Muscle Function", (), ()),
+    "muscle_function": ("Muscle Function", (), ("muscle", "sarcopenia", "myopathy")),
     "oncology": ("Oncology", (), ()),
     "ophthalmologic": ("Ophthalmologic", (), ()),
     "other": ("Other", (), ()),
     "safety": ("Safety", (), ()),
     "safety_comorbidity": ("Safety and Comorbidity", ("safety comorbidity",), ("safety", "adverse", "kidney", "chronic", "comorbidity")),
-    "skeletal_fracture_bone": ("Skeletal, Fracture, and Bone", ("skeletal fracture bone", "bone fracture"), ("bone", "fracture", "osteoporosis", "calcium", "skeletal")),
+    # NB: bare "skeletal" was dropped — it substring-matched "skeletal muscle",
+    # mis-filing muscle papers as bone. muscle_function (above, earlier in dict
+    # order) now claims those via its "muscle" needle.
+    "skeletal_fracture_bone": ("Skeletal, Fracture, and Bone", ("skeletal fracture bone", "bone fracture"), ("bone", "fracture", "osteoporosis", "calcium")),
 }
 
 BIOMEDICAL_OTHER_OUTCOME_RULES: tuple[tuple[str, tuple[str, ...]], ...] = tuple(
@@ -78,6 +83,20 @@ def outcome_display(label: str) -> str:
     return OUTCOME_VOCAB.get(canon, (str(label).replace("_", " ").strip().title() or "Other", (), ()))[0]
 
 
+def unique_outcome_displays(labels: Iterable[str], *, lower: bool = False) -> tuple[str, ...]:
+    """Public labels, deduped after canonical alias resolution."""
+    seen: set[str] = set()
+    out: list[str] = []
+    for label in labels:
+        display = outcome_display(str(label))
+        key = display.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(display.lower() if lower else display)
+    return tuple(out)
+
+
 def is_known_misclassification(endpoint: str, current_class: str) -> bool:
     target = _lookup(endpoint)
     return target is not None and target != current_class
@@ -104,6 +123,13 @@ def refine_other_outcome_class(receipt: object, current_class: str) -> str:
     for label, needles in BIOMEDICAL_OTHER_OUTCOME_RULES:
         if any(needle in text for needle in needles):
             return label
+    # A mechanistic-directness source whose outcome WHAT wasn't classifiable
+    # above is MECHANISM evidence, not the undifferentiated catch-all — this
+    # drains the "contextual adjacent" junk drawer (mostly preclinical work)
+    # and separates mechanistic from clinical strata for tension grouping.
+    # Universal: keys on the directness field, no topic terms.
+    if str(getattr(receipt, "directness", "") or "").lower() == "mechanistic":
+        return "mechanism"
     return "contextual_other"
 
 

@@ -16,6 +16,8 @@ from html import escape
 from pathlib import Path
 from typing import Any
 
+import domain_discrimination
+
 REPO = Path(__file__).resolve().parent.parent
 
 
@@ -25,6 +27,7 @@ class PaperThesis:
     framework_name: str
     axes: list[str]
     falsifier: str
+    novel_contribution: str
     support_claim_ids: list[str]
     contradiction_ids: list[str]
 
@@ -98,9 +101,10 @@ def compile_run(run_dir: Path) -> dict[str, Any]:
     topic = str(manifest.get("topic") or _topic_from_run(run_dir))
     receipts = [r for r in manifest.get("receipts", []) if isinstance(r, dict)]
     tensions = _load_tensions(run_dir)
+    domain = domain_discrimination.build_domain_discrimination(topic, receipts)
     framework = select_domain_framework(topic, _topic_class(topic), receipts, _topic_framework(topic))
-    thesis = _build_thesis(paper, topic, framework, receipts, tensions)
-    exports = _write_exports(run_dir, paper, manifest, receipts, tensions)
+    thesis = _build_thesis(paper, topic, framework, receipts, tensions, domain)
+    exports = _write_exports(run_dir, paper, manifest, receipts, tensions, domain)
     ir = PaperIR(
         schema="researka.paper_ir.v1",
         title=_title(paper, topic),
@@ -125,6 +129,9 @@ def select_domain_framework(
 ) -> DomainFramework:
     if configured:
         return configured
+    schema = domain_discrimination.select_domain_schema(topic, receipts)
+    if schema.key != "geroscience":
+        return DomainFramework(schema.name, schema.terms, schema.axes, schema.falsifier)
     haystack = " ".join(
         [topic, topic_class]
         + [str(r.get("outcome_class") or "") for r in receipts[:40]]
@@ -193,6 +200,7 @@ def _load_tensions(run_dir: Path) -> list[dict[str, Any]]:
 def _build_thesis(
     paper: str, topic: str, framework: DomainFramework,
     receipts: list[dict[str, Any]], tensions: list[dict[str, Any]],
+    domain: dict[str, Any],
 ) -> PaperThesis:
     claim = _first_sentence(_section_text(paper, "Discussion")) or _first_sentence(_section_text(paper, "Abstract"))
     support = [
@@ -204,10 +212,11 @@ def _build_thesis(
         for i, t in enumerate(tensions[:8], 1)
     ]
     return PaperThesis(
-        claim=claim or f"{topic.replace('_', ' ')} evidence requires bounded interpretation.",
+        claim=str(domain.get("thesis") or claim or f"{topic.replace('_', ' ')} evidence requires bounded interpretation."),
         framework_name=framework.name,
         axes=list(framework.axes),
         falsifier=framework.falsifier,
+        novel_contribution=str(domain.get("novel_contribution") or ""),
         support_claim_ids=[s for s in support if s],
         contradiction_ids=contradiction_ids,
     )
@@ -271,8 +280,10 @@ def _references(paper: str) -> list[str]:
 def _write_exports(
     run_dir: Path, paper: str, manifest: dict[str, Any],
     receipts: list[dict[str, Any]], tensions: list[dict[str, Any]],
+    domain: dict[str, Any],
 ) -> dict[str, str | None]:
     _write_evidence_csv(run_dir / "evidence_table.csv", receipts)
+    (run_dir / "domain_discrimination.json").write_text(json.dumps(domain, indent=2) + "\n", encoding="utf-8")
     _write_bib(run_dir / "references.bib", _references(paper), manifest)
     (run_dir / "contradiction_map.json").write_text(json.dumps({"tensions": tensions}, indent=2) + "\n", encoding="utf-8")
     _write_docx(run_dir / "full_paper.docx", paper)
@@ -284,6 +295,7 @@ def _write_exports(
         "paper_audit": "paper_audit.json" if (run_dir / "paper_audit.json").exists() else None,
         "claim_cards": "claim_graph.json" if (run_dir / "claim_graph.json").exists() else None,
         "evidence_table_csv": "evidence_table.csv",
+        "domain_discrimination": "domain_discrimination.json",
         "contradiction_map": "contradiction_map.json",
         "supplement": "structured_evidence_tables.md" if (run_dir / "structured_evidence_tables.md").exists() else None,
     }
@@ -387,11 +399,57 @@ def _quality_score(ir: PaperIR, paper: str, receipts: list[dict[str, Any]], tens
     return {"schema": "researka.paper_quality_score.v1", "score_out_of_100": round(100 * sum(checks.values()) / len(checks), 1), "checks": checks}
 
 
+def reresolve_export_manifest(run_dir: Path) -> bool:
+    """Re-point public_export_manifest.json at post-organize file locations.
+
+    The manifest is written by compile_run BEFORE _organize_run_artifacts
+    relocates appraisal sidecars into audit/, so a recorded bare path can go
+    stale (the file is no longer top-level yet `exists` stays True) and the
+    public bundle then drops the populated sidecar — the reader shows
+    "not appraised". Re-resolve any recorded path that no longer exists to its
+    audit/ location. Idempotent; fail-open. Returns True if anything changed."""
+    path = run_dir / "public_export_manifest.json"
+    try:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    files = manifest.get("files")
+    if not isinstance(files, dict):
+        return False
+    changed = False
+    for entry in files.values():
+        if not isinstance(entry, dict):
+            continue
+        rel = str(entry.get("path") or "")
+        if not rel or (run_dir / rel).exists():
+            continue
+        audit_rel = f"audit/{rel.rsplit('/', 1)[-1]}"
+        if (run_dir / audit_rel).exists():
+            entry["path"], entry["exists"] = audit_rel, True
+            changed = True
+        elif entry.get("exists"):
+            entry["exists"] = False
+            changed = True
+    if changed:
+        path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    return changed
+
+
 def _export_manifest(run_dir: Path, ir: PaperIR, score: dict[str, Any]) -> dict[str, Any]:
+    # Appraisal sidecars are public artifacts, but _organize_run_artifacts
+    # relocates them into audit/; resolve either location so the public
+    # manifest points at the populated file instead of reading "not appraised".
+    def _rel(name: str) -> str:
+        return name if (run_dir / name).exists() else f"audit/{name}"
+    # Explicit/appraisal keys are declared AFTER **ir.exports so a named public
+    # sidecar always wins over an exports-dict collision.
     export_paths = {
+        **ir.exports,
         "paper_ir": "paper_ir.json",
         "paper_quality_score": "paper_quality_score.json",
-        **ir.exports,
+        "risk_of_bias": _rel("risk_of_bias.json"),
+        "grade_assessment": _rel("grade_assessment.json"),
+        "quality_methods": _rel("quality_methods.json"),
     }
     files = {
         name: {"path": rel, "exists": bool(rel and (run_dir / rel).exists())}
