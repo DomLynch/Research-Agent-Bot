@@ -1,8 +1,8 @@
-# V3 standardized publishing — audit at 2026-09-10 23:32 Dubai
+# V3 standardized publishing — continuation audited 2026-09-11
 
 The shared fixes are deployed. **Publishing recovery and unattended cross-topic
 repeatability are not yet proven.** Both VPS checkouts are clean at
-`a41bee86455f2a68be983dee55a49345eee67870` (runtime code commit); the dashboard returned HTTP 200 and
+`49d1c12031b3f3cd8d62bb0ede83799471205c4f` (runtime code commit); the dashboard returned HTTP 200 and
 all six publishing timers were restored. Deployment is not a public paper.
 
 The user requested steps 1–5 with an audit after each, then explicitly rejected
@@ -11,31 +11,54 @@ source facts, normal review decisions and canonical submission history.
 
 ## Five-step audit
 
-### Active continuation, 23:55 Dubai
+### Current continuation, September 11
 
-The ordinary fresh service started at 23:43:57 on `b92dd6e7` (runtime `a41bee86`),
-invocation `3c54f04ef2a84e6d9d48eceaa39dd17e`. Its normal selector chose
-`telomere_cardiovascular_effects`; run directory:
-`/opt/research-agent-bot/runs/synthesis-telomere_cardiovascular_effects-v06-DAILY-2026-09-10T19-45-59Z`.
-Abstract, Question, Introduction and Background are complete. Generation is still
-active; no new submission or public artifact is verified. Do not deploy code over
-this worker or count its unfinished manuscript as publishing recovery.
+The ordinary fresh run started September 10 at 23:43:57 on `b92dd6e7` and selected
+`telomere_cardiovascular_effects` itself. Its first manuscript completed in 1,733
+seconds with local `publication_ready`, but the publishing bridge blocked it:
+`researka_claim_trace_insufficient:cited=11/11,aligned=8/11,required=9`.
+Its subsequent attempts failed quality gates. The scheduler mislabeled those
+valid negative outcomes `synthesis_failed`, so systemd restarted the whole cycle
+after its bounded attempts ended. Later ordinary selection also tried resistance
+training. Local readiness did not establish publishing eligibility.
 
-Follow-up `8e83afd6ef4009c73465c92f38349b5428b05d64` is committed and pushed,
-**not deployed**. Audit found that stopping the Python cycle still returned 2,
-causing systemd `Restart=on-failure` to regenerate the paper. The CLI now returns
-70 for `local_gate_execution_failed`; fresh/revise units prevent restart for 70
-while preserving its failed status. Other transient failures retain exit 2.
-Checks: 13 focused tests, required quality 347, Ruff and typing passed. Isolated
-mutation changes the result back from 70 to 2. A real transient systemd diagnostic
-confirmed `Result=exit-code`, `ExecMainStatus=70`, `ActiveState=failed`, `NRestarts=0`;
-only that diagnostic unit was cleaned up. No runtime LOC was added.
-Discovery queries were run before editing; exact `main` lookup was misresolved by
-CodeGraph, so the actual CLI/entrypoint were inspected directly with Python AST.
-Receipts: `.quality-reports/v3-service-restart-{discovery,mutation}.json` and
-`/tmp/v3-service-restart-{focused,quality,mypy,native}.log`.
-Deploy this follow-up only after all publishing workers are idle, and preserve
-the existing fresh-service drop-in (one topic, 10,800 seconds).
+The last observed fresh cycle ended at 09:26:55 Dubai with zero submissions. A
+temporary `Restart=no` hold allowed that worker to finish without another restart;
+no active manuscript was interrupted. All six loaded publishing workers were
+then verified idle before deploying `49d1c120` to both clean VPS checkouts. The
+temporary hold was removed, the original fresh one-topic/10,800-second override
+was preserved, and all six timers were verified active at 09:28:36. The prior
+fresh failure and drought failure remain visible; neither was reset to fake health.
+
+The shared fix distinguishes software failure (`local_gate_execution_failed`,
+CLI exit 70, visibly failed without restart), a quality rejection after bounded
+retries (`local_gate_blocked`, no-submission exit 3), and transient failure (exit 2).
+It adds no runtime LOC. Audit: 16 focused tests, required quality 347, Ruff and
+typing passed. A real systemd diagnostic verified software exit 70 stays failed
+with zero restarts. CLI mutation and cycle tests preserve transient retries and
+bound repeated quality failures. Deployment: `/tmp/v3-gate-exit-deploy.log`;
+checks: `/tmp/v3-gate-exit-{focused,quality,mypy}.log`.
+
+The remaining publication blocker is scientific repair integrity. A frozen
+resistance-training payload reproduces exactly `cited=16/16,aligned=15/16` when
+the original verified grounding context is loaded. The failing claim combines
+different study arms into a contradiction. The original writer distinguished
+the groups but expanded their abbreviations incorrectly; reviewer patch P03
+removed one qualifier, and P04 was applied through the repair loop, leaving a
+partial contrasting clause. The final publication block is valid and remains.
+The exact replacement proposed during that repair was not retained in the log,
+so do not claim the precise deletion mechanism has been established.
+The source is frozen at
+`runs/synthesis-resistance_training-v06-DAILY-2026-09-10T23-02-48Z`; inspect its
+`debug/full_paper.review_patches.json`, `debug/full_paper.review_patch_log.json`,
+`prose_grounding_review.json`, and `researka_preflight_input.json` together.
+An initial replay omitted grounding context and returned 4/16; it is invalid as
+a production-equivalent result and was superseded by the exact 15/16 replay.
+
+No manuscript, source fact, threshold or reviewer outcome was overridden. The
+public feed checked after midnight still listed August 15 as V3's latest public
+publication. A new accepted public artifact and cross-topic repeatability remain
+unverified; steps 3 and 5 must not be marked complete.
 
 ### Step status
 
@@ -43,9 +66,9 @@ the existing fresh-service drop-in (one topic, 10,800 seconds).
 |---|---|---|
 | 1. Reconciliation | Bounded reconciliation is deployed. Earlier two real passes covered 80 distinct IDs in 57–58 seconds. The 17:06 UTC receipt completed in 52.065 seconds, with no runtime error and 205 deferred records. | The deferred backlog remains; do not equate a bounded successful pass with every historical record reconciled. |
 | 2. Source records before prose | Shared source-role, comparator, direction and author-record rules pass focused checks. Five unchanged corpora compile without a crash. | Missing endpoint facts remain unknown. Do not promote an unknown direction or treat a protocol as completed efficacy evidence. |
-| 3. Manuscript completeness | Quote cleanup, URL word counting and a DOI-corrupting finalization loop have shared fixes. A sixth topic was selected by the ordinary production scheduler; its failed artifact now passes surface repair through the ordinary repair function. | Training completed on b398; semaglutide timed out. The sixth paper is not journal-ready: its regenerated local verdict remains Trust-Spine Pass / L3, with 36 P2 notes. No manual prose or scientific-fact correction was applied. |
+| 3. Manuscript completeness | Shared rendering fixes now reach completed, locally ready manuscripts through ordinary production selection, including the September 10 19:45:59Z telomere run. | Publishing preflight still rejects unresolved scientific claims. The training trace identifies loss of study-arm distinctions during reviewer repair; repair integrity remains open. |
 | 4. Publishing contract | Actual public contract, latest Resveratrol decision, 15 recent ledger submissions and current semaglutide decision audited. | Public calibration is invalid and unbound to the current judge release. No calibrated-current-judge claim is supported. |
-| 5. Production and repeatability | Both VPS copies have the same clean release, healthy dashboard and six active timers. The ordinary submit service finished at 23:30:52 Dubai after checking 179 run records: zero submitted, zero published. | A new accepted public artifact and unattended repeatability remain unproven. Missing final certification artifacts, unmet revisions and quality checks still block the available production runs. |
+| 5. Production and repeatability | Both VPS copies have the same clean release, a responding dashboard and six active timers. The September 11 09:26 fresh cycle ended with zero submissions; its quality failure now maps to a bounded no-submission outcome instead of an automatic whole-cycle restart. | A new accepted public artifact and unattended repeatability remain unproven. Missing certification artifacts, unmet revisions and scientific checks still block available runs. |
 
 ## Shared changes and review
 
