@@ -281,3 +281,20 @@ def test_real_receipt_builder_gives_writer_outcomes_without_extracted_statistics
     assert 'p = 0.065' in packet
     assert receipt.n_claims == row['receipt']['n_claims']
     assert tuple(receipt.p_values) == tuple(row['receipt']['p_values'])
+
+
+@pytest.mark.parametrize("direction,prefix", [
+    ("positive", "Positive signals appear in: "),
+    ("negative", "Negative signals appear in: "),
+    ("null", "Null findings are recorded in: "),
+])
+def test_thesis_reports_every_recorded_outcome_class(synthesis, direction, prefix):
+    from agent.synthesis_schemas import ReceiptSummary, TensionMatrix
+    outcomes = ["muscle_function", "muscle_function", "contextual_other", "contextual_other", "cognitive_function"]
+    receipts = [ReceiptSummary(str(i), "", "resistance_training", "Source finding", "accept_clean", 1, 0,
+        None, "A1", "direct", outcome, direction, (), "Adults") for i, outcome in enumerate(outcomes)]
+    matrix = TensionMatrix(tuple(receipts), ())
+    thesis = synthesis.build_thesis(receipts, matrix, topic="resistance_training")
+    clause = thesis.text.split(prefix)[1].split(".")[0]
+    assert clause == "muscle function, contextual other, cognitive function"
+    assert len(thesis.receipt_ids_referenced) == len(receipts)

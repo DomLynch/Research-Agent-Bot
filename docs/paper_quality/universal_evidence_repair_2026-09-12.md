@@ -193,3 +193,10 @@ review checked cache reuse/invalidation, before/after comparison preservation an
 the repair controller's exclusive lock plus author hold before submission.
 No source-specific runtime exception or publication threshold change is included.
 Live manuscript repair and Core publication require separate receipts.
+
+The final audit also reproduced an outcome-summary omission: `build_thesis`
+truncated each direction to its two most common outcome classes. It now renders
+all observed classes in frequency order, retaining one label per class. Three
+regression cases cover positive, negative and null summaries with a third class
+that the previous implementation omitted. This changes generated summaries, not
+source classifications, counts, evidence or acceptance thresholds.

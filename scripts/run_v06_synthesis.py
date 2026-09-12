@@ -2100,13 +2100,13 @@ def build_thesis(
         elif ed == "null":
             null_outcomes.append(oc)
     pos_top = [
-        o for o, _ in Counter(pos_outcomes).most_common(2)
+        o for o, _ in Counter(pos_outcomes).most_common()
     ]
     neg_top = [
-        o for o, _ in Counter(neg_outcomes).most_common(2)
+        o for o, _ in Counter(neg_outcomes).most_common()
     ]
     null_top = [
-        o for o, _ in Counter(null_outcomes).most_common(2)
+        o for o, _ in Counter(null_outcomes).most_common()
     ]
 
     n = len(receipts)
