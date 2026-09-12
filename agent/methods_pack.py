@@ -276,7 +276,7 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
             f"The synthesis includes {sf['n_included']} admitted sources. "
             "Missing retrieval, screening and full-text exclusion counts are "
             "not inferred from that total. Recorded stages: "
-            + ("; ".join(f"{key}={sf[key]}" for key in (
+            + ("; ".join(f"{key.removeprefix('n_').replace('_', ' ')}={sf[key]}" for key in (
                 "n_retrieved", "n_screened", "n_excluded_at_full_text",
             ) if sf.get(key) is not None) or "none") + ".",
             "Retrieval and extraction counts below do not establish a record-linked screening path to these admitted sources; "

@@ -232,3 +232,13 @@ negative primary, and exhausted malformed responses. They also verify exact numb
 inputs and unchanged source context. The first audit checked these boundaries and
 cache validity; the second checked all callers, type checking, runtime LOC and
 complexity. No manuscript-specific retry, approval or threshold is introduced.
+
+The live replay then completed all five stages. Its sole pre-submit blocker was
+the public Methods label `n_retrieved`; labels now render without internal prefixes
+or underscores while retaining the same counts. The final reviewer also caught a
+grammatical corruption from a bare-verb replacement (`generally established` became
+`generally is consistent with`). Those three bare-verb substitutions are removed;
+source-bound review remains responsible for evaluating their scientific meaning.
+Regressions preserve negation, passive construction, diagnostic usage and strong
+claims for review rather than silently converting them into apparent hedges.
+The actual reviewer removed the corrupted phrase from the preserved candidate.

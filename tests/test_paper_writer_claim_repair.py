@@ -11,6 +11,8 @@ The repair pass must:
 """
 from __future__ import annotations
 
+import pytest
+
 from agent.paper_writer_claim_repair import (
     REPAIR_PREFIX,
     repair_abstract_claim_strength,
@@ -71,7 +73,8 @@ def test_abstract_repair_softens_broad_claim_strength_phrases() -> None:
     assert n == 1
     assert "context-dependent benefits" in repaired
     assert "suggested by preclinical models" in repaired
-    assert "is consistent with the thesis" in repaired
+    # Bare verbs are left for source-bound review, not blindly replaced.
+    assert "confirm the thesis" in repaired
     assert "can motivate further targeted testing" in repaired
     assert "bounded evidence hypothesis" in repaired
 
@@ -85,6 +88,18 @@ def test_abstract_repair_does_not_break_negative_establish_claims() -> None:
     assert n == 0
     assert "does not yet establish definitive efficacy" in repaired
     assert "does not yet is consistent with" not in repaired
+
+
+@pytest.mark.parametrize("sentence", [
+    "Benefits remain comparator-dependent rather than generally established.",
+    "The diagnosis was confirmed before enrolment.",
+    "Efficacy has not been proved in this population.",
+    "These findings fail to establish clinical benefit.",
+    "The study confirms efficacy.",
+    "The study proves efficacy.",
+])
+def test_abstract_repair_preserves_bare_verbs_for_source_review(sentence):
+    assert repair_abstract_claim_strength(sentence) == (sentence, 0)
 
 
 def test_repair_fires_on_unhedged_causal_verb_citing_mechanistic_receipt() -> None:

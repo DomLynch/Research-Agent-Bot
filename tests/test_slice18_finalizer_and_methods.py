@@ -1733,7 +1733,8 @@ def test_methods_summary_uses_frozen_retrieval_audit_without_inventing_screening
         n_rejected=None, outcome_classes=("muscle_function",), retrieval_audit=audit)
     assert pack.screening_flow == {"n_retrieved": retrieved, "n_included": 19}
     md = render_methods_md(pack, submission_id="revision")
-    assert f"Recorded stages: n_retrieved={retrieved}." in md
+    assert f"Recorded stages: retrieved={retrieved}." in md
+    assert "n_retrieved" not in md
     assert f"| retrieved | {retrieved} |" in md
     assert "Recorded stages: none." not in md
     assert "record-linked screening path" in md
