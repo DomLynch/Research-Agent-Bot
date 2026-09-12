@@ -391,7 +391,7 @@ _ROLE_KEYWORD_EFFECT = (
     "between groups", "between arms", "between the groups",
     "compared to placebo", "vs. placebo", "vs placebo",
     "treatment arm", "metformin group", "placebo group",
-    "did not improve", "did not change", "did not differ",
+    "did not improve", "did not change", "did not differ", "resulted in less", "lower percentage change", "no effect", "tended to increase",
     "did not reach", "did not reach significance", "were not statistically significant", "was not statistically significant",
 )
 

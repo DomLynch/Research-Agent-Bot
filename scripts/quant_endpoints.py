@@ -1,26 +1,8 @@
-"""Day 10.17 Path B-prime Phase 2.2 — endpoint + arm + direction binding.
+"""Deterministic endpoint, arm and direction binding from the selected topic pack.
 
-Each QuantClaim carries a numeric value; Phase 2.2 enriches it with the
-SEMANTIC context the paper writer needs:
-  - endpoint: WHAT was measured (lean body mass, VO2max, walk speed, ...)
-  - arm:      WHICH group (metformin, placebo, control, ...)
-  - direction: increase | decrease | no_change | mixed
-
-Vocab is curated for the metformin/aging corpus — extending to a new
-domain (e.g., rapamycin) means swapping `_ENDPOINT_VOCAB` only. Matchers
-are deterministic regex (per AGENTS.md "code disposes" — no LLM).
-
-Binding heuristic per claim:
-  1. Scan the claim's `sentence` for endpoint vocab; first match wins.
-  2. Scan for arm vocab; first match wins.
-  3. For direction, find the keyword CLOSEST to the claim's
-     source_offset (NOT first-match-wins). Metformin papers commonly
-     write "X increased but Y decreased" — proximity disambiguates.
-  4. binding_confidence: high (3/3 fields bound) | partial (1-2/3) |
-     none (0/3).
-
-Lives in scripts/ (offline benchmark tool). Pure stdlib + re. No httpx
-dependency added; no agent/ runtime touched.
+Endpoint and direction matches use proximity to a supplied anchor; longer
+compound direction phrases suppress their contained bare verbs. Bindings retain
+missing fields explicitly. Domain packs share clinical vocabulary where valid.
 """
 from __future__ import annotations
 
@@ -128,7 +110,7 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
                  r"|\blowered?\b|\bdeclined?\b|\bfell\b|\bdropped?\b"
                  r"|\bslowed?\b|\bworsened?\b|\bantagonized?\b|\bimpaired?\b"
                  r"|\blost?\s+(?:weight|mass|function)"
-                 r"|\blower\b|\bsmaller\b"),
+                 r"|\blower\b|\bsmaller\b|\bless\b"),
     ("increase", r"\bsmaller\s+(?:decrease|decline|loss|reduction)\b|\bincreas(?:e[ds]?|ing)\b|\bgain(?:ed|s)?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
                  r"|\brose\b|\brisen\b|\bgrew\b|\bgrowth\s+of\b|\belevated?\b"
                  r"|\bgreater\b|\bhigher\b|\blarger\b|\bmore\b|\bgained?\s+more\b"
@@ -295,29 +277,10 @@ def match_arm(sentence: str) -> str:
 def match_direction(
     sentence: str, anchor_offset: int | None = None,
 ) -> str:
-    """Return one of: increase | decrease | no_change | mixed | "".
+    """Bind movement by proximity, preferring compound phrases over inner verbs.
 
-    `anchor_offset` is the position of the numeric token within the
-    sentence. Disambiguation rules (in order):
-
-      1. Span-containment filter: if a "compound" direction phrase
-         like "did not improve" or "attenuated the increase" matches,
-         drop any single-word match (improve / increase) that sits
-         INSIDE its span. The outer phrase is more specific and would
-         be lost to the proximity tiebreaker otherwise. This is the
-         load-bearing fix — Konopka's "attenuated the increase in
-         VO2max" pre-fix bound to increase (the closer word) instead
-         of decrease (the semantically correct phrase).
-
-      2. Proximity to anchor: among the surviving candidates, the
-         closest match to `anchor_offset` wins (handles "metformin
-         increased X but decreased Y" — the closer word to the
-         numeric anchor wins).
-
-      3. Vocab-order tiebreaker: when matches are equidistant, the
-         entry listed earlier in DIRECTION_VOCAB wins (no_change >
-         mixed > decrease > increase) — biases toward the more-
-         conservative reading.
+    A supplied numeric or endpoint anchor selects the nearest match. Without
+    one, textual order applies. Vocabulary order breaks ties conservatively.
     """
     if not sentence:
         return ""

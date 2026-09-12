@@ -16,6 +16,14 @@ from __future__ import annotations
 
 
 ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
+    ("ADAS-Cog score", r"\bADAS[- ]?cog(?:nitive)?\b"),
+    ("Stroop interference time", r"\bStroop (?:time interference|interference time)\b"),
+    ("verbal learning score", r"\bRAVLT (?:scores?|total)\b"),
+    ("exercise repetitions", r"\b(?:total )?number of repetitions\b|\bexercise repetitions\b"),
+    ("cortisol", r"\bcortisol(?: levels?)?\b"),
+    ("tympanic temperature", r"\btympanic temperature\b"),
+    ("perceived exertion", r"\b(?:rate of )?perceived exertion\b"),
+    ("electromyography", r"\belectromyography\b"),
     # Cardio / aerobic
     ("VO2max", r"\bVO\s*2\s*max\b|\bVO₂\s*max\b|peak\s+oxygen\s+(?:consumption|uptake)|aerobic\s+capacity"),
     ("walk speed", r"\b(?:4-?\s*m|six-?minute)\s+walk(?:\s+(?:speed|distance|test))?\b|gait\s+speed\b"),
@@ -61,6 +69,9 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
 
 
 ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = {
+    "ADAS-Cog score": "cognitive", "Stroop interference time": "cognitive", "verbal learning score": "cognitive",
+    "exercise repetitions": "muscle_function", "cortisol": "mechanism",
+    "tympanic temperature": "safety", "perceived exertion": "other", "electromyography": "mechanism",
     "cognitive function": "cognitive", "muscle power": "muscle_function", "fat mass": "cardiometabolic",
     "VO2max": "muscle_function",
     "thigh muscle mass": "muscle_function",
@@ -92,6 +103,8 @@ ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = {
 
 
 ENDPOINT_POLARITY: dict[str, int] = {
+    "ADAS-Cog score": -1, "Stroop interference time": -1, "verbal learning score": +1, "exercise repetitions": +1,
+    "cortisol": 0, "tympanic temperature": 0, "perceived exertion": 0, "electromyography": 0,
     "cognitive function": +1, "muscle power": +1, "fat mass": -1,
     # higher = better
     "VO2max": +1, "thigh muscle mass": +1, "lean body mass": +1,

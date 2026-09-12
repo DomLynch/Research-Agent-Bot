@@ -118,25 +118,49 @@ def _reports_null(claim: dict, alpha: float) -> bool:
                 and comparison and comparison[0] in {"=", ">", ">="} and comparison[1] >= alpha)
 
 
+def _source_endpoint_aliases(record: dict) -> dict[str, str]:
+    """Resolve only unambiguous endpoint definitions inside this source."""
+    from quant_endpoints import _ENDPOINT_COMPILED
+    text = " ".join(v for v in (record.get("sections") or {}).values() if isinstance(v, str))
+    definitions: dict[str, list[str]] = {}
+    for endpoint, pattern in _ENDPOINT_COMPILED:
+        for hit in pattern.finditer(text):
+            if alias := re.match(r"\s*\(([A-Z][A-Z0-9]{1,7})\)", text[hit.end():]):
+                definitions.setdefault(alias[1], []).append(endpoint)
+    return {alias: names[0] for alias, names in definitions.items() if len(set(names)) == 1}
+
+
+def _reported_comparative_estimate(claim: dict) -> bool:
+    """A reported point-estimate direction is descriptive, not significance."""
+    text = str(claim.get("sentence") or "")
+    estimate = re.search(r"\b(?:increased|decreased|declined|reduced)\s+(?:by\s*)?([+-]?(?:\d*\.)?\d+)", text, re.I)
+    return bool(claim.get("claim_type") == "qualitative_outcome" and _single_outcome_scope(text)
+                and not re.search(r"\b(?:p|CI|confidence|tended|trend|baseline|no|not|without|failed|absent)\b", text, re.I)
+                and estimate and float(estimate[1]) > 0
+                and re.search(r"\b(?:compared (?:with|to) (?:the )?|than the )(?:control|placebo)(?: group| arm)?\b", text, re.I))
+
+
 def source_outcome_claims(record: dict) -> list[dict]:
     """Retain qualitative own-study outcomes that numeric extraction cannot represent."""
     from quant_claim_extract import source_result_excerpts
     from quant_endpoints import match_direction, match_endpoint, _ENDPOINT_COMPILED
     claims = []
     record = {**record, "sections": {key: re.sub(r"</?[A-Za-z][^>]*>", " ", value) if isinstance(value, str) else value for key, value in (record.get("sections") or {}).items()}}
-    for sentence in source_result_excerpts(record, require_numeric=False):
+    aliases = _source_endpoint_aliases(record)
+    for original in source_result_excerpts(record, require_numeric=False):
+        sentence = re.sub(r"\b(?:" + "|".join(map(re.escape, aliases)) + r")\b", lambda m: aliases[str(m[0])], original) if aliases else original
         for clause in re.split(r";(?![^()]*\))|\b(?:but|whereas|while|however|yet)\b|,\s+with\s+|\s+and (?=(?:greater|lower|higher|smaller|increased|decreased|improved|reduced)\b)", re.sub(r";\s*however,?\s*(?=the (?:increase|decrease|improvement) was significant)", " ", sentence, flags=re.I), flags=re.I):
             endpoint = match_endpoint(clause)
             matched = next((pattern.search(clause) for name, pattern in _ENDPOINT_COMPILED if name == endpoint and pattern.search(clause)), None)
-            direction = match_direction(clause, anchor_offset=matched.end() if matched else None)
+            direction = match_direction(clause, anchor_offset=matched.start() if matched else None)
             if not endpoint or not direction or re.search(r"\b(?:may|might|could|hypothes\w*|baseline|previous|prior)\b", clause, re.I):
                 continue
             p_values = list(_P_COMPARISON_RE.finditer(clause))
-            own_p = _parse_p_comparison(p_values[0][0]) if len(p_values) == 1 and len({match_endpoint(clause, anchor_offset=hit.start()) for _, pattern in _ENDPOINT_COMPILED if (hit := pattern.search(clause))}) == 1 and matched and clause.casefold().count(matched[0].casefold()) == 1 else None
+            own_p = _parse_p_comparison(p_values[0][0]) if len(p_values) == 1 and (_single_outcome_scope(clause) or direction == "no_change") and matched and clause.casefold().count(matched[0].casefold()) == 1 else None
             if p_values and own_p is None:
                 continue
             claims.append({"endpoint": endpoint, "direction": direction, "sentence": clause, "source_p_value": own_p,
-                           "raw_text": matched[0] if matched else endpoint, "claim_role": "effect", "claim_type": "qualitative_outcome"})
+                           "source_sentence": original, "raw_text": matched[0] if matched else endpoint, "claim_role": "effect", "claim_type": "qualitative_outcome"})
     return claims
 
 
@@ -148,8 +172,9 @@ def infer_effect_direction(
 ) -> str:
     """Aggregate source-owned outcomes with endpoint-specific significance.
 
-    Unknown outcomes stay unclear. Qualitative clauses require their own
-    significance; significant and explicit null outcomes yield mixed.
+    Unknown outcomes stay unclear. Source-reported comparative point estimates
+    describe movement without certifying significance. Changed plus null
+    outcomes are mixed; neutral biomarker polarity never establishes benefit.
     """
     # Baseline balance, dose and sample descriptors cannot establish an outcome.
     claims = [c for c in claims if c.get("claim_role") not in {"baseline", "population", "background", "dose", "duration", "sample_size", "protocol"}]
@@ -158,8 +183,8 @@ def infer_effect_direction(
 
     significance_by_endpoint = _significance_by_endpoint(claims, alpha)
 
-    sig_positive = False
-    sig_negative = False
+    supported_positive = False
+    supported_negative = False
     explicit_null = any(_reports_null(c, alpha) for c in claims)
 
     for c in claims:
@@ -174,19 +199,19 @@ def infer_effect_direction(
             significance_by_endpoint.get(endpoint, False) and ctype != "qualitative_outcome"
             or (
                 (endpoint not in significance_by_endpoint or ctype == "qualitative_outcome")
-                and (_comparison_is_significant(c["source_p_value"][0], c["source_p_value"][1], alpha) if c.get("source_p_value") else _reports_significance(c))
+                and (_comparison_is_significant(c["source_p_value"][0], c["source_p_value"][1], alpha) if c.get("source_p_value") else _reports_significance(c) or (endpoint not in significance_by_endpoint and _reported_comparative_estimate(c)))
             )
         ):
             if sign > 0:
-                sig_positive = True
+                supported_positive = True
             elif sign < 0:
-                sig_negative = True
+                supported_negative = True
 
-    if (sig_positive and sig_negative) or (explicit_null and (sig_positive or sig_negative)):
+    if (supported_positive and supported_negative) or (explicit_null and (supported_positive or supported_negative or any(c.get("source_p_value") and _comparison_is_significant(c["source_p_value"][0], c["source_p_value"][1], alpha) and c.get("direction") in {"increase", "decrease"} for c in claims))):
         return "mixed"
-    if sig_positive:
+    if supported_positive:
         return "positive"
-    if sig_negative:
+    if supported_negative:
         return "negative"
     # Neither an unsigned claim nor a small number establishes a null outcome.
     null_endpoints = {c.get("endpoint") for c in claims if c.get("endpoint") and _reports_null(c, alpha)}

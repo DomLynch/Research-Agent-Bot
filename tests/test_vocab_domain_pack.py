@@ -36,9 +36,15 @@ def _reload_quant_endpoints() -> Any:
 
 @pytest.fixture(autouse=True)
 def _reset_topic_domain():
-    """Clean TOPIC_DOMAIN before each test to avoid bleed."""
+    """Restore both the selected domain and replaced vocabulary modules."""
+    def module_names():
+        return [name for name in sys.modules if name == "quant_endpoints" or name == "vocab" or name.startswith("vocab.")]
+    modules = {name: sys.modules[name] for name in module_names()}
     saved = os.environ.pop("TOPIC_DOMAIN", None)
     yield
+    for name in module_names():
+        sys.modules.pop(name, None)
+    sys.modules.update(modules)
     if saved is not None:
         os.environ["TOPIC_DOMAIN"] = saved
     else:

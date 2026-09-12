@@ -214,3 +214,48 @@ def test_rendered_claim_count_is_metadata_but_effect_estimates_still_need_proof(
     count = f'finding=6 extracted claim(s); {label}-level direction is the coded finding'
     assert untyped_table_cells_supported(['Smith 2020', count], header, '', _EFFECT_STAT_RE)
     assert not untyped_table_cells_supported(['Smith 2020', 'finding=6 participants improved'], header, '', _EFFECT_STAT_RE)
+
+
+@pytest.mark.parametrize("citation,expected", [("Denben 2023", "mixed"), ("Kenville 2024", "mixed"), ("EVALUATION of ONLINE AEROBIC 2023", "positive")])
+def test_remaining_live_profiles_use_source_defined_outcomes(synthesis, citation, expected):
+    rows = json.loads((Path(__file__).parent / "fixtures/revision_remaining_profiles.json").read_text())
+    row = next(r for r in rows if r["receipt"]["citation_token"] == citation)
+    claims = [c for c in row["claims"] if c.get("binding_confidence") in {"high", "partial"}]
+    before = json.dumps(row, sort_keys=True)
+    result = synthesis._aggregate_paper(claims, paper_meta=row["record"])
+    assert result["effect_direction"] == expected
+    assert json.dumps(row, sort_keys=True) == before
+    if citation == "Denben 2023":
+        assert dict(result["endpoint_directions"])["cortisol"] == "unclear"
+        assert dict(result["endpoint_directions"])["muscle strength"] == "null"
+    if citation.startswith("EVALUATION"):
+        assert dict(result["endpoint_directions"])["verbal learning score"] == "unclear"
+        assert dict(result["endpoint_directions"])["ADAS-Cog score"] == "positive"
+
+
+@pytest.mark.parametrize("endpoint,movement", [("blood glucose", "decreased"), ("muscle strength", "increased")])
+def test_comparative_estimate_is_descriptive_and_never_supplies_significance(synthesis, endpoint, movement):
+    text = f"The {endpoint} in the intervention group {movement} by 3 more than the control group."
+    record = {"sections": {"abstract": text}}
+    claims = synthesis._direction.source_outcome_claims(record)
+    assert claims and not synthesis._direction._reports_significance(claims[0])
+    assert claims[0]["source_p_value"] is None
+    assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] == "positive"
+    for invalid in (text.replace("by 3", "by 0"), text.replace("by 3", "by -3"),
+                    text.replace("more than the control group", "relative to baseline"),
+                    text.replace("by 3", "by 3 (p = 0.8)"),
+                    text.replace("by 3", "by 3 (95% CI -2 to 8)"),
+                    text.replace(movement, "not " + movement)):
+        assert synthesis._aggregate_paper([], paper_meta={"sections": {"abstract": invalid}})["effect_direction"] != "positive"
+
+
+def test_endpoint_abbreviations_are_source_local_and_conflicts_fail_closed(synthesis):
+    ed = synthesis._direction
+    sentence = "The intervention resulted in less TR compared to placebo (p < .001)."
+    assert ed.source_outcome_claims({"sections": {"abstract": sentence}}) == []
+    definition = "We measured the total number of repetitions (TR). "
+    rows = ed.source_outcome_claims({"sections": {"abstract": definition + sentence}})
+    assert rows[0]["endpoint"] == "exercise repetitions"
+    assert rows[0]["source_sentence"] == sentence
+    conflicting = definition + "We also measured cortisol (TR). " + sentence
+    assert ed._source_endpoint_aliases({"sections": {"abstract": conflicting}}) == {}

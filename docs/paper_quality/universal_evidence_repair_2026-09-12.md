@@ -161,3 +161,11 @@ or duplication findings and unchanged LOC limits; mypy passed 181 source files.
 The 300 focused checks and actual frozen-run preparation replay passed before
 release. Live final review, Core resubmission and public publication remain
 separate outstanding evidence at this checkpoint.
+
+### Final source-profile audit
+
+The final semantic revision check still blocked three source profiles despite the earlier local pipeline pass. A replay against all 19 frozen records reproduced unclear labels for Denben, Kenville and the online three-arm RCT. Shared endpoint definitions, source-local abbreviation expansion and endpoint-start direction binding now recover their own reported outcomes. Neutral cortisol polarity stays unknown; changed and null outcomes produce a mixed source profile. The online trial reports favorable comparative point estimates but does not supply uncertainty for those contrasts: these are descriptive directions, and the classification criteria explicitly distinguish them from significance. Its separate aerobic memory trend (p=.065) stays unclear. No numerical values, source identities, review verdicts or thresholds were changed.
+
+Two audit passes covered authentic source records and adversarial cross-topic controls: missing/zero/negative estimates, explicit negation, reported nonsignificance/CI, source-local abbreviation conflicts and neutral biomarker polarity. Full tests:5187passed,2XPASS,16warnings,seed69495797. Type-only clarifications subsequently passed97focused checks; mypy agent scripts181files passed. Quality passed347checks with unchanged complexity, duplication andLOC ceilings. The randomized vocabulary fixture now restores replaced modules as well as environment, fixing the independently reproduced CI contamination defect.
+
+These are implementation and component receipts. Normal regeneration, final outgoing correction verification, Core review and public publication remain separate live acceptance checks.
