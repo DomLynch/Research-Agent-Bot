@@ -26,7 +26,7 @@ def test_ambiguous_or_statistical_parenthetical_is_preserved(annotation):
 
 
 def test_unverified_excerpt_does_not_become_a_finding():
-    assert manifest_row_finding({"source_result_excerpts": ["Mortality decreased (Table 2)."], "n_claims": 3}) == "3 extracted claim(s); receipt-level direction is the coded finding"
+    assert manifest_row_finding({"source_result_excerpts": ["Mortality decreased (Table 2)."], "n_claims": 3}) == "Source-level classification only; no result passage available in the frozen record."
 
 
 @pytest.mark.parametrize("change", [None, "value", "operator", "endpoint", "unverified", "source"])

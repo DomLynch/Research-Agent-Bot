@@ -440,6 +440,7 @@ def _export_manifest(run_dir: Path, ir: PaperIR, score: dict[str, Any]) -> dict[
         "risk_of_bias": _rel("risk_of_bias.json"),
         "grade_assessment": _rel("grade_assessment.json"),
         "quality_methods": _rel("quality_methods.json"),
+        "source_admission": _rel("source_admission.json"),
     }
     files = {
         name: {"path": rel, "exists": bool(rel and (run_dir / rel).exists())}

@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-import csv
 import re
 from collections import Counter
 from collections.abc import Sequence
 from types import SimpleNamespace
 from typing import Any
 
+from agent.revision_contract import _table_cells
 from agent import revision_source_roles as _source_roles
 from agent import revision_consistency as _consistency
 from agent import revision_identity as _identity
@@ -175,10 +175,7 @@ def manifest_row_finding(row: dict[str, Any]) -> str:
     if row.get("directness") != "protocol" and row.get("verified_source_sections") and (excerpts := row.get("source_result_excerpts")):
         # Source layout locators do not name objects in this manuscript.
         return _SOURCE_LAYOUT_ONLY.sub("", str(excerpts[0]))
-    claims = row.get("n_claims")
-    if isinstance(claims, int) and claims > 0:
-        return f"{claims} extracted claim(s); receipt-level direction is the coded finding"
-    return "qualitative receipt-level finding recorded in the manifest"
+    return "Source-level classification only; no result passage available in the frozen record."
 
 
 def findings_map_row(row: dict[str, Any]) -> tuple[str, str, str, str, str, str, str]:
@@ -376,30 +373,12 @@ def _findings_map_is_exact(paper_md: str, rows: Sequence[dict[str, Any]]) -> boo
         return tuple(re.sub(r"\s+", " ", re.sub(r"\s*\[bundle:\d+\]", "", value)).replace("|", "/").strip().casefold() for value in cells[:6])
     if any(not cells[6].removeprefix("finding=").strip() for cells in table_rows):
         return False
-    expected = Counter(key(findings_map_row(row)) for row in rows)
-    actual = Counter(key(cells) for cells in table_rows)
-    return actual == expected
-
-
-def final_source_integrity(paper: str, rows: Sequence[dict[str, Any]]) -> bool:
-    """Validate final source accounting independently of reviewer ask wording."""
-    rows = _ordered_rows(rows)
-    ids = [row.get("receipt_id") for row in rows]
-    valid = all(row.get("effect_direction") in {"positive", "negative", "mixed", "null", "unclear"}
-                and row.get("directness") in {"direct", "indirect", "review", "mechanistic", "protocol"}
-                and row.get("evidence_tier") and row.get("outcome_class") for row in rows)
-    return bool(rows) and all(ids) and len(set(ids)) == len(ids) and valid and _findings_map_is_exact(paper, rows)
+    return Counter(key(cells) for cells in table_rows) == Counter(key(findings_map_row(row)) for row in rows)
 
 
 def _count_text(values: Sequence[str] | Any) -> str:
     counts = Counter(values)
     return "; ".join(f"{key}={counts[key]}" for key in sorted(counts))
-
-
-def _table_cells(line: str) -> list[str]:
-    cells = [cell.strip() for cell in next(csv.reader([line.strip()], delimiter="|", escapechar="\\", quoting=csv.QUOTE_NONE))] if line.lstrip().startswith("|") else []
-    cells = cells[1:-1] if cells and not cells[-1] else cells[1:]
-    return [] if all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells) else cells
 
 
 def _prose_paragraphs(text: str) -> list[str]:

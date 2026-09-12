@@ -2466,6 +2466,7 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
         "topic": topic,
         "content_hash": content_hash,
         "source_citation_hash": source_hash,
+        "source_admission": _read_json(run / "source_admission.json"),
         "submission_identity_key": _submission_identity_key(
             agent_slug=agent_slug,
             title=title,
@@ -2512,6 +2513,7 @@ def freeze_submission_package(run: Path, verdict: dict[str, Any]) -> None:
     _write_json(run / "submission_package.json", {
         "payload": payload, "verdict_hash": _hash_json(verdict),
         "package_hash": _reviewed_package_hash(payload),
+        "source_records_hash": _source_records_hash(run),
     })
 
 
@@ -2530,7 +2532,15 @@ def _frozen_package_status(run: Path, payload: dict[str, Any]) -> str:
         return "submission_package_changed_after_review"
     if payload.get("body_markdown") != (run / "full_paper.md").read_text(encoding="utf-8"):
         return "submission_manuscript_changed_after_review"
-    return "eligible"
+    if frozen.get("source_records_hash") != _source_records_hash(run):
+        return "submission_source_records_changed_after_review"
+    from source_admission import check
+    return check(run, payload["body_markdown"])
+
+
+def _source_records_hash(run: Path) -> str:
+    return _hash_json([_read_json(run / "manifest.json").get("receipts"),
+                       _read_json(run / "source_admission.json"), _read_json(run / "methods_pack.json")])
 
 
 def _trusted_submission_url(url: str) -> bool:

@@ -740,9 +740,8 @@ def run_audit(
     issues: list[ConsistencyIssue] = []
     year = current_year if current_year is not None else datetime.now(timezone.utc).year
     if run_dir is not None and manifest.get("receipts"):
-        from agent.revision_contract import evidence_rows
-        from agent.revision_quality import final_source_integrity
-        if not final_source_integrity(paper_md, evidence_rows(run_dir, manifest)):
+        from source_admission import check
+        if check(run_dir, paper_md) != "eligible":
             issues.append(ConsistencyIssue("C23-source-accounting", "P1", "final_source_accounting", False,
                 "Final Findings Map differs from the included sources, classifications or totals.",
                 "Regenerate source accounting from reviewed records and review the final manuscript."))

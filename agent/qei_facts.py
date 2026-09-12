@@ -152,7 +152,7 @@ def render_rows(rows: list[dict[str, Any]], topic: str, tokens: Mapping[str, str
     def cell(value: Any) -> str:
         return " ".join(str(value).split()).replace("|", "&#124;") if value is not None else "Not reported in quoted result"
     lines = [f"## Quantitative Evidence Index — {topic}", "",
-             "Study comparisons describe the design; quoted estimates may be within-group changes or correlations. Missing uncertainty is not zero uncertainty. Source clauses retain the reported analysis context.", "",
+             "This index is a selected subset of source-supported quantitative results, not a complete inventory of included studies or outcomes. The Findings Map covers all included sources. Study comparisons describe the design; quoted estimates may be within-group changes or correlations. Missing uncertainty is not zero uncertainty. Source clauses retain the reported analysis context.", "",
              "| " + " | ".join(HEADERS) + " |", "|" + "---|" * len(HEADERS)]
     for row in rows:
         values = (tokens[row["receipt_id"]], *(row[key] for key in ("endpoint", "comparison", "estimate", "uncertainty", "significance", "result_span")))

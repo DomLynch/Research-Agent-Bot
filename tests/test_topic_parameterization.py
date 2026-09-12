@@ -238,7 +238,12 @@ def test_build_receipts_filters_to_active_extract_report(
     }))
     monkeypatch.setattr(orch, "QUANT_DIR", qdir)
     monkeypatch.setattr(orch, "PARSED_DIR", pdir)
-    receipts = orch.build_receipts_from_quant_claims(topic="test_topic")
+    import source_admission
+    admission = source_admission.start("test_topic", frozenset())
+    receipts = orch.build_receipts_from_quant_claims(topic="test_topic", admission_log=admission)
+    assert admission["decisions"]["stale_paper"] == {"source_id": "stale_paper", "included": False, "reason": "outside_active_or_classified_scope"}
+    assert admission["decisions"]["active_paper"]["included"] is True
+    assert source_admission.validate(admission, [{"receipt_id": r.receipt_id} for r in receipts])
     assert [r.receipt_id for r in receipts] == ["active_paper"]
 
     monkeypatch.setattr(orch, "_classify_paper_tier", lambda *_a, **_k: ("A1", "direct"))

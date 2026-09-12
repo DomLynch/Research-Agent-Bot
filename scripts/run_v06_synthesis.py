@@ -19,6 +19,7 @@ from types import SimpleNamespace
 from typing import Any, cast
 
 import httpx
+import source_admission
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -1826,38 +1827,17 @@ def build_receipt_funnel_report(
 
 
 def render_receipt_funnel_markdown(report: dict[str, Any]) -> str:
-    lines = [
-        f"# Receipt Funnel - {report['topic']}",
-        "",
-        "| Metric | Value |",
-        "|---|---:|",
-        f"| Quant-claim files | {report['quant_claim_files']} |",
-        f"| Active paper IDs | {report['active_paper_ids']} |",
-        f"| Classified receipt candidates | "
-        f"{report['classified_receipt_candidates']} |",
-        f"| Candidate union | {report['receipt_candidate_union']} |",
-        "",
-        "## Admission Counts",
-        "",
-        "| Gate result | Papers |",
-        "|---|---:|",
-    ]
-    for key, value in report["counts"].items():
-        lines.append(f"| `{key}` | {value} |")
-    lines += [
-        "",
-        "## Claim Binding Confidence Totals",
-        "",
-        "| Binding confidence | Claims |",
-        "|---|---:|",
-    ]
-    for key, value in report["claim_binding_confidence_totals"].items():
-        lines.append(f"| `{key}` | {value} |")
-    lines += ["", "## Examples", ""]
+    lines = [f"# Receipt Funnel - {report['topic']}", "", "| Metric | Value |", "|---|---:|"]
+    for label, key in (("Quant-claim files", "quant_claim_files"), ("Active paper IDs", "active_paper_ids"),
+                       ("Classified receipt candidates", "classified_receipt_candidates"), ("Candidate union", "receipt_candidate_union")):
+        lines.append(f"| {label} | {report[key]} |")
+    for title, headers, key in (("Admission Counts", "Gate result | Papers", "counts"),
+                               ("Claim Binding Confidence Totals", "Binding confidence | Claims", "claim_binding_confidence_totals")):
+        lines.extend(["", f"## {title}", "", f"| {headers} |", "|---|---:|"])
+        lines.extend(f"| `{name}` | {count} |" for name, count in report[key].items())
+    lines.extend(["", "## Examples", ""])
     for key, values in report["examples"].items():
-        lines.append(f"### `{key}`")
-        lines.extend(f"- `{v}`" for v in values)
-        lines.append("")
+        lines.extend([f"### `{key}`", *(f"- `{value}`" for value in values), ""])
     return "\n".join(lines).rstrip() + "\n"
 
 
@@ -1946,6 +1926,7 @@ def build_receipts_from_quant_claims(
     receipt_ids: frozenset[str] = frozenset(),
     receipt_contracts: dict[str, dict[str, Any]] | None = None,
     authorized_contract_fields: dict[str, set[str]] | None = None,
+    admission_log: dict[str, Any] | None = None,
 ) -> list[ReceiptSummary]:
     """Build one role-aware receipt per contributing quant-claim paper."""
     from quant_claim_extract import source_result_excerpts
@@ -1963,7 +1944,9 @@ def build_receipts_from_quant_claims(
             continue
         d = json.loads(path.read_text())
         pid = d.get("paper_id") or path.stem.replace(".quant_claims", "")
+        source_admission.record(admission_log, pid, "no_admissible_bound_claims")
         if active_paper_ids is not None and pid not in active_paper_ids:
+            source_admission.record(admission_log, pid, "outside_active_or_classified_scope")
             continue
         pmc_prefix = pid.split("_")[0]
         in_keep_class = pmc_prefix in paper_class_map or pid in paper_class_map
@@ -1991,10 +1974,13 @@ def build_receipts_from_quant_claims(
         meta = paper_meta_by_id.get(paper_id, {})
         identity = _receipt_topic_identity(paper_id, meta, claims)
         if not receipt_ids and not is_source_topic_specific(topic, identity, aliases=aliases):
+            source_admission.record(admission_log, paper_id, "source_identity_not_topic_specific")
             continue
-        if _is_retracted_source(meta) or (
-            not receipt_ids and not _receipt_mentions_active_topic(topic, meta, claims)
-        ):
+        if _is_retracted_source(meta):
+            source_admission.record(admission_log, paper_id, "known_retraction")
+            continue
+        if not receipt_ids and not _receipt_mentions_active_topic(topic, meta, claims):
+            source_admission.record(admission_log, paper_id, "no_active_topic_mention")
             continue
         agg = _aggregate_paper(claims, paper_meta=meta)
         tier, directness = _classify_paper_tier(paper_id, agg["n_claims"], meta)
@@ -2006,6 +1992,7 @@ def build_receipts_from_quant_claims(
                 topic, _receipt_source_identity(paper_id, meta), aliases=aliases,
             )
         ):
+            source_admission.record(admission_log, paper_id, "direct_source_identity_not_topic_specific")
             continue
         if (
             paper_id not in high_papers
@@ -2053,26 +2040,32 @@ def build_receipts_from_quant_claims(
             receipt, directness=effective_directness(receipt),
             outcome_class=refine_other_outcome_class(receipt, receipt.outcome_class),
         )
-        locked = receipt_contracts.get(paper_id, {})
         allowed = set() if authorized_contract_fields is None else authorized_contract_fields.setdefault(paper_id, set())
-        allowed.update(({"endpoints", "endpoint_directions"} if allowed & {"outcome_class", "effect_direction"} else set())
-                       | ({"source_result_excerpts"} if "effect_direction" in allowed else set()))
-        updates: dict[str, Any] = {}
-        for field in dataclasses.fields(receipt):
-            name = field.name
-            if name not in locked or name in allowed or name in {"receipt_id", "receipt_path"}:
-                continue
-            if name == "thesis_text" and _completes_locked_comparison(receipt.thesis_text, locked[name]):
-                allowed.add("thesis_text")
-                continue
-            if name == "directness" and effective_directness(receipt) == effective_directness(locked):
-                continue
-            updates[name] = tuple(locked[name] or ()) if name == "p_values" else locked[name]
-        if updates:
-            receipt = dataclasses.replace(receipt, **updates)
+        receipt = _apply_receipt_contract(receipt, receipt_contracts.get(paper_id, {}), allowed)
         typed.append((receipt, _taxonomy.population_of(identity)))
+        source_admission.record(admission_log, paper_id,
+            "retained_source_with_bound_claims" if receipt_ids else "topic_eligible_with_bound_claims", included=True)
     typed.sort(key=lambda rp: -rp[0].n_claims)
-    return [receipt for receipt, _population in typed] if receipt_ids else _enforce_population_coherence(typed, high_papers)
+    selected = [receipt for receipt, _population in typed] if receipt_ids else _enforce_population_coherence(typed, high_papers)
+    source_admission.retain(admission_log, selected, "population_coherence_exclusion")
+    return selected
+
+
+def _apply_receipt_contract(receipt: ReceiptSummary, locked: dict[str, Any], allowed: set[str]) -> ReceiptSummary:
+    allowed.update(({"endpoints", "endpoint_directions"} if allowed & {"outcome_class", "effect_direction"} else set())
+                   | ({"source_result_excerpts"} if "effect_direction" in allowed else set()))
+    updates: dict[str, Any] = {}
+    for field in dataclasses.fields(receipt):
+        name = field.name
+        if name not in locked or name in allowed or name in {"receipt_id", "receipt_path"}:
+            continue
+        if name == "thesis_text" and _completes_locked_comparison(receipt.thesis_text, locked[name]):
+            allowed.add("thesis_text")
+            continue
+        if name == "directness" and effective_directness(receipt) == effective_directness(locked):
+            continue
+        updates[name] = tuple(locked[name] or ()) if name == "p_values" else locked[name]
+    return dataclasses.replace(receipt, **updates) if updates else receipt
 
 
 def build_thesis(
@@ -2624,10 +2617,10 @@ async def _run(
         evidence_lock, os.getenv("RESEARKA_REVISION_FEEDBACK", ""),
     )
     if evidence_lock.mode == "snapshot":
+        source_admission.prepare_reassessment(topic, evidence_lock, out_dir, build_receipts_from_quant_claims)
         QUANT_DIR, PARSED_DIR = evidence_lock.quant_dir, evidence_lock.parsed_dir
         _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
-    source_run = evidence_lock.source_run
-    revision_receipt_ids = evidence_lock.receipt_ids
+    source_run, revision_receipt_ids = evidence_lock.source_run, evidence_lock.receipt_ids
     continuity: dict[str, Any] = {
         "source_run": source_run.name if source_run else None,
         "mode": evidence_lock.mode,
@@ -2735,16 +2728,15 @@ async def _run(
                 aliases_by_receipt,
             )
         )
+    admission_log = source_admission.start(topic, revision_receipt_ids)
     receipts = build_receipts_from_quant_claims(
         topic=topic,
         receipt_ids=revision_receipt_ids,
         receipt_contracts=evidence_lock.receipt_rows,
         authorized_contract_fields=allowed_by_receipt,
+        admission_log=admission_log,
     )
-    from agent.synthesis import dedupe_receipts
-    original_receipt_count = len(receipts)
-    receipts = list(dedupe_receipts(receipts))
-    continuity["duplicate_receipts_removed"] = original_receipt_count - len(receipts)
+    receipts = source_admission.deduplicate(receipts, admission_log, continuity)
     if revision_receipt_ids:
         revision_receipt_ids = frozenset(receipt.receipt_id for receipt in receipts)
     try:
@@ -2756,6 +2748,7 @@ async def _run(
             "retraction_check_unavailable",
         )
     receipt_funnel["retraction_preflight"] = {"retracted_dois": retracted, "unverified_dois": unverified}
+    source_admission.finish(admission_log, receipts, receipt_funnel, out_dir)
     if (retracted or unverified) and revision_receipt_ids:
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,

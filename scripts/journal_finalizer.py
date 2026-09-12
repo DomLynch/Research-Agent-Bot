@@ -315,7 +315,8 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
     ):
         text, log = phase(text)
         entries.extend(log)
-    return text, entries
+    from quant_claim_extract import readable_source_notation
+    return readable_source_notation(text), entries
 
 
 def _phase_o_restore_numeric_evidence_index(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
@@ -761,6 +762,7 @@ def _phase_a_methods_replace(
             human_accountability=d["human_accountability"],
             source_inventory=tuple(tuple(row) for row in d.get("source_inventory", ())),
             retrieval_audit=dict(d.get("retrieval_audit") or {}),
+            source_admission=dict(d.get("source_admission") or {}),
         )
     except (OSError, KeyError, TypeError, json.JSONDecodeError):
         return text, []
@@ -1296,97 +1298,34 @@ def _additive_screening_flow_note(out_dir: Path) -> str:
     )
 
 
-def _phase_d_admission_funnel_clarification(
-    text: str, out_dir: Path,
-) -> tuple[str, list[FinalizerLogEntry]]:
-    request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-    feedback = _revision_feedback(request)
+def _phase_d_admission_funnel_clarification(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    # New runs render actual source decisions through Methods. These repairs
+    # remain only for historical manuscripts with aggregate diagnostic buckets.
+    pack = _load_sidecar(out_dir / "methods_pack.json") or {}
+    if pack.get("source_admission"):
+        return text, []
+    feedback = _revision_feedback(_load_sidecar(out_dir / "researka_revision_request.json") or {})
     if not _revision_asks_admission_funnel_clarification(feedback):
         return text, []
-    replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
-    wants_additive_flow = revision_coverage._asks_additive_screening_flow(_normalised_feedback(feedback))
-    has_placeholder_exclusion = _has_no_exclusion_placeholder(text)
     note = _admission_funnel_note(out_dir)
-    if (
-        "admission-bucket note:" in text.lower()
-        and "source-selection interpretation:" in text.lower()
-        and not replace_table
-        and not wants_additive_flow
-        and not has_placeholder_exclusion
-    ):
-        return text, []
-    if wants_additive_flow and "additive screening flow:" not in text.lower():
-        patched, changed = _prepend_section_paragraph(text, "Methods", _additive_screening_flow_note(out_dir))
-        if changed:
-            return patched, [FinalizerLogEntry(
-                phase="D_admission_funnel_clarification",
-                rule="insert_additive_screening_flow",
-                n_changes=1,
-                detail="added additive records-screened to admitted flow from methods_pack",
-            )]
-    heading = re.search(
-        r"^#{2,4}\s+.*(?:admission funnel|selection flow).*$",
-        text,
-        flags=re.M | re.I,
-    )
-    if not heading:
-        patched, changed = _prepend_section_paragraph(text, "Methods", note)
-        if changed:
-            return patched, [FinalizerLogEntry(
-                phase="D_admission_funnel_clarification",
-                rule="state_receipt_funnel_arithmetic",
-                n_changes=1,
-                detail="added source-selection arithmetic note from manifest",
-            )]
-        return text, []
-    section_end = re.search(r"^#{2,4}\s+", text[heading.end():], flags=re.M)
-    section_end_pos = heading.end() + section_end.start() if section_end else len(text)
-    if replace_table:
-        body = text[heading.end():section_end_pos]
-        if "|" not in body:
+    replace_table = _revision_asks_admission_funnel_textual_replacement(feedback)
+    additive = revision_coverage._asks_additive_screening_flow(_normalised_feedback(feedback))
+    if additive and "additive screening flow:" not in text.lower():
+        patched, _ = _prepend_section_paragraph(text, "Methods", _additive_screening_flow_note(out_dir))
+        rule = "insert_additive_screening_flow"
+    elif (heading := re.search(r"^#{2,4}[ \t]+[^\n]*(?:admission funnel|selection flow)[^\n]*$(.*?)(?=^#{2,4}\s+|\Z)", text, re.M | re.I | re.S)) and replace_table:
+        if "|" not in heading.group(1):
             return text, []
-        patched = text[:heading.end()].rstrip() + "\n\n" + note + "\n\n" + text[section_end_pos:].lstrip()
-        patched, n_exclusions = _replace_no_exclusion_placeholder(patched)
-        return patched, [FinalizerLogEntry(
-            phase="D_admission_funnel_clarification",
-            rule="replace_non_additive_admission_table",
-            n_changes=1 + n_exclusions,
-            detail="replaced non-additive admission-funnel table with textual clarification",
-        )]
-    lines = text[heading.end():].splitlines(keepends=True)
-    offset = heading.end()
-    in_table = False
-    insert_at = offset
-    for line in lines:
-        stripped = line.strip()
-        if re.match(r"^#{2,4}\s+", stripped):
-            break
-        offset += len(line)
-        if stripped.startswith("|"):
-            in_table = True
-            insert_at = offset
-        elif in_table and stripped:
-            break
-    if not in_table:
-        if not has_placeholder_exclusion:
-            return text, []
-        patched, n_exclusions = _replace_no_exclusion_placeholder(text)
-        if not n_exclusions:
-            return text, []
-        return patched, [FinalizerLogEntry(
-            phase="D_admission_funnel_clarification",
-            rule="replace_no_exclusion_placeholder",
-            n_changes=n_exclusions,
-            detail="replaced misleading no-exclusion placeholder with non-additive admission accounting",
-        )]
-    patched = text[:insert_at].rstrip() + "\n\n" + note + "\n" + text[insert_at:]
-    patched, n_exclusions = _replace_no_exclusion_placeholder(patched)
-    return patched, [FinalizerLogEntry(
-        phase="D_admission_funnel_clarification",
-        rule="state_non_additive_admission_buckets",
-        n_changes=1 + n_exclusions,
-        detail="added admission-funnel non-additive bucket clarification",
-    )]
+        patched = text[:heading.start(1)] + "\n\n" + note + "\n\n" + text[heading.end():]
+        rule = "replace_non_additive_admission_table"
+    elif note not in text:
+        patched, _ = _prepend_section_paragraph(text, "Methods", note)
+        rule = "state_non_additive_admission_buckets"
+    else:
+        patched, rule = text, "replace_no_exclusion_placeholder"
+    patched, _ = _replace_no_exclusion_placeholder(patched)
+    return (text, []) if patched == text else (patched, [FinalizerLogEntry(
+        "D_admission_funnel_clarification", rule, 1, "clarified recorded selection scope without inventing admission history")])
 
 
 def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
@@ -1397,41 +1336,9 @@ def _revision_asks_admission_funnel_clarification(feedback: str) -> bool:
 
 
 def _admission_funnel_note(out_dir: Path) -> str:
-    manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    funnel = manifest.get("receipt_funnel") if isinstance(manifest, dict) else None
-    counts = funnel.get("counts") if isinstance(funnel, dict) else None
-    if not isinstance(funnel, dict) or not isinstance(counts, dict):
-        return _ADMISSION_FUNNEL_NOTE
-    candidates = funnel.get("classified_receipt_candidates")
-    admitted = counts.get("admitted_receipts") or manifest.get("n_receipts")
-    if not isinstance(candidates, int) or not isinstance(admitted, int):
-        return _ADMISSION_FUNNEL_NOTE
-    return (
-        f"{_ADMISSION_FUNNEL_NOTE} Source-selection interpretation: {admitted} "
-        f"admitted sources came from {candidates} classified source candidates "
-        "after deduplication, active-scope filtering, claim-binding confidence, "
-        "and eligibility checks. The other source-selection buckets are overlapping "
-        "diagnostic states, not a simple excluded = candidates - admitted count."
-        f" Stepwise reconciliation: classified source candidates ({candidates}) -> "
-        f"admitted final sources ({admitted}); not admitted after deduplication, "
-        "active-scope filtering, claim-binding confidence, and eligibility checks = "
-        f"{max(candidates - admitted, 0)}."
-        + (
-            " Strict high-confidence subset note: "
-            f"{counts.get('original_strict_high_confidence_receipts')} strict "
-            "high-confidence receipt(s) are a quality subset, not the synthesis "
-            f"denominator; the admitted source base remains {admitted}."
-            if counts.get("original_strict_high_confidence_receipts") is not None
-            else ""
-        )
-    )
-
-
-def _has_no_exclusion_placeholder(text: str) -> bool:
-    return bool(re.search(
-        r"(?ims)^###\s+Exclusion reasons\s*\n\s*-?\s*No records were excluded\b",
-        text,
-    ))
+    return (_ADMISSION_FUNNEL_NOTE + " Source-selection interpretation: these aggregate buckets do not establish "
+            "source-by-source admission decisions. A new dated selection assessment is required when the "
+            "historical decision record is unavailable; differences between overlapping bucket totals are not exclusions.")
 
 
 def _replace_no_exclusion_placeholder(text: str) -> tuple[str, int]:

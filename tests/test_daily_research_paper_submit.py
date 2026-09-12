@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime as dt
 import io
+import importlib
 import json
 import os
 import re
@@ -23,7 +24,7 @@ import pytest
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import daily_research_paper_submit as daily  # type: ignore[import-not-found]  # noqa: E402
+daily: Any = importlib.import_module("daily_research_paper_submit")
 from agent.revision_evidence import create_revision_evidence_snapshot, load_revision_evidence  # noqa: E402
 
 _REAL_EUROPE_PMC_IDENTIFIERS = daily._europe_pmc_identifiers
@@ -454,6 +455,9 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
             "n_claims": 9,
             "effect_direction": "mixed",
             "directness": "direct",
+            "evidence_tier": "A1",
+            "source_title": f"Trial report {i}",
+            "citation_token": "Alpha 2026" if i == 0 else "Beta 2025" if i == 1 else f"Smith {i + 1} 2026",
         }
         for i in range(12)
     ]
@@ -488,6 +492,7 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
         for idx, row in enumerate(receipts, start=1)
     })
     _snapshot_run(run)
+    _admission_case(run)
     daily.prepare_submission_manuscript(run)
     _write_json(run / "full_paper.audit.json", {"p1_pass": True, "n_pass": 14, "n_total": 14})
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
@@ -615,6 +620,25 @@ def _retopic(run: Path, topic: str) -> None:
     })
     shutil.rmtree(run / "revision_evidence_snapshot", ignore_errors=True)
     _snapshot_run(run)
+    _admission_case(run)
+
+
+def _admission_case(run: Path) -> None:
+    import source_admission
+    from agent.selection_flow import render_admission
+    from journal_finalizer import _phase_d_proactive_findings_map
+    manifest = json.loads((run / "manifest.json").read_text())
+    log = source_admission.start(manifest["topic"], frozenset())
+    for row in manifest["receipts"]:
+        source_admission.record(log, row["receipt_id"], "topic_eligible_with_bound_claims", included=True)
+    manifest["receipt_funnel"] = {"source_admission": log}
+    _write_json(run / "manifest.json", manifest)
+    _write_json(run / "source_admission.json", log)
+    paper = (run / "full_paper.md").read_text()
+    paper = re.sub(r"Selection assessment.*?(?=\n|$)", "", paper)
+    paper = paper.replace("## Methods\n", "## Methods\n\n" + render_admission(log) + "\n")
+    paper, _ = _phase_d_proactive_findings_map(paper, run)
+    (run / "full_paper.md").write_text(paper)
 
 
 def _snapshot_run(run: Path) -> None:
@@ -1322,7 +1346,7 @@ def test_payload_uses_researka_v2_submission_contract(tmp_path: Path) -> None:
     assert payload["sections"]["Abstract"]
     assert payload["sections"]["Methods"]
     assert "Research Question" not in payload["sections"]
-    assert "Evidence Landscape" not in payload["sections"]
+    assert "Findings Map" in payload["sections"]["Evidence Landscape"]
     assert payload["author_signature"].startswith("sha256:")
     assert payload["source_bundle"][0]["doi"] == "10.1/x"
     assert payload["source_bundle"][0]["evidence_type"] == "primary"
@@ -2714,7 +2738,12 @@ def test_load_bearing_source_span_ask_checks_outgoing_payload(tmp_path: Path) ->
 
 
 def test_source_bundle_does_not_promote_citation_token_to_source_title(tmp_path: Path) -> None:
-    payload = daily.build_payload(_run(tmp_path))
+    run = _run(tmp_path)
+    manifest = daily._read_json(run / "manifest.json")
+    manifest["receipts"][0].pop("source_title")
+    _write_json(run / "manifest.json", manifest)
+    _snapshot_run(run)
+    payload = daily.build_payload(run)
 
     assert payload["source_bundle"][0]["title"] == "Evidence receipt"
     assert payload["source_bundle"][0]["cited_as"] == "Alpha 2026"
@@ -2736,6 +2765,7 @@ def test_researka_preflight_accepts_named_source_without_publication_date(tmp_pa
         "title": "TRIal of STatin Therapy Effect on Androgen Status and Erectile functioN in Men",
         "year": None,
     })
+    payload["body_markdown"] = payload["body_markdown"].replace("Alpha 2026", payload["source_bundle"][0]["cited_as"]).replace("Trial report 0", payload["source_bundle"][0]["title"])
     _seal_source(payload["source_bundle"][0])
 
     assert daily._researka_preflight_status(payload) == "eligible"
@@ -3251,6 +3281,8 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
     manifest["receipts"] = [
         {
             "receipt_id": f"topic_r{i}",
+            "citation_token": f"Source {i} 2026",
+            "evidence_tier": "A1",
             "paper_id": f"topic_r{i}",
             "source_pmid": str(1000 + i),
             "effect_direction": "null",
@@ -3284,6 +3316,7 @@ def test_generation_reconciled_null_coding_submits_signed_body_unchanged(tmp_pat
             )}},
         )
     _snapshot_run(run)
+    _admission_case(run)
     monkeypatch.setattr(
         daily,
         "_pubmed_abstracts",

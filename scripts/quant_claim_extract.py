@@ -1014,3 +1014,14 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+def readable_source_notation(text: str) -> str:
+    """Render known source typesetting, preserving unknown math verbatim."""
+    def math(match: re.Match[str]) -> str:
+        value = match[1].replace("$", "").replace(r"\:", "").strip()
+        value = re.sub(r"\\(eta|beta|alpha)\b", lambda m: {"eta": "η", "beta": "β", "alpha": "α"}[m[1]], value)
+        value = re.sub(r"\{([ηβα])\}", r"\1", value).replace("_{p}", "ₚ").replace("^{2}", "²")
+        return match[0] if "\\" in value or "{" in value or "}" in value else value
+    text = re.sub(r"\\documentclass\b.*?\\begin\{document\}(.*?)\\end\{document\}", math, text, flags=re.S)
+    return re.sub(r"</?(?:jats:)?(?:italic|bold)(?:\s[^>]*)?>", "", text)

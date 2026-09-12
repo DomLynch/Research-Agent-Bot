@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from collections import Counter
 
 _ADMISSION_ROWS = (
     ("Receipt candidate union", "receipt_candidate_union"), ("Classified receipt candidates", "classified_receipt_candidates"),
@@ -41,3 +42,17 @@ def render_selection_flow_lines(receipt_funnel: Any) -> list[str]:
     lines = ["### Selection flow (PRISMA-style counts)", "", "These are audit counts, not a PRISMA claim. Mixed partial-or-none candidates and partial-only candidates are distinct audit buckets, not additive exclusion totals.", "", "| Stage | n |", "|---|---:|"]
     lines.extend(f"| {label} | {'not recorded' if value is None else value} |" for label, value in rows)
     return lines + [""]
+
+
+def render_admission(log: dict[str, Any]) -> str:
+    decisions = log["decisions"]
+    included = sum(row["included"] for row in decisions.values())
+    excluded = Counter(row["reason"] for row in decisions.values() if not row["included"])
+    reasons = "; ".join(f"{reason.replace('_', ' ')}: {count}" for reason, count in sorted(excluded.items())) or "none"
+    prior = render_admission(log["selection_assessment"]) + "\n\n" if log.get("selection_assessment") else ""
+    return prior + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
+            f"{log['rule']} Assessed {len(decisions)} candidate sources; included {included}; "
+            f"excluded {len(decisions) - included}. Exclusion reasons: {reasons}. "
+            "The source-by-source decisions and identifiers are in source_admission.json. "
+            "This assessment records the stated candidate scope on this date; it does not reconstruct "
+            "unrecorded historical screening or equate retrieval totals with assessed candidates.")

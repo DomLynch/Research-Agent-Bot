@@ -1254,7 +1254,7 @@ def test_exact_p_value_in_array_is_not_traceable_without_source_excerpt() -> Non
 
     assert "p = 0.01" not in fixed
     assert details == ["exact_stat_trace"]
-    assert manifest_row_finding(rows[0]).startswith("4 extracted claim")
+    assert "no result passage available" in manifest_row_finding(rows[0])
     assert revision_quality_proof_is_stated(fixed, ask, rows) is True
 
 
@@ -1297,7 +1297,7 @@ def test_findings_map_does_not_present_baseline_balance_as_an_outcome() -> None:
         "Negative symptoms improved versus placebo (P < .001)."
     )}
     assert manifest_row_finding(row) == (
-        "4 extracted claim(s); receipt-level direction is the coded finding"
+        "Source-level classification only; no result passage available in the frozen record."
     )
 
 

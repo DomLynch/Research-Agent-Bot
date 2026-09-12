@@ -1,0 +1,139 @@
+"""Final-record invariants across intervention, drug and preclinical corpora."""
+import importlib
+import json
+from copy import deepcopy
+
+import pytest
+
+from agent.publication_evidence import attach_bundle_references, ordered_source_rows
+from agent.revision_contract import final_source_integrity
+from agent.selection_flow import render_admission
+from journal_finalizer import _findings_map_section, _phase_d_proactive_findings_map
+import source_admission
+
+
+@pytest.fixture(params=[
+    ("resistance_training", "muscle_function", "direct", "A1"),
+    ("metformin", "cardiometabolic", "indirect", "B1"),
+    ("resveratrol", "mechanistic", "mechanistic", "C1"),
+])
+def corpus(request):
+    topic, outcome, directness, tier = request.param
+    rows = [{"receipt_id": f"Study_{n}", "citation_token": f"Study{n} 2025", "source_title": f"{topic} study {n}",
+             "source_year": 2025, "outcome_class": outcome, "effect_direction": "positive" if n == 1 else "unclear",
+             "directness": directness if n == 1 else "protocol", "evidence_tier": tier if n == 1 else "D1", "n_claims": 1}
+            for n in (1, 2)]
+    log = source_admission.start(topic, frozenset())
+    for row in rows:
+        source_admission.record(log, row["receipt_id"], "topic_eligible_with_bound_claims", included=True)
+    source_admission.record(log, "excluded_candidate", "no_admissible_bound_claims")
+    paper = "## Methods\n\n" + render_admission(log) + "\n\n## Evidence Landscape\n\n" + _findings_map_section(rows)
+    return rows, log, attach_bundle_references(paper, ordered_source_rows(rows))
+
+
+def save_run(tmp_path, corpus):
+    rows, log, paper = corpus
+    for name, value in {"manifest.json": {"receipts": rows, "receipt_funnel": {"source_admission": log}},
+                        "source_admission.json": log, "methods_pack.json": {"source_admission": log},
+                        "full_paper.final_verdict.json": {"passed": True}}.items():
+        (tmp_path / name).write_text(json.dumps(value))
+    (tmp_path / "full_paper.md").write_text(paper)
+    return paper
+
+
+@pytest.mark.parametrize("mutation", ["missing_source", "blank_classification", "wrong_total", "wrong_classification", "wrong_bundle", "protocol_outcomes", "duplicate_source"])
+def test_final_structural_mutations_block_every_topic(corpus, tmp_path, mutation):
+    rows, _, paper = corpus
+    save_run(tmp_path, corpus)
+    assert final_source_integrity(paper, rows)
+    assert source_admission.check(tmp_path, paper) == "eligible"
+    lines = paper.splitlines()
+    target = next(line for line in lines if "| direction=" in line)
+    if mutation == "missing_source":
+        paper = paper.replace(target, "")
+    elif mutation == "blank_classification":
+        cells = target.split("|")
+        cells[4] = " "
+        paper = paper.replace(target, "|".join(cells))
+    elif mutation == "wrong_total":
+        paper = paper.replace("n=2", "n=99")
+    elif mutation == "wrong_classification":
+        paper = paper.replace(target, target.replace("direction=positive", "direction=null"))
+    elif mutation == "wrong_bundle":
+        paper = paper.replace(target, target.replace("[bundle:1]", "[bundle:99]"))
+    elif mutation == "protocol_outcomes":
+        paper = paper.replace("Planned research only; no completed outcomes reported.", "Mortality was reduced.")
+    else:
+        paper += "\n" + target
+    assert not final_source_integrity(paper, rows)
+    assert source_admission.check(tmp_path, paper) != "eligible"
+
+
+def test_repair_restores_complete_table_without_specific_reviewer_ask(corpus, tmp_path):
+    rows, _, paper = corpus
+    save_run(tmp_path, corpus)
+    broken = "\n".join(line for line in paper.splitlines() if "| direction=" not in line)
+    fixed, log = _phase_d_proactive_findings_map(broken, tmp_path)
+    assert log and final_source_integrity(fixed, rows)
+    assert _phase_d_proactive_findings_map(fixed, tmp_path) == (fixed, [])
+
+
+@pytest.mark.parametrize("mutation", ["paper", "classification", "admission", "missing_ledger"])
+def test_post_approval_mutations_cannot_reach_transport(corpus, tmp_path, monkeypatch, mutation):
+    daily = importlib.import_module("scripts.publishing.submission")
+    paper = save_run(tmp_path, corpus)
+    payload = {"body_markdown": paper, "metadata": {}}
+    monkeypatch.setattr(daily, "build_payload", lambda *_a, **_kw: payload)
+    daily.freeze_submission_package(tmp_path, {"passed": True})
+    assert daily._frozen_package_status(tmp_path, payload) == "eligible"
+    if mutation == "paper":
+        (tmp_path / "full_paper.md").write_text(paper + "\nAn edit after approval.")
+    elif mutation == "missing_ledger":
+        (tmp_path / "source_admission.json").unlink()
+    else:
+        path = tmp_path / ("manifest.json" if mutation == "classification" else "source_admission.json")
+        changed = json.loads(path.read_text())
+        if mutation == "classification":
+            changed["receipts"][0]["directness"] = "review"
+        else:
+            changed["decisions"]["Study_1"]["reason"] = "changed_reason"
+        path.write_text(json.dumps(changed))
+    assert daily._frozen_package_status(tmp_path, payload) != "eligible"
+
+
+def test_admission_methods_and_source_membership_are_not_inferred(corpus, tmp_path):
+    rows, log, paper = deepcopy(corpus)
+    save_run(tmp_path, corpus)
+    assert "Assessed 3 candidate sources; included 2; excluded 1" in render_admission(log)
+    log["decisions"].pop("Study_1")
+    assert not source_admission.validate(log, rows)
+    assert source_admission.check(tmp_path, paper.replace("included 2", "included 3")) == "source_admission_methods_mismatch"
+
+
+def test_readable_notation_preserves_source_numbers_and_rejects_mutations():
+    from quant_claim_extract import readable_source_notation
+    from agent.publication_evidence import exact_source_quote
+    tex = r'\documentclass[12pt]{minimal} \usepackage{amsmath} \begin{document}$$\:{\eta\:}_{p}^{2}$$\end{document}'
+    raw = 'The group interaction had ' + tex + ' = 0.08 and <jats:italic>P</jats:italic> = 0.039.'
+    rendered = readable_source_notation(raw)
+    assert rendered == 'The group interaction had ηₚ² = 0.08 and P = 0.039.'
+    assert readable_source_notation(rendered) == rendered
+    assert exact_source_quote(rendered, raw)
+    assert not exact_source_quote(rendered.replace('0.08', '0.80'), raw)
+    assert not exact_source_quote(rendered.replace('P =', 'P >'), raw)
+    unknown = tex.replace(r'\eta', r'\unknown')
+    assert readable_source_notation(unknown) == unknown
+
+
+def test_dated_reassessment_cannot_silently_change_the_frozen_corpus(corpus, tmp_path):
+    from types import SimpleNamespace
+    rows, _, _ = corpus
+    source = tmp_path / 'prior'
+    source.mkdir()
+    lock = SimpleNamespace(errors=[], source_run=source, receipt_ids=frozenset(r['receipt_id'] for r in rows))
+    def assess(topic, admission_log):
+        source_admission.record(admission_log, 'different_source', 'topic_eligible_with_bound_claims', included=True)
+        return []
+    with pytest.raises(ValueError, match='changes_included_set'):
+        source_admission.prepare_reassessment('topic', lock, tmp_path / 'revision', assess)
+    assert not (source / 'source_admission.json').exists()
