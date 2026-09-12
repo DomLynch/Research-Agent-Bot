@@ -9,12 +9,15 @@ from typing import Any
 # conventional bar; downstream callers can pass a tighter alpha if
 # they want stricter classification.
 _DEFAULT_ALPHA = 0.05
+_P_COMPARISON_RE = re.compile(
+    r"\b[Pp][_\-a-zA-Z]*\s*(<=|>=|[<>=≤≥]|:)\s*"
+    r"(\d+\.?\d*[eE][+-]?\d+|0?\.\d+|\d+\.\d+|\d+)"
+)
 
 
 def _parse_p_value(raw_text: str) -> float | None:
     """Parse a reported p-value, preserving comparison semantics in the shared parser."""
-    parsed = _parse_p_comparison(raw_text)
-    return parsed[1] if parsed else None
+    return parsed[1] if (parsed := _parse_p_comparison(raw_text)) else None
 
 
 def _parse_p_comparison(raw_text: str) -> tuple[str, float] | None:
@@ -27,11 +30,7 @@ def _parse_p_comparison(raw_text: str) -> tuple[str, float] | None:
     # Two acceptable separators: `[<>=≤≥]` (with optional space) or a
     # bare `:` (for 'P-value: 0.05'). Scientific notation tried FIRST
     # so `1.2e-5` doesn't get truncated to 1.2.
-    m = re.search(
-        r"[Pp][_\-a-zA-Z]*\s*(<=|>=|[<>=≤≥]|:)\s*"
-        r"(\d+\.?\d*[eE][+-]?\d+|0?\.\d+|\d+\.\d+|\d+)",
-        s,
-    )
+    m = _P_COMPARISON_RE.search(s)
     if not m:
         return None
     try:
@@ -58,7 +57,7 @@ def _comparison_is_significant(comparator: str, value: float, alpha: float) -> b
     return False
 
 
-_DIRECTION_TERM = r"(?:improv(?:e[ds]?|ing|ements?)|increas(?:e[ds]?|ing)|decreas(?:e[ds]?|ing)|reduc(?:e[ds]?|ing)|enhanc(?:e[ds]?|ing))"
+_DIRECTION_TERM = r"(?:improv(?:e[ds]?|ing|ements?)|increas(?:e[ds]?|ing)|decreas(?:e[ds]?|ing)|reduc(?:e[ds]?|ing|tions?)|enhanc(?:e[ds]?|ing))"
 _SIGNIFICANCE_RE = re.compile(
     rf"\b(?:statistically\s+)?significant(?:ly)?\s+{_DIRECTION_TERM}\b"
     rf"|\b{_DIRECTION_TERM}\s+(?:was\s+)?(?:statistically\s+)?significant(?:ly)?\b",
@@ -103,7 +102,7 @@ def _reports_null(claim: dict, alpha: float) -> bool:
     if claim.get("claim_role") not in {None, "effect"}:
         return False
     if claim.get("direction") == "no_change":
-        return True
+        return not (claim.get("source_p_value") and _comparison_is_significant(claim["source_p_value"][0], claim["source_p_value"][1], alpha))
     comparison = _parse_p_comparison(str(claim.get("raw_text") or ""))
     return bool(claim.get("claim_type") == "p_value" and claim.get("endpoint")
                 and comparison and comparison[0] in {"=", ">", ">="} and comparison[1] >= alpha)
@@ -118,11 +117,13 @@ def source_outcome_claims(record: dict) -> list[dict]:
         for clause in re.split(r";(?![^()]*\))|\b(?:but|whereas|while|however)\b|\s+and (?=(?:greater|lower|higher|smaller)\b)", re.sub(r";\s*however,?\s*(?=the (?:increase|decrease|improvement) was significant)", " ", sentence, flags=re.I), flags=re.I):
             endpoint = match_endpoint(clause)
             matched = next((pattern.search(clause) for name, pattern in _ENDPOINT_COMPILED if name == endpoint and pattern.search(clause)), None)
-            direction = match_direction(clause, anchor_offset=matched.start() if matched else None)
+            direction = match_direction(clause, anchor_offset=matched.end() if matched else None)
             if not endpoint or not direction or re.search(r"\b(?:may|might|could|hypothes\w*|baseline|previous|prior)\b", clause, re.I):
                 continue
-            p_values = list(re.finditer(r"\bp\s*(?:<=|>=|[<=>≤≥])\s*0?\.\d+", clause, re.I))
-            own_p = _parse_p_comparison(p_values[0][0]) if len(p_values) == 1 and len({name for name, pattern in _ENDPOINT_COMPILED if pattern.search(clause)}) == 1 else None
+            p_values = list(_P_COMPARISON_RE.finditer(clause))
+            own_p = _parse_p_comparison(p_values[0][0]) if len(p_values) == 1 and len({match_endpoint(clause, anchor_offset=hit.start()) for _, pattern in _ENDPOINT_COMPILED if (hit := pattern.search(clause))}) == 1 and matched and clause.casefold().count(matched[0].casefold()) == 1 else None
+            if p_values and own_p is None:
+                continue
             claims.append({"endpoint": endpoint, "direction": direction, "sentence": clause, "source_p_value": own_p,
                            "raw_text": matched[0] if matched else endpoint, "claim_role": "effect", "claim_type": "qualitative_outcome"})
     return claims
@@ -136,9 +137,8 @@ def infer_effect_direction(
 ) -> str:
     """Aggregate source-owned outcomes with endpoint-specific significance.
 
-    Unmeasured or unsigned outcomes remain unclear; significant effects and
-    explicit null outcomes yield mixed. Qualitative claims need their own
-    significance statement and cannot borrow a numeric endpoint's p-value.
+    Unknown outcomes stay unclear. Qualitative clauses require their own
+    significance; significant and explicit null outcomes yield mixed.
     """
     # Baseline balance, dose and sample descriptors cannot establish an outcome.
     claims = [c for c in claims if c.get("claim_role") not in {"baseline", "population", "background", "dose", "duration", "sample_size", "protocol"}]

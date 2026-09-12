@@ -97,7 +97,7 @@ def test_global_review_recode_preserves_identity_and_unrequested_fields():
     assert coverage.authorized_receipt_contract_fields_by_receipt("Directness coding is consistent.", rows) == {}
 
 
-@pytest.mark.parametrize("citation,expected", [("Salter 2024", "positive"), ("Hwang 2018", "mixed"), ("Claussen 2025", "positive"), ("Chen 2026", "mixed")])
+@pytest.mark.parametrize("citation,expected", [("Salter 2024", "positive"), ("Hwang 2018", "mixed"), ("Claussen 2025", "positive"), ("Chen 2026", "mixed"), ("Longrak 2024", "positive")])
 def test_actual_qualitative_outcomes_keep_favourable_and_null_findings(synthesis, citation, expected):
     source = next(row for row in SOURCES if row["receipt"]["citation_token"] == citation)
     claims = [c for c in source["claims"] if c["binding_confidence"] in {"high", "partial"}]
@@ -123,3 +123,39 @@ def test_comparison_of_adjuncts_cannot_prove_shared_intervention_effect(target):
 def test_own_p_value_does_not_get_overruled_by_conflicting_qualitative_word(synthesis):
     record = {"sections": {"abstract": "Muscle strength significantly increased compared with control (p = 0.8)."}}
     assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] == "unclear"
+
+
+def test_favourable_nominal_results_and_null_secondary_outcomes_remain_separate(synthesis):
+    source = next(row for row in SOURCES if row["receipt"]["citation_token"] == "Chen 2026")
+    result = synthesis._aggregate_paper([], paper_meta=source["record"])
+    endpoints = dict(result["endpoint_directions"])
+    assert endpoints["fat mass"] == "positive"
+    assert endpoints["muscle strength"] == "positive"
+    assert endpoints["muscle hypertrophy"] == "null"
+    assert result["effect_direction"] == "mixed"
+
+
+@pytest.mark.parametrize("statement,expected", [
+    ("Muscle strength showed significant increases compared with placebo.", "positive"),
+    ("Fat mass showed significant reductions compared with placebo.", "positive"),
+    ("Muscle area showed statistically significant increases after training.", "positive"),
+    ("Muscle area changes were not statistically significant (p = 0.001).", "unclear"),
+])
+def test_nominal_outcome_phrases_and_conflicting_null_statement(synthesis, statement, expected):
+    assert synthesis._aggregate_paper([], paper_meta={"sections": {"abstract": statement}})["effect_direction"] == expected
+
+
+@pytest.mark.parametrize("statement,expected", [
+    ("Thigh muscle mass significantly increased compared with control (p = 0.8).", "unclear"),
+    ("Thigh muscle mass significantly increased compared with control (p = 0.001).", "positive"),
+    ("Muscle strength significantly increased and fat mass decreased (p = 0.8).", "unclear"),
+    ("Muscle strength increased in controls and muscle strength decreased in treatment (p = 0.01).", "unclear"),
+])
+def test_alias_overlap_and_multiple_comparisons_do_not_borrow_significance(synthesis, statement, expected):
+    assert synthesis._aggregate_paper([], paper_meta={"sections": {"abstract": statement}})["effect_direction"] == expected
+
+
+@pytest.mark.parametrize("reported,expected", [("p = 1.2e-5", "positive"), ("P_adjusted = 8e-1", "unclear"), ("p = 1", "unclear")])
+def test_qualitative_significance_uses_shared_p_value_parser(synthesis, reported, expected):
+    record = {"sections": {"abstract": f"Muscle strength significantly increased compared with control ({reported})."}}
+    assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] == expected

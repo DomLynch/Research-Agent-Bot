@@ -106,7 +106,7 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
                   r"|\bsimilar\s+(?:between|across|in\s+both)\b"
                   r"|\bnot\s+(?:significantly\s+)?different\b"
                   r"|\bunchanged\b|\bnull\s+(?:result|effect|finding)\b"
-                  r"|\bnon-?significant\s+(?:effect|difference|change)\b"),
+                  r"|\bnon-?significant\s+(?:effect|difference|change)\b|\b(?:were|was) not (?:statistically )?significant\b"),
     ("mixed", r"\bmixed\s+(?:response|result|finding|effect)\b"
               r"|\bvariable\s+(?:response|effect)\b"
               r"|\bdichotomous\b"
@@ -123,13 +123,13 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
                  r"|\bantagonized?\s+the\s+(?:increase|gain|improvement|rise|growth|response)"
                  r"|\bsmaller\s+(?:gain|increase|improvement|response)"
                  # Bare decrease verbs/adjectives.
-                 r"|\bdecreased?\b|\breduced?\b|\bdiminished?\b|\bblunted?\b"
+                 r"|\bdecreas(?:e[ds]?|ing)\b|\breduc(?:e[ds]?|ing|tions?)\b|\bdiminished?\b|\bblunted?\b"
                  r"|\battenuated?\b|\bsuppressed?\b|\binhibited?\b"
                  r"|\blowered?\b|\bdeclined?\b|\bfell\b|\bdropped?\b"
                  r"|\bslowed?\b|\bworsened?\b|\bantagonized?\b|\bimpaired?\b"
                  r"|\blost?\s+(?:weight|mass|function)"
                  r"|\blower\b|\bsmaller\b"),
-    ("increase", r"\bsmaller\s+(?:decrease|decline|loss|reduction)\b|\bincreased?\b|\bgained?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
+    ("increase", r"\bsmaller\s+(?:decrease|decline|loss|reduction)\b|\bincreas(?:e[ds]?|ing)\b|\bgained?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
                  r"|\brose\b|\brisen\b|\bgrew\b|\bgrowth\s+of\b|\belevated?\b"
                  r"|\bgreater\b|\bhigher\b|\blarger\b|\bmore\b|\bgained?\s+more\b"
                  r"|\bextended?\b|\bprolonged?\b"),

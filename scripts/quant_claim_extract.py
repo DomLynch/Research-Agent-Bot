@@ -368,7 +368,7 @@ _ROLE_KEYWORD_BACKGROUND = (
 _ROLE_KEYWORD_EFFECT = (
     # Direction verbs
     "increased", "decreased", "increase of", "decrease of", "increases", "decreases", "improved", "improvement", "improvements",
-    "reduced", "blunted",
+    "reduced", "reductions", "blunted",
     "attenuated", "enhanced", "elevated", "lowered", "diminished",
     "suppressed", "inhibited", "declined", "rose", "rose by",
     # Phase 2.2-fix: P1 #3 / Walton-class regressions. The pre-fix
@@ -392,7 +392,7 @@ _ROLE_KEYWORD_EFFECT = (
     "compared to placebo", "vs. placebo", "vs placebo",
     "treatment arm", "metformin group", "placebo group",
     "did not improve", "did not change", "did not differ",
-    "did not reach", "did not reach significance",
+    "did not reach", "did not reach significance", "were not statistically significant", "was not statistically significant",
 )
 
 

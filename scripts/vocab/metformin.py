@@ -25,7 +25,7 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
     # Body composition
     ("thigh muscle mass", r"\bthigh\s+muscle\s+(?:mass|size|area|volume|cross-?sectional\s+area)|thigh\s+CSA"),
     ("lean body mass", r"\blean\s+(?:body\s+)?mass\b|fat-?free\s+mass\b|\bFFM\b"),
-    ("muscle hypertrophy", r"\bhypertroph(?:y|ic\s+response)|muscle\s+gain"),
+    ("muscle hypertrophy", r"\bhypertroph(?:y|ic\s+response)|muscle\s+(?:gain|area|thickness|size|mass)"),
     ("muscle strength", r"\b(?:muscle\s+|grip\s+|leg\s+|knee\s+|handgrip\s+)?strength\b|\b1[\s-]*RM\b|one[\s-]?rep(?:etition)?\s*max(?:imum)?"),
     ("body weight", r"\bbody\s+weight\b|\bweight\s+(?:loss|gain|change)\b"),
     ("body mass index", r"\bbody\s+mass\s+index\b|\bBMI\b"),

@@ -1,6 +1,6 @@
 # Universal evidence repair — audit record, 12 September 2026
 
-Status: local implementation passed both audit passes and release checks. Live deployment and the publication outcome remain pending.
+Status: the main repair is deployed at `d25972bd`; audited table-prefix and endpoint follow-ups are awaiting an idle worker for deployment. The resistance-training resubmission and publication outcome remain pending.
 
 ## Scope and source receipt
 
@@ -24,7 +24,7 @@ The frozen-record replay rebuilt the following classifications through the norma
 | Zhang 2025 | unclear → positive | direct → direct |
 | Denben 2023 | unclear → unclear | indirect → indirect |
 | Salter 2024 | unclear → positive | direct → indirect |
-| Longrak 2024 | unclear → unclear | direct → direct |
+| Longrak 2024 | unclear → positive | direct → direct |
 | Lander 2026 | unclear → positive | indirect → indirect |
 | Jacob 2025 | unclear → unclear | indirect → indirect |
 | Hwang 2018 | unclear → mixed | direct → indirect |
@@ -55,8 +55,14 @@ The existing QEI was independently revalidated: 15 rows retained, four rows omit
 
 ## Release checks and live outcome
 
-Release checks on the final runtime diff: 5,109 tests passed, 2 xpassed, 16 warnings (160.76 seconds); `make quality` passed (347 checks, Ruff, complexity with no new/worsened findings, duplication and unchanged LOC budgets); mypy passed across 180 source files. Changed quantitative-cell/source negative controls, source classifications, selection framing, and ordinary submission preparation were audited. No source-ID exception or gate/budget increase was introduced. The withdrawn apply_patches experiment is absent from the final diff.
+Release checks on deployed `d25972bd`: 5,109 tests passed, 2 xpassed, 16 warnings (160.76 seconds); `make quality` passed (347 checks, Ruff, complexity with no new/worsened findings, duplication and unchanged LOC budgets); mypy passed across 180 source files. Changed quantitative-cell/source negative controls, source classifications, selection framing, and ordinary submission preparation were audited. No source-ID exception or gate/budget increase was introduced. The withdrawn apply_patches experiment is absent from the final diff.
 
-The prior production workers have finished without submitting. Deployment and a normal corrected revision are next; there is no new Core acceptance or publication receipt yet.
+The older resistance-training revision finished on the pre-repair baseline without submission: all four coverage asks remained unmet. The first normal worker after deployment selected an older HPV revision. It is still drafting; it is not the requested resistance-training validation. A one-shot operational wrapper will select the canonical resistance-training request through the existing `run_cycle` revision-loader seam, retaining all history caps, source locks, semantic review, and submission gates.
 
-Production handoff: all six publishing timers were active, then paused while the already-running fresh and revision workers complete on the old baseline. No worker was interrupted. Restore all six timers after deployment or before ending work if deployment cannot proceed.
+## Follow-up endpoint audit
+
+The source-level `mixed` label concealed an incorrect endpoint sign: "greater reductions in fat mass" was read as an increase. The shared vocabulary and endpoint binding now preserve the reduction. Explicit muscle-area increases are recognized; Longrak becomes positive. Chen remains mixed with favorable fat-mass and strength outcomes and a null hypertrophy outcome. Contradictory significance, overlapping endpoint aliases, multiple comparisons, scientific-notation p-values, and adjusted p-values have focused negative/positive controls. These are general parser rules, not source-specific runtime cases.
+
+A replay of all 19 frozen sources regenerates a Findings Map with no unbound rows. Fifteen revalidated QEI rows pass the outgoing check; four unsupported rows are omitted. An exact `finding=` rendering prefix is normalized without changing the quoted source text. Final follow-up release check: 5,123 passed, 2 xpassed, 16 warnings in 164.51 seconds. `make quality` passes (347 tests, Ruff, no new/worsened complexity or duplication, unchanged LOC ceilings); mypy passes across 180 source files. The final focused significance-parser checks pass (77 tests).
+
+Production handoff: the six publishing timers are temporarily paused to allow the active HPV worker to finish before the next deployment. No worker was interrupted. Restore all six timers after the targeted normal revision is launched, or before ending work if deployment cannot proceed. No new acceptance or publication has been observed.
