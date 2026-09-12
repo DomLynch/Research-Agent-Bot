@@ -235,6 +235,27 @@ def _is_repeated_safe_simplification(ptype: str, before: str, after: str) -> boo
     return ok
 
 
+def _preserves_claim_terms(before: str, after: str) -> bool:
+    """Word subsets cannot prove meaning: preserve order, qualifiers and signs."""
+    def terms(text: str) -> list[str]:
+        return re.findall(r"\w+|[<>=≤≥+−%/-]", text.casefold())
+    return terms(before) == terms(after)
+
+
+def _complete_deletion_region(md: str, before: str) -> str:
+    """Expand a unique prose target to its sentence, or a table target to its row."""
+    from agent.revision_claim_trace import _sentences
+    if not before or md.count(before) != 1 or _has_unsafe_match_boundary(md, before):
+        return ""
+    for line in md.splitlines():
+        if before not in line or line.lstrip().startswith(("#", "```")):
+            continue
+        if line.lstrip().startswith("|"):
+            return line if line.rstrip().endswith("|") else ""
+        return next((s for s in _sentences(line) if before in s), "")
+    return ""
+
+
 _NEUTRAL_EVIDENCE_WORDS = frozenset({
     "examined", "evaluated", "assessed", "studied", "tested",
     "investigated", "reported", "described",
@@ -303,6 +324,10 @@ def _is_safe_neutral_claim_rephrase(
         )
     if not (before_words & _DIRECTIONAL_CLAIM_WORDS):
         return False, "neutral rephrase did not remove directional wording"
+    normalized = re.sub(r"\b(?:" + "|".join(_DIRECTIONAL_CLAIM_WORDS) + r")\b", "reported", before)
+    neutral = re.sub(r"\b(?:" + "|".join(_NEUTRAL_EVIDENCE_WORDS) + r")\b", "reported", after)
+    if not _preserves_claim_terms(normalized, neutral):
+        return False, "neutral rephrase removes or reorders scientific terms"
     return True, (
         f"safe neutral claim rephrase ({n_before} → {n_after} words; "
         f"new neutral words={sorted(new_words)})"
@@ -398,6 +423,8 @@ def _is_safe_simplification(
             f"{sorted(new_content)} not in BEFORE — looks like a "
             "semantic substitution, not a pure deletion"
         )
+    if after.strip() and not _preserves_claim_terms(before, after):
+        return False, "word deletion or reordering needs source verification, not a subset test"
     return True, (
         f"safe simplification ({n_before} → {n_after} words; "
         "AFTER words ⊆ BEFORE words; no new numerics/citations/"
@@ -469,6 +496,8 @@ def _is_safe_citation_attribution_patch(
 
     before_core = _strip_cites(before)
     after_core = _strip_cites(after)
+    if not _preserves_claim_terms(re.sub(r"^This\s+", "", before_core), after_core):
+        return False, "citation attribution changes scientific terms"
     new_numbers = _numbers(after_core) - _numbers(before_core)
     if new_numbers:
         return False, (
@@ -779,6 +808,13 @@ def apply_patches(
             f"{gate_reason}. final-layer reviewer rationale: {proposer_reason!r}"
             if proposer_reason else gate_reason
         )
+
+        if ptype in {"claim", "numeric", "structure"} and not after.strip() and ok:
+            region = _complete_deletion_region(new_md, before)
+            if region:
+                before = region
+            elif not _has_unsafe_match_boundary(new_md, before):
+                ok, full_reason = False, "deletion target is not a unique complete evidence unit"
 
         if not ok:
             results.append(PatchResult(
