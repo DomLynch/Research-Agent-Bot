@@ -311,6 +311,7 @@ def _run_text_phases(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEn
         _phase_m_strip_surface_duplicate_paragraphs,
         _phase_m_repair_surface_artifacts,
         lambda t: _phase_o_restore_numeric_evidence_index(t, out_dir),
+        lambda t: _phase_d_proactive_findings_map(t, out_dir),
     ):
         text, log = phase(text)
         entries.extend(log)
@@ -4037,9 +4038,6 @@ def _phase_d_proactive_findings_map(
         r"^### Findings Map\b.*?(?=^### |^## |\Z)", text, flags=re.M | re.S,
     )
     if existing:
-        request = _load_sidecar(out_dir / "researka_revision_request.json") or {}
-        if not _asks_exact_stat_trace(_revision_feedback(request)):
-            return text, []
         if existing.group(0).strip() == note.strip():
             return text, []
         return text[:existing.start()] + note + "\n\n" + text[existing.end():], [

@@ -168,6 +168,8 @@ _SOURCE_LAYOUT_ONLY = re.compile(rf"\s*\(\s*{_SOURCE_LAYOUT_GROUP}(?:\s*;\s*{_SO
 
 
 def manifest_row_finding(row: dict[str, Any]) -> str:
+    if row.get("directness") == "protocol":
+        return "Planned research only; no completed outcomes reported."
     # Keep the whole verified result: selecting its first p-value can substitute
     # baseline balance or a different endpoint for the actual treatment finding.
     if row.get("directness") != "protocol" and row.get("verified_source_sections") and (excerpts := row.get("source_result_excerpts")):
@@ -357,22 +359,36 @@ def _findings_map_is_exact(paper_md: str, rows: Sequence[dict[str, Any]]) -> boo
     for row in rows:
         grouped.setdefault(findings_map_row(row)[0], []).append(row)
     for display, outcome_rows in grouped.items():
-        directions = _count_text(receipt_direction(row) for row in outcome_rows)
+        directions = _count_text(resolved_effect_direction(row) for row in outcome_rows)
         directness = _count_text(findings_map_row(row)[3].split("=", 1)[-1] for row in outcome_rows)
         labels = "; ".join(sorted((_label(row) for row in outcome_rows), key=str.casefold))
         roster = (
             f"{display} n={len(outcome_rows)} (direction: {directions}; "
             f"directness: {directness}; sources: {labels})"
         )
-        if scope.casefold().count(roster.casefold()) != 1:
+        if re.sub(r"\s*\[bundle:\d+\]", "", scope).casefold().count(roster.casefold()) != 1:
             return False
     table_rows = [_table_cells(line) for line in scope.splitlines()]
     table_rows = [cells for cells in table_rows if len(cells) == 7 and cells[0].lower() not in {"outcome class", "evidence domain"}]
     if len(table_rows) != len(rows):
         return False
-    expected = Counter(tuple(value.casefold() for value in findings_map_row(row)) for row in rows)
-    actual = Counter(tuple(value.casefold() for value in cells) for cells in table_rows)
+    def key(cells):
+        return tuple(re.sub(r"\s+", " ", re.sub(r"\s*\[bundle:\d+\]", "", value)).replace("|", "/").strip().casefold() for value in cells[:6])
+    if any(not cells[6].removeprefix("finding=").strip() for cells in table_rows):
+        return False
+    expected = Counter(key(findings_map_row(row)) for row in rows)
+    actual = Counter(key(cells) for cells in table_rows)
     return actual == expected
+
+
+def final_source_integrity(paper: str, rows: Sequence[dict[str, Any]]) -> bool:
+    """Validate final source accounting independently of reviewer ask wording."""
+    rows = _ordered_rows(rows)
+    ids = [row.get("receipt_id") for row in rows]
+    valid = all(row.get("effect_direction") in {"positive", "negative", "mixed", "null", "unclear"}
+                and row.get("directness") in {"direct", "indirect", "review", "mechanistic", "protocol"}
+                and row.get("evidence_tier") and row.get("outcome_class") for row in rows)
+    return bool(rows) and all(ids) and len(set(ids)) == len(ids) and valid and _findings_map_is_exact(paper, rows)
 
 
 def _count_text(values: Sequence[str] | Any) -> str:
