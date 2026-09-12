@@ -122,3 +122,42 @@ Final exact local checks for this outgoing-gate follow-up: 5,166 passed, 2 xpass
 passed with 347 gate tests, no new/worsened complexity or duplication findings,
 and unchanged LOC budgets. Mypy passed for 181 source files. Runtime changes
 contain no author, submission-ID, or paper-specific branches.
+
+### Final preparation audit: presentation equivalence
+
+The 15:18 UTC normal rebuild preserved all 19 frozen sources and regenerated the
+corrected profiles. Its final gate stopped before submission. Auditing the actual
+preparation diff and source review found three general presentation defects:
+
+- Adjacent author citations acquired bundle markers and spaces, invalidating the
+  approval key for two supported Abstract sentences. The key now normalizes only
+  missing adjacency spacing before known source labels; changed wording, source
+  sets and citation placement still invalidate approval.
+- The methodology gate treated `not a systematic scoping review` as a positive
+  self-claim. Explicit local negation is excluded; positive claims and `not only`
+  claims remain blocked when stronger than the declared review type.
+- A source's `P =.23` and the rendered `P = 0.23` were treated as different claim
+  contexts. Leading-zero decimal presentation now matches while numbers,
+  operators, endpoints and comparators remain bound to the authentic passage.
+
+Three distinct Semble queries and CodeGraph localization preceded each affected
+surface. For citation handling, queries covered approval keys, bundle rendering,
+and changed-claim tests. For methodology, queries covered negated review types,
+self-claim qualifiers, and gate tests. For numeric binding, queries covered
+source-bound contexts, leading-zero rendering, and changed-comparator tests.
+The exact query receipts are in `.quality-reports/universal-publishing-context.md`.
+
+The real citation renderer regression failed before its fix. The methodology and
+decimal regression group reproduced four failures before those fixes. All 300
+focused checks then passed. A deterministic replay restored the original writer
+Abstract from the recorded preparation diff: both approved sentences survive,
+the rejected unqualified power sentence remains excluded, and all outgoing
+quantitative table checks pass. The replay does not replace full pipeline review
+or constitute a Core submission. Runtime LOC and scientific thresholds are unchanged.
+
+Final presentation-fix verification: 5,181 tests passed, 2 XPASS and 16 existing
+warnings in 157.12 seconds; `make quality` passed with no new/worsened complexity
+or duplication findings and unchanged LOC limits; mypy passed 181 source files.
+The 300 focused checks and actual frozen-run preparation replay passed before
+release. Live final review, Core resubmission and public publication remain
+separate outstanding evidence at this checkpoint.
