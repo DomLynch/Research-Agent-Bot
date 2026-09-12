@@ -197,3 +197,30 @@ def test_payload_exports_the_verified_section_containing_its_findings_map_quote(
     paper = "### Findings Map\n\n| Source | Finding |\n|---|---|\n| Smith 2020 | finding=" + finding + " |\n"
     status = submission._researka_quantitative_trace_status({"body_markdown": paper}, bundle)
     assert (status == "eligible") is (not altered)
+
+
+def test_preparation_reviews_uncited_scope_before_cleanup(run, monkeypatch):
+    scope = "Background: We asked what intervention findings show and how populations and comparators constrain their interpretation across outcome classes."
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text().replace("## Abstract\n\n", "## Abstract\n\n" + scope + "\n\n"))
+    calls = install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    reviewed = json.loads(calls[0]["messages"][1]["content"])["statements"]
+    assert scope in {row["text"] for row in reviewed}
+    submission.prepare_submission_manuscript(run, enrich_sources=False)
+    assert scope in paper.read_text()
+
+
+def test_prose_review_includes_sources_without_numeric_abstract_results(run, monkeypatch):
+    # This source has only qualitative abstract results, so QEI omits it.
+    from agent.qei_facts import source_entries
+    assert source_entries(run, "resveratrol", {"trial": "Smith 2020"}) == []
+    calls = install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    sources = json.loads(calls[0]["messages"][1]["content"])["sources"]
+    rows = sources["own_results"]
+    assert len(rows) == 1
+    assert rows[0]["receipt_id"] == "trial"
+    assert rows[0]["citation_token"] == "Smith 2020"
+    assert rows[0]["verified_source_sections"]["abstract"] == "Resveratrol reduced fasting glucose in older adults compared with placebo."
+    assert "12%" in rows[0]["verified_source_sections"]["results"]

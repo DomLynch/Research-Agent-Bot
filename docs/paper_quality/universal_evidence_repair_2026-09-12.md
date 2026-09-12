@@ -66,3 +66,26 @@ The source-level `mixed` label concealed an incorrect endpoint sign: "greater re
 A replay of all 19 frozen sources regenerates a Findings Map with no unbound rows. Fifteen revalidated QEI rows pass the outgoing check; four unsupported rows are omitted. An exact `finding=` rendering prefix is normalized without changing the quoted source text. Final follow-up release check: 5,123 passed, 2 xpassed, 16 warnings in 164.51 seconds. `make quality` passes (347 tests, Ruff, no new/worsened complexity or duplication, unchanged LOC ceilings); mypy passes across 180 source files. The final focused significance-parser checks pass (77 tests).
 
 Production handoff: the six publishing timers are temporarily paused to allow the active HPV worker to finish before the next deployment. No worker was interrupted. Restore all six timers after the targeted normal revision is launched, or before ending work if deployment cannot proceed. No new acceptance or publication has been observed.
+
+## Source-review input audit follow-up
+
+The September 12 regenerated manuscript stopped locally at Abstract 125/150
+words. Its recorded preparation diff showed loss before final review. Two
+regressions reproduced: the semantic statement selector omitted uncited scope
+sentences later removed by cleanup, and the prose reviewer reused the QEI source
+selector, which excluded studies without numerical abstract results. The frozen
+Zhang abstract documents randomized allocation but was absent from that packet.
+
+Prose review now includes Abstract/Conclusion sentences and uses the existing
+verified revision evidence reader for every retained source, including complete
+source sections and tables. Citation identity remains tied to the frozen
+registry. The policy clarifies intervention attribution versus the original
+study's direct comparison. Existing negative, altered-text, corrupted-snapshot,
+and stale-policy checks remain fail-closed. No word floor, source classification,
+review verdict, provider, budget, or runtime LOC limit changes.
+
+Audit pass 1: both input regressions failed before the change and passed after it;
+62 focused prose and universal evidence tests passed. Audit pass 2: reviewed
+source identity, negative decisions, cache invalidation, and downstream cleanup;
+quality (347 tests), type checks and unchanged complexity/LOC gates passed.
+The live replay and Core decision require separate receipts.
