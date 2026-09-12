@@ -2055,7 +2055,8 @@ def build_receipts_from_quant_claims(
         )
         locked = receipt_contracts.get(paper_id, {})
         allowed = set() if authorized_contract_fields is None else authorized_contract_fields.setdefault(paper_id, set())
-        allowed.update({"endpoints", "endpoint_directions"} if allowed & {"outcome_class", "effect_direction"} else ())
+        allowed.update(({"endpoints", "endpoint_directions"} if allowed & {"outcome_class", "effect_direction"} else set())
+                       | ({"source_result_excerpts"} if "effect_direction" in allowed else set()))
         updates: dict[str, Any] = {}
         for field in dataclasses.fields(receipt):
             name = field.name
@@ -3014,8 +3015,7 @@ async def _run(
     if override := os.environ.get("RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE", "").strip():
         _review_type_effective = parse_review_type(override)
     # Automated retrieval/admission records do not establish PRISMA-ScR screening.
-    if _review_type_effective == "prisma_scr_scoping_synthesis":
-        _review_type_effective = "curated_evidence_map"
+    _review_type_effective = {"prisma_scr_scoping_synthesis": "curated_evidence_map"}.get(_review_type_effective, _review_type_effective)
     if surface_code := _public_surface_return_code(_review_type_canonical, _review_type_effective):
         print(
             f"Public full-only policy blocked compact surface {_review_type_effective!r}.",

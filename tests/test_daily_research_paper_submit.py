@@ -307,7 +307,7 @@ def test_preparation_refreshes_old_qei_from_frozen_context_and_labels_protocol(t
     prepared = paper_path.read_bytes()
     payload = daily.build_payload(run, enrich_sources=False)
     assert "| Alpha 2026 | mortality | 48% |" not in payload["body_markdown"]
-    assert payload["body_markdown"].count(f"| Alpha 2026 | {sentence} | 48% |") == (1 if source_case == "supported" else 0)
+    assert payload["body_markdown"].count(f"| Alpha 2026 [bundle:1] | {sentence} | 48% |") == (1 if source_case == "supported" else 0)
     assert payload["body_markdown"].count("## Quantitative Evidence Index") <= 1
     if source_case == "background":
         assert "drop_unowned_result" in (run / "qei_quarantine.json").read_text()

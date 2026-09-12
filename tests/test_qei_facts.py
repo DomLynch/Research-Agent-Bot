@@ -198,3 +198,51 @@ def test_saved_table_revalidates_source_hashes_and_citations(tmp_path, row, sour
         _prepare_qei_section(paper, run, "resveratrol", bundle, manifest)
     with pytest.raises(ValueError, match="snapshot"):
         saved_table(run, "resveratrol", tokens)
+
+
+def test_only_evidence_sent_to_core_can_support_a_comparison(row, source):
+    source["publication_excerpt"] = QUOTE
+    assert row_issue(row, {"trial": source}) == "unverified_comparison"
+    source["publication_excerpt"] = source["abstract"]
+    assert not row_issue(row, {"trial": source})
+
+
+@pytest.mark.parametrize("field,value", [(1, "fasting glucose"), (2, "Randomized treatment versus vitamin C."),
+    (3, "9.62±8.75 mg/dL"), (4, "95% CI [0.19, 0.99]"), (5, "p=0.05"), (6, "Unsupported endpoint changed by 3.62±8.75 mg/dL (p=0.01).")])
+def test_final_outgoing_table_rejects_cell_mutations_and_accepts_rendering(row, source, field, value):
+    from agent.qei_facts import quoted_table_row_supported, HEADERS
+    from agent.revision_quality import _quantitative_table_rows, _table_cells, _statistics_are_source_bound
+    paper = render_rows([row], "resveratrol", {"trial": "Smith 2020"})
+    rows = [{"citation_token": "Smith 2020", "verified_abstract": source["abstract"]}]
+    assert _statistics_are_source_bound(paper, rows, tables_only=True)
+    line, header = list(_quantitative_table_rows(paper))[0]
+    cells = _table_cells(line)
+    assert quoted_table_row_supported([cell.replace("p=", "P=") for cell in cells], header, source["abstract"])
+    cells[field] = value
+    assert not quoted_table_row_supported(cells, header, source["abstract"])
+    assert not quoted_table_row_supported(cells[:2], [h.lower() for h in HEADERS[:2]], source["abstract"])
+    assert not _statistics_are_source_bound(paper.replace("Smith 2020", "Jones 2021"), rows, tables_only=True)
+    assert not _statistics_are_source_bound(paper, [{**rows[0], "verified_abstract": COMPARISON}], tables_only=True)
+
+
+def test_numeric_table_checks_are_not_limited_to_named_sections():
+    from agent.revision_quality import _statistics_are_source_bound
+    text = "The intervention increased muscle strength by 12 kg compared with placebo."
+    rows = [{"citation_token": "Smith 2020", "verified_abstract": text}]
+    for heading in ("Results", "Supplementary estimates", "Unusual table heading"):
+        paper = f"## {heading}\n| Study | Result |\n|---|---|\n| Smith 2020 | {text} |"
+        assert _statistics_are_source_bound(paper, rows, tables_only=True)
+        assert not _statistics_are_source_bound(paper.replace("12 kg", "99 kg"), rows, tables_only=True)
+
+
+def test_untyped_numeric_columns_cannot_bypass_source_verification():
+    from agent.revision_quality import _statistics_are_source_bound
+    rows = [{"citation_token": "Smith 2020", "verified_abstract": "Participants experienced improvements in fasting glucose."}]
+    for column in ("Result", "Fasting glucose", "Reported estimate"):
+        paper = f"| Study | {column} |\n|---|---|\n| Smith 2020 | 35 |"
+        assert not _statistics_are_source_bound(paper, rows, tables_only=True)
+    text = "The intervention increased muscle strength by 12 kg compared with placebo."
+    legacy = f"| Study | Source context | Raw statistic |\n|---|---|---|\n| Smith 2020 | {text} | 12 kg |"
+    rows[0]["verified_abstract"] = text
+    assert _statistics_are_source_bound(legacy, rows, tables_only=True)
+    assert not _statistics_are_source_bound(legacy.replace("| 12 kg |", "| 99 kg |"), rows, tables_only=True)

@@ -391,7 +391,8 @@ def test_source_primary_outcome_beats_numeric_frequency(
         **args, authorized_contract_fields=allowed,
     )[0]
     assert allowed == {"trial": {"outcome_class", "endpoints", "endpoint_directions"}}
-    assert revised.endpoints == ((endpoint,) if endpoint else ())
+    assert not endpoint or endpoint in revised.endpoints
+    assert set(revised.endpoints) <= {endpoint, "cognition", "cognitive function"}
     assert "stale endpoint" not in dict(revised.endpoint_directions)
     assert revised.outcome_class == expected
     assert revised.receipt_id == locked.receipt_id == "trial"
@@ -416,7 +417,9 @@ def test_background_cognitive_null_does_not_determine_endpoint_direction() -> No
         "sections": {"abstract": own, "discussion": background},
     })
     assert result["outcome_class"] == "cognitive"
-    assert result["endpoint_directions"] == ()
+    # Own qualitative results may now supply an endpoint; background nulls cannot.
+    assert all(direction != "null" for _, direction in result["endpoint_directions"])
+    assert result["effect_direction"] != "null"
     assert result["n_claims"] == 2
     assert claims[1]["direction"] == "no_change"
 

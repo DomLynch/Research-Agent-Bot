@@ -470,7 +470,7 @@ _TREATMENT_TIMING_RE = re.compile(
 # boundaries (e.g. "the effect was significant. 58% of participants...").
 # Decimals like "0.05" don't false-split because the preceding char
 # is a digit, not [.!?].
-_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9])")
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])(?:\s+(?=[A-Z0-9])|(?=(?:Background|Objective|Methods|Results|Conclusion)[A-Z]))")
 
 
 def _split_sentences(text: str) -> list[tuple[int, str]]:
@@ -527,7 +527,7 @@ def source_result_excerpts(paper_meta: dict, *, require_numeric: bool = True) ->
     sections.setdefault("abstract", paper_meta.get("abstract") or "")
     record = {**paper_meta, "sections": sections}
     excerpts: dict[str, None] = {}
-    for section in ("results", "abstract", "conclusion"):
+    for section in ("abstract", "results", "conclusion"):
         for _, sentence in _split_sentences(_record_text(sections.get(section) or "")):
             if _assign_claim_role(sentence, section) == "effect" and _owned_result_sentence(sentence, record) and (not require_numeric or extract_from_text(sentence, section)):
                 excerpts.setdefault(sentence, None)

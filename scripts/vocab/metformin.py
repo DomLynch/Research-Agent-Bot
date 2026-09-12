@@ -19,11 +19,14 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
     # Cardio / aerobic
     ("VO2max", r"\bVO\s*2\s*max\b|\bVO₂\s*max\b|peak\s+oxygen\s+(?:consumption|uptake)|aerobic\s+capacity"),
     ("walk speed", r"\b(?:4-?\s*m|six-?minute)\s+walk(?:\s+(?:speed|distance|test))?\b|gait\s+speed\b"),
+    ("cognitive function", r"\bcognitive (?:function|performance)|\binhibitory control\b|\bperceptual processing\b|\bworking memory\b"),
+    ("muscle power", r"\b(?:peak )?muscle power\b"),
+    ("fat mass", r"\b(?:body )?fat mass\b"),
     # Body composition
     ("thigh muscle mass", r"\bthigh\s+muscle\s+(?:mass|size|area|volume|cross-?sectional\s+area)|thigh\s+CSA"),
     ("lean body mass", r"\blean\s+(?:body\s+)?mass\b|fat-?free\s+mass\b|\bFFM\b"),
     ("muscle hypertrophy", r"\bhypertroph(?:y|ic\s+response)|muscle\s+gain"),
-    ("muscle strength", r"\b(?:muscle\s+|grip\s+|leg\s+|knee\s+|handgrip\s+)?strength\b|\b1\s*RM\b|one[\s-]?rep\s*max"),
+    ("muscle strength", r"\b(?:muscle\s+|grip\s+|leg\s+|knee\s+|handgrip\s+)?strength\b|\b1[\s-]*RM\b|one[\s-]?rep(?:etition)?\s*max(?:imum)?"),
     ("body weight", r"\bbody\s+weight\b|\bweight\s+(?:loss|gain|change)\b"),
     ("body mass index", r"\bbody\s+mass\s+index\b|\bBMI\b"),
     # Glucose / insulin
@@ -57,6 +60,7 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
 
 
 ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = {
+    "cognitive function": "cognitive", "muscle power": "muscle_function", "fat mass": "cardiometabolic",
     "VO2max": "muscle_function",
     "thigh muscle mass": "muscle_function",
     "lean body mass": "muscle_function",
@@ -87,6 +91,7 @@ ENDPOINT_TO_OUTCOME_CLASS: dict[str, str] = {
 
 
 ENDPOINT_POLARITY: dict[str, int] = {
+    "cognitive function": +1, "muscle power": +1, "fat mass": -1,
     # higher = better
     "VO2max": +1, "thigh muscle mass": +1, "lean body mass": +1,
     "muscle hypertrophy": +1, "muscle strength": +1, "lifespan": +1,

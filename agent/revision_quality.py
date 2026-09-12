@@ -18,11 +18,11 @@ from agent.template_language import mask_fenced_markdown
 
 
 _EFFECT_STAT_RE = re.compile(
-    r"\b(?:HR|OR|RR|NNT|SMD|MD)\s*(?:=|:|was|is)?\s*[-+\u2212]?\d+(?:\.\d+)?"
+    r"(?:\b(?:HR|OR|RR|NNT|SMD|MD|beta)|β)\s*(?:=|:|was|is)?\s*[-+\u2212]?\d+(?:\.\d+)?"
     r"|\b(?:95\s*%\s*)?(?:CI|confidence interval)\s*[:=]?\s*"
-    r"[-+\u2212]?\d+(?:\.\d+)?\s*(?:-|–|to)\s*[-+\u2212]?\d+(?:\.\d+)?"
+    r"\[?[-+\u2212]?\d+(?:\.\d+)?\s*(?:-|–|to|,)\s*[-+\u2212]?\d+(?:\.\d+)?\]?"
     r"|\bp\s*(?:<=|>=|<|>|=|≤|≥)\s*(?:0?\.\d+|1(?:\.0+)?)"
-    r"|(?<![\w.])[-+\u2212]?\d+(?:\.\d+)?\s*%(?!\w)",
+    r"|(?<![\w.])[-+\u2212]?\d+(?:\.\d+)?\s*(?:%|kg|mg/dL|mmHg|m/s|mmol/L)(?!\w)",
     re.I,
 )
 _STRONG_CLAIM_RE = re.compile(
@@ -138,7 +138,7 @@ def repair_revision_quality(
     return patched, details
 
 
-def _normalise(text: str) -> str: return " ".join(re.sub(r"[-\u2010-\u2015]+", " ", text.lower()).split())
+_normalise = _source_roles._normalise
 
 
 def protocol_only_source(title: str, evidence_text: str) -> bool:
@@ -489,10 +489,20 @@ def _statistics_are_source_bound(paper_md: str, rows: Sequence[dict[str, Any]], 
         _stat_is_source_bound(paragraph, match, rows)
         for paragraph in _prose_paragraphs(paper_md) for match in _EFFECT_STAT_RE.finditer(paragraph)
     )) and all(
-        _table_row_supported(line, rows, _table_header(paper_md))
-        for line in _findings_map(paper_md).splitlines()
-        if line.lstrip().startswith("|") and _EFFECT_STAT_RE.search(line)
+        _table_row_supported(line, rows, header) for line, header in _quantitative_table_rows(paper_md)
     )
+
+
+def _quantitative_table_rows(paper_md: str):
+    header: list[str] = []
+    for line in mask_fenced_markdown(paper_md).splitlines():
+        cells = _table_cells(line)
+        if not line.lstrip().startswith("|"):
+            header = []
+        elif not header and cells:
+            header = [cell.casefold() for cell in cells]
+        elif cells and (_EFFECT_STAT_RE.search(line) or re.search(r"\d", line) and any(name in {"source", "study"} or re.search(r"\b(?:estimates?|effects?|results?|finding|values?|mean|median|sd|ci|statistic)\b", name) for name in header)):
+            yield line, header
 
 
 def _table_source_row(line: str, rows: Sequence[dict[str, Any]]) -> dict[str, Any] | None:
@@ -505,9 +515,15 @@ def _table_header(paper_md: str) -> list[str]:
 
 
 def _table_row_supported(line: str, rows: Sequence[dict[str, Any]], header: Sequence[str] = ()) -> bool:
-    # An exact bibliographic citation is not a result claim.
-    return (row := _table_source_row(line, rows)) is not None and all(
+    if "source result clause" in header or "source context" in header:
+        from agent.qei_facts import quoted_table_row_supported
+        row = _table_source_row(line, rows)
+        return row is not None and quoted_table_row_supported(_table_cells(line), header, _row_evidence(row, statistics=True))
+    from agent.qei_facts import untyped_table_cells_supported
+    return (row := _table_source_row(line, rows)) is not None and untyped_table_cells_supported(_table_cells(line), header, _row_evidence(row, statistics=True), _EFFECT_STAT_RE) and all(
         _stat_supported(match.group(), row, context=cell) for index, cell in enumerate(_table_cells(line)) if index != (header.index("source") if header.count("source") == 1 else None) or re.sub(r"\s*\[bundle:\d+\]", "", cell).strip() != findings_map_row(row)[1] for match in _EFFECT_STAT_RE.finditer(cell))
+
+
 
 
 def _repair_findings_map_statistics(paper_md: str, rows: Sequence[dict[str, Any]]) -> tuple[str, int]:
@@ -582,14 +598,8 @@ def _target_headings(paper_md: str, ask: str) -> set[str]:
 
 
 def _paragraphs_with_headings(paper_md: str) -> list[tuple[str, str]]:
-    heading = ""
-    out: list[tuple[str, str]] = []
-    for part in re.split(r"\n\s*\n", paper_md):
-        if match := re.match(r"^#{2,3}\s+(.+?)\s*$", part.strip()):
-            heading = match.group(1)
-        elif part.strip() in _prose_paragraphs(part):
-            out.append((heading, part))
-    return out
+    return [(heading, part) for heading, part in _source_roles._paragraphs(paper_md)
+            if part.strip() in _prose_paragraphs(part)]
 
 
 def _reviewed_fragments_are_absent(paper_md: str, ask: str) -> bool:
@@ -662,14 +672,7 @@ def _topic_fit_is_deterministic(ask: str, rows: Sequence[dict[str, Any]]) -> boo
                                not in {"", "unknown"} and not directness.startswith("direct") for row in named)
 
 
-def _section_span(paper_md: str, heading: str) -> tuple[int, int] | None:
-    match = re.search(rf"^(?P<marks>#{{2,3}})\s+{re.escape(heading)}[ \t]*$", paper_md, re.M | re.I)
-    if not match:
-        return None
-    tail = paper_md[match.end():]
-    next_heading = re.search(rf"^#{{1,{len(match.group('marks'))}}}\s+", tail, re.M)
-    return match.end(), match.end() + (next_heading.start() if next_heading else len(tail))
-
+_section_span = _source_roles._section_span
 
 def _requested_headings(paper_md: str, ask: str) -> list[str]:
     lower = _normalise(ask)

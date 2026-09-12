@@ -46,20 +46,7 @@ def derive_lane(
     population: str | None = None,
     source_excerpt: str | None = None,
 ) -> str:
-    """Map a receipt's (tier, directness, source-text) triple to one
-    of the six canonical lanes. Universal — no per-topic table.
-
-    Decision rules (ordered, first-match wins). Universal — based on
-    the canonical evidence-tier taxonomy used across project corpora
-    (A1=RCT, A2=strong obs., B1=review/meta, B2=weaker obs., C=preclinical):
-      1. directness == "review" OR evidence_tier == "B1" → review_meta_analysis
-      2. A1 with human source identity → human_rct
-      3. explicit non-human identity or animal-only excerpt → animal_preclinical
-      4. directness == "mechanistic" → human_mechanistic
-      5. evidence_tier in ("A2", "B2") → human_observational
-      6. evidence_tier == "C" → animal_preclinical (preclinical tier code)
-      7. fallback → background_only
-    """
+    """Classify source identity; human trials outrank incidental animal mentions."""
     # source_excerpt (the receipt's claim-sentence excerpts) is included so
     # species named only in the body text — "in male arctic foxes", "broiler
     # chickens" — flip the lane even when the title is generic.
@@ -93,10 +80,7 @@ def derive_lane(
 
 
 def lane_qualifier_phrases_for(lane: str) -> tuple[str, ...]:
-    """Return the set of academic phrasings that, when found in the
-    same paragraph as a citation from this lane, satisfy the lane-label
-    requirement. Used by the journal-surface gate's evidence-lane
-    check. Universal — no topic-specific tokens."""
+    """Academic qualifiers for each source lane; callers require word boundaries."""
     if lane == "animal_preclinical":
         # Slice 26 (2026-05-15): added the everyday-prose terms researchers
         # actually use in body text ("mice", "mouse", "rat", "rats", "in
@@ -128,18 +112,10 @@ def lane_qualifier_phrases_for(lane: str) -> tuple[str, ...]:
 
 
 def build_lane_map(receipts: Any) -> dict[str, str]:
-    """Build {citation_token: lane_token} from a receipts iterable.
-    Each receipt must expose attributes/keys: citation_token (or
-    body_citation), evidence_tier, directness, source_title, source_venue,
-    population_summary. Falls back gracefully when fields are missing.
-    Universal — works for any receipt shape that has these fields."""
-    out: dict[str, str] = {}
-    for r in receipts:
-        cite = _get(r, "citation_token") or _get(r, "body_citation")
-        if not cite:
-            continue
-        out[str(cite)] = derive_receipt_lane(r)
-    return out
+    """Map author-year citations to source lanes, accepting typed receipts or dicts."""
+    return {str(cite): derive_receipt_lane(receipt) for receipt in receipts
+            if (cite := _get(receipt, "citation_token") or _get(receipt, "body_citation"))}
+
 
 
 def derive_receipt_lane(receipt: Any) -> str:
@@ -189,29 +165,25 @@ def unisolated_combination(title: str, abstract: str, target: str, aliases: tupl
         # An explicit randomized contrast defines what the trial isolates;
         # mentioning the topic elsewhere does not make it the treatment contrast.
         contrast_text = re.sub(r"\bdivided into(?=[^.;\n]{0,160}\bplacebo\b)", "randomized into", abstract)
-        for match in re.finditer(r"\b(?:randomi[sz]ed|randomly assigned|randomi[sz]ation)(?:\s+\w+){0,4}\s+(?:to|into)\s+(.+?)(?=(?<!\d)\.(?!\d)|[\n]|$)|\btrials comparing\s+([^.;\n]+)", contrast_text):
-            comparison = re.split(r"\b(?:for|during|following|after|effects on)\b", match[1] or match[2], maxsplit=1)[0]
+        for match in re.finditer(r"\b(?:randomi[sz]ed|randomly assigned|randomi[sz]ation)(?:\s+\w+){0,4}\s+(?:to|into)\s+(.+?)(?=(?<!\d)\.(?!\d)|[\n]|$)|\btrials comparing\s+([^.;\n]+)|\beffects? of ([^.;]+? compared (?:to|with) [^.;]+?)(?= on | during | for |[.;]|$)", contrast_text):
+            comparison = re.split(r"\b(?:for|during|following|after|effects on)\b", match[1] or match[2] or match[3], maxsplit=1)[0]
             comparison = re.sub(r"^.*?groups?:\s*", "", comparison)
-            arms = re.split(r";\s*(?:and\s+)?|\s+(?:or|versus|vs\.?|and)\s+|,\s*", comparison)
+            arms = re.split(r";\s*(?:and\s+)?|\s+(?:or|versus|vs\.?|and|compared to|compared with)\s+|,\s*", comparison)
             if len(arms) >= 2 and all(arm.strip() for arm in arms):
                 present = [bool(target_re.search(arm)) for arm in arms]
                 # Dose/regimen/group labels alone do not identify another intervention.
-                anonymous = all(re.fullmatch(r"(?:\d+(?:\.\d+)?\s*(?:mg|mcg|[µu]?g)(?:/\w+)?|(?:low|high|moderate) (?:dose|intensity|volume|frequency)|(?:group|arm) [a-z\d]+|placebo|control)", arm.strip()) for arm in arms)
+                anonymous = all(re.fullmatch(r"(?:\d+(?:\.\d+)?\s*(?:mg|mcg|[µu]?g)(?:/\w+)?|(?:low|high|moderate) (?:dose|intensity|volume|frequency)|(?:group|arm) [a-z\d]+|placebo|control|intervention|treatment)", arm.strip()) for arm in arms)
                 if not any(present) and not anonymous or all(present) and all(re.search(r"\bplus\b|\+", arm) for arm in arms):
                     return True
-    combination = r"\b(?:multi ingredient|combined supplementation|combination)\b"
+    combination = r"\b(?:multi ingredient|combined supplementation|combination|combined [^.!?:]{0,100}\band\b)"
     if re.search(combination, target) or re.search(r"\band\b|\+", target) or not re.search(combination, title):
         return False
-    binary = re.search(r"\btwo (?:groups|arms)\b|\bgroup\s*\(\s*placebo,\s*intervention\s*\)", abstract)
-    placebo = re.search(r"\bcontrol group (?:was )?treated with placebo\s*(?:[.!?]|\(group)|\bplacebo contained[^.!?]+\bonly\b", abstract)
+    binary = re.search(r"\btwo (?:groups|arms)\b|\b(?:intervention|treatment) or control\b|\bgroup\s*\(\s*placebo,\s*intervention\s*\)", abstract)
+    placebo = re.search(r"\bcontrols? (?:group )?maintained usual (?:lifestyle|care)\b|\bcontrol group (?:was )?treated with placebo\s*(?:[.!?]|\(group)|\bplacebo contained[^.!?]+\bonly\b", abstract)
     shared = re.search(r"\b(?:both|all) groups (?:received|took|were given|were treated)\b|\bfactorial\b", abstract)
     return bool(binary and placebo and not shared)
 
 
 def _get(receipt: Any, field: str) -> str | None:
-    """Universal attr-or-key getter so this works for both
-    ReceiptSummary dataclasses and dict receipts (manifest serialised
-    form)."""
-    if isinstance(receipt, dict) and not hasattr(receipt, field):
-        return receipt.get(field)
-    return getattr(receipt, field, None)
+    """Read a field from either a manifest row or a typed receipt."""
+    return receipt.get(field) if isinstance(receipt, dict) and not hasattr(receipt, field) else getattr(receipt, field, None)

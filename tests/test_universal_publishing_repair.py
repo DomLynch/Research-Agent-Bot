@@ -1,0 +1,125 @@
+"""Regression evidence from Core submission 9d8747ec and cross-topic controls."""
+import importlib
+import json
+from pathlib import Path
+
+import pytest
+
+from agent.evidence_lanes import unisolated_combination
+from agent.publication_evidence import attach_bundle_references
+
+SOURCES = json.loads((Path(__file__).parent / "fixtures/universal_publishing_review.json").read_text())["sources"]
+
+
+@pytest.fixture
+def synthesis():
+    module = importlib.import_module("run_v06_synthesis")
+    previous = module._get_active_topic()
+    module._set_topic("resistance_training")
+    yield module
+    module._set_topic(previous)
+
+
+def test_actual_lai_outcomes_are_not_a_null_bmi_balance_result(synthesis):
+    source = next(row for row in SOURCES if row["receipt"]["citation_token"] == "Lai 2023")
+    assert source["receipt"]["effect_direction"] == "null"
+    claims = [c for c in source["claims"] if c["binding_confidence"] in {"high", "partial"}]
+    result = synthesis._aggregate_paper(claims, paper_meta=source["record"])
+    assert result["effect_direction"] == "positive"
+    assert dict(result["endpoint_directions"])["muscle strength"] == "positive"
+
+
+@pytest.mark.parametrize("citation", ["Salter 2024", "Hwang 2018", "Chen 2026"])
+def test_actual_supplement_contrasts_do_not_isolate_training(synthesis, citation):
+    source = next(row for row in SOURCES if row["receipt"]["citation_token"] == citation)
+    assert source["receipt"]["directness"] == "direct"
+    assert synthesis._classify_paper_tier("", len(source["claims"]), source["record"]) == ("A1", "indirect")
+
+
+@pytest.mark.parametrize("target", ["resistance training", "metformin", "cognitive therapy"])
+def test_shared_background_intervention_is_not_randomized_contrast(target):
+    abstract = f"Participants were randomly assigned to supplement or placebo while also receiving {target}."
+    assert unisolated_combination("Randomized trial", abstract, target)
+    direct = f"Participants were randomly assigned to {target} or placebo. Both groups completed assessments."
+    assert not unisolated_combination("Randomized trial", direct, target)
+
+
+@pytest.mark.parametrize("topic,endpoint,movement", [
+    ("resistance_training", "muscle strength", "increased"),
+    ("metformin", "blood glucose", "decreased"),
+])
+def test_source_outcome_signal_is_not_borrowed_from_background_or_other_p_value(synthesis, topic, endpoint, movement):
+    synthesis._set_topic(topic)
+    statement = f"The intervention significantly {movement} {endpoint} in the participants compared with the control group."
+    record = {"title": "Randomized clinical trial", "sections": {"abstract": statement}}
+    assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] == "positive"
+    for invalid in (
+        statement.replace("significantly", "did not significantly"),
+        "Previous studies reported that " + statement.lower(),
+        statement.replace("significantly", "could significantly"),
+        statement.replace("significantly", "slightly"),
+    ):
+        record["sections"]["abstract"] = invalid
+        assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] != "positive"
+
+
+def test_claussen_outgoing_evidence_contains_the_actual_quoted_statistics(tmp_path):
+    submission = importlib.import_module("scripts.publishing.submission")
+    source = next(row for row in SOURCES if row["receipt"]["citation_token"] == "Claussen 2025")
+    receipt = source["receipt"]
+    (tmp_path / f"{receipt['receipt_id']}.paper_sections.json").write_text(json.dumps(source["record"]))
+    old = submission._parsed_receipt_excerpt(tmp_path, receipt["receipt_id"], receipt)
+    assert "β = 0.42" not in old
+    quote = "β = 0.42, 95% CI [0.19, 0.65]"
+    selected = submission._parsed_receipt_excerpt(tmp_path, receipt["receipt_id"], receipt, (quote,))
+    assert quote in selected
+    assert selected == " ".join(source["record"]["sections"]["abstract"].split())
+    assert "invented 99.99" not in submission._parsed_receipt_excerpt(tmp_path, receipt["receipt_id"], receipt, ("invented 99.99",))
+
+
+def test_source_markers_cover_tables_and_remain_idempotent():
+    paper = "## Quantitative Evidence Index\n| Study | Result |\n|---|---|\n| Example 2025 | β = 0.42 |\n## References\nExample 2025.\n"
+    rows = [{"cited_as": "Example 2025"}]
+    marked = attach_bundle_references(paper, rows)
+    assert "| Example 2025 [bundle:1] |" in marked
+    assert marked.endswith("## References\nExample 2025.")
+    assert attach_bundle_references(marked, rows) == marked
+
+
+def test_global_review_recode_preserves_identity_and_unrequested_fields():
+    coverage = importlib.import_module("scripts.revision_coverage")
+    rows = {"a": {"source_title": "Trial A"}, "b": {"source_title": "Trial B"}}
+    feedback = "The source-level direction profile is materially mis-coded: favorable findings are unclear.\nDirectness coding is internally inconsistent and inflates the direct evidence count."
+    assert coverage.authorized_receipt_contract_fields_by_receipt(feedback, rows) == {
+        key: {"effect_direction", "directness"} for key in rows
+    }
+    assert coverage.authorized_receipt_contract_fields_by_receipt("Do not change the source-level direction profile.", rows) == {}
+    assert coverage.authorized_receipt_contract_fields_by_receipt("Directness coding is consistent.", rows) == {}
+
+
+@pytest.mark.parametrize("citation,expected", [("Salter 2024", "positive"), ("Hwang 2018", "mixed"), ("Claussen 2025", "positive"), ("Chen 2026", "mixed")])
+def test_actual_qualitative_outcomes_keep_favourable_and_null_findings(synthesis, citation, expected):
+    source = next(row for row in SOURCES if row["receipt"]["citation_token"] == citation)
+    claims = [c for c in source["claims"] if c["binding_confidence"] in {"high", "partial"}]
+    assert synthesis._aggregate_paper(claims, paper_meta=source["record"])["effect_direction"] == expected
+
+
+@pytest.mark.parametrize("target", ["resistance training", "metformin", "cognitive therapy"])
+def test_combined_program_against_usual_care_does_not_isolate_one_component(target):
+    title = f"Combined nutritional support and {target}: a randomized trial"
+    abstract = f"Participants were randomized to intervention or control. The intervention received nutritional support and {target}. Controls maintained usual care."
+    assert unisolated_combination(title, abstract, target)
+    assert not unisolated_combination(title, abstract, f"nutritional support and {target}")
+    assert not unisolated_combination(title, abstract.replace("intervention or control", f"{target}, nutritional support, or control"), target)
+
+
+@pytest.mark.parametrize("target", ["resistance training", "metformin", "cognitive therapy"])
+def test_comparison_of_adjuncts_cannot_prove_shared_intervention_effect(target):
+    abstract = f"This randomized study investigated the effects of cooling compared to no cooling on performance during {target}."
+    assert unisolated_combination("Randomized study", abstract, target)
+    assert not unisolated_combination("Randomized study", abstract.replace("cooling compared to no cooling", f"{target} compared to placebo"), target)
+
+
+def test_own_p_value_does_not_get_overruled_by_conflicting_qualitative_word(synthesis):
+    record = {"sections": {"abstract": "Muscle strength significantly increased compared with control (p = 0.8)."}}
+    assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] == "unclear"

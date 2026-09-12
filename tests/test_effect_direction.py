@@ -263,9 +263,8 @@ def test_explicit_significance_without_p_value_is_directional() -> None:
     assert ed.infer_effect_direction(positive, metformin_effect_fn=_const(1)) == "unclear"
 
 
-def test_negligible_signed_no_p_values_returns_null() -> None:
-    """Signs exist BUT all magnitudes negligible (≈ 0) AND no p-values
-    → null (the change is too small to matter)."""
+def test_small_signed_effect_without_uncertainty_remains_unclear() -> None:
+    """A small raw value cannot establish nullity without units or uncertainty."""
     claims = [
         {
             "claim_type": "effect",
@@ -276,7 +275,7 @@ def test_negligible_signed_no_p_values_returns_null() -> None:
         },
     ]
     result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(1))
-    assert result == "null"
+    assert result == "unclear"
 
 
 def test_p_value_above_alpha_does_not_count_as_significant() -> None:
@@ -358,12 +357,12 @@ def test_p_value_extraction_returns_none_on_unparseable() -> None:
     assert ed._parse_p_value("HR 0.85") is None
 
 
-def test_negligible_threshold_is_001() -> None:
-    """Magnitudes < 0.01 are treated as negligible (Witham case at
-    0.001). Magnitudes >= 0.01 are not."""
-    assert ed._negligible([0.001, 0.005, -0.003]) is True
-    assert ed._negligible([0.001, 0.05]) is False  # 0.05 not negligible
-    assert ed._negligible([]) is False  # empty list = no evidence
+@pytest.mark.parametrize("value", [0.001, 0.1, 1, 100])
+def test_effect_classification_does_not_depend_on_unit_scale(value):
+    claim = {"claim_type": "effect", "endpoint": "walk speed", "direction": "increase", "numeric_values": [value]}
+    assert ed.infer_effect_direction([claim], metformin_effect_fn=_const(1)) == "unclear"
+    null = {"claim_type": "p_value", "endpoint": "walk speed", "raw_text": "p = 0.96"}
+    assert ed.infer_effect_direction([claim, null], metformin_effect_fn=_const(1)) == "null"
 
 
 # ----- Reviewer-fix discriminating tests (post-2x review) ---------------
@@ -439,12 +438,8 @@ def test_negative_and_null_endpoints_are_mixed_without_claiming_positive() -> No
     assert ed.infer_effect_direction(claims[2:], metformin_effect_fn=_const(1)) != "positive"
 
 
-def test_sample_size_numeric_does_not_defeat_negligibility() -> None:
-    """Reviewer P1 ship-blocker: pre-fix `_aggregate_paper` shipped
-    `n=120` (sample_size) into `numeric_values`. The prior
-    `_negligible` collected ALL non-p_value numerics; n=120 made
-    every paper non-negligible → MET-PREVENT regressed to 'unclear'.
-    Now: only effect-type claims with whitelisted-endpoint contribute."""
+def test_sample_size_numeric_does_not_establish_nullity() -> None:
+    """Sample size and a small estimate cannot substitute for uncertainty."""
     claims = [
         {
             "claim_type": "effect", "endpoint": "walk speed",
@@ -457,7 +452,7 @@ def test_sample_size_numeric_does_not_defeat_negligibility() -> None:
         },
     ]
     result = ed.infer_effect_direction(claims, metformin_effect_fn=_const(1))
-    assert result == "null"
+    assert result == "unclear"
 
 
 def test_p_value_extraction_handles_scientific_notation() -> None:

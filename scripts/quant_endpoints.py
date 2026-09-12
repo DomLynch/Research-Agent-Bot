@@ -102,7 +102,7 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
     # because of bare "improve").
     ("no_change", r"\bno\s+(?:significant\s+|statistically\s+significant\s+)?(?:change|difference|effect|improvements?)\b"
                   r"|did\s+not\s+(?:significantly\s+)?(?:change|differ|improve|increase|decrease|gain|reduce)"
-                  r"|was\s+not\s+(?:significantly\s+)?(?:different|changed|improved)"
+                  r"|was\s+not\s+(?:significantly\s+)?(?:different|changed|improved|increased|decreased)"
                   r"|\bsimilar\s+(?:between|across|in\s+both)\b"
                   r"|\bnot\s+(?:significantly\s+)?different\b"
                   r"|\bunchanged\b|\bnull\s+(?:result|effect|finding)\b"
@@ -129,7 +129,7 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
                  r"|\bslowed?\b|\bworsened?\b|\bantagonized?\b|\bimpaired?\b"
                  r"|\blost?\s+(?:weight|mass|function)"
                  r"|\blower\b|\bsmaller\b"),
-    ("increase", r"\bincreased?\b|\bgained?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
+    ("increase", r"\bsmaller\s+(?:decrease|decline|loss|reduction)\b|\bincreased?\b|\bgained?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
                  r"|\brose\b|\brisen\b|\bgrew\b|\bgrowth\s+of\b|\belevated?\b"
                  r"|\bgreater\b|\bhigher\b|\blarger\b|\bmore\b|\bgained?\s+more\b"
                  r"|\bextended?\b|\bprolonged?\b"),

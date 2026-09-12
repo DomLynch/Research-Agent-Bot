@@ -828,6 +828,11 @@ def _researka_claim_trace_status(
 def _researka_core_claim_trace_status(
     payload: dict[str, Any], source_bundle: list[dict[str, Any]],
 ) -> str:
+    from agent.revision_quality import _statistics_are_source_bound
+    rows = [{"citation_token": source.get("cited_as"), "source_title": source.get("title"),
+             "verified_abstract": source.get("excerpt")} for source in source_bundle]
+    if not _statistics_are_source_bound(str(payload.get("body_markdown") or ""), rows, tables_only=True):
+        return "researka_core_claims_unresolved:quantitative_table_source_trace"
     sections = {heading.strip().lower(): value for heading, value in _sections(str(payload.get("body_markdown") or "")).items()}
     decisive = "\n".join(map(str, (payload.get("title") or "", payload.get("abstract") or "", sections.get("conclusion") or "")))
     if re.search(r"(?:\b(?:todo|tbd|unresolved|placeholder)\b|\[(?:to fill|insert|pending)[^]]*\]|\?\?\?)", decisive, re.I):

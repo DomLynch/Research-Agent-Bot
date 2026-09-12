@@ -7,7 +7,7 @@ import re
 from collections import Counter
 from importlib import import_module
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 from agent.llm_client import chat_json, build_judge_chain
 from agent.settings import load_settings
@@ -66,8 +66,10 @@ def source_entries(run: Path, topic: str, tokens: Mapping[str, str]) -> list[dic
         if rid not in lock.receipt_rows or tokens[rid] != registry[rid]["body_citation"]:
             raise ValueError("qei_source_identity_mismatch")
         record = json.loads((lock.parsed_dir / f"{rid}.paper_sections.json").read_text())
-        if own := list(extract.source_result_excerpts(record)):
-            entries.append({"receipt_id": rid, "title": record.get("title", ""), "own_result_sentences": own,
+        excerpt = _record_text(record.get("sections", {}).get("abstract"))
+        if own := [quote for quote in extract.source_result_excerpts(record) if _literal_span(quote, excerpt)]:
+            entries.append({"receipt_id": rid, "title": record.get("title", ""), "own_result_sentences": own, "publication_excerpt": excerpt,
+                            "additional_results_for_contradiction_review": list(extract.source_result_excerpts(record)),
                             **{key: _record_text(record.get("sections", {}).get(key)) for key in ("abstract", "methods")}})
     return entries
 
@@ -102,7 +104,7 @@ def row_issue(row: Any, entries: Mapping[str, dict[str, Any]]) -> str:
     quote, span = row["source_result_quote"], row["result_span"]
     if quote not in source.get("own_result_sentences", ()) or not _literal_span(span, quote):
         return "unverified_result_quote"
-    if not any(row["comparison"] in source.get(key, "") for key in ("abstract", "methods")):
+    if not any(row["comparison"] in source.get(key, "") for key in (("publication_excerpt",) if "publication_excerpt" in source else ("abstract", "methods"))):
         return "unverified_comparison"
     if any(row[key] is not None and not _literal_span(row[key], span, numeric=key == "estimate") for key in FIELDS[3:] if key != "comparison"):
         return "unverified_field_span"
@@ -229,3 +231,26 @@ def submission_table(run: Path, topic: str, tokens: Mapping[str, str]) -> str:
     return build_results_table(snapshot / "quant_claims", topic=topic, parsed_dir=snapshot / "parsed",
                                accepted_paper_ids=frozenset(tokens), citation_tokens_by_paper_id=tokens,
                                quarantine_path=run / "qei_quarantine.json")
+
+
+def quoted_table_row_supported(cells: list[str], header: Sequence[str], source_text: str) -> bool:
+    from agent.publication_evidence import exact_source_quote
+    if tuple(header) == ("study", "source context", "raw statistic") and len(cells) == 3:
+        return bool(exact_source_quote(cells[1], source_text) and _literal_span(cells[2], cells[1], numeric=True))
+    if len(cells) != len(header) or set(header) != {name.lower() for name in HEADERS}:
+        return False
+    normalize = lambda text: re.sub(r"\bP(?=\s*[<=>≤≥])", "p", text)  # noqa: E731
+    values = dict(zip(header, map(normalize, cells)))
+    quote = values["source result clause"]
+    comparison = values["study comparison"].split("Study design: ", 1)[-1]
+    if not exact_source_quote(quote, normalize(source_text)) or not _literal_span(comparison, normalize(source_text)):
+        return False
+    return all(_literal_span(re.sub(r"^Reported ± dispersion: ([^;]+);.*", r"\1", value), quote, numeric=key == "reported estimate")
+               for key, value in values.items() if key in {"endpoint", "reported estimate", "uncertainty", "significance"}
+               and value != "Not reported in quoted result")
+
+
+def untyped_table_cells_supported(cells: Sequence[str], header: Sequence[str], source_text: str, typed: re.Pattern[str]) -> bool:
+    from agent.publication_evidence import exact_source_quote
+    return len(cells) == len(header) and all(exact_source_quote(cell, source_text) for name, cell in zip(header, cells)
+        if name not in {"source", "study", "citation", "tier", "id"} and re.search(r"(?<!\w)\d", cell) and not typed.search(cell) and not re.fullmatch(r"finding=\d+ extracted claim\(s\); receipt-level direction is the coded finding", cell))
