@@ -1309,6 +1309,8 @@ def _claim_topic_effect(claim: dict) -> int:
     polarity = _polarity_for_endpoint(endpoint)
     if not polarity:
         return 0
+    if claim.get("claim_type") == "qualitative_outcome":
+        return polarity * {"increase": 1, "decrease": -1}.get(direction, 0)
     if claim.get("claim_type") in _RATIO_CLAIM_TYPES:
         vals = claim.get("numeric_values") or []
         try:
@@ -1397,7 +1399,7 @@ def _aggregate_paper(claims: list[dict], *, paper_meta: dict | None = None) -> d
     sections = dict(record.get("sections") or {})
     sections.setdefault("abstract", record.get("abstract") or "")
     record["sections"] = sections
-    owned = [c for c in claims if _owned_result_sentence(str(c.get("sentence") or ""), record)] if any(sections.values()) else claims
+    owned = ([c for c in claims if _owned_result_sentence(str(c.get("sentence") or ""), record)] + _direction.source_outcome_claims(record)) if any(sections.values()) else claims
     outcome_counter: Counter[str] = Counter()
     p_values = [str(c["raw_text"]).replace("\xa0", " ").strip() for c in claims
                 if c.get("claim_type") == "p_value" and c.get("raw_text")]
@@ -2053,7 +2055,7 @@ def build_receipts_from_quant_claims(
         )
         locked = receipt_contracts.get(paper_id, {})
         allowed = set() if authorized_contract_fields is None else authorized_contract_fields.setdefault(paper_id, set())
-        allowed.update({"endpoints", "endpoint_directions"} if "outcome_class" in allowed else ())
+        allowed.update({"endpoints", "endpoint_directions"} if allowed & {"outcome_class", "effect_direction"} else ())
         updates: dict[str, Any] = {}
         for field in dataclasses.fields(receipt):
             name = field.name
@@ -3011,6 +3013,9 @@ async def _run(
     _review_type_effective = _review_type_canonical
     if override := os.environ.get("RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE", "").strip():
         _review_type_effective = parse_review_type(override)
+    # Automated retrieval/admission records do not establish PRISMA-ScR screening.
+    if _review_type_effective == "prisma_scr_scoping_synthesis":
+        _review_type_effective = "curated_evidence_map"
     if surface_code := _public_surface_return_code(_review_type_canonical, _review_type_effective):
         print(
             f"Public full-only policy blocked compact surface {_review_type_effective!r}.",

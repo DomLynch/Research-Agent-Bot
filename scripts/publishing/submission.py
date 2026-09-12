@@ -1783,11 +1783,16 @@ def _parsed_source_excerpt(parsed_dir: Path, receipt_id: str) -> str:
     return ""
 
 
-def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str, Any]) -> str:
+def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str, Any], quotes: tuple[str, ...] = ()) -> str:
     data = _read_json(parsed_dir / f"{receipt_id}.paper_sections.json")
     sections = data.get("sections")
     if not isinstance(sections, dict):
         return ""
+    if quotes:
+        passages = [_publication_evidence._record_text(sections.get(name)) for name in ("abstract", "results", "conclusion", "discussion", "methods")]
+        passage = max(passages, key=lambda text: sum(bool(_publication_evidence.exact_source_quote(quote, text)) for quote in quotes))
+        if any(_publication_evidence.exact_source_quote(quote, passage) for quote in quotes):
+            return " ".join(passage.split())
     findings = receipt.get("source_result_excerpts")
     if isinstance(findings, list) and findings:
         for name in ("abstract", "results", "conclusion", "discussion", "methods"):
@@ -1889,6 +1894,7 @@ def _source_bundle(run: Path, *, limit: int, enrich: bool = True) -> list[dict[s
     )
     pubmed_abstracts = _pubmed_abstracts([str(row.get("source_pmid") or "") for row in rows[:limit]]) if enrich else {}
     rob_ratings = _publication_evidence.risk_of_bias_ratings(run)
+    quantitative_rows = _read_json(run / "qei_facts.json").get("rows", [])
     bundle = []
     for row in rows[:limit]:
         receipt = receipts.get(str(row.get("receipt_id")), {})
@@ -1925,7 +1931,9 @@ def _source_bundle(run: Path, *, limit: int, enrich: bool = True) -> list[dict[s
         claim_excerpt = _claim_excerpt(quant_dir, str(row.get("receipt_id") or ""))
         pubmed_excerpt = pubmed_abstracts.get(pmid or "")
         parsed_excerpt = _parsed_source_excerpt(parsed_dir, receipt_id)
-        receipt_excerpt = _parsed_receipt_excerpt(parsed_dir, receipt_id, receipt)
+        receipt_excerpt = _parsed_receipt_excerpt(parsed_dir, receipt_id, receipt, tuple(
+            str(fact.get("source_result_quote") or "") for fact in quantitative_rows
+            if isinstance(fact, dict) and fact.get("receipt_id") == receipt_id))
         excerpt = receipt_excerpt or parsed_excerpt or pubmed_excerpt or ""
         quote = _publication_evidence.exact_source_quote(claim_excerpt, excerpt)
         cited_as = str(row.get("body_citation") or "")

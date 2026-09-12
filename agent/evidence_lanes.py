@@ -183,12 +183,16 @@ def unisolated_combination(title: str, abstract: str, target: str, aliases: tupl
     ):
         return True
     if target_re and target_re.search(abstract):
+        shared = re.search(r"\bwhile also (?:participating in|undergoing|completing|receiving)\s+([^.;]+)", abstract)
+        if shared and target_re.search(shared[1]) and re.search(r"\b(?:randomi[sz]ed|randomly assigned)\b", abstract):
+            return True
         # An explicit randomized contrast defines what the trial isolates;
         # mentioning the topic elsewhere does not make it the treatment contrast.
         contrast_text = re.sub(r"\bdivided into(?=[^.;\n]{0,160}\bplacebo\b)", "randomized into", abstract)
-        for match in re.finditer(r"\b(?:randomi[sz]ed|randomly assigned)(?:\s+\w+){0,4}\s+(?:to|into)\s+(.+?)(?=(?<!\d)\.(?!\d)|[;\n]|$)|\btrials comparing\s+([^.;\n]+)", contrast_text):
+        for match in re.finditer(r"\b(?:randomi[sz]ed|randomly assigned|randomi[sz]ation)(?:\s+\w+){0,4}\s+(?:to|into)\s+(.+?)(?=(?<!\d)\.(?!\d)|[\n]|$)|\btrials comparing\s+([^.;\n]+)", contrast_text):
             comparison = re.split(r"\b(?:for|during|following|after|effects on)\b", match[1] or match[2], maxsplit=1)[0]
-            arms = re.split(r"\s+(?:or|versus|vs\.?|and)\s+|,\s*", comparison)
+            comparison = re.sub(r"^.*?groups?:\s*", "", comparison)
+            arms = re.split(r";\s*(?:and\s+)?|\s+(?:or|versus|vs\.?|and)\s+|,\s*", comparison)
             if len(arms) >= 2 and all(arm.strip() for arm in arms):
                 present = [bool(target_re.search(arm)) for arm in arms]
                 # Dose/regimen/group labels alone do not identify another intervention.

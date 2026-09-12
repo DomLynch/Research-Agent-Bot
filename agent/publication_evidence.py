@@ -217,7 +217,7 @@ def attach_bundle_references(paper: str, bundle: Sequence[dict[str, Any]]) -> st
         if heading := re.match(r"^##\s+(.+?)\s*$", line):
             section = heading.group(1).strip().lower()
             in_references = section == "references"
-        if not in_references and line.strip() and not line.lstrip().startswith(("#", "|", "```")):
+        if not in_references and line.strip() and not line.lstrip().startswith(("#", "```")):
             line = re.sub(r"\s*\[bundle:\d+\]", "", line, flags=re.I)
             for index, row in enumerate(bundle, start=1):
                 marker = f"[bundle:{index}]"

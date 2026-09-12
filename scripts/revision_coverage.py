@@ -412,6 +412,11 @@ def authorized_receipt_contract_fields_by_receipt(
     segments = (_normalised_feedback(part) for part in re.split(r"(?:\r?\n)+|;\s+", text) if part.strip())
     authorized: dict[str, set[str]] = {}
     for segment in segments:
+        global_field = _global_recode_field(segment)
+        if global_field:
+            for receipt_id in rows:
+                authorized.setdefault(receipt_id, set()).add(global_field)
+            continue
         fields = authorized_receipt_contract_fields(segment)
         named, scope = _named_recode_scope(segment, aliases)
         classes = requested_recode_classes(scope)
@@ -424,6 +429,15 @@ def authorized_receipt_contract_fields_by_receipt(
         for receipt_id in named:
             authorized.setdefault(receipt_id, set()).update(fields)
     return authorized
+
+
+def _global_recode_field(segment: str) -> str:
+    """Recognize an unqualified corpus-level coding defect, not an isolated example."""
+    if re.match(r"^(?:the )?source level direction profile is (?:materially )?mis coded\b", segment):
+        return "effect_direction"
+    if re.match(r"^directness coding is (?:internally )?inconsistent\b", segment):
+        return "directness"
+    return ""
 
 
 def asks_admission_direction_tally_reconciliation(text: str) -> bool:

@@ -706,7 +706,7 @@ async def render_full_paper(
     user += "\n\nAUTHOR RECORDS (our own question, corpus and process; external studies are not their authority):\n" + json.dumps(author_context)
     # Keep internal run identifiers in the manifest, outside scientific prose.
     topic_title = humanize_topic(topic, title_case=True, root=_repo)
-    title_md = f"# Research Synthesis: {topic_title} — full paper\n\n"
+    title_md = f"# {topic_title}: A Curated Evidence Map\n\n" if review_type == "curated_evidence_map" else f"# Research Synthesis: {topic_title} — full paper\n\n"
     sections: dict[SectionName, SynthesisSection] = {
         "research_question": SynthesisSection(
             name="research_question", body_md=f"## Research Question\n\n{question}\n", anchors=(),

@@ -135,11 +135,29 @@ def _negligible(values: list[float]) -> bool:
 
 
 def _reports_null(claim: dict, alpha: float) -> bool:
+    if claim.get("claim_role") not in {None, "effect"}:
+        return False
     if claim.get("direction") == "no_change":
         return True
     comparison = _parse_p_comparison(str(claim.get("raw_text") or ""))
     return bool(claim.get("claim_type") == "p_value" and claim.get("endpoint")
                 and comparison and comparison[0] in {"=", ">", ">="} and comparison[1] >= alpha)
+
+
+def source_outcome_claims(record: dict) -> list[dict]:
+    """Retain qualitative own-study outcomes that numeric extraction cannot represent."""
+    from quant_claim_extract import source_result_excerpts
+    from quant_endpoints import match_direction, match_endpoint
+    claims = []
+    for sentence in source_result_excerpts(record, require_numeric=False):
+        for clause in re.split(r";|\b(?:but|whereas|while|however)\b", sentence, flags=re.I):
+            endpoint = match_endpoint(clause)
+            direction = match_direction(clause, anchor_offset=clause.casefold().find(endpoint.casefold()))
+            if not endpoint or not direction or re.search(r"\b(?:may|might|could|hypothes\w*|baseline|previous|prior)\b", clause, re.I):
+                continue
+            claims.append({"endpoint": endpoint, "direction": direction, "sentence": clause,
+                           "raw_text": endpoint, "claim_role": "effect", "claim_type": "qualitative_outcome"})
+    return claims
 
 
 def infer_effect_direction(
@@ -207,9 +225,9 @@ def infer_effect_direction(
         # endpoint has a significant p-value (paper-level signal is
         # not enough — the original bug we're fixing).
         if sign != 0 and (
-            significance_by_endpoint.get(endpoint, False)
+            significance_by_endpoint.get(endpoint, False) and ctype != "qualitative_outcome"
             or (
-                endpoint not in significance_by_endpoint
+                (endpoint not in significance_by_endpoint or ctype == "qualitative_outcome")
                 and _reports_significance(c)
             )
         ):
