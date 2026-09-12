@@ -259,3 +259,25 @@ def test_endpoint_abbreviations_are_source_local_and_conflicts_fail_closed(synth
     assert rows[0]["source_sentence"] == sentence
     conflicting = definition + "We also measured cortisol (TR). " + sentence
     assert ed._source_endpoint_aliases({"sections": {"abstract": conflicting}}) == {}
+
+
+def test_real_receipt_builder_gives_writer_outcomes_without_extracted_statistics(synthesis, tmp_path, monkeypatch):
+    from agent.paper_writer_builders import receipt_evidence_text
+    rows = json.loads((Path(__file__).parent / 'fixtures/revision_remaining_profiles.json').read_text())
+    row = next(r for r in rows if r['receipt']['citation_token'].startswith('EVALUATION'))
+    rid = row['receipt']['receipt_id']
+    quant, parsed = tmp_path / 'quant', tmp_path / 'parsed'
+    quant.mkdir()
+    parsed.mkdir()
+    (quant / f'{rid}.quant_claims.json').write_text(json.dumps({'paper_id': rid, 'claims': row['claims']}))
+    (parsed / f'{rid}.paper_sections.json').write_text(json.dumps(row['record']))
+    monkeypatch.setattr(synthesis, 'QUANT_DIR', quant)
+    monkeypatch.setattr(synthesis, 'PARSED_DIR', parsed)
+    receipt, = synthesis.build_receipts_from_quant_claims('resistance_training', receipt_ids=frozenset({rid}),
+        receipt_contracts={rid: row['receipt']}, authorized_contract_fields={rid: {'effect_direction'}})
+    packet = receipt_evidence_text(receipt, 1800)
+    assert 'resistance group decreased by1.43' in packet
+    assert 'Stroop time interference in resistance group' in packet
+    assert 'p = 0.065' in packet
+    assert receipt.n_claims == row['receipt']['n_claims']
+    assert tuple(receipt.p_values) == tuple(row['receipt']['p_values'])

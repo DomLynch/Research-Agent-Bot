@@ -2047,7 +2047,7 @@ def build_receipts_from_quant_claims(
             source_doi=meta.get("doi"),
             source_pmid=meta.get("pmid"),
             source_venue=meta.get("journal"),
-            source_result_excerpts=source_result_excerpts(meta),
+            source_result_excerpts=source_result_excerpts(meta, require_numeric=False),
         )
         receipt = dataclasses.replace(
             receipt, directness=effective_directness(receipt),

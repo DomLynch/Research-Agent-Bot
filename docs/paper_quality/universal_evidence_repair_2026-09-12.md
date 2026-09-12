@@ -169,3 +169,27 @@ The final semantic revision check still blocked three source profiles despite th
 Two audit passes covered authentic source records and adversarial cross-topic controls: missing/zero/negative estimates, explicit negation, reported nonsignificance/CI, source-local abbreviation conflicts and neutral biomarker polarity. Full tests:5187passed,2XPASS,16warnings,seed69495797. Type-only clarifications subsequently passed97focused checks; mypy agent scripts181files passed. Quality passed347checks with unchanged complexity, duplication andLOC ceilings. The randomized vocabulary fixture now restores replaced modules as well as environment, fixing the independently reproduced CI contamination defect.
 
 These are implementation and component receipts. Normal regeneration, final outgoing correction verification, Core review and public publication remain separate live acceptance checks.
+
+
+## Final manuscript audit follow-up
+
+The source classifier received complete own-study results, but writer receipts
+filtered out findings not recognized by the numeric extractor. Receipt generation
+now supplies every identified own-result excerpt. A real-source regression proved
+the missing cognitive contrasts were absent before the fix and present afterward;
+claim counts and extracted statistics remain unchanged.
+
+QEI proposal and review now require one endpoint and comparison per row, allowing
+paired baseline/follow-up values for before/after comparisons. Estimates spanning
+distinct measures under one endpoint label must be split into exact source clauses
+or omitted. Review cache fingerprints now bind both proposal and review policies,
+so an old approval cannot survive changed rules. Regression tests reproduced stale
+approval under both changed policies before the fix. Shared publication guidance
+retains source abbreviations unless their definitions are supplied.
+
+First review checked source identity, frozen contracts, exact-span requirements,
+normal negative-review handling and unchanged numeric/classification gates. Second
+review checked cache reuse/invalidation, before/after comparison preservation and
+the repair controller's exclusive lock plus author hold before submission.
+No source-specific runtime exception or publication threshold change is included.
+Live manuscript repair and Core publication require separate receipts.

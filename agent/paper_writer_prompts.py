@@ -7,7 +7,7 @@ The full manuscript must earn at least 4/5 in EACH of: research_question_quality
 synthesis_quality, claim_evidence_alignment, limitations_quality, gaps_quality, and source_grounding.
 No average compensates for a weak category. Acceptance requires supported claims, no overclaim and no unresolved major issues. Do not claim acceptance yourself.
 Keep article type, question, population, methods and conclusions consistent; retain each section's format and word budget.
-For prose and tables, keep the cited study's own source, endpoint, comparator, value, significance and direction together, not background-study results.
+For prose and tables, keep the cited study's own source, endpoint, comparator, value, significance and direction together, not background-study results. Preserve source abbreviations unless their definitions are supplied; never guess an expansion.
 Protocols are not completed trials; case series and observational evidence are not RCTs. Do not invent methods, evidence classifications or risk-of-bias assessments.
 Optional style/wording suggestions are not publication blockers. Preserve resolved fixes and disclose unresolved material items.
 Bounded repairs use existing evidence and records: correct attribution, labels, counts and citations, remove unsupported claims and document the actual search.

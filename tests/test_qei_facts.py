@@ -139,6 +139,24 @@ def test_semantic_review_quarantines_conflicts_and_binds_cache_to_sources(tmp_pa
     assert len(calls) == 2
 
 
+@pytest.mark.parametrize("policy", ["PROMPT", "REVIEW_PROMPT"])
+def test_changed_quantitative_policy_cannot_reuse_an_old_approval(tmp_path, row, source, monkeypatch, policy):
+    from agent import qei_facts as qei
+    calls = []
+    async def judge(**kwargs):
+        calls.append(kwargs)
+        return SimpleNamespace(model="configured-judge", parsed={"assessments": [
+            {"row": 0, "supported": len(calls) == 1, "reason": "Initial approval" if len(calls) == 1 else "Multiple outcomes under one endpoint label."}
+        ]})
+    monkeypatch.setattr(qei, "chat_json", judge)
+    assert asyncio.run(qei._review_rows(tmp_path, [row], [source])) == [row]
+    assert asyncio.run(qei._review_rows(tmp_path, [row], [source])) == [row]
+    assert len(calls) == 1
+    monkeypatch.setattr(qei, policy, getattr(qei, policy, "") + " Require one endpoint per estimate.", raising=False)
+    assert asyncio.run(qei._review_rows(tmp_path, [row], [source])) == []
+    assert len(calls) == 2
+
+
 @pytest.mark.parametrize("assessments", [[], [{"row": 0, "supported": "true", "reason": "yes"}],
     [{"row": 1, "supported": True, "reason": "yes"}], [{"row": 0, "supported": True, "reason": ""}]])
 def test_incomplete_or_malformed_semantic_review_fails_closed(tmp_path, row, source, monkeypatch, assessments):
