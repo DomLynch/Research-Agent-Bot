@@ -1,6 +1,7 @@
 """Regression evidence from Core submission 9d8747ec and cross-topic controls."""
 import importlib
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -9,6 +10,26 @@ from agent.evidence_lanes import unisolated_combination
 from agent.publication_evidence import attach_bundle_references
 
 SOURCES = json.loads((Path(__file__).parent / "fixtures/universal_publishing_review.json").read_text())["sources"]
+
+
+@pytest.mark.parametrize("endpoint,estimate,interval,significance", [
+    ("forward lunge", "4.50 W", "95% CI −2.94 to 11.94 W", "P =.23"),
+    ("side lunge", "9.24 W", "95% CI 2.99-15.49 W", "P <.01"),
+    ("forward lunge with row", "15.25 W", "95% CI −0.63 to 31.13 W", "P =.06"),
+])
+def test_actual_arroniz_outgoing_decimal_format_preserves_source_binding(endpoint, estimate, interval, significance):
+    from agent.qei_facts import HEADERS, quoted_table_row_supported
+    source = next(s for s in SOURCES if s["receipt"]["citation_token"] == "Arroniz 2025")
+    abstract = source["record"]["sections"]["abstract"]
+    quote = re.search(r"(?:For|for) " + re.escape(endpoint) + r", between-group difference[^)]+\)", abstract).group()
+    comparison = re.search(r"This study aims[^.]+\.", abstract).group()
+    cells = ["Arroniz 2025 [bundle:1]", endpoint, comparison, estimate, interval, significance, quote]
+    header = [h.lower() for h in HEADERS]
+    rendered = [c.replace("=.", "= 0.").replace("<.", "< 0.") for c in cells]
+    assert quoted_table_row_supported(rendered, header, abstract)
+    assert not quoted_table_row_supported([c.replace(estimate, "99.99 W") for c in rendered], header, abstract)
+    assert not quoted_table_row_supported([c.replace("P =", "P >").replace("P <", "P >") for c in rendered], header, abstract)
+    assert not quoted_table_row_supported([*rendered[:1], "unreported endpoint", *rendered[2:]], header, abstract)
 
 
 @pytest.fixture

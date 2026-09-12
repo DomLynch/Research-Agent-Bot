@@ -236,7 +236,7 @@ def quoted_table_row_supported(cells: list[str], header: Sequence[str], source_t
         return bool(exact_source_quote(cells[1], source_text) and _literal_span(cells[2], cells[1], numeric=True))
     if len(cells) != len(header) or set(header) != {name.lower() for name in HEADERS}:
         return False
-    normalize = lambda text: re.sub(r"\bP(?=\s*[<=>≤≥])", "p", text)  # noqa: E731
+    normalize = lambda text: re.sub(r"\bp\s*([<=>≤≥]+)\s*(?=\d|\.\d)", r"p\1", re.sub(r"(?<![\w.])\.(?=\d)", "0.", text), flags=re.I)  # noqa: E731
     values = dict(zip(header, map(normalize, cells)))
     quote = values["source result clause"]
     comparison = values["study comparison"].split("Study design: ", 1)[-1]
