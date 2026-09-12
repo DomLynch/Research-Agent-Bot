@@ -1,5 +1,14 @@
 # DECISION JOURNAL
 
+## 2026-09-12 - Opt-in V3 technical-error telemetry
+Pin official sentry-sdk 2.69.1. Without SENTRY_DSN, never initialize or import the SDK. Use isolated clients at HTTP and publishing CLI boundaries, with no logging handlers or global client. Preserve original exceptions, exit codes, scientific gates and retry scheduling. Capture uncaught errors and explicit terminal execution, authentication, missing submit configuration and reconciliation failures. REVISE/REJECT, expected no-output and scheduled retry results remain normal outcomes. Import-time failures and killed subprocesses remain outside coverage.
+
+Rebuild every event from an allowlist: generated event ID, fixed message/platform/level, operation/failure enums, permitted SENTRY_ENVIRONMENT and the actual checkout SHA, with SHA-validated SENTRY_RELEASE as the fallback when Git is unavailable. Deployment also sets that fallback to the exact deployed commit. Missing/invalid metadata becomes unknown/unspecified; raw values never leave the process. Never pass exception contents, manuscripts, prompts, evidence, credentials, requests, locals, breadcrumbs, attachments or ambient scopes. Disable automatic integrations and all other telemetry streams. Flush errors for at most one second and suppress telemetry failures. A separately labelled synthetic verification event permits live ingestion proof without causing a processing failure.
+
+Consolidate the duplicated CLI and function-API template report serializers to fit unchanged LOC ceilings. Preserve severity counts, gate outcomes, report bytes, labels and trailing-newline conventions. The adapter uses the repository's existing dynamic-import convention for scripts to avoid duplicate mypy module identities. Concise adapter documentation replaces duplicated field descriptions; no detector, scientific rule or source adapter changes. Both CLI shims still alias their implementation modules, making their old __getattr__ forwarding redundant.
+
+The dedicated research-agent-v3 DSN is staged separately from active service configuration. Local SDK/envelope tests and a staged DSN do not prove live delivery; verify a harmless production event after deployment with the exact release. Do not merge or deploy until quality, privacy, entry-point and renderer checks pass.
+
 ## 2026-09-07 - Verify revisions against complete frozen statistics
 Use one hash-verified abstract projection for revision repair and its gate.
 Keep this context separate from direction/role classification and preserve the

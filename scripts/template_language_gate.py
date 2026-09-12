@@ -17,6 +17,7 @@ import argparse
 import json
 import sys
 from collections import Counter
+from collections.abc import Sequence
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -30,63 +31,48 @@ from agent.template_language import (  # noqa: E402
 )
 
 
-def _build_summary(hits: list[Hit]) -> dict[str, object]:
+def _build_summary(hits: Sequence[Hit], *, gate: bool = False) -> dict[str, object]:
     """Compute counts per severity and per category."""
-    severity_counts = Counter(h.severity for h in hits)
+    severity_counts: Counter[str] = Counter(h.severity for h in hits)
     category_counts = Counter(h.category for h in hits)
     return {
         "total_hits": len(hits),
-        "by_severity": dict(severity_counts),
-        "by_category": dict(category_counts),
+        "by_severity": {severity: severity_counts.get(severity, 0) for severity in ("P1", "P2", "P3")} if gate else dict(severity_counts),
+        "by_category": dict(sorted(category_counts.items())) if gate else dict(category_counts),
         "blocking": has_blocking_severity(hits),
     }
 
 
-def _render_markdown(hits: list[Hit], source_path: Path, summary: dict[str, object]) -> str:
+def _render_markdown(hits: Sequence[Hit], source_path: Path | str, summary: dict[str, object], *, gate: bool = False) -> str:
     """Render a markdown audit report. Sorted by line_number then severity."""
-    lines: list[str] = []
-    lines.append(f"# Template-Language Audit — {source_path.name}")
-    lines.append("")
-    lines.append(f"**Source:** `{source_path}`")
-    lines.append(f"**Total hits:** {summary['total_hits']}")
-    lines.append(f"**Blocking (P1/P2):** {summary['blocking']}")
-    lines.append("")
-    lines.append("## Counts by severity")
-    lines.append("")
-    lines.append("| Severity | Count |")
-    lines.append("| --- | --- |")
-    by_sev = summary["by_severity"]
-    if isinstance(by_sev, dict):
-        for sev in ("P1", "P2", "P3"):
-            count = by_sev.get(sev, 0)
-            lines.append(f"| {sev} | {count} |")
-    lines.append("")
-    lines.append("## Counts by category")
-    lines.append("")
-    lines.append("| Category | Count |")
-    lines.append("| --- | --- |")
-    by_cat = summary["by_category"]
-    if isinstance(by_cat, dict):
-        for cat, count in sorted(by_cat.items()):
-            lines.append(f"| {cat} | {count} |")
-    lines.append("")
-    lines.append("## Hits")
-    lines.append("")
+    title = f"Gate — {source_path}" if gate else f"Audit — {Path(source_path).name}"
+    lines = [f"# Template-Language {title}", ""]
+    if not gate:
+        lines.append(f"**Source:** `{source_path}`")
+    lines.extend([f"**Total hits:** {summary['total_hits']}", f"**Blocking (P1/P2):** {summary['blocking']}"])
+    for group in ("severity", "category"):
+        label = group.capitalize()
+        lines.extend(["", f"## Counts by {group}", "", f"| {label} | Count |", "| --- | --- |"])
+        counts = summary[f"by_{group}"]
+        if isinstance(counts, dict):
+            rows = [(key, counts.get(key, 0)) for key in ("P1", "P2", "P3")] if group == "severity" else sorted(counts.items())
+            if gate and group == "category" and not rows:
+                rows = [("_none_", 0)]
+            lines.extend(f"| {key} | {count} |" for key, count in rows)
+    lines.extend(["", "## Hits", ""])
     if not hits:
         lines.append("_No template-language hits detected._")
     else:
-        lines.append("| Line | Severity | Category | Phrase | Sentence |")
-        lines.append("| ---: | --- | --- | --- | --- |")
-        sorted_hits = sorted(hits, key=lambda h: (h.line_number, h.severity, h.category))
-        for h in sorted_hits:
-            sentence = h.sentence.replace("|", "\\|").replace("\n", " ")
-            phrase = h.phrase.replace("|", "\\|")
-            lines.append(
-                f"| {h.line_number} | {h.severity} | {h.category} | "
-                f"`{phrase}` | {sentence} |"
-            )
-    lines.append("")
-    return "\n".join(lines)
+        lines.extend(["| Line | Severity | Category | Phrase | Sentence |", "| ---: | --- | --- | --- | --- |"])
+        for hit in sorted(hits, key=lambda h: (h.line_number, h.severity, h.category)):
+            sentence = hit.sentence.replace("|", "\\|").replace("\n", " ")
+            phrase = hit.phrase.replace("|", "\\|")
+            lines.append(f"| {hit.line_number} | {hit.severity} | {hit.category} | `{phrase}` | {sentence} |")
+    return "\n".join(lines) + ("" if gate else "\n")
+
+
+def _render_json_report(hits: Sequence[Hit], summary: dict[str, object], source: str, *, sort_keys: bool = True) -> str:
+    return json.dumps({"source": source, "summary": summary, "hits": [hit_to_dict(hit) for hit in hits]}, indent=2, sort_keys=sort_keys)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -122,13 +108,8 @@ def main(argv: list[str] | None = None) -> int:
     summary = _build_summary(hits)
 
     json_path = Path(args.json_out)
-    json_payload = {
-        "source": str(source),
-        "summary": summary,
-        "hits": [hit_to_dict(h) for h in hits],
-    }
     json_path.parent.mkdir(parents=True, exist_ok=True)
-    json_path.write_text(json.dumps(json_payload, indent=2), encoding="utf-8")
+    json_path.write_text(_render_json_report(hits, summary, str(source), sort_keys=False), encoding="utf-8")
 
     if args.md_out:
         md_path = Path(args.md_out)

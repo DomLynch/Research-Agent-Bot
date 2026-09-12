@@ -43,6 +43,7 @@ sys.path.insert(0, str(ROOT))
 import revision_coverage  # noqa: E402
 from source_topic_specificity import generated_pack_publishable, is_source_topic_specific, source_gate_aliases, topic_aliases  # noqa: E402
 from agent.final_gate import DEFAULT_THRESHOLDS  # noqa: E402
+from agent.observability import capture_terminal  # noqa: E402
 from agent.publishing.io import (  # noqa: E402
     AtomicJsonState,
     parse_time as _parse_time,
@@ -5188,6 +5189,7 @@ def main(argv: list[str] | None = None) -> int:
             f"[daily-v3-cycle] status={result['status']} checked={result['checked']} "
             f"updated={result['updated']} ledgers={','.join(result.get('updated_ledgers', [])) or '-'}"
         )
+        capture_terminal("publishing_cycle", result["status"])
         return 0 if result["status"] != "remote_dedupe_failed" else 2
     if args.prepare_only:
         result = prepare_candidate_buffer(
@@ -5214,6 +5216,7 @@ def main(argv: list[str] | None = None) -> int:
             reasons = preflight.get("reasons") if isinstance(preflight, dict) else None
             reason = " | ".join(str(item) for item in reasons) if isinstance(reasons, list) else ""
             print(f"[daily-v3-prepare] rejected_topic={topic} reason={reason or 'readiness_checks_failed'}")
+        capture_terminal("publishing_cycle", result["status"])
         if result["status"] == "remote_dedupe_failed":
             return 2
         return 0 if result["ready_count"] >= result["target_ready"] else 3
@@ -5237,6 +5240,7 @@ def main(argv: list[str] | None = None) -> int:
         f"submitted_topic={ledger.get('submitted_topic', '-')} "
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
+    capture_terminal("publishing_cycle", ledger["status"])
     failures = {"submission_failed", "synthesis_failed", "local_gate_execution_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
     if ledger["status"] in failures:
         return os.EX_SOFTWARE if ledger["status"] == "local_gate_execution_failed" else 2

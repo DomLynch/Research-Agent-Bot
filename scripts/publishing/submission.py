@@ -2984,6 +2984,8 @@ def main(argv: list[str] | None = None) -> int:
         runs_root=args.runs_root, date=args.date, submit=args.submit,
         max_submissions=max(1, args.max_submissions),
     )
+    from agent.observability import capture_terminal
+    capture_terminal("publishing_submit", ledger["status"])
     _write_daily_submit_cycle_ledger(args.runs_root, args.date, ledger)
     print(
         f"[daily-v3] status={ledger['status']} submitted={ledger['submitted']} "

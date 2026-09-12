@@ -9,6 +9,9 @@ from __future__ import annotations
 import argparse
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from socket import socket
+
+from agent.observability import capture_terminal, run_observed
 
 _LIVE_HTML = (
     "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
@@ -43,8 +46,14 @@ class _LiveHandler(BaseHTTPRequestHandler):
         return  # suppress access logs
 
 
+class _LiveServer(ThreadingHTTPServer):
+    def handle_error(self, request: socket | tuple[bytes, socket], client_address: object) -> None:
+        capture_terminal("status_http")
+        super().handle_error(request, client_address)
+
+
 def _dashboard(args: argparse.Namespace) -> int:
-    server = ThreadingHTTPServer((args.host, args.port), _LiveHandler)
+    server = _LiveServer((args.host, args.port), _LiveHandler)
     print(f"Research Agent live status on http://{args.host}:{args.port}")
     try:
         server.serve_forever()
@@ -79,7 +88,7 @@ def main(argv: list[str] | None = None) -> int:
     d.add_argument("--host", default="127.0.0.1")
     d.add_argument("--port", type=int, default=8791)
     args = parser.parse_args(argv)
-    return _run(args) if args.cmd == "run" else _dashboard(args)
+    return _run(args) if args.cmd == "run" else run_observed("status_process", lambda: _dashboard(args))
 
 
 if __name__ == "__main__":

@@ -1,47 +1,20 @@
-"""Phase 6 template-language gate adapter.
-
-Function-API wrapper over `agent.template_language.detect_template_language`
-for use by the writer post-render hook. Returns a structured report with
-both markdown and JSON serialisations the orchestrator can persist
-alongside the audit / cert artifacts.
-
-Stdlib-only. The detector handles section-skipping (code fences, tables,
-references, audit metadata) already; this adapter only assembles counts +
-serialisations + the blocking verdict.
-"""
+"""Function API for the template-language gate and its shared report serializers."""
 from __future__ import annotations
 
-import json
-from collections import Counter
 from dataclasses import dataclass
+from importlib import import_module
 
 from agent.template_language import (
     Hit,
     detect_template_language,
-    has_blocking_severity,
-    hit_to_dict,
 )
 
-__all__ = [
-    "TemplateGateReport",
-    "evaluate_template_gate",
-]
+__all__ = ["TemplateGateReport", "evaluate_template_gate"]
 
 
 @dataclass(frozen=True, slots=True)
 class TemplateGateReport:
-    """Structured verdict from the template-language gate.
-
-    template_language_blocking — True if any P1 or P2 hit. Wired directly
-                                 into `agent.final_gate.GateInputs`.
-    p1_count, p2_count, p3_count — per-severity counts.
-    total_hits                  — sum across severities.
-    hits                        — frozen tuple of Hit records.
-    markdown_report             — human-readable markdown audit.
-    json_report                 — JSON-serialised dict (str) with summary +
-                                  hits, suitable for persistence next to
-                                  audit.json / consistency.json.
-    """
+    """Severity counts, frozen hits and rendered reports for the final trust gate."""
 
     template_language_blocking: bool
     p1_count: int
@@ -54,77 +27,19 @@ class TemplateGateReport:
 
 
 def _build_summary(hits: tuple[Hit, ...]) -> dict[str, object]:
-    severity_counts = Counter(h.severity for h in hits)
-    category_counts = Counter(h.category for h in hits)
-    return {
-        "total_hits": len(hits),
-        "by_severity": {
-            "P1": severity_counts.get("P1", 0),
-            "P2": severity_counts.get("P2", 0),
-            "P3": severity_counts.get("P3", 0),
-        },
-        "by_category": dict(sorted(category_counts.items())),
-        "blocking": has_blocking_severity(hits),
-    }
+    return import_module("scripts.template_language_gate")._build_summary(hits, gate=True)
 
 
 def _render_markdown_report(
     hits: tuple[Hit, ...], summary: dict[str, object], source: str
 ) -> str:
-    lines: list[str] = []
-    lines.append(f"# Template-Language Gate — {source}")
-    lines.append("")
-    lines.append(f"**Total hits:** {summary['total_hits']}")
-    lines.append(f"**Blocking (P1/P2):** {summary['blocking']}")
-    lines.append("")
-    lines.append("## Counts by severity")
-    lines.append("")
-    lines.append("| Severity | Count |")
-    lines.append("| --- | --- |")
-    by_sev = summary["by_severity"]
-    if isinstance(by_sev, dict):
-        for sev in ("P1", "P2", "P3"):
-            lines.append(f"| {sev} | {by_sev.get(sev, 0)} |")
-    lines.append("")
-    lines.append("## Counts by category")
-    lines.append("")
-    lines.append("| Category | Count |")
-    lines.append("| --- | --- |")
-    by_cat = summary["by_category"]
-    if isinstance(by_cat, dict):
-        if not by_cat:
-            lines.append("| _none_ | 0 |")
-        else:
-            for cat, count in by_cat.items():
-                lines.append(f"| {cat} | {count} |")
-    lines.append("")
-    lines.append("## Hits")
-    lines.append("")
-    if not hits:
-        lines.append("_No template-language hits detected._")
-    else:
-        lines.append("| Line | Severity | Category | Phrase | Sentence |")
-        lines.append("| ---: | --- | --- | --- | --- |")
-        sorted_hits = sorted(hits, key=lambda h: (h.line_number, h.severity, h.category))
-        for h in sorted_hits:
-            sentence = h.sentence.replace("|", "\\|").replace("\n", " ")
-            phrase = h.phrase.replace("|", "\\|")
-            lines.append(
-                f"| {h.line_number} | {h.severity} | {h.category} | "
-                f"`{phrase}` | {sentence} |"
-            )
-    return "\n".join(lines)
+    return import_module("scripts.template_language_gate")._render_markdown(hits, source, summary, gate=True)
 
 
 def _render_json_report(
     hits: tuple[Hit, ...], summary: dict[str, object], source: str
 ) -> str:
-    payload = {
-        "source": source,
-        "summary": summary,
-        "hits": [hit_to_dict(h) for h in hits],
-    }
-    return json.dumps(payload, indent=2, sort_keys=True)
+    return import_module("scripts.template_language_gate")._render_json_report(hits, summary, source)
 
 
 def evaluate_template_gate(
