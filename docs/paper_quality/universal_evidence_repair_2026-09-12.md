@@ -242,3 +242,12 @@ source-bound review remains responsible for evaluating their scientific meaning.
 Regressions preserve negation, passive construction, diagnostic usage and strong
 claims for review rather than silently converting them into apparent hedges.
 The actual reviewer removed the corrupted phrase from the preserved candidate.
+
+The final outgoing table check reproduced the three Arroniz failures despite their
+numbers existing in the source: final rendering added leading zeros and p-value
+spacing, while the quoted-row verifier compared those forms literally. Its local
+normalizer now treats those presentation forms consistently. Exact values, signs,
+endpoints, comparisons and source identity still must match. Three real-source
+regressions fail before the change and pass afterward; changed values, inequalities
+and endpoints remain rejected. Replaying all 29 quantitative rows in the preserved
+outgoing manuscript reports zero failed rows, with all 19 source identities retained.
