@@ -217,3 +217,18 @@ The Arroniz discrepancy reported by a literal-number probe is decimal presentati
 the frozen abstract contains P =.23, P <.01 and P =.06; the manuscript adds leading
 zeros. The scientific values are unchanged. Source-owned endpoint, comparator and
 confidence-interval support still require the ordinary final outgoing check.
+
+## Malformed reviewer responses
+
+The final replay reproduced `prose_semantic_review_invalid`: JSON parsing succeeded,
+but the assessment schema failed outside the established technical fallback path.
+Prose and QEI review now explicitly number their input rows and validate assessment
+coverage inside that existing path. Strict schema checks remain after the call;
+a valid negative assessment returns immediately and never triggers fallback.
+The existing attempt limits and the prohibition on paid writer fallback are unchanged.
+
+HTTP-transport regressions exercise malformed-primary/negative-fallback, a valid
+negative primary, and exhausted malformed responses. They also verify exact numbered
+inputs and unchanged source context. The first audit checked these boundaries and
+cache validity; the second checked all callers, type checking, runtime LOC and
+complexity. No manuscript-specific retry, approval or threshold is introduced.
