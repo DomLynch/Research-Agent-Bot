@@ -252,5 +252,5 @@ def quoted_table_row_supported(cells: list[str], header: Sequence[str], source_t
 
 def untyped_table_cells_supported(cells: Sequence[str], header: Sequence[str], source_text: str, typed: re.Pattern[str]) -> bool:
     from agent.publication_evidence import exact_source_quote
-    return len(cells) == len(header) and all(exact_source_quote(cell, source_text) for name, cell in zip(header, cells)
+    return len(cells) == len(header) and all(exact_source_quote(re.sub(r"^finding=", "", cell), source_text) for name, cell in zip(header, cells)
         if name not in {"source", "study", "citation", "tier", "id"} and re.search(r"(?<!\w)\d", cell) and not typed.search(cell) and not re.fullmatch(r"finding=\d+ extracted claim\(s\); receipt-level direction is the coded finding", cell))

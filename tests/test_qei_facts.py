@@ -246,3 +246,12 @@ def test_untyped_numeric_columns_cannot_bypass_source_verification():
     rows[0]["verified_abstract"] = text
     assert _statistics_are_source_bound(legacy, rows, tables_only=True)
     assert not _statistics_are_source_bound(legacy.replace("| 12 kg |", "| 99 kg |"), rows, tables_only=True)
+
+
+def test_source_finding_prefix_does_not_break_untyped_source_quote():
+    from agent.revision_quality import _statistics_are_source_bound
+    text = "Muscle area increased (HI: Δ12%, MIX: Δ9.2%) after the intervention."
+    paper = f"| Source | Finding |\n|---|---|\n| Smith 2020 | finding={text} |"
+    rows = [{"citation_token": "Smith 2020", "verified_abstract": text}]
+    assert _statistics_are_source_bound(paper, rows, tables_only=True)
+    assert not _statistics_are_source_bound(paper.replace("Δ12%", "Δ99%"), rows, tables_only=True)
