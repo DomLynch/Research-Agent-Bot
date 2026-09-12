@@ -32,9 +32,9 @@ def claim_key(claim: str, bundle: list[dict[str, Any]], indexes: set[int]) -> st
     from agent.revision_claim_trace import _stable_locator
     # Only the cited source's generated locator is presentation, not claim text.
     for index in indexes:
+        claim = re.sub(r"(?<=\])(?=\[" + re.escape(str(bundle[index].get("cited_as") or "")) + r"\])", " ", claim)
         if locator := _stable_locator(bundle[index]):
-            claim = re.sub(re.escape(f"[exact source: {locator}]"), "", claim,
-                           flags=re.I if locator.startswith("https://doi.org/") else 0)
+            claim = re.sub(re.escape(f"[exact source: {locator}]"), "", claim, flags=re.I if locator.startswith("https://doi.org/") else 0)
     text = " ".join(re.sub(r"\[bundle:\d+\]", "", claim).split())
     text = re.sub(r"\s+([.,;:!?])", r"\1", text)
     return _hash([text, _sources(bundle), sorted(indexes)])

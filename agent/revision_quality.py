@@ -441,7 +441,7 @@ def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = Fal
         value = re.sub(r"\b(?:was|is)\b", "", re.sub(r"[–\u2212]", "-", value.casefold()))
         return re.sub(r"[\s:=<>≤≥]", "", re.compile(r"\d+(?:\.\d+)?|\.\d+").sub(lambda m: _numbers(m[0])[0], value)), _p_relations(value)
     def context_key(value: str) -> str:
-        value = re.sub(r"[–\u2212]", "-", _SOURCE_LAYOUT_ONLY.sub("", value)).replace("≤", "<=").replace("≥", ">=")
+        value = re.sub(r"(?<![\w.])\.(?=\d)", "0.", re.sub(r"[–\u2212]", "-", _SOURCE_LAYOUT_ONLY.sub("", value))).replace("≤", "<=").replace("≥", ">=")
         return _claim_key(re.sub(r"[-+<>=]", lambda m: f" operator{ord(m[0])} ", value), [row])
     claim = context_key(re.sub(r"^finding\s*=\s*", "", context, flags=re.I))
     return any((not context or claim != context_key(stat) and claim == context_key(clause))

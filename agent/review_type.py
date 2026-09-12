@@ -160,7 +160,7 @@ def _self_claim_proximity_window(
     `token` in `text`. Distinguishes self-methodological claims
     (qualifier + token adjacent) from list-construction sentences
     (qualifier + token far apart in a multi-clause sentence)."""
-    low = text.lower()
+    low = re.sub(r"\b(?:not|no|without)\s+(?:(?:a|an|the|systematic|scoping)\s+)*" + re.escape(token), "", text.lower())
     q_idx = low.find(qualifier)
     if q_idx < 0:
         return False

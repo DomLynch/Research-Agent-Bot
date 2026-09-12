@@ -245,3 +245,57 @@ def test_incorrect_author_count_cannot_borrow_a_positive_prose_review(run, monke
     with grounding.grounding_context(run):
         assert grounding.approved(text, bundle, set())
         assert not grounding.approved(text.replace('1 admitted', '19 admitted'), bundle, set())
+
+
+@pytest.mark.parametrize("gap", ["", " ", "  "])
+def test_adjacent_reviewed_citations_survive_real_bundle_rendering(gap):
+    from agent.publication_evidence import attach_bundle_references
+    bundle = [{"cited_as": "Smith 2020", "doi": "10.1234/first"},
+              {"cited_as": "Jones 2021", "doi": "10.1234/second"}]
+    claim = f"Conclusions: The populations and endpoints limit comparison [Smith 2020]{gap}[Jones 2021]."
+    rendered = attach_bundle_references(claim, bundle)
+    assert "[bundle:1]" in rendered and "[bundle:2]" in rendered
+    key = grounding.claim_key(claim, bundle, {0, 1})
+    token = grounding._APPROVED.set(frozenset({key}))
+    try:
+        assert grounding.approved(rendered, bundle, {0, 1})
+        kept = submission._attach_aligned_claim_references("## Abstract\n\n" + rendered, bundle)
+        assert "The populations and endpoints limit comparison" in kept
+        assert not grounding.approved(rendered.replace("limit", "permit"), bundle, {0, 1})
+        assert not grounding.approved(rendered.replace("Jones 2021", "Jones 2022"), bundle, {0, 1})
+        assert not grounding.approved(rendered, bundle, {0})
+        assert not grounding.approved(rendered.replace("[Smith 2020]", "").replace("populations", "populations [Smith 2020]"), bundle, {0, 1})
+    finally:
+        grounding._APPROVED.reset(token)
+
+
+@pytest.mark.parametrize("statement,blocked", [
+    ("This is a curated evidence map, not a systematic scoping review or pooled analysis.", False),
+    ("We conducted no systematic review.", False),
+    ("This is a narrative review, not a meta-analysis.", False),
+    ("This is a systematic scoping review, not a curated map.", True),
+    ("We conducted not only a systematic review but also an evidence map.", True),
+    ("This is a curated map, not a systematic review; we performed a meta-analysis.", True),
+    ("We conducted no systematic review initially; this is a systematic review now.", True),
+])
+def test_negated_method_names_do_not_create_or_hide_self_claims(statement, blocked):
+    from agent.review_type import review_type_overclaim_issue_messages
+    assert bool(review_type_overclaim_issue_messages(statement, "", "curated_evidence_map")) is blocked
+
+
+@pytest.mark.parametrize("alteration", [None, "number", "operator", "endpoint", "comparator"])
+def test_findings_map_decimal_layout_preserves_exact_numeric_context(alteration):
+    from agent.revision_quality import _statistics_are_source_bound
+    source = "For side lunge, the training versus control difference was 9.24 W (95% CI 2.99-15.49 W; P <.01)."
+    rendered = source.replace("P <.01", "P < 0.01")
+    if alteration == "number":
+        rendered = rendered.replace("9.24", "9.25")
+    elif alteration == "operator":
+        rendered = rendered.replace("P <", "P >")
+    elif alteration == "endpoint":
+        rendered = rendered.replace("side lunge", "forward lunge")
+    elif alteration == "comparator":
+        rendered = rendered.replace("training versus control", "training versus supplement")
+    rows = [{"cited_as": "Smith 2020", "thesis_text": source}]
+    paper = "### Findings Map\n\n| Source | Finding |\n|---|---|\n| Smith 2020 [bundle:1] | finding=" + rendered + " |\n"
+    assert _statistics_are_source_bound(paper, rows, tables_only=True) is (alteration is None)
