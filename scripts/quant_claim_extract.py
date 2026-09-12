@@ -383,7 +383,7 @@ _ROLE_KEYWORD_EFFECT = (
     # criteria." Kept the arm-anchored variants ("than placebo",
     # "than metformin", "gained more", "lost less") which require
     # a clinical context word.
-    "gained", "lost more", "lost less", "gained more", "gained less",
+    "gained", "gains", "no significant differences", "no significant changes", "did not significantly improve", "between-group difference", "lost more", "lost less", "gained more", "gained less",
     "than placebo", "than metformin",
     "than control", "than the placebo", "than the metformin",
     # Trial-design markers
@@ -410,6 +410,8 @@ def _assign_claim_role(sentence: str, section: str) -> str:
     # use one of the effect keywords).
     if has_background:
         return "background"
+    if re.search(r"\bdifferences? in age,? (?:and )?sex\b", s):
+        return "population"
     if re.match(r"^baseline (?:characteristics|scores|values|levels)\b", s) and not re.search(r"\b(?:after|change[ds]?|follow[- ]up|post[- ]treatment)\b", s):
         return "population"
     if has_effect:

@@ -170,7 +170,7 @@ _SOURCE_LAYOUT_ONLY = re.compile(rf"\s*\(\s*{_SOURCE_LAYOUT_GROUP}(?:\s*;\s*{_SO
 def manifest_row_finding(row: dict[str, Any]) -> str:
     # Keep the whole verified result: selecting its first p-value can substitute
     # baseline balance or a different endpoint for the actual treatment finding.
-    if row.get("verified_source_sections") and (excerpts := row.get("source_result_excerpts")):
+    if row.get("directness") != "protocol" and row.get("verified_source_sections") and (excerpts := row.get("source_result_excerpts")):
         # Source layout locators do not name objects in this manuscript.
         return _SOURCE_LAYOUT_ONLY.sub("", str(excerpts[0]))
     claims = row.get("n_claims")

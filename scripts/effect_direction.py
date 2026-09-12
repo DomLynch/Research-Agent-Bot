@@ -60,7 +60,8 @@ def _comparison_is_significant(comparator: str, value: float, alpha: float) -> b
 _DIRECTION_TERM = r"(?:improv(?:e[ds]?|ing|ements?)|increas(?:e[ds]?|ing)|decreas(?:e[ds]?|ing)|reduc(?:e[ds]?|ing|tions?)|enhanc(?:e[ds]?|ing))"
 _SIGNIFICANCE_RE = re.compile(
     rf"\b(?:statistically\s+)?significant(?:ly)?\s+{_DIRECTION_TERM}\b"
-    rf"|\b{_DIRECTION_TERM}\s+(?:was\s+)?(?:statistically\s+)?significant(?:ly)?\b",
+    rf"|\b{_DIRECTION_TERM}\s+(?:was\s+)?(?:statistically\s+)?significant(?:ly)?\b"
+    r"|(?P<contrast>\b(?:difference|gains?)\s+(?:was\s+|were\s+)?(?:only\s+)?statistically\s+significant\b)",
     re.I,
 )
 _NEGATED_SIGNIFICANCE_RE = re.compile(
@@ -68,6 +69,15 @@ _NEGATED_SIGNIFICANCE_RE = re.compile(
     r"|\b(?:fail(?:ed|s)?|failure)\s+to\b|\bnon[-\s]?$",
     re.I,
 )
+
+
+def _single_outcome_scope(scope: str) -> bool:
+    from quant_endpoints import match_endpoint, _ENDPOINT_COMPILED
+    return len({match_endpoint(scope, anchor_offset=hit.start()) for _, pattern in _ENDPOINT_COMPILED for hit in pattern.finditer(scope)}) == 1
+
+
+def _significance_matches(scope: str):
+    return [match for match in _SIGNIFICANCE_RE.finditer(scope) if match.lastgroup != "contrast" or _single_outcome_scope(scope)]
 
 
 def _reports_significance(claim: dict) -> bool:
@@ -82,7 +92,7 @@ def _reports_significance(claim: dict) -> bool:
     if best and scores.count(best) != 1:
         return False
     scope = clauses[scores.index(best)] if best else text
-    matches = list(_SIGNIFICANCE_RE.finditer(scope))
+    matches = _significance_matches(scope)
     if not matches:
         return False
     lower_scope = scope.lower()
@@ -113,8 +123,9 @@ def source_outcome_claims(record: dict) -> list[dict]:
     from quant_claim_extract import source_result_excerpts
     from quant_endpoints import match_direction, match_endpoint, _ENDPOINT_COMPILED
     claims = []
+    record = {**record, "sections": {key: re.sub(r"</?[A-Za-z][^>]*>", " ", value) if isinstance(value, str) else value for key, value in (record.get("sections") or {}).items()}}
     for sentence in source_result_excerpts(record, require_numeric=False):
-        for clause in re.split(r";(?![^()]*\))|\b(?:but|whereas|while|however)\b|\s+and (?=(?:greater|lower|higher|smaller)\b)", re.sub(r";\s*however,?\s*(?=the (?:increase|decrease|improvement) was significant)", " ", sentence, flags=re.I), flags=re.I):
+        for clause in re.split(r";(?![^()]*\))|\b(?:but|whereas|while|however|yet)\b|,\s+with\s+|\s+and (?=(?:greater|lower|higher|smaller|increased|decreased|improved|reduced)\b)", re.sub(r";\s*however,?\s*(?=the (?:increase|decrease|improvement) was significant)", " ", sentence, flags=re.I), flags=re.I):
             endpoint = match_endpoint(clause)
             matched = next((pattern.search(clause) for name, pattern in _ENDPOINT_COMPILED if name == endpoint and pattern.search(clause)), None)
             direction = match_direction(clause, anchor_offset=matched.end() if matched else None)

@@ -159,3 +159,58 @@ def test_alias_overlap_and_multiple_comparisons_do_not_borrow_significance(synth
 def test_qualitative_significance_uses_shared_p_value_parser(synthesis, reported, expected):
     record = {"sections": {"abstract": f"Muscle strength significantly increased compared with control ({reported})."}}
     assert synthesis._aggregate_paper([], paper_meta=record)["effect_direction"] == expected
+
+
+@pytest.mark.parametrize('citation,expected', [('Jacob 2025', 'positive'), ('Arroniz 2025', 'mixed'),
+    ('Expanding Access to Strength 2025', 'mixed'), ('Zhang 2025', 'mixed')])
+def test_remaining_source_profiles_keep_favorable_and_null_outcomes(synthesis, citation, expected):
+    source = next(row for row in SOURCES if row['receipt']['citation_token'] == citation)
+    claims = [c for c in source['claims'] if c.get('binding_confidence') in {'high', 'partial'}]
+    assert synthesis._aggregate_paper(claims, paper_meta=source['record'])['effect_direction'] == expected
+
+
+@pytest.mark.parametrize('topic,endpoint', [('metformin', 'blood glucose'), ('resistance_training', 'muscle strength')])
+def test_markup_keeps_p_values_and_shared_null_outcomes(synthesis, topic, endpoint):
+    synthesis._set_topic(topic)
+    direction = 'decreased' if topic == 'metformin' else 'increased'
+    record = {'title': 'Randomized intervention trial', 'sections': {'abstract':
+        f'<jats:p>The intervention significantly {direction} {endpoint} (<jats:italic>p</jats:italic> < .05). '
+        'No significant changes in body composition were observed.</jats:p>'}}
+    result = synthesis._aggregate_paper([], paper_meta=record)
+    assert result['effect_direction'] == 'mixed'
+    assert ('body composition', 'null') in result['endpoint_directions']
+
+
+@pytest.mark.parametrize('wording,expected', [('significantly improved', 'positive'),
+    ('significantly increased', 'negative'), ('did not significantly improve', 'null')])
+def test_improvement_does_not_invert_an_adverse_endpoint(synthesis, wording, expected):
+    record = {'title': 'Randomized intervention trial', 'sections': {'abstract':
+        f'The intervention {wording} frailty.'}}
+    assert synthesis._aggregate_paper([], paper_meta=record)['effect_direction'] == expected
+
+
+def test_demographic_balance_does_not_become_a_null_outcome(synthesis):
+    record = {'title': 'Randomized intervention trial', 'sections': {'abstract':
+        'There were no significant differences in age, sex, height and body weight among groups. '
+        'Muscle strength significantly increased after the intervention.'}}
+    result = synthesis._aggregate_paper([], paper_meta=record)
+    assert result['effect_direction'] == 'positive'
+    assert 'body weight' not in dict(result['endpoint_directions'])
+
+
+def test_protocol_findings_do_not_publish_planned_followup_as_a_result():
+    from agent.revision_quality import manifest_row_finding
+    source = next(row for row in SOURCES if row['receipt']['citation_token'] == 'Kang 2025')
+    row = {**source['receipt'], 'verified_source_sections':source['record']['sections']}
+    assert '6–12 months' in str(row['source_result_excerpts'])
+    assert '6–12 months' not in manifest_row_finding(row)
+
+
+@pytest.mark.parametrize('label', ['receipt', 'source'])
+def test_rendered_claim_count_is_metadata_but_effect_estimates_still_need_proof(label):
+    from agent.qei_facts import untyped_table_cells_supported
+    from agent.revision_quality import _EFFECT_STAT_RE
+    header = ['source', 'finding']
+    count = f'finding=6 extracted claim(s); {label}-level direction is the coded finding'
+    assert untyped_table_cells_supported(['Smith 2020', count], header, '', _EFFECT_STAT_RE)
+    assert not untyped_table_cells_supported(['Smith 2020', 'finding=6 participants improved'], header, '', _EFFECT_STAT_RE)

@@ -508,3 +508,13 @@ def test_empty_claims_returns_unclear_not_null() -> None:
     assert ed.infer_effect_direction(
         [], metformin_effect_fn=_const(0),
     ) == "unclear"
+
+
+def test_significant_difference_cannot_belong_to_another_endpoint():
+    claim = {'endpoint':'muscle power', 'raw_text':'eccentric power',
+        'sentence':'Eccentric power gains were greater and the body weight difference was statistically significant.'}
+    assert not ed._reports_significance(claim)
+    claim['sentence'] = 'Eccentric power gains were greater and the difference was statistically significant.'
+    assert ed._reports_significance(claim)
+    claim['sentence'] = 'Eccentric power gains were greater and the difference was not statistically significant.'
+    assert not ed._reports_significance(claim)

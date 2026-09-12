@@ -100,7 +100,7 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
     # bare "improve" / "increase" / "decrease" matches inside them
     # (Witham "did not improve walk speed" pre-fix bound to increase
     # because of bare "improve").
-    ("no_change", r"\bno\s+(?:significant\s+|statistically\s+significant\s+)?(?:change|difference|effect|improvements?)\b"
+    ("no_change", r"\bno\s+(?:significant\s+|statistically\s+significant\s+)?(?:changes?|differences?|effects?|improvements?)\b"
                   r"|did\s+not\s+(?:significantly\s+)?(?:change|differ|improve|increase|decrease|gain|reduce)"
                   r"|was\s+not\s+(?:significantly\s+)?(?:different|changed|improved|increased|decreased)"
                   r"|\bsimilar\s+(?:between|across|in\s+both)\b"
@@ -129,7 +129,7 @@ DIRECTION_VOCAB: tuple[tuple[str, str], ...] = (
                  r"|\bslowed?\b|\bworsened?\b|\bantagonized?\b|\bimpaired?\b"
                  r"|\blost?\s+(?:weight|mass|function)"
                  r"|\blower\b|\bsmaller\b"),
-    ("increase", r"\bsmaller\s+(?:decrease|decline|loss|reduction)\b|\bincreas(?:e[ds]?|ing)\b|\bgained?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
+    ("increase", r"\bsmaller\s+(?:decrease|decline|loss|reduction)\b|\bincreas(?:e[ds]?|ing)\b|\bgain(?:ed|s)?\b|\bimprov(?:e[ds]?|ing|ements?)\b|\benhanced?\b"
                  r"|\brose\b|\brisen\b|\bgrew\b|\bgrowth\s+of\b|\belevated?\b"
                  r"|\bgreater\b|\bhigher\b|\blarger\b|\bmore\b|\bgained?\s+more\b"
                  r"|\bextended?\b|\bprolonged?\b"),

@@ -1310,7 +1310,7 @@ def _claim_topic_effect(claim: dict) -> int:
     if not polarity:
         return 0
     if claim.get("claim_type") == "qualitative_outcome":
-        return polarity * {"increase": 1, "decrease": -1}.get(direction, 0)
+        return 1 if direction == "increase" and _direction._single_outcome_scope(str(claim.get("sentence") or "")) and re.search(r"\bsignificant(?:ly)?\s+improv", str(claim.get("sentence") or ""), re.I) else polarity * {"increase": 1, "decrease": -1}.get(direction, 0)
     if claim.get("claim_type") in _RATIO_CLAIM_TYPES:
         vals = claim.get("numeric_values") or []
         try:

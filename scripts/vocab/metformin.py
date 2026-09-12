@@ -20,10 +20,11 @@ ENDPOINT_VOCAB: tuple[tuple[str, str], ...] = (
     ("VO2max", r"\bVO\s*2\s*max\b|\bVO₂\s*max\b|peak\s+oxygen\s+(?:consumption|uptake)|aerobic\s+capacity"),
     ("walk speed", r"\b(?:4-?\s*m|six-?minute)\s+walk(?:\s+(?:speed|distance|test))?\b|gait\s+speed\b"),
     ("cognitive function", r"\bcognitive (?:function|performance)|\binhibitory control\b|\bperceptual processing\b|\bworking memory\b"),
-    ("muscle power", r"\b(?:peak )?muscle power\b"),
+    ("muscle power", r"\b(?:(?:peak )?muscle|eccentric|concentric) power\b"),
     ("fat mass", r"\b(?:body )?fat mass\b"),
     # Body composition
     ("thigh muscle mass", r"\bthigh\s+muscle\s+(?:mass|size|area|volume|cross-?sectional\s+area)|thigh\s+CSA"),
+    ("body composition", r"\bbody composition\b"),
     ("lean body mass", r"\blean\s+(?:body\s+)?mass\b|fat-?free\s+mass\b|\bFFM\b"),
     ("muscle hypertrophy", r"\bhypertroph(?:y|ic\s+response)|muscle\s+(?:gain|area|thickness|size|mass)"),
     ("muscle strength", r"\b(?:muscle\s+|grip\s+|leg\s+|knee\s+|handgrip\s+)?strength\b|\b1[\s-]*RM\b|one[\s-]?rep(?:etition)?\s*max(?:imum)?"),

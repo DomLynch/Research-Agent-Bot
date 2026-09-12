@@ -213,7 +213,7 @@ _QUANTITY_RE = re.compile(
     re.I,
 )
 _BUNDLE_COUNT_RE = re.compile(
-    r"^\s*(?:sources?|papers?|studies|findings|receipts|claims)\b", re.I,
+    r"^\s*(?:(?:admitted|retained|included|accepted|curated|reference)\s+)*(?:sources?|papers?|studies|findings|receipts|claims)\b", re.I,
 )
 SUBMISSION_REQUIRED_FILES = (
     "full_paper.md",

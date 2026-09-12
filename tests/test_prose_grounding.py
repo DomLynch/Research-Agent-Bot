@@ -224,3 +224,24 @@ def test_prose_review_includes_sources_without_numeric_abstract_results(run, mon
     assert rows[0]["citation_token"] == "Smith 2020"
     assert rows[0]["verified_source_sections"]["abstract"] == "Resveratrol reduced fasting glucose in older adults compared with placebo."
     assert "12%" in rows[0]["verified_source_sections"]["results"]
+
+
+@pytest.mark.parametrize('label', ['admitted', 'retained', 'included', 'curated reference'])
+def test_method_source_counts_are_not_external_effect_statistics(label):
+    text = f'Methods: We produced a curated evidence map of 19 {label} sources without pooling effects.'
+    assert submission._quantitative_claim_candidates(text) == []
+    assert submission._quantity_tokens(f'We studied 19 {label} patients.') == {('19', '')}
+    effect = text + ' The intervention improved outcomes by 19%.'
+    assert submission._quantity_tokens(effect) == {('19', '%')}
+
+
+def test_incorrect_author_count_cannot_borrow_a_positive_prose_review(run, monkeypatch):
+    text = 'Methods: We produced a curated evidence map of 1 admitted source without pooling effects.'
+    paper = run / 'full_paper.md'
+    paper.write_text(paper.read_text().replace('## Abstract\n\n', '## Abstract\n\n' + text + '\n\n'))
+    install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    bundle = grounding._verified_bundle(run)
+    with grounding.grounding_context(run):
+        assert grounding.approved(text, bundle, set())
+        assert not grounding.approved(text.replace('1 admitted', '19 admitted'), bundle, set())

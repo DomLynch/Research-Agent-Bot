@@ -89,3 +89,36 @@ Audit pass 1: both input regressions failed before the change and passed after i
 source identity, negative decisions, cache invalidation, and downstream cleanup;
 quality (347 tests), type checks and unchanged complexity/LOC gates passed.
 The live replay and Core decision require separate receipts.
+
+## Final outgoing manuscript audit
+
+The real outgoing gate caught issues beyond the general 14/14 audit: remaining
+unclear result profiles, four rendered claim-count metadata cells, a protocol's
+proposed follow-up presented as a finding, and an author Methods source count
+misread as an external effect statistic. No submission was sent.
+
+The general fixes preserve numeric comparison signs while removing XML tags for
+classification, recognize plural null findings and comparative gains, separate
+contrasting result clauses, and distinguish improved adverse endpoints from
+increased adverse endpoints. Demographic balance stays population context;
+significance on another endpoint cannot establish a result. Actual frozen Jacob,
+Arroniz, remote-training, Zhang and protocol records extend the regression set;
+metformin and direction/negation controls cover broader behavior.
+
+Receipt/source wording variants share the existing metadata rule. Protocols use
+the recorded claim summary rather than future numerical recommendations. Methods
+source-count adjectives use the existing corpus-count treatment; patient counts
+and percentages remain quantitative claims, and changed author counts cannot
+reuse a prior semantic approval.
+
+Audit pass 1 reproduced these failures from the exact outgoing body. Audit pass
+2 checked baseline balance, adverse-outcome polarity, cross-endpoint significance,
+XML numeric signs, protocol attribution and changed-count approval invalidation.
+The rebuilt table projection passes the complete outgoing quantitative trace.
+This is component proof, not a regenerated manuscript or a Core decision.
+
+Final exact local checks for this outgoing-gate follow-up: 5,166 passed, 2 xpassed,
+16 warnings in 156.59 seconds; 122 focused regressions passed. `make quality`
+passed with 347 gate tests, no new/worsened complexity or duplication findings,
+and unchanged LOC budgets. Mypy passed for 181 source files. Runtime changes
+contain no author, submission-ID, or paper-specific branches.
