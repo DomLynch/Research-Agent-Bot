@@ -1723,3 +1723,19 @@ def test_phase_k_noop_when_no_results_section(tmp_path: Path) -> None:
     new_text, log = _phase_k_route_outcome_paragraphs(text, run)
     assert new_text == text
     assert log == []
+
+
+@pytest.mark.parametrize("retrieved", [0, 3255])
+def test_methods_summary_uses_frozen_retrieval_audit_without_inventing_screening(retrieved):
+    audit = {"selection_counts": {"retrieved": retrieved}, "extraction_counts": {"extracted": 117}}
+    pack = build_methods_pack(review_type="curated_evidence_map", topic="resistance_training",
+        corpus_search_queries=(), n_retrieved=None, n_screened=None, n_included=19,
+        n_rejected=None, outcome_classes=("muscle_function",), retrieval_audit=audit)
+    assert pack.screening_flow == {"n_retrieved": retrieved, "n_included": 19}
+    md = render_methods_md(pack, submission_id="revision")
+    assert f"Recorded stages: n_retrieved={retrieved}." in md
+    assert f"| retrieved | {retrieved} |" in md
+    assert "Recorded stages: none." not in md
+    assert "record-linked screening path" in md
+    assert "117 were screened" not in md
+    assert "full-text review" not in md

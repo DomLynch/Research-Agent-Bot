@@ -200,3 +200,20 @@ all observed classes in frequency order, retaining one label per class. Three
 regression cases cover positive, negative and null summaries with a third class
 that the previous implementation omitted. This changes generated summaries, not
 source classifications, counts, evidence or acceptance thresholds.
+
+
+## Recorded Methods and external audit follow-up
+
+The Methods summary read only receipt-funnel counters while the retrieval table
+read the frozen retrieval audit. With no flat retrieval counter, this produced
+"Recorded stages: none" alongside a recorded 3,255-record pool. The builder now
+uses the audit's recorded retrieval count when the flat count is missing. It does
+not convert extraction counts into screened/excluded counts or infer historical
+record-level linkage. Incomplete-flow prose states this boundary explicitly.
+Eligibility now identifies retained protocols as planned-study context, never
+completed-outcome evidence, matching the existing protocol classification.
+
+The Arroniz discrepancy reported by a literal-number probe is decimal presentation:
+the frozen abstract contains P =.23, P <.01 and P =.06; the manuscript adds leading
+zeros. The scientific values are unchanged. Source-owned endpoint, comparator and
+confidence-interval support still require the ordinary final outgoing check.

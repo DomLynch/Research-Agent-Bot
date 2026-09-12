@@ -71,7 +71,7 @@ def build_methods_pack(
         (f"Analytic scope: {research_question.strip()} This describes the retained-source analysis, "
          "not evidence that this criterion was prospectively applied during screening."
          if research_question.strip() else f"Sources whose primary content addresses {topic.replace('_', ' ')}."),
-        "Sources with extractable quantitative or qualitative findings.",
+        "Sources with extractable quantitative or qualitative findings; retained protocols provide planned-study context only and no completed outcome evidence.",
         "Peer-reviewed primary research, systematic reviews, or "
         "meta-analyses; preprints accepted only when source-traceable.",
         "Sources with verifiable bibliographic identifiers "
@@ -90,7 +90,7 @@ def build_methods_pack(
         "Source-level exclusion reasons were not recorded in this methods pack; receipt-funnel non-admission buckets are not full-text screening reasons.",
     )
     screening_flow = {key: int(value) for key, value in {
-        "n_retrieved": n_retrieved,
+        "n_retrieved": n_retrieved if n_retrieved is not None else (retrieval_audit or {}).get("selection_counts", {}).get("retrieved"),
         "n_screened": n_screened,
         "n_included": n_included,
         "n_excluded_at_full_text": n_rejected,
@@ -279,8 +279,8 @@ def render_methods_md(pack: MethodsPack, *, submission_id: str) -> str:
             + ("; ".join(f"{key}={sf[key]}" for key in (
                 "n_retrieved", "n_screened", "n_excluded_at_full_text",
             ) if sf.get(key) is not None) or "none") + ".",
-            "Per-database yields, deduplication counts and screening personnel "
-            "are not documented by these admission counts.",
+            "Retrieval and extraction counts below do not establish a record-linked screening path to these admitted sources; "
+            "unrecorded screening personnel or exclusion decisions are not inferred.",
             "", "### Exclusion reasons",
         ])
     lines.extend(f"- {r}" for r in pack.exclusion_reason_summary)
