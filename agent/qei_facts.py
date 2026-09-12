@@ -11,6 +11,7 @@ from typing import Any, Mapping, Sequence
 
 from agent.llm_client import chat_json, build_judge_chain
 from agent.settings import load_settings
+from agent.prose_grounding import _validate_assessments
 
 FIELDS = ("receipt_id", "source_result_quote", "result_span", "endpoint", "comparison", "estimate", "uncertainty", "significance")
 HEADERS = ("Study", "Endpoint", "Study comparison", "Reported estimate", "Uncertainty", "Significance", "Source result clause")
@@ -35,17 +36,12 @@ async def _review_rows(run: Path, rows: list[dict[str, Any]], entries: list[dict
     if path.is_file() and json.loads(path.read_text()).get("accepted_input_hash") == _review_hash(rows, entries):
         return rows
     response = await chat_json(messages=[{"role": "system", "content": REVIEW_PROMPT},
-        {"role": "user", "content": json.dumps({"rows": rows, "sources": entries}, ensure_ascii=False)},
-    ], chain=build_judge_chain(load_settings()), temperature=0.0,
+        {"role": "user", "content": json.dumps({"rows": [{**row, "row": index} for index, row in enumerate(rows)], "sources": entries}, ensure_ascii=False)},
+    ], chain=build_judge_chain(load_settings()), temperature=0.0, validate=lambda parsed: _validate_assessments(rows, parsed.get("assessments"), label="qei"),
         **{key: value for key, value in options.items() if key in {"client", "ledger", "seed"}})
     assessments = response.parsed.get("assessments")
-    if (not isinstance(assessments, list) or len(assessments) != len(rows)
-            or any(not isinstance(item, dict) or type(item.get("row")) is not int
-                   or type(item.get("supported")) is not bool or not isinstance(item.get("reason"), str)
-                   or not item["reason"].strip() for item in assessments)
-            or sorted(item["row"] for item in assessments) != list(range(len(rows)))):
-        raise ValueError("qei_semantic_review_invalid")
-    supported = {item["row"] for item in assessments if item["supported"]}
+    _validate_assessments(rows, assessments, label="qei")
+    supported = {item["row"] for item in response.parsed["assessments"] if item["supported"]}
     accepted = [row for index, row in enumerate(rows) if index in supported]
     path.write_text(json.dumps({"model": response.model, "reviewed_input_hash": _review_hash(rows, entries),
         "accepted_input_hash": _review_hash(accepted, entries), "assessments": assessments,

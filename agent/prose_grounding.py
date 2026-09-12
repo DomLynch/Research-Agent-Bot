@@ -54,21 +54,21 @@ def author_context(run: Path, bundle: list[dict[str, Any]]) -> dict[str, Any]:
 
 async def review_statements(statements: list[dict[str, Any]], sources: Any, **options: Any) -> dict[str, Any]:
     response = await chat_json(messages=[{"role": "system", "content": _PROMPT},
-        {"role": "user", "content": json.dumps({"statements": statements, "sources": sources}, ensure_ascii=False)}],
-        chain=build_judge_chain(load_settings()), temperature=0.0,
+        {"role": "user", "content": json.dumps({"statements": [{**entry, "row": index} for index, entry in enumerate(statements)], "sources": sources}, ensure_ascii=False)}],
+        chain=build_judge_chain(load_settings()), temperature=0.0, validate=lambda parsed: _validate_assessments(statements, parsed.get("assessments")),
         **{key: value for key, value in options.items() if key in {"client", "ledger", "seed"}})
     assessments = response.parsed.get("assessments")
     _validate_assessments(statements, assessments)
     return {"model": response.model, "assessments": assessments, "statements": statements}
 
 
-def _validate_assessments(statements: Any, assessments: Any) -> None:
+def _validate_assessments(statements: Any, assessments: Any, *, label: str = "prose") -> None:
     if (not isinstance(assessments, list) or len(assessments) != len(statements)
             or any(not isinstance(item, dict) or type(item.get("row")) is not int
                    or type(item.get("supported")) is not bool or not isinstance(item.get("reason"), str)
                    or not item["reason"].strip() for item in assessments)
             or sorted(item["row"] for item in assessments) != list(range(len(statements)))):
-        raise ValueError("prose_semantic_review_invalid")
+        raise ValueError(f"{label}_semantic_review_invalid: expected={len(statements)} received={len(assessments) if isinstance(assessments, list) else 'non-list'}")
 
 
 async def review_writer_paragraphs(name: str, paragraphs: list[dict[str, Any]], receipts: Any, reviewed: set[tuple[str, tuple[str, ...]]], **options: Any) -> tuple[list[dict[str, Any]], list[str]]:

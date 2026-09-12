@@ -274,6 +274,41 @@ def test_chat_json_falls_back_on_5xx() -> None:
     assert call_count["n"] == 2
 
 
+@pytest.mark.parametrize("invalid_responses", [0, 1, 2])
+def test_prose_review_falls_back_only_on_invalid_schema(monkeypatch, invalid_responses):
+    from agent import prose_grounding
+
+    monkeypatch.setattr(prose_grounding, "build_judge_chain", lambda _: (_spec("primary"), _spec("fallback")))
+    statements = [{"text": "An unsupported comparison.", "sources": [0]}]
+    sources = [{"result": "Only a within-group change was reported."}]
+    calls = []
+    negative = {"row": 0, "supported": False, "reason": "The source does not support the comparison."}
+
+    def handler(request):
+        body = json.loads(request.content)
+        supplied = json.loads(body["messages"][-1]["content"])
+        assert supplied == {"statements": [{**statements[0], "row": 0}], "sources": sources}
+        calls.append(body["model"])
+        assessments = [] if len(calls) <= invalid_responses else [negative]
+        return httpx.Response(200, json=_ok_body(json.dumps({"assessments": assessments})))
+
+    async def go():
+        client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+        try:
+            return await prose_grounding.review_statements(statements, sources, client=client)
+        finally:
+            await client.aclose()
+
+    if invalid_responses == 2:
+        with pytest.raises(LLMError, match="prose_semantic_review_invalid: expected=1 received=0"):
+            _run(go())
+    else:
+        result = _run(go())
+        assert result["assessments"] == [negative]
+        assert result["statements"] == statements
+    assert calls == ["primary", "fallback"][:min(invalid_responses + 1, 2)]
+
+
 def test_chat_json_falls_back_on_missing_provider_content() -> None:
     call_count = {"n": 0}
 

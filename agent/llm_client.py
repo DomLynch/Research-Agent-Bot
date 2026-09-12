@@ -9,7 +9,7 @@ import re
 import shutil
 import signal
 import tempfile
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any
@@ -397,6 +397,7 @@ async def chat_json(
     temperature: float = 0.2,
     max_tokens: int | None = None,
     seed: int | None = None,
+    validate: Callable[[Mapping[str, Any]], None] = lambda _: None,
 ) -> LLMResponse:
     """Return the first successful spec; subscription writers never fall back.
     HTTP routes forward seed and temperature (best-effort reproducibility).
@@ -437,6 +438,7 @@ async def chat_json(
                         max_tokens=max_tokens,
                         seed=seed,
                     )
+                    validate(resp.parsed)
                 except (
                     _HTTPX_HTTP_ERROR,
                     ValueError,
