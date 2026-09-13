@@ -247,6 +247,36 @@ def test_incorrect_author_count_cannot_borrow_a_positive_prose_review(run, monke
         assert not grounding.approved(text.replace('1 admitted', '19 admitted'), bundle, set())
 
 
+@pytest.mark.parametrize("verb", ["reassessed", "examined", "evaluated"])
+def test_uncited_methods_count_uses_current_author_record_review(run, monkeypatch, verb):
+    text = f"Methods: This curated evidence map {verb} 1 frozen source, requiring bound claims; historical screening was not reconstructed and no pooling was performed."
+    (run / "full_paper.md").write_text("## Abstract\n\n" + text)
+    bundle = grounding._verified_bundle(run)
+    payload = {"abstract": text}
+    assert submission._quantitative_claim_candidates(text) == [text]
+    assert submission._researka_quantitative_trace_status(payload, bundle) != "eligible"
+    install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    with grounding.grounding_context(run):
+        assert submission._researka_quantitative_trace_status(payload, bundle) == "eligible"
+        assert submission._researka_quantitative_trace_status({"abstract": text.replace("1 frozen", "19 frozen")}, bundle) != "eligible"
+    (run / "methods_pack.json").write_text(json.dumps({"selection": "changed"}))
+    with grounding.grounding_context(run):
+        assert submission._researka_quantitative_trace_status(payload, bundle) != "eligible"
+
+
+@pytest.mark.parametrize("citation", ["", " [Smith 2020]"])
+def test_prose_approval_does_not_replace_source_support_for_effect_numbers(run, monkeypatch, citation):
+    claim = "This review found that treatment reduced mortality by 99%" + citation + "."
+    (run / "full_paper.md").write_text("## Abstract\n\n" + claim)
+    install_judge(monkeypatch)
+    asyncio.run(grounding.review_manuscript(run))
+    bundle = grounding._verified_bundle(run)
+    with grounding.grounding_context(run):
+        assert grounding.approved(claim, bundle, submission._citation_indexes(claim, bundle))
+        assert submission._researka_quantitative_trace_status({"abstract": claim}, bundle) != "eligible"
+
+
 @pytest.mark.parametrize("gap", ["", " ", "  "])
 def test_adjacent_reviewed_citations_survive_real_bundle_rendering(gap):
     from agent.publication_evidence import attach_bundle_references

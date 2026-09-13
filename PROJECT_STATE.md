@@ -1,5 +1,15 @@
 # PROJECT_STATE.md
 
+## Author-Record Quantities - 2026-09-13
+Quantitative preflight now recognizes uncited non-empirical Methods statements
+with a current, exact author-context review. It no longer requires the
+manuscript source count to appear in an external study. Cited/empirical effect
+quantities still require matching source evidence, including when a prose judge
+incorrectly approves them. Count edits or changed Methods records invalidate
+author approval. Full suite: 5,344 passed, 2 xpassed; 396 focused and 51 isolated
+VPS checks pass, as do quality and mypy. Every preflight and frozen-package check
+passes on the exact final manuscript in the isolated live-data replay.
+
 ## Mixed-Evidence Scope Rendering - 2026-09-13
 The finalizer no longer inserts a blanket review-level/causal/policy disclaimer
 merely because direct and indirect studies coexist. The Findings Map retains

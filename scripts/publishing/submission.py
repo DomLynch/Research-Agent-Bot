@@ -929,7 +929,8 @@ def _researka_quantitative_trace_status(
     aligned = 0
     for claim in claims:
         indexes = _citation_indexes(claim, source_bundle)
-        aligned += _cited_claim_aligns(claim, source_bundle, indexes) and _quantities_agree(claim, [source_bundle[index] for index in indexes])
+        author_record = not indexes and not _empirical_claim(claim) and _prose_approved(claim, source_bundle, indexes)
+        aligned += _cited_claim_aligns(claim, source_bundle, indexes) and (author_record or _quantities_agree(claim, [source_bundle[index] for index in indexes]))
     return (
         "eligible" if aligned == len(claims)
         else f"researka_quantitative_trace_insufficient:aligned={aligned}/{len(claims)}"
