@@ -186,7 +186,7 @@ def test_phase_f_fills_outcome_heading_with_source_level_findings(tmp_path: Path
     assert logs
     section = fixed.split("### Cardiometabolic Outcomes", 1)[1].split("## References", 1)[0]
     assert "Wang 2024 (Impact of a Precision Intervention for Vascular Health" in section
-    assert "54 extracted claim(s)" in section
+    assert "no result passage available" in section
     assert "representative statistic" not in section
     assert "direction=unclear; directness=direct; tier=A1" in section
     assert "Direction reconciliation:" not in section
@@ -857,7 +857,7 @@ def test_admission_funnel_clarification_repairs_numeric_inconsistency_ask(tmp_pa
             phase="D_admission_funnel_clarification",
             rule="state_non_additive_admission_buckets",
             n_changes=1,
-            detail="added admission-funnel non-additive bucket clarification",
+            detail="clarified recorded selection scope without inventing admission history",
         )
     ]
 
@@ -951,9 +951,9 @@ def test_admission_funnel_clarification_covers_live_overlapping_bucket_ask(
     )
 
     assert logs
-    assert "classified source candidates (73) -> admitted final sources (66)" in fixed
-    assert "overlapping diagnostic states" in fixed
-    assert "not admitted" in fixed and "= 7" in fixed
+    assert "source-by-source admission decisions" in fixed
+    assert "overlapping bucket totals are not exclusions" in fixed
+    assert "= 7" not in fixed  # Aggregate bucket subtraction is not an exclusion decision.
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
 
 
@@ -1046,7 +1046,7 @@ def test_admission_funnel_clarification_replaces_non_additive_table_when_request
             phase="D_admission_funnel_clarification",
             rule="replace_non_additive_admission_table",
             n_changes=1,
-            detail="replaced non-additive admission-funnel table with textual clarification",
+            detail="clarified recorded selection scope without inventing admission history",
         )
     ]
 
@@ -1072,9 +1072,9 @@ def test_methods_funnel_arithmetic_uses_manifest_counts(tmp_path: Path) -> None:
     assert revision_coverage.deterministic_unmet_asks(paper, [ask]) == [ask]
     fixed, logs = journal_finalizer._phase_d_admission_funnel_clarification(paper, tmp_path)
 
-    assert "33 admitted sources came from 61 classified source candidates" in fixed
+    assert "new dated selection assessment is required" in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
-    assert logs[0].rule == "state_receipt_funnel_arithmetic"
+    assert logs[0].rule == "state_non_additive_admission_buckets"
 
 
 def test_outcome_direction_summary_uses_manifest_tallies(tmp_path: Path) -> None:
@@ -1160,7 +1160,7 @@ def test_terminal_terminology_scrubs_late_admission_funnel_note(tmp_path: Path) 
     assert "receipt-funnel buckets" not in fixed.lower()
     assert "classified receipt candidates" not in fixed.lower()
     assert "Source-selection interpretation:" in fixed
-    assert "73 classified source candidates" in fixed
+    assert "new dated selection assessment is required" in fixed
     assert any(log.phase == "D_admission_funnel_clarification" for log in logs)
 
 
@@ -3092,7 +3092,7 @@ def test_source_outcome_class_map_emits_findings_map_with_finding_field(tmp_path
     assert "### Findings Map" in fixed
     assert "Cardiometabolic n=1 (direction: null=1; directness: indirect=1; sources: Smith 2024)" in fixed
     assert "| Cardiometabolic | Smith 2024: Clinical source one | direction=null | directness=indirect | B2 |" in fixed
-    assert "finding=7 extracted claim(s)" in fixed
+    assert "no result passage available" in fixed
     assert "representative statistic" not in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
@@ -3132,7 +3132,7 @@ def test_source_outcome_class_map_includes_all_rows_for_each_retained_source_ask
     assert "### Findings Map" in fixed
     assert "Smith 2001" in fixed
     assert "Smith 2045" in fixed
-    assert "finding=45 extracted claim(s); receipt-level direction is the coded finding" in fixed
+    assert "finding=Source-level classification only; no result passage available in the frozen record." in fixed
     assert logs[0].phase == "D_source_outcome_class_map"
 
 
@@ -3171,7 +3171,7 @@ def test_source_outcome_class_map_repairs_surface_every_admitted_source_feedback
     assert "### Findings Map" in fixed
     assert "Smith 2026: Clinical intervention source" in fixed
     assert "Jones 2025: Mechanistic source" in fixed
-    assert "finding=3 extracted claim(s); receipt-level direction is the coded finding" in fixed
+    assert "finding=Source-level classification only; no result passage available in the frozen record." in fixed
     assert revision_coverage.deterministic_unmet_asks(fixed, [ask]) == []
     assert logs[0].phase == "D_source_outcome_class_map"
 
@@ -3349,11 +3349,11 @@ def test_revise_feedback_surfaces_direction_cues_funnel_and_tensions(tmp_path: P
 
     assert "Auditable arithmetic is therefore candidate union -> classified source candidates -> admitted final sources" in fixed
     assert "diagnostic bucket rows do not sum to the classified count" in fixed
-    assert "Stepwise reconciliation: classified source candidates (18) -> admitted final sources (15)" in fixed
+    assert "source-by-source admission decisions" in fixed
     assert "Findings Map completeness note: all 9 admitted manifest rows are surfaced below" in fixed
     assert "Pena 2024: G2019S inhibitor abrogates mitochondrial DNA damage" in fixed
     assert "Pena 2024" in fixed and "direction=unclear" in fixed
-    assert "finding=2 extracted claim(s)" in fixed
+    assert "no result passage available" in fixed
     assert "representative non-significant statistic" not in fixed
     assert "Hsiao 2026" in fixed and "direction=negative" in fixed
     assert "Ng 2019" in fixed and "direction=null" in fixed
@@ -3710,7 +3710,7 @@ def test_substantive_synthesis_does_not_restore_templates_after_preparation(tmp_
         "thesis_text": "Source excerpts: Resveratrol significantly improved balance and gait speed (all p < 0.05), without affecting resting pain.",
     }]}))
     before, _ = journal_finalizer._phase_d_substantive_evidence_synthesis(paper, tmp_path)
-    assert "1 extracted claim(s)" in before
+    assert "no result passage available" in before
     restored_before, _ = journal_finalizer.review_noise_control.restore_surface_floors(
         paper, tmp_path, [], journal_finalizer.FinalizerLogEntry,
     )
@@ -4070,7 +4070,7 @@ def test_latest_telomere_reviewer_asks_are_repaired_generically(tmp_path: Path) 
 
     assert "Majority-direction note: 17/25" in fixed
     assert "Receipt-funnel interpretation:" not in fixed
-    assert "Source-selection interpretation: 25 admitted sources came from 73" in fixed
+    assert "new dated selection assessment is required" in fixed
     assert "outcome-class source-level signals directionally consistent enough" in fixed
     assert "source-title subdomain labels" in fixed
     assert "Liu 2026: outcome=Dosing and Pharmacokinetics" not in fixed
@@ -4606,7 +4606,7 @@ def test_finalizer_answers_vascular_source_level_revision_bundle(tmp_path: Path)
     assert "- Luo 2025: Effects of L-citrulline supplementation" in fixed
     assert "Synthesis interpretation: These source-level findings connect" in fixed
     assert "Publication-year note: citation years follow the manifest metadata" in fixed
-    assert "finding=102 extracted claim(s)" in fixed
+    assert "no result passage available" in fixed
     assert "No semantically comparable source-pair disagreements" in fixed
     assert "## Gaps Identified" in fixed
     assert "1. Run adequately powered prospective trials" in fixed
@@ -5641,7 +5641,7 @@ def test_revision_audit_notes_answer_claim_count_and_doi_gap_asks(tmp_path: Path
 
     fixed, logs = journal_finalizer._phase_d_revision_audit_notes(paper, tmp_path)
 
-    assert "Claim-count audit note: The Dosing and Pharmacokinetics slice count" in fixed
+    assert "Claim-count audit note: The Exposure and Dose-Adjacent Evidence slice count" in fixed
     assert "1 retained source contribute 79 extracted claims" in fixed
     assert "source(s)" not in fixed
     assert "claim(s)" not in fixed
@@ -6825,13 +6825,15 @@ def test_second_telomere_revise_asks_repaired_generically(tmp_path: Path) -> Non
     assert "not pooled as direct evidence" in fixed
     assert "Numeric verification note: Ha 2023" in fixed
     assert "p = .903" in fixed
-    assert "Strict high-confidence subset note: 3 strict high-confidence receipt(s)" in fixed
-    assert "admitted source base remains 25" in fixed
+    assert "new dated selection assessment is required" in fixed
+    assert "overlapping bucket totals are not exclusions" in fixed
     assert "Dominant source pattern:" in fixed
     assert "not weighed equally" in fixed
     assert "minority slices" in fixed.lower()
     assert "risk-marker, causal, mechanistic, or treatment-response hypotheses according to source directness" not in fixed
-    assert journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks) == []
+    unmet = journal_finalizer.revision_coverage.deterministic_unmet_asks(fixed, asks)
+    assert len(unmet) == 1 and "Clarify admission funnel arithmetic" in unmet[0]
+    # Aggregate buckets cannot prove why particular sources were admitted.
 
 
 def test_third_telomere_revise_asks_repaired_generically(tmp_path: Path) -> None:
@@ -7090,7 +7092,6 @@ def test_revise_feedback_repairs_denominators_tensions_and_findings_map(tmp_path
         "D_substantive_evidence_synthesis",
         "D_source_outcome_class_map",
         "D_tensions_and_gaps_breadth",
-        "D_outcome_label_cleanup",
         "D_revision_surface_notes",
     }
 
@@ -7546,7 +7547,7 @@ def test_multi_issue_reviewer_revision_repairs_and_verifies_all_requirements(tmp
     for old, new in (
         ("| B1 | outcome=Longevity;", "| C9 | outcome=Longevity;"),
         ("outcome=Longevity; direction=positive |", "outcome=Cardiometabolic; direction=positive |"),
-        ("finding=qualitative receipt-level finding recorded in the manifest", "finding=unsupported replacement"),
+        ("finding=Source-level classification only; no result passage available in the frozen record.", "finding=unsupported replacement"),
     ):
         altered = fixed.replace(old, new, 1)
         assert asks[0] in journal_finalizer.revision_coverage.deterministic_unmet_asks(
@@ -7675,7 +7676,7 @@ def test_exact_stat_revision_rebuilds_existing_findings_map(tmp_path: Path) -> N
     fixed, log = journal_finalizer._phase_d_proactive_findings_map(paper, tmp_path)
 
     assert "p = 0.01" not in fixed
-    assert "5 extracted claim(s)" in fixed
+    assert "no result passage available" in fixed
     assert log and log[0].rule == "reconcile_source_level_findings_map"
 
 

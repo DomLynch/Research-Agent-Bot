@@ -369,10 +369,10 @@ def _findings_map_is_exact(paper_md: str, rows: Sequence[dict[str, Any]]) -> boo
     table_rows = [cells for cells in table_rows if len(cells) == 7 and cells[0].lower() not in {"outcome class", "evidence domain"}]
     if len(table_rows) != len(rows):
         return False
+    from importlib import import_module
+    render = import_module("scripts.quant_claim_extract").readable_source_notation
     def key(cells):
-        return tuple(re.sub(r"\s+", " ", re.sub(r"\s*\[bundle:\d+\]", "", value)).replace("|", "/").strip().casefold() for value in cells[:6])
-    if any(not cells[6].removeprefix("finding=").strip() for cells in table_rows):
-        return False
+        return tuple(re.sub(r"\s+", " ", re.sub(r"\s*\[bundle:\d+\]", "", render(value))).replace("|", "/").strip().casefold() for value in cells)
     return Counter(key(cells) for cells in table_rows) == Counter(key(findings_map_row(row)) for row in rows)
 
 

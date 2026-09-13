@@ -2345,7 +2345,7 @@ def test_finalizer_load_bearing_tensions_are_public_safe(tmp_path) -> None:
     }))
     finalize_run(tmp_path)
     new_text = (tmp_path / "full_paper.md").read_text()
-    assert "Dosing and Pharmacokinetics" in new_text
+    assert "Exposure and Dose-Adjacent Evidence" in new_text
     assert "dosing_pharmacokinetics" not in new_text
     assert "0.002" not in new_text
     assert "severity 4" not in new_text

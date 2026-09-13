@@ -2044,7 +2044,7 @@ def build_receipts_from_quant_claims(
         receipt = _apply_receipt_contract(receipt, receipt_contracts.get(paper_id, {}), allowed)
         typed.append((receipt, _taxonomy.population_of(identity)))
         source_admission.record(admission_log, paper_id,
-            "retained_source_with_bound_claims" if receipt_ids else "topic_eligible_with_bound_claims", included=True)
+            "high_confidence_bound_claims" if paper_id in high_papers else "classified_or_retained_partial_bound_claims", included=True)
     typed.sort(key=lambda rp: -rp[0].n_claims)
     selected = [receipt for receipt, _population in typed] if receipt_ids else _enforce_population_coherence(typed, high_papers)
     source_admission.retain(admission_log, selected, "population_coherence_exclusion")

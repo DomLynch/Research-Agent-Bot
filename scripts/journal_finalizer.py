@@ -3933,37 +3933,29 @@ def _phase_d_source_outcome_class_map(
     )]
 
 
-def _phase_d_proactive_findings_map(
-    text: str, out_dir: Path,
-) -> tuple[str, list[FinalizerLogEntry]]:
-    manifest = _load_sidecar(out_dir / "manifest.json") or {}
-    rows = _revision_evidence_rows(out_dir, manifest) if isinstance(manifest, dict) else []
+def _phase_d_proactive_findings_map(text: str, out_dir: Path) -> tuple[str, list[FinalizerLogEntry]]:
+    from agent.publication_evidence import attach_bundle_references, ordered_source_rows
+    rows = _revision_evidence_rows(out_dir, _load_sidecar(out_dir / "manifest.json") or {})
     if not rows:
         return text, []
-    note = _findings_map_section(rows)
-    existing = re.search(
-        r"^### Findings Map\b.*?(?=^### |^## |\Z)", text, flags=re.M | re.S,
-    )
+    existing = re.search(r"^### Findings Map\b.*?(?=^### |^## |\Z)", text, flags=re.M | re.S)
+    notes = [part for part in re.split(r"\n\s*\n", existing.group() if existing else "") if part.strip() and not part.lstrip().startswith(
+        ("#", "|", "Findings Map completeness note:", "Findings Map accounting note:", "Direction heterogeneity note:"))]
+    note = _findings_map_section(rows, extra_notes=notes)
+    prior_accounting = re.search(r"^Findings Map accounting note:[^\n]+", existing.group() if existing else "", re.M)
+    if prior_accounting and (links := re.findall(r"\[exact source:[^\]]+\]", prior_accounting.group())):
+        note = re.sub(r"(?m)^(Findings Map accounting note:[^\n]+)\.$", lambda m: m[1] + " " + " ".join(links) + ".", note)
+    if existing and "[bundle:" in existing.group():
+        note = attach_bundle_references(note, ordered_source_rows(rows))
     if existing:
-        if existing.group(0).strip() == note.strip():
+        if existing.group().strip() == note.strip():
             return text, []
-        return text[:existing.start()] + note + "\n\n" + text[existing.end():], [
-            FinalizerLogEntry(
-                phase="D_proactive_findings_map",
-                rule="reconcile_source_level_findings_map",
-                n_changes=1,
-                detail=f"rebuilt source-level Findings Map from {len(rows)} manifest receipt(s)",
-            )
-        ]
-    patched, n = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
-    if not n:
-        return text, []
-    return patched, [FinalizerLogEntry(
-        phase="D_proactive_findings_map",
-        rule="add_source_level_findings_map",
-        n_changes=1,
-        detail=f"added source-level Findings Map from {len(rows)} manifest receipt(s)",
-    )]
+        patched, rule = text[:existing.start()] + note + "\n\n" + text[existing.end():], "reconcile_source_level_findings_map"
+    else:
+        patched, _ = _prepend_or_create_section_paragraph(text, "Evidence Landscape", note)
+        rule = "add_source_level_findings_map"
+    return (text, []) if patched == text else (patched, [FinalizerLogEntry(
+        "D_proactive_findings_map", rule, 1, f"reconciled source-level Findings Map from {len(rows)} manifest receipt(s)")])
 
 
 def _findings_map_section(

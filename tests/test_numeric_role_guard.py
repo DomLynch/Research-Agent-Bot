@@ -427,7 +427,7 @@ def test_source_context_drift_validates_exact_manifest_bullets():
     }]
     trusted = "- " + _manifest_source_finding_line(rows[0]) + "."
     rendered = trusted.replace("Smith 2025", "Smith 2025 [bundle:1]")
-    forged = rendered.replace("8 extracted", "80 extracted")
+    forged = rendered.replace("no result passage available", "a reduction of 99% was observed")
     prose = "Smith 2025 reported a reduction of 99%."
     checked = _strip_compiler_source_finding_lines("\n\n".join((rendered, forged, prose)), {"receipts": rows})
     assert rendered not in checked

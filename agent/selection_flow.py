@@ -47,12 +47,12 @@ def render_selection_flow_lines(receipt_funnel: Any) -> list[str]:
 def render_admission(log: dict[str, Any]) -> str:
     decisions = log["decisions"]
     included = sum(row["included"] for row in decisions.values())
-    excluded = Counter(row["reason"] for row in decisions.values() if not row["included"])
-    reasons = "; ".join(f"{reason.replace('_', ' ')}: {count}" for reason, count in sorted(excluded.items())) or "none"
+    reasons_by_decision = Counter((row["included"], row["reason"]) for row in decisions.values())
+    reasons = "; ".join(f"{'included' if kept else 'excluded'} — {reason.replace('_', ' ')}: {count}" for (kept, reason), count in sorted(reasons_by_decision.items())) or "none"
     prior = render_admission(log["selection_assessment"]) + "\n\n" if log.get("selection_assessment") else ""
     return prior + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
             f"{log['rule']} Assessed {len(decisions)} candidate sources; included {included}; "
-            f"excluded {len(decisions) - included}. Exclusion reasons: {reasons}. "
+            f"excluded {len(decisions) - included}. Decision reasons: {reasons}. "
             "The source-by-source decisions and identifiers are in source_admission.json. "
             "This assessment records the stated candidate scope on this date; it does not reconstruct "
             "unrecorded historical screening or equate retrieval totals with assessed candidates.")
