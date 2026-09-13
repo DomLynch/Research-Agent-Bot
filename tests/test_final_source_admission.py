@@ -137,3 +137,58 @@ def test_dated_reassessment_cannot_silently_change_the_frozen_corpus(corpus, tmp
     with pytest.raises(ValueError, match='changes_included_set'):
         source_admission.prepare_reassessment('topic', lock, tmp_path / 'revision', assess)
     assert not (source / 'source_admission.json').exists()
+
+
+def test_authorized_exclusion_preserves_assessment_and_passes_final_gate(corpus, tmp_path):
+    from types import SimpleNamespace
+    from agent.revision_evidence import RevisionEvidenceLock
+    from run_v06_synthesis import _without_reviewer_unavailable_sources
+    rows, prior, _ = deepcopy(corpus)
+    rows[1]["source_doi"] = "10.1234/unavailable"
+    source, revision = tmp_path / "prior", tmp_path / "revision"
+    source.mkdir()
+    prior_path = source / "source_admission.json"
+    prior_path.write_text(json.dumps(prior))
+    original = prior_path.read_bytes()
+    rows[1]["thesis_text"] = "Source evidence authority unavailable: 10.1234/unavailable"
+    lock = RevisionEvidenceLock(source, {r["receipt_id"]: r for r in rows}, source, source, None, "snapshot")
+    assert _without_reviewer_unavailable_sources(lock, "")[0].receipt_ids == lock.receipt_ids
+    reduced, _ = _without_reviewer_unavailable_sources(lock, "Source evidence authority unavailable: 10.1234/unavailable")
+    excluded = lock.receipt_ids - reduced.receipt_ids
+    source_admission.prepare_reassessment("topic", reduced, revision, None, excluded_receipt_ids=excluded)
+    retained = list(reduced.receipt_rows.values())
+    current = source_admission.start("topic", reduced.receipt_ids)
+    for row in retained:
+        source_admission.record(current, row["receipt_id"], "high_confidence_bound_claims", included=True)
+    source_admission.finish(current, [SimpleNamespace(**r) for r in retained], {}, revision, excluded_receipt_ids=excluded)
+    paper = "## Methods\n\n" + render_admission(current) + "\n\n" + _findings_map_section(retained)
+    paper = attach_bundle_references(paper, ordered_source_rows(retained))
+    save_run(revision, (retained, current, paper))
+    assert source_admission.check(revision, paper) == "eligible"
+    assert prior_path.read_bytes() == original
+    assert current["selection_assessment"] == prior
+    assert current["reviewer_excluded_source_ids"] == sorted(excluded)
+    # A later unchanged revision must preserve and validate the entire history.
+    later = RevisionEvidenceLock(revision, reduced.receipt_rows, revision, revision, None, "snapshot")
+    source_admission.prepare_reassessment("topic", later, tmp_path / "later", None)
+    assert json.loads((tmp_path / "later/source_selection_assessment.json").read_text()) == current
+    del current["reviewer_excluded_source_ids"]
+    save_run(revision, (retained, current, paper))
+    assert source_admission.check(revision, paper) == "source_admission_unverified"
+    for invalid in (["extra"], ["Study_2", "Study_2"], ["Study_1"], "Study_2", [None]):
+        current["reviewer_excluded_source_ids"] = invalid
+        save_run(revision, (retained, current, paper))
+        assert source_admission.check(revision, paper) == "source_admission_unverified"
+
+
+@pytest.mark.parametrize("retained,excluded", [({"Study_1"}, set()), ({"Study_1", "extra"}, {"Study_2"}),
+    ({"Study_1"}, {"Study_2", "extra"}), ({"Study_1", "Study_2"}, {"Study_2"})])
+def test_reassessment_rejects_unauthorized_membership(corpus, tmp_path, retained, excluded):
+    from types import SimpleNamespace
+    _, prior, _ = corpus
+    prior["reviewer_excluded_source_ids"] = ["Study_2"]  # A source ledger cannot authorize removal.
+    (tmp_path / "source_admission.json").write_text(json.dumps(prior))
+    lock = SimpleNamespace(errors=[], source_run=tmp_path, receipt_ids=frozenset(retained))
+    with pytest.raises(ValueError, match="changes_included_set"):
+        source_admission.prepare_reassessment("topic", lock, tmp_path / "out", None, excluded_receipt_ids=frozenset(excluded))
+    assert not (tmp_path / "out/source_selection_assessment.json").exists()

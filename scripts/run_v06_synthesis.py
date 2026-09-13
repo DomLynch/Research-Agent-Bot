@@ -2613,11 +2613,13 @@ async def _run(
         requested_source, quant_dir=QUANT_DIR, parsed_dir=PARSED_DIR,
         expected_topic=topic,
     )
+    original_receipt_ids = evidence_lock.receipt_ids
     evidence_lock, reviewer_excluded_dois = _without_reviewer_unavailable_sources(
         evidence_lock, os.getenv("RESEARKA_REVISION_FEEDBACK", ""),
     )
+    excluded_receipt_ids = original_receipt_ids - evidence_lock.receipt_ids
     if evidence_lock.mode == "snapshot":
-        source_admission.prepare_reassessment(topic, evidence_lock, out_dir, build_receipts_from_quant_claims)
+        source_admission.prepare_reassessment(topic, evidence_lock, out_dir, build_receipts_from_quant_claims, excluded_receipt_ids=excluded_receipt_ids)
         QUANT_DIR, PARSED_DIR = evidence_lock.quant_dir, evidence_lock.parsed_dir
         _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
     source_run, revision_receipt_ids = evidence_lock.source_run, evidence_lock.receipt_ids
@@ -2748,7 +2750,7 @@ async def _run(
             "retraction_check_unavailable",
         )
     receipt_funnel["retraction_preflight"] = {"retracted_dois": retracted, "unverified_dois": unverified}
-    source_admission.finish(admission_log, receipts, receipt_funnel, out_dir)
+    source_admission.finish(admission_log, receipts, receipt_funnel, out_dir, excluded_receipt_ids=excluded_receipt_ids)
     if (retracted or unverified) and revision_receipt_ids:
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
