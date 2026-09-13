@@ -1,5 +1,23 @@
 # PROJECT_STATE.md
 
+## Final Source-Row Review - 2026-09-13
+Findings Map rows now enter the existing source reviewer as complete displayed
+rows, including direction, directness and finding. Unapproved rows block Core
+preflight. Review runs again after the final repair pass, then the exact package
+is frozen with its updated claim-support state. Changed rows invalidate approval.
+The primary reviewer rejected the original MCI row and accepted the regenerated
+row against identical evidence; a separate audit accepted all 19 regenerated
+rows in three requests below the unchanged 300,000-character limit.
+
+Numeric drift extraction no longer splits alphanumeric identifiers into numbers;
+standalone values and attached recognized units remain checked. This addresses
+the observed quarantine of `20E` as numeric `20`. The completed 13:15Z run still
+failed locally with Abstract 139/150 words and submitted nothing. The scheduler
+started another normal linked revision at 13:49Z on the previous release.
+These code changes, their deployment and Core acceptance remain separate states.
+Release verification: 5,355 tests passed, 2 xpassed; quality, mypy across 183
+source files, and both import boundaries pass without budget increases.
+
 ## Comparable Findings and Delivery Recovery - 2026-09-13
 Core received parent-linked revision `d85c342d-f646-4012-a89b-7ee4c6d04413`
 and requested two scientific corrections: an unmatched-intervention contrast

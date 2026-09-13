@@ -1031,6 +1031,7 @@ def test_final_source_review_receives_post_repair_manuscript(tmp_path, monkeypat
     def final_gates(**kwargs):
         events.append("final_repair")
         path.write_text("## Abstract\n\nFinal repaired manuscript and rendered source rows.\n")
+        path.with_suffix(".final_verdict.json").write_text('{"verdict":"L5"}')
         return path.read_text(), {}, {"gate": SimpleNamespace(passed=True)}
     async def source_review(run):
         events.append("source_review")

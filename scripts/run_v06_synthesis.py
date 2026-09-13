@@ -3558,6 +3558,15 @@ def _finalize_stage5_supplement(out_dir: Path, manifest: dict, audit_report: dic
         )
 
 
+async def _review_final_source_claims(out_dir: Path, gate_artifacts: dict[str, Any]) -> str:
+    if getattr(gate_artifacts.get("gate"), "passed", False):
+        from agent.prose_grounding import review_manuscript
+        from publishing.submission import freeze_submission_package
+        await review_manuscript(out_dir)
+        freeze_submission_package(out_dir, json.loads((out_dir / "full_paper.final_verdict.json").read_text()))
+    return _pre_submit_blocker_summary(gate_artifacts)
+
+
 async def _run_post_paper_pipeline(
     *, paper_path: Path, manifest: dict, out_dir: Path,
     citation_registry: dict | None = None,
@@ -3650,7 +3659,7 @@ async def _run_post_paper_pipeline(
         audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
     # Submission preparation is a visible revision, before the reviewer sees it.
-    from agent.prose_grounding import prepare_reviewed_manuscript, review_manuscript
+    from agent.prose_grounding import prepare_reviewed_manuscript
     await prepare_reviewed_manuscript(paper_path.parent)
     paper_md = paper_path.read_text()
     audit_report = _write_paper_audit(paper_path, paper_md, _audit)
@@ -3850,10 +3859,8 @@ async def _run_post_paper_pipeline(
         citation_outcome_map=_citation_outcome_map, sections=sections, methods_md=methods_md,
         reviewer_counts=(grok_unresolved_p1, n_flagged, n_stripped),
     )
-    if getattr(gate_artifacts.get("gate"), "passed", False):
-        await review_manuscript(out_dir)
     unified = SimpleNamespace(**json.loads(paper_path.with_suffix(".final_verdict.json").read_text()))
-    blocker_summary = _pre_submit_blocker_summary(gate_artifacts)
+    blocker_summary = await _review_final_source_claims(out_dir, gate_artifacts)
     print(f"[pipeline] Stage 5c — pre-submit quality gate: {blocker_summary or 'passed'}", file=sys.stderr)
     # FactReview-style audit pack: roll the persisted trust signals (citation
     # registry, audit, this verdict, retraction check) into paper_audit.json +

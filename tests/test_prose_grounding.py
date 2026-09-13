@@ -79,6 +79,20 @@ def test_findings_map_labels_require_review_of_the_displayed_row(run, monkeypatc
             assert submission._researka_core_claim_trace_status(payload, bundle) == "researka_core_claims_unresolved:findings_map_labels_unverified"
 
 
+@pytest.mark.parametrize("supported", [True, False])
+def test_final_review_refreshes_approval_before_freezing_package(run, monkeypatch, supported):
+    import run_v06_synthesis as pipeline
+    install_judge(monkeypatch, supported=supported)
+    (run / "full_paper.final_verdict.json").write_text('{"verdict":"L5"}')
+    frozen = []
+    def freeze(path, verdict):
+        with grounding.grounding_context(path):
+            frozen.append((verdict, grounding.approved(CLAIM, grounding._verified_bundle(path), {0})))
+    monkeypatch.setattr(submission, "freeze_submission_package", freeze)
+    asyncio.run(pipeline._review_final_source_claims(run, {"gate": SimpleNamespace(passed=True)}))
+    assert frozen == [({"verdict": "L5"}, supported)]
+
+
 def test_reviewed_paraphrase_survives_cleanup_payload_and_context_reset(run, monkeypatch):
     calls = install_judge(monkeypatch)
     bundle = grounding._verified_bundle(run)
