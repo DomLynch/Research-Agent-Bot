@@ -1029,4 +1029,5 @@ def readable_source_notation(text: str) -> str:
         value = re.sub(r"\{([ηβα])\}", r"\1", value).replace("_{p}", "ₚ").replace("^{2}", "²")
         return match[0] if "\\" in value or "{" in value or "}" in value else value
     text = re.sub(r"\\documentclass\b.*?\\begin\{document\}(.*?)\\end\{document\}", math, text, flags=re.S)
+    text = re.sub(r"(?<=[a-z0-9)\]])\.(?=[A-Z])", ". ", text)
     return re.sub(r"</?(?:jats:)?(?:italic|bold)(?:\s[^>]*)?>", "", text)

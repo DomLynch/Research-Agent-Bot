@@ -8,6 +8,24 @@ from agent.publication_evidence import exact_source_quote
 
 
 @pytest.mark.parametrize("endpoint", ["Memory", "Strength", "Blood pressure"])
+def test_source_sentence_spacing_is_stable_before_review_without_changing_evidence(endpoint):
+    from quant_claim_extract import readable_source_notation
+    from apply_consistency_fixes import _normalize_sentence_spacing
+
+    raw = f"{endpoint} was assessed.ResultsOf 52 participants, 12 improved (p = 0.05)."
+    row = {"verified_source_sections": True, "source_result_excerpts": [raw]}
+    before = deepcopy(row)
+    rendered = readable_source_notation(manifest_row_finding(row))
+    assert rendered == raw.replace(".ResultsOf", ". ResultsOf")
+    assert _normalize_sentence_spacing(rendered) == (rendered, 0)
+    assert readable_source_notation(rendered) == rendered
+    assert row == before
+    assert exact_source_quote(rendered, raw)
+    assert not exact_source_quote(rendered.replace("52", "53"), raw)
+    assert not exact_source_quote(rendered.replace("p =", "p >"), raw)
+
+
+@pytest.mark.parametrize("endpoint", ["Memory", "Strength", "Blood pressure"])
 def test_findings_map_keeps_other_arm_results_without_recognized_statistic(endpoint):
     from quant_claim_extract import source_result_excerpts
 

@@ -1,5 +1,14 @@
 # PROJECT_STATE.md
 
+## Source Sentence Spacing - 2026-09-13
+The 13:49Z linked revision cleared the abstract floor but stopped before submission:
+Core preflight inserted one missing space in a source finding, invalidating the
+frozen payload. Shared source typesetting now performs that normalization before
+final review. It matches Core's exact cleaned body and is stable on a second pass;
+raw evidence, quantities and approval requirements remain unchanged.
+Validation: 516 focused checks and 5,358 full-suite tests pass (2 xpassed),
+with quality and mypy passing. Renewed review and Core acceptance are separate.
+
 ## Final Source-Row Review - 2026-09-13
 Shared writing targets are 220–260 words for the Abstract and 400–500 for
 the Conclusion, leaving repair margin while acceptance gates remain unchanged.
