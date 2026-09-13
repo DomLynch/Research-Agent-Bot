@@ -90,6 +90,20 @@ def test_proof_requires_retrievable_locator_and_intact_snapshot(frozen_source):
     assert proof(row, evidence) == {}
 
 
+def test_complete_sections_can_travel_together_without_fabricated_splices(frozen_source):
+    evidence, _ = frozen_source({"abstract": ABSTRACT, "results": RESULT})
+    row = {"excerpt": ABSTRACT + "\n\n" + RESULT, "quote": RESULT, "doi": "10.1234/study"}
+    fields = proof(row, evidence)
+    assert fields["source_passage_locator"] == "sections.abstract;sections.results"
+    assert fields["excerpt_is_complete_field"] is True
+    assert source_proof_is_valid({**row, **fields})
+    for excerpt in (ABSTRACT + "\n\n" + RESULT.replace("12", "21"),
+                    ABSTRACT + "\n\n" + RESULT.partition(", ")[2],
+                    ABSTRACT + "\n\n" + RESULT + " Invented context."):
+        assert proof({**row, "excerpt": excerpt}, evidence) == {}
+        assert not source_proof_is_valid({**row, **fields, "excerpt": excerpt})
+
+
 @pytest.mark.parametrize("locator", ["https://[", "file:///local/source.pdf", "revision-snapshot:run:test:r1"])
 def test_invalid_locator_does_not_block_doi_fallback(frozen_source, locator):
     evidence, _ = frozen_source({"results": RESULT}, source_pdf=locator)

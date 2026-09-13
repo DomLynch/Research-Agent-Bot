@@ -598,7 +598,7 @@ def _tension_summary(
         return (
             f"{a.receipt_id} reports {direction_a} effect on {endpoint}; "
             f"{b.receipt_id} reports {direction_b} on the same endpoint "
-            "— direct conflict"
+            "— opposite reported directions; intervention and comparator alignment must be checked"
         )
     if kind in ("null_vs_positive", "null_vs_negative"):
         signed = a if direction_a != "null" else b
@@ -606,7 +606,7 @@ def _tension_summary(
         signed_direction = direction_a if direction_a != "null" else direction_b
         return (
             f"{signed.receipt_id} ({signed_direction} on {endpoint}) vs "
-            f"{nullish.receipt_id} (null on {endpoint}) — partial conflict"
+            f"{nullish.receipt_id} (null on {endpoint}) — different reported directions; intervention and comparator alignment must be checked"
         )
     if kind == "indirectness_gap":
         direct_one = a if a.directness == "direct" else b
@@ -658,15 +658,10 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
         # mechanism_vs_clinical rule above. Resolves an asymmetry the
         # reviewer flagged (cross-outcome direct+indirect was severity
         # 3 but same-outcome direct+indirect was severity 0).
-        # A null-vs tension is a real disagreement only between COMPARABLE
-        # evidence strata. A null mechanistic (preclinical) finding paired with
-        # a signed clinical one — or vice-versa — is a mechanism-vs-clinical
-        # relationship, not a disagreement; pairing a human study against
-        # non-comparable animal/in-vitro work manufactured the spurious
-        # all-vs-one severity-4 cluster the reviewer flagged. Such pairs fall
-        # through to orthogonal. Universal — directness only, no topic terms.
-        # (direct-vs-non-direct is already routed to indirectness_gap above.)
-        comparable = (a.directness == "mechanistic") == (b.directness == "mechanistic")
+        # Indirect comparisons do not establish agreement or conflict on the
+        # target intervention merely because endpoint names and signs match.
+        # Direct-versus-indirect evidence remains a separate role contrast.
+        comparable = a_direct and b_direct
         if (a_direct and b_non_direct) or (b_direct and a_non_direct):
             kind = "indirectness_gap"
         else:
@@ -684,7 +679,7 @@ def _classify_pair(a: ReceiptSummary, b: ReceiptSummary) -> Tension:
                 candidate_b = map_b[shared_endpoint]
                 candidate_kind = directional_kind(candidate_a, candidate_b)
                 if (
-                    candidate_kind in {"null_vs_positive", "null_vs_negative"}
+                    candidate_kind in {"null_vs_positive", "null_vs_negative", "disagreement", "agreement"}
                     and not comparable
                 ):
                     continue

@@ -520,7 +520,7 @@ def _claim_id(paper_id: str, section: str, kind: str, offset: int) -> str:
     return f"{paper_id}-{section}-{kind}-{offset}"
 
 
-def source_result_excerpts(paper_meta: dict, *, require_numeric: bool = True) -> tuple[str, ...]:
+def source_result_excerpts(paper_meta: dict, *, require_numeric: bool = True, complete_context: bool = False) -> tuple[str, ...]:
     """Complete own-study result quotes; never infer an endpoint-statistic pair."""
     from agent.publication_evidence import _record_text
     from agent.results_table import _owned_result_sentence
@@ -530,9 +530,14 @@ def source_result_excerpts(paper_meta: dict, *, require_numeric: bool = True) ->
     record = {**paper_meta, "sections": sections}
     excerpts: dict[str, None] = {}
     for section in ("abstract", "results", "conclusion"):
-        for _, sentence in _split_sentences(_record_text(sections.get(section) or "")):
+        text = _record_text(sections.get(section) or "")
+        findings = []
+        for _, sentence in _split_sentences(text):
             if _assign_claim_role(sentence, section) == "effect" and _owned_result_sentence(sentence, record) and (not require_numeric or extract_from_text(sentence, section)):
-                excerpts.setdefault(sentence, None)
+                findings.append(sentence)
+        if complete_context and findings:
+            findings = [text[text.index(findings[0]):text.index(findings[-1]) + len(findings[-1])]]
+        excerpts.update(dict.fromkeys(findings))
     return tuple(excerpts)
 
 

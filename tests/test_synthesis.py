@@ -1081,12 +1081,18 @@ def test_classify_pair_null_vs_requires_comparable_strata() -> None:
     """Item 4: a null mechanistic (preclinical) finding vs a signed clinical
     one (same outcome, different strata) is NOT a null_vs disagreement — it
     falls to orthogonal, dissolving the spurious all-vs-one severity-4 cluster.
-    Comparable strata (both non-mechanistic) still form a real null_vs."""
+    Indirect studies cannot establish conflict on the target intervention."""
     from agent.synthesis import _classify_pair  # noqa: PLC0415
     mech_null = _summary("MECH", direction="null", directness="mechanistic")
     clin_neg = _summary("CLIN", direction="negative", directness="indirect")
     assert _classify_pair(mech_null, clin_neg).kind == "orthogonal"
-    # both non-mechanistic → genuine null_vs preserved
+    # Two adjunct/combined comparisons are not a target-intervention conflict.
     a = _summary("A", direction="null", directness="indirect")
     b = _summary("B", direction="negative", directness="indirect")
-    assert _classify_pair(a, b).kind == "null_vs_negative"
+    assert _classify_pair(a, b).kind == "orthogonal"
+    direct_a = _summary("A", direction="null", directness="direct")
+    direct_b = _summary("B", direction="negative", directness="direct")
+    contrast = _classify_pair(direct_a, direct_b)
+    assert contrast.kind == "null_vs_negative"
+    assert "intervention and comparator alignment must be checked" in contrast.summary
+    assert "conflict" not in contrast.summary

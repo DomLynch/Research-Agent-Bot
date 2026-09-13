@@ -3386,8 +3386,8 @@ def _manifest_direction_visibility_note(rows: list[dict[str, Any]], feedback: st
 def _manifest_direction_heterogeneity_note(rows: list[dict[str, Any]]) -> str:
     grouped: dict[str, dict[str, list[str]]] = {}
     for row in rows:
-        outcome = re.sub(r"\s+\([^)]*\)$", "", role_outcome_display(row))
-        direction = _normalised_direction(row)
+        values = findings_map_row(row)
+        outcome, direction = values[0], values[2].removeprefix("direction=")
         grouped.setdefault(outcome, {}).setdefault(direction, []).append(_row_citation(row))
     parts = []
     for outcome, directions in sorted(grouped.items()):
@@ -3803,15 +3803,10 @@ def _phase_d_source_outcome_class_map(
     if not rows:
         return text, []
     lower_feedback = feedback.lower()
-    present_tokens = {
-        str(row.get("citation_token") or "").strip()
-        for row in rows
-        if str(row.get("citation_token") or "").strip()
-    }
     if wants_findings_map:
         note = _findings_map_section(
             rows,
-            extra_notes=_findings_map_feedback_notes(feedback, present_tokens),
+            extra_notes=_findings_map_feedback_notes(feedback),
         )
         existing = re.search(
             r"^### (?:Findings Map|Source (?:Outcome-Class|Classification) Map)\b.*?(?=^### (?!(?:Findings Map|Source (?:Outcome-Class|Classification) Map)[ \t]*$)|^## |\Z)",
@@ -3890,16 +3885,6 @@ def _phase_d_source_outcome_class_map(
         adjacent_note = _adjacent_human_evidence_note(rows)
         if adjacent_note:
             notes.append(adjacent_note)
-    named = {
-        m.group(0)
-        for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)
-    }
-    missing = sorted(named - present_tokens)
-    if missing:
-        notes.append(
-            f"{len(missing)} reviewer-named sources are not retained in this source map "
-            "and are not counted in clinical outcome-class tallies unless listed below."
-        )
     heading = "### Findings Map" if wants_findings_map else "### Source Outcome-Class Map"
     note = heading + "\n\n" + "\n\n".join((*notes, *examples))
     existing = re.search(
@@ -4020,7 +4005,7 @@ def _row_cited_as(row: dict[str, Any]) -> str:
     )
 
 
-def _findings_map_feedback_notes(feedback: str, present_tokens: set[str]) -> list[str]:
+def _findings_map_feedback_notes(feedback: str) -> list[str]:
     lower_feedback = feedback.lower()
     notes: list[str] = []
     if "biomarker-positive" in lower_feedback and "clinical-endpoint" in lower_feedback:
@@ -4051,16 +4036,6 @@ def _findings_map_feedback_notes(feedback: str, present_tokens: set[str]) -> lis
             "Tension-accounting note: disagreement counts are claim-level. Substantive tension "
             "still remains between biomarker-elevating studies and mixed/null clinical-endpoint "
             f"studies{context_note}, so these contrasts are treated as unresolved evidence gaps."
-        )
-    named = {
-        m.group(0)
-        for m in re.finditer(r"\b[A-Z][A-Za-z'’\-]+ 20\d{2}\b", feedback)
-    }
-    missing = sorted(named - present_tokens)
-    if missing:
-        notes.append(
-            f"{len(missing)} reviewer-named sources are not retained in this source map "
-            "and are not counted in clinical outcome-class tallies unless listed below."
         )
     return notes
 

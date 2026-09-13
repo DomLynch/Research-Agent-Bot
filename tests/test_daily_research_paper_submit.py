@@ -2242,8 +2242,8 @@ def test_source_projection_carries_full_results_after_abstract_summary(tmp_path:
         "abstract": abstract, "results": results,
     }}))
     receipt = {"source_result_excerpts": [abstract, first, second]}
-    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt) == results
-    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt, (first,)) == results
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt) == abstract + "\n\n" + results
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt, (first,)) == abstract + "\n\n" + results
     assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt, (abstract,)) == abstract
 
 
@@ -5192,7 +5192,7 @@ def test_uncertain_delivery_reposts_identical_frozen_package_then_reconciles_409
         monkeypatch.setattr(daily.subprocess, "run", fake_qa)
 
     def fake_urlopen(req: Request, timeout: int) -> None:
-        assert timeout == 60
+        assert timeout == 180
         assert isinstance(req.data, bytes)
         requests.append(req.data)
         if len(requests) == 1:

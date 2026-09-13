@@ -3070,7 +3070,7 @@ def test_source_outcome_class_map_repairs_findings_map_accounting_ask(tmp_path: 
     assert "Role-accounting note: retained translational or mechanistic-with-human-correlational evidence" in fixed
     assert "Tension-accounting note: disagreement counts are claim-level" in fixed
     assert "across cognition, menopause, acute-care" in fixed
-    assert "3 reviewer-named sources are not retained in this source map" in fixed
+    assert "reviewer-named sources are not retained" not in fixed
     assert "source(s)" not in fixed
     assert "Gao 2026" not in fixed
     assert "Qader 2025" not in fixed

@@ -7,6 +7,22 @@ from agent.revision_quality import _stat_supported, manifest_row_finding
 from agent.publication_evidence import exact_source_quote
 
 
+@pytest.mark.parametrize("endpoint", ["Memory", "Strength", "Blood pressure"])
+def test_findings_map_keeps_other_arm_results_without_recognized_statistic(endpoint):
+    from scripts.quant_claim_extract import source_result_excerpts
+
+    target = f"{endpoint} improved by 1.43 more in the treatment group than control."
+    qualification = "The difference was only observed at the first follow-up."
+    other = f"{endpoint} improved by 5.15 in the alternative group compared with control (p = 0.065)."
+    context = " ".join((target, qualification, other))
+    record = {"sections": {"abstract": context}}
+    assert source_result_excerpts(record) == (other,)
+    excerpts = source_result_excerpts(record, require_numeric=False, complete_context=True)
+    assert excerpts == (context,)
+    assert manifest_row_finding({"verified_source_sections": record["sections"], "source_result_excerpts": excerpts}) == context
+    assert exact_source_quote(context, record["sections"]["abstract"])
+
+
 @pytest.mark.parametrize("endpoint", ["Strength", "Blood pressure", "Memory"])
 def test_adjacent_result_sentences_preserve_context_and_typesetting(endpoint):
     raw = f"{endpoint} was assessed before and after treatment. <jats:italic>Results : </jats:italic> Adherence was 90.2 ± 14.5% and treatment improved the endpoint versus control (<jats:italic>p</jats:italic> < .05)."
@@ -87,4 +103,5 @@ def test_direction_count_includes_every_named_source_in_its_roster():
              "effect_direction": "unclear" if i < 4 else "positive"} for i in range(5)]
     note = _manifest_direction_heterogeneity_note(rows)
     assert "unclear=4" in note
+    assert "direction=" not in note
     assert all(row["citation_token"] in note for row in rows)

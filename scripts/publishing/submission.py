@@ -1808,6 +1808,11 @@ def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str
         passages = [_publication_evidence._record_text(sections.get(name)) for name in ("abstract", "results", "conclusion", "discussion", "methods")]
         passage = max(passages, key=lambda text: tuple(sum(bool(_publication_evidence.exact_source_quote(quote, text)) for quote in group) for group in (quotes, findings)))
         if any(_publication_evidence.exact_source_quote(quote, passage) for quote in (*quotes, *findings)):
+            from quant_claim_extract import source_result_excerpts
+            context = next(iter(source_result_excerpts(data, require_numeric=False, complete_context=True)), "")
+            if context and not _publication_evidence.exact_source_quote(context, passage):
+                needed = next((text for text in passages if _publication_evidence.exact_source_quote(context, text)), "")
+                return "\n\n".join(" ".join(text.split()) for text in (needed, passage) if text)
             return " ".join(passage.split())
     # Keep a contiguous passage; background citations are not this study's findings.
     for name in ("abstract", "results", "conclusion", "discussion", "methods"):

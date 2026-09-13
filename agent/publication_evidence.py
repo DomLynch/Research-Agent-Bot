@@ -83,14 +83,12 @@ def source_proof_fields(
     sections = record.get("sections", {}) if isinstance(record, dict) else {}
     if not isinstance(sections, dict):
         return {}
-    section = next((name for name in sorted(sections, key=lambda name: name.lower() != "abstract")
-                    if exact_source_quote(excerpt, _record_text(sections[name]))), None)
-    if section is None:
+    parts = [excerpt] if any(exact_source_quote(excerpt, _record_text(value)) for value in sections.values()) else [_normalized_text(part) for part in str(row.get("excerpt") or "").split("\n\n")]
+    matched = [next((name for name in sorted(sections, key=lambda name: name.lower() != "abstract") if exact_source_quote(part, _record_text(sections[name]))), "") for part in parts]
+    if not all(matched) or len(parts) > 1 and not all(_complete_record_field(sections[name], part) for name, part in zip(matched, parts)):
         return {}
     pmid = _normalized_text(row.get("pmid") or (row.get("id") if row.get("source_type") == "pubmed" else ""))
-    origin = "full_text"
-    if section.lower() == "abstract":
-        origin = "pubmed" if re.fullmatch(r"[1-9]\d*", pmid) else "publisher"
+    origin = ("pubmed" if re.fullmatch(r"[1-9]\d*", pmid) else "publisher") if len(matched) == 1 and matched[0].lower() == "abstract" else "full_text"
     pmcid = _normalized_text(row.get("pmcid")).upper()
     locator = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if origin == "pubmed" else ""
     if not locator and re.fullmatch(r"PMC[1-9]\d*", pmcid):
@@ -119,11 +117,11 @@ def source_proof_fields(
         "source_record_locator": locator,
         # Local preparation ledger only; build_payload strips these before submission.
         "source_snapshot_locator": f"revision-snapshot:{source_run}:{topic}:{receipt_id}",
-        "source_passage_locator": f"sections.{section}",
+        "source_passage_locator": ";".join(f"sections.{name}" for name in matched),
         "source_record_hash": "sha256:" + hashlib.sha256(raw).hexdigest(),
         "source_content_hash": _sha256_text(excerpt),
         "source_identity_hash": identity_hash,
-        "excerpt_is_complete_field": _complete_record_field(record, excerpt),
+        "excerpt_is_complete_field": all(_complete_record_field(record, part) for part in parts),
         "quote_verified": bool(quote and exact_source_quote(quote, excerpt)),
     }
 

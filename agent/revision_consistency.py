@@ -362,7 +362,7 @@ def _endpoint_tension_lines(rows: Sequence[dict[str, Any]], limit: int = 8) -> l
         line = (
             f"- Severity {tension.severity} {tension.kind.replace('_', ' ')}: "
             f"{left_label} [bundle:{left_i}] vs {right_label} [bundle:{right_i}]; "
-            f"{left_direction} versus {right_direction} on {tension.endpoint} - endpoint-coded conflict."
+            f"{left_direction} versus {right_direction} on {tension.endpoint} - reported direction contrast; intervention and comparator alignment required."
         )
         candidates.append((-tension.severity, f"{tension.endpoint}:{left_label}:{right_label}".casefold(), line))
     return [line for _rank, _key, line in sorted(candidates)[:limit]]
@@ -571,11 +571,12 @@ def proof_is_stated(
 def repair(
     paper_md: str, rows: Sequence[dict[str, Any]], feedback: str,
 ) -> tuple[str, list[str]]:
-    lower, patched, details = _normalise(feedback), paper_md, []
+    lower = _normalise(feedback)
+    patched, changed = _repair_endpoint_tensions(paper_md, rows)
+    details = ["endpoint_tension_recompute"] if changed else []
     for predicate, repairer, detail in (
         (_asks_tension_series, lambda text: _repair_tension_series(text), "tension_series"),
         (_asks_claim_total, lambda text: _repair_claim_totals(text, rows), "claim_total_reconciliation"),
-        (_asks_endpoint_tensions, lambda text: _repair_endpoint_tensions(text, rows), "endpoint_tension_recompute"),
         (_asks_framework_cleanup, lambda text: _repair_framework(text), "framework_cleanup"),
         (_asks_substantive_background, lambda text: _repair_background(text, rows), "substantive_background"),
         (_asks_exclusion_directness_reconciliation,

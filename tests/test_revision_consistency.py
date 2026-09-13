@@ -693,6 +693,7 @@ def test_endpoint_tensions_use_canonical_severity_and_exact_proof() -> None:
         {
             "citation_token": f"Source {year}",
             "outcome_class": "cardiometabolic",
+            "directness": "direct",
             "endpoint_directions": {"body mass index": direction},
         }
         for year, direction in ((2024, "positive"), (2025, "negative"))
