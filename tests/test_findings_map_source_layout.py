@@ -9,7 +9,7 @@ from agent.publication_evidence import exact_source_quote
 
 @pytest.mark.parametrize("endpoint", ["Memory", "Strength", "Blood pressure"])
 def test_findings_map_keeps_other_arm_results_without_recognized_statistic(endpoint):
-    from scripts.quant_claim_extract import source_result_excerpts
+    from quant_claim_extract import source_result_excerpts
 
     target = f"{endpoint} improved by 1.43 more in the treatment group than control."
     qualification = "The difference was only observed at the first follow-up."
@@ -105,3 +105,18 @@ def test_direction_count_includes_every_named_source_in_its_roster():
     assert "unclear=4" in note
     assert "direction=" not in note
     assert all(row["citation_token"] in note for row in rows)
+
+
+def test_direction_note_uses_the_same_domain_as_the_displayed_findings():
+    from journal_finalizer import _manifest_direction_heterogeneity_note
+    from agent.revision_quality import findings_map_row
+
+    rows = [
+        {"citation_token": "Training 2025", "outcome_class": "muscle_function", "directness": "direct", "effect_direction": "positive"},
+        {"citation_token": "Adjunct 2025", "source_title": "Resistance training with supplementation increases lean mass",
+         "outcome_class": "muscle_function", "directness": "indirect", "effect_direction": "mixed"},
+    ]
+    assert [findings_map_row(row)[0] for row in rows] == ["Muscle Function", "Muscle Function"]
+    assert _manifest_direction_heterogeneity_note(rows) == (
+        "Direction heterogeneity note: Muscle Function: mixed=1 (Adjunct 2025); positive=1 (Training 2025)."
+    )

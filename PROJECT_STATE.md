@@ -1,5 +1,28 @@
 # PROJECT_STATE.md
 
+## Comparable Findings and Delivery Recovery - 2026-09-13
+Core received parent-linked revision `d85c342d-f646-4012-a89b-7ee4c6d04413`
+and requested two scientific corrections: an unmatched-intervention contrast
+and a Findings Map row displaying the alternative arm's result. The earlier
+admission/coverage requests did not recur. This is REVISE, not publication.
+Normal identical retry reconciled Core's 409 to that submission ID and cleared
+the uncertain-delivery ledger. Submission acknowledgement timeout is 180 seconds;
+an observed response previously took 96 seconds, exceeding the old 60 seconds.
+
+The shared matrix excludes indirect-only pairs from target-intervention
+direction conflicts. Reported direct-source contrasts require comparator review.
+Findings retain contiguous own-result context without requiring every sentence
+to contain a recognised statistic. Export preserves complete source fields when
+both abstract context and fuller Results are needed; each field must trace to
+the frozen record. Heterogeneity totals now use the displayed table's domains.
+Removed unsupported reviewer-name absence boilerplate. Gates and budgets remain
+unchanged. Frozen-run replay retains 19/19 source proofs and all 19 admitted rows;
+new generated contribution text no longer asserts the Chen/Denben conflict.
+An old manuscript's already-written headline still needs normal revision;
+code deployment, fresh manuscript review and Core acceptance remain separate.
+Final validation: 5,349 tests passed, 2 xpassed; quality, mypy (183 source files),
+both import boundaries and unchanged LOC/complexity budgets pass.
+
 ## Author-Record Quantities - 2026-09-13
 Quantitative preflight now recognizes uncited non-empirical Methods statements
 with a current, exact author-context review. It no longer requires the
