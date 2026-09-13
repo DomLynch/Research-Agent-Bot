@@ -566,7 +566,7 @@ def test_all_section_briefs_and_retries_share_evidence_boundaries() -> None:
         assert "original JSON schema" in backstop
         assert "Make each paragraph 8-12 sentences" not in backstop
     for prompt in (prompts["abstract"], ABSTRACT_SOURCE_RETRY):
-        assert "200-220" in prompt and "300" in prompt
+        assert "220-260" in prompt and "300" in prompt
         assert "300-400" not in prompt and "250-350" not in prompt
     for name in ("cross_domain_synthesis", "limitations_full"):
         retry = paper_writer.cross_domain_retry_prompt("base", name, ["novel_numeric:'50'"])
@@ -597,7 +597,7 @@ def test_abstract_retries_over_ceiling_instead_of_returning_it(monkeypatch) -> N
     ))
     assert paper_writer._section_word_count(section) == 260
     assert len(calls) == 2 and "LENGTH RETRY REQUIRED" in calls[1]
-    assert "200-300 words" in calls[1]
+    assert "220-300 words" in calls[1]
 
 
 @pytest.mark.parametrize("declared_question", ["", "How do direct and indirect vascular findings differ?"])
@@ -884,7 +884,7 @@ def test_section_word_floors_protect_analytical_depth() -> None:
     Introduction/Background floors stay (Fix #27 was right for
     those — they're not analytical sections)."""
     from agent.paper_writer import SECTION_WORD_FLOORS
-    assert SECTION_WORD_FLOORS["abstract"] <= 250
+    assert 220 <= SECTION_WORD_FLOORS["abstract"] <= 260
     assert SECTION_WORD_FLOORS["introduction"] <= 1000
     assert SECTION_WORD_FLOORS["background"] <= 800
     assert SECTION_WORD_FLOORS["results"] <= 1700
@@ -892,7 +892,7 @@ def test_section_word_floors_protect_analytical_depth() -> None:
     assert SECTION_WORD_FLOORS["cross_domain_synthesis"] >= 850
     assert SECTION_WORD_FLOORS["discussion"] >= 900
     assert SECTION_WORD_FLOORS["limitations_full"] <= 500
-    assert SECTION_WORD_FLOORS["conclusion"] <= 300
+    assert 400 <= SECTION_WORD_FLOORS["conclusion"] <= 500
 
 
 def test_section_prompts_use_explicit_targets() -> None:
@@ -979,10 +979,9 @@ def test_conclusion_prompt_lists_required_content_item_5() -> None:
 
 
 def test_conclusion_prompt_word_target_accommodates_extra_clause() -> None:
-    """Adding the clinical-practice clause bumped target from
-    250-350 → 280-380 words. The prompt's word target should reflect this."""
+    """The conclusion must retain substantive room for downstream repairs."""
     from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
-    assert "280-380" in CONCLUSION_SYSTEM_PROMPT or "280" in CONCLUSION_SYSTEM_PROMPT
+    assert "400-500" in CONCLUSION_SYSTEM_PROMPT
 
 
 def test_conclusion_prompt_retains_overclaim_guard() -> None:

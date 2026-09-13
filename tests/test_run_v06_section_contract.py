@@ -1232,7 +1232,7 @@ def test_final_section_minimum_keeps_writer_headroom(title, minimum, old_minimum
     from agent.paper_writer import SECTION_WORD_FLOORS
 
     assert SECTION_WORD_FLOORS["results"] == 1500
-    assert SECTION_WORD_FLOORS["conclusion"] == 250
+    assert SECTION_WORD_FLOORS["conclusion"] == 400
     for count in (177, minimum - 1, minimum):
         paper = _full_evidence_owned_paper().replace(
             f"## {title}\n\n" + _words(old_minimum),

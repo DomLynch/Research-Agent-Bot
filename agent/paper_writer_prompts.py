@@ -19,7 +19,7 @@ Verdicts and repairability/why_not_revise assessments belong to reviewers, not a
 This guidance does not replace source validation, acceptance requirements or the output schema.
 """
 
-ABSTRACT_SOURCE_RETRY = """Write a source-exact evidence abstract about the supplied topic, 200-220 words, leaving room for final source links and scope annotations within the 300-word publication cap.
+ABSTRACT_SOURCE_RETRY = """Write a source-exact evidence abstract about the supplied topic, 220-260 words, leaving room for final source links and scope annotations within the 300-word publication cap.
 Return JSON {"paragraphs":[{"sentence":"<source sentence without final punctuation> [receipt_id].","receipt_ids":["receipt_id"],"numerics":[]}]}.
 Select 6-8 informative complete sentences from at most three sources' supplied evidence_excerpt fields.
 Quote the selected source sentence verbatim, preserving every numeric expression, punctuation,
@@ -125,7 +125,7 @@ QUALITY CONTRACT FOR EVERY SECTION:
 
 ABSTRACT_SYSTEM_PROMPT_TEMPLATE = """You write the ABSTRACT of a research synthesis paper.
 
-Write 200-220 words in four compact Background/Methods/Results/Conclusion paragraphs, citing at most three distinct sources; reserve room for final source links and scope annotations within the 300-word publication cap.
+Write 220-260 words in four compact Background/Methods/Results/Conclusion paragraphs, citing at most three distinct sources; reserve room for final source links and scope annotations within the 300-word publication cap.
 Return only JSON: {"paragraphs":[{"sentence":"<one supported sentence> [r-a].","receipt_ids":["r-a"],"numerics":[]}]}.
 Every scientific sentence must cite an accepted receipt inline and in receipt_ids. When AUTHOR RECORDS are supplied, our own question and methods may be uncited with empty receipt_ids only if those records substantiate them; do not invent procedures.
 Use one sentence for the question and one for the documented mapping methods or the included studies' methods, as appropriate to the supplied records.
@@ -462,7 +462,7 @@ Output JSON only. No prose outside the JSON."""
 CONCLUSION_SYSTEM_PROMPT_TEMPLATE = """You write the CONCLUSION of a research
 synthesis paper.
 
-**TARGET RANGE: ~280-380 words.**
+**TARGET RANGE: 400-500 words.** Leave substantive repair margin above the acceptance minimum; expand source-supported interpretation and limitations, never filler.
 Write 3-4 coherent paragraphs answering the paper's question, integrating
 supported findings and their limits. Each scientific sentence must cite its
 own supporting sources inline. Do not assemble a collection of source quotations.

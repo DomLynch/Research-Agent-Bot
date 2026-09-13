@@ -1,6 +1,8 @@
 # PROJECT_STATE.md
 
 ## Final Source-Row Review - 2026-09-13
+Shared writing targets are 220–260 words for the Abstract and 400–500 for
+the Conclusion, leaving repair margin while acceptance gates remain unchanged.
 Findings Map rows now enter the existing source reviewer as complete displayed
 rows, including direction, directness and finding. Unapproved rows block Core
 preflight. Review runs again after the final repair pass, then the exact package

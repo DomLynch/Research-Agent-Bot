@@ -57,14 +57,14 @@ from agent.topic_display import humanize_topic, intervention_label
 
 # Enforce section targets with bounded retries; final gates remain mandatory.
 SECTION_WORD_FLOORS: Mapping[str, int] = {
-    "abstract": 200,            # was 250
+    "abstract": 220,            # repair margin above the 150-word surface minimum
     "introduction": 800,        # was 1200
     "background": 700,          # was 1000
     "results": 1500,            # was 2000 (Tables 2 + 5 carry numerics)
     "cross_domain_synthesis": 850,   # Q12 + journal-surface margin
     "discussion": 900,          # was 1100 → 900 (matches Q11 floor)
     "limitations_full": 450,    # was 600
-    "conclusion": 250,          # was 300
+    "conclusion": 400,          # repair margin above the downstream minimum
 }
 
 # Total full-paper floor — paper_writer's render_full_paper records
