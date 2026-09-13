@@ -1,5 +1,15 @@
 # PROJECT_STATE.md
 
+## Dated Assessment Preservation - 2026-09-13
+Both prose-deduplication passes now preserve separately dated source-admission
+records and their associated count tables. A phase trace reproduced the latest
+assessment disappearing after Methods rendering; the final package check then
+reported source_admission_methods_mismatch. The full finalizer now preserves the
+complete recorded history and is stable on a second pass. Gates remain unchanged.
+Validation: 657 focused checks, 64 isolated VPS checks and 5,361 full-suite tests
+pass (2 xpassed); quality and mypy pass. Scientific revision coverage remains a
+separate prerequisite for linked submission; publication is not yet confirmed.
+
 ## Source Sentence Spacing - 2026-09-13
 The 13:49Z linked revision cleared the abstract floor but stopped before submission:
 Core preflight inserted one missing space in a source finding, invalidating the

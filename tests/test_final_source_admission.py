@@ -112,6 +112,7 @@ def test_admission_methods_and_source_membership_are_not_inferred(corpus, tmp_pa
 
 def test_dated_admission_history_survives_prose_deduplication(corpus, tmp_path):
     from review_noise_control import _dedupe_repeated_blocks
+    from journal_finalizer import _phase_m_strip_surface_duplicate_paragraphs
     rows, log, original = deepcopy(corpus)
     previous = render_admission(log)
     for day in ("2026-09-12", "2026-09-13"):
@@ -123,6 +124,7 @@ def test_dated_admission_history_survives_prose_deduplication(corpus, tmp_path):
     assert revised == paper
     assert removed == 0
     assert _dedupe_repeated_blocks(revised) == (revised, 0)
+    assert _phase_m_strip_surface_duplicate_paragraphs(revised) == (revised, [])
     save_run(tmp_path, (rows, log, paper))
     assert source_admission.check(tmp_path, revised) == "eligible"
     assert source_admission.check(tmp_path, revised.replace("2026-09-13", "2026-09-14")) == "source_admission_methods_mismatch"

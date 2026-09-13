@@ -403,7 +403,7 @@ def _phase_m_strip_surface_duplicate_paragraphs(
         is_duplicate = tokens and any(
             len(tokens & prior) / max(1, len(tokens | prior)) >= 0.9 for prior in seen
         )
-        if is_duplicate and not (protect_intro_first or stripped.startswith("Outcome-class coded-direction reconciliation:")):
+        if is_duplicate and not (protect_intro_first or stripped.startswith(("Outcome-class coded-direction reconciliation:", "Selection assessment ("))):
             n += 1
             continue
         if tokens:
