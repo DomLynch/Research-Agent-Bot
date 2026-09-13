@@ -10,6 +10,9 @@ source locking and submission gates remain active.
 Focused cycle checks: 470 passed, 2 xpassed, including same-title cross-topic
 collisions and absent requested revisions. Full suite: 5,319 passed, 2 xpassed;
 quality 347 passed, mypy 183 files, unchanged complexity and LOC limits.
+The VPS cycle suite passes 470 tests in an isolated checkout. An earlier run
+in the live checkout exposed tests reading production revision history through
+an import-bound default; the offline fixture now isolates that default too.
 The initial unfiltered service invocation selected another frozen revision and
 was stopped before submission. This is not proof of a fresh duplicate or of a
 completed resistance-training revision.

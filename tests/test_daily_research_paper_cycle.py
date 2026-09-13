@@ -441,7 +441,9 @@ def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path:
 
 
 @pytest.fixture(autouse=True)
-def _offline_environment(monkeypatch):
+def _offline_environment(monkeypatch, tmp_path):
+    # The keyword default is bound at import; patching RUNS alone leaves live history reachable.
+    monkeypatch.setattr(cycle._remote_revision_requests, "__kwdefaults__", {"runs_root": tmp_path / "runs"})
     monkeypatch.setenv("RESEARKA_REVIEWS_URL", "https://reviews.test")
 
     def urlopen(request, **_kwargs):
