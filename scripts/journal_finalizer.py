@@ -1769,11 +1769,6 @@ def _phase_d_evidence_honesty_guard(
             "The retained evidence has no direct interventional hard-endpoint evidence; indirect, "
             "review-level, adjacent, or mechanistic sources are used only to bound interpretation."
         )
-    elif direct < total:
-        pieces.append(
-            "A subset of the retained sources is indirect, review-level, adjacent, or "
-            "mechanistic and is used only to bound interpretation."
-        )
     if not pieces:
         return patched, ([FinalizerLogEntry(
             phase="D_evidence_honesty_guard",

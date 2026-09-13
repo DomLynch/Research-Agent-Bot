@@ -1,5 +1,15 @@
 # PROJECT_STATE.md
 
+## Mixed-Evidence Scope Rendering - 2026-09-13
+The finalizer no longer inserts a blanket review-level/causal/policy disclaimer
+merely because direct and indirect studies coexist. The Findings Map retains
+actual classifications and scientific review still checks each claim. This
+removes the stock text that submission preparation stripped and finalization
+reinserted. The exact latest-run replay is idempotent with complete source
+accounting and a passing surface check. Three-topic regression and existing
+zero-direct/null guard tests pass: 673 focused; full suite 5,339 passed,
+2 xpassed. Quality and mypy pass. Core review remains required.
+
 ## Quantitative Source Handoff - 2026-09-13
 Source projection ranks recorded sections by QEI quote coverage, then complete
 receipt findings, so an early abstract summary cannot hide fuller result passages.

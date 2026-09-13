@@ -1569,6 +1569,18 @@ def test_evidence_boundary_note_is_revision_scoped(tmp_path: Path) -> None:
     assert logs == []
 
 
+@pytest.mark.parametrize("topic", ["resistance_training", "hpv", "metformin"])
+def test_mixed_directness_does_not_add_unsupported_stock_scope(tmp_path: Path, topic: str) -> None:
+    paper = "## Abstract\n\nThe included studies have different comparators.\n\n## Conclusion\n\nInterpretation remains specific to the reported endpoints.\n"
+    (tmp_path / "manifest.json").write_text(json.dumps({"topic": topic, "receipts": [
+        {"directness": "direct", "effect_direction": "positive"},
+        {"directness": "indirect", "effect_direction": "mixed"},
+    ]}))
+    fixed, _ = journal_finalizer._phase_d_evidence_honesty_guard(paper, tmp_path)
+    assert fixed == paper
+    assert "review-level" not in fixed
+
+
 def test_evidence_honesty_guard_bounds_null_and_non_direct_manifest(tmp_path: Path) -> None:
     import revision_coverage
 
