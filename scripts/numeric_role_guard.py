@@ -412,9 +412,9 @@ _CITATION_TOKEN_RE = re.compile(
 # every standalone number plus simple unit-bound numerics. Conservative
 # (we'd rather miss a number than false-positive an honest sentence).
 _DRIFT_NUMERIC_RE = re.compile(
-    r"(?<![\w.])(\d+\.\d+|\.\d+|\d+)\s*"
-    r"(?:%|mg|g|kg|mL|L|m/s|months?|years?|weeks?|days?|"
-    r"mmHg|bpm|U/L)?",
+    r"(?<![\w.])(\d+\.\d+|\.\d+|\d+)(?![\d.])"
+    r"(?=\b|(?:%|mg|g|kg|mL|L|m/s|months?|years?|weeks?|days?|"
+    r"mmHg|bpm|U/L)\b)",
 )
 _NON_CLAIM_NUMERIC_RE = re.compile(
     r"\[bundle:\d+\]|\[exact source:[^\]]+\]|https?://\S+|"

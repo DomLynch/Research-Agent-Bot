@@ -24,6 +24,15 @@ from numeric_role_guard import (  # type: ignore[import-not-found]  # noqa: E402
 # ---------- arithmetic violations -----------------------------------
 
 
+def test_source_drift_does_not_split_identifiers_but_still_checks_quantities():
+    from numeric_role_guard import _check_source_context_drift
+    source = {"Smith 2024": {"7": {"outcome"}}}
+    for identifier in ("20E", "30sSTST", "6MWT", "5HT2A"):
+        assert _check_source_context_drift(f"The trial assessed {identifier} [Smith 2024].", source) is None
+    for quantity in ("20", "20mg", "20%", "20 mmol/L", "20.5kg", ".20mg"):
+        assert _check_source_context_drift(f"The trial reported {quantity} [Smith 2024].", source) is not None
+
+
 def test_source_duration_is_not_dose_and_cannot_be_used_as_outcome(tmp_path):
     import json
     claims = [{"claim_type": "unit_value", "raw_text": "12 weeks", "numeric_values": [12],

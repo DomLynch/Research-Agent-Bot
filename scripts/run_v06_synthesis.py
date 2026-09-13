@@ -3650,7 +3650,7 @@ async def _run_post_paper_pipeline(
         audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
     # Submission preparation is a visible revision, before the reviewer sees it.
-    from agent.prose_grounding import prepare_reviewed_manuscript
+    from agent.prose_grounding import prepare_reviewed_manuscript, review_manuscript
     await prepare_reviewed_manuscript(paper_path.parent)
     paper_md = paper_path.read_text()
     audit_report = _write_paper_audit(paper_path, paper_md, _audit)
@@ -3850,6 +3850,8 @@ async def _run_post_paper_pipeline(
         citation_outcome_map=_citation_outcome_map, sections=sections, methods_md=methods_md,
         reviewer_counts=(grok_unresolved_p1, n_flagged, n_stripped),
     )
+    if getattr(gate_artifacts.get("gate"), "passed", False):
+        await review_manuscript(out_dir)
     unified = SimpleNamespace(**json.loads(paper_path.with_suffix(".final_verdict.json").read_text()))
     blocker_summary = _pre_submit_blocker_summary(gate_artifacts)
     print(f"[pipeline] Stage 5c — pre-submit quality gate: {blocker_summary or 'passed'}", file=sys.stderr)

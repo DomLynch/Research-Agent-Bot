@@ -1013,6 +1013,39 @@ def test_stage_5_runs_finalizer_before_surface_gate(tmp_path, monkeypatch) -> No
     assert events == ["finalize", "repair", "surface"]
 
 
+def test_final_source_review_receives_post_repair_manuscript(tmp_path, monkeypatch) -> None:
+    import asyncio
+    from types import SimpleNamespace
+    from agent import prose_grounding
+
+    class ReviewedFinal(Exception):
+        pass
+
+    path = tmp_path / "full_paper.md"
+    path.write_text("## Abstract\n\nInitial manuscript.\n")
+    events = []
+    async def prepare(_run):
+        events.append("prepare")
+    async def reviewer(*args, **kwargs):
+        return [], "", "offline-reviewer", 0.0
+    def final_gates(**kwargs):
+        events.append("final_repair")
+        path.write_text("## Abstract\n\nFinal repaired manuscript and rendered source rows.\n")
+        return path.read_text(), {}, {"gate": SimpleNamespace(passed=True)}
+    async def source_review(run):
+        events.append("source_review")
+        assert run == tmp_path
+        assert "Final repaired manuscript and rendered source rows." in (run / "full_paper.md").read_text()
+        raise ReviewedFinal
+    monkeypatch.setattr(prose_grounding, "prepare_reviewed_manuscript", prepare)
+    monkeypatch.setattr(prose_grounding, "review_manuscript", source_review)
+    monkeypatch.setattr(orch._final_reviewer, "review_paper", reviewer)
+    monkeypatch.setattr(orch, "_write_stage5c_quality_gates", final_gates)
+    with pytest.raises(ReviewedFinal):
+        asyncio.run(orch._run_post_paper_pipeline(paper_path=path, manifest={}, out_dir=tmp_path, quality_bundle=object()))
+    assert events == ["prepare", "final_repair", "source_review"]
+
+
 def test_restore_required_section_body_can_refuse_dirty_typed_restore() -> None:
     paper = "## Results\n\nToo short.\n"
     sections = (

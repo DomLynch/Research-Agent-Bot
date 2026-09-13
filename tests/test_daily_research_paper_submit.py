@@ -37,6 +37,13 @@ def _disable_live_pubmed_fetch(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) 
     monkeypatch.setattr(daily, "ROOT", tmp_path)
     monkeypatch.setattr(daily, "_europe_pmc_identifiers", lambda _title: {})
     monkeypatch.setattr(daily, "_retraction_gate_status", lambda _run: ("eligible", []))
+    # These transport/structure fixtures use synthetic studies, not scientific
+    # evidence. Supply their row-review decision at the reviewer boundary;
+    # test_prose_grounding exercises real approval binding and negative rows.
+    approved = daily._prose_approved
+    monkeypatch.setattr(daily, "_prose_approved", lambda claim, bundle, indexes:
+        claim.startswith("Findings Map | ")
+        or approved(claim, bundle, indexes))
 
 
 def _write_json(path: Path, payload: Any) -> None:
