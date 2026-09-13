@@ -1,5 +1,14 @@
 # PROJECT_STATE.md
 
+## Revision Parent Handoff - 2026-09-13
+The cycle now persists its complete revision request before synthesis. This
+fixes the ordering regression where final payload freezing encountered the
+writer's feedback-only sidecar before the parent was attached. The writer keeps
+the full request unchanged. Three-topic checks invoke that real helper and
+serialize the parent before synthesis returns; focused cycle: 481 passed,
+2 xpassed; full suite 5,330 passed, 2 xpassed, quality and mypy pass.
+Publication still requires all normal outgoing checks and Core review.
+
 ## Scoped Revision Discovery - 2026-09-13
 Explicit revision topics now restrict direct decision polling before its time
 budget is consumed by unrelated submission history. Whole-history reconciliation

@@ -4254,7 +4254,7 @@ def test_revise_timeout_remains_retryable_until_round_cap(tmp_path: Path, monkey
     })
 
     def timeout_with_checkpoint(_topic_name: str, out_dir: Path, **_kwargs: Any) -> int:
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text(f"# {title}\n\nPartial revision.\n", encoding="utf-8")
         _write_json(out_dir / "manifest.json", json.loads((source / "manifest.json").read_text()))
         _write_json(out_dir / "full_paper.audit.json", {"status": "pass"})
@@ -5937,7 +5937,7 @@ def test_cycle_polls_revision_after_submit_and_resubmits(tmp_path: Path, monkeyp
         assert topic == "ace_inhibitors_aging"
         feedback_seen.append(revision_feedback)
         run_names.append(out_dir.name)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text(f"# {title}\n\n## Abstract\n\nA.", encoding="utf-8")
         return 0
 
@@ -6026,7 +6026,7 @@ def test_cycle_prioritizes_delayed_researka_revision_request(tmp_path: Path, mon
     ) -> int:
         synthesis_calls.append(topic)
         feedback_seen.append(revision_feedback)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text(
             "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.",
             encoding="utf-8",
@@ -6094,7 +6094,7 @@ def _coverage_fake_synthesis(feedback_seen: list[str | None], paper_md: str | No
     def fake(topic: str, out_dir: Path, *, dry_run: bool, timeout: int | None = None,
              revision_feedback: str | None = None, review_type_override: str | None = None, revision_source_run: Path | None = None) -> int:
         feedback_seen.append(revision_feedback)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text(
             paper_md or "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.", encoding="utf-8")
         return 0
@@ -6431,7 +6431,7 @@ def test_revise_restores_source_manifest_files_from_quarantine(tmp_path: Path, m
         revision_source_run: Path | None = None,
     ) -> int:
         calls.append(topic)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text("# Research Synthesis: Aspirin Geroprotection\n", encoding="utf-8")
         return 0
 
@@ -6472,7 +6472,7 @@ def test_revise_restores_single_missing_source_receipt_above_floor(tmp_path: Pat
         revision_source_run: Path | None = None,
     ) -> int:
         source_runs.append(revision_source_run)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text("# Research Synthesis: Aspirin\n", encoding="utf-8")
         return 0
 
@@ -6631,7 +6631,7 @@ def test_revise_retry_after_synthesis_failure_keeps_source_manifest(tmp_path: Pa
         calls += 1
         if calls == 1:
             return 1
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text(
             "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.",
             encoding="utf-8",
@@ -6940,7 +6940,7 @@ def test_coverage_window_records_one_round_if_budget_expires_between_rewrites(
     ) -> int:
         nonlocal calls
         calls += 1
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text("# revised\n", encoding="utf-8")
         now[0] = 500.0 if calls == 1 else 2500.0
         return 0
@@ -7066,7 +7066,7 @@ def test_revise_lane_rotates_to_next_pending_revision_after_coverage_block(tmp_p
         revision_source_run: Path | None = None,
     ) -> int:
         seen_topics.append(topic)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         title = dict(topics)[topic]
         (out_dir / "full_paper.md").write_text(f"# {title}\n\n## Abstract\n\nA.", encoding="utf-8")
         return 0
@@ -7728,7 +7728,7 @@ def test_submission_ready_final_status_makes_duplicate_overclaim_advisory(tmp_pa
         review_type_override: str | None = None,
         revision_source_run: Path | None = None,
     ) -> int:
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "full_paper.md").write_text(
             "# Research Synthesis: Aspirin Geroprotection — full paper\n\n## Abstract\n\nA.",
             encoding="utf-8",
@@ -13305,7 +13305,7 @@ def test_revise_source_precision_repair_clears_recent_failure_cooldown(tmp_path:
             assert lock.errors == ()
             evidence_modes.append(lock.mode)
         rendered_runs.append(out_dir.name)
-        out_dir.mkdir(parents=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         _write_json(out_dir / "manifest.json", {
             "topic": selected,
             "n_non_orthogonal_tensions": 5,
@@ -13756,4 +13756,43 @@ def test_revision_discovery_failure_is_not_reported_as_empty_queue(tmp_path, mon
         revision_loader=lambda: ([], "decision_poll_deferred"), submit_cycle=lambda **_: pytest.fail("must not submit"))
     assert ledger["status"] == "revision_discovery_incomplete"
     assert ledger["remote_revisions"]["error"] == "decision_poll_deferred"
+    assert ledger["submitted"] == 0
+
+
+@pytest.mark.parametrize("topic", ["resistance_training", "metformin", "hpv"])
+def test_revision_parent_reaches_writer_and_payload_before_synthesis_returns(tmp_path, monkeypatch, topic):
+    import run_v06_synthesis as writer
+    _topic(tmp_path, topic, target_journal=True)
+    source = _prior_run(tmp_path, topic, receipts=19, tensions=20, level=5)
+    title = "Review of " + topic
+    (source / "full_paper.md").write_text("# " + title + "\n\nEvidence.")
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {"topic": topic, "run": source.name, "submission_id": "original-parent", "title": title}])
+    request = {"topic": topic, "title": title, "submissionId": "original-parent", "artifactId": "review-artifact",
+               "resubmission": {"allowed": True, "parent_submission_id": "original-parent"}, "feedback": "Clarify the scientific interpretation."}
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    monkeypatch.setattr(cycle, "_repair_existing_run", lambda *_a, **_k: (False, "not_deterministic"))
+    checked = []
+
+    def synthesize(selected, out_dir, **kwargs):
+        before = json.loads((out_dir / "researka_revision_request.json").read_text())
+        assert before["submissionId"] == "original-parent"
+        monkeypatch.setenv("RESEARKA_REVISION_FEEDBACK", kwargs["revision_feedback"])
+        writer._write_revision_feedback_sidecar(out_dir)
+        assert json.loads((out_dir / "researka_revision_request.json").read_text()) == before
+        _write_json(out_dir / "manifest.json", {"topic": selected, "receipts": []})
+        (out_dir / "full_paper.md").write_text("# " + title + "\n\n## Abstract\n\nEvidence.")
+        payload = cycle.submit_bridge.build_payload(out_dir, enrich_sources=False)
+        assert payload["parent_submission_id"] == "original-parent"
+        checked.append(selected)
+        return 7  # No scientific acceptance or submission is simulated by this handoff check.
+
+    monkeypatch.setattr(cycle, "_run_synthesis", synthesize)
+    ledger = cycle.run_cycle(runs_root=tmp_path / "runs", date="2026-09-13", mode="revise", topic=topic,
+        run_synthesis=True, submit=True, remote_loader=lambda: (set(), None), revision_loader=lambda: ([request], None),
+        submit_cycle=lambda **_: pytest.fail("handoff-only check must not submit"), max_attempts=1, max_revise_attempts=1)
+    assert checked == [topic]
     assert ledger["submitted"] == 0

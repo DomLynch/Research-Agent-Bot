@@ -4894,9 +4894,9 @@ def run_cycle(
                         cycle_budget_seconds=cycle_budget_seconds,
                     ))
                     break
-                return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
-                if revision_source and out_dir.exists():
+                if revision_source:
                     _write_json(out_dir / "researka_revision_request.json", revision_source)
+                return_code = 0 if existing_repair else _run_synthesis(selected, out_dir, **synthesis_kwargs)
                 # Retraction gate: never submit a paper that cites retracted science.
                 retraction_result = _retracted_cited_sources(out_dir) if return_code == 0 else []
                 retraction_unverified = retraction_result is None
