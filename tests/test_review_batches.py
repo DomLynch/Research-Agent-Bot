@@ -10,14 +10,15 @@ from scripts import review_batches as batches
 
 
 def test_batch_limits_and_stable_original_source_indexes(monkeypatch):
-    monkeypatch.setattr(batches, 'MAX_REVIEW_CHARS', 6000)
+    limit = len(prose_grounding._PROMPT) + 3500
+    monkeypatch.setattr(batches, 'MAX_REVIEW_CHARS', limit)
     sources = {'bundle': [{'cited_as': f'Study {i}', 'excerpt': 'evidence ' * 200} for i in range(9)],
                'own_results': [{'citation_token': f'Study {i}', 'verified_source_sections': {'results': f'Contradiction {i}'}} for i in range(9)],
                'author_context': {'source_count': 9}}
     statements = [{'text': f'Claim {i}', 'sources': [8-i]} for i in range(9)]
     calls = []
     async def call(**kw):
-        assert sum(len(m['content']) for m in kw['messages']) <= 6000
+        assert sum(len(m['content']) for m in kw['messages']) <= limit
         packet = json.loads(kw['messages'][1]['content'])
         calls.append(packet)
         for row in packet['statements']:

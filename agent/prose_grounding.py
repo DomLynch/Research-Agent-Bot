@@ -21,6 +21,7 @@ _PROMPT += " Statements about this manuscript's own question, scope or process m
 
 _PROMPT += " Packet bundle source_index values are original zero-based indexes; never infer them from list position. The source catalogue gives identities and classifications, not evidence for uncited effects. Uncited scientific effects must fail; uncited author scope/process requires author_context support. Review each statement only against its complete cited sources; catalogue totals do not establish whole-corpus effects."
 _PROMPT += " Writer receipt_ids identify the complete cited receipts in this packet. Within author_context, review_reference is a path of keys/indexes from the author_context root to an identical record supplied elsewhere there; resolve it to the complete record. An object with review_key_field and review_records represents a dictionary keyed by each record's named field; all original records and IDs are retained. Resolve references before reconstructing those dictionaries. These are lossless transport encodings, never absent evidence."
+_PROMPT += " For Findings Map rows, check every displayed classification against both the displayed finding and the source's intervention/comparator. A verbatim finding from a different arm or endpoint cannot justify the coded target-intervention direction. Missing or ambiguous support fails. Protocols describe planned research, never completed outcomes."
 
 
 def _hash(value: Any) -> str:
@@ -110,9 +111,9 @@ def _verified_bundle(run: Path) -> list[dict[str, Any]]:
 async def review_manuscript(run: Path, **options: Any) -> None:
     from agent import revision_claim_trace
     from agent.revision_contract import evidence_rows
-    from publishing.submission import _citation_indexes, _cited_claim_aligns, _claim_candidates, _empirical_claim, _sections, _PUBLIC_CLAIM_SECTIONS
+    from publishing.submission import _citation_indexes, _cited_claim_aligns, _claim_candidates, _empirical_claim, _sections, _PUBLIC_CLAIM_SECTIONS, _findings_map_claims
     bundle = _verified_bundle(run)
-    statements = []
+    statements = [{"text": text, "sources": sorted(indexes)} for text, indexes in _findings_map_claims((run / "full_paper.md").read_text(), bundle)]
     for heading, body in _sections((run / "full_paper.md").read_text()).items():
         if heading.lower() not in _PUBLIC_CLAIM_SECTIONS:
             continue

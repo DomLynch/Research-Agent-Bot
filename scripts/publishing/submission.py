@@ -826,10 +826,23 @@ def _researka_claim_trace_status(
     return "eligible"
 
 
+def _findings_map_claims(paper: str, bundle: list[dict[str, Any]]) -> list[tuple[str, set[int]]]:
+    from agent.revision_quality import _findings_map
+    from agent.revision_contract import _table_cells
+    rows = [cells for line in _findings_map(paper).splitlines() if len(cells := _table_cells(line)) == 7]
+    if not rows:
+        return []
+    return [("Findings Map | " + " | ".join(f"{heading}: {value}" for heading, value in zip(rows[0], cells)),
+             _citation_indexes(" | ".join(cells), bundle)) for cells in rows[1:]]
+
+
 def _researka_core_claim_trace_status(
     payload: dict[str, Any], source_bundle: list[dict[str, Any]],
 ) -> str:
     from agent.revision_quality import _statistics_are_source_bound
+    for claim, source_indexes in _findings_map_claims(str(payload.get("body_markdown") or ""), source_bundle):
+        if len(source_indexes) != 1 or not _prose_approved(claim, source_bundle, source_indexes):
+            return "researka_core_claims_unresolved:findings_map_labels_unverified"
     rows = [{"citation_token": source.get("cited_as"), "source_title": source.get("title"),
              "verified_abstract": source.get("excerpt")} for source in source_bundle]
     if not _statistics_are_source_bound(str(payload.get("body_markdown") or ""), rows, tables_only=True):

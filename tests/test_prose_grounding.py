@@ -44,6 +44,41 @@ def install_judge(monkeypatch, *, supported=True):
     return calls
 
 
+@pytest.mark.parametrize("supported", [True, False])
+def test_findings_map_labels_require_review_of_the_displayed_row(run, monkeypatch, supported):
+    paper = run / "full_paper.md"
+    table = (
+        "\n## Evidence Landscape\n\n### Findings Map\n\n"
+        "| Evidence domain | Source | Direction | Directness | Tier | Evidence role | Finding |\n"
+        "| --- | --- | --- | --- | --- | --- | --- |\n"
+        "| Cardiometabolic | Smith 2020 [bundle:1] | positive | direct | A1 | clinical | "
+        "Resveratrol reduced fasting glucose in older adults compared with placebo. |\n"
+    )
+    paper.write_text(paper.read_text() + table)
+    seen = []
+    async def judge(**kwargs):
+        entries = json.loads(kwargs["messages"][1]["content"])["statements"]
+        seen.extend(entries)
+        return SimpleNamespace(model="configured-reviewer", parsed={"assessments": [
+            {"row": i, "supported": supported if "Direction:" in entry["text"] else True,
+             "reason": "Checked displayed finding, treatment comparison and labels."}
+            for i, entry in enumerate(entries)]})
+    monkeypatch.setattr(grounding, "chat_json", judge)
+    asyncio.run(grounding.review_manuscript(run))
+    reviewed = [row for row in seen if "Direction:" in row["text"]]
+    assert len(reviewed) == 1
+    assert reviewed[0]["sources"] == [0]
+    assert all(value in reviewed[0]["text"] for value in ("Direction: positive", "Directness: direct", "older adults", "placebo"))
+    bundle = grounding._verified_bundle(run)
+    payload = {"body_markdown": paper.read_text()}
+    with grounding.grounding_context(run):
+        status = submission._researka_core_claim_trace_status(payload, bundle)
+        assert (status == "eligible") is supported
+        if supported:
+            payload["body_markdown"] = payload["body_markdown"].replace("| positive |", "| negative |")
+            assert submission._researka_core_claim_trace_status(payload, bundle) == "researka_core_claims_unresolved:findings_map_labels_unverified"
+
+
 def test_reviewed_paraphrase_survives_cleanup_payload_and_context_reset(run, monkeypatch):
     calls = install_judge(monkeypatch)
     bundle = grounding._verified_bundle(run)
