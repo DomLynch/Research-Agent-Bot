@@ -3987,7 +3987,7 @@ def _findings_map_section(
         lines.extend(("", heterogeneity_note))
     lines.extend((
         "",
-        "| Outcome class | Source | Direction | Directness | Tier | Evidence role | Finding |",
+        "| Evidence domain | Source | Direction | Directness | Tier | Evidence role | Finding |",
         "| --- | --- | --- | --- | --- | --- | --- |",
     ))
     projected = sorted((findings_map_row(row) for row in rows), key=lambda values: values[:2])

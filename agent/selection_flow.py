@@ -53,6 +53,8 @@ def render_admission(log: dict[str, Any]) -> str:
     return prior + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
             f"{log['rule']} Assessed {len(decisions)} candidate sources; included {included}; "
             f"excluded {len(decisions) - included}. Decision reasons: {reasons}. "
-            "The source-by-source decisions and identifiers are in source_admission.json. "
+            "The supplementary source-selection decision log contains each source identifier and decision. "
             "This assessment records the stated candidate scope on this date; it does not reconstruct "
-            "unrecorded historical screening or equate retrieval totals with assessed candidates.")
+            "unrecorded historical screening or equate retrieval totals with assessed candidates.\n\n"
+            "| Selection gate | Assessed | Excluded | Included |\n|---|---:|---:|---:|\n"
+            f"| Dated source eligibility assessment | {len(decisions)} | {len(decisions) - included} | {included} |")
