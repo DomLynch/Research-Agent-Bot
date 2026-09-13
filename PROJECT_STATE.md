@@ -1,5 +1,15 @@
 # PROJECT_STATE.md
 
+## Scoped Revision Discovery - 2026-09-13
+Explicit revision topics now restrict direct decision polling before its time
+budget is consumed by unrelated submission history. Whole-history reconciliation
+keeps its existing fair polling. Scoped lookup failures remain explicit, even
+when another record succeeded; an incomplete discovery is no longer reported as
+an empty revision queue. Regression cases span three topics and 257 unrelated
+records, with both explicit and run-derived topic metadata. Focused cycle checks:
+478 passed, 2 xpassed; full suite 5,327 passed, 2 xpassed. Quality and mypy
+pass. No scientific gate, polling deadline or round cap changed.
+
 ## Explicit Revision Topic Selection - 2026-09-13
 The revise CLI now honors an explicit topic by filtering source records before
 choosing a pending request. A missing matching request stops without rotating

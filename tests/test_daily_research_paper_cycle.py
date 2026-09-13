@@ -443,7 +443,7 @@ def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path:
 @pytest.fixture(autouse=True)
 def _offline_environment(monkeypatch, tmp_path):
     # The keyword default is bound at import; patching RUNS alone leaves live history reachable.
-    monkeypatch.setattr(cycle._remote_revision_requests, "__kwdefaults__", {"runs_root": tmp_path / "runs"})
+    monkeypatch.setattr(cycle._remote_revision_requests, "__kwdefaults__", {**cycle._remote_revision_requests.__kwdefaults__, "runs_root": tmp_path / "runs"})
     monkeypatch.setenv("RESEARKA_REVIEWS_URL", "https://reviews.test")
 
     def urlopen(request, **_kwargs):
@@ -13705,3 +13705,55 @@ def test_revise_topic_selection_cannot_rotate_to_other_topic(tmp_path, monkeypat
         loader=lambda: (requests, None), requested_topic=requested)
     assert error is None
     assert (request["submissionId"] if request else None) == ("parent-" + requested if available else None)
+
+
+@pytest.mark.parametrize("topic", ["resistance_training", "metformin", "hpv"])
+@pytest.mark.parametrize("legacy_topic", [False, True])
+def test_requested_revision_polls_only_its_topic_before_budget(tmp_path, monkeypatch, topic, legacy_topic):
+    run = _seed_submitted_run(tmp_path, topic, "# Requested paper\n\nEvidence.")
+    target = {"submission_id": "target-parent", "run": run.name, "title": "Requested paper"}
+    if not legacy_topic:
+        target["topic"] = topic
+    unrelated = [{"submission_id": f"other-{i}", "topic": "another_topic", "title": f"Other {i}"} for i in range(257)]
+    _write_json(tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [target, *unrelated])
+    fetched = []
+
+    def fetch(sid):
+        fetched.append(sid)
+        assert sid == "target-parent", "unrelated history must not consume the topic's polling budget"
+        return {"decision": "revise", "title": "Requested paper", "required_revisions": ["Explain source admission."]}, None
+
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", fetch)
+    request, error = cycle._pending_remote_revision(tmp_path, tmp_path / cycle.LEDGER_DIR, requested_topic=topic)
+    assert error is None
+    assert request["submissionId"] == "target-parent"
+    assert request["topic"] == topic
+    assert request["source_run"] == run.name
+    assert fetched == ["target-parent"]
+    checkpoint = json.loads((tmp_path / cycle.LEDGER_DIR / cycle.DECISION_POLL_CHECKPOINT).read_text())
+    assert checkpoint["deferred"] == 0
+    assert checkpoint["blocked_submission_ids"] == []
+
+
+def test_requested_revision_discovery_preserves_partial_poll_failure(tmp_path, monkeypatch):
+    _write_json(tmp_path / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [
+        {"submission_id": "missing", "topic": "metformin", "title": "Newer paper"},
+        {"submission_id": "available", "topic": "metformin", "title": "Older paper"},
+    ])
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda sid:
+        (None, "HTTPError:503") if sid == "missing" else ({"decision": "revise", "required_revisions": ["Explain selection."]}, None))
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda *_: pytest.fail("failed direct lookup must not use stale feed"))
+    assert cycle._remote_revision_requests(runs_root=tmp_path, requested_topic="metformin") == ([], "HTTPError:503")
+
+
+def test_revision_discovery_failure_is_not_reported_as_empty_queue(tmp_path, monkeypatch):
+    _topic(tmp_path, "metformin", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    ledger = cycle.run_cycle(runs_root=tmp_path / "runs", date="2026-09-13", topic="metformin", mode="revise",
+        submit=True, run_synthesis=False, remote_loader=lambda: (set(), None),
+        revision_loader=lambda: ([], "decision_poll_deferred"), submit_cycle=lambda **_: pytest.fail("must not submit"))
+    assert ledger["status"] == "revision_discovery_incomplete"
+    assert ledger["remote_revisions"]["error"] == "decision_poll_deferred"
+    assert ledger["submitted"] == 0

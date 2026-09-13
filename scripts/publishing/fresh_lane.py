@@ -1158,9 +1158,11 @@ def _poll_submission_decisions(rows: list[dict[str, Any]], runs_root: Path, repo
     return results
 
 
-def _submitted_submission_decisions_by_title(runs_root: Path = RUNS, *, poll_report: dict[str, Any] | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
+def _submitted_submission_decisions_by_title(runs_root: Path = RUNS, *, poll_report: dict[str, Any] | None = None, requested_topic: str | None = None) -> tuple[dict[str, dict[str, Any]], str | None]:
     submitted_path = runs_root / submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json"
-    rows = submit_bridge._ledger_rows(submitted_path)
+    rows = [row for row in submit_bridge._ledger_rows(submitted_path)
+            if requested_topic is None or submit_bridge._normalized_key(str(row.get("topic") or
+                submit_bridge._run_topic(runs_root / str(row.get("run") or "")))) == submit_bridge._normalized_key(requested_topic)]
     polled = _poll_submission_decisions(rows, runs_root, poll_report)
     latest: dict[str, dict[str, Any]] = {}
     first_error: str | None = None
@@ -1262,7 +1264,7 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS, *, poll_rep
                     current_record.update(update)
 
         _update_json_list(submitted_path, merge)
-    return latest, None if latest else first_error
+    return latest, None if latest and requested_topic is None else first_error
 
 
 def _should_replace_review_row(existing: dict[str, Any], candidate: dict[str, Any]) -> bool:
@@ -1385,9 +1387,11 @@ def _record_revise_reasons(ledger_dir: Path, latest: dict[str, dict[str, Any]]) 
     })
 
 
-def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS) -> tuple[list[dict[str, Any]], str | None]:
+def _remote_revision_requests(url: str | None = None, *, runs_root: Path = RUNS, requested_topic: str | None = None) -> tuple[list[dict[str, Any]], str | None]:
     poll: dict[str, Any] = {}
-    direct, direct_err = _submitted_submission_decisions_by_title(runs_root, poll_report=poll)
+    direct, direct_err = _submitted_submission_decisions_by_title(runs_root, poll_report=poll, requested_topic=requested_topic)
+    if requested_topic and direct_err:
+        return [], direct_err
     latest, err = _latest_reviews_by_title(url)
     known_ids = {row.get("submissionId") for row in direct.values()}
     known_ids.update(poll.get("blocked_submission_ids") or [])
@@ -1593,9 +1597,9 @@ def _source_manifest_receipt_contract_hash(
 
 def _revision_observations(
     runs_root: Path, ledger_dir: Path, loader: RevisionLoader | None,
-    published_loader: PublishedLoader | None, exclude_keys: set[str] | None = None,
+    published_loader: PublishedLoader | None, exclude_keys: set[str] | None = None, requested_topic: str | None = None,
 ) -> tuple[list[dict[str, Any]], str | None, RevisionHistory, set[str], list[tuple[dict[str, Any], Path, str, str]]]:
-    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root)
+    rows, error = loader() if loader else _remote_revision_requests(runs_root=runs_root, requested_topic=requested_topic)
     if error:
         return [], error, _revision_history([]), set(), []
     rows = [row for row in rows if _revision_key(row) not in (exclude_keys or set())]
@@ -1629,7 +1633,7 @@ def _pending_remote_revision(
     requested_topic: str | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
     rows, error, history, remote_seen, records = _revision_observations(
-        runs_root, ledger_dir, loader, published_loader, exclude_keys,
+        runs_root, ledger_dir, loader, published_loader, exclude_keys, requested_topic,
     )
     if error:
         return None, error
@@ -4105,7 +4109,7 @@ def run_cycle(
             # stop so a single timer fire cannot flood Researka.
             if mode == "revise" and revision_source is None:
                 if not ledger["attempts"]:
-                    ledger["status"] = "no_revise_pending"
+                    ledger["status"] = "revision_discovery_incomplete" if ledger.get("remote_revisions", {}).get("error") else "no_revise_pending"
                 break
             dynamic_preflight_blocked = set() if topic else _recent_preflight_blocked_topics(ledger_dir)
             dynamic_preflight_blocked -= prepared_candidates
