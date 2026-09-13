@@ -61,6 +61,7 @@ def test_real_sdk_envelope_strict_allowlist_and_ambient_isolation(telemetry, mon
         for scope in (isolation, current):
             scope.set_user({"email": SECRET})
             scope.set_tag("private", SECRET)
+            scope.set_tag("synthetic_test", "true")
             scope.set_extra("prompt", SECRET)
             scope.set_context("trace", {"dynamic_sampling_context": {"secret": SECRET}})
             scope.add_attachment(bytes=SECRET.encode(), filename=SECRET)
@@ -84,7 +85,7 @@ def test_real_sdk_envelope_strict_allowlist_and_ambient_isolation(telemetry, mon
     assert [item.headers["type"] for item in envelope.items] == ["event"]
     event = envelope.items[0].payload.json
     assert set(event) == {"event_id", "platform", "level", "message", "environment", "release", "tags", "fingerprint"}
-    assert event["tags"] == {"operation": "publishing_cycle", "failure": "unhandled_exception"}
+    assert event["tags"] == {"operation": "publishing_cycle", "failure": "unhandled_exception", "synthetic_test": "false"}
     assert event["release"] == subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     assert event["environment"] == "test"
     assert event["event_id"] == envelope.headers["event_id"]
@@ -110,6 +111,21 @@ def test_before_send_drops_sensitive_fields_and_attachment_hints(telemetry):
     assert len(telemetry.envelopes) == 1
     assert SECRET.encode() not in telemetry.envelopes[0].serialize()
     assert len(telemetry.envelopes[0].items) == 1
+
+
+@pytest.mark.parametrize("failure,expected", [("local_gate_execution_failed", "false"), ("synthetic_test", "true")])
+@pytest.mark.parametrize("spoof", ["true", "false", True, None, SECRET])
+def test_synthetic_classification_ignores_incoming_tag(telemetry, failure, expected, spoof):
+    observability._client().capture_event({"tags": {
+        "operation": "status_process", "failure": failure, "synthetic_test": spoof,
+    }})
+    assert len(telemetry.envelopes) == 1
+    envelope = telemetry.envelopes[0]
+    assert [item.headers["type"] for item in envelope.items] == ["event"]
+    assert envelope.items[0].payload.json["tags"] == {
+        "operation": "status_process", "failure": failure, "synthetic_test": expected,
+    }
+    assert SECRET.encode() not in envelope.serialize()
 
 
 def test_sdk_log_metric_and_transaction_envelopes_are_dropped(telemetry):
@@ -210,6 +226,7 @@ def test_terminal_execution_exit_is_captured_once(telemetry, monkeypatch):
     assert result.value.code == os.EX_SOFTWARE
     assert len(telemetry.envelopes) == 1
     assert telemetry.envelopes[0].items[0].payload.json["tags"]["failure"] == "local_gate_execution_failed"
+    assert telemetry.envelopes[0].items[0].payload.json["tags"]["synthetic_test"] == "false"
 
 
 def test_telemetry_failure_never_changes_publishing_result_or_exception(telemetry, monkeypatch):
@@ -288,3 +305,4 @@ def test_release_prefers_checkout_over_stale_configuration(telemetry, monkeypatc
     event = telemetry.envelopes[0].items[0].payload.json
     assert event["release"] == subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     assert event["message"] == "V3 synthetic verification"
+    assert event["tags"] == {"operation": "status_process", "failure": "synthetic_test", "synthetic_test": "true"}

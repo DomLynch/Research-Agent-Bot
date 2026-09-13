@@ -52,7 +52,7 @@ def _client() -> Client | None:
                 "event_id": event_id,
                 "platform": "python", "level": "error", "message": "V3 synthetic verification" if failure == "synthetic_test" else "V3 terminal technical error",
                 "environment": environment, "release": release,
-                "tags": {"operation": operation, "failure": failure},
+                "tags": {"operation": operation, "failure": failure, "synthetic_test": str(failure == "synthetic_test").lower()},
                 "fingerprint": ["v3", operation, failure],
             }
 
