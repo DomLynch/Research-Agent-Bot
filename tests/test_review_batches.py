@@ -188,7 +188,45 @@ def _restore_context(compact):
         if isinstance(value, dict):
             return {key: restore(item) for key, item in value.items()}
         return [restore(item) for item in value] if isinstance(value, list) else value
-    return restore(compact)
+    def unpack(value):
+        if isinstance(value, dict):
+            if set(value) == {'review_key_field', 'review_records'}:
+                rows = unpack(value['review_records'])
+                return {row[value['review_key_field']]: row for row in rows}
+            return {key: unpack(item) for key, item in value.items()}
+        return [unpack(item) for item in value] if isinstance(value, list) else value
+    return unpack(restore(compact))
+
+
+@pytest.mark.parametrize('prefix', ['clinical', 'ecology'])
+def test_multisource_manuscript_retains_every_admission_and_cited_passage(monkeypatch, prefix):
+    decisions = {f'{prefix}_{i}_' + 'long_source_identity_' * 5:
+                 {'included': i < 3, 'reason': 'selected' if i < 3 else 'outside_declared_scope'} for i in range(406)}
+    decisions = {key: {'source_id': key, **row} for key, row in decisions.items()}
+    context = {'methods_record': {'decisions': decisions}, 'selection_copy': decisions}
+    sources = {'bundle': [{'cited_as': str(i)} for i in range(3)],
+               'own_results': [{'citation_token': str(i), 'verified_source_sections': {'results': str(i) * 73_000}}
+                               for i in range(3)], 'author_context': context}
+    assert len(json.dumps(sources)) > batches.MAX_REVIEW_CHARS
+    calls = []
+    async def call(**kwargs):
+        assert sum(len(m['content']) for m in kwargs['messages']) <= batches.MAX_REVIEW_CHARS
+        packet = json.loads(kwargs['messages'][1]['content'])
+        assert _restore_context(packet['sources']['author_context']) == context
+        assert packet['sources']['own_results'] == sources['own_results']
+        calls.append(packet)
+        return SimpleNamespace(model='primary', parsed={'assessments': [
+            {'row': 0, 'supported': False, 'reason': 'Cited comparison does not establish causality.'}]})
+    monkeypatch.setattr(prose_grounding, 'chat_json', call)
+    report = asyncio.run(prose_grounding.review_statements([{'text': 'Comparative claim', 'sources': [0, 1, 2]}], sources))
+    assert len(calls) == 1 and report['assessments'][0]['supported'] is False
+    assert len(sources['author_context']['methods_record']['decisions']) == 406
+
+
+def test_keyed_record_transport_keeps_mismatched_ids_and_original_order():
+    rows = {'a': {'id': 'a', 'reason': 'x' * 400}, 'b': {'id': 'b', 'reason': 'x' * 400}}
+    original = {'decisions': rows, 'duplicate': rows, 'different': {**rows, 'c': {'id': 'WRONG'}}}
+    assert _restore_context(batches._shared_context(original)) == original
 
 
 def test_shared_author_context_roundtrips_exactly_and_keeps_differing_records():

@@ -1,0 +1,22 @@
+[importlinter]
+root_package = agent
+include_external_packages = True
+
+[importlinter:contract:types]
+name = Stage types cannot depend on providers or orchestration
+type = forbidden
+source_modules = agent.types
+forbidden_modules =
+    agent.llm_client
+    agent.paper_writer
+    agent.prose_grounding
+    agent.sources
+
+[importlinter:contract:sources]
+name = Source adapters cannot depend on writing or review
+type = forbidden
+source_modules = agent.sources
+forbidden_modules =
+    agent.llm_client
+    agent.paper_writer
+    agent.prose_grounding

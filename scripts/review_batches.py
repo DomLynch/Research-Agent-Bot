@@ -12,11 +12,12 @@ def _shared_context(value: Any, path: tuple[str, ...] = (), seen: dict[str, tupl
     """Reference exact duplicate author records; retain their first complete copy."""
     seen = {} if seen is None else seen
     signature = json.dumps(value, sort_keys=True, ensure_ascii=False)
-    if len(signature) > 1024:
-        if signature in seen:
-            return {"review_reference": list(seen[signature])}
-        seen[signature] = path
+    if len(signature) > 256 and (previous := seen.setdefault(signature, path)) != path:
+        return {"review_reference": list(previous)}
     if isinstance(value, dict):
+        if len(value) > 1 and all(isinstance(row, dict) for row in value.values()):
+            if field := next((key for key in next(iter(value.values())) if all(row.get(key) == identity for identity, row in value.items())), None):
+                value = {"review_key_field": field, "review_records": list(value.values())}
         return {key: _shared_context(item, (*path, key), seen) for key, item in value.items()}
     if isinstance(value, list):
         return [_shared_context(item, (*path, str(i)), seen) for i, item in enumerate(value)]
@@ -56,8 +57,7 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
     own = [r for r in sources.get("own_results", []) if r.get("citation_token") in {bundle[i].get("cited_as") for i in indexes}]
     if len(own) != len(indexes):
         raise ValueError("review_source_citation_mismatch")
-    return {"bundle": [{**bundle[i], "source_index": i} for i in indexes],
-            "own_results": own,
+    return {"bundle": [{**bundle[i], "source_index": i} for i in indexes], "own_results": own,
             "author_context": _shared_context(sources.get("author_context", {})),
             "source_catalog": [{key: row.get(key) for key in ("cited_as", "title", "evidence_type", "directness", "outcome_class", "effect_direction")} for row in bundle]}
 
