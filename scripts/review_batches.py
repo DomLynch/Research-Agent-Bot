@@ -8,28 +8,45 @@ MAX_REVIEW_CHARS = 300_000
 MAX_STATEMENTS = 16
 
 
+def _shared_context(value: Any, path: tuple[str, ...] = (), seen: dict[str, tuple[str, ...]] | None = None) -> Any:
+    """Reference exact duplicate author records; retain their first complete copy."""
+    seen = {} if seen is None else seen
+    signature = json.dumps(value, sort_keys=True, ensure_ascii=False)
+    if len(signature) > 1024:
+        if signature in seen:
+            return {"review_reference": list(seen[signature])}
+        seen[signature] = path
+    if isinstance(value, dict):
+        return {key: _shared_context(item, (*path, key), seen) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_shared_context(item, (*path, str(i)), seen) for i, item in enumerate(value)]
+    return value
+
+
 def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, overhead: int = 0, max_items: int = 1000) -> list[tuple[list[Any], str]]:
     batches: list[tuple[list[Any], str]] = []
-    pending: list[Any] = []
     for item in items:
-        candidate = [*pending, item]
+        single = render([item])
+        if len(single) + overhead > MAX_REVIEW_CHARS:
+            raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
+        candidate = [*batches[-1][0], item] if batches else [item]
         content = render(candidate)
-        if len(content) + overhead > MAX_REVIEW_CHARS or len(candidate) > max_items:
-            if pending:
-                batches.append((pending, render(pending)))
-            pending = [item]
-            if len(render(pending)) + overhead > MAX_REVIEW_CHARS:
-                raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
+        if batches and len(content) + overhead <= MAX_REVIEW_CHARS and len(candidate) <= max_items:
+            batches[-1] = (candidate, content)
         else:
-            pending = candidate
-    if pending:
-        batches.append((pending, render(pending)))
+            batches.append(([item], single))
     return batches
 
 
 def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
     if not isinstance(sources, dict) or "bundle" not in sources:
-        return sources
+        receipts = sources if isinstance(sources, list) else sources.get("receipts", [])
+        ids = {rid for row in statements for rid in row.get("receipt_ids", [])}
+        selected = [row for row in receipts if row.get("receipt_id") in ids]
+        if ids != {row.get("receipt_id") for row in selected} or len(selected) != len(ids):
+            raise ValueError("review_source_citation_mismatch")
+        return selected if isinstance(sources, list) else {**sources, "receipts": selected,
+            "author_context": _shared_context(sources.get("author_context", {}))}
     bundle = sources["bundle"]
     indexes = sorted({index for row in statements for index in row.get("sources", [])})
     if any(type(i) is not int or i < 0 or i >= len(bundle) for i in indexes):
@@ -40,7 +57,7 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
         raise ValueError("review_source_citation_mismatch")
     return {"bundle": [{**bundle[i], "source_index": i} for i in indexes],
             "own_results": own,
-            "author_context": sources.get("author_context", {}),
+            "author_context": _shared_context(sources.get("author_context", {})),
             "source_catalog": [{key: row.get(key) for key in ("cited_as", "title", "evidence_type", "directness", "outcome_class", "effect_direction")} for row in bundle]}
 
 
