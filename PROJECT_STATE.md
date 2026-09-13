@@ -1,5 +1,16 @@
 # PROJECT_STATE.md
 
+## Quantitative Source Handoff - 2026-09-13
+Source projection ranks recorded sections by QEI quote coverage, then complete
+receipt findings, so an early abstract summary cannot hide fuller result passages.
+Quote and typed-statistic checks normalize source typesetting and preserve
+complete adjacent-sentence context. Mutated values, operators, comparisons and
+noncontiguous passages remain blocked. Focused checks: 879 passed; full suite:
+5,336 passed, 2 xpassed. Quality, mypy and both import boundaries pass with
+unchanged budgets. Exact latest outgoing table replay: 27 rows, zero failures;
+19/19 source proofs remain valid. Changed evidence invalidates prior prose review
+as intended; fresh review and Core submission are separate remaining steps.
+
 ## Revision Parent Handoff - 2026-09-13
 The cycle now persists its complete revision request before synthesis. This
 fixes the ordering regression where final payload freezing encountered the
