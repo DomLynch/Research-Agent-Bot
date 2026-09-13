@@ -2232,6 +2232,21 @@ def test_source_projection_keeps_complete_bounded_abstract(tmp_path: Path) -> No
     assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt) == finding[:90]
 
 
+@pytest.mark.parametrize("endpoint", ["Strength", "Blood pressure", "Memory"])
+def test_source_projection_carries_full_results_after_abstract_summary(tmp_path: Path, endpoint: str) -> None:
+    abstract = f"{endpoint} improved with treatment."
+    first = f"{endpoint} increased by 56.4% versus baseline (p < 0.05)."
+    second = "The control group did not improve (p > 0.05)."
+    results = first + " " + second
+    (tmp_path / "source.paper_sections.json").write_text(json.dumps({"sections": {
+        "abstract": abstract, "results": results,
+    }}))
+    receipt = {"source_result_excerpts": [abstract, first, second]}
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt) == results
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt, (first,)) == results
+    assert daily._parsed_receipt_excerpt(tmp_path, "source", receipt, (abstract,)) == abstract
+
+
 def test_literal_compound_findings_align_with_inline_citation() -> None:
     finding = (
         "Body weight decreased after resveratrol supplementation "

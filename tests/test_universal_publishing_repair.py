@@ -90,7 +90,7 @@ def test_claussen_outgoing_evidence_contains_the_actual_quoted_statistics(tmp_pa
     receipt = source["receipt"]
     (tmp_path / f"{receipt['receipt_id']}.paper_sections.json").write_text(json.dumps(source["record"]))
     old = submission._parsed_receipt_excerpt(tmp_path, receipt["receipt_id"], receipt)
-    assert "β = 0.42" not in old
+    assert "β = 0.42" in old
     quote = "β = 0.42, 95% CI [0.19, 0.65]"
     selected = submission._parsed_receipt_excerpt(tmp_path, receipt["receipt_id"], receipt, (quote,))
     assert quote in selected

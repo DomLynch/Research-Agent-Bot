@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from collections import Counter
 from collections.abc import Sequence
+from importlib import import_module
 from types import SimpleNamespace
 from typing import Any
 
@@ -369,7 +370,6 @@ def _findings_map_is_exact(paper_md: str, rows: Sequence[dict[str, Any]]) -> boo
     table_rows = [cells for cells in table_rows if len(cells) == 7 and cells[0].lower() not in {"outcome class", "evidence domain"}]
     if len(table_rows) != len(rows):
         return False
-    from importlib import import_module
     render = import_module("scripts.quant_claim_extract").readable_source_notation
     def key(cells):
         return tuple(re.sub(r"\s+", " ", re.sub(r"\s*\[bundle:\d+\]", "", render(value))).replace("|", "/").strip().casefold() for value in cells)
@@ -393,7 +393,7 @@ def _row_evidence(row: dict[str, Any], *, statistics: bool = False) -> str:
         return " ".join((str(row.get("thesis_text") or ""), str(row.get("source_title") or "")))
     excerpts = row.get("source_result_excerpts", []) if row.get("verified_source_sections") else []
     text = "\n".join([str(row.get("verified_abstract") or _row_evidence(row)), *excerpts])
-    return re.sub(r"(\bp\s*(?:[<>]=?|=|≤|≥)\s*0?\.)\s+(?=\d)", r"\1", text, flags=re.I)
+    return re.sub(r"(\bp\s*(?:[<>]=?|=|≤|≥)\s*0?\.)\s+(?=\d)", r"\1", import_module("scripts.quant_claim_extract").readable_source_notation(text), flags=re.I)
 
 
 def traceable_p_values(row: dict[str, Any]) -> tuple[str, ...]:
@@ -441,7 +441,8 @@ def _stat_supported(stat: str, row: dict[str, Any], *, original_only: bool = Fal
     claim = context_key(re.sub(r"^finding\s*=\s*", "", context, flags=re.I))
     return any((not context or claim != context_key(stat) and claim == context_key(clause))
                and any(key(match.group()) == key(stat) for match in _EFFECT_STAT_RE.finditer(clause))
-               for passage in evidence.splitlines() for sentence in _sentences(passage)
+               for passage in evidence.splitlines() for sentences in [_sentences(passage)]
+               for index in range(len(sentences)) for sentence in [" ".join(sentences[index:index + max(1, len(_sentences(context)))])]
                for clause in (sentence, *sentence.split(";")))
 
 

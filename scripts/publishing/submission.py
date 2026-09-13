@@ -1802,17 +1802,12 @@ def _parsed_receipt_excerpt(parsed_dir: Path, receipt_id: str, receipt: dict[str
     sections = data.get("sections")
     if not isinstance(sections, dict):
         return ""
-    if quotes:
+    findings = tuple(receipt.get("source_result_excerpts") or ())
+    if quotes or findings:
         passages = [_publication_evidence._record_text(sections.get(name)) for name in ("abstract", "results", "conclusion", "discussion", "methods")]
-        passage = max(passages, key=lambda text: sum(bool(_publication_evidence.exact_source_quote(quote, text)) for quote in quotes))
-        if any(_publication_evidence.exact_source_quote(quote, passage) for quote in quotes):
+        passage = max(passages, key=lambda text: tuple(sum(bool(_publication_evidence.exact_source_quote(quote, text)) for quote in group) for group in (quotes, findings)))
+        if any(_publication_evidence.exact_source_quote(quote, passage) for quote in (*quotes, *findings)):
             return " ".join(passage.split())
-    findings = receipt.get("source_result_excerpts")
-    if isinstance(findings, list) and findings:
-        for name in ("abstract", "results", "conclusion", "discussion", "methods"):
-            text = " ".join(str(sections.get(name) or "").split())
-            if _publication_evidence.exact_source_quote(findings[0], text):
-                return text
     # Keep a contiguous passage; background citations are not this study's findings.
     for name in ("abstract", "results", "conclusion", "discussion", "methods"):
         text = " ".join(str(sections.get(name) or "").split())

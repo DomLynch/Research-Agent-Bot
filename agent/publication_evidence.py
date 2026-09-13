@@ -42,7 +42,7 @@ def source_identity_hash(row: dict[str, Any], *, origin: str) -> str:
 def exact_source_quote(candidate: object, source_text: object) -> str | None:
     from importlib import import_module
     render = import_module("scripts.quant_claim_extract").readable_source_notation
-    quote, source = (render(_normalized_text(value)) for value in (candidate, source_text))
+    quote, source = (_normalized_text(render(_normalized_text(value))) for value in (candidate, source_text))
     return quote if len(quote) >= 20 and quote in source else None
 
 

@@ -4,6 +4,24 @@ import pytest
 
 from agent.journal_surface_gate import _orphan_table_issue_messages
 from agent.revision_quality import _stat_supported, manifest_row_finding
+from agent.publication_evidence import exact_source_quote
+
+
+@pytest.mark.parametrize("endpoint", ["Strength", "Blood pressure", "Memory"])
+def test_adjacent_result_sentences_preserve_context_and_typesetting(endpoint):
+    raw = f"{endpoint} was assessed before and after treatment. <jats:italic>Results : </jats:italic> Adherence was 90.2 ± 14.5% and treatment improved the endpoint versus control (<jats:italic>p</jats:italic> < .05)."
+    claim = f"{endpoint} was assessed before and after treatment. Results : Adherence was 90.2 ± 14.5% and treatment improved the endpoint versus control (p < .05)."
+    row = {"verified_abstract": raw}
+    assert exact_source_quote(claim, raw)
+    assert _stat_supported("14.5%", row, context="finding=" + claim)
+    assert _stat_supported("p < .05", row, context=claim)
+    for changed in (claim.replace("14.5", "15.4"), claim.replace("<", ">"),
+                    claim.replace("control", "baseline"), claim.replace(endpoint, "Survival"),
+                    claim.replace("improved", "did not improve")):
+        assert not exact_source_quote(changed, raw)
+        assert not _stat_supported("p < .05", row, context=changed)
+    interrupted = raw.replace(" <jats:italic>Results", " This result was not significant. <jats:italic>Results")
+    assert not _stat_supported("p < .05", {"verified_abstract": interrupted}, context=claim)
 
 
 @pytest.mark.parametrize("locator", ["(Table 2 )", "( Table 4 ; Figures 2A , 3A–H )", "(Figures 2A, 3B)"])
