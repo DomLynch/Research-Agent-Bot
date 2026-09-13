@@ -1,5 +1,19 @@
 # PROJECT_STATE.md
 
+## Explicit Revision Topic Selection - 2026-09-13
+The revise CLI now honors an explicit topic by filtering source records before
+choosing a pending request. A missing matching request stops without rotating
+to another topic. A request with a known submission ID cannot borrow a different
+known parent through title matching; historical records with no submission ID
+retain the existing title-based recovery behavior. Normal revision budgets,
+source locking and submission gates remain active.
+Focused cycle checks: 470 passed, 2 xpassed, including same-title cross-topic
+collisions and absent requested revisions. Full suite: 5,319 passed, 2 xpassed;
+quality 347 passed, mypy 183 files, unchanged complexity and LOC limits.
+The initial unfiltered service invocation selected another frozen revision and
+was stopped before submission. This is not proof of a fresh duplicate or of a
+completed resistance-training revision.
+
 ## Shared Revision Rendering and Lineage - 2026-09-13
 Findings Map rendering now uses the public header that the final surface gate
 accepts, so late table regeneration cannot undo the earlier header repair.

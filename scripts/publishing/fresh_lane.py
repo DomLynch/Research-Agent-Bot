@@ -1626,12 +1626,14 @@ def _pending_remote_revision(
     loader: RevisionLoader | None = None,
     published_loader: PublishedLoader | None = None,
     exclude_keys: set[str] | None = None,
+    requested_topic: str | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
     rows, error, history, remote_seen, records = _revision_observations(
         runs_root, ledger_dir, loader, published_loader, exclude_keys,
     )
     if error:
         return None, error
+    records = [row for row in records if requested_topic is None or submit_bridge._normalized_key(row[2]) == submit_bridge._normalized_key(requested_topic)]
     handled = history.handled(rows)
     for request in rows:
         request_key = _revision_key(request)
@@ -1649,13 +1651,9 @@ def _pending_remote_revision(
             for record, _run, _topic in matches
         ):
             continue
-        if request_submission_id:
-            exact_matches = [
-                match for match in matches
-                if str(match[0].get("submission_id") or "").strip() == request_submission_id
-            ]
-            if exact_matches:
-                matches = exact_matches
+        matches = [match for match in matches if request_submission_id
+                   and str(match[0].get("submission_id") or "").strip() == request_submission_id] or [
+                       match for match in matches if not request_submission_id or not match[0].get("submission_id")]
         if any(_submitted_record_is_published(record, run / "full_paper.md", remote_seen) for record, run, _topic in matches):
             continue
         if request_key in handled:
@@ -3878,10 +3876,10 @@ def run_cycle(
             )
         remote_revision: dict[str, Any] | None = None
         terminal_excluded: set[str] = set()
-        if submit and topic is None and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
+        if submit and (topic is None or mode == "revise") and mode != "fresh" and (revision_loader is not None or submit_cycle is None):
             remote_revision, revision_error = _pending_remote_revision(
                 runs_root,
-                ledger_dir,
+                ledger_dir, requested_topic=topic,
                 loader=revision_loader,
                 published_loader=lambda: (remote_seen, None),
             )

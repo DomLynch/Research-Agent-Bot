@@ -13671,3 +13671,35 @@ def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monke
     assert ledger["attempts"][0]["failure_class"] == ("D_no_action" if failure == "local_gate_execution_failed" else "C_writer_fixable")
     assert ledger["attempts"][0]["synthesis_error_details"] == details
     assert ledger["submitted"] == 0
+
+
+@pytest.mark.parametrize("requested", ["resistance_training", "metformin", "resveratrol"])
+@pytest.mark.parametrize("available", [True, False])
+@pytest.mark.parametrize("same_title", [False, True])
+def test_revise_topic_selection_cannot_rotate_to_other_topic(tmp_path, monkeypatch, requested, available, same_title):
+    topics = ["unrelated_topic", requested]
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _sid: ({"decision": "revise"}, None))
+    records, requests = [], []
+    for topic in topics:
+        _topic(tmp_path, topic, target_journal=True)
+        run = tmp_path / "runs" / ("synthesis-" + topic + "-v06-test")
+        run.mkdir(parents=True)
+        title = "Shared title" if same_title else "Review of " + topic.replace("_", " ")
+        (run / "full_paper.md").write_text("# " + title + "\n\nManuscript.")
+        records.append({"topic": topic, "run": run.name, "submission_id": "parent-" + topic})
+        if topic != requested or available:
+            requests.append({"title": title, "submissionId": "parent-" + topic, "feedback": "Explain the selection rules."})
+    _write_json(tmp_path / "runs" / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", records)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    ledger = cycle.run_cycle(runs_root=tmp_path / "runs", date="2026-09-13", topic=requested, mode="revise",
+        submit=True, run_synthesis=False, remote_loader=lambda: (set(), None),
+        revision_loader=lambda: (requests, None), submit_cycle=lambda **_: pytest.fail("selection must not submit"))
+    assert ledger["status"] == ("dry_run_selected_topic" if available else "no_revise_pending")
+    assert ledger.get("topic") == (requested if available else None)
+    assert ledger["submitted"] == 0
+    request, error = cycle._pending_remote_revision(tmp_path / "runs", tmp_path / "runs" / cycle.LEDGER_DIR,
+        loader=lambda: (requests, None), requested_topic=requested)
+    assert error is None
+    assert (request["submissionId"] if request else None) == ("parent-" + requested if available else None)
