@@ -3992,11 +3992,7 @@ def _findings_map_section(
     ))
     projected = sorted((findings_map_row(row) for row in rows), key=lambda values: values[:2])
     for values in projected:
-        lines.append(
-            "| "
-            + " | ".join(_table_cell(value) for value in values)
-            + " |"
-        )
+        lines.append("| " + " | ".join(_table_cell(value) for value in values) + " |")
     return "\n".join(lines)
 
 

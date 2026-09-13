@@ -1015,6 +1015,15 @@ def _needs_submit_self_heal(run: Path, *, inside_refresh: bool | None = None) ->
     return False
 
 
+def _revision_parent(revision: dict[str, Any], *, required: bool) -> str:
+    parent = revision.get("submissionId", "")
+    resubmission = revision.get("resubmission") or {}
+    if required and (not isinstance(parent, str) or not parent.strip() or not isinstance(resubmission, dict)
+                     or resubmission.get("parent_submission_id", parent) != parent):
+        raise ValueError("revision_parent_missing_or_conflicting")
+    return parent
+
+
 def _static_ineligible_status(
     run: Path, *, allow_recent_repair: bool = True, inside_refresh: bool | None = None,
     revision_verified: bool = False,
@@ -1056,6 +1065,10 @@ def _static_ineligible_status(
 
 def _revision_coverage_status(run: Path, *, refreshed: bool = False) -> str:
     request = _read_json(run / "researka_revision_request.json")
+    try:
+        _revision_parent(request, required=(run / "researka_revision_request.json").exists())
+    except ValueError:
+        return "revision_parent_missing_or_conflicting"
     if not request or not _revision_needs_coverage(request):
         return "eligible"
     gate = _read_json(run / REVISION_COVERAGE_GATE)
@@ -1494,13 +1507,9 @@ def _payload_candidate_status(
     submitted_topics = _seen_field(submitted_path, "topic", latest_active=True)
     if revision and not explicit_candidate and topic in submitted_topics:
         return "revision_pending_for_revise_lane"
-    if topic in submitted_topics and not revision and topic not in _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic"):
-        same_run_rows = [row for row in _ledger_rows(submitted_path)
-                         if row.get("topic") == topic and row.get("run") == run.name and not row.get("duplicate_submission_id")]
-        if explicit_candidate and same_run_rows and not any(
-            fp in {row.get("fingerprint"), row.get("submission_payload_hash")} for row in same_run_rows
-        ):
-            return "eligible_resubmission_after_payload_change"
+    if not revision and topic in _seen_field(submitted_path.with_name(REVISION_FINGERPRINTS), "topic"):
+        return "revision_pending_for_revise_lane"
+    if topic in submitted_topics and not revision:
         return "topic_already_submitted_pending"
     return "eligible"
 
@@ -1578,7 +1587,7 @@ def _prepare_submission(
             seen_topics.add(topic)
         row = {"run": run.name, "topic": topic, "fingerprint": fp, "status": status}
         considered.append(row)
-        if locally_eligible and status in {"eligible", "eligible_resubmission_after_payload_change"}:
+        if locally_eligible and status == "eligible":
             return run, payload, considered
     return None, {}, considered
 
@@ -1616,7 +1625,7 @@ def select_candidate(
                 )
                 seen_topics.add(topic)
         considered.append({"run": run.name, "topic": topic, "fingerprint": fp, "status": status})
-        if status in {"eligible", "eligible_resubmission_after_payload_change"}:
+        if status == "eligible":
             return run, considered
     return None, considered
 
@@ -2443,17 +2452,13 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
         # Reconciliation invariant: the retained-source count must equal the
         # receipt count the body reports. Surfacing rather than silently
         # shipping a mismatch.
-        print(
-            f"[submit] WARN source_bundle={len(source_bundle)} != "
-            f"n_receipts={n_receipts} for {run.name}",
-            file=sys.stderr,
-        )
+        print(f"[submit] WARN source_bundle={len(source_bundle)} != n_receipts={n_receipts} for {run.name}", file=sys.stderr)
     body_markdown = paper
     content_hash = "sha256:" + hashlib.sha256(body_markdown.encode("utf-8")).hexdigest()
     source_hash = _source_citation_hash(source_bundle)
     agent_slug = _agent_slug()
     revision = _read_json(run / "researka_revision_request.json")
-    revision_parent = str(revision.get("submissionId") or revision.get("artifactId") or "")
+    revision_parent = _revision_parent(revision, required=(run / "researka_revision_request.json").exists())
     article_type = DEFAULT_ARTICLE_TYPE
     domain_slug = _env_or_default("RESEARKA_DOMAIN_SLUG_V3", "longevity")
     category = _env_or_default("RESEARKA_CATEGORY_V3", domain_slug).removesuffix("_research")
@@ -2501,7 +2506,7 @@ def build_payload(run: Path, *, max_sources: int = 1000, enrich_sources: bool = 
         "core_claims_resolved": False,
         "author_signature": content_hash,
         "metadata": metadata,
-    } | ({"parent_submission_id": revision_parent} if revision.get("submissionId") else {})
+    } | ({"parent_submission_id": revision_parent} if revision_parent else {})
     payload["core_claims_resolved"] = _researka_core_claim_trace_status(payload, source_bundle) == "eligible"
     metadata["submission_payload_hash"] = _payload_fingerprint(payload)
     return payload
@@ -2770,8 +2775,6 @@ def _run_cycle_unlocked(
             run, payload, submitted_path, remote_seen=remote_seen,
             purpose=purpose, explicit_candidate=candidate_run is not None,
         )
-        if preflight_status == "eligible_resubmission_after_payload_change":
-            preflight_status = "eligible"
     ledger["researka_preflight"] = preflight_status
     if preflight_status == "eligible":
         preflight_status = _frozen_package_status(run, payload)

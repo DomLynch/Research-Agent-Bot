@@ -1,5 +1,22 @@
 # PROJECT_STATE.md
 
+## Shared Revision Rendering and Lineage - 2026-09-13
+Findings Map rendering now uses the public header that the final surface gate
+accepts, so late table regeneration cannot undo the earlier header repair.
+Admission Methods use a readable decision-log label and derive assessed,
+excluded and included counts from the recorded dated decisions. Historical
+retrieval totals remain separate; no missing screening history is invented.
+Submission refuses missing/conflicting revision parents and no longer allows a
+manually selected changed payload to become an unlinked fresh duplicate while
+the topic is pending or has recorded revision feedback.
+The exact September 13 resistance-training draft passes the full text-phase
+surface check and source-admission check, and is stable on a second pass.
+Full regression: 5,306 passed, 2 xpassed; the final focused check including an
+additional empty-request case passes 403 tests. Quality, mypy and both Import
+Linter boundaries pass; diff-cover is report-only (18 executable changed lines,
+100% covered). These are local receipts, not Core acceptance or publication.
+
+
 ## Retained Writer Repairs and Bounded Revisions - 2026-09-09
 Writer retries retain validated sentences and request only missing/corrected
 content. Exhausted sections now fail explicitly instead of emitting placeholders;

@@ -752,7 +752,7 @@ def test_phase_g_preserves_payload_bound_rejection_after_finalizer_text(tmp_path
     if not resolved:
         paper = "## Evidence Landscape\n\nDirection coding remains unresolved.\n"
     (tmp_path / "full_paper.md").write_text(paper, encoding="utf-8")
-    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": ask}), encoding="utf-8")
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"submissionId": "sub-parent", "feedback": ask}), encoding="utf-8")
     payload = submission.build_payload(tmp_path, enrich_sources=False)
     proof = {
         "passed": False, "ask_count": 1, "unmet_asks": [ask],
@@ -4519,7 +4519,7 @@ def test_finalizer_answers_sirtuin_revision_count_and_positive_finding_asks(tmp_
         "## Conclusion\n\n"
         "The bounded conclusion does not support clinical claims.\n"
     )
-    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"feedback": "; ".join(asks)}))
+    (tmp_path / "researka_revision_request.json").write_text(json.dumps({"submissionId": "sub-parent", "feedback": "; ".join(asks)}))
     (tmp_path / "manifest.json").write_text(json.dumps({"n_non_orthogonal_tensions": 116, "receipts": [
         {"citation_token": "Smith 2025", "source_title": "Sirtuin intervention improves arterial stiffness", "endpoints": ["arterial stiffness"], "outcome_class": "cardiometabolic", "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1", "n_claims": 12},
         {"citation_token": "Jones 2024", "source_title": "Sirtuin review finds null arterial stiffness effects", "endpoints": ["arterial stiffness"], "outcome_class": "cardiometabolic", "effect_direction": "null", "directness": "review", "evidence_tier": "B1", "n_claims": 8},

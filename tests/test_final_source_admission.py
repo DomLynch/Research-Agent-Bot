@@ -192,3 +192,24 @@ def test_reassessment_rejects_unauthorized_membership(corpus, tmp_path, retained
     with pytest.raises(ValueError, match="changes_included_set"):
         source_admission.prepare_reassessment("topic", lock, tmp_path / "out", None, excluded_receipt_ids=frozenset(excluded))
     assert not (tmp_path / "out/source_selection_assessment.json").exists()
+
+
+def test_render_repair_surface_contract_converges_for_every_topic(corpus, tmp_path):
+    from agent.journal_surface_gate import evaluate_journal_surface
+    from journal_finalizer import _phase_m_relabel_public_metadata_table_headers
+    rows, admission, paper = corpus
+    save_run(tmp_path, corpus)
+    assert "| Dated source eligibility assessment | 3 | 1 | 2 |" in paper
+    for _ in range(2):
+        paper, _ = _phase_m_relabel_public_metadata_table_headers(paper, tmp_path)
+        paper, _ = _phase_d_proactive_findings_map(paper, tmp_path)
+        assert final_source_integrity(paper, rows)
+        assert source_admission.check(tmp_path, paper) == "eligible"
+        issues = evaluate_journal_surface(paper).issues
+        assert not any("classification metadata leaked" in i.detail or "source_admission" in i.detail for i in issues)
+        assert "| Evidence domain | Source |" in paper
+    assert _phase_d_proactive_findings_map(paper, tmp_path) == (paper, [])
+    assert render_admission(admission) in paper
+    # A public table is still linted: generated headers do not exempt its contents.
+    bad = paper.replace("Planned research only; no completed outcomes reported.", "source_admission leaked_internal_slug")
+    assert any(i.code == "topic_slug_artifact" for i in evaluate_journal_surface(bad).issues)

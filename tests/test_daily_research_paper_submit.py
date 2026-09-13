@@ -166,7 +166,7 @@ def test_structural_pending_revision_reads_history_once(tmp_path, monkeypatch):
     ("full_paper.audit.json", {}, "audit_p1_failed"),
     ("full_paper.audit.json", {"p1_pass": False}, "audit_p1_failed"),
     ("full_paper.journal_surface.json", {"passed": False}, "journal_surface_not_passed"),
-    ("researka_revision_request.json", {"feedback": "repair all asks"}, "revision_coverage_unverified"),
+    ("researka_revision_request.json", {"submissionId": "sub-parent", "feedback": "repair all asks"}, "revision_coverage_unverified"),
 ])
 def test_structural_assessment_is_read_only(tmp_path, monkeypatch, file, value, status):
     run = _run(tmp_path)
@@ -771,7 +771,7 @@ def test_select_candidate_blocks_changed_payload_for_pending_submitted_topic(tmp
     assert considered[0]["status"] == "topic_already_submitted_pending"
 
 
-def test_select_candidate_allows_explicit_changed_payload_for_submitted_topic(tmp_path: Path) -> None:
+def test_select_candidate_blocks_unlinked_explicit_changed_payload_for_submitted_topic(tmp_path: Path) -> None:
     run = _run(tmp_path)
     _write_json(tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", [{
         "topic": "topic",
@@ -785,8 +785,8 @@ def test_select_candidate_allows_explicit_changed_payload_for_submitted_topic(tm
         candidate_run=run,
     )
 
-    assert selected == run
-    assert considered[0]["status"] == "eligible_resubmission_after_payload_change"
+    assert selected is None
+    assert considered[0]["status"] == "topic_already_submitted_pending"
 
 
 def test_preparation_strips_trailing_doi_punctuation(tmp_path: Path) -> None:
@@ -1132,7 +1132,7 @@ def test_select_candidate_skips_old_revision_coverage_failure_before_expensive_e
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
-    _write_json(run / "researka_revision_request.json", {"feedback": "Add the missing reviewer-requested caveat."})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": "Add the missing reviewer-requested caveat."})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["Add the missing reviewer-requested caveat."]})
     old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
     os.utime(run, (old, old))
@@ -1178,7 +1178,7 @@ def test_select_candidate_cannot_promote_old_semantic_rejection(
         "- Lee 2021 vs Rao 2020: surfaced tension/disagreement in Safety because directions are unclear versus null.\n",
         encoding="utf-8",
     )
-    _write_json(run / "researka_revision_request.json", {"feedback": ask})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": ask})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
     old = time.time() - daily.STALE_AUDIT_REFRESH_WINDOW_S - 60
     os.utime(run, (old, old))
@@ -4211,7 +4211,7 @@ def test_selection_skips_exact_payload_already_submitted_even_if_revision(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
-    _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True})
     _trust_revision_gate(monkeypatch)
     fp = daily._payload_fingerprint(daily.build_payload(run))
@@ -4487,7 +4487,7 @@ def test_missing_revision_coverage_cannot_be_certified_by_section_presence(
         encoding="utf-8",
     )
     ask = "Define the classification criteria used to assign studies to outcome classes and to code directness."
-    _write_json(run / "researka_revision_request.json", {"feedback": ask})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": ask})
     monkeypatch.setattr(revision_coverage, "unmet_asks", lambda _paper, _asks: [ask])
 
     selected, _payload, considered = daily._prepare_submission(
@@ -4507,7 +4507,7 @@ def test_passed_partial_revision_gate_is_fully_revalidated(tmp_path: Path) -> No
         "Reconcile internal count discrepancies and report an authoritative outcome-class tally.; "
         "Resolve PMID accuracy for every bundle entry."
     )
-    request = {"feedback": feedback}
+    request = {"submissionId": "sub-parent", "feedback": feedback}
     _write_json(run / "researka_revision_request.json", request)
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True, "unmet_asks": [feedback.split(";")[0]]})
 
@@ -4522,7 +4522,7 @@ def test_stale_passed_revision_gate_fails_closed_when_refresh_is_unverified(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failure: type[Exception] | None,
 ) -> None:
     run = _run(tmp_path)
-    request = {"feedback": "Complete the requested repair."}
+    request = {"submissionId": "sub-parent", "feedback": "Complete the requested repair."}
     _write_json(run / "researka_revision_request.json", request)
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": True, "unmet_asks": []})
     def fail(*_args: Any, **_kwargs: Any) -> None:
@@ -4545,7 +4545,7 @@ def test_revision_proof_binds_judgment_to_final_submission(tmp_path, monkeypatch
 
     run = _run(tmp_path)
     ask = "Explain the interpretation of population differences."
-    _write_json(run / "researka_revision_request.json", {"feedback": ask, "required_revisions": [ask]})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": ask, "required_revisions": [ask]})
     def judge(paper, asks, **context):
         assert paper == (run / "full_paper.md").read_text()
         assert context["evidence_rows"]
@@ -4591,7 +4591,7 @@ def test_stale_revision_coverage_refresh_runs_after_finalizer_change(
     from agent import journal_finalizer
 
     run = _run(tmp_path)
-    _write_json(run / "researka_revision_request.json", {"feedback": "tighten"})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": "tighten"})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": ["tighten"]})
     called = {"refresh": False}
 
@@ -4630,7 +4630,7 @@ def test_stale_unmet_revision_gate_preserves_uncertified_failure(tmp_path: Path,
         "is therefore not a human clinical confirmation.\n",
         encoding="utf-8",
     )
-    _write_json(run / "researka_revision_request.json", {
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent",
         "feedback": f"{ask}; Define the classification criteria used to assign studies to outcome classes and to code directness.",
     })
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
@@ -4653,7 +4653,7 @@ def test_unmet_refreshed_revision_coverage_still_blocks_selection(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     run = _run(tmp_path)
-    _write_json(run / "researka_revision_request.json", {
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent",
         "feedback": "Define the classification criteria used to assign studies to outcome classes and to code directness.",
     })
 
@@ -4834,7 +4834,7 @@ def test_selection_cannot_clear_semantic_rejection_after_text_repair(
         "Resolve the disconnect between the '47/48 null-coded' framing and the clearly "
         "directional findings visible in the source bundle excerpts."
     )
-    _write_json(run / "researka_revision_request.json", {"feedback": ask})
+    _write_json(run / "researka_revision_request.json", {"submissionId": "sub-parent", "feedback": ask})
     _write_json(run / daily.REVISION_COVERAGE_GATE, {"passed": False, "unmet_asks": [ask]})
 
     def fake_finalize(path: Path) -> object:
@@ -5539,3 +5539,33 @@ def test_run_cycle_capped_continues_past_rejection(tmp_path: Path, monkeypatch) 
     assert out["submitted"] == 1
     assert out["status"] == "submitted_to_researka"
     assert out["candidate"]["run"] == "new"
+
+
+@pytest.mark.parametrize("revision_request", [
+    {}, {"artifactId": "review-artifact"}, {"feedback": "Revise"}, {"submissionId": " "},
+    {"submissionId": 123}, {"submissionId": "parent", "resubmission": {"parent_submission_id": "other"}},
+    {"submissionId": "parent", "resubmission": ["other"]},
+])
+def test_invalid_revision_parent_cannot_be_serialized_or_submitted(tmp_path, revision_request):
+    run = _run(tmp_path)
+    _write_json(run / "researka_revision_request.json", revision_request)
+    with pytest.raises(ValueError, match="revision_parent_missing_or_conflicting"):
+        daily.build_payload(run)
+    ledger = daily.run_cycle(runs_root=tmp_path, date="2026-09-13", submit=True, candidate_run=run,
+        submitter=lambda _: pytest.fail("invalid revision must not reach transport"),
+        remote_loader=lambda: (set(), None))
+    assert ledger["status"] == "no_eligible_research_paper"
+    assert ledger["considered"][0]["status"] == "revision_parent_missing_or_conflicting"
+
+
+@pytest.mark.parametrize("topic", ["resistance_training", "metformin", "resveratrol"])
+def test_pending_revision_cannot_be_submitted_as_new_paper(tmp_path, topic):
+    run = _run(tmp_path)
+    manifest = daily._read_json(run / "manifest.json")
+    manifest["topic"] = topic
+    _write_json(run / "manifest.json", manifest)
+    _write_json(tmp_path / daily.LEDGER_DIR / daily.REVISION_FINGERPRINTS,
+                [{"topic": topic, "run": "original", "fingerprint": "previous", "submission_id": "parent"}])
+    assert daily._payload_candidate_status(run, daily.build_payload(run),
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json", remote_seen=set(),
+        purpose="resubmit", explicit_candidate=True) == "revision_pending_for_revise_lane"
