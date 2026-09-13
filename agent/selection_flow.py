@@ -52,7 +52,7 @@ def render_admission(log: dict[str, Any]) -> str:
     original = log.get("selection_assessment")
     while original and original.get("scope") == "retained-source reassessment":
         original = original.get("selection_assessment")
-    return (render_admission(original) + "\n\n" if original else "") + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
+    return (render_admission(original) + "\n\n" if original else "") + (log["selection_provenance"] + "\n\n" if log.get("selection_provenance") else "") + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
             f"{log['rule']} Assessed {len(decisions)} candidate sources; included {included}; "
             f"excluded {len(decisions) - included}. Decision reasons: {reasons}. "
             "The supplementary source-selection decision log contains each source identifier and decision. "

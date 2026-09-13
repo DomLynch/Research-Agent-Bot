@@ -57,6 +57,11 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
     own = [r for r in sources.get("own_results", []) if r.get("citation_token") in {bundle[i].get("cited_as") for i in indexes}]
     if len(own) != len(indexes):
         raise ValueError("review_source_citation_mismatch")
+    from agent.revision_claim_trace import _sentences
+    from journal_finalizer import _findings_map_roster_sentence, _manifest_direction_heterogeneity_note
+    accounting = set(map(str.strip, _sentences("Outcome-class roster: " + _findings_map_roster_sentence(sources.get("own_results", [])) + "\n" + _manifest_direction_heterogeneity_note(sources.get("own_results", [])))))
+    if statements and all(row.get("text", "").strip() in accounting for row in statements):
+        own = [{k: v for k, v in row.items() if k not in {"verified_source_sections", "verified_source_tables", "verified_abstract"}} for row in own]
     return {"bundle": [{**bundle[i], "source_index": i} for i in indexes], "own_results": own,
             "author_context": _shared_context(sources.get("author_context", {})),
             "source_catalog": [{key: row.get(key) for key in ("cited_as", "title", "evidence_type", "directness", "outcome_class", "effect_direction")} for row in bundle]}
@@ -99,5 +104,5 @@ def revision_inputs(paper: str, asks: list[str], rows: list[dict[str, Any]], pay
             fields["source_bundle"] = [{k: {"review_reference": "this source's excerpt"} if k == "evidence_span" and isinstance(v, str) and v and v == source.get("excerpt") else v for k, v in source.items()} for source in fields["source_bundle"]]
         return template.format(n=len(asks), asks="\n".join(f"{i}. {ask}" for i, ask in enumerate(asks, 1)), paper=paper,
             evidence=json.dumps({"source_catalog": catalog, "batch": batch}, ensure_ascii=False, separators=(",", ":")),
-            payload=json.dumps(fields, ensure_ascii=False, separators=(",", ":")))
+            payload=json.dumps(_shared_context(fields), ensure_ascii=False, separators=(",", ":")))
     return [content for _, content in bounded_batches(rows or [{}], render, overhead=len(system))]

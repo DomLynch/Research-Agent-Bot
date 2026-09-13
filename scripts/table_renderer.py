@@ -120,62 +120,6 @@ def _split_population_n(population_summary: str) -> tuple[str, str]:
     return n_str, pop_label or "—"
 
 
-def _parse_p_value(p: str) -> float | None:
-    m = re.search(r"\d*\.?\d+(?:[eE][-+]?\d+)?", p)
-    if not m:
-        return None
-    try:
-        return float(m.group(0))
-    except (ValueError, TypeError):
-        return None
-
-
-def _smallest_p_string(pvals: list[str]) -> str:
-    """Most-significant (smallest) p-value string from a list, or '—'."""
-    cleaned = [p.strip() for p in pvals if p and p.strip()]
-    if not cleaned:
-        return "—"
-    parsed = [(f, p) for p in cleaned if (f := _parse_p_value(p)) is not None]
-    # If nothing parses as a number, emit "—" rather than a non-p-value string
-    # (e.g. CI notation) — honours the "or '—'" contract for both callers.
-    return min(parsed, key=lambda t: t[0])[1] if parsed else "—"
-
-
-def _representative_p_value(r: object) -> str:
-    """Smallest (most-significant) p-value from receipt's p_values."""
-    return _smallest_p_string(list(getattr(r, "p_values", None) or ()))
-
-
-def _p_value_signatures(text: str) -> set[tuple[str, float]]:
-    operators = {"≤": "<=", "≥": ">="}
-    return {
-        (operators.get(operator, operator), float(value))
-        for operator, value in re.findall(
-            r"\bp\s*(<=|>=|<|>|=|≤|≥)\s*(\d*\.?\d+(?:[eE][-+]?\d+)?)",
-            text,
-            re.I,
-        )
-    }
-
-
-def _representative_p_value_coherent(r: object) -> str:
-    """Select an excerpt-grounded p-value coherent with the coded direction."""
-    direction = str(getattr(r, "effect_direction", "") or "").lower()
-    if direction in {"mixed", "unclear"}:
-        return "—"
-    pvals = [p for p in (getattr(r, "p_values", None) or ()) if p and p.strip()]
-    thesis = str(getattr(r, "thesis_text", "") or "")
-    if thesis:
-        supported = _p_value_signatures(thesis)
-        pvals = [
-            p for p in pvals
-            if _p_value_signatures(p) & supported
-        ]
-    if direction == "null":
-        pvals = [p for p in pvals if not _has_significant_p_value(p)]
-    return _smallest_p_string(pvals)
-
-
 def _n_claims(r: object) -> str:
     """High-confidence-claim count for a receipt."""
     n = getattr(r, "n_claims", None)
@@ -217,10 +161,10 @@ def render_table_1_included_studies(receipts: list) -> str:
         + _row(
             "Citation", "Design", "Tier", "N", "Population",
             "Endpoint", "Direction", "Directness",
-            "Trial ID", "Representative p-value", "n claims",
+            "Trial ID", "n claims",
         )
         + "\n"
-        + _row(*(["---"] * 11)) + "\n"
+        + _row(*(["---"] * 10)) + "\n"
     )
     rows: list[str] = []
     for r in receipts:
@@ -246,7 +190,6 @@ def render_table_1_included_studies(receipts: list) -> str:
             _public_label(getattr(r, "effect_direction", None)),
             _safe(getattr(r, "directness", None), "—"),
             _safe(getattr(r, "canonical_trial_id", None), "—"),
-            _representative_p_value_coherent(r),
             _n_claims(r),
         ))
     return header + "\n".join(rows) + "\n"
@@ -847,7 +790,6 @@ def _public_tension_lines(matrix: object | None, limit: int) -> list[str]:
         return ["- No load-bearing cross-study tensions were detected."]
     return [
         "- "
-        + f"Severity {int(getattr(t, 'severity', 0) or 0)} "
         + f"{_public_label(getattr(t, 'kind', 'tension'))}: "
         + f"{_inline_cell(getattr(t, 'receipt_a_id', '—'))} vs "
         + f"{_inline_cell(getattr(t, 'receipt_b_id', '—'))}; "
@@ -878,7 +820,6 @@ def render_public_evidence_snapshot(
     else:
         lines.extend(["### Load-Bearing Included Studies", ""])
         for r in ranked:
-            p_value = _representative_p_value_coherent(r)
             bits = [
                 _inline_cell(getattr(r, "receipt_id", "—")),
                 f"tier={_inline_cell(getattr(r, 'evidence_tier', '—'))}",
@@ -886,8 +827,6 @@ def render_public_evidence_snapshot(
                 f"endpoint={_public_label(getattr(r, 'outcome_class', '—'))}",
                 f"direction={_public_label(getattr(r, 'effect_direction', '—'))}",
             ]
-            if p_value != "—":
-                bits.append(f"representative statistic={_inline_cell(p_value)}")
             lines.append("- " + "; ".join(bits) + ".")
     lines.extend(["", *_classification_map_lines(receipts), ""])
     lines.extend(_classification_criteria_lines())

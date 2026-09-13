@@ -2750,7 +2750,7 @@ async def _run(
             "retraction_check_unavailable",
         )
     receipt_funnel["retraction_preflight"] = {"retracted_dois": retracted, "unverified_dois": unverified}
-    source_admission.finish(admission_log, receipts, receipt_funnel, out_dir, excluded_receipt_ids=excluded_receipt_ids)
+    source_admission.finish(admission_log, receipts, receipt_funnel, out_dir, excluded_receipt_ids=excluded_receipt_ids, corpus_root=REPO_ROOT / "docs/quality-reference" / topic)
     if (retracted or unverified) and revision_receipt_ids:
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,

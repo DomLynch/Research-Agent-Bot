@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import json
+import hashlib
 from pathlib import Path
 from typing import Any
 
@@ -86,11 +87,65 @@ def deduplicate(receipts: Any, log: dict[str, Any], continuity: dict[str, Any]) 
     return selected
 
 
-def finish(log: dict[str, Any], receipts: Any, funnel: dict[str, Any], out_dir: Path, *, excluded_receipt_ids: frozenset[str] = frozenset()) -> None:
+def _saved_candidate_links(records: dict[str, Any], source_ids: Any, corpus_root: Path) -> dict[str, dict[str, str]]:
+    def normalized(value: Any) -> str:
+        return " ".join(str(value or "").casefold().split())
+    index: dict[tuple[str, str], set[str]] = {}
+    for key, row in records.items():
+        for field in ("doi", "title"):
+            if value := normalized(row.get(field)):
+                index.setdefault((field, value), set()).add(key)
+    links = {}
+    for source_id in source_ids:
+        path = corpus_root / "parsed" / f"{source_id}.paper_sections.json"
+        doc = json.loads(path.read_text()) if path.is_file() else {}
+        for field in ("doi", "title"):
+            candidates = index.get((field, normalized(doc.get(field))), set())
+            if len(candidates) == 1 and (field != "title" or not normalized(doc.get("doi")) or normalized(records[next(iter(candidates))].get("doi")) in {"", normalized(doc.get("doi"))}):
+                links[source_id] = {"metadata_id": next(iter(candidates)), "matched_by": field}
+                break
+    return links
+
+
+def reconcile_saved_candidates(log: dict[str, Any], corpus_root: Path) -> None:
+    """Date an identifier crosswalk; never infer unrecorded historical screening."""
+    while log.get("selection_assessment"):
+        log = log["selection_assessment"]
+    path = corpus_root / "corpus_manifest.json"
+    if log.get("selection_provenance") or not path.is_file():
+        return
+    raw = path.read_bytes()
+    entries = json.loads(raw).get("entries", [])
+    if not entries:
+        return
+    records = {row["paper_id"]: row for row in entries}
+    if len(records) != len(entries) or any(type(row.get("keep_for_extraction")) is not bool for row in entries):
+        raise ValueError("selection_metadata_identity_or_decision_invalid")
+    links = _saved_candidate_links(records, log["decisions"], corpus_root)
+    linked = {row["metadata_id"] for row in links.values()}
+    kept = {key for key, row in records.items() if row["keep_for_extraction"]}
+    unlinked = sorted(set(log["decisions"]) - links.keys())
+    assessed = datetime.now(timezone.utc).isoformat()
+    log["selection_provenance_records"] = {"assessed_at": assessed, "metadata_sha256": hashlib.sha256(raw).hexdigest(),
+        "metadata_records": len(records), "metadata_kept": len(kept), "candidate_links": links, "unlinked_candidate_ids": unlinked}
+    log["selection_provenance"] = (
+        f"Saved-record reconciliation dated {assessed}: exact DOI, otherwise a unique exact title after case/whitespace normalization, linked saved candidate files to retrieval metadata. "
+        f"Of {len(records)} metadata records, {len(records)-len(kept)} were excluded by the recorded metadata rules and {len(kept)} were kept. "
+        f"Among the kept records, {len(kept & linked)} link to saved candidates and {len(kept-linked)} have no linked candidate file in this assessment. "
+        f"A further {len(linked-kept)} linked metadata records were marked excluded. The {len(linked)} distinct linked metadata records correspond to {len(links)} saved candidate files; "
+        f"adding {len(unlinked)} candidate files without a unique recorded match gives the {len(log['decisions'])} candidates assessed below. "
+        "Unmatched files are not claimed to originate in this retrieval. This is a dated crosswalk of saved datasets, not reconstructed historical screening. "
+        "Extraction-report counts describe a processing batch, not the cumulative saved candidate set. Candidate-level admission and exclusion reasons follow below; the decision log records every match and unmatched identifier."
+    )
+
+
+def finish(log: dict[str, Any], receipts: Any, funnel: dict[str, Any], out_dir: Path, *, excluded_receipt_ids: frozenset[str] = frozenset(), corpus_root: Path | None = None) -> None:
     retain(log, receipts, "doi_retraction_exclusion")
     if log["scope"] == "retained-source reassessment":
         log["selection_assessment"] = json.loads((out_dir / "source_selection_assessment.json").read_text())
         log["reviewer_excluded_source_ids"] = sorted(excluded_receipt_ids)
+    if corpus_root is not None:
+        reconcile_saved_candidates(log, corpus_root)
     funnel["source_admission"] = log
     (out_dir / "source_admission.json").write_text(json.dumps(log, indent=2))
 

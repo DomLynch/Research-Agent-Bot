@@ -1,5 +1,30 @@
 # PROJECT_STATE.md
 
+## Retrieval Crosswalk and Summary Statistics - 2026-09-13
+Core received linked revision c9bc2b8b (parent d85c342d) and returned REVISE:
+reconcile retrieval with the saved candidate pool and remove or support an
+unlabelled Longrak p-value. The previous two scientific asks did not recur.
+This is an actual resubmission, not publication.
+
+The shared admission logger now captures a dated source-identifier crosswalk
+using exact DOI or unique exact normalized title, with unmatched candidates
+explicitly recorded. It distinguishes metadata records from cached candidate
+files instead of fabricating a historical screening chain. Summary tables no
+longer choose a representative p-value independently of endpoint/comparator.
+Evidence Snapshot claims enter source review. Exact regenerated accounting
+sentences use the source catalog and recorded findings; altered counts or added
+scientific assertions keep full source evidence. This avoids loading every full
+paper merely to recount classifications, without bypassing scientific review.
+The corrected linked revision has 70/70 supported source statements and passes
+both normal revision asks. Seven coverage requests are each below 300,000
+characters after lossless duplicate-record encoding. Core preflight changes
+nothing; the frozen package and normal submission dry run are eligible. All 40
+frozen source files match the previous submission. Deployment and Core
+acceptance remain separate verification steps.
+Validation: 5,371 full-suite tests pass (2 xpassed), 240 focused tests pass,
+quality and mypy pass; both Import Linter contracts are kept. Two-pass code
+and evidence audit completed with unchanged LOC and review limits.
+
 ## Final Review and Admission Rendering - 2026-09-13
 Methods now renders the original candidate assessment and the current retained-source
 assessment. The complete intermediate history stays in the source decision log;

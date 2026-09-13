@@ -237,3 +237,56 @@ def test_render_repair_surface_contract_converges_for_every_topic(corpus, tmp_pa
     # A public table is still linted: generated headers do not exempt its contents.
     bad = paper.replace("Planned research only; no completed outcomes reported.", "source_admission leaked_internal_slug")
     assert any(i.code == "topic_slug_artifact" for i in evaluate_journal_surface(bad).issues)
+
+
+def test_saved_candidate_crosswalk_reconciles_distinct_populations(corpus, tmp_path):
+    rows, log, _ = deepcopy(corpus)
+    entries = [
+        {"paper_id": "metadata-1", "doi": "10.1/a", "title": "First source", "keep_for_extraction": True},
+        {"paper_id": "metadata-2", "doi": "", "title": "Second source", "keep_for_extraction": True},
+        {"paper_id": "metadata-3", "doi": "", "title": "Not extracted", "keep_for_extraction": True},
+        {"paper_id": "metadata-4", "doi": "", "title": "Excluded metadata", "keep_for_extraction": False},
+    ]
+    (tmp_path / "corpus_manifest.json").write_text(json.dumps({"entries": entries}))
+    (tmp_path / "parsed").mkdir()
+    for rid, doc in {"Study_1": {"doi": "10.1/A", "title": "Changed title"},
+                     "Study_2": {"title": "SECOND   SOURCE"},
+                     "excluded_candidate": {"title": "Other cached source"}}.items():
+        (tmp_path / "parsed" / f"{rid}.paper_sections.json").write_text(json.dumps(doc))
+    source_admission.reconcile_saved_candidates(log, tmp_path)
+    records = log["selection_provenance_records"]
+    assert records["metadata_records"] == 4 and records["metadata_kept"] == 3
+    assert records["candidate_links"] == {"Study_1": {"metadata_id": "metadata-1", "matched_by": "doi"},
+                                            "Study_2": {"metadata_id": "metadata-2", "matched_by": "title"}}
+    assert records["unlinked_candidate_ids"] == ["excluded_candidate"]
+    text = render_admission(log)
+    assert "adding 1 candidate files" in text and "gives the 3 candidates" in text
+    assert "2 link to saved candidates and 1 have no linked candidate" in text
+    assert "not reconstructed historical screening" in text
+    assert source_admission.validate(log, rows)
+    snapshot = deepcopy(log)
+    (tmp_path / "corpus_manifest.json").write_text('{}')
+    source_admission.reconcile_saved_candidates(log, tmp_path)
+    assert log == snapshot  # Captured evidence is not silently replaced later.
+
+
+def test_candidate_crosswalk_does_not_guess_ambiguous_identity(tmp_path):
+    (tmp_path / "parsed").mkdir()
+    (tmp_path / "parsed/unknown.paper_sections.json").write_text(json.dumps({"title": "Same title"}))
+    records = {key: {"title": "Same title"} for key in ("a", "b")}
+    assert source_admission._saved_candidate_links(records, ["unknown", "missing"], tmp_path) == {}
+    (tmp_path / "parsed/unknown.paper_sections.json").write_text(json.dumps({"title": "Same title", "doi": "10.1/different"}))
+    assert source_admission._saved_candidate_links({"a": {"title": "Same title", "doi": "10.1/original"}}, ["unknown"], tmp_path) == {}
+
+
+def test_source_review_context_reports_computed_completeness(corpus, tmp_path):
+    from agent.prose_grounding import author_context
+    rows, _, _ = corpus
+    paper = save_run(tmp_path, corpus)
+    bundle = [{**row, "cited_as": row["citation_token"]} for row in rows]
+    context = author_context(tmp_path, bundle)
+    assert context["rendered_findings_map_source_indexes"] == [[0], [1]]
+    assert context["source_accounting_verified"] is True
+    assert "not proof of statistical significance" in "\n".join(context["declared_classification_policy"])
+    (tmp_path / "full_paper.md").write_text("\n".join(line for line in paper.splitlines() if "| direction=" not in line))
+    assert author_context(tmp_path, rows)["source_accounting_verified"] is False

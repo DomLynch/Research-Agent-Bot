@@ -4,6 +4,7 @@ table's structure + edge cases."""
 from __future__ import annotations
 
 import sys
+import pytest
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, cast
@@ -21,6 +22,7 @@ class _FakeReceipt:
     effect_direction: str = "positive"
     population_summary: str | None = "older adults, n=120"
     canonical_trial_id: str | None = "NCT01234567"
+    p_values: tuple[str, ...] = ()
 
 
 def test_table_1_renders_one_row_per_receipt() -> None:
@@ -308,71 +310,13 @@ def test_table_1_handles_missing_population_gracefully() -> None:
 # ----- Fix #12: evidence-table completion (p-value + n claims columns) -
 
 
-def test_table_1_includes_representative_p_value_column() -> None:
-    """Fix #12: surface deterministic p-values from receipts into Table
-    1 → boosts Q9 numeric density without prose bloat."""
-    @dataclass
-    class _R:
-        receipt_id: str = "Walton 2019"
-        evidence_tier: str = "A1"
-        directness: str = "direct"
-        outcome_class: str = "muscle_function"
-        effect_direction: str = "negative"
-        population_summary: str | None = "older adults, n=120"
-        canonical_trial_id: str | None = "NCT01234567"
-        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
-        n_claims: int = 17
-
-    receipts = [_R()]
-    md = tr.render_table_1_included_studies(receipts)
-    assert "Representative p-value" in md  # column header
-    assert "p < 0.001" in md  # first p-value selected
-    assert "n claims" in md  # column header
-    assert "17" in md  # n_claims rendered
-
-
-def test_representative_p_value_coherent_reconciles_null_with_significant_stat() -> None:
-    """A receipt coded direction=null must NOT surface a significant p (an
-    incoherent 'null; p<0.001'). It is RESOLVED — not tagged: the null receipt
-    shows its smallest NON-significant p, or '—' if it has none. A signed
-    receipt keeps its significant stat. Resolution only selects among the
-    receipt's own values."""
-    @dataclass
-    class _RNull:
-        effect_direction: str = "null"
-        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.20")
-
-    @dataclass
-    class _RNullAllSig:
-        effect_direction: str = "null"
-        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.04")
-
-    @dataclass
-    class _RPos:
-        effect_direction: str = "positive"
-        p_values: tuple[str, ...] = ("p < 0.001",)
-
-    @dataclass
-    class _RAmbiguous:
-        effect_direction: str = "unclear"
-        p_values: tuple[str, ...] = ("p < 0.001", "p = 0.20")
-
-    assert tr._representative_p_value_coherent(_RNull()) == "p = 0.20"
-    assert tr._representative_p_value_coherent(_RNullAllSig()) == "—"
-    assert tr._representative_p_value_coherent(_RPos()) == "p < 0.001"
-    assert tr._representative_p_value_coherent(_RAmbiguous()) == "—"
-
-
-def test_representative_p_value_coherent_uses_receipt_excerpt() -> None:
-    """A summary must not promote a statistic absent from its evidence excerpt."""
-    @dataclass
-    class _R:
-        effect_direction: str = "positive"
-        p_values: tuple[str, ...] = ("p = 0.002", "p = 0.001", "p = 0.049")
-        thesis_text: str = "Fatty liver index improved (p=0.002); liver fat score changed (p=.049)."
-
-    assert tr._representative_p_value_coherent(_R()) == "p = 0.002"
-    assert tr._representative_p_value_coherent(_R(thesis_text="No numeric excerpt.")) == "—"
+@pytest.mark.parametrize("direction", ["positive", "negative", "null", "mixed", "unclear"])
+def test_summary_tables_omit_unlabelled_representative_statistics(direction) -> None:
+    receipt = _FakeReceipt(receipt_id="Study 2024", effect_direction=direction, p_values=("p = 0.01",))
+    for text in (tr.render_table_1_included_studies([receipt]), tr.render_public_evidence_snapshot([receipt])):
+        assert "p = 0.01" not in text
+        assert "representative" not in text.lower()
+        assert receipt.receipt_id in text
 
 
 def test_table_1_null_direction_does_not_surface_bare_significant_p_value() -> None:
@@ -422,46 +366,6 @@ def test_table_1_falls_back_to_dash_when_no_p_value() -> None:
     assert walton_lines
     # At least 2 dashes (p-value + trial_id at minimum)
     assert walton_lines[0].count("—") >= 2
-
-
-def test_representative_p_value_picks_smallest_not_first() -> None:
-    """Reviewer P2: pre-fix returned the FIRST non-empty p-value
-    (iteration-order dependent → non-deterministic). Now picks the
-    SMALLEST (most-significant) one, which is what a clinician would
-    cite as 'representative.'"""
-    @dataclass
-    class _R:
-        p_values: tuple[str, ...] = ("p = 0.04", "p < 0.001", "p = 0.02")
-
-    # Smallest is 0.001 → "p < 0.001" wins, NOT first ("p = 0.04")
-    assert tr._representative_p_value(_R()) == "p < 0.001"
-
-
-def test_representative_p_value_falls_back_to_first_when_unparseable() -> None:
-    @dataclass
-    class _R:
-        p_values: tuple[str, ...] = ("not a p", "still not", "p = 0.02")
-
-    # First parseable is "p = 0.02" → wins (only parseable one)
-    assert tr._representative_p_value(_R()) == "p = 0.02"
-
-
-def test_representative_p_value_dash_when_all_unparseable() -> None:
-    """Bug-4: when NO value parses as a number, emit '—' rather than a
-    non-p-value string in the summary cell."""
-    @dataclass
-    class _R:
-        p_values: tuple[str, ...] = ("not reported", "see table", "NS")
-
-    assert tr._representative_p_value(_R()) == "—"
-
-
-def test_representative_p_value_helper_returns_dash_when_empty() -> None:
-    @dataclass
-    class _R:
-        p_values: tuple[str, ...] = ()
-
-    assert tr._representative_p_value(_R()) == "—"
 
 
 def test_n_claims_helper_renders_int() -> None:
@@ -1276,3 +1180,12 @@ def test_table_4_caveat_mentions_synthesis_weight() -> None:
     assert "tier × directness × overall RoB" in md or (
         "qualitative weighting" in md
     )
+
+
+def test_public_tension_summary_does_not_present_internal_severity_as_evidence():
+    from types import SimpleNamespace
+    tension = SimpleNamespace(severity=3, kind="indirectness_gap", receipt_a_id="A", receipt_b_id="B", summary="Different comparators.")
+    matrix = SimpleNamespace(non_orthogonal=lambda: [tension])
+    text = "\n".join(tr._public_tension_lines(matrix, 8))
+    assert "Severity" not in text
+    assert "Different comparators" in text

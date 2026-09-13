@@ -248,3 +248,34 @@ def test_unknown_or_duplicate_writer_citation_blocks_before_network(monkeypatch,
     with pytest.raises(ValueError, match='review_source_citation_mismatch'):
         asyncio.run(prose_grounding.review_statements([{'text': 'Claim', 'receipt_ids': ['missing']}], receipts))
     assert calls == []
+
+
+def test_exact_count_roster_uses_catalog_but_scientific_claim_keeps_full_sources():
+    from journal_finalizer import _findings_map_roster_sentence
+    rows = [{"receipt_id": f"source{i}", "citation_token": f"Study {i}", "outcome_class": "muscle_function",
+             "effect_direction": "positive", "directness": "direct", "evidence_tier": "A1",
+             "verified_source_sections": {"results": "Contradictory source passage. " * 12000}} for i in range(3)]
+    sources = {"bundle": [{"cited_as": f"Study {i}", "excerpt": f"Complete abstract {i}."} for i in range(3)], "own_results": rows}
+    roster = "Outcome-class roster: " + _findings_map_roster_sentence(rows)
+    packet = batches._sources_for([{"text": roster, "sources": [0, 1, 2]}], sources)
+    assert [b["excerpt"] for b in packet["bundle"]] == [b["excerpt"] for b in sources["bundle"]]
+    assert len(json.dumps(packet)) < batches.MAX_REVIEW_CHARS
+    for text in (roster.replace("n=3", "n=4"), roster + " Mortality decreased."):
+        packet = batches._sources_for([{"text": text, "sources": [0, 1, 2]}], sources)
+        assert packet["own_results"] == rows
+    assert all(row["verified_source_sections"] for row in sources["own_results"])
+
+
+def test_revision_packets_preserve_admission_records_with_lossless_encoding():
+    import revision_coverage
+    decisions = {f"source_{i}": {"source_id": f"source_{i}", "included": i < 2, "reason": "Recorded decision " * 20} for i in range(406)}
+    admission = {"decisions": decisions, "original_decisions": decisions}
+    payload = {"metadata": {"source_admission": admission}, "source_bundle": [{"cited_as": "Study", "excerpt": "Complete source passage."}]}
+    rows = [{"citation_token": "Study", "verified_source_sections": {"results": "Complete contradictory passage."}}]
+    packets = batches.revision_inputs("Complete manuscript.", ["Explain source selection."], rows, payload, revision_coverage._SYS, revision_coverage._USER)
+    assert packets and all(len(packet) + len(revision_coverage._SYS) <= batches.MAX_REVIEW_CHARS for packet in packets)
+    for packet in packets:
+        encoded = json.loads(packet.split("=== OUTGOING PAYLOAD FIELDS ===\n", 1)[1])
+        assert _restore_context(encoded)["metadata"]["source_admission"] == admission
+        assert "Complete contradictory passage." in packet
+    assert len(payload["metadata"]["source_admission"]["decisions"]) == 406

@@ -166,7 +166,7 @@ RESEARKA_RECOMMENDED_SECTIONS = {
         "References",
     ),
 }
-_PUBLIC_CLAIM_SECTIONS = frozenset({"abstract", "key findings", "findings", "results", "conclusion"})
+_PUBLIC_CLAIM_SECTIONS = frozenset({"abstract", "key findings", "findings", "results", "conclusion", "evidence snapshot"})
 _CLAIM_MARKERS = ("support", "suggest", "risk", "increase", "decrease", "null", "evidence")
 _GENERIC_EVIDENCE_WORDS = frozenset({
     "about", "across", "adults", "after", "among", "associated", "before", "bundle", "cohort", "compared", "evidence",
@@ -729,8 +729,6 @@ def _cited_claim_aligns(claim: str, bundle: list[dict[str, Any]], indexes: set[i
         return True
     if len(indexes) == 1 and _verified_complete_quotation(claim, bundle[next(iter(indexes))]):
         return True
-    if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
-        return any(_evidence_aligns(claim, bundle[index]) for index in indexes)
     clauses = _claim_clauses(claim)
     if len(clauses) < 2:
         return any(_evidence_aligns(claim, bundle[index]) for index in indexes)
@@ -852,13 +850,13 @@ def _researka_core_claim_trace_status(
     if re.search(r"(?:\b(?:todo|tbd|unresolved|placeholder)\b|\[(?:to fill|insert|pending)[^]]*\]|\?\?\?)", decisive, re.I):
         return "researka_core_claims_unresolved:placeholder_token"
     claims: list[str] = []
-    for name in ("abstract", "conclusion"):
+    for name in sorted(_PUBLIC_CLAIM_SECTIONS):
         text = re.sub(r"^#{1,6}\s+(.+?)\s*$", r"\1.", sections.get(name, ""), flags=re.M)
         section_claims = [
-            sentence.strip() for sentence in _revision_claim_trace._sentences(text)
-            if sentence.strip() and (bool(_claim_candidates(sentence)) or _empirical_claim(sentence) or (_corpus_accounting_only(sentence) and bool(re.search(r"\d", sentence))) or "synthesizes evidence on" in sentence.lower())
+            sentence.strip() for line in text.splitlines() if not line.lstrip().startswith(("|", "```")) for sentence in _revision_claim_trace._sentences(line)
+            if sentence.strip() and (bool(_claim_candidates(sentence)) or _empirical_claim(sentence) or (_corpus_accounting_only(sentence) and bool(re.search(r"\d", sentence))) or "synthesizes evidence on" in sentence.lower() or _quantity_tokens(sentence, source_bundle))
         ]
-        if not section_claims:
+        if not section_claims and name in {"abstract", "conclusion"}:
             return f"researka_core_claims_unresolved:{name}_claims=0"
         claims.extend(section_claims)
     indexes = [_citation_indexes(claim, source_bundle) for claim in claims]

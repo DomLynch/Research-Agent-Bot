@@ -390,3 +390,12 @@ def test_findings_map_decimal_layout_preserves_exact_numeric_context(alteration)
     rows = [{"cited_as": "Smith 2020", "thesis_text": source}]
     paper = "### Findings Map\n\n| Source | Finding |\n|---|---|\n| Smith 2020 [bundle:1] | finding=" + rendered + " |\n"
     assert _statistics_are_source_bound(paper, rows, tables_only=True) is (alteration is None)
+
+
+def test_evidence_snapshot_numeric_claims_are_reviewed(run, monkeypatch):
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text() + "\n## Evidence Snapshot\n\nA representative result was P = 0.01.\n")
+    calls = install_judge(monkeypatch, supported=False)
+    asyncio.run(grounding.review_manuscript(run))
+    reviewed = [row["text"] for call in calls for row in json.loads(call["messages"][1]["content"])["statements"]]
+    assert "A representative result was P = 0.01." in reviewed

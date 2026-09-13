@@ -274,8 +274,7 @@ def _normalize_journal_layout(text: str) -> str:
     """Dispatch to per-journal normalizers in order. Add a new
     `_normalize_<journal>_layout` function above and call it here."""
     text = _normalize_aging_cell_layout(text)
-    text = _collapse_letter_spaced_headers(text)
-    return text
+    return _collapse_letter_spaced_headers(text)
 
 
 def _split_sections(full_text: str) -> tuple[Sections, list[str]]:

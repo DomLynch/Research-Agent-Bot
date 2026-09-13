@@ -8,11 +8,13 @@ import re
 from contextlib import contextmanager
 from contextvars import ContextVar
 from functools import wraps
+from importlib import import_module
 from pathlib import Path
 from typing import Any, Callable, Iterator
 
 from agent.llm_client import build_judge_chain, chat_json
 from agent.settings import load_settings
+from agent.revision_contract import evidence_rows, final_source_integrity
 
 _APPROVED: ContextVar[frozenset[str]] = ContextVar("prose_grounding", default=frozenset())
 _RENDER_FIELDS = {"evidence_span", "claim_span", "excerpt_is_complete_field", "pmcid", "source_snapshot_locator", "source_passage_locator"}
@@ -52,12 +54,11 @@ def author_context(run: Path, bundle: list[dict[str, Any]]) -> dict[str, Any]:
     manifest = json.loads((run / "manifest.json").read_text())
     methods = run / "methods_pack.json"
     return {"question": manifest.get("research_question") or manifest.get("thesis"), "review_type": manifest.get("review_type"),
-            "source_count": len(bundle), "retrieval": manifest.get("retrieval"),
-            "methods_record": json.loads(methods.read_text()) if methods.is_file() else {}}
+            "source_count": len(bundle), "retrieval": manifest.get("retrieval"), "source_accounting_verified": final_source_integrity((run / "full_paper.md").read_text(), evidence_rows(run, manifest)), "rendered_findings_map_source_indexes": [sorted(indexes) for _, indexes in import_module("scripts.publishing.submission")._findings_map_claims((run / "full_paper.md").read_text(), bundle)],
+            "methods_record": json.loads(methods.read_text()) if methods.is_file() else {}, "declared_classification_policy": import_module("scripts.table_renderer")._classification_criteria_lines()}
 
 
 async def review_statements(statements: list[dict[str, Any]], sources: Any, **options: Any) -> dict[str, Any]:
-    from importlib import import_module
     return await import_module("scripts.review_batches").review_prose(statements, sources, prompt=_PROMPT, call=chat_json,
                               validate=_validate_assessments, chain=build_judge_chain(load_settings()), **options)
 
@@ -110,8 +111,7 @@ def _verified_bundle(run: Path) -> list[dict[str, Any]]:
 
 async def review_manuscript(run: Path, **options: Any) -> None:
     from agent import revision_claim_trace
-    from agent.revision_contract import evidence_rows
-    from publishing.submission import _citation_indexes, _cited_claim_aligns, _claim_candidates, _empirical_claim, _sections, _PUBLIC_CLAIM_SECTIONS, _findings_map_claims
+    from publishing.submission import _citation_indexes, _cited_claim_aligns, _claim_candidates, _empirical_claim, _sections, _PUBLIC_CLAIM_SECTIONS, _findings_map_claims, _quantity_tokens
     bundle = _verified_bundle(run)
     statements = [{"text": text, "sources": sorted(indexes)} for text, indexes in _findings_map_claims((run / "full_paper.md").read_text(), bundle)]
     for heading, body in _sections((run / "full_paper.md").read_text()).items():
@@ -122,7 +122,7 @@ async def review_manuscript(run: Path, **options: Any) -> None:
                 continue
             for sentence in revision_claim_trace._sentences(line):
                 indexes = _citation_indexes(sentence, bundle)
-                if (heading.lower() in {"abstract", "conclusion"} or indexes or _claim_candidates(sentence) or _empirical_claim(sentence)) and not _cited_claim_aligns(sentence, bundle, indexes):
+                if (heading.lower() in {"abstract", "conclusion"} or indexes or _claim_candidates(sentence) or _empirical_claim(sentence) or _quantity_tokens(sentence, bundle)) and not _cited_claim_aligns(sentence, bundle, indexes):
                     statements.append({"text": sentence.strip(), "sources": sorted(indexes)})
     if not statements:
         return
