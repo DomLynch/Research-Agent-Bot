@@ -116,9 +116,13 @@ def test_dated_admission_history_survives_prose_deduplication(corpus, tmp_path):
     rows, log, original = deepcopy(corpus)
     previous = render_admission(log)
     for day in ("2026-09-12", "2026-09-13"):
-        log = {**log, "scope": "retained-source reassessment", "assessed_at": day,
-               "selection_assessment": deepcopy(log)}
+        log = {**source_admission.start(log["topic"], frozenset(row["receipt_id"] for row in rows)), "assessed_at": day,
+               "selection_assessment": deepcopy(log),
+               "decisions": {key: row for key, row in log["decisions"].items() if row["included"]}}
     expected = render_admission(log)
+    assert "dated 2026-09-12," not in expected
+    assert log["selection_assessment"]["assessed_at"] == "2026-09-12"
+    assert previous in expected
     paper = original.replace(previous, expected)
     revised, removed = _dedupe_repeated_blocks(paper)
     assert revised == paper

@@ -118,7 +118,7 @@ async def review_manuscript(run: Path, **options: Any) -> None:
         if heading.lower() not in _PUBLIC_CLAIM_SECTIONS:
             continue
         for line in body.splitlines():
-            if line.lstrip().startswith(("#", "|", "```", "_Cited:")):
+            if not line.strip() or line.lstrip().startswith(("#", "|", "```", "_Cited:")):
                 continue
             for sentence in revision_claim_trace._sentences(line):
                 indexes = _citation_indexes(sentence, bundle)

@@ -49,8 +49,10 @@ def render_admission(log: dict[str, Any]) -> str:
     included = sum(row["included"] for row in decisions.values())
     reasons_by_decision = Counter((row["included"], row["reason"]) for row in decisions.values())
     reasons = "; ".join(f"{'included' if kept else 'excluded'} — {reason.replace('_', ' ')}: {count}" for (kept, reason), count in sorted(reasons_by_decision.items())) or "none"
-    prior = render_admission(log["selection_assessment"]) + "\n\n" if log.get("selection_assessment") else ""
-    return prior + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
+    original = log.get("selection_assessment")
+    while original and original.get("scope") == "retained-source reassessment":
+        original = original.get("selection_assessment")
+    return (render_admission(original) + "\n\n" if original else "") + (f"Selection assessment ({log['scope']}) dated {log['assessed_at']}, rule {log['rule_version']}: "
             f"{log['rule']} Assessed {len(decisions)} candidate sources; included {included}; "
             f"excluded {len(decisions) - included}. Decision reasons: {reasons}. "
             "The supplementary source-selection decision log contains each source identifier and decision. "

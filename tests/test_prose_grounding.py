@@ -44,6 +44,18 @@ def install_judge(monkeypatch, *, supported=True):
     return calls
 
 
+def test_review_omits_blank_lines_but_keeps_short_unsupported_claims(run, monkeypatch):
+    paper = run / "full_paper.md"
+    paper.write_text(paper.read_text().replace("## Abstract\n\n", "## Abstract\n\n \t\nMortality decreased.\n\n"))
+    calls = install_judge(monkeypatch, supported=False)
+    asyncio.run(grounding.review_manuscript(run))
+    reviewed = [row for call in calls for row in json.loads(call["messages"][1]["content"])["statements"]]
+    assert all(row["text"].strip() for row in reviewed)
+    assert "Mortality decreased." in {row["text"] for row in reviewed}
+    with grounding.grounding_context(run):
+        assert not grounding.approved("Mortality decreased.", grounding._verified_bundle(run), set())
+
+
 @pytest.mark.parametrize("supported", [True, False])
 def test_findings_map_labels_require_review_of_the_displayed_row(run, monkeypatch, supported):
     paper = run / "full_paper.md"
