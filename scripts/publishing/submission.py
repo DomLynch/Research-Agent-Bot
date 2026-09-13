@@ -2581,7 +2581,7 @@ def _submitter(url: str, token: str, agent_slug: str, *, purpose: str = "resubmi
             },
         )
         try:
-            with urllib.request.urlopen(req, timeout=60) as response:
+            with urllib.request.urlopen(req, timeout=180) as response:
                 body = response.read().decode("utf-8")
                 result = json.loads(body)
                 if not 200 <= response.status < 300 or _submission_id_from_response(result) is None:
