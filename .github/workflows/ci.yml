@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]" "diff-cover>=9,<11" "import-linter>=2.6,<3"
+          pip install -e ".[dev]"
 
       - name: Import boundaries
         run: lint-imports --no-cache

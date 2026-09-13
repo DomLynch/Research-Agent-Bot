@@ -126,3 +126,38 @@ make quality passed with 347 checks; mypy passed all 183 runtime files. The seco
 review preserved the legacy index-list API and exact smart-gate instructions.
 Both complete live reviewer checks passed technically and retained negative
 scientific findings. Deployment and normal publishing remain separately gated.
+# Follow-up: complete manuscript and project CI
+
+The Metformin full writer completed, then its consistency preparation failed
+before a provider call. The exact manuscript has 35 review statements. A cited
+comparison repeated 406 admission IDs as both dictionary keys and record fields.
+The transport now represents such maps as keyed record lists and references exact
+repeated records over 256 characters. Decoding restores every original value;
+the 300,000-character cap and scientific acceptance policy remain unchanged.
+The same 35 statements now form seven packets, maximum 299,906 characters.
+This sizing receipt is not a scientific approval or publication receipt.
+
+Audit: complete cited passages and decisions round-trip unchanged, including
+mismatched IDs and 100 randomized orderings. Two cross-domain regression cases
+retain a negative reviewer result. Full suite: 5,294 passed, 2 xpassed, 16 existing
+warnings. Required quality gate: 347 passed, no new complexity or LOC findings.
+Mypy: 183 source files clean. AST-grep confirms the four transport call sites.
+
+V3 project CI now checks two Import Linter contracts: stage types cannot depend
+on providers/orchestration, and source adapters cannot depend on writing/review.
+Both direct and indirect imports are checked. Both contracts pass; deliberate
+forbidden imports in isolated copies fail. These are focused static boundaries,
+not a claim to inspect arbitrary dynamic imports or all architectural layers.
+
+The diff-cover trial reuses the existing full test run under coverage, compares
+against the actual PR base or preceding push SHA, and uploads XML/Markdown reports.
+It has no coverage threshold and is report-only. A missing event base is explicitly
+reported as unavailable. Neither tool is added to the per-turn quality hook.
+Local publishing-change trial against `9a8a3f66`: seven changed executable lines,
+seven covered (100%). This measures exercised lines, not assertion quality.
+
+Reproduce: install `.[dev]`, run `make imports`; run the full suite under
+`coverage run --branch --source=agent,scripts`, then `coverage xml` and
+`make diff-cover DIFF_BASE=<reviewed-base-sha>`. CI runs these automatically.
+Tool contracts follow [Import Linter](https://import-linter.readthedocs.io/en/v2.6/contract_types.html)
+and [diff-cover](https://github.com/Bachmann1234/diff_cover).

@@ -15,9 +15,9 @@ duplicates:
 
 # Project CI tooling, deliberately separate from the per-turn quality hook.
 imports:
-	$(dir $(PYTHON))lint-imports --no-cache
+	PATH="$(dir $(PYTHON)):$$PATH" lint-imports --no-cache
 
 # Explicit base prevents an unrelated branch from giving a misleading result.
 diff-cover:
 	test -n "$(DIFF_BASE)"
-	$(dir $(PYTHON))diff-cover coverage.xml --compare-branch="$(DIFF_BASE)" --fail-under=0 --format markdown:diff-coverage.md
+	PATH="$(dir $(PYTHON)):$$PATH" diff-cover coverage.xml --compare-branch="$(DIFF_BASE)" --fail-under=0 --format markdown:diff-coverage.md

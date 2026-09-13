@@ -19,6 +19,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
+  "diff-cover>=9,<11",
+  "import-linter>=2.6,<3",
   "pytest>=8,<9",
   "hypothesis>=6.167,<7",
   "pytest-randomly>=5,<6",
@@ -35,8 +37,6 @@ dev = [
   "types-PyYAML>=6,<7",
 ]
 diagnostics = [
-  "diff-cover>=9,<11",
-  "import-linter>=2.6,<3",
   "coverage[toml]>=7.16,<8",
   "py-spy>=0.4,<1",
   "pytest>=8,<9",
