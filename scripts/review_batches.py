@@ -39,6 +39,8 @@ def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, ove
 
 
 def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
+    if isinstance(sources, list) and not any("receipt_ids" in row for row in statements):
+        return sources
     if not isinstance(sources, dict) or "bundle" not in sources:
         receipts = sources if isinstance(sources, list) else sources.get("receipts", [])
         ids = {rid for row in statements for rid in row.get("receipt_ids", [])}
@@ -51,8 +53,7 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
     indexes = sorted({index for row in statements for index in row.get("sources", [])})
     if any(type(i) is not int or i < 0 or i >= len(bundle) for i in indexes):
         raise ValueError("review_source_index_invalid")
-    citations = {bundle[i].get("cited_as") for i in indexes}
-    own = [r for r in sources.get("own_results", []) if r.get("citation_token") in citations]
+    own = [r for r in sources.get("own_results", []) if r.get("citation_token") in {bundle[i].get("cited_as") for i in indexes}]
     if len(own) != len(indexes):
         raise ValueError("review_source_citation_mismatch")
     return {"bundle": [{**bundle[i], "source_index": i} for i in indexes],

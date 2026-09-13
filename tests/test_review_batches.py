@@ -145,3 +145,67 @@ def test_prose_batch_entrypoint_imports_without_test_scripts_path():
     from pathlib import Path
     subprocess.run([sys.executable, "-c", "import asyncio; from agent.prose_grounding import review_statements; assert asyncio.run(review_statements([], []))['assessments'] == []"],
                    cwd=Path(__file__).resolve().parents[1], check=True, capture_output=True, text=True)
+
+
+@pytest.mark.parametrize('section', ['abstract', 'conclusion'])
+def test_writer_batches_complete_cited_receipts_instead_of_repeating_corpus(monkeypatch, section):
+    from dataclasses import make_dataclass, asdict
+    Receipt = make_dataclass('Receipt', ['receipt_id', 'source_result_excerpts'])
+    receipts = [Receipt(f'source_{i}', ['Source-owned comparison. ' * 1800, f'Contradiction {i}']) for i in range(8)]
+    selection = {'decisions': [{'source': str(i), 'reason': 'Recorded reason. ' * 1000} for i in range(8)]}
+    context = {'question': 'A bounded evidence map.', 'source_count': 8,
+               'receipt_funnel': {'source_admission': selection}, 'methods': {'source_admission': selection}}
+    paragraphs = [{'text': f'Finding {i}.', 'receipt_ids': [r.receipt_id]} for i, r in enumerate(receipts)]
+    assert len(json.dumps([asdict(r) for r in receipts])) > batches.MAX_REVIEW_CHARS
+    calls = []
+    async def call(**kw):
+        assert sum(len(m['content']) for m in kw['messages']) <= batches.MAX_REVIEW_CHARS
+        packet = json.loads(kw['messages'][1]['content'])
+        source_rows = packet['sources']['receipts'] if section == 'abstract' else packet['sources']
+        ids = {rid for row in packet['statements'] for rid in row['receipt_ids']}
+        assert source_rows == [asdict(r) for r in receipts if r.receipt_id in ids]
+        if section == 'abstract':
+            shared = packet['sources']['author_context']
+            assert _restore_context(shared) == context
+        calls.append(packet)
+        return SimpleNamespace(model='primary', parsed={'assessments': [
+            {'row': row['row'], 'supported': 'source_7' not in row['receipt_ids'], 'reason': 'Compared all supplied passages.'}
+            for row in packet['statements']]})
+    monkeypatch.setattr(prose_grounding, 'chat_json', call)
+    accepted, reasons = asyncio.run(prose_grounding.review_writer_paragraphs(section, paragraphs, receipts, set(), author_context=context))
+    assert len(calls) > 1 and len(accepted) == 7 and len(reasons) == 1
+    assert sorted(rid for packet in calls for row in packet['statements'] for rid in row['receipt_ids']) == sorted(r.receipt_id for r in receipts)
+    assert context['methods']['source_admission'] == selection
+
+
+def _restore_context(compact):
+    def restore(value):
+        if isinstance(value, dict) and set(value) == {'review_reference'}:
+            target = compact
+            for key in value['review_reference']:
+                target = target[int(key)] if isinstance(target, list) else target[key]
+            return restore(target)
+        if isinstance(value, dict):
+            return {key: restore(item) for key, item in value.items()}
+        return [restore(item) for item in value] if isinstance(value, list) else value
+    return restore(compact)
+
+
+def test_shared_author_context_roundtrips_exactly_and_keeps_differing_records():
+    records = {'values': ['complete evidence ' * 100, 'different evidence ' * 100]}
+    original = {'first': records, 'second': {'same': records, 'different': {**records, 'extra': 'contradiction'}}}
+    compact = batches._shared_context(original)
+    assert _restore_context(compact) == original
+    assert compact['second']['different']['extra'] == 'contradiction'
+    assert len(json.dumps(compact)) < len(json.dumps(original))
+
+
+@pytest.mark.parametrize('receipts', [[{'receipt_id': 'known'}], [{'receipt_id': 'missing'}, {'receipt_id': 'missing'}]])
+def test_unknown_or_duplicate_writer_citation_blocks_before_network(monkeypatch, receipts):
+    calls = []
+    async def call(**kw):
+        calls.append(kw)
+    monkeypatch.setattr(prose_grounding, 'chat_json', call)
+    with pytest.raises(ValueError, match='review_source_citation_mismatch'):
+        asyncio.run(prose_grounding.review_statements([{'text': 'Claim', 'receipt_ids': ['missing']}], receipts))
+    assert calls == []

@@ -77,3 +77,52 @@ Receipt: V3-Universal-Repair-2026-09-12/primary-review-canary.json.
 
 Release/CI/deployment and normal current-parent resubmission remain to verify.
 A technically successful reviewer call or HTTP 200 is not publication proof.
+
+## Follow-up: writer packets — 2026-09-13
+
+The 11:28 Metformin failure was before abstract completion: writer receipt-list
+inputs bypassed cited-source selection, attaching all 53 receipts plus duplicated
+author records to every statement. It was not one 300k study. Reproduced without
+provider calls from that run's manifest and author_records.json.
+
+Writer packets now select complete receipts by receipt_id, reject unknown or
+duplicate cited IDs, and retain the legacy index-list transport contract. Shared
+author records use exact-equality path references within author_context; original
+records are unchanged. Expanding the transport restores the entire author record
+exactly (256,973 serialized characters -> 133,709). Complete cited results,
+contradictions and classifications are never truncated. The prompt explains the
+references; its policy hash invalidates old prose approvals. All batch results
+remain required, with negative results retained and technical fallback unchanged.
+
+Offline failed-run replay: 53 source statements, four packets, largest 211,614
+characters. This uses source thesis statements as a coverage probe; the failed
+writer's discarded paragraphs were not available. Live complete HPV review:
+five batches, 32 assessments, five unsupported, primary Terra only, 73.76 seconds.
+This verifies complete review execution, not scientific approval or publication.
+
+Audit: three materially different Semble searches and CodeGraph caller/impact
+inspection before edits (repeated after a checkpoint hook overlooked the first
+receipt). ast-grep confirmed writer and manuscript entry points. No disputed
+call edge or cross-agent handoff required Tree-sitter/Repomix. Sentry tools were
+unavailable; production journals provided the incident receipt. No clean Sentry
+claim is made. Checked source identity, legacy API behavior, approval binding,
+late failure, exact-record restoration, and 100 randomized key-order roundtrips.
+A bounded mutation restoring whole-corpus packets fails both new writer tests.
+The full-suite first pass exposed legacy list transport and prompt-contract
+regressions; both were corrected and are rerun before release. Existing LOC and
+quality ceilings are unchanged; final-review metadata aliases were removed and
+its prompt consolidated without changing the smart-gate contract.
+
+Remaining boundary: a genuinely indivisible cited record or shared author record
+that exceeds 300k after lossless deduplication still fails closed locally. This
+patch fixes the observed corpus-repetition defect; it does not silently fragment
+scientific context or guarantee arbitrary-size manuscripts can be reviewed.
+
+Live writer-path review also completed: all four batches, 53 assessments, three
+unsupported, primary Terra only, 89.30 seconds. Neither diagnostic submitted a paper.
+
+Follow-up release checks: 5,291 passed, 2 xpassed, 16 existing warnings in 153.06s;
+make quality passed with 347 checks; mypy passed all 183 runtime files. The second
+review preserved the legacy index-list API and exact smart-gate instructions.
+Both complete live reviewer checks passed technically and retained negative
+scientific findings. Deployment and normal publishing remain separately gated.
