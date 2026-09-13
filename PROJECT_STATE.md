@@ -1,14 +1,22 @@
 # PROJECT_STATE.md
 
-## Dated Assessment Preservation - 2026-09-13
-Both prose-deduplication passes now preserve separately dated source-admission
-records and their associated count tables. A phase trace reproduced the latest
-assessment disappearing after Methods rendering; the final package check then
-reported source_admission_methods_mismatch. The full finalizer now preserves the
-complete recorded history and is stable on a second pass. Gates remain unchanged.
-Validation: 657 focused checks, 64 isolated VPS checks and 5,361 full-suite tests
-pass (2 xpassed); quality and mypy pass. Scientific revision coverage remains a
-separate prerequisite for linked submission; publication is not yet confirmed.
+## Final Review and Admission Rendering - 2026-09-13
+Methods now renders the original candidate assessment and the current retained-source
+assessment. The complete intermediate history stays in the source decision log;
+no historical decisions are invented or discarded. This replaces the earlier
+cleanup exemptions: both prose deduplicators and the surface gate retain their
+normal behavior. Three topic fixtures verify stable rendering and mismatch rejection.
+The source reviewer skips empty lines while still checking short unsupported claims.
+
+The corrected 13:49Z resistance-training revision has 45 supported substantive
+source statements, no unsupported statements, and passes both normal revision asks.
+The exact frozen package and Core preflight pass without outgoing text changes.
+The normal dry run selects it as eligible, linked to parent d85c342d.
+The previous real submission attempt sent nothing because duplicated Methods
+paragraphs failed the surface gate; this rendering correction resolves that failure.
+Submission acknowledgement and Core publication remain separate verification steps.
+Validation: 370 focused tests and 5,362 full-suite tests pass (2 xpassed);
+quality and mypy pass with unchanged LOC budgets.
 
 ## Source Sentence Spacing - 2026-09-13
 The 13:49Z linked revision cleared the abstract floor but stopped before submission:
