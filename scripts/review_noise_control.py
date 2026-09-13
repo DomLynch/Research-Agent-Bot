@@ -277,7 +277,7 @@ def _dedupe_repeated_blocks(text: str) -> tuple[str, int]:
         words = norm.split()
         if not norm:
             continue
-        if re.match(r"\*\*\s*(?:thesis|resolution\s+criteria)\s*:", norm, flags=re.I) or norm.lower().startswith("outcome-class coded-direction reconciliation:"):
+        if re.match(r"\*\*\s*(?:thesis|resolution\s+criteria)\s*:", norm, flags=re.I) or norm.lower().startswith("outcome-class coded-direction reconciliation:") or norm.startswith(("Selection assessment (", "| Selection gate |")):
             continue
         table_like = block.lstrip().startswith("|") and block.count("\n|") >= 1
         # Lists and source-specific revision notes are enumeration, not prose

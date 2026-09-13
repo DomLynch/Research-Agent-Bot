@@ -110,6 +110,24 @@ def test_admission_methods_and_source_membership_are_not_inferred(corpus, tmp_pa
     assert source_admission.check(tmp_path, paper.replace("included 2", "included 3")) == "source_admission_methods_mismatch"
 
 
+def test_dated_admission_history_survives_prose_deduplication(corpus, tmp_path):
+    from review_noise_control import _dedupe_repeated_blocks
+    rows, log, original = deepcopy(corpus)
+    previous = render_admission(log)
+    for day in ("2026-09-12", "2026-09-13"):
+        log = {**log, "scope": "retained-source reassessment", "assessed_at": day,
+               "selection_assessment": deepcopy(log)}
+    expected = render_admission(log)
+    paper = original.replace(previous, expected)
+    revised, removed = _dedupe_repeated_blocks(paper)
+    assert revised == paper
+    assert removed == 0
+    assert _dedupe_repeated_blocks(revised) == (revised, 0)
+    save_run(tmp_path, (rows, log, paper))
+    assert source_admission.check(tmp_path, revised) == "eligible"
+    assert source_admission.check(tmp_path, revised.replace("2026-09-13", "2026-09-14")) == "source_admission_methods_mismatch"
+
+
 def test_readable_notation_preserves_source_numbers_and_rejects_mutations():
     from quant_claim_extract import readable_source_notation
     from agent.publication_evidence import exact_source_quote
