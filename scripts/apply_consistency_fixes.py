@@ -36,7 +36,7 @@ __all__ = ["apply_fixes", "main"]
 
 _POTENTIALLY_RE = re.compile(r"\s*\(potentially\)", re.IGNORECASE)
 _DOUBLE_HASH_RE = re.compile(r"^(#{2,4})\s+#{2,4}\s+", re.MULTILINE)
-_H3_RESIDUE_HEADING_RE = re.compile(r"(?im)^###\s+H3[:.]\s+")
+_H3_RESIDUE_HEADING_RE = re.compile(r"(?im)^###\s+H3[:.](?:\d+)?\s+")
 # Sentences that contain stale-SPAR phrases — strip the entire sentence.
 # Fix #29: extended phrase set per reviewer — "spar quarantine"
 # (noun form), "spar-rejected", "rejected evidence" added.

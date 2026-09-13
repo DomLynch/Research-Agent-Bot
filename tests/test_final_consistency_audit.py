@@ -368,14 +368,14 @@ def test_apply_fixes_strips_fuzzy_duplicate_body_paragraph() -> None:
     import apply_consistency_fixes as fixer
     first = (
         "The clinical evidence should be interpreted through population, "
-        "endpoint, duration, and comparator boundaries because the accepted "
-        "receipt set contains heterogeneous designs and outcome definitions. "
+        "endpoint, duration, and comparator boundaries because the retained "
+        "source set contains heterogeneous designs and outcome definitions. "
         "This paragraph states a specific interpretive boundary for the paper."
     )
     second = (
         "The clinical evidence should be interpreted through population, "
-        "endpoint, duration, and comparator boundaries because the accepted "
-        "receipt set includes heterogeneous designs and outcome definitions. "
+        "endpoint, duration, and comparator boundaries because the retained "
+        "source set includes heterogeneous designs and outcome definitions. "
         "This paragraph states a specific interpretive boundary for the paper."
     )
     paper = (
@@ -540,7 +540,7 @@ def test_apply_fixes_preserves_deterministic_methods_steps() -> None:
         "## Methods\n\n"
         "### Pipeline stages (deterministic, in order)\n\n"
         "1. quant-claim extraction.\n"
-        "2. receipt summarization.\n"
+        "2. source summarization.\n"
         "3. tension matrix construction.\n"
         "4. thesis selection.\n"
         "5. claim-strength repair.\n"
@@ -570,7 +570,7 @@ def test_apply_fixes_strips_leaked_results_from_deterministic_methods() -> None:
         "## Methods\n\n"
         "### Pipeline stages (deterministic, in order)\n\n"
         "1. quant-claim extraction.\n"
-        "2. receipt summarization.\n"
+        "2. source summarization.\n"
         "3. tension matrix construction.\n"
         "4. thesis selection.\n"
         "5. claim-strength repair.\n"
@@ -1351,8 +1351,8 @@ def test_apply_fixes_removes_conclusion_paragraph_repeated_earlier() -> None:
     duplicate = (
         "The synthesis therefore uses a tiered reading of the evidence. "
         "Direct clinical evidence carries the highest interpretive "
-        "weight; indirect clinical receipts help define adjacent human "
-        "signals; mechanistic receipts explain plausibility and "
+        "weight; indirect clinical sources help define adjacent human "
+        "signals; mechanistic sources explain plausibility and "
         "candidate pathways."
     )
     paper = (
@@ -1512,11 +1512,14 @@ def test_apply_fixes_normalizes_h3_residue_and_taken_together() -> None:
     fixed, log = fixer.apply_fixes(
         "## Results\n\n"
         "### H3: Cardiometabolic Outcomes\n\n"
+        "### H3.1 Muscle Function Outcomes\n\n"
         "Taken together, these findings remain bounded.\n",
         [],
     )
     assert "### H3:" not in fixed
+    assert "### H3.1" not in fixed
     assert "### Cardiometabolic Outcomes" in fixed
+    assert "### Muscle Function Outcomes" in fixed
     assert "Taken together," not in fixed
     assert "Across the corpus, these findings remain bounded." in fixed
     assert any(e["fix_type"] == "h3_residue_heading_normalization" for e in log)
