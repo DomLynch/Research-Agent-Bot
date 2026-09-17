@@ -1378,6 +1378,12 @@ def _record_revise_reasons(ledger_dir: Path, latest: dict[str, dict[str, Any]]) 
                 "reviewed_at": row.get("reviewedAt") or row.get("reviewed_at"),
                 "asks": asks,
             })
+    # Two pollers feed this (reconcile: merged decisions; fresh: public reviews page). Merge by
+    # review id so the last writer never shrinks the ledger the lessons loop reads.
+    known = {str(row.get("id")): row for row in _read_json(ledger_dir / REVISE_REASONS).get("reviews", []) if isinstance(row, dict)}
+    known.update((row["id"], row) for row in rows)
+    rows = sorted(known.values(), key=lambda row: str(row.get("reviewed_at") or ""))
+    bucket_counts = Counter(ask["bucket"] for row in rows for ask in row.get("asks", []))
     _write_json(ledger_dir / REVISE_REASONS, {
         "updated_at": dt.datetime.now(dt.UTC).isoformat(),
         "total_reviews": len(rows),

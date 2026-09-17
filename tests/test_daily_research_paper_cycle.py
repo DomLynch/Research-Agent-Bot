@@ -3263,6 +3263,15 @@ def test_review_decisions_by_day_preserves_null_status(tmp_path: Path) -> None:
     assert reasons["total_reviews"] == 1
     assert reasons["total_revision_asks"] == 2
     assert reasons["bucket_counts"] == {"directness_honesty": 1, "readability_redundancy": 1}
+    # A later poll from another lane that sees a subset (or nothing) must not shrink the ledger.
+    cycle._record_review_decisions(ledger_dir, {})
+    cycle._record_review_decisions(ledger_dir, {"other": {
+        "artifactId": "art-3", "title": "Research Synthesis: Other", "decision": "revise",
+        "reviewedAt": "2026-06-02T08:35:00+00:00", "required_revisions": ["High overlap with publication abc."],
+    }})
+    reasons = json.loads((ledger_dir / cycle.REVISE_REASONS).read_text(encoding="utf-8"))
+    assert [row["id"] for row in reasons["reviews"]] == ["art-1", "art-3"]
+    assert reasons["bucket_counts"] == {"directness_honesty": 1, "publication_overlap": 1, "readability_redundancy": 1}
 
 
 def test_revision_asks_keep_semicolon_examples_inside_one_ask() -> None:
