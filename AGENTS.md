@@ -24,6 +24,10 @@ agent and paper engine.
   No API-key writer fallback. Old `MIMO_*`/`MINIMAX_*`
   environment variables are ignored; legacy Settings field names remain internal.
 - Release configuration uses Codex; pin `CODEX_WRITER_BIN` to the VPS CLI below.
+- Outgoing gates read `/etc/research-agent-bot/research-agent-bot.env` only (no
+  unit `Environment=`/drop-ins: `EnvironmentFile=` overrides them):
+  `RESEARKA_RUNTIME_ROOT=/opt/researka-v2` runs Core's own claim-trace guard and
+  `RESEARKA_PREFLIGHT_QA=live` (alias of `enforce`) blocks on preflight criticals.
 - Current judge/final reviewer: `gpt-5.6-terra`, Medium reasoning via Codex;
   `z-ai/glm-5.3-flash` is bounded OpenRouter technical-failure fallback.
   A valid negative review never triggers failover. Sol/Terra share a model family;

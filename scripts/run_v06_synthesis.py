@@ -25,7 +25,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from agent.llm_client import (  # noqa: E402
-    CallSpec, CostLedger, build_extract_chain,
+    CallSpec, CostLedger, LLMError, build_extract_chain,
 )
 from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
@@ -202,6 +202,7 @@ EXIT_EVIDENCE_INSUFFICIENT = 6
 EXIT_LOCAL_GATE_BLOCKED = 7
 EXIT_FINAL_STATUS_FAILED = 8
 EXIT_REQUIRED_ARTIFACT_INVALID = 9
+_WRITER_UNAVAILABLE_RE = re.compile(r"usage limit|quota|credits|rate limit|unauthori[sz]ed|authentication|not logged in|\b40[13]\b|\b429\b", re.I)
 EXIT_TIMEOUT = 124
 
 _TOP_LEVEL_RUN_ARTIFACTS = frozenset({
@@ -4987,6 +4988,8 @@ def main(argv: list[str] | None = None) -> int:
             )
         except Exception as exc:
             rendered = (out_dir / "full_paper.md").is_file()
+            if isinstance(exc, LLMError) and _WRITER_UNAVAILABLE_RE.search(str(exc)):  # quota/auth outage, not a paper defect
+                return _record_synthesis_exit(out_dir, started_at, EXIT_REQUIRED_ARTIFACT_INVALID, "writer_unavailable", (str(exc),))
             return _record_synthesis_exit(
                 out_dir,
                 started_at,

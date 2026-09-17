@@ -20,11 +20,11 @@ from agent.paper_writer import (  # noqa: E402
     _build_user_prompt,
     _humanize_paper_tier,
 )
-from agent.paper_writer_prompts import (  # noqa: E402
-    DISCUSSION_SYSTEM_PROMPT,
-    LIMITATIONS_FULL_SYSTEM_PROMPT,
-    RESULTS_SYSTEM_PROMPT,
-)
+from agent.paper_writer_prompts import format_prompts_for_topic  # noqa: E402
+_DEFAULT_PROMPTS = format_prompts_for_topic("the drug", "drug")  # noqa: E402
+RESULTS_SYSTEM_PROMPT = _DEFAULT_PROMPTS["results"]
+DISCUSSION_SYSTEM_PROMPT = _DEFAULT_PROMPTS["discussion"]
+LIMITATIONS_FULL_SYSTEM_PROMPT = _DEFAULT_PROMPTS["limitations_full"]
 from agent.synthesis_schemas import (  # noqa: E402
     EffectDirection,
     OutcomeClass,

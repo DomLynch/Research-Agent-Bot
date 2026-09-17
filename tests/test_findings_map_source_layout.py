@@ -18,6 +18,8 @@ def test_source_sentence_spacing_is_stable_before_review_without_changing_eviden
     rendered = readable_source_notation(manifest_row_finding(row))
     assert rendered == raw.replace(".ResultsOf", ". ResultsOf")
     assert _normalize_sentence_spacing(rendered) == (rendered, 0)
+    # Core's cleaner rstrips every line; a trailing space before a blank line must not reach the package.
+    assert _normalize_sentence_spacing(f"{rendered} \n\n| a | b |\n") == (f"{rendered}\n\n| a | b |\n", 0)
     assert readable_source_notation(rendered) == rendered
     assert row == before
     assert exact_source_quote(rendered, raw)

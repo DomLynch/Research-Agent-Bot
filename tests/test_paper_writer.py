@@ -903,12 +903,15 @@ def test_section_prompts_use_explicit_targets() -> None:
         `HARD MINIMUM` (Fix #45 depth restoration)
     Either explicit-target language is acceptable; what matters is
     the prompt isn't silent on word count."""
-    from agent.paper_writer_prompts import (
-        BACKGROUND_SYSTEM_PROMPT, CONCLUSION_SYSTEM_PROMPT,
-        CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
-        DISCUSSION_SYSTEM_PROMPT, INTRODUCTION_SYSTEM_PROMPT,
-        LIMITATIONS_FULL_SYSTEM_PROMPT, RESULTS_SYSTEM_PROMPT,
-    )
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    _p = format_prompts_for_topic("the drug", "drug")
+    INTRODUCTION_SYSTEM_PROMPT = _p["introduction"]
+    BACKGROUND_SYSTEM_PROMPT = _p["background"]
+    RESULTS_SYSTEM_PROMPT = _p["results"]
+    CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = _p["cross_domain_synthesis"]
+    DISCUSSION_SYSTEM_PROMPT = _p["discussion"]
+    LIMITATIONS_FULL_SYSTEM_PROMPT = _p["limitations_full"]
+    CONCLUSION_SYSTEM_PROMPT = _p["conclusion"]
     for name, prompt in (
         ("BACKGROUND", BACKGROUND_SYSTEM_PROMPT),
         ("CONCLUSION", CONCLUSION_SYSTEM_PROMPT),
@@ -929,10 +932,10 @@ def test_section_prompts_use_explicit_targets() -> None:
 def test_discussion_and_cross_domain_prompts_demand_900_word_floor() -> None:
     """Fix #45: the analytical-core sections explicitly require ≥900
     words to prevent the grok-smart 310/525 regression."""
-    from agent.paper_writer_prompts import (
-        CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
-        DISCUSSION_SYSTEM_PROMPT,
-    )
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    _p = format_prompts_for_topic("the drug", "drug")
+    CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = _p["cross_domain_synthesis"]
+    DISCUSSION_SYSTEM_PROMPT = _p["discussion"]
     for name, prompt in (
         ("DISCUSSION", DISCUSSION_SYSTEM_PROMPT),
         ("CROSS_DOMAIN", CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT),
@@ -952,7 +955,8 @@ def test_conclusion_prompt_demands_clinical_practice_statement() -> None:
     correctly hedged "evidence is mixed and incomplete" but did not state
     the actionable clinical-practice implication. The prompt now requires
     an off-label-use statement."""
-    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    CONCLUSION_SYSTEM_PROMPT = format_prompts_for_topic("the drug", "drug")["conclusion"]
     assert "clinical-practice" in CONCLUSION_SYSTEM_PROMPT.lower(), (
         "Conclusion prompt no longer demands a clinical-practice "
         "statement (peer-review fix 2026-05-09 regression)"
@@ -969,7 +973,8 @@ def test_conclusion_prompt_demands_clinical_practice_statement() -> None:
 def test_conclusion_prompt_lists_required_content_item_5() -> None:
     """The required-content list must enumerate the new clinical-practice
     requirement as item 5 — older runs had only 4 items."""
-    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    CONCLUSION_SYSTEM_PROMPT = format_prompts_for_topic("the drug", "drug")["conclusion"]
     # The literal "5." marker for required content is load-bearing —
     # the writer LLM keys off the numbered list.
     assert "5." in CONCLUSION_SYSTEM_PROMPT
@@ -980,14 +985,16 @@ def test_conclusion_prompt_lists_required_content_item_5() -> None:
 
 def test_conclusion_prompt_word_target_accommodates_extra_clause() -> None:
     """The conclusion must retain substantive room for downstream repairs."""
-    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    CONCLUSION_SYSTEM_PROMPT = format_prompts_for_topic("the drug", "drug")["conclusion"]
     assert "400-500" in CONCLUSION_SYSTEM_PROMPT
 
 
 def test_conclusion_prompt_retains_overclaim_guard() -> None:
     """Regression: the new clause must not weaken the existing overclaim
     guard (no unhedged 'extends lifespan' or similar)."""
-    from agent.paper_writer_prompts import CONCLUSION_SYSTEM_PROMPT
+    from agent.paper_writer_prompts import format_prompts_for_topic
+    CONCLUSION_SYSTEM_PROMPT = format_prompts_for_topic("the drug", "drug")["conclusion"]
     assert "extends lifespan" in CONCLUSION_SYSTEM_PROMPT  # in the do-NOT list
     assert "unhedged clinical claim" in CONCLUSION_SYSTEM_PROMPT.lower()
 

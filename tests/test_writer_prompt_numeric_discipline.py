@@ -11,17 +11,16 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from agent.paper_writer_prompts import (  # noqa: E402
-    ABSTRACT_SYSTEM_PROMPT,
-    BACKGROUND_SYSTEM_PROMPT,
-    CONCLUSION_SYSTEM_PROMPT,
-    CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT,
-    DISCUSSION_SYSTEM_PROMPT,
-    INTRODUCTION_SYSTEM_PROMPT,
-    LIMITATIONS_FULL_SYSTEM_PROMPT,
-    NUMERIC_DISCIPLINE_RULE,
-    RESULTS_SYSTEM_PROMPT,
-)
+from agent.paper_writer_prompts import NUMERIC_DISCIPLINE_RULE, format_prompts_for_topic  # noqa: E402
+_DEFAULT_PROMPTS = format_prompts_for_topic("the drug", "drug")  # noqa: E402
+ABSTRACT_SYSTEM_PROMPT = _DEFAULT_PROMPTS["abstract"]
+INTRODUCTION_SYSTEM_PROMPT = _DEFAULT_PROMPTS["introduction"]
+BACKGROUND_SYSTEM_PROMPT = _DEFAULT_PROMPTS["background"]
+RESULTS_SYSTEM_PROMPT = _DEFAULT_PROMPTS["results"]
+CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = _DEFAULT_PROMPTS["cross_domain_synthesis"]
+DISCUSSION_SYSTEM_PROMPT = _DEFAULT_PROMPTS["discussion"]
+LIMITATIONS_FULL_SYSTEM_PROMPT = _DEFAULT_PROMPTS["limitations_full"]
+CONCLUSION_SYSTEM_PROMPT = _DEFAULT_PROMPTS["conclusion"]
 
 
 _ALL_SECTION_PROMPTS = (

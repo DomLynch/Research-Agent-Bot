@@ -442,7 +442,8 @@ def _normalize_heading_boundaries(paper_md: str) -> tuple[str, int]:
 
 
 def _normalize_sentence_spacing(paper_md: str) -> tuple[str, int]:
-    body, tail = _split_public_body(paper_md)
+    # Trailing whitespace is the one edit Core's preflight cleaner makes that is ours to prevent.
+    body, tail = _split_public_body("\n".join(line.rstrip() for line in paper_md.splitlines()) + ("\n" if paper_md.endswith("\n") else ""))
     fixed, n = re.subn(r"(?<=[a-z0-9)\]])\.(?=[A-Z])", ". ", body)
     return fixed + tail, n
 

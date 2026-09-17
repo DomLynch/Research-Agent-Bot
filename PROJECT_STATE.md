@@ -1,5 +1,36 @@
 # PROJECT_STATE.md
 
+## Gate Config, Run Pruning, Failure Reasons, Bucketer, Lessons Loop - 2026-09-17
+Config: the outgoing gates read only `/etc/research-agent-bot/research-agent-bot.env`
+(`RESEARKA_RUNTIME_ROOT=/opt/researka-v2`, `RESEARKA_PREFLIGHT_QA=live`); unit
+drop-ins were removed because `EnvironmentFile=` overrides `Environment=`, which had
+left a drop-in's `enforce` value inert (measured with systemd-run). AGENTS.md records it.
+First enforced cycle blocked `preflight_revision_required`: the Core cleaner rstrips a
+trailing space (now done by `_normalize_sentence_spacing`) and inserts a space inside
+a source title (`p.V42L` -> `p. V42L`, platform bug; cleaner output is not adopted).
+Runs: 1,133 of 2,600 run dirs (4.1 GB) moved to `runs/_archive/` with a manifest; kept
+every run under 30 days, every submitted/attempted/source-run reference, and the newest
+run per topic so `_topic_run_stats`/`untried` selection is unchanged. daily-submit
+considers ~300 runs either way (8 min/cycle); the prune is hygiene, not speed.
+Failure reasons: quota/auth writer failures are recorded as `writer_unavailable`
+(transient, D_no_action, never a surface repeat) and every non-zero synthesis exit
+writes `failure_reason` from the run's runtime record into the cycle ledger.
+Bucketer: `revise_reason_bucket` gains publication_overlap, scope_mismatch,
+section_duplication, table_without_numbers, direction_coding, methods_accounting,
+citation_bundle_mismatch; on the 401 live asks unknown falls from 164 to 5 (fixture
+`tests/fixtures/revise_asks_2026-09-17.json`).
+Lessons loop: `revision_lessons(root)` turns the trailing-30-day top buckets into at
+most eight fixed, topic-agnostic instructions prefixed to every section system prompt
+through `format_prompts_for_topic(..., lessons=)`, so writer retries inherit them; the
+finalizer is deterministic and has no prompt to extend. Three proposed surface checks
+(section duplicate, numberless evidence rows, Methods without counts) were replayed on
+2,600 runs and never fire while current papers pass, so no gate was added.
+Paid with deletions: `reviewer_replay.py`, `section_loss_report.py`,
+`agent/reference_styles.py` (no production callers), eight pre-filled legacy prompt
+names. Local Researka exam (item 7) not built: the exam is private `WorkflowEngine`
+methods with no frozen import surface, the Codex judge is at its usage limit until
+2026-09-19, and Core reviews with `google/gemma-4-31b-it`.
+
 ## Platform Claim-Trace Gate and Legacy Reassessment - 2026-09-17
 The outgoing claim-trace gate now runs Researka's own `claim_trace_guard`
 (`runtime_core.evidence_quality.claim_candidates` + `support_for_claim`) when

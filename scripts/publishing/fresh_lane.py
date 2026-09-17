@@ -619,7 +619,7 @@ def _recent_failed_attempts(topic: str, ledger_dir: Path, *, now: dt.datetime | 
 _NON_REPEAT_STATUSES = frozenset({"", "eligible", "submitted_to_researka",
                                   "cycle_budget_exhausted", "current_run_not_submitted",
                                   "synthesis_failed", "synthesis_timeout", "terminal_synthesis_timeout",
-                                  "corpus_seed_failed",
+                                  "corpus_seed_failed", "writer_unavailable",
                                   "terminal_surface_repeat"})
 _PREFLIGHT_BLOCK_STATUSES = frozenset({"corpus_missing_dry_run", "corpus_seed_empty",
                                         "preflight_insufficient_corpus", "preflight_thin_quant_corpus",
@@ -2426,6 +2426,7 @@ def _failure_class(status: str) -> str:
         "synthesis_failed": "C_writer_fixable", "local_gate_blocked": "C_writer_fixable",
         "local_gate_execution_failed": "D_no_action",
         "synthesis_timeout": "D_no_action",
+        "writer_unavailable": "D_no_action",
         "cycle_budget_exhausted": "D_no_action",
         "submission_rejected_by_researka": "C_writer_fixable",
         "submission_revise_requested": "C_writer_fixable",
@@ -3155,7 +3156,7 @@ def _synthesis_failure_status(out_dir: Path, return_code: int) -> str:
     if return_code == NEEDS_CORPUS_RETURN_CODE:
         return "needs_corpus_expansion"
     runtime = _read_json(out_dir / "benchmark_runtime.json")
-    if runtime.get("reason") in {"local_gate_execution_failed", "local_gate_blocked"} and runtime.get("return_code") == return_code:
+    if runtime.get("reason") in {"local_gate_execution_failed", "local_gate_blocked", "writer_unavailable"} and runtime.get("return_code") == return_code:
         return str(runtime["reason"])
     return "synthesis_failed"
 
@@ -5067,7 +5068,9 @@ def run_cycle(
                     ledger["status"] = "needs_corpus_expansion_no_submission"
                     ledger["no_submission_reason"] = gate_status
                 elif return_code != 0:
-                    ledger.update(status=gate_status, no_submission_reason=gate_status)
+                    runtime = _read_json(out_dir / "benchmark_runtime.json")
+                    ledger.update(status=gate_status, no_submission_reason=gate_status,
+                                  failure_reason="; ".join(filter(None, [str(runtime.get("reason") or ""), *map(str, runtime.get("details") or [])]))[:500])
                 elif bridge.get("status") == "submitted_to_researka":
                     ledger["status"] = "submitted_to_researka"
                     ledger.pop("no_submission_reason", None)
@@ -5243,7 +5246,7 @@ def main(argv: list[str] | None = None) -> int:
         f"submitted={ledger['submitted']} published={ledger['published']}"
     )
     capture_terminal("publishing_cycle", ledger["status"])
-    failures = {"submission_failed", "synthesis_failed", "local_gate_execution_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
+    failures = {"submission_failed", "synthesis_failed", "writer_unavailable", "local_gate_execution_failed", "remote_dedupe_failed", "submit_not_configured", "topic_not_available"}
     if ledger["status"] in failures:
         return os.EX_SOFTWARE if ledger["status"] == "local_gate_execution_failed" else 2
     no_output = args.submit and not int(ledger.get("submitted") or 0)

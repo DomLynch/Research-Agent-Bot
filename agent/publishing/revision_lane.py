@@ -1,6 +1,7 @@
 """Pure reviewer-request classification used by the revision lane."""
 from __future__ import annotations
 
+import json
 import re
 import datetime as dt
 from collections import Counter
@@ -171,15 +172,53 @@ def terminal_revision(row: dict[str, Any]) -> bool:
     return category in {"integrity_duplicate", "duplicate_remote_publication", "publication_overlap"} or calibration_only_revision(text) or bool(terminal_text)
 
 
+# One writer-facing instruction per revise-ask bucket. Buckets without a writer-actionable
+# instruction (publication overlap) are deliberately absent. Topic-agnostic by construction.
+_LESSONS = {
+    "citation_bundle_mismatch": "Every Results and Conclusion claim cites its [bundle:N] source and stays within that source's own words; never cite an author-year that has no bundle entry.",
+    "section_duplication": "Never repeat a paragraph, note, or boilerplate across sections; each section adds content the others do not.",
+    "directness_honesty": "Call evidence direct only when the study tests the topic intervention itself on the stated outcome; label reviews, models, and co-interventions as indirect.",
+    "direction_coding": "State each source's direction exactly as its own results sentence reports it (positive, negative, mixed, or null); never infer direction from a title or a count.",
+    "source_relevance_classification": "Give every source the study design and outcome class its own abstract states; protocols and registrations are planned work, not results.",
+    "methods_accounting": "Methods states the retrieved, assessed, and admitted counts with the admission rule, and claims no appraisal that was not performed.",
+    "numeric_claim_rigor": "Report each statistic with its endpoint, comparator, and p-value exactly as the source gives it; never pool, round, or invent a number.",
+    "scope_mismatch": "The title and research question describe exactly what the admitted sources test, no broader.",
+    "table_without_numbers": "Every evidence-table row carries the source's numeric finding, not only a direction label.",
+    "null_signal_reconciliation": "Where sources are coded null or unclear, the prose says so and draws no directional conclusion from their count.",
+    "readability_redundancy": "Write complete sentences in ordinary paragraphs; no fragments, garbled headers, or repeated phrases.",
+    "actionable_gaps": "Name the specific disagreements between sources and the specific study that would resolve each.",
+}
+REVISE_REASONS_RELPATH = "runs/_daily_research_paper_cycle_ledger/_revise_reasons.json"
+
+
+def revision_lessons(root: Any, *, days: int = 30, cap: int = 8) -> str:
+    """Instructions for the most frequent reviewer revision buckets of the trailing window, or ""."""
+    try:
+        reviews = json.loads((root / REVISE_REASONS_RELPATH).read_text()).get("reviews", [])
+    except (OSError, ValueError, AttributeError):
+        return ""
+    cutoff = dt.datetime.now(dt.UTC) - dt.timedelta(days=days)
+    counts = Counter(ask.get("bucket") for review in reviews if (seen := parse_time(str(review.get("reviewed_at") or ""))) and seen >= cutoff for ask in review.get("asks", []))
+    lines = [_LESSONS[bucket] for bucket, _ in counts.most_common() if bucket in _LESSONS][:cap]
+    return "Reviewer lessons (most frequent revision requests, last %d days):\n%s\n\n" % (days, "\n".join(f"- {line}" for line in lines)) if lines else ""
+
+
 def revise_reason_bucket(text: str) -> str:
     lower = " ".join(str(text or "").lower().split())
     taxonomy = (
-        ("directness_honesty", ("direct clinical", "direct interventional", "indirect", "adjacent", "mechanistic", "overclaim", "hypothesis-generating", "broad population-level proof", "no direct")),
-        ("null_signal_reconciliation", ("null directional", "no extracted directional signal", "no directional signal", "strongest signal", "reconcile", "supports", "bounded rationale")),
-        ("source_relevance_classification", ("source bundle", "source directness", "source classification", "outcome class", "evidence_type", "evidence type", "off-topic", "operationalize", "included under")),
-        ("numeric_claim_rigor", ("p-value", "p value", "confidence interval", "significant", "non-significant", "effect direction", "factual error", "statistic")),
-        ("readability_redundancy", ("repetitive", "duplication", "truncated", "grammatical", "readability", "verbatim repetition")),
-        ("actionable_gaps", ("gaps identified", "actionable", "future research", "next steps")),
+        ('publication_overlap', ('overlap with publication', 'already published', 'duplicate submission')),
+        ('scope_mismatch', ('scope mismatch', 'scope/title', 'narrow the title', 'research question', 'does not match the corpus', 'match the actual corpus', 'title says', 'mismatch between the title', 'pico', 'framing that does not match', 'rename the title', 'abstract omits', 'synthesis question')),
+        ('section_duplication', ('near-verbatim duplicate', 'verbatim', 'repeated', 'repeating', 'duplicated', 'duplicates content', 'redundant', 'boilerplate', 'templated', 'placeholder', 'corrupted', 'meta-commentary', 'scaffolding', 'restatement', 'collapsing redundant')),
+        ('table_without_numbers', ('no actual numeric', 'aggregate counts', 'no numeric', 'without numeric', 'no effect sizes', "beyond 'positive", 'only enumerates source-level')),
+        ('direction_coding', ('mis-coded', 'miscoded', 'coded as', 'coded positive', "coded 'positive'", 'labeled "null"', "labeled 'null'", 'labelled', 'labels ', 'direction profile', 'direction assignments', 'direction synthesis', 'directional coding', 'coded null', 'polarity', 'coded direct', 'directness coding', 'recode', 'coding is consistent', 'coding is internally', 'orient positive', 'outcome-class allocation', 'direction code')),
+        ('methods_accounting', ('inclusion funnel', 'auditable', 'selection flow', 'retrieved records', 'search summary', 'search strategy', 'search window', 'query list', 'database coverage', 'retrieval date', 'admitted sources', 'exclusion counts', 'eligibility criterion', 'screening', 'extraction qc', 'future-dated', 'publication dates', 'dated 2025', 'risk-of-bias', 'rob ', 'rob-2', 'not visible to the reader', 'methods_pack', 'conference abstract', 'conference-abstract', 'justify its tier', 'sample-size and follow-up')),
+        ('citation_bundle_mismatch', ('exact source tokens', 'exactly traceable', 'identify a bundle source', 'traceab', 'could not be verified', 'not present in the source_bundle', 'not in the source bundle', 'source-list mismatch', 'attributions are inaccurate', 'source attributions', 'attribute each', 'cited numbers', 'citations that are not', 'author-year', 'cited source', 'bundle excerpt', 'bundle entries', 'conflict between the abstract', 'enumerate and locate', 'remove the number', 'cross-study disagreements', 'tensions and gaps', 'name the specific sources', 'itemize the specific', 'without citing', 'broken author token', 'misattributed', 'misattribution', 'does not cite', 'incorrectly describes', 'incorrectly states', 'completeness claim', 'primary evidence anchor', 'invalid at indices')),
+        ('directness_honesty', ('direct clinical', 'direct interventional', 'indirect', 'adjacent', 'mechanistic', 'overclaim', 'hypothesis-generating', 'broad population-level proof', 'no direct', 'single-source', 'does not directly test', 'not directly', 'stand-alone intervention', 'direct sources', 'direct-rct', 'add-on or comparator')),
+        ('null_signal_reconciliation', ('null directional', 'no extracted directional signal', 'no directional signal', 'strongest signal', 'reconcile', 'supports', 'bounded rationale')),
+        ('source_relevance_classification', ('source bundle', 'source directness', 'source classification', 'outcome class', 'evidence_type', 'evidence type', 'off-topic', 'operationalize', 'included under', 'misclassified', 'reclassify', 'protocol', 'belongs in the synthesis', 'clarify why it is in', 'weakly relevant', 'not a results paper', 'reframe', 'justify inclusion', "meta-analysis' label", 'source-role')),
+        ('numeric_claim_rigor', ('p-value', 'p value', 'confidence interval', 'significant', 'non-significant', 'effect direction', 'factual error', 'statistic', 'numeric', 'hedged', 'hedge', 'primary endpoint', 'contradiction', 'contradicts', 'pooled', 'power rationale', 'misattribution')),
+        ('readability_redundancy', ('repetitive', 'duplication', 'truncated', 'grammatical', 'readability', 'verbatim repetition', 'readable', 'formatting', 'paragraph breaks', 'paragraph structure', 'self-contained', 'garbled', 'fragment', 'capitalization', 'inline label')),
+        ('actionable_gaps', ('gaps identified', 'actionable', 'future research', 'next steps', 'concise list', 'add an explicit background', 'add a single sentence', 'add one or two sentences', 'expand the discussion')),
     )
     return next(
         (

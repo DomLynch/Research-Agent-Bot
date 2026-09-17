@@ -28,6 +28,7 @@ from agent.paper_writer_citations import (
     run_citation_fix_pass as _run_citation_fix_pass,
 )
 from agent.paper_writer_claim_repair import repair_abstract_claim_strength
+from agent.publishing.revision_lane import revision_lessons
 from agent.paper_writer_deterministic import (
     build_methods_section,
     build_references_full_section,
@@ -536,7 +537,7 @@ async def write_results_section(
     except (ImportError, OSError, ValueError):
         pass
     _results_prompt = format_prompts_for_topic(
-        topic=intervention_label(topic, root=_repo), drug_class=drug_class,
+        topic=intervention_label(topic, root=_repo), drug_class=drug_class, lessons=revision_lessons(_repo),
     )["results"]
     per_outcome_floor = max(180, min(500, SECTION_WORD_FLOORS.get("results", 0) // max(1, len(by_outcome))))
     result_bodies: list[str] = []
@@ -694,7 +695,7 @@ async def render_full_paper(
     except (ImportError, OSError, ValueError):
         pass
     _prompts = format_prompts_for_topic(
-        topic=intervention_label(topic, root=_repo), drug_class=drug_class,
+        topic=intervention_label(topic, root=_repo), drug_class=drug_class, lessons=revision_lessons(_repo),
     )
     author_context = dict(author_context or {})
     question = str(author_context.get("question") or "").strip() or build_research_question(accepted, topic=topic)

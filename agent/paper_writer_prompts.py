@@ -548,8 +548,9 @@ def _fill(template: str, topic: str, drug_class: str) -> str:
     return template.replace("{topic}", topic).replace("{drug_class}", drug_class)
 
 
-def format_prompts_for_topic(topic: str, drug_class: str = "drug") -> dict[str, str]:
-    return {
+def format_prompts_for_topic(topic: str, drug_class: str = "drug", lessons: str = "") -> dict[str, str]:
+    """Section system prompts; `lessons` (reviewer-derived, see revision_lane.revision_lessons) is prefixed like the numeric rule."""
+    return {name: lessons + prompt for name, prompt in {
         "abstract": _fill(ABSTRACT_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
         "introduction": _fill(INTRODUCTION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
         "background": _fill(BACKGROUND_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
@@ -558,18 +559,4 @@ def format_prompts_for_topic(topic: str, drug_class: str = "drug") -> dict[str, 
         "discussion": _fill(DISCUSSION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
         "limitations_full": _fill(LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
         "conclusion": _fill(CONCLUSION_SYSTEM_PROMPT_TEMPLATE, topic, drug_class),
-    }
-
-
-# Backward-compat: keep the OLD names as default-filled strings so
-# any legacy import that still uses them gets a generic 'the drug' /
-# 'drug' fill (won't crash, won't pollute with metformin specifics).
-# New code should call format_prompts_for_topic() instead.
-ABSTRACT_SYSTEM_PROMPT = _fill(ABSTRACT_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-INTRODUCTION_SYSTEM_PROMPT = _fill(INTRODUCTION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-BACKGROUND_SYSTEM_PROMPT = _fill(BACKGROUND_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-RESULTS_SYSTEM_PROMPT = _fill(RESULTS_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT = _fill(CROSS_DOMAIN_SYNTHESIS_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-DISCUSSION_SYSTEM_PROMPT = _fill(DISCUSSION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-LIMITATIONS_FULL_SYSTEM_PROMPT = _fill(LIMITATIONS_FULL_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
-CONCLUSION_SYSTEM_PROMPT = _fill(CONCLUSION_SYSTEM_PROMPT_TEMPLATE, "the drug", "drug")
+    }.items()}

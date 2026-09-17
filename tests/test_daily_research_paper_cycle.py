@@ -13675,6 +13675,34 @@ def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monke
     assert ledger["submitted"] == 0
 
 
+def test_writer_outage_is_recorded_as_transient_failure_with_reason(tmp_path, monkeypatch):
+    """A quota/auth outage recorded by the runtime is its own status, never a surface repeat, and the
+    ledger carries the run's reason instead of a bare synthesis_failed."""
+    _topic(tmp_path, "aaa_execution", target_journal=True)
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_current_low_source_precision_topics", lambda _topics: set())
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "source_topic_precision_ok:10/10", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {"passed": True})
+    detail = "Codex writer stopped; no paid fallback: LLMError: You've hit your usage limit."
+
+    def fail(topic, out_dir, **_kwargs):
+        _write_json(out_dir / "benchmark_runtime.json", {"return_code": 9, "reason": "writer_unavailable", "details": [detail]})
+        return 9
+
+    monkeypatch.setattr(cycle, "_run_synthesis", fail)
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-09-17", mode="fresh", topic="aaa_execution",
+        run_synthesis=True, submit=True, max_attempts=1, max_revise_attempts=3,
+        remote_loader=lambda: (set(), None), submit_cycle=lambda **_k: pytest.fail("outage must not submit"),
+    )
+    assert ledger["status"] == "writer_unavailable"
+    assert ledger["failure_reason"] == f"writer_unavailable; {detail}"
+    assert ledger["attempts"][0]["failure_class"] == "D_no_action"
+    assert "writer_unavailable" in cycle._NON_REPEAT_STATUSES
+
+
 @pytest.mark.parametrize("requested", ["resistance_training", "metformin", "resveratrol"])
 @pytest.mark.parametrize("available", [True, False])
 @pytest.mark.parametrize("same_title", [False, True])

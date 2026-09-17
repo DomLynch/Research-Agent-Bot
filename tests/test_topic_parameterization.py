@@ -153,6 +153,21 @@ def test_legacy_revision_source_run_is_reassessed_before_admission_finish(
         orch._set_topic("metformin")
 
 
+def test_main_records_writer_outage_as_writer_unavailable(tmp_path: Path, monkeypatch) -> None:
+    from agent.llm_client import LLMError
+
+    async def outage(*_args, **_kwargs):
+        raise LLMError("Codex writer stopped; no paid fallback: You've hit your usage limit. Visit ... purchase more credits")
+
+    monkeypatch.setattr(orch, "_run", outage)
+    out_dir = tmp_path / "outage-run"
+    rc = orch.main(["--topic", "metformin", "--dry-run", "--out-dir", str(out_dir)])
+    orch._set_topic("metformin")
+    runtime = json.loads((out_dir / "benchmark_runtime.json").read_text())
+    assert (rc, runtime["reason"]) == (9, "writer_unavailable")
+    assert "usage limit" in runtime["details"][0]
+
+
 def test_main_accepts_topic_cli_arg() -> None:
     """The CLI exposes --topic. main() with --dry-run + a missing
     corpus exits with code 9 (required input missing); proves the arg
