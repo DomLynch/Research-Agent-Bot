@@ -1,5 +1,26 @@
 # PROJECT_STATE.md
 
+## Platform Claim-Trace Gate and Legacy Reassessment - 2026-09-17
+The outgoing claim-trace gate now runs Researka's own `claim_trace_guard`
+(`runtime_core.evidence_quality.claim_candidates` + `support_for_claim`) when
+`RESEARKA_RUNTIME_ROOT` names the platform checkout (`/opt/researka-v2` on the
+VPS); the word-overlap stand-in is deleted and the internal aligner is only the
+fallback where no checkout exists (CI). Measured on the frozen b6897b61 package:
+platform rule 37/50 aligned, 40 required (Core: 21/30 of reviewer-scoped claims,
+24 required); the old gate had passed it at 29/30 and HEAD's internal pass
+blocked it at 16/30 - neither was the platform's rule. Reviewer resolutions are
+Core-side and only add, so the local verdict is a lower bound of Core's.
+`_claim_trace_counts` moved into the test module (production-dead after this).
+
+`source_admission.prepare_reassessment` now runs for every frozen included set,
+not only snapshot mode: legacy_contract revisions (no snapshot) reached
+`finish()` with no `source_selection_assessment.json` and crashed (exit 9,
+`resistance_training_rt_effects` 2026-09-16); they now fail closed with
+`selection_reassessment_changes_included_set` when the live corpus no longer
+reproduces the frozen set. Regression tests reproduce both failures.
+Writer (Codex subscription) is at its usage limit until 2026-09-19; no
+resubmission is possible before that.
+
 ## Retrieval Crosswalk and Summary Statistics - 2026-09-13
 Core received linked revision c9bc2b8b (parent d85c342d) and returned REVISE:
 reconcile retrieval with the saved candidate pool and remove or support an

@@ -6,6 +6,7 @@ import contextlib
 import datetime as dt
 import fcntl
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -692,21 +693,16 @@ def _citation_indexes(text: str, bundle: list[dict[str, Any]]) -> set[int]:
     return {index for index in indexes if 0 <= index < len(bundle)}
 
 
-def _claim_trace_counts(
-    text: str, bundle: list[dict[str, Any]],
-) -> tuple[int, int, int]:
-    claims = _claim_candidates(text)
-    indexes = [_citation_indexes(claim, bundle) for claim in claims]
-    return len(claims), sum(map(bool, indexes)), sum(_cited_claim_aligns(claim, bundle, values)
-                                                     for claim, values in zip(claims, indexes, strict=True))
-
-
-def _researka_evidence_aligns(claim: str, source: dict[str, Any]) -> bool:
-    claim_words = _evidence_words(claim)
-    if re.search(r"\brepresentative (?:non-significant )?statistic\b", claim, re.I):
-        return False
-    required = min(4, max(2, (len(claim_words) + 4) // 5))
-    return any(len(evidence := " ".join(str(source.get(key) or "").lower().split())) >= 20 and (evidence in claim.lower() or claim.lower() in evidence or len(claim_words & _evidence_words(evidence)) >= required) for key in ("quote", "evidence_span", "excerpt"))
+@lru_cache(maxsize=None)
+def _researka_evidence_quality() -> Any:
+    """Researka's own claim-trace guard when RESEARKA_RUNTIME_ROOT names a platform checkout."""
+    if not (root := os.getenv("RESEARKA_RUNTIME_ROOT", "").strip()):
+        return None
+    sys.path.append(root)  # the module imports the platform's `contracts` package
+    spec = importlib.util.spec_from_file_location("researka_evidence_quality", Path(root, "runtime_core", "evidence_quality.py"))
+    assert spec and spec.loader
+    spec.loader.exec_module(module := importlib.util.module_from_spec(spec))
+    return module
 
 
 def _claim_clauses(text: str) -> list[str]:
@@ -812,15 +808,16 @@ def _researka_claim_trace_status(
         if str(name).strip().lower() in {"key findings", "findings", "results", "conclusion"}
     ]
     prose = "\n".join(line for line in "\n".join([str(payload.get("abstract") or ""), *major]).splitlines() if not line.lstrip().startswith("|"))
-    claims = _claim_candidates(prose)[:30]
+    # Researka's claim_trace_guard: its claim_candidates over the same prose, a claim counted only when
+    # support_for_claim aligns it with a cited bundle passage. Local judge approval stands in for its
+    # reviewer quorum; without a platform checkout the internal aligner is the stand-in.
+    researka = _researka_evidence_quality()
+    claims = researka.claim_candidates(prose) if researka else _claim_candidates(prose)
     indexes = [_citation_indexes(claim, source_bundle) for claim in claims]
-    strict = (len(claims), sum(map(bool, indexes)), sum(_prose_approved(claim, source_bundle, values) or any(_researka_evidence_aligns(claim, source_bundle[index]) for index in values)
-                                                        for claim, values in zip(claims, indexes, strict=True)))
-    for count, cited, aligned in (_claim_trace_counts(prose, source_bundle), strict):
-        required = (count * 4 + 4) // 5 if count else 0
-        if count and aligned < required:
-            return (f"researka_claim_trace_insufficient:cited={cited}/{count},"
-                    f"aligned={aligned}/{count},required={required}")
+    aligned = sum(_prose_approved(claim, source_bundle, values) or (bool(researka.support_for_claim(claim, source_bundle)) if researka else _cited_claim_aligns(claim, source_bundle, values))
+                  for claim, values in zip(claims, indexes, strict=True))
+    if aligned < (required := max(1 if researka else 0, (len(claims) * 4 + 4) // 5)):  # Researka rejects a claim-free paper
+        return f"researka_claim_trace_insufficient:cited={sum(map(bool, indexes))}/{len(claims)},aligned={aligned}/{len(claims)},required={required}"
     return "eligible"
 
 

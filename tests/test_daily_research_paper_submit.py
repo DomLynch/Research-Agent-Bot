@@ -25,6 +25,13 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
 daily: Any = importlib.import_module("daily_research_paper_submit")
+
+
+def _claim_trace_counts(text: str, bundle: list[dict[str, Any]]) -> tuple[int, int, int]:
+    """(claims, cited, aligned) under the internal aligner — the fixture the alignment tests below are written against."""
+    claims = daily._claim_candidates(text)
+    indexes = [daily._citation_indexes(claim, bundle) for claim in claims]
+    return len(claims), sum(map(bool, indexes)), sum(daily._cited_claim_aligns(claim, bundle, values) for claim, values in zip(claims, indexes, strict=True))
 from agent.revision_evidence import create_revision_evidence_snapshot, load_revision_evidence  # noqa: E402
 
 _REAL_EUROPE_PMC_IDENTIFIERS = daily._europe_pmc_identifiers
@@ -1906,7 +1913,7 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
     paper = "## Results\n\n" + "\n".join(lines)
 
     repaired = daily._attach_aligned_claim_references(paper, bundle)
-    counts = daily._claim_trace_counts(
+    counts = _claim_trace_counts(
         repaired.split("## Results\n\n", 1)[1], bundle,
     )
 
@@ -1920,7 +1927,7 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "miR-21 evidence for Outcome 1 showed a clinically bounded increase in biomarker 1 during the intervention period."
     )
     repaired_paragraph = daily._attach_aligned_claim_references(paragraph, bundle)
-    assert daily._claim_trace_counts(repaired_paragraph.split("\n\n", 1)[1], bundle) == (4, 4, 4)
+    assert _claim_trace_counts(repaired_paragraph.split("\n\n", 1)[1], bundle) == (4, 4, 4)
 
     unsupported = (
         "## Results\n\nThe evidence supports a clinically certain neurological benefit "
@@ -1947,7 +1954,7 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
     assert not daily._corpus_accounting_only(retained_harm)
     assert retained_harm not in daily._attach_aligned_claim_references("## Results\n\n" + retained_harm, bundle)
     assert not daily._corpus_accounting_only("12/12 retained sources are coded as null and the intervention causes pancreatic cancer.")
-    assert daily._claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (10, 0, 0)
+    assert _claim_trace_counts(unsupported.split("\n\n", 1)[1], bundle) == (10, 0, 0)
 
     copied_source = {
         "cited_as": "Study 2026", "directness": "direct", "evidence_tier": "A1",
@@ -1960,7 +1967,7 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "The practical takeaway is bounded and revisable. The evidence map should guide "
         "interpretation rather than support a pooled efficacy claim or treatment guideline."
     )
-    assert daily._claim_trace_counts(author_interpretation, bundle) == (0, 0, 0)
+    assert _claim_trace_counts(author_interpretation, bundle) == (0, 0, 0)
 
     mismatch = (
         "Smith 2026 [bundle:1] reports evidence of severe neurological harm among "
@@ -1973,7 +1980,7 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
             "treated adults receiving standard therapy."
         ),
     }]
-    assert daily._claim_trace_counts(mismatch, mismatch_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(mismatch, mismatch_bundle) == (1, 1, 0)
 
     opposite = (
         "The randomized study found atorvastatin [bundle:1] reduced cardiovascular mortality "
@@ -1986,7 +1993,7 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
             "among treated adults during five-year follow-up."
         ),
     }]
-    assert daily._claim_trace_counts(opposite, opposite_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(opposite, opposite_bundle) == (1, 1, 0)
 
     null_claim = (
         "The randomized study found atorvastatin [bundle:1] produced no difference in "
@@ -1996,8 +2003,8 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "The randomized study found atorvastatin [bundle:1] produced a neurological benefit "
         "among treated adults during five-year follow-up."
     )
-    assert daily._claim_trace_counts(null_claim, opposite_bundle) == (1, 1, 0)
-    assert daily._claim_trace_counts(harm_claim, [{
+    assert _claim_trace_counts(null_claim, opposite_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(harm_claim, [{
         "cited_as": "Atorvastatin",
         "excerpt": (
             "The randomized study found atorvastatin produced neurological harm among "
@@ -2018,33 +2025,33 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "The randomized study found atorvastatin [bundle:1] did not improve survival among treated adults during five-year follow-up.",
         "The randomized study found atorvastatin [bundle:1] produced no significant improvement in neurological recovery during follow-up.",
     ):
-        assert daily._claim_trace_counts(negated, positive_bundle) == (1, 1, 0)
+        assert _claim_trace_counts(negated, positive_bundle) == (1, 1, 0)
 
     mixed_result = (
         "Wu 2025a [bundle:1] reports: RT reduced fatigue and improved sleep quality and "
         "psychological symptoms (P < 0.05) [exact source: https://doi.org/10.1234/example]."
     )
-    assert daily._claim_trace_counts(mixed_result, [{
+    assert _claim_trace_counts(mixed_result, [{
         "cited_as": "Wu 2025a",
         "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
         "(P < 0.05), but had no effect on cognition or overall quality of life.",
     }]) == (1, 1, 1)
-    assert daily._claim_trace_counts(mixed_result, [{
+    assert _claim_trace_counts(mixed_result, [{
         "cited_as": "Wu 2025a",
         "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
         "(P < 0.05) and had no effect on those same symptoms.",
     }]) == (1, 1, 0)
-    assert daily._claim_trace_counts(mixed_result, [{
+    assert _claim_trace_counts(mixed_result, [{
         "cited_as": "Wu 2025a",
         "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
         "(P < 0.05), but no significant effect was observed.",
     }]) == (1, 1, 0)
-    assert daily._claim_trace_counts(mixed_result, [{
+    assert _claim_trace_counts(mixed_result, [{
         "cited_as": "Wu 2025a",
         "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
         "(P < 0.05), but no significant effect was observed among participants.",
     }]) == (1, 1, 0)
-    assert daily._claim_trace_counts(mixed_result, [{
+    assert _claim_trace_counts(mixed_result, [{
         "cited_as": "Wu 2025a",
         "excerpt": "RT reduced fatigue and improved sleep quality and psychological symptoms "
         "(P < 0.05) and had no effect on cognition.",
@@ -2064,17 +2071,17 @@ def test_aligned_claim_references_close_exact_outgoing_trace_gap() -> None:
         "excerpt": "Significant improvements were noted in waist circumference reduction "
         "(p <= 0.01, % = 1.85) and dominant hand grip strength (% = 5.47).",
     }]
-    assert daily._claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 1)
+    assert _claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 1)
     percentage_bundle[0]["excerpt"] = "Grip strength improved by 1.85% after treatment."
-    assert daily._claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 0)
     percentage_bundle[0]["excerpt"] = "Waist circumference reduction was 1.85% after treatment."
-    assert daily._claim_trace_counts(percentage_result.replace("-1.85%", "+1.85%"), percentage_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(percentage_result.replace("-1.85%", "+1.85%"), percentage_bundle) == (1, 1, 0)
     percentage_bundle[0]["excerpt"] = "Waist circumference reduction was 5.47% after treatment."
-    assert daily._claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(percentage_result, percentage_bundle) == (1, 1, 0)
     percentage_bundle[0]["excerpt"] = (
         "Waist circumference reduction was 1.85% and grip strength improved 5.47%."
     )
-    assert daily._claim_trace_counts(percentage_result.replace("-1.85%", "-5.47%"), percentage_bundle) == (1, 1, 0)
+    assert _claim_trace_counts(percentage_result.replace("-1.85%", "-5.47%"), percentage_bundle) == (1, 1, 0)
     percentage_bundle[0]["excerpt"] = "Waist circumference reduction was 1.85% after treatment."
     assert daily._quantities_agree(percentage_result, percentage_bundle)
 
@@ -2113,7 +2120,7 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
     exact_claims = daily._claim_candidates(payload["sections"]["Results"])[:30]
     exact_indexes = [daily._citation_indexes(item, payload["source_bundle"]) for item in exact_claims]
     assert (len(exact_claims), sum(map(bool, exact_indexes)), sum(
-        any(daily._researka_evidence_aligns(item, payload["source_bundle"][index]) for index in indexes)
+        daily._cited_claim_aligns(item, payload["source_bundle"], indexes)
         for item, indexes in zip(exact_claims, exact_indexes, strict=True)
     )) == (5, 3, 3)
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == (
@@ -2125,6 +2132,27 @@ def test_researka_preflight_checks_exact_outgoing_claim_trace_ratio(tmp_path: Pa
         "intervention period. [bundle:4]\nOutcome 5",
     )
     assert daily._researka_claim_trace_status(payload, payload["source_bundle"]) == "eligible"
+
+
+def test_researka_claim_trace_gate_uses_platform_guard_when_configured(monkeypatch) -> None:
+    """With a platform checkout configured, the gate counts Researka's own claim_candidates and
+    support_for_claim (its claim_trace_guard) instead of the local word-overlap stand-in."""
+    monkeypatch.delenv("RESEARKA_RUNTIME_ROOT", raising=False)
+    daily._researka_evidence_quality.cache_clear()
+    assert daily._researka_evidence_quality() is None  # no checkout configured: local stand-in
+    payload = {"abstract": "Short abstract.", "sections": {"Results": "Result A [bundle:1]. Result B [bundle:1]."}}
+    bundle = [{"cited_as": "Study 2024", "excerpt": "Unrelated passage."}]
+    supported = {"claim one", "claim two", "claim three"}
+    guard = SimpleNamespace(
+        claim_candidates=lambda prose: ["claim one", "claim two", "claim three", "claim four", "claim five"],
+        support_for_claim=lambda claim, sources, **kwargs: [sources[0]] if claim in supported else [],
+    )
+    monkeypatch.setattr(daily, "_researka_evidence_quality", lambda: guard)
+    assert daily._researka_claim_trace_status(payload, bundle) == (
+        "researka_claim_trace_insufficient:cited=0/5,aligned=3/5,required=4"
+    )
+    supported.add("claim four")
+    assert daily._researka_claim_trace_status(payload, bundle) == "eligible"
 
 
 def test_source_bound_structured_statistic_requires_matching_evidence_and_metadata() -> None:
@@ -2142,17 +2170,15 @@ def test_source_bound_structured_statistic_requires_matching_evidence_and_metada
         "directness=direct; tier=A1)."
     )
 
-    assert daily._claim_trace_counts(claim, [source]) == (1, 1, 0)
-    assert daily._claim_trace_counts(claim.replace("0.007", "0.008"), [source]) == (1, 1, 0)
-    assert daily._claim_trace_counts(claim.replace("direction=mixed", "direction=positive"), [source]) == (1, 1, 0)
-    assert daily._claim_trace_counts(claim.replace("outcome=Longevity", "outcome=Safety"), [source]) == (1, 1, 0)
-    assert daily._claim_trace_counts(claim.replace("Faqihi 2021", "Wrong 2021"), [source]) == (1, 1, 0)
+    assert _claim_trace_counts(claim, [source]) == (1, 1, 0)
+    assert _claim_trace_counts(claim.replace("0.007", "0.008"), [source]) == (1, 1, 0)
+    assert _claim_trace_counts(claim.replace("direction=mixed", "direction=positive"), [source]) == (1, 1, 0)
+    assert _claim_trace_counts(claim.replace("outcome=Longevity", "outcome=Safety"), [source]) == (1, 1, 0)
+    assert _claim_trace_counts(claim.replace("Faqihi 2021", "Wrong 2021"), [source]) == (1, 1, 0)
     wrong_direction = claim.replace("direction=mixed", "direction=positive")
     overlap_source = {**source, "excerpt": claim}
-    assert not daily._researka_evidence_aligns(claim, source)
     finding = "The cited source reports the following finding: Days on ventilation were lower in the exchange group (p = 0.007) [bundle:1]."
-    assert daily._claim_trace_counts(finding, [source]) == (1, 1, 1)
-    assert not daily._researka_evidence_aligns(wrong_direction, overlap_source)
+    assert _claim_trace_counts(finding, [source]) == (1, 1, 1)
     assert daily._researka_claim_trace_status(
         {"abstract": "", "sections": {"Results": wrong_direction}}, [overlap_source],
     ) == "researka_claim_trace_insufficient:cited=1/1,aligned=0/1,required=1"
@@ -2184,7 +2210,7 @@ def test_generated_statistic_repair_preserves_endpoint_and_deduplicates() -> Non
     repaired = daily._attach_aligned_claim_references(paper, [source])
     assert repaired.count(excerpt.rstrip(".")) == 1
     assert "outcome=Longevity" not in repaired
-    assert daily._claim_trace_counts(repaired, [source]) == (1, 1, 1)
+    assert _claim_trace_counts(repaired, [source]) == (1, 1, 1)
     assert daily._attach_aligned_claim_references(repaired, [source]) == repaired
     source["excerpt"] = excerpt.replace("0.007", "0.008")
     assert "reports the following finding" not in daily._attach_aligned_claim_references(paper, [source])
@@ -2199,7 +2225,7 @@ def test_verified_finding_keeps_full_comparison_not_source_category() -> None:
     finding = daily._verified_source_finding(claim, [source], set())
     assert result.rstrip(".") in finding
     assert "outcome=Cognitive" not in finding
-    assert daily._claim_trace_counts(finding, [source]) == (1, 1, 1)
+    assert _claim_trace_counts(finding, [source]) == (1, 1, 1)
     assert not daily._evidence_aligns(
         "The cited source reports the following finding: Cognitive outcomes improved significantly after treatment (p < .05) [bundle:1].", source,
     )
@@ -2394,13 +2420,13 @@ def test_core_claim_trace_checks_every_clause_of_multisource_claim() -> None:
     payload = {"body_markdown": f"## Abstract\n\n{claim}\n\n## Conclusion\n\n{claim}"}
     assert daily._researka_core_claim_trace_status(payload, bundle) == "eligible"
     assert daily._researka_quantitative_trace_status({"abstract": claim}, bundle) == "eligible"
-    assert daily._claim_trace_counts(claim, bundle) == (1, 1, 1)
+    assert _claim_trace_counts(claim, bundle) == (1, 1, 1)
     for unsupported in (claim.replace("gait speed", "survival"), claim.replace("0.01", "0.001"), claim.replace("improved", "worsened")):
         assert daily._researka_core_claim_trace_status(
             {"body_markdown": payload["body_markdown"].replace(claim, unsupported)}, bundle,
         ) != "eligible"
         assert daily._researka_quantitative_trace_status({"abstract": unsupported}, bundle) != "eligible"
-        assert daily._claim_trace_counts(unsupported, bundle) == (1, 1, 0)
+        assert _claim_trace_counts(unsupported, bundle) == (1, 1, 0)
 
 
 def test_core_claim_trace_does_not_recycle_only_verified_finding(tmp_path: Path) -> None:
@@ -2580,7 +2606,7 @@ def test_quantitative_preflight_ignores_identifiers_and_corpus_accounting() -> N
     empirical = (
         "The included sources show a significant 55 percent mortality reduction during follow-up."
     )
-    assert daily._claim_trace_counts(empirical, []) == (1, 0, 0)
+    assert _claim_trace_counts(empirical, []) == (1, 0, 0)
     assert daily._quantitative_claim_candidates(empirical) == [empirical]
 
 

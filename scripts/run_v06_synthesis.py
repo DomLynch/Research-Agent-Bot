@@ -2618,8 +2618,9 @@ async def _run(
         evidence_lock, os.getenv("RESEARKA_REVISION_FEEDBACK", ""),
     )
     excluded_receipt_ids = original_receipt_ids - evidence_lock.receipt_ids
+    # Every frozen included set (snapshot or legacy) is reassessed; source_admission.finish reads the record.
+    source_admission.prepare_reassessment(topic, evidence_lock, out_dir, build_receipts_from_quant_claims, excluded_receipt_ids=excluded_receipt_ids)
     if evidence_lock.mode == "snapshot":
-        source_admission.prepare_reassessment(topic, evidence_lock, out_dir, build_receipts_from_quant_claims, excluded_receipt_ids=excluded_receipt_ids)
         QUANT_DIR, PARSED_DIR = evidence_lock.quant_dir, evidence_lock.parsed_dir
         _audit_v06.QUANT_DIR, _audit_v06.PARSED_DIR = QUANT_DIR, PARSED_DIR
     source_run, revision_receipt_ids = evidence_lock.source_run, evidence_lock.receipt_ids

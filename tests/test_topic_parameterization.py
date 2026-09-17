@@ -133,6 +133,26 @@ def test_run_fails_closed_on_corrupt_required_revision_snapshot(
     assert "snapshot_receipt_set_mismatch" in continuity["errors"]
 
 
+def test_legacy_revision_source_run_is_reassessed_before_admission_finish(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    """A frozen included set without a snapshot (legacy_contract) must still get the
+    selection assessment that source_admission.finish reads; it used to raise FileNotFoundError."""
+    source = tmp_path / "source-run"
+    source.mkdir()
+    (source / "manifest.json").write_text(json.dumps({
+        "topic": "metformin",
+        "receipts": [{"receipt_id": "DOI_10_1001_jama_281_21_2005_glycemic_control_with_diet_sulfonylurea_metformin_or_insulin", "n_claims": 1}],
+    }))
+    monkeypatch.setenv("RESEARCH_AGENT_REVISION_SOURCE_RUN", str(source))
+    monkeypatch.setattr(orch, "build_receipts_from_quant_claims", lambda *args, **kwargs: [])
+    try:
+        with pytest.raises(ValueError, match="selection_reassessment_changes_included_set"):
+            asyncio.run(orch._run(tmp_path / "revised-run", dry_run=True, topic="metformin"))
+    finally:
+        orch._set_topic("metformin")
+
+
 def test_main_accepts_topic_cli_arg() -> None:
     """The CLI exposes --topic. main() with --dry-run + a missing
     corpus exits with code 9 (required input missing); proves the arg
