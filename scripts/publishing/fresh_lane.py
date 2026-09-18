@@ -15,6 +15,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -2756,6 +2757,32 @@ def _insufficient_revise_retry_budget(remaining: int | None, cycle_budget_second
     return remaining < floor
 
 
+def _kill_process_group(proc: subprocess.Popen) -> None:
+    """Kill the child's whole process group on timeout, not just the direct
+    child: the synthesis/seed children spawn `codex exec` with
+    start_new_session=True, so a plain child kill leaks quota-burning
+    grandchildren and their temp dirs. POSIX-only; falls back to proc.kill()."""
+    if not hasattr(os, "killpg"):
+        proc.kill()
+        return
+    try:
+        pgid = os.getpgid(proc.pid)
+    except ProcessLookupError:
+        return
+    try:
+        os.killpg(pgid, signal.SIGTERM)
+    except ProcessLookupError:
+        return
+    try:
+        proc.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        pass
+    try:
+        os.killpg(pgid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
+
+
 def _run_synthesis(
     topic: str,
     out_dir: Path,
@@ -2780,9 +2807,12 @@ def _run_synthesis(
             env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
         if revision_source_run:
             env["RESEARCH_AGENT_REVISION_SOURCE_RUN"] = str(revision_source_run.resolve())
+    proc = subprocess.Popen(cmd, cwd=ROOT, env=env, start_new_session=True)
     try:
-        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=timeout or None, env=env)
+        proc.communicate(timeout=timeout or None)
     except subprocess.TimeoutExpired as exc:
+        _kill_process_group(proc)
+        proc.wait()
         out_dir.mkdir(parents=True, exist_ok=True)
         _write_json(out_dir / "synthesis_timeout.json", {
             "topic": topic,
@@ -2790,7 +2820,7 @@ def _run_synthesis(
             "error": f"{type(exc).__name__}: {exc}",
         })
         return SYNTHESIS_TIMEOUT_RETURN_CODE
-    return int(result.returncode)
+    return int(proc.returncode)
 
 
 def _receipt_preflight(
@@ -3325,11 +3355,19 @@ def _seed_topic(
         env.setdefault("V5_MEMO_FULL_RAW_QUERY_TIMEOUT", timeout_value)
     seed_timeout = _seed_topic_timeout(timeout)
     try:
-        result = subprocess.run(cmd, cwd=ROOT, check=False, timeout=seed_timeout, capture_output=True, text=True, env=env)
+        proc = subprocess.Popen(
+            cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env,
+            start_new_session=True,
+        )
+        _, stderr = proc.communicate(timeout=seed_timeout)
     except subprocess.TimeoutExpired as exc:
+        _kill_process_group(proc)
+        _, drained_stderr = proc.communicate()
+        if exc.stderr is None:
+            exc.stderr = drained_stderr
         after = _quant_claim_count(topic)
         status = "corpus_seeded" if after else "corpus_seed_failed"
-        stderr = exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else str(exc.stderr or "")
+        stderr_text = exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else str(exc.stderr or "")
         return {
             "status": status,
             "return_code": SYNTHESIS_TIMEOUT_RETURN_CODE,
@@ -3339,7 +3377,7 @@ def _seed_topic(
             "seed_timeout_seconds": seed_timeout,
             "seed_timeout_expired": True,
             "error": f"{type(exc).__name__}: {exc}",
-            "stderr_tail": stderr[-1200:],
+            "stderr_tail": stderr_text[-1200:],
         }
     except OSError as exc:
         return {
@@ -3351,14 +3389,14 @@ def _seed_topic(
             "error": f"{type(exc).__name__}: {exc}",
         }
     after = _quant_claim_count(topic)
-    status = "corpus_seeded" if result.returncode == 0 and after else "corpus_seed_empty" if result.returncode == 0 else "corpus_seed_failed"
+    status = "corpus_seeded" if proc.returncode == 0 and after else "corpus_seed_empty" if proc.returncode == 0 else "corpus_seed_failed"
     return {
         "status": status,
-        "return_code": int(result.returncode),
+        "return_code": int(proc.returncode),
         "n_quant_claims_before": before,
         "n_quant_claims": after,
         "seed_limit": seed_limit,
-        "stderr_tail": result.stderr[-1200:],
+        "stderr_tail": stderr[-1200:],
     }
 
 

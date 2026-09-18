@@ -469,16 +469,61 @@ def _offline_coverage_judge(monkeypatch):
     monkeypatch.setattr(cycle, "_numeric_effect_direction_issues", lambda out_dir: [])
 
 
+def _stub_popen(
+    seen: dict[str, Any] | None = None,
+    *,
+    returncode: int = 0,
+    stdout: str = "",
+    stderr: str = "",
+    communicate_exc_factory: Any = None,
+    on_communicate: Any = None,
+):
+    """Minimal subprocess.Popen stand-in for fresh_lane tests. The bogus pid
+    makes fresh_lane._kill_process_group a no-op (ProcessLookupError)."""
+
+    class _StubPopen:
+        pid = 2**22
+
+        def __init__(self, cmd, **kwargs):
+            self._cmd = cmd
+            self.returncode = returncode
+            self._raised = False
+            if seen is not None:
+                seen["cmd"] = cmd
+                seen["kwargs"] = kwargs
+                seen["env"] = kwargs.get("env")
+
+        def communicate(self, timeout=None):
+            if seen is not None:
+                seen.setdefault("timeout", timeout)
+            if on_communicate is not None:
+                on_communicate()
+            if communicate_exc_factory is not None and not self._raised:
+                self._raised = True
+                raise communicate_exc_factory(self._cmd, timeout)
+            return stdout, stderr
+
+        def wait(self, timeout=None):
+            return self.returncode
+
+        def kill(self):
+            pass
+
+    return _StubPopen
+
+
 @pytest.fixture
 def failed_corpus_process(monkeypatch):
     """No new evidence arrives from the external seed/probe CLI in these cases."""
-    def run(command, **_kwargs):
+    stub = _stub_popen(returncode=1, stderr="fixture: corpus unavailable")
+
+    def popen(command, **kwargs):
         assert command[1] == "scripts/seed_topic_corpus.py" or (
             command[1] == "scripts/run_v06_synthesis.py" and "--dry-run" in command
         ), "unexpected corpus command"
-        return cycle.subprocess.CompletedProcess(command, 1, stdout="", stderr="fixture: corpus unavailable")
+        return stub(command, **kwargs)
 
-    monkeypatch.setattr(cycle.subprocess, "run", run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", popen)
 
 
 def _write_json(path: Path, payload: Any) -> None:
@@ -4143,15 +4188,7 @@ def test_cycle_does_not_reselect_after_submit_bridge_no_eligible(tmp_path: Path,
 def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Path, monkeypatch) -> None:
     seen: dict[str, Any] = {}
 
-    class Result:
-        returncode = 0
-
-    def fake_run(*args: Any, **kwargs: Any) -> Result:
-        seen["args"] = args
-        seen["kwargs"] = kwargs
-        return Result()
-
-    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen))
 
     source_run = tmp_path / "source-run"
     source_run.mkdir()
@@ -4165,11 +4202,12 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
         revision_source_run=source_run,
     )
 
-    cmd = seen["args"][0]
+    cmd = seen["cmd"]
     assert rc == 0
     assert cmd[:4] == [sys.executable, "scripts/run_v06_synthesis.py", "--topic", "aspirin_geroprotection"]
     assert seen["kwargs"]["cwd"] == cycle.ROOT
-    assert seen["kwargs"]["timeout"] == 123
+    assert seen["kwargs"]["start_new_session"] is True
+    assert seen["timeout"] == 123
     assert seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"] == "Add clinical-use caveat."
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] == "thin_corpus_brief"
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVISION_SOURCE_RUN"] == str(source_run.resolve())
@@ -4192,10 +4230,10 @@ def test_runner_fails_closed_when_full_only_surface_is_compact(
 
 
 def test_run_synthesis_timeout_returns_status_code_and_sidecar(tmp_path: Path, monkeypatch) -> None:
-    def fake_run(*args: Any, **kwargs: Any) -> object:
-        raise cycle.subprocess.TimeoutExpired(args[0], kwargs["timeout"])
-
-    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    monkeypatch.setattr(
+        cycle.subprocess, "Popen",
+        _stub_popen(communicate_exc_factory=lambda cmd, timeout: cycle.subprocess.TimeoutExpired(cmd, timeout)),
+    )
     out_dir = tmp_path / "timeout-run"
 
     rc = cycle._run_synthesis("rapamycin_cancer_effects", out_dir, dry_run=False, timeout=7)
@@ -5464,10 +5502,10 @@ def test_revise_lane_marks_domain_scope_mismatch_terminal(tmp_path: Path, monkey
 def test_corpus_seed_failure_is_corpus_fixable(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
 
-    def fail_run(*_args: Any, **_kwargs: Any) -> None:
+    def fail_popen(*_args: Any, **_kwargs: Any) -> None:
         raise OSError("offline")
 
-    monkeypatch.setattr(cycle.subprocess, "run", fail_run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", fail_popen)
 
     result = cycle._ensure_topic_corpus("new_topic", dry_run=False)
 
@@ -5483,14 +5521,12 @@ def test_ensure_topic_corpus_counts_seeded_quant_claims(tmp_path: Path, monkeypa
     monkeypatch.delenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", raising=False)
     seen: dict[str, Any] = {}
 
-    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
-        seen["cmd"] = cmd
+    def seed_claims() -> None:
         qdir = cycle.CORPORA / "new_topic" / "quant_claims"
         qdir.mkdir(parents=True)
         _write_json(qdir / "seed.quant_claims.json", {"paper_id": "seed", "claims": []})
-        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
 
-    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen, on_communicate=seed_claims))
 
     result = cycle._ensure_topic_corpus("new_topic", dry_run=False)
 
@@ -5512,13 +5548,7 @@ def test_seed_topic_bounds_v5_timeout_without_forcing_v5_only(tmp_path: Path, mo
     monkeypatch.setenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", "91")
     seen: dict[str, Any] = {}
 
-    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
-        seen["cmd"] = cmd
-        seen["env"] = _kwargs["env"]
-        seen["timeout"] = _kwargs["timeout"]
-        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
-
-    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen))
 
     result = cycle._seed_topic("new_topic", seed_limit=7)
 
@@ -5538,11 +5568,7 @@ def test_seed_topic_bounds_canonical_fullraw_timeout(tmp_path: Path, monkeypatch
     monkeypatch.setenv("RESEARCH_AGENT_DISCOVERY_TIMEOUT_SECONDS", "17")
     seen: dict[str, Any] = {}
 
-    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
-        seen["env"] = _kwargs["env"]
-        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
-
-    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen))
 
     result = cycle._seed_topic("new_topic", seed_limit=7)
 
@@ -5559,12 +5585,7 @@ def test_seed_topic_source_env_override_wins(tmp_path: Path, monkeypatch) -> Non
     monkeypatch.setenv("V5_MEMO_FULL_RAW_CORPUS_TOKEN", "token")
     seen: dict[str, Any] = {}
 
-    def fake_run(cmd: list[str], **_kwargs: Any) -> Any:
-        seen["cmd"] = cmd
-        seen["env"] = _kwargs["env"]
-        return cycle.subprocess.CompletedProcess(cmd, 0, stdout="", stderr="")
-
-    monkeypatch.setattr(cycle.subprocess, "run", fake_run)
+    monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen))
 
     result = cycle._seed_topic("new_topic", seed_limit=7)
 
@@ -5578,14 +5599,21 @@ def test_seed_topic_timeout_with_claims_stays_gate_checkable(tmp_path: Path, mon
     monkeypatch.setenv("RESEARCH_AGENT_SEED_TOPIC_TIMEOUT_SECONDS", "17")
     seen: dict[str, Any] = {}
 
-    def slow_run(cmd: list[str], **kwargs: Any) -> Any:
-        seen["timeout"] = kwargs["timeout"]
+    def seed_claims() -> None:
         qdir = cycle.CORPORA / "new_topic" / "quant_claims"
-        qdir.mkdir(parents=True)
+        qdir.mkdir(parents=True, exist_ok=True)
         _write_json(qdir / "seed.quant_claims.json", {"paper_id": "seed", "claims": []})
-        raise cycle.subprocess.TimeoutExpired(cmd=cmd, timeout=kwargs["timeout"], stderr="report written")
 
-    monkeypatch.setattr(cycle.subprocess, "run", slow_run)
+    monkeypatch.setattr(
+        cycle.subprocess, "Popen",
+        _stub_popen(
+            seen,
+            communicate_exc_factory=lambda cmd, timeout: cycle.subprocess.TimeoutExpired(
+                cmd=cmd, timeout=timeout, stderr="report written",
+            ),
+            on_communicate=seed_claims,
+        ),
+    )
 
     result = cycle._ensure_topic_corpus("new_topic", dry_run=False, timeout=999)
 
