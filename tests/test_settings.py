@@ -151,7 +151,6 @@ def test_load_settings_ignores_stale_writer_provider_names(
     assert s.minimax_model == "gpt-5.6-sol"
     assert s.minimax_base_url == "codex://chatgpt"
     assert s.minimax_timeout_sec == 180.0
-    assert s.mimo_model == s.minimax_model
 
 
 def test_load_settings_accepts_explicit_writer_configuration(

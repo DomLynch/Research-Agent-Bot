@@ -59,22 +59,6 @@ class Settings:
     # Run logging
     runs_dir: str
 
-    @property
-    def mimo_api_key(self) -> str:
-        return self.minimax_api_key
-
-    @property
-    def mimo_model(self) -> str:
-        return self.minimax_model
-
-    @property
-    def mimo_base_url(self) -> str:
-        return self.minimax_base_url
-
-    @property
-    def mimo_timeout_sec(self) -> float:
-        return self.minimax_timeout_sec
-
 
 def load_settings() -> Settings:
     _load_dotenv_if_present()
