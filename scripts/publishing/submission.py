@@ -225,6 +225,7 @@ SUBMISSION_REQUIRED_FILES = (
     "full_paper.journal_surface.json",
     "full_paper.final_verdict.json",
     "pre_submit_gate.json",
+    "final_status.json",
 )
 Submitter = Callable[[dict[str, Any]], dict[str, Any]]
 RemoteLoader = Callable[[], tuple[set[str], str | None]]
@@ -1065,11 +1066,8 @@ def _static_ineligible_status(
     if source_floor_status != "eligible":
         return source_floor_status
     final_status = _read_json(run / "final_status.json")
-    if final_status and not _final_status_ready(final_status):
+    if not _final_status_ready(final_status):
         return "final_status_not_ready"
-    verdict = _read_json(run / "full_paper.final_verdict.json")
-    if not final_status and str(verdict.get("verdict", "")).upper() != "AAA":
-        return "final_verdict_not_aaa"
     return None
 
 

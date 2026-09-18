@@ -512,6 +512,7 @@ def _run(root: Path, name: str = "synthesis-topic-v06-test", *, tensions: int = 
     _write_json(run / "full_paper.journal_surface.json", {"passed": True, "issues": []})
     _write_json(run / "full_paper.final_verdict.json", {"verdict": "AAA"})
     _write_json(run / "pre_submit_gate.json", {"result": {"passed": True}})
+    _write_json(run / "final_status.json", {"submission_ready": True})
     daily.freeze_submission_package(run, {"verdict": "AAA"})
     return run
 
@@ -3588,6 +3589,68 @@ def test_submit_prefers_researka_readiness_over_journal_readiness(
         submitter=lambda payload: {
             "ok": True, "status": 201,
             "response": {"id": "obj-researka-ready", "title": payload["title"]},
+        },
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert ledger["status"] == "submitted_to_researka"
+
+
+def test_submit_requires_final_status_sidecar(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    run = _run(tmp_path)
+    (run / "final_status.json").unlink()
+    monkeypatch.setattr(
+        daily,
+        "_eligible",
+        lambda _run: (_ for _ in ()).throw(AssertionError("missing final_status.json should skip eligibility")),
+    )
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "missing:final_status.json"
+
+
+def test_submit_rejects_corrupt_final_status_without_aaa_fallback(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    (run / "final_status.json").write_text("{truncated", encoding="utf-8")
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "run_operational_state_invalid:final_status.json"
+
+
+def test_submit_rejects_final_status_submission_ready_false(tmp_path: Path) -> None:
+    run = _run(tmp_path)
+    _write_json(run / "final_status.json", {"submission_ready": False})
+
+    selected, considered = daily.select_candidate(
+        tmp_path,
+        tmp_path / daily.LEDGER_DIR / "_submitted_fingerprints.json",
+    )
+
+    assert selected is None
+    assert considered[0]["status"] == "final_status_not_ready"
+
+
+def test_submit_eligible_with_ready_final_status(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    _run(tmp_path)
+    monkeypatch.setattr(daily, "_refresh_stale_audit_sidecar", lambda _run: False)
+
+    ledger = daily.run_cycle(
+        runs_root=tmp_path,
+        date="2026-07-25",
+        submit=True,
+        submitter=lambda payload: {
+            "ok": True, "status": 201,
+            "response": {"id": "obj-final-status-ready", "title": payload["title"]},
         },
         remote_loader=lambda: (set(), None),
     )
