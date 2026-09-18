@@ -4245,6 +4245,43 @@ def test_run_synthesis_timeout_returns_status_code_and_sidecar(tmp_path: Path, m
     assert "TimeoutExpired" in timeout["error"]
 
 
+def test_run_synthesis_truncates_oversized_revision_feedback(tmp_path: Path, monkeypatch, capsys) -> None:
+    seen: dict[str, Any] = {}
+
+    monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen))
+
+    feedback = "x" * (cycle._REVISION_FEEDBACK_ENV_CAP + 500)
+    rc = cycle._run_synthesis(
+        "aspirin_geroprotection",
+        tmp_path / "revised-run",
+        dry_run=False,
+        revision_feedback=feedback,
+    )
+
+    assert rc == 0
+    env_feedback = seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"]
+    assert env_feedback == feedback[:cycle._REVISION_FEEDBACK_ENV_CAP] + "\n...[truncated]"
+    assert len(env_feedback) < len(feedback)
+    assert "revision_feedback truncated" in capsys.readouterr().out
+
+
+def test_run_synthesis_spawn_oserror_returns_sidecar_and_code(tmp_path: Path, monkeypatch) -> None:
+    def _raising_popen(*_args: Any, **_kwargs: Any) -> Any:
+        raise OSError(7, "Argument list too long")
+
+    monkeypatch.setattr(cycle.subprocess, "Popen", _raising_popen)
+    out_dir = tmp_path / "spawn-error-run"
+
+    rc = cycle._run_synthesis("rapamycin_cancer_effects", out_dir, dry_run=False, timeout=7)
+
+    assert rc == cycle.SYNTHESIS_SPAWN_ERROR_RETURN_CODE
+    assert cycle._synthesis_failure_status(out_dir, rc) == "synthesis_spawn_error"
+    spawn_error = json.loads((out_dir / "synthesis_spawn_error.json").read_text(encoding="utf-8"))
+    assert spawn_error["topic"] == "rapamycin_cancer_effects"
+    assert "OSError" in spawn_error["error"]
+    assert "Argument list too long" in spawn_error["error"]
+
+
 def test_cycle_records_synthesis_timeout_without_service_failure_status(tmp_path: Path, monkeypatch) -> None:
     _topic(tmp_path, "rapamycin_cancer_effects", target_journal=True)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")

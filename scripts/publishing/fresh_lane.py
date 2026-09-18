@@ -177,7 +177,12 @@ DECISION_POLL_INTERVAL_SECONDS = 30
 CYCLE_BUDGET_SECONDS = 6300
 MIN_REVISE_RETRY_BUDGET_SECONDS = 1200
 SYNTHESIS_TIMEOUT_RETURN_CODE = 124
+SYNTHESIS_SPAWN_ERROR_RETURN_CODE = 126
 NEEDS_CORPUS_RETURN_CODE = 6
+# Linux caps a single env string at MAX_ARG_STRLEN (128 KiB); an oversized
+# external review placed verbatim into RESEARKA_REVISION_FEEDBACK makes
+# subprocess.Popen raise E2BIG and crash the whole lane.
+_REVISION_FEEDBACK_ENV_CAP = 102400
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 _TERMINAL_SPARSE_RE = re.compile(r"\b(precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -2802,13 +2807,20 @@ def _run_synthesis(
         if not dry_run:
             env["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] = "1"
         if revision_feedback:
+            if len(revision_feedback) > _REVISION_FEEDBACK_ENV_CAP:
+                print(
+                    f"[daily-v3-cycle] revision_feedback truncated "
+                    f"{len(revision_feedback)} -> {_REVISION_FEEDBACK_ENV_CAP} chars",
+                    flush=True,
+                )
+                revision_feedback = revision_feedback[:_REVISION_FEEDBACK_ENV_CAP] + "\n...[truncated]"
             env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback
         if review_type_override:
             env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
         if revision_source_run:
             env["RESEARCH_AGENT_REVISION_SOURCE_RUN"] = str(revision_source_run.resolve())
-    proc = subprocess.Popen(cmd, cwd=ROOT, env=env, start_new_session=True)
     try:
+        proc = subprocess.Popen(cmd, cwd=ROOT, env=env, start_new_session=True)
         proc.communicate(timeout=timeout or None)
     except subprocess.TimeoutExpired as exc:
         _kill_process_group(proc)
@@ -2820,6 +2832,13 @@ def _run_synthesis(
             "error": f"{type(exc).__name__}: {exc}",
         })
         return SYNTHESIS_TIMEOUT_RETURN_CODE
+    except OSError as exc:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        _write_json(out_dir / "synthesis_spawn_error.json", {
+            "topic": topic,
+            "error": f"{type(exc).__name__}: {exc}",
+        })
+        return SYNTHESIS_SPAWN_ERROR_RETURN_CODE
     return int(proc.returncode)
 
 
@@ -3189,6 +3208,8 @@ def _submit_current_candidate(
 def _synthesis_failure_status(out_dir: Path, return_code: int) -> str:
     if return_code == SYNTHESIS_TIMEOUT_RETURN_CODE:
         return "synthesis_timeout"
+    if return_code == SYNTHESIS_SPAWN_ERROR_RETURN_CODE:
+        return "synthesis_spawn_error"
     if return_code == NEEDS_CORPUS_RETURN_CODE:
         return "needs_corpus_expansion"
     runtime = _read_json(out_dir / "benchmark_runtime.json")
