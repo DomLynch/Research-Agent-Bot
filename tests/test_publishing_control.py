@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import json
 from dataclasses import replace
 from pathlib import Path
 
@@ -16,6 +17,7 @@ from agent.publishing.io import (
     AtomicJsonState,
     CorruptJsonState,
     JsonStateStatus,
+    atomic_write_json,
     update_json_list,
     write_json,
 )
@@ -291,9 +293,13 @@ def test_atomic_json_state_distinguishes_missing_corrupt_and_valid(
 
     path.write_text("{broken", encoding="utf-8")
     assert store.read().status is JsonStateStatus.CORRUPT
-    with pytest.raises(CorruptJsonState):
-        store.write({"fabricated": True})
-    assert path.read_text(encoding="utf-8") == "{broken"
+    store.write({"healed": True})
+    result = store.read()
+    assert result.status is JsonStateStatus.VALID
+    assert result.value == {"healed": True}
+    quarantined = list(tmp_path.glob("state.json.corrupt-*"))
+    assert len(quarantined) == 1
+    assert quarantined[0].read_text(encoding="utf-8") == "{broken"
 
     path.unlink()
     fsync_calls: list[int] = []
@@ -312,9 +318,29 @@ def test_atomic_updates_do_not_replace_corrupt_state(tmp_path: Path) -> None:
 
     with pytest.raises(CorruptJsonState):
         update_json_list(path, lambda rows: rows.append({"id": "new"}))
-    with pytest.raises(CorruptJsonState):
-        write_json(path, [])
     assert path.read_text(encoding="utf-8") == "not-json"
+
+
+def test_atomic_write_heals_corrupt_state_with_quarantine(tmp_path: Path) -> None:
+    path = tmp_path / "rows.json"
+    path.write_text("not-json", encoding="utf-8")
+
+    write_json(path, [])
+    assert json.loads(path.read_text(encoding="utf-8")) == []
+    quarantined = list(tmp_path.glob("rows.json.corrupt-*"))
+    assert len(quarantined) == 1
+    assert quarantined[0].read_text(encoding="utf-8") == "not-json"
+
+
+def test_atomic_write_json_writes_valid_json_and_replaces(tmp_path: Path) -> None:
+    path = tmp_path / "gate.json"
+    path.write_text('{"stale": true}', encoding="utf-8")
+
+    payload = {"passed": True, "issues": [{"code": "x"}]}
+    atomic_write_json(path, payload)
+
+    assert json.loads(path.read_text(encoding="utf-8")) == payload
+    assert not list(tmp_path.glob("*.tmp"))
 
 
 def test_candidate_buffer_writer_rejects_unbound_ready_rows(tmp_path: Path) -> None:

@@ -13,6 +13,7 @@ from types import SimpleNamespace
 from typing import Any
 
 from agent import statistical_consistency as _stats
+from agent.publishing.io import atomic_write_json
 from agent.endpoint_evidence import directional_kind, endpoint_direction_map
 from agent.evidence_lanes import LANE_TOKENS, build_lane_map, derive_receipt_lane, effective_directness, is_animal_context
 from agent.revision_identity import outcome_direction_tally_note, repair_revision_identity
@@ -5582,9 +5583,9 @@ def _reevaluate_journal_surface(out_dir: Path) -> int:
         return 0
     old = _load_sidecar(out_dir / "full_paper.journal_surface.json") or {}
     old_n = len(old.get("issues") or []) if isinstance(old, dict) else 0
-    (out_dir / "full_paper.journal_surface.json").write_text(json.dumps({
+    atomic_write_json(out_dir / "full_paper.journal_surface.json", {
         "passed": report.passed,
-        "issues": [asdict(i) for i in report.issues]}, indent=2))
+        "issues": [asdict(i) for i in report.issues]})
     return len(report.issues) - old_n
 
 
@@ -5633,7 +5634,7 @@ def _refresh_pre_submit_gate(out_dir: Path) -> bool:
     except (ImportError, TypeError, ValueError):
         return False
     gate["inputs"], gate["result"] = fresh, asdict(result)
-    (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
+    atomic_write_json(out_dir / "pre_submit_gate.json", gate)
     return True
 
 def _refresh_final_verdict(out_dir: Path) -> bool:
@@ -5685,7 +5686,7 @@ def _refresh_audit_sidecar(out_dir: Path) -> bool:
         return False
     if _load_sidecar(out_dir / "full_paper.audit.json") == report:
         return False
-    (out_dir / "full_paper.audit.json").write_text(json.dumps(report, indent=2))
+    atomic_write_json(out_dir / "full_paper.audit.json", report)
     (out_dir / "full_paper.audit.md").write_text(audit_v06._format_summary(report))
     return True
 
@@ -5774,7 +5775,7 @@ def _refresh_final_consistency_sidecar(out_dir: Path) -> bool:
     path = out_dir / "full_paper.consistency.json"
     if _load_sidecar(path) == payload:
         return False
-    path.write_text(json.dumps(payload, indent=2))
+    atomic_write_json(path, payload)
     try:
         (out_dir / "full_paper.consistency.md").write_text(
             consistency_audit._format_summary(issues),
@@ -5867,7 +5868,7 @@ def _refresh_readiness_contract_items(out_dir: Path) -> int:
         if item != before:
             n_changed += 1
     if n_changed:
-        (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate, indent=2))
+        atomic_write_json(out_dir / "pre_submit_gate.json", gate)
     n_changed += _write_pre_submit_gate_markdown(out_dir, gate)
     return n_changed
 

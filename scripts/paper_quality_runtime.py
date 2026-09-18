@@ -29,6 +29,7 @@ from agent.final_gate_mapper import build_gate_inputs
 from agent.forest_plot_svg import render_forest_plot_svg
 from agent.meta_analysis import EffectRow, pool_random_effects
 from agent.publication_scorer import ScoreInputs, score_publication
+from agent.publishing.io import atomic_write_json
 from agent.quality_methods_bundle import build_quality_methods_bundle
 from agent.review_type import formal_appraisal_required, parse_review_type
 from agent.template_gate_adapter import evaluate_template_gate
@@ -881,7 +882,7 @@ def write_final_quality_gates(
         "runtime_integrity": runtime_issue or {"blocks_submission": False},
         "journal_readiness_contract": readiness_contract,
     }
-    (out_dir / "pre_submit_gate.json").write_text(json.dumps(gate_payload, indent=2))
+    atomic_write_json(out_dir / "pre_submit_gate.json", gate_payload)
     (out_dir / "pre_submit_gate.md").write_text(
         "# Pre-Submit Final Gate\n\n"
         + gate.summary

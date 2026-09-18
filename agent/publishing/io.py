@@ -6,6 +6,7 @@ import fcntl
 import json
 import os
 import tempfile
+import time
 from collections.abc import Callable
 from dataclasses import dataclass
 from enum import StrEnum
@@ -30,6 +31,34 @@ class JsonStateRead(Generic[T]):
 
 class CorruptJsonState(RuntimeError):
     pass
+
+
+def _atomic_write_text(path: Path, text: str) -> None:
+    descriptor, name = tempfile.mkstemp(
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+    )
+    temporary = Path(name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+        directory = os.open(path.parent, os.O_RDONLY)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def atomic_write_json(path: Path, payload: Any) -> None:
+    """Crash-safe JSON write (tmp file + fsync + os.replace) for gate sidecars."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _atomic_write_text(path, json.dumps(payload, indent=2) + "\n")
 
 
 class AtomicJsonState(Generic[T]):
@@ -71,26 +100,17 @@ class AtomicJsonState(Generic[T]):
             )
 
     def _write_unlocked(self, value: T) -> None:
-        descriptor, name = tempfile.mkstemp(
-            dir=self.path.parent,
-            prefix=f".{self.path.name}.",
-            suffix=".tmp",
-        )
-        temporary = Path(name)
-        try:
-            with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
-                json.dump(value, handle, indent=2, sort_keys=True)
-                handle.write("\n")
-                handle.flush()
-                os.fsync(handle.fileno())
-            os.replace(temporary, self.path)
-            directory = os.open(self.path.parent, os.O_RDONLY)
-            try:
-                os.fsync(directory)
-            finally:
-                os.close(directory)
-        finally:
-            temporary.unlink(missing_ok=True)
+        _atomic_write_text(self.path, json.dumps(value, indent=2, sort_keys=True) + "\n")
+
+    def _quarantine_corrupt(self) -> Path:
+        stamp = int(time.time())
+        quarantine = self.path.with_name(f"{self.path.name}.corrupt-{stamp}")
+        suffix = 1
+        while quarantine.exists():
+            quarantine = self.path.with_name(f"{self.path.name}.corrupt-{stamp}-{suffix}")
+            suffix += 1
+        os.replace(self.path, quarantine)
+        return quarantine
 
     def write(self, value: T) -> None:
         if not isinstance(value, self.expected_type):
@@ -100,7 +120,12 @@ class AtomicJsonState(Generic[T]):
             fcntl.flock(lock, fcntl.LOCK_EX)
             current = self._read_unlocked()
             if current.status is JsonStateStatus.CORRUPT:
-                raise CorruptJsonState(f"{self.path}: {current.error}")
+                quarantine = self._quarantine_corrupt()
+                print(
+                    f"[publishing.io] {self.path}: quarantined corrupt state "
+                    f"as {quarantine.name} ({current.error})",
+                    flush=True,
+                )
             self._write_unlocked(value)
 
     def update(

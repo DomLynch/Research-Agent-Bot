@@ -31,7 +31,7 @@ from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
 )
 from agent.evidence_lanes import derive_receipt_lane, effective_directness, unisolated_combination  # noqa: E402
-from agent.publishing.io import CorruptJsonState, read_json  # noqa: E402
+from agent.publishing.io import CorruptJsonState, atomic_write_json, read_json  # noqa: E402
 from agent.paper_writer_helpers import build_research_question  # noqa: E402
 from agent.paper_writer import MAX_EVIDENCE_CHARS_PER_RECEIPT, render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
@@ -73,7 +73,7 @@ def _write_revision_feedback_sidecar(out_dir: Path) -> None:
     path = out_dir / "researka_revision_request.json"
     if not feedback or path.is_file():
         return
-    path.write_text(json.dumps({"feedback": feedback}, indent=2))
+    atomic_write_json(path, {"feedback": feedback})
 
 
 def _restore_revision_citations(
@@ -2400,7 +2400,7 @@ def _write_benchmark_runtime(
 ) -> None:
     completed_at = dt.datetime.now(dt.timezone.utc)
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "benchmark_runtime.json").write_text(json.dumps({
+    atomic_write_json(out_dir / "benchmark_runtime.json", {
         "return_code": return_code,
         "reason": reason,
         "details": list(details),
@@ -2408,7 +2408,7 @@ def _write_benchmark_runtime(
         "completed_at": completed_at.isoformat(timespec="seconds"),
         "duration_s": round((completed_at - started_at).total_seconds(), 3),
         "topic": str(_ACTIVE_TOPIC),
-    }, indent=2))
+    })
 
 
 def _record_synthesis_exit(

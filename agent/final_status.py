@@ -7,6 +7,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Literal
 
+from agent.publishing.io import atomic_write_json
+
 LabelLevel = Literal[1, 2, 3, 4, 5]
 LABELS: dict[int, str] = {
     1: "L1 — DRAFT GENERATED",
@@ -355,7 +357,7 @@ def write_sidecar(run_dir: Path, status: FinalStatus) -> Path:
         "blocking_reasons": [asdict(b) for b in status.blocking_reasons],
         "sidecars_read": list(status.sidecars_read),
     }
-    out.write_text(json.dumps(payload, indent=2) + "\n")
+    atomic_write_json(out, payload)
     return out
 
 
