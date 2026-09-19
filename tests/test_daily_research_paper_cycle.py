@@ -13899,3 +13899,28 @@ def test_revision_parent_reaches_writer_and_payload_before_synthesis_returns(tmp
         submit_cycle=lambda **_: pytest.fail("handoff-only check must not submit"), max_attempts=1, max_revise_attempts=1)
     assert checked == [topic]
     assert ledger["submitted"] == 0
+
+
+@pytest.mark.parametrize("outcome", ["revise", "pending", "failed", "accept", "reject"])
+def test_core_outcome_overrides_stale_decision_and_preserves_structured_findings(tmp_path, monkeypatch, outcome):
+    runs = tmp_path / "runs"
+    run = _seed_submitted_run(runs, "senolytics", "# Research Synthesis: Senolytics")
+    _write_json(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json", [{
+        "run": run.name, "topic": "senolytics", "submission_id": "submission-1", "decision": "revise",
+    }])
+    finding = {"materiality": "blocking", "section": "Methods", "quote": "We selected sources.",
+               "issue": "Admission rule omitted", "impact": "Selection cannot be audited",
+               "correction": "State the recorded admission rule", "repairability": "bounded_revision"}
+    monkeypatch.setattr(cycle, "_latest_reviews_by_title", lambda _url=None: ({}, None))
+    monkeypatch.setattr(cycle, "_fetch_submission_decision", lambda _: ({
+        "outcome": outcome, "decision": "revise", "material_findings": [finding],
+    }, None))
+    requests, error = cycle._remote_revision_requests(runs_root=runs)
+    assert error is None
+    assert bool(requests) is (outcome == "revise")
+    if requests:
+        assert requests[0]["material_findings"] == [finding]
+        assert all(value in requests[0]["feedback"] for value in (finding["correction"], finding["section"], finding["quote"]))
+    saved = cycle.submit_bridge._ledger_rows(runs / cycle.submit_bridge.LEDGER_DIR / "_submitted_fingerprints.json")
+    assert saved[0]["outcome"] == saved[0]["decision"] == outcome
+    assert saved[0]["material_findings"] == [finding]

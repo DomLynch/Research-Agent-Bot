@@ -143,6 +143,17 @@ def required_revision_items(row: dict[str, Any]) -> list[str]:
         raw = row.get(snake) or row.get(camel)
         values = raw if isinstance(raw, list) else [raw] if isinstance(raw, str) else []
         items.extend(text for item in values if (text := _revision_item_text(item)))
+    findings = row.get("material_findings") or row.get("materialFindings") or []
+    if isinstance(findings, list):
+        for finding in findings:
+            if not isinstance(finding, dict) or finding.get("materiality") != "blocking":
+                continue
+            correction = finding.get("correction")
+            if isinstance(correction, str) and correction.strip():
+                # Keep location, quoted defect and rationale attached to the correction.
+                items.append("; ".join(f"{key}: {finding[key]}" for key in
+                    ("section", "quote", "issue", "impact", "correction", "repairability")
+                    if isinstance(finding.get(key), str) and finding[key].strip()))
     return list(dict.fromkeys(items))
 
 

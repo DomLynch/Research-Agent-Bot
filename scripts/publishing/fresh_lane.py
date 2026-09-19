@@ -1075,6 +1075,8 @@ def _fetch_submission_decision(submission_id: str) -> tuple[dict[str, Any] | Non
 
 _DECISION_LIFECYCLE_FIELDS = {
     "decision_status": ("status",),
+    "outcome": ("outcome",),
+    "material_findings": ("material_findings", "materialFindings"),
     "updated_at": ("updated_at", "updatedAt"),
     "closed": ("closed",),
     "fault_domain": ("fault_domain", "faultDomain"),
@@ -1188,7 +1190,7 @@ def _submitted_submission_decisions_by_title(runs_root: Path = RUNS, *, poll_rep
             continue
         fields = {
             "title": ("title",),
-            "decision": ("decision",),
+            "decision": ("outcome", "decision"),
             "decision_object_id": (
                 "decision_object_id", "decisionObjectId", "decision_id", "decisionId", "id",
             ),
