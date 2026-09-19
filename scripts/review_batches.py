@@ -62,7 +62,7 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
     accounting = set(map(str.strip, _sentences("Outcome-class roster: " + _findings_map_roster_sentence(sources.get("own_results", [])) + "\n" + _manifest_direction_heterogeneity_note(sources.get("own_results", [])))))
     if statements and all(row.get("text", "").strip() in accounting for row in statements):
         own = [{k: v for k, v in row.items() if k not in {"verified_source_sections", "verified_source_tables", "verified_abstract"}} for row in own]
-    return {"bundle": [{**bundle[i], "source_index": i} for i in indexes], "own_results": own,
+    return {"bundle": [{**bundle[i], "source_index": i} for i in indexes], "own_results": _shared_context(own),
             "author_context": _shared_context(sources.get("author_context", {})),
             "source_catalog": [{key: row.get(key) for key in ("cited_as", "title", "evidence_type", "directness", "outcome_class", "effect_direction")} for row in bundle]}
 

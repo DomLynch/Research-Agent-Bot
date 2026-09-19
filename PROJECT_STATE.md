@@ -1,5 +1,16 @@
 # PROJECT_STATE.md
 
+## Fresh Review Evidence Transport - 2026-09-19
+The metformin fresh run stopped before any reviewer request because one
+four-source statement required 303,169 characters against the 300,000 limit.
+Fresh manuscript review now reuses exact duplicate passages within own_results,
+using the existing lossless reference encoding with an explicit field-local root.
+All cited passages, author records and statement identities remain intact;
+negative and malformed reviews still fail closed. Frozen-input transport replay
+covers all 91 statements in 17 packets (maximum 295,222 characters), with exact
+source/context reconstruction. This offline check is not scientific approval or
+publication; deployed reviewer verification is recorded separately.
+
 ## Core Feedback and Revision Transport Follow-up — 2026-09-19
 Core's non-null outcome now takes precedence over legacy decision; pending/failed
 cannot reuse a stale revise verdict. Structured blocking findings retain their

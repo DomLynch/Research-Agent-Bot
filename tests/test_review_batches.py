@@ -262,7 +262,7 @@ def test_exact_count_roster_uses_catalog_but_scientific_claim_keeps_full_sources
     assert len(json.dumps(packet)) < batches.MAX_REVIEW_CHARS
     for text in (roster.replace("n=3", "n=4"), roster + " Mortality decreased."):
         packet = batches._sources_for([{"text": text, "sources": [0, 1, 2]}], sources)
-        assert packet["own_results"] == rows
+        assert _restore_context(packet["own_results"]) == rows
     assert all(row["verified_source_sections"] for row in sources["own_results"])
 
 
@@ -314,3 +314,40 @@ def test_revision_single_oversized_ask_fails_closed_without_provider_request():
     asks = [("Correction " * 30001).strip()]
     assert coverage.unmet_asks("Complete manuscript.", asks, chat=review) == asks
     assert calls == []
+
+
+@pytest.mark.parametrize("last", [True, False, "invalid"])
+def test_four_source_packet_deduplicates_exact_passages_without_partial_approval(monkeypatch, last):
+    # The Sep19 fresh run exceeded 300k with four cited sources plus author records.
+    context = {"methods_record": {"selection": "recorded admission " * 6900}}
+    passages = [f"Source {i}: " + "complete result " * 1400 for i in range(4)]
+    rows = [{"citation_token": f"Study {i}",
+             "verified_source_sections": {"results": passage, "limitations": f"Contradiction {i}"},
+             "source_result_excerpts": [passage]} for i, passage in enumerate(passages)]
+    sources = {"bundle": [{"cited_as": f"Study {i}", "excerpt": f"Abstract {i}"} for i in range(4)],
+               "own_results": rows, "author_context": context}
+    statements = [{"text": text, "sources": [0, 1, 2, 3]} for text in ("First comparison", "Later comparison")]
+    assert len(json.dumps(sources)) > batches.MAX_REVIEW_CHARS
+    monkeypatch.setattr(batches, "MAX_STATEMENTS", 1)
+    calls = []
+    async def review(**kw):
+        assert sum(len(message["content"]) for message in kw["messages"]) <= batches.MAX_REVIEW_CHARS
+        packet = json.loads(kw["messages"][1]["content"])
+        assert _restore_context(packet["sources"]["own_results"]) == rows
+        assert _restore_context(packet["sources"]["author_context"]) == context
+        assert [row["source_index"] for row in packet["sources"]["bundle"]] == [0, 1, 2, 3]
+        assert packet["statements"][0]["text"] == statements[len(calls)]["text"]
+        calls.append(packet)
+        assessments = [] if len(calls) == 2 and last == "invalid" else [
+            {"row": 0, "supported": last if len(calls) == 2 else True, "reason": "Checked all four sources."}]
+        return SimpleNamespace(model="primary", parsed={"assessments": assessments})
+    monkeypatch.setattr(prose_grounding, "chat_json", review)
+    if last == "invalid":
+        with pytest.raises(ValueError, match="semantic_review_invalid"):
+            asyncio.run(prose_grounding.review_statements(statements, sources))
+    else:
+        report = asyncio.run(prose_grounding.review_statements(statements, sources))
+        assert [row["supported"] for row in report["assessments"]] == [True, last]
+        assert report["statements"] == statements
+    assert len(calls) == 2
+    assert sources["own_results"] == rows
