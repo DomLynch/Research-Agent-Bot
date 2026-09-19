@@ -1,5 +1,23 @@
 # PROJECT_STATE.md
 
+## Core Feedback and Revision Transport Follow-up — 2026-09-19
+Core's non-null outcome now takes precedence over legacy decision; pending/failed
+cannot reuse a stale revise verdict. Structured blocking findings retain their
+location, quotation, impact and correction in revision requests and the ledger.
+The actual Sep19 resistance-training request reproduced the 300k input overflow:
+10 asks (~64k characters) were repeated in every source batch. Review packets now
+batch asks as well as sources, retaining original indexes and AND-ing every
+source result for each ask. Exact duplicate text uses reversible references;
+no evidence, manuscript text or correction is truncated. Offline production replay:
+25 packets, max 299,837 chars; all 190 ask/source pairs preserved exactly.
+Negative/invalid/oversized responses remain fail-closed. Quality347 tests and
+batching25 tests pass, mypy180 files clean. Isolated full suite: 5,259 passed,
+38 skipped (local PDFs/data/assets absent), two existing XPASS; no failures.
+Polish cleaner4fd711e is separately deployed and preserves p.V42L scientific
+identifiers. V3 release owner is the existing V3 task; this follow-up must not
+be deployed over an active writing process. Publication remains unproven.
+
+
 ## Timeout and Gate-File Audit Repairs - 2026-09-19
 The Sep19 audit reproduced detached writer children surviving lane timeouts and
 UTF-8 feedback exceeding Linux's per-environment-string limit. Timeout cleanup

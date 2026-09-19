@@ -130,7 +130,7 @@ def test_revision_transport_references_only_identical_outgoing_text():
     payload = {'body_markdown': paper, 'sections': {'Results': 'Same result.', 'Conclusion': 'ALTERED conclusion.'},
                'source_bundle': [{'cited_as': 'Study', 'excerpt': 'Exact evidence', 'evidence_span': 'Exact evidence'}]}
     rows = [{'citation_token': 'Study', 'verified_source_sections': {'results': 'Exact evidence'}}]
-    text = batches.revision_inputs(paper, ['Check changes.'], rows, payload, coverage._SYS, coverage._USER)[0]
+    text = batches.revision_inputs(paper, ['Check changes.'], rows, payload, coverage._SYS, coverage._USER)[0][1]
     fields = json.loads(text.split('=== OUTGOING PAYLOAD FIELDS ===\n')[1])
     assert fields['body_markdown'] == {'review_reference': 'MANUSCRIPT'}
     assert fields['sections']['Results'] == {'review_reference': 'MANUSCRIPT section Results'}
@@ -273,9 +273,44 @@ def test_revision_packets_preserve_admission_records_with_lossless_encoding():
     payload = {"metadata": {"source_admission": admission}, "source_bundle": [{"cited_as": "Study", "excerpt": "Complete source passage."}]}
     rows = [{"citation_token": "Study", "verified_source_sections": {"results": "Complete contradictory passage."}}]
     packets = batches.revision_inputs("Complete manuscript.", ["Explain source selection."], rows, payload, revision_coverage._SYS, revision_coverage._USER)
-    assert packets and all(len(packet) + len(revision_coverage._SYS) <= batches.MAX_REVIEW_CHARS for packet in packets)
-    for packet in packets:
+    assert packets and all(len(packet) + len(revision_coverage._SYS) <= batches.MAX_REVIEW_CHARS for _, packet in packets)
+    for _, packet in packets:
         encoded = json.loads(packet.split("=== OUTGOING PAYLOAD FIELDS ===\n", 1)[1])
         assert _restore_context(encoded)["metadata"]["source_admission"] == admission
         assert "Complete contradictory passage." in packet
     assert len(payload["metadata"]["source_admission"]["decisions"]) == 406
+
+
+@pytest.mark.parametrize("failure", [None, "negative", "invalid"])
+def test_revision_ask_batches_check_every_source_and_keep_original_ask_order(monkeypatch, failure):
+    import revision_coverage as coverage
+    monkeypatch.setattr(batches, "MAX_REVIEW_CHARS", len(coverage._SYS) + len(coverage._USER) + 1500)
+    asks = [(f"Correct item {i}: " + "requirement " * 55).strip() for i in range(5)]
+    rows = [{"receipt_id": str(i), "citation_token": f"Study {i}",
+             "verified_source_sections": {"results": f"Source {i}: " + "evidence " * 50}} for i in range(3)]
+    seen = set()
+    async def review(**kw):
+        assert sum(len(m["content"]) for m in kw["messages"]) <= batches.MAX_REVIEW_CHARS
+        text = kw["messages"][1]["content"]
+        selected = [i for i, ask in enumerate(asks) if ask in text]
+        evidence = _restore_context(json.loads(text.split("=== SOURCE EVIDENCE ===\n")[1].split("\n\n=== OUTGOING PAYLOAD")[0]))
+        source_ids = {r["receipt_id"] for r in evidence["batch"]}
+        seen.update((i, source) for i in selected for source in source_ids)
+        values = [not (failure == "negative" and i == 3 and "2" in source_ids) for i in selected]
+        if failure == "invalid" and 3 in selected and "2" in source_ids:
+            values = []
+        return SimpleNamespace(parsed={"addressed": values})
+    unmet = coverage.unmet_asks("Complete manuscript.", asks, evidence_rows=rows, chat=review)
+    if failure != "invalid":
+        assert seen == {(i, str(j)) for i in range(5) for j in range(3)}
+    assert unmet == (asks if failure == "invalid" else [asks[3]] if failure == "negative" else [])
+
+
+def test_revision_single_oversized_ask_fails_closed_without_provider_request():
+    import revision_coverage as coverage
+    calls = []
+    async def review(**kw):
+        calls.append(kw)
+    asks = [("Correction " * 30001).strip()]
+    assert coverage.unmet_asks("Complete manuscript.", asks, chat=review) == asks
+    assert calls == []

@@ -90,19 +90,29 @@ async def review_prose(statements: list[dict[str, Any]], sources: Any, *, prompt
             "batches": [{"rows": indexes, "input_chars": len(content) + len(prompt)} for indexes, content in batches]}
 
 
-def revision_inputs(paper: str, asks: list[str], rows: list[dict[str, Any]], payload: dict[str, Any], system: str, template: str) -> list[str]:
+def revision_inputs(paper: str, asks: list[str], rows: list[dict[str, Any]], payload: dict[str, Any], system: str, template: str) -> list[tuple[list[int], str]]:
     catalog = [{k: v for k, v in row.items() if k not in {"verified_source_sections", "verified_source_tables", "verified_abstract", "source_result_excerpts", "thesis_text"}} for row in rows]
     if rows and any(not b.get("cited_as") or b["cited_as"] not in {r.get("citation_token") for r in rows} for b in payload.get("source_bundle", [])):
         raise ValueError("review_source_citation_mismatch")
     outgoing = {**payload, **({"body_markdown": {"review_reference": "MANUSCRIPT"}} if payload.get("body_markdown") == paper else {})}
-    def render(batch: list[dict[str, Any]]) -> str:
+    def render(batch: list[dict[str, Any]], indexes: list[int]) -> str:
         citations = {r.get("citation_token") for r in batch}
         fields = {**outgoing, **({"source_bundle": [b for b in payload["source_bundle"] if b.get("cited_as") in citations]} if rows and "source_bundle" in payload else {})}
+        for key in ("abstract", "summary"):
+            if isinstance(fields.get(key), str) and fields[key] and fields[key] in paper:
+                fields[key] = {"review_reference": f"MANUSCRIPT {key}"}
         if isinstance(fields.get("sections"), dict):
             fields["sections"] = {heading: {"review_reference": f"MANUSCRIPT section {heading}"} if isinstance(body, str) and body and body in paper else body for heading, body in fields["sections"].items()}
         if "source_bundle" in fields:
             fields["source_bundle"] = [{k: {"review_reference": "this source's excerpt"} if k == "evidence_span" and isinstance(v, str) and v and v == source.get("excerpt") else v for k, v in source.items()} for source in fields["source_bundle"]]
-        return template.format(n=len(asks), asks="\n".join(f"{i}. {ask}" for i, ask in enumerate(asks, 1)), paper=paper,
-            evidence=json.dumps({"source_catalog": catalog, "batch": batch}, ensure_ascii=False, separators=(",", ":")),
+        return template.format(n=len(indexes), asks="\n".join(f"{i}. {asks[index]}" for i, index in enumerate(indexes, 1)), paper=paper,
+            evidence=json.dumps(_shared_context({"source_catalog": catalog, "batch": batch}), ensure_ascii=False, separators=(",", ":")),
             payload=json.dumps(_shared_context(fields), ensure_ascii=False, separators=(",", ":")))
-    return [content for _, content in bounded_batches(rows or [{}], render, overhead=len(system))]
+    # Every ask is checked against every source; group compatible ask subsets so
+    # a large correction does not get repeated alongside the entire corpus.
+    groups: dict[tuple[int, ...], list[dict[str, Any]]] = {}
+    for row in rows or [{}]:
+        for indexes, _ in bounded_batches(list(range(len(asks))), lambda ids: render([row], ids), overhead=len(system)):
+            groups.setdefault(tuple(indexes), []).append(row)
+    return [(list(indexes), content) for indexes, source_rows in groups.items()
+            for _, content in bounded_batches(source_rows, lambda batch: render(batch, list(indexes)), overhead=len(system))]
