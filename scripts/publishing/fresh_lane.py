@@ -179,10 +179,6 @@ MIN_REVISE_RETRY_BUDGET_SECONDS = 1200
 SYNTHESIS_TIMEOUT_RETURN_CODE = 124
 SYNTHESIS_SPAWN_ERROR_RETURN_CODE = 126
 NEEDS_CORPUS_RETURN_CODE = 6
-# Linux caps a single env string at MAX_ARG_STRLEN (128 KiB); an oversized
-# external review placed verbatim into RESEARKA_REVISION_FEEDBACK makes
-# subprocess.Popen raise E2BIG and crash the whole lane.
-_REVISION_FEEDBACK_ENV_CAP = 102400
 PUBLISHED_TOPIC_COOLDOWN_DAYS = 21
 _SPARSE_REVIEW_RE = re.compile(r"\b(mixed and sparse|evidence base\W+sparse|precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
 _TERMINAL_SPARSE_RE = re.compile(r"\b(precludes?\W+(?:a\W+)?(?:strong\W+)?accept|no material revisions?)\b", re.I)
@@ -2762,30 +2758,41 @@ def _insufficient_revise_retry_budget(remaining: int | None, cycle_budget_second
     return remaining < floor
 
 
+def _signal_child(pid: int, sig: signal.Signals) -> None:
+    try:
+        os.kill(pid, sig)
+    except ProcessLookupError:
+        pass
+
+
 def _kill_process_group(proc: subprocess.Popen) -> None:
-    """Kill the child's whole process group on timeout, not just the direct
-    child: the synthesis/seed children spawn `codex exec` with
-    start_new_session=True, so a plain child kill leaks quota-burning
-    grandchildren and their temp dirs. POSIX-only; falls back to proc.kill()."""
+    """Freeze and kill descendants, including children in detached sessions."""
     if not hasattr(os, "killpg"):
         proc.kill()
         return
     try:
         pgid = os.getpgid(proc.pid)
+        os.killpg(pgid, signal.SIGSTOP)
     except ProcessLookupError:
         return
+    stopped: list[int] = []
+    pending = [proc.pid]
     try:
-        os.killpg(pgid, signal.SIGTERM)
-    except ProcessLookupError:
-        return
-    try:
-        proc.wait(timeout=5)
-    except subprocess.TimeoutExpired:
-        pass
-    try:
-        os.killpg(pgid, signal.SIGKILL)
-    except ProcessLookupError:
-        pass
+        while pending:
+            for pid in pending:
+                _signal_child(pid, signal.SIGSTOP)
+            stopped.extend(pending)
+            # Frozen parents cannot spawn after discovery; rescan each generation.
+            table = subprocess.check_output(["ps", "-axo", "pid=,ppid="], text=True, timeout=5)
+            pending = [int(pid) for line in table.splitlines() for pid, parent in [line.split()]
+                       if int(parent) in stopped and int(pid) not in stopped]
+    finally:
+        for pid in reversed(stopped):
+            _signal_child(pid, signal.SIGKILL)
+        try:
+            os.killpg(pgid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
 
 
 def _run_synthesis(
@@ -2801,25 +2808,20 @@ def _run_synthesis(
     cmd = [sys.executable, "scripts/run_v06_synthesis.py", "--topic", topic, "--out-dir", str(out_dir)]
     if dry_run:
         cmd.append("--dry-run")
-    env: dict[str, str] | None = None
-    if revision_feedback or review_type_override or revision_source_run or not dry_run:
-        env = os.environ.copy()
-        if not dry_run:
-            env["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] = "1"
-        if revision_feedback:
-            if len(revision_feedback) > _REVISION_FEEDBACK_ENV_CAP:
-                print(
-                    f"[daily-v3-cycle] revision_feedback truncated "
-                    f"{len(revision_feedback)} -> {_REVISION_FEEDBACK_ENV_CAP} chars",
-                    flush=True,
-                )
-                revision_feedback = revision_feedback[:_REVISION_FEEDBACK_ENV_CAP] + "\n...[truncated]"
-            env["RESEARKA_REVISION_FEEDBACK"] = revision_feedback
-        if review_type_override:
-            env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
-        if revision_source_run:
-            env["RESEARCH_AGENT_REVISION_SOURCE_RUN"] = str(revision_source_run.resolve())
+    env = os.environ.copy()
+    for key in ("RESEARKA_REVISION_FEEDBACK", "RESEARKA_REVISION_FEEDBACK_FILE"):
+        env.pop(key, None)
+    if not dry_run:
+        env["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] = "1"
+    if review_type_override:
+        env["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] = review_type_override
+    if revision_source_run:
+        env["RESEARCH_AGENT_REVISION_SOURCE_RUN"] = str(revision_source_run.resolve())
     try:
+        if revision_feedback:
+            path = out_dir / "revision_feedback.json"
+            _write_json(path, {"feedback": revision_feedback})
+            env["RESEARKA_REVISION_FEEDBACK_FILE"] = str(path.resolve())
         proc = subprocess.Popen(cmd, cwd=ROOT, env=env, start_new_session=True)
         proc.communicate(timeout=timeout or None)
     except subprocess.TimeoutExpired as exc:
@@ -3384,11 +3386,10 @@ def _seed_topic(
     except subprocess.TimeoutExpired as exc:
         _kill_process_group(proc)
         _, drained_stderr = proc.communicate()
-        if exc.stderr is None:
-            exc.stderr = drained_stderr
+        timeout_stderr = exc.stderr if exc.stderr is not None else drained_stderr
         after = _quant_claim_count(topic)
         status = "corpus_seeded" if after else "corpus_seed_failed"
-        stderr_text = exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else str(exc.stderr or "")
+        stderr_text = timeout_stderr.decode("utf-8", errors="replace") if isinstance(timeout_stderr, bytes) else str(timeout_stderr or "")
         return {
             "status": status,
             "return_code": SYNTHESIS_TIMEOUT_RETURN_CODE,

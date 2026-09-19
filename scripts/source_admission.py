@@ -6,6 +6,7 @@ import json
 import hashlib
 from pathlib import Path
 from typing import Any
+from agent.publishing.io import atomic_write_json
 
 RULE = "role-aware-source-admission-v1"
 RULE_TEXT = (
@@ -147,7 +148,7 @@ def finish(log: dict[str, Any], receipts: Any, funnel: dict[str, Any], out_dir: 
     if corpus_root is not None:
         reconcile_saved_candidates(log, corpus_root)
     funnel["source_admission"] = log
-    (out_dir / "source_admission.json").write_text(json.dumps(log, indent=2))
+    atomic_write_json(out_dir / "source_admission.json", log)
 
 
 def prepare_reassessment(topic: str, lock: Any, out_dir: Path, assess: Any, *, excluded_receipt_ids: frozenset[str] = frozenset()) -> None:
@@ -164,4 +165,4 @@ def prepare_reassessment(topic: str, lock: Any, out_dir: Path, assess: Any, *, e
     if lock.receipt_ids & excluded_receipt_ids or not validate(log, [{"receipt_id": rid} for rid in lock.receipt_ids | excluded_receipt_ids]):
         raise ValueError("selection_reassessment_changes_included_set: scientific review required")
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "source_selection_assessment.json").write_text(json.dumps(log, indent=2))
+    atomic_write_json(out_dir / "source_selection_assessment.json", log)

@@ -1,5 +1,22 @@
 # PROJECT_STATE.md
 
+## Timeout and Gate-File Audit Repairs - 2026-09-19
+The Sep19 audit reproduced detached writer children surviving lane timeouts and
+UTF-8 feedback exceeding Linux's per-environment-string limit. Timeout cleanup
+now freezes the process tree, discovers detached descendants, and kills children
+before their parent. Revision feedback travels intact through an atomic JSON
+file; only its path is passed to synthesis. All writer/runner readers use the
+same loader, and invalid requested files fail closed. Fresh runs clear inherited
+revision feedback so old review instructions cannot leak into a new paper.
+Remaining JSON writes in synthesis, finalization, quality methods, source admission
+and the consolidated audit pack now use the existing atomic writer. This protects
+individual files, not a multi-file transaction or concurrent same-topic runs.
+Real-process regression checks pass on macOS and Linux, including detached children
+ignoring SIGTERM, an unrelated process left alive, large Unicode feedback, and
+replacement failure preserving the prior gate. Verification: 5,388 tests passed, two existing XPASS results, make quality green,
+changed-file mypy clean, and both import contracts kept. Deployment and live
+publication remain separate; no content-review threshold was changed.
+
 ## Gate Config, Run Pruning, Failure Reasons, Bucketer, Lessons Loop - 2026-09-17
 Config: the outgoing gates read only `/etc/research-agent-bot/research-agent-bot.env`
 (`RESEARKA_RUNTIME_ROOT=/opt/researka-v2`, `RESEARKA_PREFLIGHT_QA=live`); unit

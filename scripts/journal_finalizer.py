@@ -134,7 +134,7 @@ def _refresh_evidence_lanes(out_dir: Path) -> bool:
     path = out_dir / "evidence_lanes.json"
     if _load_sidecar(path) == payload:
         return False
-    path.write_text(json.dumps(payload, indent=2))
+    atomic_write_json(path, payload)
     return True
 
 
@@ -214,7 +214,7 @@ def finalize_run(out_dir: Path, *, repair: Callable[[str], str] | None = None) -
     report = FinalizerReport(paper_changed=changed, final_word_count=len(text.split()), entries=tuple(entries))  # noqa: E501
     report_path = out_dir / "journal_finalizer.json"
     if changed or entries or not report_path.exists():
-        report_path.write_text(json.dumps(asdict(report), indent=2))
+        atomic_write_json(report_path, asdict(report))
     return report
 
 
@@ -4542,7 +4542,7 @@ def _phase_d_revision_surface_notes(
         patched, receipts, feedback, audit=stored_audit,
     )
     if audit and audit != stored_audit:
-        audit_path.write_text(json.dumps(audit, indent=2), encoding="utf-8")
+        atomic_write_json(audit_path, audit)
     n += len(identity_details)
     details.extend(identity_details)
     patched, quality_details = repair_revision_quality(patched, receipts, feedback)
@@ -5701,7 +5701,7 @@ def _refresh_revision_coverage_gate(out_dir: Path) -> bool:
     path = out_dir / "revision_coverage_gate.json"
     if _load_sidecar(path) == fresh:
         return False
-    path.write_text(json.dumps(fresh, indent=2))
+    atomic_write_json(path, fresh)
     return True
 
 

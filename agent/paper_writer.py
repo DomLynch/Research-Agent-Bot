@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import os
 import re
 from collections.abc import Mapping, Sequence
 from typing import Any
@@ -29,6 +28,7 @@ from agent.paper_writer_citations import (
 )
 from agent.paper_writer_claim_repair import repair_abstract_claim_strength
 from agent.publishing.revision_lane import revision_lessons
+from agent.publishing.io import revision_feedback
 from agent.paper_writer_deterministic import (
     build_methods_section,
     build_references_full_section,
@@ -104,7 +104,7 @@ def _revision_feedback_block() -> str:
 
 
 def _revision_feedback_text() -> str:
-    return " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())
+    return " ".join(revision_feedback().split())
 
 
 # --- Tier-aware paper-tier classification (reviewer-aligned) -----------

@@ -31,7 +31,7 @@ from agent.framework_section import (  # noqa: E402
     build_framework_engagement_records,
 )
 from agent.evidence_lanes import derive_receipt_lane, effective_directness, unisolated_combination  # noqa: E402
-from agent.publishing.io import CorruptJsonState, atomic_write_json, read_json  # noqa: E402
+from agent.publishing.io import CorruptJsonState, atomic_write_json, read_json, revision_feedback as read_revision_feedback  # noqa: E402
 from agent.paper_writer_helpers import build_research_question  # noqa: E402
 from agent.paper_writer import MAX_EVIDENCE_CHARS_PER_RECEIPT, render_full_paper  # noqa: E402
 from agent.paper_writer_helpers import (  # noqa: E402
@@ -69,7 +69,7 @@ def _without_reviewer_unavailable_sources(
 
 
 def _write_revision_feedback_sidecar(out_dir: Path) -> None:
-    feedback = " ".join(os.getenv("RESEARKA_REVISION_FEEDBACK", "").split())
+    feedback = " ".join(read_revision_feedback().split())
     path = out_dir / "researka_revision_request.json"
     if not feedback or path.is_file():
         return
@@ -926,7 +926,7 @@ def _pop_h2_section_by_prefix(
 
 
 def _route_inferential_bridge(markdown: str) -> tuple[str, str]:
-    feedback = os.getenv("RESEARKA_REVISION_FEEDBACK", "").lower()
+    feedback = read_revision_feedback().lower()
     if "inferential bridge" in feedback:
         return markdown, ""
     return _pop_h2_section_by_prefix(markdown, "Inferential Bridge")
@@ -2616,7 +2616,7 @@ async def _run(
     )
     original_receipt_ids = evidence_lock.receipt_ids
     evidence_lock, reviewer_excluded_dois = _without_reviewer_unavailable_sources(
-        evidence_lock, os.getenv("RESEARKA_REVISION_FEEDBACK", ""),
+        evidence_lock, read_revision_feedback(),
     )
     excluded_receipt_ids = original_receipt_ids - evidence_lock.receipt_ids
     # Every frozen included set (snapshot or legacy) is reassessed; source_admission.finish reads the record.
@@ -2642,9 +2642,7 @@ async def _run(
     }
     if source_run is not None and (evidence_lock.errors or not revision_receipt_ids):
         out_dir.mkdir(parents=True, exist_ok=True)
-        (out_dir / "revision_evidence_continuity.json").write_text(
-            json.dumps(continuity, indent=2),
-        )
+        atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
         print("Revision evidence lock failed: invalid source snapshot.", file=sys.stderr)
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
@@ -2677,9 +2675,7 @@ async def _run(
         continuity["missing_parsed_metadata"] = missing_parsed
         out_dir.mkdir(parents=True, exist_ok=True)
         if missing or missing_parsed:
-            (out_dir / "revision_evidence_continuity.json").write_text(
-                json.dumps(continuity, indent=2),
-            )
+            atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
             print(
                 "Revision evidence lock failed: source manifest is empty or "
                 f"{len(missing)} quant / {len(missing_parsed)} parsed file(s) are missing.",
@@ -2698,15 +2694,13 @@ async def _run(
         topic, receipt_ids=revision_receipt_ids,
     )
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "receipt_funnel.json").write_text(
-        json.dumps(receipt_funnel, indent=2),
-    )
+    atomic_write_json(out_dir / "receipt_funnel.json", receipt_funnel)
     (out_dir / "receipt_funnel.md").write_text(
         render_receipt_funnel_markdown(receipt_funnel),
     )
     allowed_by_receipt: dict[str, set[str]] = {}
     if revision_receipt_ids:
-        revision_feedback = os.getenv("RESEARKA_REVISION_FEEDBACK", "")
+        revision_feedback = read_revision_feedback()
         aliases_by_receipt: dict[str, tuple[str, ...]] = {}
         if evidence_lock.citation_registry is not None:
             try:
@@ -2763,9 +2757,7 @@ async def _run(
         missing = sorted(revision_receipt_ids - {r.receipt_id for r in receipts})
         continuity["missing_admitted_receipts"] = missing
         if missing:
-            (out_dir / "revision_evidence_continuity.json").write_text(
-                json.dumps(continuity, indent=2),
-            )
+            atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
             print(
                 f"Revision evidence lock failed: {len(missing)} source receipt(s) "
                 "were not admitted.",
@@ -2785,9 +2777,7 @@ async def _run(
             for receipt_id, fields in sorted(allowed_by_receipt.items())
         }
         if mismatches:
-            (out_dir / "revision_evidence_continuity.json").write_text(
-                json.dumps(continuity, indent=2),
-            )
+            atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
             print(
                 f"Revision evidence lock failed: {len(mismatches)} receipt contract mismatch(es).",
                 file=sys.stderr,
@@ -2797,7 +2787,7 @@ async def _run(
                 "required_evidence_snapshot_missing_or_corrupt",
             )
     receipt_funnel = reconcile_receipt_funnel_report(receipt_funnel, receipts)
-    (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
+    atomic_write_json(out_dir / "receipt_funnel.json", receipt_funnel)
     (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
     funnel_counts = receipt_funnel.get("counts", {})
     source_fit_counts = _manifest_source_fit_counts(receipt_funnel)
@@ -2831,7 +2821,7 @@ async def _run(
         "outcome_classes": len({r.outcome_class for r in receipts if r.outcome_class}),
     })
     receipt_funnel["counts"] = dict(sorted(funnel_counts.items()))
-    (out_dir / "receipt_funnel.json").write_text(json.dumps(receipt_funnel, indent=2))
+    atomic_write_json(out_dir / "receipt_funnel.json", receipt_funnel)
     (out_dir / "receipt_funnel.md").write_text(render_receipt_funnel_markdown(receipt_funnel))
     thesis = build_thesis(receipts, matrix, topic=topic)
 
@@ -2869,9 +2859,7 @@ async def _run(
     continuity["citation_entries_restored"] = restored
     continuity["missing_citation_entries"] = missing_citations
     if missing_citations:
-        (out_dir / "revision_evidence_continuity.json").write_text(
-            json.dumps(continuity, indent=2),
-        )
+        atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
         print(
             f"Revision evidence lock failed: {len(missing_citations)} source "
             "citation entrie(s) were not restored.",
@@ -2882,10 +2870,10 @@ async def _run(
             "required_evidence_snapshot_missing_or_corrupt",
         )
     citation_registry_path = out_dir / "citation_registry.json"
-    citation_registry_path.write_text(json.dumps({
+    atomic_write_json(citation_registry_path, {
         rid: dataclasses.asdict(entry)
         for rid, entry in citation_registry.items()
-    }, indent=2))
+    })
     snapshot = create_revision_evidence_snapshot(
         out_dir, quant_dir=QUANT_DIR, parsed_dir=PARSED_DIR,
         citation_registry=citation_registry_path,
@@ -2896,9 +2884,7 @@ async def _run(
     continuity["snapshot_passed"] = snapshot["passed"]
     if not snapshot["passed"]:
         continuity["snapshot_missing_files"] = snapshot["missing_files"]
-        (out_dir / "revision_evidence_continuity.json").write_text(
-            json.dumps(continuity, indent=2),
-        )
+        atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
         print("Revision evidence snapshot failed: source files are incomplete.", file=sys.stderr)
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
@@ -2930,9 +2916,7 @@ async def _run(
                    if original.get(receipt_id) != rebuilt.get(receipt_id))
     continuity["snapshot_receipt_drift"] = drift
     if drift:
-        (out_dir / "revision_evidence_continuity.json").write_text(
-            json.dumps(continuity, indent=2),
-        )
+        atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
         print("Revision evidence snapshot failed: copied evidence drifted.", file=sys.stderr)
         return _record_synthesis_exit(
             out_dir, _run_start_ts, EXIT_REQUIRED_ARTIFACT_INVALID,
@@ -2941,9 +2925,7 @@ async def _run(
     receipts = snapshot_receipts
     if revision_receipt_ids:
         continuity["passed"] = True
-        (out_dir / "revision_evidence_continuity.json").write_text(
-            json.dumps(continuity, indent=2),
-        )
+        atomic_write_json(out_dir / "revision_evidence_continuity.json", continuity)
     if dry_run:
         # A dry run intentionally stops before rendering full_paper.md: its job is
         # to measure the receipt corpus, not to produce a manuscript. Reporting the
@@ -2983,9 +2965,7 @@ async def _run(
             writer_receipts, list(_bglit.load_registry().values()),
         )
     )
-    (out_dir / "field_engagement.json").write_text(
-        json.dumps(field_engagement, indent=2),
-    )
+    atomic_write_json(out_dir / "field_engagement.json", field_engagement)
     qei_citation_tokens = {
         rid: entry.body_citation
         for rid, entry in citation_registry.items()
@@ -3032,8 +3012,8 @@ async def _run(
         topic=topic, review_type=_review_type_effective, receipts=writer_receipts,
         retrieval_record=retrieval_record, receipt_funnel=receipt_funnel,
     )
-    (out_dir / "author_records.json").write_text(json.dumps(author_context, indent=2))
-    (out_dir / "manifest.json").write_text(json.dumps({"topic": topic, "receipts": [dataclasses.asdict(r) for r in receipts]}, indent=2))
+    atomic_write_json(out_dir / "author_records.json", author_context)
+    atomic_write_json(out_dir / "manifest.json", {"topic": topic, "receipts": [dataclasses.asdict(r) for r in receipts]})
     async with httpx.AsyncClient(timeout=180.0) as client:
         full_paper_md, sections = await render_full_paper(
             writer_receipts, writer_matrix, thesis,
@@ -3203,9 +3183,7 @@ async def _run(
         full_paper_md, _initial_abstract_log,
     )
     abstract_strength_repaired = bool(_initial_abstract_log)
-    (out_dir / "run_mode_contract.json").write_text(
-        json.dumps(dataclasses.asdict(contract), indent=2)
-    )
+    atomic_write_json(out_dir / "run_mode_contract.json", dataclasses.asdict(contract))
 
     paper_path = out_dir / "full_paper.md"
     paper_path.write_text(full_paper_md)
@@ -3264,7 +3242,7 @@ async def _run(
         # primary-tier insufficiency downshift.
         "review_type": _review_type_effective,
     }
-    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    atomic_write_json(out_dir / "manifest.json", manifest)
     # Bug-fix 2026-05-14: derive evidence_lanes.json sidecar so the
     # journal-surface gate can flag animal/preclinical citations that
     # leak into human-evidence prose without lane qualifiers (the
@@ -3298,7 +3276,7 @@ async def _run(
             animal_citations.append({
                 "citation": cite, "paper_id": r.receipt_id,
             })
-    (out_dir / "evidence_lanes.json").write_text(json.dumps({
+    atomic_write_json(out_dir / "evidence_lanes.json", {
         "lanes": lanes,
         "animal_citations": animal_citations,  # backward-compat alias
         "canonical_lanes": list(LANE_TOKENS),
@@ -3306,7 +3284,7 @@ async def _run(
             "agent.evidence_lanes.derive_lane over (evidence_tier, "
             "directness, source_title+venue+population_summary)"
         ),
-    }, indent=2))
+    })
     methods_md = _write_review_methods(paper_path, _methods_pack)
     # Slice 7 step 1: publish manifest as module-global so the
     # consistency audit's _check_numeric_role_guard can resolve
@@ -3330,7 +3308,7 @@ async def _run(
     # consistent (no more "manifest says 570 / pre_submit says 299").
     manifest["section_words"] = _section_words_from_paper(final_paper_md)
     manifest["total_words"] = word_count
-    (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    atomic_write_json(out_dir / "manifest.json", manifest)
 
     # Slice 14 (2026-05-14): final artifact consistency. Kills the
     # stale-PDF / desync-supplement reviewer trap. Run AFTER manifest
@@ -3363,7 +3341,7 @@ async def _run(
 
 def _write_paper_audit(paper_path: Path, paper_md: str, audit_fn) -> dict:
     report = audit_fn(paper_md)
-    paper_path.with_suffix(".audit.json").write_text(json.dumps(report, indent=2))
+    atomic_write_json(paper_path.with_suffix(".audit.json"), report)
     paper_path.with_suffix(".audit.md").write_text(_audit_v06._format_summary(report))
     return report
 
@@ -3422,9 +3400,9 @@ def _stage5_repair_callback(
         log.extend(polish_log)
         paper_md, _ = _ensure_references_section(paper_md, citation_registry)
         paper_md = _apply_abstract_claim_strength_repair(paper_md, log)
-        paper_path.with_suffix(".final_fixed_log.json").write_text(json.dumps(log, indent=2))
+        atomic_write_json(paper_path.with_suffix(".final_fixed_log.json"), log)
         if template_log:
-            paper_path.with_suffix(".template_repair_log.json").write_text(json.dumps(template_log, indent=2))
+            atomic_write_json(paper_path.with_suffix(".template_repair_log.json"), template_log)
         return paper_md
 
     return repair
@@ -3457,9 +3435,9 @@ def _write_stage5c_quality_gates(
         declared_review_type=manifest.get("review_type"),
     )
     surface_payload = {"passed": surface_report.passed, "issues": [dataclasses.asdict(issue) for issue in surface_report.issues]}
-    paper_path.with_suffix(".journal_surface.json").write_text(json.dumps(surface_payload, indent=2))
+    atomic_write_json(paper_path.with_suffix(".journal_surface.json"), surface_payload)
     issues = _paper_consistency_issues(paper_md, manifest, paper_path, lambda _: audit_report)
-    paper_path.with_suffix(".consistency.json").write_text(json.dumps([_issue_to_dict(i) for i in issues], indent=2))
+    atomic_write_json(paper_path.with_suffix(".consistency.json"), [_issue_to_dict(i) for i in issues])
     paper_path.with_suffix(".consistency.md").write_text(_consistency_audit._format_summary(issues))
     reviewer_patches = _reviewer_patches_for_gate(paper_path.parent, int(reviewer_patches.get("unresolved_p1_count", 0)))
     if reviewer_counts is not None:
@@ -3628,9 +3606,7 @@ async def _run_post_paper_pipeline(
         paper_md, manifest, audit_report, audit_md,
         run_dir=paper_path.parent,
     )
-    paper_path.with_suffix(".consistency.json").write_text(
-        json.dumps([_issue_to_dict(i) for i in issues], indent=2)
-    )
+    atomic_write_json(paper_path.with_suffix(".consistency.json"), [_issue_to_dict(i) for i in issues])
     paper_path.with_suffix(".consistency.md").write_text(
         _consistency_audit._format_summary(issues)
     )
@@ -3640,9 +3616,7 @@ async def _run_post_paper_pipeline(
             "numeric_claim_quarantine.json",
         ),
     )
-    paper_path.with_suffix(".fixed_log.json").write_text(
-        json.dumps(fix_log, indent=2)
-    )
+    atomic_write_json(paper_path.with_suffix(".fixed_log.json"), fix_log)
     paper_path.write_text(paper_md)
 
     # Re-run the audit + manifest now that auto-fixes have landed
@@ -3654,9 +3628,7 @@ async def _run_post_paper_pipeline(
         paper_md,
     )
     if pre_review_template_log:
-        paper_path.with_suffix(".pre_review_template_repair_log.json").write_text(
-            json.dumps(pre_review_template_log, indent=2),
-        )
+        atomic_write_json(paper_path.with_suffix(".pre_review_template_repair_log.json"), pre_review_template_log)
         paper_path.write_text(paper_md)
         audit_report = _write_paper_audit(paper_path, paper_md, _audit)
 
@@ -3695,7 +3667,7 @@ async def _run_post_paper_pipeline(
             file=sys.stderr,
         )
         patches, model_used, cost = [], "none", 0.0
-    paper_path.with_suffix(".review_patches.json").write_text(json.dumps({
+    atomic_write_json(paper_path.with_suffix(".review_patches.json"), {
         "model_used": model_used,
         "cost_usd": cost,
         "n_patches": len(patches),
@@ -3707,7 +3679,7 @@ async def _run_post_paper_pipeline(
             }
             for p in patches
         ],
-    }, indent=2))
+    })
     paper_path.with_suffix(".review_summary.md").write_text(
         _final_reviewer._format_summary(patches, cost, model_used)
     )
@@ -3746,7 +3718,7 @@ async def _run_post_paper_pipeline(
         results = _resolve_absent_flagged_patches(results, paper_md)
 
         paper_path.write_text(paper_md)
-        paper_path.with_suffix(".review_patch_log.json").write_text(json.dumps({
+        atomic_write_json(paper_path.with_suffix(".review_patch_log.json"), {
             "applied_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
             "n_proposed": len(results),
             "n_applied": sum(
@@ -3771,7 +3743,7 @@ async def _run_post_paper_pipeline(
                 }
                 for r in results
             ],
-        }, indent=2))
+        })
         n_applied = sum(
             1 for r in results
             if r.decision in ("applied", "applied_via_repair")
@@ -3921,9 +3893,7 @@ async def _run_post_paper_pipeline(
             ),
             "declared_in_topic_pack": bool(_declared_target),
         }
-        (out_dir / "target_journal_pack.json").write_text(
-            json.dumps(_target_payload, indent=2),
-        )
+        atomic_write_json(out_dir / "target_journal_pack.json", _target_payload)
         print(
             f"[pipeline] Stage 5cc — target_journal readiness input written "
             f"(declared={_target_payload['declared_in_topic_pack']})",
@@ -4203,7 +4173,7 @@ def _resolve_absent_reviewer_p1s(out_dir: Path) -> int:
         log["n_applied"] = sum(1 for r in rows if r.get("decision") in {"applied", "applied_via_repair"})
         log["n_rejected"] = sum(1 for r in rows if r.get("decision") == "rejected")
         log["n_flagged"] = sum(1 for r in rows if r.get("decision") == "flagged")
-        log_path.write_text(json.dumps(log, indent=2))
+        atomic_write_json(log_path, log)
     return changed
 
 
@@ -4330,7 +4300,7 @@ def _refresh_post_finalizer_verdict(
             return False
     except (OSError, ValueError, json.JSONDecodeError):
         pass
-    path.write_text(json.dumps(payload, indent=2))
+    atomic_write_json(path, payload)
     (out_dir / "full_paper.final_verdict.md").write_text(_format_unified_verdict(unified))
     return True
 
@@ -4400,9 +4370,7 @@ def _maybe_run_no_regression_gate(new_run_dir: Path) -> None:
         report = _nrg.compare_runs(baseline_dir, new_run_dir)
         md = _nrg.render_report_md(report)
         (new_run_dir / "no_regression_report.md").write_text(md)
-        (new_run_dir / "no_regression_report.json").write_text(
-            json.dumps(report.to_dict(), indent=2),
-        )
+        atomic_write_json(new_run_dir / "no_regression_report.json", report.to_dict())
         verdict = "PASS" if report.passes else (
             f"REGRESSION ({report.n_regressions} dim(s))"
         )

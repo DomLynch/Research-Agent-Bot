@@ -83,7 +83,7 @@ def refresh_publication_score(out_dir: Path) -> bool:
     fresh = {"inputs": inputs, "result": dataclasses.asdict(score)}
     if payload == fresh:
         return False
-    path.write_text(json.dumps(fresh, indent=2))
+    atomic_write_json(path, fresh)
     for md in (out_dir / "publication_score.md", out_dir / "readable" / "publication_score.md"):
         if md.exists():
             md.write_text("# Publication Score\n\n" + score.summary + "\n")
@@ -177,7 +177,7 @@ def _write_rob_consistency_sidecar(out_dir: Path, rob_payload: list[dict[str, An
                 for r in bad
             ],
         }
-        (out_dir / "rob_consistency.json").write_text(json.dumps(payload, indent=2))
+        atomic_write_json(out_dir / "rob_consistency.json", payload)
     except Exception:
         # advisory sidecar only — must never block finalize
         pass
@@ -251,9 +251,9 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
         receipt_count=len(receipts),
         outcome_count=len(outcomes),
     )
-    (out_dir / "risk_of_bias.json").write_text(json.dumps(rob_payload, indent=2))
+    atomic_write_json(out_dir / "risk_of_bias.json", rob_payload)
     _write_rob_consistency_sidecar(out_dir, rob_payload)
-    (out_dir / "grade_assessment.json").write_text(json.dumps(grade_payload, indent=2))
+    atomic_write_json(out_dir / "grade_assessment.json", grade_payload)
     (out_dir / "quality_methods.md").write_text(bundle.markdown)
     summary = {
         "appraisal_status": "Appraised" if rob_payload or grade_payload else "NotAppraised",
@@ -265,7 +265,7 @@ def write_quality_methods(out_dir: Path, receipts: list[dict[str, Any]], parsed_
         "grade_path": "grade_assessment.json",
         "markdown_path": "quality_methods.md",
     }
-    (out_dir / "quality_methods.json").write_text(json.dumps(summary, indent=2))
+    atomic_write_json(out_dir / "quality_methods.json", summary)
     return {"bundle": bundle, "summary": summary}
 
 
@@ -389,7 +389,7 @@ def write_meta_analysis(out_dir: Path, receipts: list[dict[str, Any]], quant_dir
             "pool": dataclasses.asdict(pool),
         })
     result = {"pools": pools, "skipped": skipped, "candidate_groups": len(rows_by_group)}
-    (out_dir / "meta_analysis_results.json").write_text(json.dumps(result, indent=2))
+    atomic_write_json(out_dir / "meta_analysis_results.json", result)
     (out_dir / "meta_analysis_results.md").write_text(render_meta_analysis_section(result))
     return result
 
@@ -478,7 +478,7 @@ def write_tension_plans(out_dir: Path, matrix: Any) -> dict[str, Any]:
             "by_conflict_type": dict(sorted(Counter(r.conflict_type for r in records).items())),
         },
     }
-    (out_dir / "tension_elaboration_plans.json").write_text(json.dumps(payload, indent=2))
+    atomic_write_json(out_dir / "tension_elaboration_plans.json", payload)
     (out_dir / "tension_elaboration_plans.md").write_text(render_tension_section(payload))
     return payload
 
@@ -804,7 +804,7 @@ def write_final_quality_gates(
 ) -> dict[str, Any]:
     review_type = parse_review_type(manifest.get("review_type"))
     template = evaluate_template_gate(paper_text, source=str(out_dir / "full_paper.md"))
-    (out_dir / "template_language_gate.json").write_text(template.json_report)
+    atomic_write_json(out_dir / "template_language_gate.json", json.loads(template.json_report))
     (out_dir / "template_language_gate.md").write_text(template.markdown_report)
     inputs = build_gate_inputs(
         numeric_coverage=_numeric_coverage(audit),
@@ -891,7 +891,7 @@ def write_final_quality_gates(
         + "\n"
     )
     score_payload = {"inputs": dataclasses.asdict(score_inputs), "result": dataclasses.asdict(score)}
-    (out_dir / "publication_score.json").write_text(json.dumps(score_payload, indent=2))
+    atomic_write_json(out_dir / "publication_score.json", score_payload)
     (out_dir / "publication_score.md").write_text("# Publication Score\n\n" + score.summary + "\n")
     _write_provenance_sidecar(out_dir, manifest, dataclasses.asdict(gate))
     return {"template": template, "gate": gate, "score": score}

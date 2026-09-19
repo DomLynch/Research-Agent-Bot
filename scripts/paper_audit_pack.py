@@ -20,6 +20,8 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
+from agent.publishing.io import atomic_write_json
+
 
 def _read_json(run_dir: Path, name: str) -> Any:
     try:
@@ -135,6 +137,6 @@ def _render_md(pack: dict[str, Any]) -> str:
 
 def write_audit_pack(run_dir: Path, **kwargs: Any) -> Path:
     pack = compose_audit_pack(run_dir, **kwargs)
-    (run_dir / "paper_audit.json").write_text(json.dumps(pack, indent=2) + "\n", encoding="utf-8")
+    atomic_write_json(run_dir / "paper_audit.json", pack)
     (run_dir / "paper_audit.md").write_text(_render_md(pack), encoding="utf-8")
     return run_dir / "paper_audit.json"

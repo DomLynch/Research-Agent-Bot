@@ -17,7 +17,7 @@ from typing import Any
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 
-import daily_research_paper_cycle as cycle  # type: ignore[import-not-found]  # noqa: E402
+from publishing import fresh_lane as cycle  # noqa: E402
 from agent.publication_evidence import source_proof_fields  # noqa: E402
 from agent.methods_pack import REQUIRED_METHODS_H3_MARKERS  # noqa: E402
 from agent.revision_evidence import (  # noqa: E402
@@ -4208,7 +4208,9 @@ def test_run_synthesis_passes_revision_feedback_into_full_pipeline(tmp_path: Pat
     assert seen["kwargs"]["cwd"] == cycle.ROOT
     assert seen["kwargs"]["start_new_session"] is True
     assert seen["timeout"] == 123
-    assert seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"] == "Add clinical-use caveat."
+    feedback_path = Path(seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK_FILE"])
+    assert json.loads(feedback_path.read_text())["feedback"] == "Add clinical-use caveat."
+    assert "RESEARKA_REVISION_FEEDBACK" not in seen["kwargs"]["env"]
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVIEW_TYPE_OVERRIDE"] == "thin_corpus_brief"
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_REVISION_SOURCE_RUN"] == str(source_run.resolve())
     assert seen["kwargs"]["env"]["RESEARCH_AGENT_PUBLIC_FULL_ONLY"] == "1"
@@ -4245,12 +4247,12 @@ def test_run_synthesis_timeout_returns_status_code_and_sidecar(tmp_path: Path, m
     assert "TimeoutExpired" in timeout["error"]
 
 
-def test_run_synthesis_truncates_oversized_revision_feedback(tmp_path: Path, monkeypatch, capsys) -> None:
+def test_run_synthesis_preserves_oversized_revision_feedback(tmp_path: Path, monkeypatch) -> None:
     seen: dict[str, Any] = {}
 
     monkeypatch.setattr(cycle.subprocess, "Popen", _stub_popen(seen))
 
-    feedback = "x" * (cycle._REVISION_FEEDBACK_ENV_CAP + 500)
+    feedback = "é🧬" * 102400 + "\nFinal ask: correct the comparator."
     rc = cycle._run_synthesis(
         "aspirin_geroprotection",
         tmp_path / "revised-run",
@@ -4259,10 +4261,9 @@ def test_run_synthesis_truncates_oversized_revision_feedback(tmp_path: Path, mon
     )
 
     assert rc == 0
-    env_feedback = seen["kwargs"]["env"]["RESEARKA_REVISION_FEEDBACK"]
-    assert env_feedback == feedback[:cycle._REVISION_FEEDBACK_ENV_CAP] + "\n...[truncated]"
-    assert len(env_feedback) < len(feedback)
-    assert "revision_feedback truncated" in capsys.readouterr().out
+    env = seen["kwargs"]["env"]
+    assert "RESEARKA_REVISION_FEEDBACK" not in env
+    assert json.loads(Path(env["RESEARKA_REVISION_FEEDBACK_FILE"]).read_text())["feedback"] == feedback
 
 
 def test_run_synthesis_spawn_oserror_returns_sidecar_and_code(tmp_path: Path, monkeypatch) -> None:

@@ -160,6 +160,16 @@ def read_json(path: Path, *, snapshot: bool = False) -> dict[str, Any]:
     return {}
 
 
+def revision_feedback() -> str:
+    """Load complete feedback from a run file; retain the legacy env input."""
+    if path := os.getenv("RESEARKA_REVISION_FEEDBACK_FILE", ""):
+        value = read_json(Path(path), snapshot=True).get("feedback")
+        if not isinstance(value, str):
+            raise ValueError("revision_feedback_file_missing_or_invalid")
+        return value
+    return os.getenv("RESEARKA_REVISION_FEEDBACK", "")
+
+
 def write_json(path: Path, payload: Any) -> None:
     if isinstance(payload, dict) and {"target_ready", "thresholds", "ready"} <= payload.keys():
         rows = payload.get("ready")
