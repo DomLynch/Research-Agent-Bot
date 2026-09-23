@@ -443,6 +443,54 @@ def test_source_context_drift_validates_exact_manifest_bullets():
     assert forged in checked and prose in checked
 
 
+def test_saved_classifications_validate_accounting_counts():
+    from journal_finalizer import (
+        _findings_map_roster_sentence, _manifest_direction_heterogeneity_note,
+    )
+
+    rows = [
+        {"citation_token": "Alpha 2025", "outcome_class": "muscle_function",
+         "effect_direction": "mixed", "directness": "direct"},
+        {"citation_token": "Beta 2025", "outcome_class": "muscle_function",
+         "effect_direction": "positive", "directness": "indirect"},
+    ]
+    manifest = {"receipts": rows}
+    roster = "Outcome-class roster: " + _findings_map_roster_sentence(rows)
+    direction = _manifest_direction_heterogeneity_note(rows)
+    paper = roster + "\n\n" + direction
+    assert not [i for i in scan_paper(paper, manifest=manifest) if i.severity == "P1"]
+
+    for before, after in (("n=2", "n=3"), ("mixed=1", "mixed=2"),
+                          ("Alpha 2025", "Gamma 2025")):
+        wrong = paper.replace(before, after, 1)
+        issues = scan_paper(wrong, manifest=manifest)
+        assert any(i.issue_type == "accounting_mismatch" and i.severity == "P1" for i in issues)
+
+
+def test_unknown_source_role_cannot_be_rewritten_as_outcome(tmp_path):
+    import json
+
+    for rid, value in (("zhang", 6), ("kenville", 0.05)):
+        (tmp_path / f"{rid}.quant_claims.json").write_text(json.dumps({
+            "paper_id": rid, "claims": [{"claim_type": "unit_value", "numeric_values": [value],
+                "binding_confidence": "high", "claim_role": "unknown"}],
+        }))
+    manifest = {"receipts": [
+        {"paper_id": "zhang", "citation_token": "Zhang 2025"},
+        {"paper_id": "kenville", "citation_token": "Kenville 2024"},
+    ]}
+    paper = ("Zhang 2025 reported an outcome measure of 6 [bundle:1].\n\n"
+             "Kenville 2024 reported an outcome measure of 0.05 [bundle:2].")
+    issues = scan_paper(paper, manifest=manifest, quant_claims_dir=tmp_path)
+    assert len([i for i in issues if i.severity == "P1"]) == 2
+    fixed, n = repair_source_context_drift_sentences(
+        paper, issues, manifest=manifest, quant_claims_dir=tmp_path,
+    )
+    assert n == 0 and fixed == paper
+    stripped, n = auto_strip_offending_sentences(paper, issues)
+    assert n == 2 and "outcome measure" not in stripped
+
+
 def test_source_context_drift_skips_compiler_manifest_synthesis_blocks(tmp_path):
     qc_dir = tmp_path / "quant_claims"
     qc_dir.mkdir()
