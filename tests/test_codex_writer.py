@@ -32,7 +32,7 @@ assert args[args.index("--sandbox") + 1] == "read-only"
 model = args[args.index("--model") + 1]
 assert model in ("gpt-5.6-sol", "gpt-6-sol", "gpt-5.6-terra")
 assert 'forced_login_method="chatgpt"' in args
-effort = "medium" if model == "gpt-5.6-terra" else "high"
+effort = "medium" if model in ("gpt-5.6-terra", "gpt-6-sol") else "high"
 assert 'model_reasoning_effort="' + effort + '"' in args
 for feature in ("shell_tool", "apps", "plugins", "hooks", "multi_agent", "memories"):
     assert "features." + feature + "=false" in args
@@ -161,7 +161,7 @@ def test_missing_cli_fails_closed(monkeypatch):
         asyncio.run(call())
 
 
-def test_live_route_keeps_independent_reviewers(tmp_path, monkeypatch):
+def test_live_route_keeps_independent_reviewers(cli, tmp_path, monkeypatch):
     monkeypatch.setattr(settings, "_REPO_ROOT", tmp_path)
     monkeypatch.setenv("WRITER_PROVIDER", "codex")
     monkeypatch.setenv("WRITER_MODEL", "gpt-6-sol")
@@ -171,6 +171,12 @@ def test_live_route_keeps_independent_reviewers(tmp_path, monkeypatch):
     config = settings.load_settings()
     writer, = build_extract_chain(config)
     assert writer.base_url == CODEX_WRITER_URL and writer.api_key == ""
+    assert writer.model == "gpt-6-sol" and writer.reasoning_effort == "medium"
+    response = asyncio.run(chat_json(messages=[
+        {"role": "system", "content": "Test source-grounding instruction"},
+        {"role": "user", "content": '{"case":"ok"}'},
+    ], chain=(writer,)))
+    assert response.model == "gpt-6-sol"
     reviewers = build_judge_chain(config)
     assert [spec.model for spec in reviewers] == ["google/gemma-4-31b-it", "mistralai/mistral-small-2603"]
     assert all(spec.api_key == "reviewer-key" and spec.base_url != CODEX_WRITER_URL for spec in reviewers)
@@ -185,7 +191,7 @@ def test_terra_judge_medium_falls_back_only_on_technical_failure(cli, tmp_path, 
     monkeypatch.setenv("FALLBACK_MODEL", "z-ai/glm-5.3-flash")
     config = settings.load_settings()
     writer, = build_extract_chain(config)
-    assert writer.model == "gpt-6-sol" and writer.reasoning_effort == "high"
+    assert writer.model == "gpt-6-sol" and writer.reasoning_effort == "medium"
     chain = build_judge_chain(config)
     assert [s.model for s in chain] == ["gpt-5.6-terra", "z-ai/glm-5.3-flash"]
     calls = []

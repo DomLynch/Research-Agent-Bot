@@ -507,6 +507,8 @@ def build_extract_chain(settings: Settings) -> tuple[CallSpec, ...]:
             model=settings.minimax_model,
             timeout_sec=settings.minimax_timeout_sec,
             max_attempts=_configured_attempts(settings.minimax_base_url),
+            reasoning_effort="medium" if settings.minimax_base_url == CODEX_WRITER_URL
+            and settings.minimax_model == "gpt-6-sol" else "high",
         ),
     )
 
