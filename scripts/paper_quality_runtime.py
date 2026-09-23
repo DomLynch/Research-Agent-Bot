@@ -26,6 +26,7 @@ from agent.final_gate import (
     landscape_thresholds,
 )
 from agent.final_gate_mapper import build_gate_inputs
+from agent.manuscript_words import section_prose_word_count
 from agent.forest_plot_svg import render_forest_plot_svg
 from agent.meta_analysis import EffectRow, pool_random_effects
 from agent.publication_scorer import ScoreInputs, score_publication
@@ -563,7 +564,7 @@ def _section_word_count(markdown: str, heading: str) -> int:
         markdown,
         re.MULTILINE | re.DOTALL,
     )
-    return len(re.findall(r"\b\w+\b", match.group(1))) if match else 0
+    return section_prose_word_count(match.group(1), heading) if match else 0
 
 
 def _readiness_item(

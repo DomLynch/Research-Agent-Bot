@@ -84,6 +84,36 @@ def test_one_multisource_outlier_retains_all_context_without_widening_normal_bat
     assert result['assessments'][0]['supported'] is False
 
 
+@pytest.mark.parametrize('contradicting_source', [None, 2])
+def test_oversized_multisource_claim_reviews_every_complete_source(monkeypatch, contradicting_source):
+    monkeypatch.setattr(batches, 'MAX_SINGLE_PROSE_CHARS', 20_000)
+    sources = {'bundle': [{'cited_as': f'Study {i}', 'excerpt': f'Abstract {i}'} for i in range(4)],
+               'own_results': [{'citation_token': f'Study {i}',
+                                'verified_source_sections': {'results': str(i) * 9_000}}
+                               for i in range(4)],
+               'author_context': {'methods_record': {'selection': 'Recorded admission. ' * 200}}}
+    statement = {'text': 'Compare all four cited findings.', 'sources': list(range(4))}
+    calls = []
+
+    async def review(**kwargs):
+        assert sum(len(message['content']) for message in kwargs['messages']) <= batches.MAX_SINGLE_PROSE_CHARS
+        packet = json.loads(kwargs['messages'][1]['content'])
+        assert _restore_context(packet['sources']['author_context']) == sources['author_context']
+        indexes = [row['source_index'] for row in packet['sources']['bundle']]
+        assert indexes == packet['statements'][0]['sources']
+        assert _restore_context(packet['sources']['own_results']) == [sources['own_results'][i] for i in indexes]
+        calls.extend(indexes)
+        return SimpleNamespace(model='primary', parsed={'assessments': [
+            {'row': 0, 'supported': contradicting_source not in indexes,
+             'reason': 'Checked this complete source and selection record.'}]})
+
+    monkeypatch.setattr(prose_grounding, 'chat_json', review)
+    result = asyncio.run(prose_grounding.review_statements([statement], sources))
+    assert sorted(calls) == list(range(4))
+    assert len(result['assessments']) == 1
+    assert result['assessments'][0]['supported'] is (contradicting_source is None)
+
+
 def test_late_invalid_batch_cannot_return_partial_approval(monkeypatch):
     monkeypatch.setattr(batches, 'MAX_STATEMENTS', 1)
     calls = []

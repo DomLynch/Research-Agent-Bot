@@ -33,7 +33,7 @@ def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, ove
             raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
         candidate = [*batches[-1][0], item] if batches else [item]
         content = render(candidate)
-        if batches and len(content) + overhead <= MAX_REVIEW_CHARS and len(candidate) <= max_items:
+        if batches and len(content) + overhead <= min(MAX_REVIEW_CHARS, single_limit) and len(candidate) <= max_items:
             batches[-1] = (candidate, content)
         else:
             batches.append(([item], single))
@@ -68,28 +68,69 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
             "source_catalog": [{key: row.get(key) for key in ("cited_as", "title", "evidence_type", "directness", "outcome_class", "effect_direction")} for row in bundle]}
 
 
+def _prose_units(statements: list[dict[str, Any]], prompt: str,
+                 render: Callable[[list[dict[str, Any]]], str]) -> list[tuple[int, dict[str, Any]]]:
+    order = sorted(range(len(statements)), key=lambda i: json.dumps([statements[i].get("sources", []), statements[i].get("receipt_ids", [])]))
+    units: list[tuple[int, dict[str, Any]]] = []
+    for index in order:
+        row = statements[index]
+        if len(render([row])) + len(prompt) <= MAX_SINGLE_PROSE_CHARS:
+            units.append((index, row))
+            continue
+        key = "sources" if row.get("sources") else "receipt_ids" if row.get("receipt_ids") else None
+        if key is None or row.get("sources") and row.get("receipt_ids"):
+            raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
+        refs = list(dict.fromkeys(row[key]))
+        def fits(group: list[Any]) -> bool:
+            marked = {**row, key: group, "source_partition": {"part": len(refs), "total": len(refs)}}
+            return len(render([marked])) + len(prompt) <= MAX_SINGLE_PROSE_CHARS
+        groups: list[list[Any]] = []
+        for ref in refs:
+            candidate = [*groups[-1], ref] if groups else [ref]
+            if fits(candidate):
+                if groups:
+                    groups[-1] = candidate
+                else:
+                    groups.append(candidate)
+            elif fits([ref]):
+                groups.append([ref])
+            else:
+                raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
+        if len(groups) < 2 or [ref for group in groups for ref in group] != refs:
+            raise ValueError("review_input_exceeds_budget: incomplete source partition")
+        units.extend((index, {**row, key: group, "source_partition": {"part": part, "total": len(groups)}})
+                     for part, group in enumerate(groups, 1))
+    return units
+
+
 async def review_prose(statements: list[dict[str, Any]], sources: Any, *, prompt: str, call: Any, validate: Any, **options: Any) -> dict[str, Any]:
-    def render(indexes: list[int]) -> str:
-        rows = [statements[i] for i in indexes]
+    def render(rows: list[dict[str, Any]]) -> str:
         return json.dumps({"statements": [{**entry, "row": i} for i, entry in enumerate(rows)],
                            "sources": _sources_for(rows, sources)}, ensure_ascii=False, separators=(",", ":"))
-    order = sorted(range(len(statements)), key=lambda i: json.dumps([statements[i].get("sources", []), statements[i].get("receipt_ids", [])]))
-    batches = bounded_batches(order, render, overhead=len(prompt), max_items=MAX_STATEMENTS,
+    units = _prose_units(statements, prompt, render)
+    batches = bounded_batches(list(range(len(units))), lambda ids: render([units[i][1] for i in ids]), overhead=len(prompt), max_items=MAX_STATEMENTS,
                               single_limit=MAX_SINGLE_PROSE_CHARS)
-    assessments: list[dict[str, Any]] = []
+    part_reviews: dict[int, list[dict[str, Any]]] = {i: [] for i in range(len(statements))}
     models: list[str] = []
-    for indexes, content in batches:
-        rows = [statements[i] for i in indexes]
+    for unit_indexes, content in batches:
+        rows = [units[i][1] for i in unit_indexes]
         response = await call(messages=[{"role": "system", "content": prompt}, {"role": "user", "content": content}],
             chain=options["chain"], temperature=0.0,
             validate=lambda parsed: validate(rows, parsed.get("assessments")),
             **{key: value for key, value in options.items() if key in {"client", "ledger", "seed"}})
         validate(rows, response.parsed.get("assessments"))
-        assessments.extend({**item, "row": indexes[item["row"]]} for item in response.parsed["assessments"])
+        for item in response.parsed["assessments"]:
+            original, unit = units[unit_indexes[item["row"]]]
+            part_reviews[original].append({**item, "row": original,
+                                           "source_partition": unit.get("source_partition")})
         models.append(response.model)
+    assessments = [{"row": index, "supported": bool(parts) and all(part["supported"] for part in parts),
+                    "reason": "; ".join(part["reason"] for part in parts)}
+                   for index, parts in part_reviews.items()]
     validate(statements, assessments)
     return {"model": ",".join(dict.fromkeys(models)), "assessments": assessments, "statements": statements,
-            "batches": [{"rows": indexes, "input_chars": len(content) + len(prompt)} for indexes, content in batches]}
+            "batches": [{"rows": [units[i][0] for i in indexes], "input_chars": len(content) + len(prompt)} for indexes, content in batches],
+            "source_partition_reviews": [part for parts in part_reviews.values() for part in parts if part["source_partition"]]}
 
 
 def revision_inputs(paper: str, asks: list[str], rows: list[dict[str, Any]], payload: dict[str, Any], system: str, template: str) -> list[tuple[list[int], str]]:
