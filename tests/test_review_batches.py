@@ -198,6 +198,45 @@ def test_revision_transport_references_only_identical_outgoing_text():
     assert payload['body_markdown'] == paper and payload['source_bundle'][0]['evidence_span'] == 'Exact evidence'
 
 
+def test_revision_feedback_duplicate_is_referenced_without_losing_source_history():
+    import revision_coverage as coverage
+    paper = 'Complete manuscript. ' * 6_000
+    ask = 'Audit each source against its evidence. ' * 1_700
+    history = {'selection_assessment': 'Full source-selection record. ' * 2_900}
+    rows = [{'citation_token': f'Study {i}', 'verified_source_sections': {'results': f'Complete source {i}. ' * 2_000}}
+            for i in range(2)]
+    payload = {'metadata': {'revision_feedback': ask, 'source_admission': history},
+               'source_bundle': [{'cited_as': f'Study {i}', 'excerpt': f'Exact excerpt {i}.'} for i in range(2)]}
+    inputs = batches.revision_inputs(paper, [ask], rows, payload, coverage._SYS, coverage._USER)
+    assert len(inputs) == 2
+    assert all(batches.MAX_REVIEW_CHARS < len(content) + len(coverage._SYS) <= batches.MAX_SINGLE_PROSE_CHARS
+               for _, content in inputs)
+    for indexes, content in inputs:
+        assert indexes == [0] and paper in content and ask in content
+        evidence = json.loads(content.split('=== SOURCE EVIDENCE ===\n')[1].split('\n\n=== OUTGOING PAYLOAD')[0])
+        fields = json.loads(content.split('=== OUTGOING PAYLOAD FIELDS ===\n')[1])
+        assert fields['metadata']['revision_feedback'] == {'review_reference': 'complete numbered revision asks above'}
+        assert fields['metadata']['source_admission'] == history
+        assert len(evidence['batch']) == 1
+        assert evidence['batch'][0]['verified_source_sections'] in [row['verified_source_sections'] for row in rows]
+    assert payload['metadata']['revision_feedback'] == ask
+
+
+def test_revision_distinct_feedback_cannot_be_referenced():
+    assert batches._feedback_is_asks('First ask; additional reviewer context.', ['First ask.']) is False
+
+
+def test_revision_large_source_section_parts_reconstruct_exactly(monkeypatch):
+    monkeypatch.setattr(batches, 'MAX_SINGLE_PROSE_CHARS', 200)
+    row = {'citation_token': 'Study', 'verified_source_sections': {'results': 'Supported effect.',
+                                                                   'references': 'Reference A.\n' * 40}}
+    parts = batches._revision_source_parts(row, lambda part: 40 + len(part['verified_source_sections']['references']))
+    assert len(parts) > 1
+    assert ''.join(part['verified_source_sections']['references'] for part in parts) == row['verified_source_sections']['references']
+    assert all(part['verified_source_sections']['results'] == 'Supported effect.' for part in parts)
+    assert [part['source_partition']['part'] for part in parts] == list(range(1, len(parts) + 1))
+
+
 def test_prose_batch_entrypoint_imports_without_test_scripts_path():
     import subprocess
     import sys
