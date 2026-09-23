@@ -52,8 +52,66 @@ def test_oversized_late_item_blocks_before_any_provider_call(monkeypatch):
         calls.append(kw)
     monkeypatch.setattr(prose_grounding, 'chat_json', call)
     with pytest.raises(ValueError, match='review_input_exceeds_budget'):
-        asyncio.run(prose_grounding.review_statements([{'text': 'Small'}, {'text': 'x' * 300_001}], []))
+        asyncio.run(prose_grounding.review_statements([{'text': 'Small'}, {'text': 'x' * batches.MAX_SINGLE_PROSE_CHARS}], []))
     assert calls == []
+
+
+def test_one_multisource_outlier_retains_all_context_without_widening_normal_batches(monkeypatch):
+    passages = [str(i) * 25_000 for i in range(5)]
+    context = {'methods_record': {'selection': 'Recorded admission. ' * 9_500}}
+    sources = {'bundle': [{'cited_as': f'Study {i}', 'excerpt': f'Abstract {i} ' * 200}
+                          for i in range(5)],
+               'own_results': [{'citation_token': f'Study {i}',
+                                'verified_source_sections': {'results': passage}}
+                               for i, passage in enumerate(passages)],
+               'author_context': context}
+    statement = {'text': 'Compare every cited result.', 'sources': list(range(5))}
+    calls = []
+
+    async def review(**kwargs):
+        packet = json.loads(kwargs['messages'][1]['content'])
+        size = sum(len(message['content']) for message in kwargs['messages'])
+        assert batches.MAX_REVIEW_CHARS < size <= batches.MAX_SINGLE_PROSE_CHARS
+        assert _restore_context(packet['sources']['author_context']) == context
+        assert _restore_context(packet['sources']['own_results']) == sources['own_results']
+        calls.append(packet)
+        return SimpleNamespace(model='primary', parsed={'assessments': [
+            {'row': 0, 'supported': False, 'reason': 'One source contradicts the claim.'}]})
+
+    monkeypatch.setattr(prose_grounding, 'chat_json', review)
+    result = asyncio.run(prose_grounding.review_statements([statement], sources))
+    assert len(calls) == 1
+    assert result['assessments'][0]['supported'] is False
+
+
+@pytest.mark.parametrize('contradicting_source', [None, 2])
+def test_oversized_multisource_claim_reviews_every_complete_source(monkeypatch, contradicting_source):
+    monkeypatch.setattr(batches, 'MAX_SINGLE_PROSE_CHARS', 20_000)
+    sources = {'bundle': [{'cited_as': f'Study {i}', 'excerpt': f'Abstract {i}'} for i in range(4)],
+               'own_results': [{'citation_token': f'Study {i}',
+                                'verified_source_sections': {'results': str(i) * 9_000}}
+                               for i in range(4)],
+               'author_context': {'methods_record': {'selection': 'Recorded admission. ' * 200}}}
+    statement = {'text': 'Compare all four cited findings.', 'sources': list(range(4))}
+    calls = []
+
+    async def review(**kwargs):
+        assert sum(len(message['content']) for message in kwargs['messages']) <= batches.MAX_SINGLE_PROSE_CHARS
+        packet = json.loads(kwargs['messages'][1]['content'])
+        assert _restore_context(packet['sources']['author_context']) == sources['author_context']
+        indexes = [row['source_index'] for row in packet['sources']['bundle']]
+        assert indexes == packet['statements'][0]['sources']
+        assert _restore_context(packet['sources']['own_results']) == [sources['own_results'][i] for i in indexes]
+        calls.extend(indexes)
+        return SimpleNamespace(model='primary', parsed={'assessments': [
+            {'row': 0, 'supported': contradicting_source not in indexes,
+             'reason': 'Checked this complete source and selection record.'}]})
+
+    monkeypatch.setattr(prose_grounding, 'chat_json', review)
+    result = asyncio.run(prose_grounding.review_statements([statement], sources))
+    assert sorted(calls) == list(range(4))
+    assert len(result['assessments']) == 1
+    assert result['assessments'][0]['supported'] is (contradicting_source is None)
 
 
 def test_late_invalid_batch_cannot_return_partial_approval(monkeypatch):
@@ -138,6 +196,45 @@ def test_revision_transport_references_only_identical_outgoing_text():
     assert fields['source_bundle'][0]['excerpt'] == 'Exact evidence'
     assert fields['source_bundle'][0]['evidence_span'] == {'review_reference': "this source's excerpt"}
     assert payload['body_markdown'] == paper and payload['source_bundle'][0]['evidence_span'] == 'Exact evidence'
+
+
+def test_revision_feedback_duplicate_is_referenced_without_losing_source_history():
+    import revision_coverage as coverage
+    paper = 'Complete manuscript. ' * 6_000
+    ask = 'Audit each source against its evidence. ' * 1_700
+    history = {'selection_assessment': 'Full source-selection record. ' * 2_900}
+    rows = [{'citation_token': f'Study {i}', 'verified_source_sections': {'results': f'Complete source {i}. ' * 2_000}}
+            for i in range(2)]
+    payload = {'metadata': {'revision_feedback': ask, 'source_admission': history},
+               'source_bundle': [{'cited_as': f'Study {i}', 'excerpt': f'Exact excerpt {i}.'} for i in range(2)]}
+    inputs = batches.revision_inputs(paper, [ask], rows, payload, coverage._SYS, coverage._USER)
+    assert len(inputs) == 2
+    assert all(batches.MAX_REVIEW_CHARS < len(content) + len(coverage._SYS) <= batches.MAX_SINGLE_PROSE_CHARS
+               for _, content in inputs)
+    for indexes, content in inputs:
+        assert indexes == [0] and paper in content and ask in content
+        evidence = json.loads(content.split('=== SOURCE EVIDENCE ===\n')[1].split('\n\n=== OUTGOING PAYLOAD')[0])
+        fields = json.loads(content.split('=== OUTGOING PAYLOAD FIELDS ===\n')[1])
+        assert fields['metadata']['revision_feedback'] == {'review_reference': 'complete numbered revision asks above'}
+        assert fields['metadata']['source_admission'] == history
+        assert len(evidence['batch']) == 1
+        assert evidence['batch'][0]['verified_source_sections'] in [row['verified_source_sections'] for row in rows]
+    assert payload['metadata']['revision_feedback'] == ask
+
+
+def test_revision_distinct_feedback_cannot_be_referenced():
+    assert batches._feedback_is_asks('First ask; additional reviewer context.', ['First ask.']) is False
+
+
+def test_revision_large_source_section_parts_reconstruct_exactly(monkeypatch):
+    monkeypatch.setattr(batches, 'MAX_SINGLE_PROSE_CHARS', 200)
+    row = {'citation_token': 'Study', 'verified_source_sections': {'results': 'Supported effect.',
+                                                                   'references': 'Reference A.\n' * 40}}
+    parts = batches._revision_source_parts(row, lambda part: 40 + len(part['verified_source_sections']['references']))
+    assert len(parts) > 1
+    assert ''.join(part['verified_source_sections']['references'] for part in parts) == row['verified_source_sections']['references']
+    assert all(part['verified_source_sections']['results'] == 'Supported effect.' for part in parts)
+    assert [part['source_partition']['part'] for part in parts] == list(range(1, len(parts) + 1))
 
 
 def test_prose_batch_entrypoint_imports_without_test_scripts_path():

@@ -5,6 +5,7 @@ import json
 from typing import Any, Callable
 
 MAX_REVIEW_CHARS = 300_000
+MAX_SINGLE_PROSE_CHARS = 360_000
 MAX_STATEMENTS = 16
 
 
@@ -24,15 +25,15 @@ def _shared_context(value: Any, path: tuple[str, ...] = (), seen: dict[str, tupl
     return value
 
 
-def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, overhead: int = 0, max_items: int = 1000) -> list[tuple[list[Any], str]]:
+def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, overhead: int = 0, max_items: int = 1000, single_limit: int = MAX_REVIEW_CHARS) -> list[tuple[list[Any], str]]:
     batches: list[tuple[list[Any], str]] = []
     for item in items:
         single = render([item])
-        if len(single) + overhead > MAX_REVIEW_CHARS:
+        if len(single) + overhead > single_limit:
             raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
         candidate = [*batches[-1][0], item] if batches else [item]
         content = render(candidate)
-        if batches and len(content) + overhead <= MAX_REVIEW_CHARS and len(candidate) <= max_items:
+        if batches and len(content) + overhead <= min(MAX_REVIEW_CHARS, single_limit) and len(candidate) <= max_items:
             batches[-1] = (candidate, content)
         else:
             batches.append(([item], single))
@@ -67,37 +68,85 @@ def _sources_for(statements: list[dict[str, Any]], sources: Any) -> Any:
             "source_catalog": [{key: row.get(key) for key in ("cited_as", "title", "evidence_type", "directness", "outcome_class", "effect_direction")} for row in bundle]}
 
 
+def _prose_units(statements: list[dict[str, Any]], prompt: str,
+                 render: Callable[[list[dict[str, Any]]], str]) -> list[tuple[int, dict[str, Any]]]:
+    order = sorted(range(len(statements)), key=lambda i: json.dumps([statements[i].get("sources", []), statements[i].get("receipt_ids", [])]))
+    units: list[tuple[int, dict[str, Any]]] = []
+    for index in order:
+        row = statements[index]
+        if len(render([row])) + len(prompt) <= MAX_SINGLE_PROSE_CHARS:
+            units.append((index, row))
+            continue
+        key = "sources" if row.get("sources") else "receipt_ids" if row.get("receipt_ids") else None
+        if key is None or row.get("sources") and row.get("receipt_ids"):
+            raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
+        refs = list(dict.fromkeys(row[key]))
+        def fits(group: list[Any]) -> bool:
+            marked = {**row, key: group, "source_partition": {"part": len(refs), "total": len(refs)}}
+            return len(render([marked])) + len(prompt) <= MAX_SINGLE_PROSE_CHARS
+        groups: list[list[Any]] = []
+        for ref in refs:
+            candidate = [*groups[-1], ref] if groups else [ref]
+            if fits(candidate):
+                if groups:
+                    groups[-1] = candidate
+                else:
+                    groups.append(candidate)
+            elif fits([ref]):
+                groups.append([ref])
+            else:
+                raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
+        if len(groups) < 2 or [ref for group in groups for ref in group] != refs:
+            raise ValueError("review_input_exceeds_budget: incomplete source partition")
+        units.extend((index, {**row, key: group, "source_partition": {"part": part, "total": len(groups)}})
+                     for part, group in enumerate(groups, 1))
+    return units
+
+
 async def review_prose(statements: list[dict[str, Any]], sources: Any, *, prompt: str, call: Any, validate: Any, **options: Any) -> dict[str, Any]:
-    def render(indexes: list[int]) -> str:
-        rows = [statements[i] for i in indexes]
+    def render(rows: list[dict[str, Any]]) -> str:
         return json.dumps({"statements": [{**entry, "row": i} for i, entry in enumerate(rows)],
                            "sources": _sources_for(rows, sources)}, ensure_ascii=False, separators=(",", ":"))
-    order = sorted(range(len(statements)), key=lambda i: json.dumps([statements[i].get("sources", []), statements[i].get("receipt_ids", [])]))
-    batches = bounded_batches(order, render, overhead=len(prompt), max_items=MAX_STATEMENTS)
-    assessments: list[dict[str, Any]] = []
+    units = _prose_units(statements, prompt, render)
+    batches = bounded_batches(list(range(len(units))), lambda ids: render([units[i][1] for i in ids]), overhead=len(prompt), max_items=MAX_STATEMENTS,
+                              single_limit=MAX_SINGLE_PROSE_CHARS)
+    part_reviews: dict[int, list[dict[str, Any]]] = {i: [] for i in range(len(statements))}
     models: list[str] = []
-    for indexes, content in batches:
-        rows = [statements[i] for i in indexes]
+    for unit_indexes, content in batches:
+        rows = [units[i][1] for i in unit_indexes]
         response = await call(messages=[{"role": "system", "content": prompt}, {"role": "user", "content": content}],
             chain=options["chain"], temperature=0.0,
             validate=lambda parsed: validate(rows, parsed.get("assessments")),
             **{key: value for key, value in options.items() if key in {"client", "ledger", "seed"}})
         validate(rows, response.parsed.get("assessments"))
-        assessments.extend({**item, "row": indexes[item["row"]]} for item in response.parsed["assessments"])
+        for item in response.parsed["assessments"]:
+            original, unit = units[unit_indexes[item["row"]]]
+            part_reviews[original].append({**item, "row": original,
+                                           "source_partition": unit.get("source_partition")})
         models.append(response.model)
+    assessments = [{"row": index, "supported": bool(parts) and all(part["supported"] for part in parts),
+                    "reason": "; ".join(part["reason"] for part in parts)}
+                   for index, parts in part_reviews.items()]
     validate(statements, assessments)
     return {"model": ",".join(dict.fromkeys(models)), "assessments": assessments, "statements": statements,
-            "batches": [{"rows": indexes, "input_chars": len(content) + len(prompt)} for indexes, content in batches]}
+            "batches": [{"rows": [units[i][0] for i in indexes], "input_chars": len(content) + len(prompt)} for indexes, content in batches],
+            "source_partition_reviews": [part for parts in part_reviews.values() for part in parts if part["source_partition"]]}
 
 
 def revision_inputs(paper: str, asks: list[str], rows: list[dict[str, Any]], payload: dict[str, Any], system: str, template: str) -> list[tuple[list[int], str]]:
+    if any(len(ask) + len(system) > MAX_REVIEW_CHARS for ask in asks):
+        raise ValueError("review_input_exceeds_budget: indivisible revision ask; no provider request sent")
     catalog = [{k: v for k, v in row.items() if k not in {"verified_source_sections", "verified_source_tables", "verified_abstract", "source_result_excerpts", "thesis_text"}} for row in rows]
     if rows and any(not b.get("cited_as") or b["cited_as"] not in {r.get("citation_token") for r in rows} for b in payload.get("source_bundle", [])):
         raise ValueError("review_source_citation_mismatch")
     outgoing = {**payload, **({"body_markdown": {"review_reference": "MANUSCRIPT"}} if payload.get("body_markdown") == paper else {})}
+    feedback = payload.get("metadata", {}).get("revision_feedback") if isinstance(payload.get("metadata"), dict) else None
+    feedback_is_asks = isinstance(feedback, str) and _feedback_is_asks(feedback, asks)
     def render(batch: list[dict[str, Any]], indexes: list[int]) -> str:
         citations = {r.get("citation_token") for r in batch}
         fields = {**outgoing, **({"source_bundle": [b for b in payload["source_bundle"] if b.get("cited_as") in citations]} if rows and "source_bundle" in payload else {})}
+        if feedback_is_asks and len(indexes) == len(asks):
+            fields["metadata"] = {**fields["metadata"], "revision_feedback": {"review_reference": "complete numbered revision asks above"}}
         for key in ("abstract", "summary"):
             if isinstance(fields.get(key), str) and fields[key] and fields[key] in paper:
                 fields[key] = {"review_reference": f"MANUSCRIPT {key}"}
@@ -108,11 +157,61 @@ def revision_inputs(paper: str, asks: list[str], rows: list[dict[str, Any]], pay
         return template.format(n=len(indexes), asks="\n".join(f"{i}. {asks[index]}" for i, index in enumerate(indexes, 1)), paper=paper,
             evidence=json.dumps(_shared_context({"source_catalog": catalog, "batch": batch}), ensure_ascii=False, separators=(",", ":")),
             payload=json.dumps(_shared_context(fields), ensure_ascii=False, separators=(",", ":")))
-    # Every ask is checked against every source; group compatible ask subsets so
-    # a large correction does not get repeated alongside the entire corpus.
-    groups: dict[tuple[int, ...], list[dict[str, Any]]] = {}
-    for row in rows or [{}]:
-        for indexes, _ in bounded_batches(list(range(len(asks))), lambda ids: render([row], ids), overhead=len(system)):
-            groups.setdefault(tuple(indexes), []).append(row)
+    groups = _revision_groups(rows or [{}], len(asks), feedback_is_asks, render, len(system))
     return [(list(indexes), content) for indexes, source_rows in groups.items()
-            for _, content in bounded_batches(source_rows, lambda batch: render(batch, list(indexes)), overhead=len(system))]
+            for _, content in bounded_batches(source_rows, lambda batch: render(batch, list(indexes)), overhead=len(system),
+                                              single_limit=MAX_SINGLE_PROSE_CHARS)]
+
+
+def _revision_groups(rows: list[dict[str, Any]], ask_count: int, feedback_is_asks: bool,
+                     render: Callable[[list[dict[str, Any]], list[int]], str], overhead: int,
+                     ) -> dict[tuple[int, ...], list[dict[str, Any]]]:
+    # Every ask is checked against every source; repeated feedback is referenced
+    # only when the complete ask set is present in each partition.
+    groups: dict[tuple[int, ...], list[dict[str, Any]]] = {}
+    all_indexes = list(range(ask_count))
+    parts = [_revision_source_parts(row, lambda part: len(render([part], all_indexes)) + overhead)
+             for row in rows] if feedback_is_asks else []
+    if parts and all(parts):
+        groups[tuple(all_indexes)] = [part for source in parts for part in source]
+    else:
+        for row in rows:
+            for indexes, _ in bounded_batches(all_indexes, lambda ids: render([row], ids), overhead=overhead,
+                                              single_limit=MAX_SINGLE_PROSE_CHARS):
+                groups.setdefault(tuple(indexes), []).append(row)
+    return groups
+
+
+def _feedback_is_asks(feedback: str, asks: list[str]) -> bool:
+    """Only reference feedback when every original character is in the asks or a separator."""
+    position = 0
+    for ask in asks:
+        exact = ask if feedback.startswith(ask, position) else ask.removesuffix(".")
+        start = feedback.find(exact, position)
+        if start < 0 or any(char not in ".; \n" for char in feedback[position:start]):
+            return False
+        position = start + len(exact)
+    return all(char in ".; \n" for char in feedback[position:])
+
+
+def _revision_source_parts(row: dict[str, Any], size: Callable[[dict[str, Any]], int]) -> list[dict[str, Any]]:
+    if size(row) <= MAX_SINGLE_PROSE_CHARS:
+        return [row]
+    sections = row.get("verified_source_sections")
+    if not isinstance(sections, dict):
+        return []
+    name = max((key for key, value in sections.items() if isinstance(value, str)),
+               key=lambda key: len(sections[key]), default=None)
+    if name is None or not sections[name]:
+        return []
+    passage = sections[name]
+    for count in (2, 4, 8, 16, 32):
+        chunks = [passage[i * len(passage) // count:(i + 1) * len(passage) // count] for i in range(count)]
+        if "".join(chunks) != passage or any(not chunk for chunk in chunks):
+            continue
+        parts = [{**row, "verified_source_sections": {**sections, name: chunk},
+                  "source_partition": {"field": name, "part": index, "total": count}}
+                 for index, chunk in enumerate(chunks, 1)]
+        if all(size(part) <= MAX_SINGLE_PROSE_CHARS for part in parts):
+            return parts
+    return []

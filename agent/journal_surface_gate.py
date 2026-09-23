@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import Any, Iterable
 
 from agent.outcome_class_remap import outcome_key
+from agent.manuscript_words import manuscript_word_count as manuscript_word_count, section_prose_word_count
 from agent.qei_facts import surface_row_dict as _row_to_dict
 from agent.review_type import COMPACT_REVIEW_TYPES
 
@@ -360,11 +361,6 @@ def _qei_cells(paper_md: str) -> Iterable[tuple[str, list[str], int]]:
             yield line, cells, expected
 
 
-def manuscript_word_count(body: str) -> int:
-    """Count prose and link labels; URL destinations do not contribute words."""
-    return len(re.findall(r"\b\w+\b", re.sub(r"https?://[^\s\]<>)]*", "", body)))
-
-
 def _section_issue_messages(paper_md: str, declared_review_type: str | None = None) -> tuple[str, ...]:
     required = _REQUIRED_SECTIONS_THIN if declared_review_type in COMPACT_REVIEW_TYPES else _REQUIRED_SECTIONS
     issues: list[str] = []
@@ -373,7 +369,7 @@ def _section_issue_messages(paper_md: str, declared_review_type: str | None = No
         if body is None:
             issues.append(f"missing required section: {heading}")
             continue
-        n = manuscript_word_count(body)
+        n = section_prose_word_count(body, heading)
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
         if (ceiling := _SECTION_CEILINGS.get(heading)) is not None and n > ceiling:

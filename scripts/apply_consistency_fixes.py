@@ -30,6 +30,7 @@ from pathlib import Path
 
 from agent.topic_display import humanize_topic, intervention_label
 from agent.outcome_class_remap import outcome_key
+from agent.manuscript_words import section_prose_word_count
 from direction_consistency import repair_abstract_direction_summary
 from evidence_map_summary import signal_summary_cell, source_context_map
 from surface_render_lint import repair_locator_artifacts
@@ -1784,7 +1785,7 @@ def _section_word_count(paper: str, heading: str) -> int:
     )
     if not m:
         return 0
-    return len(re.findall(r"\b\w+\b", m.group(1)))
+    return section_prose_word_count(m.group(1), heading)
 
 
 def _extract_section(paper: str, heading: str) -> tuple[int, int, str]:

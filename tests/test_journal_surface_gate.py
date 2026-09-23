@@ -23,6 +23,35 @@ def test_source_urls_neither_inflate_word_floors_nor_exhaust_abstract_budget():
     assert any("Results 399/400" in issue for issue in _section_issue_messages("## Results\n\n" + "word " * 399 + link))
 
 
+def test_abstract_cap_counts_prose_not_repeated_source_provenance():
+    from agent.journal_surface_gate import _section_issue_messages
+
+    citation = "[Study 2025] [bundle:3] [exact source: https://doi.org/10.1234/example]"
+    paper = "## Abstract\n\n" + "word " * 238 + (citation + " ") * 9
+    assert not any("Abstract" in issue for issue in _section_issue_messages(paper))
+    scientific_interval = "## Abstract\n\n" + "word " * 299 + "[95% CI]"
+    assert any("Abstract 301/300" in issue for issue in _section_issue_messages(scientific_interval))
+
+
+def test_abstract_count_is_shared_and_keeps_bracketed_findings():
+    from agent.journal_surface_gate import _section_issue_messages, section_prose_word_count
+    from agent.paper_writer_helpers import section_word_count
+    from agent.synthesis_schemas import SynthesisSection
+    from paper_quality_runtime import _section_word_count as readiness_count
+    from apply_consistency_fixes import _section_word_count as repair_count
+
+    body = ("word " * 291) + (
+        "[Study et al. 2025] [Expanding Access to Strength 2025] [bundle:3] [exact source: https://doi.org/10.1234/example] "
+        "[95% CI] [2020–2022] [Direction in 2020]"
+    )
+    paper = "## Abstract\n\n" + body
+    assert section_prose_word_count(body, "Abstract") == 298
+    assert section_word_count(SynthesisSection(name="abstract", body_md=paper, anchors=())) == 298
+    assert readiness_count(paper, "Abstract") == repair_count(paper, "Abstract") == 298
+    assert not any("Abstract" in issue for issue in _section_issue_messages(paper))
+    assert any("Abstract 301/300" in issue for issue in _section_issue_messages(paper + " value value value"))
+
+
 def _words(n: int, prefix: str = "word") -> str:
     return " ".join(f"{prefix}{i}" for i in range(n))
 

@@ -9,7 +9,8 @@ from collections.abc import Sequence
 import httpx
 
 from agent.llm_client import CallSpec, CostLedger, chat_json
-from agent.journal_surface_gate import _SECTION_CEILINGS, manuscript_word_count
+from agent.journal_surface_gate import _SECTION_CEILINGS
+from agent.manuscript_words import section_prose_word_count
 from agent.synthesis_schemas import ReceiptSummary, SynthesisSection
 from agent.synthesis_writer import filter_accepted
 from agent.outcome_class_remap import outcome_display
@@ -96,7 +97,7 @@ def section_word_count(section: SynthesisSection) -> int:
     """
     lines = section.body_md.split("\n")
     body = "\n".join(lines[1:]) if lines else ""
-    return manuscript_word_count(strip_rendered_citation_markers(body))
+    return section_prose_word_count(body, section.name.title())
 
 
 def strip_rendered_citation_markers(markdown: str) -> str:
