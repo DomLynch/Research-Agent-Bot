@@ -23,6 +23,16 @@ def test_source_urls_neither_inflate_word_floors_nor_exhaust_abstract_budget():
     assert any("Results 399/400" in issue for issue in _section_issue_messages("## Results\n\n" + "word " * 399 + link))
 
 
+def test_abstract_cap_counts_prose_not_repeated_source_provenance():
+    from agent.journal_surface_gate import _section_issue_messages
+
+    citation = "[Study 2025] [bundle:3] [exact source: https://doi.org/10.1234/example]"
+    paper = "## Abstract\n\n" + "word " * 238 + (citation + " ") * 9
+    assert not any("Abstract" in issue for issue in _section_issue_messages(paper))
+    scientific_interval = "## Abstract\n\n" + "word " * 299 + "[95% CI]"
+    assert any("Abstract 301/300" in issue for issue in _section_issue_messages(scientific_interval))
+
+
 def _words(n: int, prefix: str = "word") -> str:
     return " ".join(f"{prefix}{i}" for i in range(n))
 

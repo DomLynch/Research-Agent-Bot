@@ -5,6 +5,7 @@ import json
 from typing import Any, Callable
 
 MAX_REVIEW_CHARS = 300_000
+MAX_SINGLE_PROSE_CHARS = 360_000
 MAX_STATEMENTS = 16
 
 
@@ -24,11 +25,11 @@ def _shared_context(value: Any, path: tuple[str, ...] = (), seen: dict[str, tupl
     return value
 
 
-def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, overhead: int = 0, max_items: int = 1000) -> list[tuple[list[Any], str]]:
+def bounded_batches(items: list[Any], render: Callable[[list[Any]], str], *, overhead: int = 0, max_items: int = 1000, single_limit: int = MAX_REVIEW_CHARS) -> list[tuple[list[Any], str]]:
     batches: list[tuple[list[Any], str]] = []
     for item in items:
         single = render([item])
-        if len(single) + overhead > MAX_REVIEW_CHARS:
+        if len(single) + overhead > single_limit:
             raise ValueError("review_input_exceeds_budget: indivisible evidence; no provider request sent")
         candidate = [*batches[-1][0], item] if batches else [item]
         content = render(candidate)
@@ -73,7 +74,8 @@ async def review_prose(statements: list[dict[str, Any]], sources: Any, *, prompt
         return json.dumps({"statements": [{**entry, "row": i} for i, entry in enumerate(rows)],
                            "sources": _sources_for(rows, sources)}, ensure_ascii=False, separators=(",", ":"))
     order = sorted(range(len(statements)), key=lambda i: json.dumps([statements[i].get("sources", []), statements[i].get("receipt_ids", [])]))
-    batches = bounded_batches(order, render, overhead=len(prompt), max_items=MAX_STATEMENTS)
+    batches = bounded_batches(order, render, overhead=len(prompt), max_items=MAX_STATEMENTS,
+                              single_limit=MAX_SINGLE_PROSE_CHARS)
     assessments: list[dict[str, Any]] = []
     models: list[str] = []
     for indexes, content in batches:

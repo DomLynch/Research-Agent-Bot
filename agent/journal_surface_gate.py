@@ -373,7 +373,9 @@ def _section_issue_messages(paper_md: str, declared_review_type: str | None = No
         if body is None:
             issues.append(f"missing required section: {heading}")
             continue
-        n = manuscript_word_count(body)
+        # Citation/provenance tags do not consume the abstract's prose budget.
+        # Numeric intervals and other bracketed scientific text still count.
+        n = manuscript_word_count(re.sub(r"\[(?:bundle:\d+|exact source:\s*https?://[^\]\n]+|[^\]\n]*\b(?:19|20)\d{2}[a-z]?)\]", "", body) if heading == "Abstract" else body)
         if n < floor:
             issues.append(f"section too short: {heading} {n}/{floor} words")
         if (ceiling := _SECTION_CEILINGS.get(heading)) is not None and n > ceiling:

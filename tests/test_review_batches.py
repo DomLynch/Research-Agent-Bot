@@ -52,8 +52,36 @@ def test_oversized_late_item_blocks_before_any_provider_call(monkeypatch):
         calls.append(kw)
     monkeypatch.setattr(prose_grounding, 'chat_json', call)
     with pytest.raises(ValueError, match='review_input_exceeds_budget'):
-        asyncio.run(prose_grounding.review_statements([{'text': 'Small'}, {'text': 'x' * 300_001}], []))
+        asyncio.run(prose_grounding.review_statements([{'text': 'Small'}, {'text': 'x' * batches.MAX_SINGLE_PROSE_CHARS}], []))
     assert calls == []
+
+
+def test_one_multisource_outlier_retains_all_context_without_widening_normal_batches(monkeypatch):
+    passages = [str(i) * 25_000 for i in range(5)]
+    context = {'methods_record': {'selection': 'Recorded admission. ' * 9_500}}
+    sources = {'bundle': [{'cited_as': f'Study {i}', 'excerpt': f'Abstract {i} ' * 200}
+                          for i in range(5)],
+               'own_results': [{'citation_token': f'Study {i}',
+                                'verified_source_sections': {'results': passage}}
+                               for i, passage in enumerate(passages)],
+               'author_context': context}
+    statement = {'text': 'Compare every cited result.', 'sources': list(range(5))}
+    calls = []
+
+    async def review(**kwargs):
+        packet = json.loads(kwargs['messages'][1]['content'])
+        size = sum(len(message['content']) for message in kwargs['messages'])
+        assert batches.MAX_REVIEW_CHARS < size <= batches.MAX_SINGLE_PROSE_CHARS
+        assert _restore_context(packet['sources']['author_context']) == context
+        assert _restore_context(packet['sources']['own_results']) == sources['own_results']
+        calls.append(packet)
+        return SimpleNamespace(model='primary', parsed={'assessments': [
+            {'row': 0, 'supported': False, 'reason': 'One source contradicts the claim.'}]})
+
+    monkeypatch.setattr(prose_grounding, 'chat_json', review)
+    result = asyncio.run(prose_grounding.review_statements([statement], sources))
+    assert len(calls) == 1
+    assert result['assessments'][0]['supported'] is False
 
 
 def test_late_invalid_batch_cannot_return_partial_approval(monkeypatch):
