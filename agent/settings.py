@@ -66,9 +66,9 @@ def load_settings() -> Settings:
     if provider not in {"codex", "openrouter"}:
         raise ValueError("WRITER_PROVIDER must be codex or openrouter")
     codex = provider == "codex"
-    model = os.environ.get("WRITER_MODEL", "gpt-5.6-sol" if codex else "z-ai/glm-5.3-flash")
-    if codex and model != "gpt-5.6-sol":
-        raise ValueError("Codex writer requires WRITER_MODEL=gpt-5.6-sol")
+    model = os.environ.get("WRITER_MODEL", "gpt-6-sol" if codex else "z-ai/glm-5.3-flash")
+    if codex and model not in {"gpt-6-sol", "gpt-5.6-sol"}:
+        raise ValueError("Codex writer requires WRITER_MODEL=gpt-6-sol or gpt-5.6-sol")
     return Settings(
         minimax_api_key="" if codex else os.environ.get("OPENROUTER_API_KEY", "").strip(),
         minimax_model=model,

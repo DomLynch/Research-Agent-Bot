@@ -105,7 +105,7 @@ def test_load_settings_defaults_when_unset(
     s = settings_module.load_settings()
     assert s.minimax_api_key == ""
     assert s.openrouter_api_key == ""
-    assert s.minimax_model == "gpt-5.6-sol"
+    assert s.minimax_model == "gpt-6-sol"
     assert s.minimax_base_url == "codex://chatgpt"
     assert s.judge_model == "gpt-5.6-terra"
     assert s.fallback_model == "z-ai/glm-5.3-flash"
@@ -148,7 +148,7 @@ def test_load_settings_ignores_stale_writer_provider_names(
         encoding="utf-8",
     )
     s = settings_module.load_settings()
-    assert s.minimax_model == "gpt-5.6-sol"
+    assert s.minimax_model == "gpt-6-sol"
     assert s.minimax_base_url == "codex://chatgpt"
     assert s.minimax_timeout_sec == 180.0
 
