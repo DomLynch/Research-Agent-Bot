@@ -9,17 +9,17 @@ full trust-spine audit trail.
 Researka/public reader/provenance is downstream. This repo's job is the research
 agent and paper engine.
 
-## Current State - 2026-08-13
+## Current State - 2026-09-23
 - Last pre-switch clean baseline: `415621b2`.
-- Current branch target (2026-09-06): Codex GPT-5.6 Sol High writer/extractor,
-  Terra Medium review and GLM Flash technical fallback.
+- Model target: Codex GPT-6 Sol High writer/extractor,
+  GPT-5.6 Terra Medium review and GLM Flash technical fallback.
 - Service: `research-agent-bot.service`.
 - Live endpoint: deploy-safe live status page, HTTP 200 by design.
 - Basket: 18 full AAA/L5+ primary topics plus 1 scoped topic in cross-topic V1.
 - Flagship: rapamycin AAA/L6 reproducibly journal-ready baseline; current
   paper-quality sprint has lifted runner-admitted receipts from 16 to 40 via
   source-validated vocabulary and qualification fixes.
-- Writer/extractor: `gpt-5.6-sol`, High reasoning, via Codex ChatGPT login;
+- Writer/extractor: `gpt-6-sol`, High reasoning, via Codex ChatGPT login;
   `WRITER_PROVIDER=codex` and `WRITER_MODEL`/`WRITER_TIMEOUT_SEC` configure it.
   No API-key writer fallback. Old `MIMO_*`/`MINIMAX_*`
   environment variables are ignored; legacy Settings field names remain internal.

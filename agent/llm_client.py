@@ -544,7 +544,7 @@ def build_judge_chain(settings: Settings) -> tuple[CallSpec, ...]:
     chain = tuple(
         c for c in candidates if c.model != settings.minimax_model and (
             _model_family(c.model) not in writer_families
-            or (settings.minimax_model == "gpt-5.6-sol" and c.model == "gpt-5.6-terra")
+            or (settings.minimax_model in {"gpt-6-sol", "gpt-5.6-sol"} and c.model == "gpt-5.6-terra")
         )
     )
     if not chain:
