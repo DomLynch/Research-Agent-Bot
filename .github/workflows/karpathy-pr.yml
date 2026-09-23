@@ -55,25 +55,11 @@ jobs:
           PYTHONPATH=. python scripts/karpathy_loop.py diff "$BASE_SNAP" "$PR_SNAP" > diff_output.txt || true
           cat diff_output.txt
 
-      - name: Post PR comment
+      - name: Publish score diff
         if: always()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            let body = '## Karpathy Score Diff\n\n';
-            try {
-              const diff = fs.readFileSync('diff_output.txt', 'utf8');
-              body += '```\n' + diff + '\n```\n';
-            } catch (e) {
-              body += '_Diff not available._\n';
-            }
-            body += '_Full results in CI run artifacts._';
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body,
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f diff_output.txt ]; then
+            cat diff_output.txt >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Score diff unavailable; inspect the run artifact." >> "$GITHUB_STEP_SUMMARY"
+          fi
