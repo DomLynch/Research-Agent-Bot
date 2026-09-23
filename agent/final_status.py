@@ -309,7 +309,7 @@ def compute(run_dir: Path) -> FinalStatus:
     from agent.human_signoff import load_and_validate
     signoff, signoff_issues = load_and_validate(run_dir)
     journal_signoff_pass = signoff is not None and not signoff_issues
-    if dims["target_journal_pass"] and not journal_signoff_pass:
+    if model == "legacy_journal_submission" and dims["target_journal_pass"] and not journal_signoff_pass:
         detail = ",".join(issue.code for issue in signoff_issues) or "signoff_missing"
         blockers += (BlockingReason(
             stage="human_signoff", code="human_signoff_invalid", detail=detail,

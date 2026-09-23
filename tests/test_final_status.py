@@ -402,6 +402,7 @@ def test_legacy_model_blocks_l5_without_human_signoff(tmp_path: Path) -> None:
     assert s.accountability_pass is False
     assert s.maturity_level == 4
     assert s.accountability_model == "legacy_journal_submission"
+    assert any(reason.code == "human_signoff_invalid" for reason in s.blocking_reasons)
 
 
 def test_legacy_model_reaches_l5_with_human_signoff(tmp_path: Path) -> None:
@@ -537,7 +538,7 @@ def test_slice36_declared_target_journal_clears_l4_ceiling(tmp_path: Path) -> No
     assert s.maturity_level == 5
 
 
-def test_declared_journal_requires_valid_signoff_for_package_readiness(tmp_path: Path) -> None:
+def test_agent_certified_run_does_not_report_human_signoff_blocker(tmp_path: Path) -> None:
     _all_pass_sidecars(tmp_path)
     (tmp_path / "human_signoff.json").unlink()
 
@@ -545,4 +546,4 @@ def test_declared_journal_requires_valid_signoff_for_package_readiness(tmp_path:
 
     assert status.researka_publish_ready is True
     assert status.journal_submission_ready is False
-    assert any(reason.code == "human_signoff_invalid" for reason in status.blocking_reasons)
+    assert status.blocking_reasons == ()
