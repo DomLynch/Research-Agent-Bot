@@ -207,6 +207,13 @@ def find_unsourced_background_uses(
     # like background values; they are bibliography metadata, not manuscript
     # prose claims. Surface/reference gates own that section.
     body_md = re.split(r"^##\s+References\b", paper_md, maxsplit=1, flags=re.M)[0]
+    # Splitters can break inside a long table cell at ". Sentence", leaving
+    # a fragment that no longer starts with "|". Exclude complete table rows
+    # before splitting; table evidence has its own citation checks.
+    body_md = "\n".join(
+        line for line in body_md.splitlines()
+        if not line.lstrip().startswith("|")
+    )
     # Split paper into sentences (rough — period followed by whitespace
     # + capital, OR newline). Same heuristic as final_consistency_audit.
     sent_split = re.compile(r"(?<=[.!?])\s+(?=[A-Z])|\n\n+")
