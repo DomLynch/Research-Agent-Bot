@@ -46,6 +46,28 @@ def _chat(parsed: dict[str, Any]) -> Any:
     return fake
 
 
+def test_structured_source_finding_uses_evidence_review_not_section_keywords(monkeypatch):
+    finding = json.dumps({
+        "claim_id": "claim_1", "claim": "Strength improved [bundle:1].",
+        "status": "NEEDS_SEMANTIC_REVIEW", "sources": ["10.1234/example"],
+        "passages_considered": ["Strength improved versus control."],
+        "required_check": "Check direction; not a proven contradiction."
+    })
+    paper = "## Results\n\nStrength improved [bundle:1].\n"
+    assert revision_coverage._structured_claim_review(finding)
+    assert not revision_coverage._structured_claim_review("Check direction; not a proven contradiction.")
+    assert revision_coverage.revision_asks(finding, [finding]) == [finding]
+    assert revision_coverage.deterministic_unmet_asks(paper, [finding], retained_citations={"Example 2026"}) == []
+    monkeypatch.setattr(revision_coverage, "unmet_asks", lambda *args, **kwargs: [finding])
+    assert revision_coverage.material_unmet_asks(paper, finding, required_revisions=[finding]) == [finding]
+
+
+def test_unstructured_section_request_still_requires_its_proof():
+    ask = "Add concrete tensions and gaps between retained sources."
+    assert not revision_coverage._structured_claim_review(ask)
+    assert revision_coverage.deterministic_unmet_asks("## Results\n\nA claim.\n", [ask]) == [ask]
+
+
 def _bound_revision_gate(
     asks: list[str], paper: str, rows: list[dict[str, Any]],
     unmet: list[str] | tuple[str, ...] = (),
