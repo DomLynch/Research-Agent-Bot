@@ -271,6 +271,23 @@ def test_unsourced_check_skips_markdown_table_rows() -> None:
     )
 
 
+def test_unsourced_check_skips_sentences_inside_long_table_cells() -> None:
+    reg = _registry(hba1c={
+        "numeric": "7%",
+        "citation_token": "ADA 2024",
+    })
+    paper = (
+        "A guideline recommends HbA1c below 7% for this population.\n\n"
+        "| Study | Finding |\n"
+        "| --- | --- |\n"
+        "| Lee 2026 | The trial measured HbA1c. "
+        "More patients reached HbA1c <7% after 24 weeks. |\n"
+    )
+    findings = bg.find_unsourced_background_uses(paper, reg)
+    assert len(findings) == 1
+    assert findings[0][2].startswith("A guideline recommends")
+
+
 def test_unsourced_check_still_flags_prose_unsourced_use() -> None:
     """Regression check: skipping tables MUST NOT skip real prose
     sentences. A naked `7%` in a prose paragraph (no ADA 2024 in
