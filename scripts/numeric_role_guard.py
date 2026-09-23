@@ -1274,6 +1274,56 @@ def _strip_non_prose_guard_sections(paper_md: str) -> str:
     return "\n".join(out)
 
 
+def _accounting_checks(paper_md: str, manifest: dict | None) -> dict[str, NumericIssue | None]:
+    """Check compiler accounting against the saved source classifications."""
+    rows = manifest.get("receipts") if isinstance(manifest, dict) else None
+    if not isinstance(rows, list) or not rows:
+        return {}
+    from journal_finalizer import (
+        _findings_map_roster_sentence, _manifest_direction_heterogeneity_note,
+    )
+
+    expected = _split_sentences(
+        "Outcome-class roster: " + _findings_map_roster_sentence(rows)
+        + "\n\n" + _manifest_direction_heterogeneity_note(rows)
+    )
+
+    def normalized(sentence: str) -> str:
+        without_tags = re.sub(
+            r"\s*\[(?:bundle:\d+|exact source:[^\]]+)\]", "", sentence,
+        )
+        return " ".join(without_tags.split())
+
+    allowed = {normalized(sentence) for sentence in expected}
+    checked: dict[str, NumericIssue | None] = {}
+    for line in paper_md.splitlines():
+        if "Outcome-class roster:" in line:
+            candidate = "Outcome-class roster:" + line.split("Outcome-class roster:", 1)[1]
+        elif line.startswith("Direction heterogeneity note:"):
+            candidate = line
+        else:
+            continue
+        for sentence in _split_sentences(candidate):
+            checked[sentence] = None if normalized(sentence) in allowed else NumericIssue(
+                sentence=sentence,
+                issue_type="accounting_mismatch",
+                severity="P1",
+                detail="Outcome or direction count/roster differs from saved study classifications.",
+                suggested_fix="Regenerate the accounting from saved study classifications.",
+            )
+    return checked
+
+
+def _validated_accounting_prose(
+    paper_md: str, manifest: dict | None,
+) -> tuple[str, list[NumericIssue]]:
+    checked = _accounting_checks(paper_md, manifest)
+    issues = [issue for issue in checked.values() if issue is not None]
+    for sentence in checked:
+        paper_md = paper_md.replace(sentence, "", 1)
+    return paper_md, issues
+
+
 # Figure / Table / Section / Equation references — skip the drift
 # check on sentences that mention these (they cite a paper element,
 # not a claim numeric).
@@ -1318,6 +1368,8 @@ def scan_paper(
             _strip_non_prose_guard_sections(paper_md), manifest,
         ),
     ))
+    prose_md, accounting_issues = _validated_accounting_prose(prose_md, manifest)
+    issues.extend(accounting_issues)
     body_for_drift = _strip_references_section(prose_md)
     source_quotes = _verified_result_quotes(manifest, quant_claims_dir)
     drift_sentences = set(_split_sentences(body_for_drift))
@@ -1478,20 +1530,20 @@ def _role_aligned_repair_sentence(issue: NumericIssue) -> str:
         "baseline": f"a baseline value of {display_num}",
         "population": f"a population descriptor of {display_num}",
         "effect": f"an effect estimate of {display_num}",
-        "outcome": f"an outcome measure of {display_num}",
-        "unit_value": f"an outcome measure of {display_num}",
-    }.get(source_role, f"an outcome measure of {display_num}")
+    }.get(source_role)
+    if role_phrase is None:
+        return ""
     return f"{token} reported {role_phrase}."
 
 
 def _preferred_repair_role(roles: set[str]) -> str:
     for role in (
         "change_score", "threshold", "dose", "baseline",
-        "population", "effect", "outcome", "unit_value",
+        "population", "effect",
     ):
         if role in roles:
             return role
-    return next(iter(roles), "")
+    return ""
 
 
 def _display_numeric_with_unit(sentence: str, num: str) -> str:
