@@ -30,7 +30,7 @@ args = sys.argv[1:]
 assert "--ignore-user-config" in args and "--ephemeral" in args
 assert args[args.index("--sandbox") + 1] == "read-only"
 model = args[args.index("--model") + 1]
-assert model in ("gpt-5.6-sol", "gpt-5.6-terra")
+assert model in ("gpt-5.6-sol", "gpt-6-sol", "gpt-5.6-terra")
 assert 'forced_login_method="chatgpt"' in args
 effort = "medium" if model == "gpt-5.6-terra" else "high"
 assert 'model_reasoning_effort="' + effort + '"' in args
@@ -41,7 +41,7 @@ config = next(a for a in args if a.startswith("model_instructions_file="))
 instructions = Path(json.loads(config.split("=", 1)[1])).read_text()
 role = "reviewer" if model == "gpt-5.6-terra" else "writer/extractor"
 assert "research " + role in instructions
-if model == "gpt-5.6-sol":
+if model in ("gpt-5.6-sol", "gpt-6-sol"):
     assert "Test source-grounding instruction" in instructions
 messages = json.load(sys.stdin)
 assert all(m["role"] != "system" for m in messages)
@@ -164,7 +164,7 @@ def test_missing_cli_fails_closed(monkeypatch):
 def test_live_route_keeps_independent_reviewers(tmp_path, monkeypatch):
     monkeypatch.setattr(settings, "_REPO_ROOT", tmp_path)
     monkeypatch.setenv("WRITER_PROVIDER", "codex")
-    monkeypatch.setenv("WRITER_MODEL", "gpt-5.6-sol")
+    monkeypatch.setenv("WRITER_MODEL", "gpt-6-sol")
     monkeypatch.setenv("OPENROUTER_API_KEY", "reviewer-key")
     monkeypatch.setenv("JUDGE_MODEL", "google/gemma-4-31b-it")
     monkeypatch.setenv("FALLBACK_MODEL", "mistralai/mistral-small-2603")
@@ -180,12 +180,12 @@ def test_live_route_keeps_independent_reviewers(tmp_path, monkeypatch):
 def test_terra_judge_medium_falls_back_only_on_technical_failure(cli, tmp_path, monkeypatch, case):
     monkeypatch.setattr(settings, "_REPO_ROOT", tmp_path)
     monkeypatch.setenv("WRITER_PROVIDER", "codex")
-    monkeypatch.setenv("WRITER_MODEL", "gpt-5.6-sol")
+    monkeypatch.setenv("WRITER_MODEL", "gpt-6-sol")
     monkeypatch.setenv("JUDGE_MODEL", "gpt-5.6-terra")
     monkeypatch.setenv("FALLBACK_MODEL", "z-ai/glm-5.3-flash")
     config = settings.load_settings()
     writer, = build_extract_chain(config)
-    assert writer.model == "gpt-5.6-sol" and writer.reasoning_effort == "high"
+    assert writer.model == "gpt-6-sol" and writer.reasoning_effort == "high"
     chain = build_judge_chain(config)
     assert [s.model for s in chain] == ["gpt-5.6-terra", "z-ai/glm-5.3-flash"]
     calls = []
