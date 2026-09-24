@@ -1,9 +1,11 @@
 # Required development checks
 
 `make quality` runs the complexity and duplication ratchets, Ruff, the real
-revision lifecycle/Hypothesis tests and LOC budgets in randomized order, with
+revision lifecycle/Hypothesis and LOC reporter tests in randomized order, with
 branch coverage of the revision boundary. CI also runs the full randomized
-application suite. Install `.[dev]` first; missing plugins must fail, not skip.
+application suite. Source-size thresholds are visible advisory reports (`make loc`);
+size alone does not block release. Report errors and the other checks still fail.
+Install `.[dev]` first; missing plugins must fail, not skip.
 
 Initial reviewed debt: 222 complexity findings and 52 clone fingerprints from
 the existing source. Normal checks never update either baseline. New/worsened
