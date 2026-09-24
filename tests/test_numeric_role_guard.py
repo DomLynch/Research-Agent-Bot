@@ -21,6 +21,17 @@ from numeric_role_guard import (  # type: ignore[import-not-found]  # noqa: E402
 )
 
 
+def test_exact_source_result_quote_preserves_supported_p_values():
+    from numeric_role_guard import _is_verified_result_quote
+
+    quote = "Triglycerides changed (P = 0.009) and saturated fatty acids changed (P = 0.008)."
+    tagged = f'"{quote}" [Burns 2025] [bundle:9] [exact source: https://doi.org/10.1/example]'
+    sources = {"Burns 2025": (quote,)}
+    assert _is_verified_result_quote(tagged, sources)
+    assert not _is_verified_result_quote(tagged.replace("0.009", "0.099"), sources)
+    assert not _is_verified_result_quote(tagged.replace("[Burns 2025]", "[Wrong 2025]"), sources)
+
+
 # ---------- arithmetic violations -----------------------------------
 
 

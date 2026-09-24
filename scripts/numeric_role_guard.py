@@ -560,7 +560,8 @@ def _is_verified_result_quote(sentence: str, quotes: dict[str, tuple[str, ...]])
     tokens = {f"{match[1]} {match[2]}" for match in _CITATION_TOKEN_RE.finditer(sentence)}
     if len(tokens) != 1 or not (source_quotes := quotes.get(next(iter(tokens)))):
         return False
-    prose = re.sub(r"\[(?:bundle:\d+|" + re.escape(next(iter(tokens))) + r")\]", "", sentence).strip(' .\"“”')
+    prose = re.sub(r"\[exact source:\s*https?://[^\]]+\]", "", sentence, flags=re.I)
+    prose = re.sub(r"\[(?:bundle:\d+|" + re.escape(next(iter(tokens))) + r")\]", "", prose).strip(' .\"“”')
     return any(_canonical_quoted_text(prose) == _canonical_quoted_text(quote) for quote in source_quotes)
 
 
