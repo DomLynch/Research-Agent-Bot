@@ -93,6 +93,9 @@ HARD NUMERIC DISCIPLINE (load-bearing, ship-blocking if violated)
 - If a contextual point needs an untraceable number, say it qualitatively.
 - Preserve source numeric notation, qualifiers, comparator, population,
   endpoint and direction. Do not calculate new values or round them.
+- Use only supplied evidence. Keep every number's source passage, endpoint and
+  comparison. Refer only to supplied manuscript tables; label source-paper
+  tables explicitly as belonging to the cited paper.
 - Do NOT invent citations. Background citation tokens use "Author Year" or
   "Author et al. Year".
 - In ANCHORED sections, every sentence must include an exact accepted

@@ -701,11 +701,11 @@ def test_orphan_table_reference_blocks_journal_surface():
 def test_source_table_numbers_inside_evidence_rows_are_not_manuscript_links(topic):
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     source_row = (
-        f"| {topic} source | direction=unclear | directness=direct | "
-        "outcome=cardiometabolic; finding=The original study reports its results "
-        "in Table 4, Table 5, Table 6 and Table 7. |\n"
+        f"| Cardiometabolic | {topic} source | direction=unclear | directness=direct | A1 | "
+        "outcome=Cardiometabolic; direction=unclear | finding=The original study reports "
+        "its results in Table 4, Table 5, Table 6 and Table 7. |\n"
     )
-    paper = paper.replace("## Results\n\n", "## Results\n\n" + source_row, 1)
+    paper = paper.replace("## Results\n\n", "## Evidence Landscape\n\n" + source_row + "\n## Results\n\n", 1)
     assert not any(
         "orphan table reference" in issue.detail
         for issue in evaluate_journal_surface(paper).issues
@@ -720,6 +720,15 @@ def test_source_table_numbers_inside_evidence_rows_are_not_manuscript_links(topi
 def test_manuscript_table_row_cannot_hide_missing_cross_reference():
     paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
     paper = paper.replace("## Results\n\n", "## Results\n\n| Manuscript summary | Our pooled results appear in Table 999. |\n", 1)
+    assert any(
+        "orphan table reference: Table 999" in issue.detail
+        for issue in evaluate_journal_surface(paper).issues
+    )
+    tagged_row = (
+        "| Cardiometabolic | Our summary | direction=unclear | directness=direct | A1 | "
+        "outcome=Cardiometabolic | finding=Our pooled results appear in Table 999. |\n"
+    )
+    paper = paper.replace("## Results\n\n", "## Results\n\n" + tagged_row, 1)
     assert any(
         "orphan table reference: Table 999" in issue.detail
         for issue in evaluate_journal_surface(paper).issues
