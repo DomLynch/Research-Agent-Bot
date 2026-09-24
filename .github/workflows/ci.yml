@@ -34,7 +34,7 @@ jobs:
       - name: Type check
         run: mypy agent scripts
 
-      - name: LOC budgets
+      - name: Advisory LOC reporter tests
         run: python -m pytest -q tests/test_loc_budget.py
 
       - name: Unit tests

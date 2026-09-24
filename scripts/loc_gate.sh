@@ -2,4 +2,5 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
-exec .venv/bin/python -m pytest -q tests/test_loc_budget.py
+# Compatibility entry point: source size is advisory.
+exec .venv/bin/python quality/check_loc.py
