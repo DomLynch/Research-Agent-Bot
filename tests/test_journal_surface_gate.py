@@ -724,14 +724,18 @@ def test_manuscript_table_row_cannot_hide_missing_cross_reference():
         "orphan table reference: Table 999" in issue.detail
         for issue in evaluate_journal_surface(paper).issues
     )
+
+
+def test_findings_map_source_row_keeps_other_cells_in_table_reference_check():
+    from agent.journal_surface_gate import _orphan_table_issue_messages
+
     tagged_row = (
-        "| Cardiometabolic | Our summary | direction=unclear | directness=direct | A1 | "
-        "outcome=Cardiometabolic | finding=Our pooled results appear in Table 999. |\n"
+        "| Source | Ref | direction=benefit | directness=direct | "
+        "Our pooled results appear in Table 999. | outcome=glucose | "
+        "finding=Source reports reduced glucose. |"
     )
-    paper = paper.replace("## Results\n\n", "## Results\n\n" + tagged_row, 1)
-    assert any(
-        "orphan table reference: Table 999" in issue.detail
-        for issue in evaluate_journal_surface(paper).issues
+    assert _orphan_table_issue_messages("## Evidence Landscape\n" + tagged_row + "\n\n## Discussion\nText.") == (
+        "orphan table reference: Table 999",
     )
 
 

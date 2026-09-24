@@ -500,20 +500,20 @@ def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
     # cell. Keep all other table rows in the manuscript cross-reference check.
     prose = re.sub(
         r"(?ms)^## Evidence Landscape\b.*?(?=^## |\Z)",
-        lambda match: "\n".join(line for line in match[0].splitlines() if not (
-            line.startswith("|") and len(cells := _table_cells(line)) == 7
-            and cells[2].startswith("direction=") and cells[3].startswith("directness=")
-            and cells[5].startswith("outcome=") and cells[6].startswith("finding=")
-        )), paper_md,
+        lambda match: "\n".join(
+            line.rsplit("|", 2)[0] + "| finding=[source-owned evidence] |" if (
+                line.startswith("|") and len(cells := _table_cells(line)) == 7
+                and cells[2].startswith("direction=") and cells[3].startswith("directness=")
+                and cells[5].startswith("outcome=") and cells[6].startswith("finding=")
+            ) else line for line in match[0].splitlines()
+        ), paper_md,
     )
     cross_reference_text = _SOURCE_OWNED_SPAN_RE.sub(
         r"\1[source-owned evidence]\2",
         prose,
     )
-    defined = {number for m in re.finditer(
-        r"^(?:#{2,6}\s+Table\s+(\d+)\b|Table\s+(\d+)\s*[:.\-—])",
-        paper_md, flags=re.IGNORECASE | re.MULTILINE,
-    ) for number in m.groups() if number}
+    defined = {number for m in re.finditer(r"^(?:#{2,6}\s+Table\s+(\d+)\b|Table\s+(\d+)\s*[:.\-—])",
+                                              paper_md, re.I | re.M) for number in m.groups() if number}
     missing = sorted(
         {m.group(1) for m in _TABLE_REF_RE.finditer(cross_reference_text) if m.group(1) not in defined},
         key=int,
