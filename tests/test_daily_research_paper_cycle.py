@@ -2121,6 +2121,37 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
     assert report["attempted_count"] == 0
 
 
+def test_prepare_candidate_buffer_replenishes_past_writer_cooldown(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    topics = ["blocked_study", "eligible_study"]
+    monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda *_a, **_k: set())
+    monkeypatch.setattr(cycle, "_writer_gate_repeat_policy", lambda *_a, **_k: {
+        "blocked_study": {"action": "skip_topic", "gate": "local_gate_blocked", "count": 2},
+    })
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda candidates, *_a, exclude=None, **_k: [
+        candidate for candidate in candidates if candidate not in (exclude or set())
+    ])
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "source_topic_precision_ok", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
+        "passed": True, "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+        "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+        "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+    })
+    _mock_candidate_bindings(monkeypatch)
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=runs_root, target_ready=1, max_repairs=0,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert [row["topic"] for row in report["ready"]] == ["eligible_study"]
+    assert [row["topic"] for row in report["attempts"]] == ["eligible_study"]
+
+
 def test_candidate_buffer_invalidates_ready_count_when_source_precision_drifts(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failed_corpus_process,
 ) -> None:

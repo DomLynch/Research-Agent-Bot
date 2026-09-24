@@ -3490,7 +3490,6 @@ def prepare_candidate_buffer(
         _write_json(ledger_dir / CANDIDATE_BUFFER, report)
         return report
 
-    terminal = _terminal_topics(runs_root)
     # _terminal_topics only covers Researka review outcomes. A topic that keeps
     # failing receipt preflight (n_primary_tier/n_direct_receipts below floor)
     # never becomes terminal, so meta-research shapes — *_measurement_methods,
@@ -3500,9 +3499,16 @@ def prepare_candidate_buffer(
     # recent preflight failures too, so the pool advances instead of re-walking
     # candidates that cannot clear the evidence floor. Universal: keyed on the
     # measured blocker code, not on topic names.
-    terminal |= _recent_blocked_topics_by_status(
-        ledger_dir, {"receipt_preflight_insufficient"}, now=now,
-    ) - retry_exempt
+    terminal = (
+        _terminal_topics(runs_root)
+        | (_recent_blocked_topics_by_status(
+            ledger_dir, {"receipt_preflight_insufficient"}, now=now,
+        ) - retry_exempt)
+        | {
+            topic for topic, policy in _writer_gate_repeat_policy(ledger_dir, now=now).items()
+            if policy.get("action") == "skip_topic"
+        }
+    )
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
