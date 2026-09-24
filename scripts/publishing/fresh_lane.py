@@ -2227,8 +2227,11 @@ def select_topic(
     allow_recent_blocked_fallback: bool = True,
     prefer_without_recent_failures: bool = True,
     prefer_source_fit: bool = False,
+    require_prepared: bool = False,
 ) -> str | None:
     prepared = _prepared_candidate_topics(ledger_dir)
+    if require_prepared:
+        topics = [topic for topic in topics if topic in prepared]
     history = _topic_attempt_history(ledger_dir)
     pool = _fresh_topic_pool(
         topics,
@@ -3487,7 +3490,6 @@ def prepare_candidate_buffer(
         _write_json(ledger_dir / CANDIDATE_BUFFER, report)
         return report
 
-    terminal = _terminal_topics(runs_root)
     # _terminal_topics only covers Researka review outcomes. A topic that keeps
     # failing receipt preflight (n_primary_tier/n_direct_receipts below floor)
     # never becomes terminal, so meta-research shapes — *_measurement_methods,
@@ -3497,9 +3499,16 @@ def prepare_candidate_buffer(
     # recent preflight failures too, so the pool advances instead of re-walking
     # candidates that cannot clear the evidence floor. Universal: keyed on the
     # measured blocker code, not on topic names.
-    terminal |= _recent_blocked_topics_by_status(
-        ledger_dir, {"receipt_preflight_insufficient"}, now=now,
-    ) - retry_exempt
+    terminal = (
+        _terminal_topics(runs_root)
+        | (_recent_blocked_topics_by_status(
+            ledger_dir, {"receipt_preflight_insufficient"}, now=now,
+        ) - retry_exempt)
+        | {
+            topic for topic, policy in _writer_gate_repeat_policy(ledger_dir, now=now).items()
+            if policy.get("action") == "skip_topic"
+        }
+    )
     pool = _fresh_topic_pool(
         topics,
         ledger_dir,
@@ -3881,6 +3890,7 @@ def run_cycle(
     submit: bool = False,
     mode: str = "mixed",
     topic: str | None = None,
+    allow_unprepared: bool = False,
     remote_loader: RemoteLoader | None = None,
     revision_loader: RevisionLoader | None = None,
     submit_cycle: SubmitCycle | None = None,
@@ -3906,6 +3916,7 @@ def run_cycle(
         )
 
     mode = mode if mode in {"fresh", "revise", "mixed"} else "mixed"
+    prepared_only = not allow_unprepared and mode == "fresh" and submit and topic is None
     ledger_dir = runs_root / LEDGER_DIR
     ledger_path = _cycle_ledger_path(ledger_dir, date, mode)
     ledger: dict[str, Any] = {
@@ -4020,7 +4031,7 @@ def run_cycle(
         source_precision_auto_excluded: set[str] = set() if topic else _unrepairable_source_precision_topics(ledger_dir)
         if source_precision_auto_excluded:
             ledger["source_precision_unrepairable_topics"] = sorted(source_precision_auto_excluded)
-        if run_synthesis and mode != "revise" and topic is None:
+        if run_synthesis and mode != "revise" and topic is None and not prepared_only:
             repairs: list[dict[str, Any]] = []
             current_source_precision = _current_low_source_precision_topics(topics)
             recent_source_precision_failed = _source_precision_repair_topics(ledger_dir)
@@ -4209,45 +4220,24 @@ def run_cycle(
                 topic for topic in (corpus_repaired_ok | source_precision_selectable) - selection_excluded
                 if _quant_claim_count(topic) >= PREFLIGHT_MIN_QUANT_CLAIMS
             )
-            if (
-                not revision_source
-                and topic is None
-                and mode == "fresh"
-                and submit
-                and not topic_supply_refreshed
-                and not repaired_candidates
-                and not current_source_precision
-                and not any(_topic_has_quant_floor(t) for t in preflight_blocked - receipt_preflight_blocked)
-                and not _has_clean_ready_topic(
-                    topics,
-                    runs_root=runs_root,
-                    exclude=selection_excluded | submitted_topics | published_topics | _recent_blocked_topics(ledger_dir),
-                    source_precision_blocked=current_source_precision,
-                )
-            ):
-                topic_supply_refreshed = True
-                refresh = _refresh_topic_supply(
-                    TOPIC_PACKS_DB,
-                    skip_slugs=selection_excluded | submitted_topics | published_topics | set(topics),
-                )
-                ledger["topic_supply_refresh"] = refresh
-                if refresh.get("created"):
-                    topic_supply_created = _created_topic_slugs(refresh)
-                    topics = discover_topics()
-                    ledger["topic_supply_topic_count_after_refresh"] = len(topics)
             selected = (
                 str(revision_source.get("topic") or "")
                 if revision_source
                 else topic or select_topic(
-                    repaired_candidates or topics,
+                    topics if prepared_only else repaired_candidates or topics,
                     ledger_dir,
                     runs_root=runs_root,
                     remote_seen=remote_seen,
                     exclude=selection_excluded,
                     allow_recent_blocked_fallback=bool(repaired_candidates)
                     or not (mode == "fresh" and submit and topic is None),
+                    require_prepared=prepared_only,
                 )
             )
+            if prepared_only and not selected:
+                ledger["status"] = "no_eligible_evidence_ready_candidate"
+                ledger["next_action"] = "prepare_candidate_buffer"
+                break
             if not selected and not revision_source and topic is None and mode != "revise":
                 retryable_preflight = {
                     t for t in preflight_blocked - receipt_preflight_blocked

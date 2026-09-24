@@ -93,6 +93,22 @@ def _mock_candidate_bindings(monkeypatch: pytest.MonkeyPatch) -> None:
     )
 
 
+def _seed_quant_claims(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
+    qdir = cycle.CORPORA / topic / "quant_claims"
+    qdir.mkdir(parents=True)
+    for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
+        _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic}-{i}"})
+    return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+
+
+def _write_surface_passing_synthesis(topic: str, out_dir: Path, synthesized: list[str]) -> int:
+    synthesized.append(topic)
+    out_dir.mkdir(parents=True)
+    _write_json(out_dir / "final_status.json", {"submission_ready": True})
+    (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
+    return 0
+
+
 def test_researka_revision_fingerprint_status_is_terminal_contract() -> None:
     assert "researka_revision_fingerprint" in cycle._TERMINAL_REVISION_STATUSES
     assert "research_revision_fingerprint" in cycle._TERMINAL_REVISION_STATUSES
@@ -258,6 +274,7 @@ def test_fresh_publish_seeds_empty_frontier_with_bounded_timeout(
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -308,6 +325,7 @@ def test_fresh_publish_continues_after_frontier_seed_stays_thin(tmp_path: Path, 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -344,6 +362,7 @@ def test_fresh_publish_blocks_empty_claim_sidecars_before_synthesis(tmp_path: Pa
         _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"seed-{i}", "claims": claims})
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-29",
         run_synthesis=True,
@@ -385,6 +404,7 @@ def test_fresh_receipt_preflight_uses_publish_seed_timeout(tmp_path: Path, monke
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -425,6 +445,7 @@ def test_fresh_publish_repairs_best_unpublished_source_precision_topic(tmp_path:
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -2100,6 +2121,37 @@ def test_prepare_candidate_buffer_promotes_valid_attempt_to_ready(
     assert report["attempted_count"] == 0
 
 
+def test_prepare_candidate_buffer_replenishes_past_writer_cooldown(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    runs_root = tmp_path / "runs"
+    topics = ["blocked_study", "eligible_study"]
+    monkeypatch.setattr(cycle, "discover_topics", lambda: topics)
+    monkeypatch.setattr(cycle, "_terminal_topics", lambda *_a, **_k: set())
+    monkeypatch.setattr(cycle, "_writer_gate_repeat_policy", lambda *_a, **_k: {
+        "blocked_study": {"action": "skip_topic", "gate": "local_gate_blocked", "count": 2},
+    })
+    monkeypatch.setattr(cycle, "_fresh_topic_pool", lambda candidates, *_a, exclude=None, **_k: [
+        candidate for candidate in candidates if candidate not in (exclude or set())
+    ])
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS)
+    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (True, "source_topic_precision_ok", []))
+    monkeypatch.setattr(cycle, "_receipt_preflight", lambda *_a, **_k: {
+        "passed": True, "n_receipts": cycle.PREFLIGHT_MIN_RECEIPTS,
+        "n_primary_tier": cycle.PREFLIGHT_MIN_PRIMARY_TIER,
+        "n_direct_receipts": cycle.PREFLIGHT_MIN_DIRECT_RECEIPTS,
+    })
+    _mock_candidate_bindings(monkeypatch)
+
+    report = cycle.prepare_candidate_buffer(
+        runs_root=runs_root, target_ready=1, max_repairs=0,
+        remote_loader=lambda: (set(), None),
+    )
+
+    assert [row["topic"] for row in report["ready"]] == ["eligible_study"]
+    assert [row["topic"] for row in report["attempts"]] == ["eligible_study"]
+
+
 def test_candidate_buffer_invalidates_ready_count_when_source_precision_drifts(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, failed_corpus_process,
 ) -> None:
@@ -2488,6 +2540,7 @@ def test_prepare_only_cli_succeeds_only_with_full_buffer(monkeypatch) -> None:
 @pytest.mark.parametrize(
     ("status", "submitted", "expected"),
     [
+        ("no_eligible_evidence_ready_candidate", 0, 3),
         ("no_publishable_topic_available", 0, 3),
         ("submitted_to_researka", 1, 0),
         ("synthesis_failed", 0, 2),
@@ -2499,11 +2552,11 @@ def test_prepare_only_cli_succeeds_only_with_full_buffer(monkeypatch) -> None:
 def test_fresh_cli_exposes_no_output_and_hard_failures(
     monkeypatch, status: str, submitted: int, expected: int,
 ) -> None:
-    monkeypatch.setattr(cycle, "run_cycle", lambda **_kwargs: {
-        "status": status,
-        "submitted": submitted,
-        "published": 0,
-    })
+    def fake_run_cycle(**kwargs: Any) -> dict[str, Any]:
+        assert kwargs.get("allow_unprepared", False) is False
+        return {"status": status, "submitted": submitted, "published": 0}
+
+    monkeypatch.setattr(cycle, "run_cycle", fake_run_cycle)
 
     assert cycle.main(["--mode", "fresh", "--submit"]) == expected
 
@@ -3071,6 +3124,7 @@ def test_cycle_skips_weak_generated_corpus_repair_topic(tmp_path: Path, monkeypa
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -3112,6 +3166,7 @@ def test_cycle_reseeds_seedable_backlog_after_selection(tmp_path: Path, monkeypa
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -3471,6 +3526,7 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -3488,67 +3544,6 @@ def test_fresh_lane_refreshes_topic_supply_when_no_candidate_remains(tmp_path: P
     assert ledger["status"] == "submitted_to_researka"
 
 
-def test_fresh_lane_refreshes_topic_supply_before_thin_frontier_candidate(tmp_path: Path, monkeypatch) -> None:
-    _topic(tmp_path, "thin_frontier", corpus=False, target_journal=True)
-    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
-    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
-    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setattr(cycle, "_quant_claim_source_precision", lambda *_a, **_k: (
-        True, "source_topic_precision_ok:10/10", [],
-    ))
-    calls: dict[str, Any] = {"preflights": []}
-
-    def fake_refresh(db_dir: Path, *, skip_slugs: set[str] | None = None) -> dict[str, Any]:
-        calls["skip_slugs"] = skip_slugs
-        latest = db_dir / "refreshed_candidate" / "latest.json"
-        _write_json(latest, {
-            "candidate_count": cycle.SOURCE_PRECISION_REPAIR_PUBLISH_MIN_QUANT,
-            "pack_data": {
-                "topic": "refreshed_candidate",
-                "aliases": ["refreshed candidate"],
-                "target_journal": "GeroScience",
-                "retrieval": {"topic_terms": ["refreshed candidate"], "scope_terms": []},
-            },
-        })
-        return {"status": "topic_supply_refreshed", "created": [{"slug": "refreshed_candidate"}]}
-
-    def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
-        qdir = cycle.CORPORA / topic / "quant_claims"
-        qdir.mkdir(parents=True)
-        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
-            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic}-{i}"})
-        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
-
-    def fake_receipt_preflight(topic: str, out_dir: Path, **_kwargs: Any) -> dict[str, Any]:
-        calls["preflights"].append(topic)
-        return {"passed": True, "status": "receipt_preflight_ok", "n_receipts": 12, "min_receipts": 12}
-
-    def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
-        calls["topic"] = topic
-        out_dir.mkdir(parents=True)
-        return 0
-
-    monkeypatch.setattr(cycle, "_refresh_topic_supply", fake_refresh)
-    monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
-    monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
-
-    ledger = cycle.run_cycle(
-        runs_root=tmp_path / "runs",
-        date="2026-06-25",
-        run_synthesis=True,
-        submit=True,
-        mode="fresh",
-        remote_loader=lambda: (set(), None),
-        ensure_corpus=fake_corpus,
-        submit_cycle=lambda **_kwargs: {"status": "submitted_to_researka", "submitted": 1, "published": 0},
-    )
-
-    assert ledger["topic_supply_refresh"]["status"] == "topic_supply_refreshed"
-    assert ledger["topic_supply_selected_after_refresh"] == "refreshed_candidate"
-    assert calls["topic"] == "refreshed_candidate"
-    assert calls["preflights"] == ["refreshed_candidate"]
-    assert "thin_frontier" in (calls["skip_slugs"] or set())
-    assert ledger["status"] == "submitted_to_researka"
 
 
 def test_fresh_lane_last_chance_rescan_submits_late_ready_topic(tmp_path: Path, monkeypatch) -> None:
@@ -3584,6 +3579,7 @@ def test_fresh_lane_last_chance_rescan_submits_late_ready_topic(tmp_path: Path, 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -3610,6 +3606,7 @@ def test_fresh_lane_true_no_supply_clears_stale_terminal_topic(tmp_path: Path, m
     monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: pytest.fail("unexpected synthesis"))
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -3805,11 +3802,8 @@ def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Pa
         return {"status": "topic_supply_refreshed", "created": [{"slug": "nr_precursor_effects"}]}
 
     def fake_corpus(topic: str, *, dry_run: bool, timeout: int | None = None) -> dict[str, Any]:
-        qdir = cycle.CORPORA / topic / "quant_claims"
-        qdir.mkdir(parents=True)
-        for i in range(cycle.PREFLIGHT_MIN_QUANT_CLAIMS):
-            _write_json(qdir / f"seed-{i}.quant_claims.json", {"paper_id": f"{topic}-{i}"})
-        return {"status": "corpus_seeded", "n_quant_claims": cycle.PREFLIGHT_MIN_QUANT_CLAIMS}
+        assert topic == "nr_precursor_effects"
+        return _seed_quant_claims(topic, dry_run=dry_run, timeout=timeout)
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
         calls["topic"] = topic
@@ -3822,6 +3816,7 @@ def test_fresh_lane_refreshes_before_retrying_recent_blocked_topics(tmp_path: Pa
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs",
         date="2026-06-25",
+        allow_unprepared=True,
         run_synthesis=True,
         submit=True,
         mode="fresh",
@@ -4739,6 +4734,7 @@ def test_fresh_publish_tops_up_partial_quant_corpus_before_synthesis(tmp_path: P
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -8795,6 +8791,7 @@ def test_fresh_lane_excludes_topic_with_pending_revise(tmp_path: Path, monkeypat
     monkeypatch.setattr(cycle.submit_bridge, "_token", lambda: ("token", "TEST_TOKEN"))
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-01",
         mode="fresh",
@@ -10562,6 +10559,7 @@ def test_fresh_mode_ignores_revise_backlog(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-05-24",
         run_synthesis=True,
@@ -10593,6 +10591,7 @@ def test_fresh_mode_excludes_terminal_review_topics(tmp_path: Path, monkeypatch)
 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-05-24",
         run_synthesis=True,
@@ -11294,6 +11293,7 @@ def test_cycle_stops_repeated_source_precision_retry_and_advances(tmp_path: Path
     monkeypatch.setattr(cycle, "_repair_low_source_precision_corpus", fake_repair)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-22",
         run_synthesis=True,
@@ -11556,6 +11556,7 @@ def test_fresh_cycle_repairs_sparse_receipt_preflight_before_submit(tmp_path: Pa
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-04",
         run_synthesis=True,
@@ -11719,16 +11720,13 @@ def test_fresh_lane_tries_next_after_sparse_receipt_preflight(tmp_path: Path, mo
     synthesized: list[str] = []
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
-        synthesized.append(topic)
-        out_dir.mkdir(parents=True)
-        _write_json(out_dir / "final_status.json", {"submission_ready": True})
-        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
-        return 0
+        return _write_surface_passing_synthesis(topic, out_dir, synthesized)
 
     monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-02",
         run_synthesis=True,
@@ -11770,11 +11768,8 @@ def test_fresh_lane_unbounded_attempts_reach_ready_after_sparse_receipts(
     synthesized: list[str] = []
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
-        synthesized.append(topic)
-        out_dir.mkdir(parents=True)
-        _write_json(out_dir / "final_status.json", {"submission_ready": True})
-        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
-        return 0
+        assert topic == "zzz_ready"
+        return _write_surface_passing_synthesis(topic, out_dir, synthesized)
 
     monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
@@ -11782,6 +11777,7 @@ def test_fresh_lane_unbounded_attempts_reach_ready_after_sparse_receipts(
     ledger = cycle.run_cycle(
         runs_root=tmp_path / "runs",
         date="2026-06-02",
+        allow_unprepared=True,
         run_synthesis=True,
         submit=True,
         mode="fresh",
@@ -11860,6 +11856,7 @@ def test_fresh_lane_skips_public_brief_risk_before_submit(
     )
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-02",
         run_synthesis=True,
@@ -11939,16 +11936,14 @@ def test_fresh_lane_receipt_preflight_repair_respects_corpus_repair_limit(
     synthesized: list[str] = []
 
     def fake_synthesis(topic: str, out_dir: Path, **_kwargs: Any) -> int:
-        synthesized.append(topic)
-        out_dir.mkdir(parents=True)
-        _write_json(out_dir / "final_status.json", {"submission_ready": True})
-        (out_dir / "full_paper.md").write_text(_surface_passing_paper(), encoding="utf-8")
-        return 0
+        assert topic not in {"aaa_sparse_receipts", "bbb_sparse_receipts"}
+        return _write_surface_passing_synthesis(topic, out_dir, synthesized)
 
     monkeypatch.setattr(cycle, "_receipt_preflight", fake_receipt_preflight)
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-02",
         run_synthesis=True,
@@ -12010,6 +12005,7 @@ def test_fresh_lane_moves_on_after_same_topic_gate_retry_exhausted(
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-10",
         run_synthesis=True,
@@ -12064,6 +12060,7 @@ def test_fresh_lane_rotates_after_one_surface_failure(tmp_path: Path, monkeypatc
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-24",
         run_synthesis=True,
@@ -12102,6 +12099,7 @@ def test_fresh_lane_retries_once_after_transient_synthesis_failure(tmp_path: Pat
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-10",
         run_synthesis=True,
@@ -12325,6 +12323,7 @@ def test_fresh_lane_skips_recent_receipt_block_and_submits_ready_topic(
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-25",
         run_synthesis=True,
@@ -12577,6 +12576,7 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
 ) -> None:
     topic = "statins"
     _topic(tmp_path, topic, target_journal=True)
+    _topic(tmp_path, "metabolism_effects", target_journal=True)
     ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
     cycle._record_blockers(ledger_dir, "2026-07-15", [{
         "topic": topic,
@@ -12592,7 +12592,9 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
-    monkeypatch.setattr(cycle, "_quant_claim_count", lambda _topic: cycle.PREFLIGHT_MIN_QUANT_CLAIMS * 2)
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda candidate: (
+        10000 if candidate == "metabolism_effects" else cycle.PREFLIGHT_MIN_QUANT_CLAIMS * 2
+    ))
     _mock_candidate_bindings(monkeypatch)
     monkeypatch.setattr(
         cycle, "_quant_claim_source_precision",
@@ -12648,6 +12650,53 @@ def test_cycle_retries_prepared_candidate_past_stale_block(
     assert source_runs == [None]
     assert "corpus_repairs" not in ledger
     assert ledger["status"] == "submitted_to_researka"
+
+
+@pytest.mark.parametrize("case", ["empty", "blocked", "stale_binding"])
+def test_fresh_auto_publish_requires_current_unblocked_prepared_evidence(
+    tmp_path: Path, monkeypatch, case: str,
+) -> None:
+    _topic(tmp_path, "ready_study", target_journal=True)
+    _topic(tmp_path, "huge_weak_corpus", target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [] if case == "empty" else [_bound_candidate(
+            "ready_study", validated_at=dt.datetime.now(dt.UTC).isoformat(),
+        )],
+        "attempts": [{
+            "topic": "huge_weak_corpus",
+            "receipt_preflight": {"passed": False, "n_receipts": 4,
+                                  "n_primary_tier": 1, "n_direct_receipts": 1},
+        }],
+    })
+    monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
+    monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
+    monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
+    monkeypatch.setattr(cycle, "_quant_claim_count", lambda candidate: (
+        10000 if candidate == "huge_weak_corpus" else cycle.PREFLIGHT_MIN_QUANT_CLAIMS * 2
+    ))
+    _mock_candidate_bindings(monkeypatch)
+    if case == "stale_binding":
+        monkeypatch.setattr(cycle, "_current_candidate_binding", lambda _topic: None)
+    if case == "blocked":
+        monkeypatch.setattr(cycle, "_writer_gate_repeat_policy", lambda _ledger_dir: {
+            "ready_study": {"action": "skip_topic", "count": 2, "gate": "local_gate_blocked"},
+        })
+    monkeypatch.setattr(cycle, "_run_synthesis", lambda *_a, **_k: pytest.fail("unverified candidate selected"))
+    monkeypatch.setattr(cycle, "_repair_topic_corpus", lambda *_a, **_k: pytest.fail("publishing seeded corpus"))
+    monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: pytest.fail("publishing discovered topic"))
+
+    ledger = cycle.run_cycle(
+        runs_root=tmp_path / "runs", date="2026-09-24", mode="fresh",
+        run_synthesis=True, submit=True, max_attempts=1,
+        remote_loader=lambda: (set(), None),
+        submit_cycle=lambda **_kwargs: pytest.fail("no manuscript eligible for submission"),
+    )
+
+    assert ledger["status"] == "no_eligible_evidence_ready_candidate"
+    assert ledger["next_action"] == "prepare_candidate_buffer"
+    assert ledger["attempts"] == []
 
 
 def test_cycle_skips_source_precision_repair_when_clean_topic_ready(tmp_path: Path, monkeypatch) -> None:
@@ -12797,6 +12846,7 @@ def test_source_precision_repair_prefers_retained_claims_over_raw_file_count(
     monkeypatch.setattr(cycle, "_run_synthesis", lambda topic, out_dir, **_k: out_dir.mkdir(parents=True) or 0)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-26",
         run_synthesis=True,
@@ -12858,6 +12908,7 @@ def test_source_precision_repair_prioritizes_prepared_candidate(tmp_path: Path, 
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-07-15",
         run_synthesis=True,
@@ -12922,6 +12973,7 @@ def test_source_precision_repair_scans_until_publishable(
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-26",
         run_synthesis=True,
@@ -13033,6 +13085,7 @@ def test_fresh_cycle_selects_currently_repaired_topic_despite_recent_preflight_b
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-28",
         run_synthesis=True,
@@ -13150,6 +13203,7 @@ def test_fresh_cycle_repairs_source_precision_fallback_after_clean_topic_receipt
     monkeypatch.setattr(cycle, "_refresh_topic_supply", lambda *_a, **_k: pytest.fail("unexpected refresh"))
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-26",
         run_synthesis=True,
@@ -13201,6 +13255,7 @@ def test_cycle_auto_excludes_recent_unrepairable_zero_source_precision_topic(
     monkeypatch.setattr(cycle, "_run_synthesis", fake_synthesis)
 
     ledger = cycle.run_cycle(
+        allow_unprepared=True,
         runs_root=tmp_path / "runs",
         date="2026-06-02",
         run_synthesis=True,
@@ -13719,6 +13774,12 @@ def test_entity_topic_terms_drops_bare_modifier_keeps_synonyms(tmp_path, monkeyp
 def test_gate_execution_failure_stops_cycle_without_regenerating(tmp_path, monkeypatch, requested, failure):
     for topic in ("aaa_execution", "zzz_other"):
         _topic(tmp_path, topic, target_journal=True)
+    ledger_dir = tmp_path / "runs" / cycle.LEDGER_DIR
+    _write_json(ledger_dir / cycle.CANDIDATE_BUFFER, {
+        "thresholds": cycle._candidate_buffer_thresholds(),
+        "ready": [_bound_candidate("aaa_execution", validated_at=dt.datetime.now(dt.UTC).isoformat())],
+    })
+    _mock_candidate_bindings(monkeypatch)
     monkeypatch.setattr(cycle, "TOPIC_PACKS", tmp_path / "topic_packs")
     monkeypatch.setattr(cycle, "TOPIC_PACKS_DB", tmp_path / "topic_packs_db")
     monkeypatch.setattr(cycle, "CORPORA", tmp_path / "docs" / "quality-reference")
