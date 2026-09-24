@@ -1,5 +1,18 @@
 # DECISION JOURNAL
 
+## 2026-09-24 - Make source-size thresholds advisory
+At the owner's explicit request, report existing file, directory and combined LOC
+thresholds without failing release on size alone. Keep the numerical thresholds
+unchanged so growth remains visible in `make quality`, CI and `scripts/loc_gate.sh`.
+Missing directories or unreadable source still fail the reporter. Test the report
+contract, including all over-limit cases, rather than asserting repository size.
+
+This is a general development-policy change, not a manuscript-gate exception.
+The table/quotation implementation already passed the previous LOC check.
+Scientific evidence, behavioral tests, type/lint checks, import boundaries,
+complexity and duplication checks remain blocking. Do not compress correct code
+or delete needed behavior solely to satisfy line counts.
+
 ## 2026-09-12 - Opt-in V3 technical-error telemetry
 Pin official sentry-sdk 2.69.1. Without SENTRY_DSN, never initialize or import the SDK. Use isolated clients at HTTP and publishing CLI boundaries, with no logging handlers or global client. Preserve original exceptions, exit codes, scientific gates and retry scheduling. Capture uncaught errors and explicit terminal execution, authentication, missing submit configuration and reconciliation failures. REVISE/REJECT, expected no-output and scheduled retry results remain normal outcomes. Import-time failures and killed subprocesses remain outside coverage.
 

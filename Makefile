@@ -1,11 +1,14 @@
 PYTHON ?= .venv/bin/python
 JSCPD := npm exec --yes --package=jscpd@5.1.2 -- jscpd
 
-.PHONY: quality complexity duplicates imports diff-cover
-quality: complexity duplicates
-	$(PYTHON) -m ruff check agent scripts tests
+.PHONY: quality complexity duplicates loc imports diff-cover
+quality: complexity duplicates loc
+	$(PYTHON) -m ruff check agent scripts tests quality/check_loc.py
 	$(PYTHON) -m coverage run --branch --include='*/agent/revision_contract.py,*/scripts/revision_coverage.py' -m pytest -q tests/test_revision_coverage.py tests/test_loc_budget.py
 	$(PYTHON) -m coverage report
+
+loc:
+	$(PYTHON) quality/check_loc.py
 
 complexity:
 	$(PYTHON) quality/check_complexity.py agent scripts

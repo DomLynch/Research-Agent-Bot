@@ -57,10 +57,10 @@ LLM PROPOSES. CODE DISPOSES.
 - Python >= 3.11.
 - Runtime dependency discipline: prefer stdlib and existing deps; justify any new
   dependency in `DECISIONS.md`.
-- Current runtime LOC ceiling: 25,269 effective LOC in `agent/`; test-enforced
-  per-file hard cap: 800.
-- Current `scripts/` ceiling: 40,231 effective LOC; combined `agent/` + `scripts/`
-  ceiling: 65,500; test-enforced script per-file hard cap: 5,700.
+- LOC thresholds are advisory: `agent/` 25,269 total / 800 per file; `scripts/`
+  40,231 total / 5,700 per file; combined 65,500. `make quality` reports
+  overages. Do not compress or delete correct code solely to satisfy a count.
+  Behavior, evidence, import boundaries, complexity and duplication still gate release.
 - Soft budgets: file ~300 cloc, function ~50 cloc.
 - All cross-stage objects should be explicit dataclasses or schema-shaped dicts.
 - No imports from `agent_legacy/` or `agent_archived/`.
@@ -71,7 +71,7 @@ LLM PROPOSES. CODE DISPOSES.
 
 ## Active Critical Path
 1. Keep repo clean, synced, and reproducible.
-2. Keep release-green blockers closed: cross-topic run selection, LOC budget,
+2. Keep release-green blockers closed: cross-topic run selection,
    state docs, full tests, and deploy sync.
 3. Make the rapamycin paper genuinely candidate-publication-ready.
 4. Preserve trust-spine gates while improving corpus depth, RoB/GRADE,
