@@ -501,7 +501,7 @@ def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
     prose = re.sub(
         r"(?ms)^## Evidence Landscape\b.*?(?=^## |\Z)",
         lambda match: "\n".join(
-            line.rsplit("|", 2)[0] + "| finding=[source-owned evidence] |" if (
+            "| " + " | ".join(cells[:-1]) + " | finding=[source-owned evidence] |" if (
                 line.startswith("|") and len(cells := _table_cells(line)) == 7
                 and cells[2].startswith("direction=") and cells[3].startswith("directness=")
                 and cells[5].startswith("outcome=") and cells[6].startswith("finding=")

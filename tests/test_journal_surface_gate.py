@@ -726,14 +726,15 @@ def test_manuscript_table_row_cannot_hide_missing_cross_reference():
     )
 
 
-def test_findings_map_source_row_keeps_other_cells_in_table_reference_check():
+@pytest.mark.parametrize("cell_index", range(6))
+@pytest.mark.parametrize("trailing_pipe", [False, True])
+def test_findings_map_source_row_keeps_other_cells_in_table_reference_check(cell_index, trailing_pipe):
     from agent.journal_surface_gate import _orphan_table_issue_messages
 
-    tagged_row = (
-        "| Source | Ref | direction=benefit | directness=direct | "
-        "Our pooled results appear in Table 999. | outcome=glucose | "
-        "finding=Source reports reduced glucose. |"
-    )
+    cells = ["Source", "Ref", "direction=benefit", "directness=direct", "A1",
+             "outcome=glucose", "finding=Source reports reduced glucose."]
+    cells[cell_index] += " Our pooled results appear in Table 999."
+    tagged_row = "| " + " | ".join(cells) + (" |" if trailing_pipe else "")
     assert _orphan_table_issue_messages("## Evidence Landscape\n" + tagged_row + "\n\n## Discussion\nText.") == (
         "orphan table reference: Table 999",
     )
