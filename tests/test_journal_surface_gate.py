@@ -1,5 +1,6 @@
 """Tests for the deterministic journal-surface gate."""
 from __future__ import annotations
+import pytest
 
 from agent.journal_surface_gate import (
     evaluate_journal_surface,
@@ -694,6 +695,35 @@ def test_orphan_table_reference_blocks_journal_surface():
     report = evaluate_journal_surface(paper)
     assert not report.passed
     assert any("orphan table reference: Table 2" in i.detail for i in report.issues)
+
+
+@pytest.mark.parametrize("topic", ["resveratrol", "resistance training"])
+def test_source_table_numbers_inside_evidence_rows_are_not_manuscript_links(topic):
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    source_row = (
+        f"| {topic} source | direction=unclear | directness=direct | "
+        "outcome=cardiometabolic; finding=The original study reports its results "
+        "in Table 4, Table 5, Table 6 and Table 7. |\n"
+    )
+    paper = paper.replace("## Results\n\n", "## Results\n\n" + source_row, 1)
+    assert not any(
+        "orphan table reference" in issue.detail
+        for issue in evaluate_journal_surface(paper).issues
+    )
+    paper = paper.replace(source_row, source_row + "Table 8 summarizes our results.\n", 1)
+    assert any(
+        "orphan table reference: Table 8" in issue.detail
+        for issue in evaluate_journal_surface(paper).issues
+    )
+
+
+def test_manuscript_table_row_cannot_hide_missing_cross_reference():
+    paper = _paper("| Smith 2024 | fasting glucose | control | 89 mg/dL | mg/dL | — |")
+    paper = paper.replace("## Results\n\n", "## Results\n\n| Manuscript summary | Our pooled results appear in Table 999. |\n", 1)
+    assert any(
+        "orphan table reference: Table 999" in issue.detail
+        for issue in evaluate_journal_surface(paper).issues
+    )
 
 
 def test_source_internal_table_reference_is_not_a_manuscript_cross_reference():

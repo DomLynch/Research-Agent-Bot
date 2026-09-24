@@ -496,9 +496,14 @@ def _outcome_key(text: str) -> str:
 
 
 def _orphan_table_issue_messages(paper_md: str) -> tuple[str, ...]:
+    # Only compiler-owned finding rows quote source-paper tables; ordinary
+    # manuscript table rows still need their cross-references checked.
+    prose = "\n".join(line for line in paper_md.splitlines() if not (
+        line.lstrip().startswith("|") and all(tag in line for tag in ("finding=", "outcome=", "directness="))
+    ))
     cross_reference_text = _SOURCE_OWNED_SPAN_RE.sub(
         r"\1[source-owned evidence]\2",
-        paper_md,
+        prose,
     )
     defined = {
         number
